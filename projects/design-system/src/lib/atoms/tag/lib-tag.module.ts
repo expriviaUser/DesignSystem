@@ -16,7 +16,7 @@ const exportComponent = [
     ...exportComponent
   ],
   imports: [
-    CommonModule,
+    // CommonModule,
     ...primeComponents
   ],
   exports: [
