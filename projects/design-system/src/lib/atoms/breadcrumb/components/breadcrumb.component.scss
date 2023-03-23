@@ -1,0 +1,107 @@
+
+.dark {
+    width: max-content;
+    background-color: black;
+
+  .c-breadcrumb {
+
+
+    .c-breadcrumb-item {
+      color: white;
+
+
+      .c-bc {
+
+
+        &:hover {
+          color: white;
+          border-bottom: 1px solid white;
+
+        }
+
+        &:focus {
+          border-bottom: 1px solid white;
+          color: white;
+        }
+
+        &.active {
+          color: white;
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+  }
+}
+
+.c-breadcrumb {
+  font-family: 'Roboto';
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: transparent;
+  margin:0;
+  padding:0;
+
+
+  .c-breadcrumb-item {
+
+    padding-left: 0.5rem;
+    text-decoration: none;
+    letter-spacing: 0.18px;
+    padding-bottom: 0.125rem;
+
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.45);
+
+
+    &::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: rgba(0, 0, 0, 0.45);
+      content: "/";
+    }
+
+    .dots-bc {
+      color: rgba(0, 0, 0, 0.45);
+      text-decoration: none;
+      padding-bottom: 1px;
+    }
+
+    .c-bc {
+      color: rgba(0, 0, 0, 0.45);
+      text-decoration: none;
+      padding-bottom: 1px;
+
+      &:hover {
+        color: black;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      &:focus {
+        border-bottom: 1px solid black;
+        outline: none;
+        color: black;
+        text-decoration: none;
+      }
+
+      &.active {
+        color: black;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        content: none;
+      }
+    }
+  }
+}

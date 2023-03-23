@@ -1,0 +1,28 @@
+<div aria-label="breadcrumb">
+  <ul *ngIf="breadcrumbList.length<=4" class="c-breadcrumb">
+    <li *ngFor="let breadCrumb of breadcrumbList;" class="c-breadcrumb-item" tabindex="0">
+      <a *ngIf="href" class="c-bc {{breadCrumb.active ? 'active' : ''}}"
+         href="{{breadCrumb.link}}">{{capitalizeFirstLetter((breadCrumb.name))}}</a>
+      <span *ngIf="!href" class="c-bc {{breadCrumb.active ? 'active' : ''}}"
+         (click)="go(breadCrumb.link)">{{capitalizeFirstLetter((breadCrumb.name))}}</span>
+    </li>
+  </ul>
+  <ul *ngIf="breadcrumbList.length>4" class="c-breadcrumb">
+    <li *ngFor="let breadCrumb of breadcrumbSubList1;" class="c-breadcrumb-item" tabindex="0">
+      <a *ngIf="href" class="c-bc {{breadCrumb.active ? 'active' : ''}}"
+         href="{{breadCrumb.link}}">{{capitalizeFirstLetter((breadCrumb.name))}}</a>
+      <span *ngIf="!href" class="c-bc {{breadCrumb.active ? 'active' : ''}}"
+            (click)="go(breadCrumb.link)">{{capitalizeFirstLetter((breadCrumb.name))}}</span>
+    </li>
+    <li class="c-breadcrumb-item" tabindex="0">
+      <span class="dots-bc">...</span>
+    </li>
+
+    <li *ngFor="let breadCrumb of breadcrumbSubList2;" class="c-breadcrumb-item" tabindex="0">
+      <a *ngIf="href" class="c-bc {{breadCrumb.active ? 'active' : ''}}"
+         href="{{breadCrumb.link}}">{{capitalizeFirstLetter((breadCrumb.name))}}</a>
+      <span *ngIf="!href" class="c-bc {{breadCrumb.active ? 'active' : ''}}"
+            (click)="go(breadCrumb.link)">{{capitalizeFirstLetter((breadCrumb.name))}}</span>
+    </li>
+  </ul>
+</div>

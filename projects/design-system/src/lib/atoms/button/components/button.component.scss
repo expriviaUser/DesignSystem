@@ -1,0 +1,190 @@
+// @import 'src/assets/styles/base/_variables.scss';
+
+// :host ::ng-deep button {
+//     margin-right: .5em;
+// }
+
+// .button-blue {
+//     background: $blue-100;
+// }
+
+// .text-black {
+//     color: $text-black;
+// }
+
+// .p-button-primary {
+//     background: $primary-100;
+//     border: 0;
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $primary-200;
+//     }
+// }
+
+// .p-button-primary-disabled {
+//     background: $dark-grey;
+//     border: 0;
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $dark-grey;
+//     }
+// }
+
+// .p-button-text-dark {
+//     color: $primary-100;
+//     background: none;
+//     border: 0;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: none;
+//         color: $primary-200;
+//     }
+// }
+
+// .p-button-second {
+//     height: 36px;
+//     background: $white;
+//     color: $black;
+//     text-transform: uppercase;
+//     border: 1px solid $black;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: #EEEEEE;
+//         color: $black;
+//         border: 1px solid $black;
+//     }
+// }
+
+// .p-button-second-dark {
+//     height: 36px;
+//     background: $dark-grey;
+//     color: $black;
+//     text-transform: uppercase;
+//     border: 1px solid $black;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $dark-grey;
+//         color: $black;
+//         border: 1px solid $black;
+//     }
+// }
+
+// .p-button-icon-action {
+//     background: none;
+//     border: 0;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: none;
+//         border: 0;
+//     }
+// }
+
+// .p-button-icon-action-circle {
+//     justify-content: center;
+//     align-items: center;
+//     background: $primary-100;
+//     width: 48px;
+//     height: 48px;
+//     border-radius: 56px;
+//     border: 0;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $primary-100;
+//         border: 0;
+//     }
+// }
+
+// .p-button-icon-action-circle-grey {
+//     justify-content: center;
+//     align-items: center;
+//     background: $dark-grey;
+//     width: 48px;
+//     height: 48px;
+//     border-radius: 56px;
+//     border: 0;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $dark-grey;
+//         border: 0;
+//     }
+// }
+
+// .p-button-icon-action-circle-white {
+//     justify-content: center;
+//     align-items: center;
+//     background: $white;
+//     width: 48px;
+//     height: 48px;
+//     border-radius: 56px;
+//     border: 1px solid $black;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $white;
+//         border: 1px solid $black;
+//     }
+// }
+
+// .p-button-icon-action-square-blue {
+//     justify-content: center;
+//     align-items: center;
+//     background: $primary-100;
+//     width: 48px;
+//     height: 48px;
+//     border: 1px solid $primary-100;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $primary-100;
+//         border: 1px solid $primary-100;
+//     }
+// }
+
+// .p-button-icon-action-square-white {
+//     justify-content: center;
+//     align-items: center;
+//     background: $white;
+//     width: 48px;
+//     height: 48px;
+//     border: 1px solid $black;
+//     &:focus {
+//         border: 0;
+//         box-shadow: none;
+//     }
+//     &:hover {
+//         background: $white;
+//         border: 1px solid $black;
+//     }
+// }
