@@ -1,6 +1,6 @@
 {
   "name": "@dnlcorti/design-system",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0",
@@ -18,5 +18,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dnlcorti/dSystem.git"
+  },
+  "exports": {
+    ".": {
+      "sass": "./assets/styles/index.scss"
+    }
   }
 }

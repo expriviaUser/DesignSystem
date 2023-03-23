@@ -1,0 +1,29 @@
+/// Qui includiamo la griglia di Bootstrap e le nostre personalizzazioni
+
+// 1. Includere priam le funzioni (così da poter manipolare colori, SVG, calc, ecc…)
+@import 'node_modules/bootstrap/scss/functions';
+
+// 2. Includere gli override delle variabili SASS qui
+$grid-gutter-width: 24px;
+
+// 3. Includere gli stili obbligatori di Bootstrap qui
+@import 'node_modules/bootstrap/scss/variables';
+
+// 4. Includere gli override delle map di default qui
+
+// 5. Includere le parti obbligatorie di Bootstrap di cui si ha bisogno qui
+@import 'node_modules/bootstrap/scss/maps';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/root';
+
+// 6. Includere le parti opzionali di Bootstrap di cui si ha bisogno qui
+// @import 'node_modules/bootstrap/scss/utilities';
+// @import 'node_modules/bootstrap/scss/reboot';
+// @import 'node_modules/bootstrap/scss/type';
+// @import 'node_modules/bootstrap/scss/images';
+// @import 'node_modules/bootstrap/scss/containers';
+@import 'node_modules/bootstrap/scss/grid';
+// @import 'node_modules/bootstrap/scss/helpers';
+
+// 7. Includere (opzionale) la utilities API
+// @import 'node_modules/bootstrap/scss/utilities/api';

@@ -1,0 +1,94 @@
+/// Set di mixin per scrivere le media query
+
+// 639px <-- $breakpoint--mobile-width
+// 640px <-- $tablet-width
+// 1024px <-- $breakpoint--desktop-width
+// 1200px <-- $x-large
+// 1400px <-- $xx-large
+// 1900px <-- $xxx-large
+
+// Ricontrollare questo calcolo, l'operazione di sottrazione non funziona coi rem.
+$single-px: 0.0625rem; // 1px - serve per le media query sotto
+$before-desktop: 63.94rem; // $breakpoint--desktop-width - (pxToRem(1px));
+$before-xxx-large: $breakpoint--xx-large - $single-px; // mixin "large-x-to-xx-only"
+
+@mixin small-only {
+  @media screen and (max-width: #{$breakpoint--mobile-width}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+    @media screen and (min-width: #{$breakpoint--tablet-width}) {
+        @content;
+    }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$breakpoint--tablet-width}) and (max-width: #{$before-desktop}) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: #{$breakpoint--desktop-width}) {
+    @content;
+  }
+}
+
+@mixin large-to-x-large-only {
+  @media (min-width: #{$breakpoint--desktop-width}) and (max-width: #{$x-large - $single-px}) {
+    @content;
+  }
+}
+
+// Schermi extra large
+@mixin x-large-up {
+  @media (min-width: #{$x-large}) {
+    @content;
+  }
+}
+
+@mixin xx-large-up {
+  @media (min-width: #{$xx-large}) {
+    @content;
+  }
+}
+
+@mixin large-x-to-xx-only {
+  @media (min-width: #{$x-large}) and (max-width: #{$xx-large - $single-px}) {
+    @content;
+  }
+}
+
+@mixin xxx-large-up {
+  @media (min-width: #{$xxx-large}) {
+    @content;
+  }
+}
+
+// mixin specifici per i dispositivi Apple
+@mixin iphone-6-only {
+  @media screen and (max-width: #{$iphone-6-width}) {
+    @content;
+  }
+}
+
+@mixin ipad-only {
+  @media screen and (min-device-width: #{$ipad-min-width}) and (max-device-width: #{$breakpoint--desktop-width}) {
+    @content;
+  }
+}
+
+@mixin ipad-pro-only {
+  @media screen and (min-device-width: #{$ipad-pro-min-width}) and (max-device-width: #{$ipad-pro-max-width}) and (-webkit-min-device-pixel-ratio: 1.5) {
+    @content;
+  }
+}
+
+// (hi dpi) Android
+// @mixin hi-dpi-screens {
+//   @media only screen and (-webkit-device-pixel-ratio:1.5) {
+//     @content;
+//   }
+// }

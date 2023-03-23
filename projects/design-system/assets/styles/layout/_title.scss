@@ -1,0 +1,15 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: $default-fonts;
+}
+
+.h1 {}
+.h2 {
+    font-weight: 700; font-size: 21px; line-height: 22px; letter-spacing: 0.1px; color: var(--blue-100); margin-bottom: $gap-3; margin-top: $gap-4;
+
+    &:first-child { margin-top: 0; }
+}

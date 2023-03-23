@@ -1,6 +1,5 @@
 import { TagModule } from 'primeng/tag';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TagComponent } from './components/tag.component';
 
 const primeComponents = [
@@ -16,7 +15,6 @@ const exportComponent = [
     ...exportComponent
   ],
   imports: [
-    // CommonModule,
     ...primeComponents
   ],
   exports: [

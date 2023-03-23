@@ -1,0 +1,43 @@
+// PrimeNG pcard component
+.p-card {
+  display: block;
+  background: $color--surface-a;
+  color: $color--text-color;
+  box-shadow: 0px 3px 6px rgba($color--black-50, 0.16), 0px 3px 6px rgba($color--black-50, 0.23);
+  border-radius: $border-radius;
+  .p-card-body {
+      padding: 1rem;
+  }
+  .p-card-title {
+      position: relative;
+      display: flex;
+      gap: $gap-2;
+      flex-direction: row;
+      width: 100%;
+      font-size: 1.25rem;
+      font-weight: $font-weight;
+      span {
+          position: absolute;
+          right: 0;
+          color: $color--blue-500;
+          font-size: 1.8rem;
+          cursor: pointer;
+      }
+  }
+  .p-card-subtitle {
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem; // 14px;
+      font-weight: $font-weight-bold;
+      color: $color--text-color-secondary;
+  }
+  .p-card-content {
+      padding: 0;
+  }
+  .p-card-footer {
+      padding: 1.25rem 0 0 0;
+  }
+  // Questa (e altre eventuali) specializzazione della card si usano facendo un binding con l'alttributo styleClass nella p-card.
+  &--full-height {
+      height: 100%;
+  }
+}

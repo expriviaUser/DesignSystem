@@ -1,0 +1,26 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-1;
+    
+    .static {
+        color: $color--primary-color;
+    }
+
+    // TODO: refactor di questo sotto.
+    &:has(.field-checkbox) {
+        min-height: 50px;
+    }
+}
+
+small {
+    padding-top: $gap-1;
+    font-size: 0.875rem;
+    color: $red-200;
+}
+
+.field-checkbox {
+    label {
+        margin-left: .6rem;
+    }
+}

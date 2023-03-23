@@ -1,0 +1,57 @@
+.search-bar {
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-shrink: 1;
+
+        //X GlobalDoc
+        .p-dropdown {
+            line-height: 0;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .p-inputtext {
+            border-radius: 0;
+            line-height: 0.875;
+            max-height: 48px;
+        }
+
+        .p-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+//Global Doc
+.search-bar {
+
+    .p-inputtext {
+        border: 1px solid $color--searchbar-inputtype-border;
+    }
+
+    .p-dropdown {
+        background-color: $color--gray-600;
+        border: 1px solid $color--gray-600;
+
+        .p-dropdown-label {
+            color:  $color--white;
+
+            &.p-inputtext {
+                border: 0;
+            }
+        }
+
+        .p-dropdown-trigger-icon {
+            color: $color--white;
+        }
+
+    }
+
+    
+}

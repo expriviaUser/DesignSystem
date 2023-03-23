@@ -1,0 +1,114 @@
+// Fonts
+$font-family: Roboto,
+Helvetica,
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
+$font-weight-light: 100;
+$font-weight: 400;
+$font-weight-bold: bold;
+$font-size-in-px: 14px;
+$font-size: 100%;
+
+$global-line-truncation-size: 2;
+
+// $global-line-height: 20px;
+// $global-letter-spacing: 0.4px;
+
+//Breakpoint media query
+$breakpoint--mobile-width: 39.94rem; // 639px
+$breakpoint--tablet-width: 40rem; // 640px
+$breakpoint--desktop-width: 64rem; // 1024px
+$breakpoint--x-large: 75rem; // 1200px
+$breakpoint--xx-large: 87.5rem; // 1400px
+$breakpoint--xxx-large: 118.8rem; // 1900px
+
+// Misure per gli iPhone
+$iphone-6-width: 375px;
+$ipad-min-width: 768px;
+$ipad-pro-min-width: 1024px;
+$ipad-pro-max-width: 1366px;
+
+// Colors prj
+$color--primary-color: #FFD300;
+
+// colors components
+// buttons
+$color--button-primary-text: #000000;
+
+// search-bar
+$color--searchbar-inputtype-border: #CBD5E1;
+
+// header-actions
+$color--headeractions-buttonlink-color: #1890FF;
+
+// radio-button
+$color--radio-button-border-default: #D4D5D8;
+$color--radio-button-icon-selected: #1890FF;
+// radio-tiles
+$color--radio-tile-card-selected-bg: #E2E9F5;
+$color--radio-tile-card-hover-border: #1890FF;
+$color--radio-tile-card-border: #E2E9F5;
+// end colors components
+
+$color--surface-a: #FFFFFF;
+$color--surface-b: #F8F9FA;
+$color--surface-c: #E9ECEF;
+$color--surface-d: #DEE2E6;
+$color--text-color: #495057;
+$color--text-color-secondary: #64748B;
+$color--surface-300: #E0E0E0;
+$color--gray-100: #CED4DA;
+$color--gray-200: #EFF6FF;
+$color--gray-600: #989AA2;
+
+$color--black-700: #202020;
+$color--black-800: #343A40;
+$color--black-900: #000000;
+$color--blue-100: #056DBF;
+$color--blue-500: #114477;
+$color--blue-600: #0A2B4D;
+$color--blue-700: #1D4ED8;
+$color--blue-800: #F0F8FE;
+$color--green-50: #2D7830;
+$color--cyan-100: #BFDBFE;
+$color--orange-50: #FB8C00;
+$color--bluegray-50: #F7F8F9;
+$color--bluegray-500: #64748B;
+$color--purple-50: #FBF7FF;
+$color--purple-500: #A855F7;
+$color--red-50: #EF4444;
+$color--red-100: #A85524;
+$color--red-200: #DD0B0B;
+$color--red-900: #E24C4C;
+$color--black-50: #000;
+$color--white-50: #000;
+$color--white: #FFFFFF;
+
+$white: #FFFFFF;
+$grey-200: #D8D8D8;
+$blue-100: #056DBF;
+$black: #202020;
+$primary-100: #114477;
+$primary-200: #056DBF;
+$primary-300: #0092bc;
+$red-200: #DD0B0B;
+
+$footer: $primary-300;
+
+// Padding/Margin
+$gap-1: 8px;
+$gap-2: 16px;
+$gap-3: 24px;
+$gap-4: 32px;
+$gap-5: 40px;
+
+// Borders
+$border-gray-200: 1px solid #CED4DA;
+$border-radius: 6px;
+
+// others
+$shadow--focus-ring: 0 0 0 0.2rem #BFDBFE;
+$overlay--maskbg: rgba(0, 0, 0, 0.4);

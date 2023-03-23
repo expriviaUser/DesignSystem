@@ -1,0 +1,90 @@
+.radiobutton-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// PrimeNG pradiobutton component
+p-radiobutton {
+
+    margin-right: 0.5rem;
+    // width: 22px;
+    height: 22px;
+
+    +label {
+        margin-right: 0.5rem;
+
+        &:last-child {
+            margin-right: 0;
+            text-transform: lowercase;
+        }
+    }
+
+    .p-radiobutton-box {
+        border: 2px solid $color--radio-button-border-default;
+        background: $color--surface-a;
+        width: 22px;
+        height: 22px;
+        color: $color--text-color;
+        border-radius: 50%;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+        &:not(.p-disabled):not(.p-highlight):hover {
+            border-color: $color--radio-button-border-default;
+        }
+
+        &:not(.p-disabled).p-focus {
+            outline: 0 none;
+            outline-offset: 0;
+            box-shadow: none;
+            border-color: $color--radio-button-icon-selected;
+        }
+
+        .p-radiobutton-icon {
+            width: 14px;
+            height: 14px;
+            transition-duration: 0.2s;
+            // background-color: $color--radio-button-icon-selected;
+            border: 4px solid $color--radio-button-icon-selected;
+        }
+
+        &.p-highlight {
+            border: 4px solid $color--radio-button-icon-selected;
+            background: none;
+
+            :not(.p-disabled):hover {
+                border-color: $color--blue-700;
+                background: $color--blue-700;
+                color: $color--surface-a;
+            }
+
+            &:hover {
+                background: none;
+            }
+        }
+    }
+}
+
+p-radiobutton.ng-dirty.ng-invalid>.p-radiobutton>.p-radiobutton-box {
+    border-color: $color--red-900;
+}
+
+.p-input-filled .p-radiobutton .p-radiobutton-box {
+    background-color: $color--surface-c;
+}
+
+.p-input-filled .p-radiobutton .p-radiobutton-box:not(.p-disabled):hover {
+    background-color: $color--surface-c;
+}
+
+.p-input-filled .p-radiobutton .p-radiobutton-box.p-highlight {
+    background: $color--primary-color;
+}
+
+.p-input-filled .p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+    background: $color--blue-700;
+}
+
+.p-radiobutton-label {
+    margin-left: 0.5rem;
+}

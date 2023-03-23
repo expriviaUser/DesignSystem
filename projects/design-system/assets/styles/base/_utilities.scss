@@ -1,0 +1,15 @@
+/// Utility generiche per tutti i componenti
+
+.text-right {
+  text-align: right;
+}
+
+.vertical-line-left {
+  padding-left: 1rem;
+  border-left: 1px solid $black;
+  min-height: 200px;
+}
+
+.align-items-center {
+  align-items: center;
+}
