@@ -1,0 +1,7 @@
+<ul class="p-error">
+    <li [hidden]="control.pristine && !control.touched" *ngIf="control.hasError('required')">required</li>
+    <li [hidden]="control.pristine && !control.touched" *ngIf="control.hasError('pattern')">pattern</li>
+    <li [hidden]="control.pristine && !control.touched" *ngIf="control.parent!.hasError('dateInvalid') && formControlName=='dataFine'">Data fine non può essere maggiore di data inizio</li>
+
+    <ng-content></ng-content>
+</ul>

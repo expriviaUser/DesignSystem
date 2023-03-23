@@ -1,0 +1,9 @@
+ul {margin: -5px 0 0; padding: 0; list-style: none;
+    ::ng-deep {
+        li {
+            position: relative; font-size: 11px; text-transform: uppercase;
+    
+            &::before { content: ' '; position: absolute; top: 0px; left: 5px;}
+        }
+    }
+}

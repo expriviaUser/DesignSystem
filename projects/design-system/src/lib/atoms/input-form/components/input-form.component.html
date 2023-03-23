@@ -1,0 +1,55 @@
+<div class="field">
+    <!-- <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'" [class.hasStatic]="hasStatic">{{label}}</label> -->
+    <label *ngIf="label && type!='checkbox'" [ngStyle]="{'font-weight': type=='static' ? '800':'400'}"
+        [for]="formControlName" id="{{formControlName}}-label'">{{label}}</label>
+
+    <div [ngSwitch]="type" [class.p-input-icon-right]="icon !== ''">
+
+        <i *ngIf="icon !== ''" class="pi" [class]="icon"></i>
+
+        <!-- Input statica -->
+        <div class="static" *ngSwitchCase="'static'">{{getValueControl()}}</div>
+
+        <!-- Input number -->
+        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" (selectedValue)="emitValue($event)" [control]="control"
+            [id]="formControlName" class="p-inputtext-sm" pInputText
+            type="number" />
+
+        <!-- dropdown  -->
+        <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
+            [clear]="clear" [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"></lib-dropdown>
+
+        <!-- Input calendar -->
+        <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
+            (selectedValue)="emitValue($event, 'calendar')"></lib-calendar>
+
+        <!-- Input autocomplete  -->
+        <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
+            (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
+            [disabled]="inputDisabled"></lib-autocomplete>
+
+        <!-- Input checkbox -->
+        <div class="field-checkbox" *ngSwitchCase="'checkbox'">
+            <p-checkbox (change)="emitValue($event)" [label]="label" [formControl]="control" [binary]="true"
+                inputId="{{formControlName}}-label'"></p-checkbox>
+        </div>
+
+        <!-- Input radio -->
+        <div class="field-radio" *ngSwitchCase="'radio'">
+            <p-radioButton [value]="value" [formControl]="control" (change)="emitValue($event)"></p-radioButton>
+        </div>
+
+        <!-- dropdown sort -->
+       <!--  <lib-select-sort *ngSwitchCase="'dropdown-sort'" [sortParam]="sortParam"
+            (selectedValue)="emitValue($event, 'dropdown')" [control]="control" [groups]="valueInput"></lib-select-sort> -->
+
+        <!-- Input Textarea  -->
+        <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
+            [placeholder]="placeholder"></lib-textarea>
+
+        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event)" [id]="formControlName"
+        [control]="control" class="p-inputtext-sm" pInputText />
+    </div>
+
+    <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
+        [controlName]="formControlName">

@@ -1,0 +1,6 @@
+<div class="autocomplete">
+    <!-- <label for="name" class="block"> {{label}} </label> -->
+    <p-autoComplete [showClear]="true" [inputStyleClass]="haveError? 'ng-invalid ng-dirty':''" [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList" (onSelect)="emitValue($event)" (onClear)="emitValue('')" (completeMethod)="filter($event)"
+        [minLength]="3" [disabled]="disabled"></p-autoComplete>
+
+</div>
