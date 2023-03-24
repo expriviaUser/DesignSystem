@@ -1,0 +1,40 @@
+<div class="radio-tiles">
+    <ng-container *ngFor="let tile of tiles">
+        <div [ngClass]="{'selected': isSelected(tile.radioValue), 'radio-tile row': true}">
+            <div class="col">
+                <lib-card [cHeader]="''" [cSubHeader]="''" [cStyle]="''" [cStyleClass]="''">
+                    <div cSubtitleTemplate class="headerActions" *ngIf="tile.showHeaderAction">
+                        <p-button styleClass="p-button-link" icon="pi pi-copy" label="Copia negli appunti"
+                            iconPos="right" (click)="buttonCopyClicked($event)">
+                        </p-button>
+                    </div>
+                    <div cFooterTemplate>
+                        <div class="bodyContainer row">
+                            <div class="col-1 bodyItem center">
+                                <p-radioButton [name]="tile.radioName" [value]="tile.radioValue"
+                                    [disabled]="tile.radioDisabled" [(ngModel)]="valueSelected"
+                                    [inputId]="tile.radioName" (onClick)="emitRadioValue($event)">
+                                </p-radioButton>
+                            </div>
+                            <div class="col-8">
+                                <label [for]="tile.radioName">
+                                    <div class="titleBody">
+                                        <strong>{{tile.title}}</strong>
+                                    </div>
+                                    <div class="contentBody">
+                                        {{tile.content}}
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="footerActions col-3 bodyItem end">
+                                <p-button styleClass="p-button-link" label="Modifica"
+                                    (click)="buttonUpdateClicked($event)">
+                                </p-button>
+                            </div>
+                        </div>
+                    </div>
+                </lib-card>
+            </div>
+        </div>
+    </ng-container>
+</div>

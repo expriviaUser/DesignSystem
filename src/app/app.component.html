@@ -39,3 +39,11 @@
         <p>{{data}}</p>
     </ng-template>
 </lib-tabs>
+
+
+<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions">
+    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+    <ng-template #actions let-item="data">
+        <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
+    </ng-template>
+</lib-table>

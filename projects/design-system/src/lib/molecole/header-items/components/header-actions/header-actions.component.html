@@ -1,0 +1,17 @@
+<div class="header-actions">
+    <div>
+        <lib-button label="Help" size="medium" type="link"></lib-button>
+    </div>
+    <div>
+        <lib-icon-circle icon="pi pi-help" type="help" size="small"></lib-icon-circle>
+    </div>
+    <div>
+        <lib-header-notifications [notifications]="notifs" *ngIf="user" ></lib-header-notifications>
+    </div>
+    <div>
+        <lib-language-selector [options]="languages" placeholder="Seleziona lingua"></lib-language-selector>
+    </div>
+    <div>
+        <lib-header-menu-user [menuNavbar]="user"></lib-header-menu-user>
+    </div>
+</div>

@@ -16,6 +16,10 @@ import { LibBadgeModule } from './atoms/badge/lib-badge.module';
 import { LibDialogModule } from './atoms/dialog/lib-dialog.module';
 import { LibIconCircleModule } from './atoms/icon-circle/lib-icon-circle.module';
 import { LibTabsModule } from './atoms/tabs/lib-tabs.module';
+import { LibTableModule } from './molecole/table/lib-table.module';
+import { CtaBarModule } from './molecole/cta-bar/cta-bar.module';
+import { HeaderItemsModule } from './molecole/header-items/header-items.module';
+import { LibMessagesModule } from './molecole/messages/lib-messages.module';
 
 const sharedModules = [
   LibTagModule,
@@ -33,7 +37,11 @@ const sharedModules = [
   LibBadgeModule,
   LibDialogModule,
   LibIconCircleModule,
-  LibTabsModule
+  LibTabsModule,
+  LibTableModule,
+  CtaBarModule,
+  HeaderItemsModule,
+  LibMessagesModule
 ];
 
 @NgModule({

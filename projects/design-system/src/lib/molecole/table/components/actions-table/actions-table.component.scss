@@ -1,0 +1,9 @@
+.actions {
+    position: relative;
+    gap: 8px;
+    display: flex;
+    .menu {
+        position: absolute;
+        top: 0;
+    }
+}

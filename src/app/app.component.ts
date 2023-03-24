@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { BreadcrumbModel } from 'projects/design-system/src/public-api';
+import { ActionTable, BreadcrumbModel } from 'projects/design-system/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +24,115 @@ export class AppComponent {
     {header: 'Prova2', isDisabled: false, content: '2', isSelected: false},
     {header: 'Prova3', isDisabled: false, content: '3', isSelected: false},
   
+];
+
+items: any[] = [
+    {name: 'Simone', surname: 'Giannuario'},
+    {name: 'Daniele', surname: 'Corti'},
+    {name: 'Vincenzo', surname: 'Marretta'},
+]
+
+columns = [
+    { header: "Nome", field: "name" },
+    { header: "Cognome", field: "surname" }
+];
+
+iconsTable: ActionTable[] = [
+    {
+        label: 'pi pi-plus',
+        command: (event: any) => {
+            /* this.router.navigate(["/assisted-registry/assisted/view", event.codFiscale], {
+                relativeTo: this.activatedRoute,
+            }); */
+        },
+    },
+    {
+        label: 'pi pi-user',
+        command: (event: any) => {
+            /* this.router.navigate(["/assisted-registry/assisted/edit", event.codFiscale], {
+                relativeTo: this.activatedRoute,
+            }); */
+        },
+    },
+    {
+        label: 'pi pi-plus',
+        command: (event: any) => {
+            /* this.router.navigate(["/assisted-registry/assisted/delete", event.codFiscale], {
+                relativeTo: this.activatedRoute,
+            }); */
+        },
+    },
+    {
+        label: 'pi pi-user',
+        items: [
+            {
+                label: "Notificare scelta pediatrica in scadenza",
+                command: (event: any) => {
+                    /* this.router.navigate(
+                        [
+                            "/assisted-registry/assisted/notifyexpiringpediatricchoice",
+                            event.codFiscale,
+                        ],
+                        {
+                            relativeTo: this.activatedRoute,
+                        }
+                    ); */
+                },
+            },
+            {
+                label: "Recuperare quote",
+                command: (event: any) => {
+                    /* this.router.navigate(
+                        ["/assisted-registry/assisted/recoveryquotes", event.codFiscale],
+                        {
+                            relativeTo: this.activatedRoute,
+                        }
+                    );*/
+                }, 
+            },
+            {
+                label: "Produrre certificato sostitutivo provvisorio TEAM",
+                command: (event: any) => {
+                    /* this.router.navigate(
+                        
+                        [`/assisted-registry/assisted/creazione-certificato-sostitutivo/${event.codFiscale}`],
+
+                        {
+                            relativeTo: this.activatedRoute,
+                        }
+                    ); */
+                },
+            },
+            {
+                label: "Gestire importo buono celiaco fuori regione (MANCA UX SIN-191)",
+                command: (event: any) => {
+                    /* this.router.navigate(
+                        [
+                            `/assisted-registry/assisted/gestire-importo-buono-celiaco-fuori-regione/${event.codFiscale}`,
+                          
+                        ],
+                        {
+                            relativeTo: this.activatedRoute,
+                        }
+                    );*/
+                }, 
+            },
+            {
+                label: "Posizione anagrafica",
+                command: (event: any) => {
+                    /* this.router.navigate(
+                        [
+                            "/assisted-registry/assisted/historicalassistedregistryposition",
+                            event.codFiscale,
+                        ],
+                        {
+                            relativeTo: this.activatedRoute,
+                        }
+                    ); */
+                },
+            }
+        ],
+    },
 ];
 
   constructor(private fb: FormBuilder) {}

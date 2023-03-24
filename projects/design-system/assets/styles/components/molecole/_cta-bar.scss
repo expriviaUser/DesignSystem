@@ -1,0 +1,13 @@
+.cta-bar {
+    display: flex;
+    justify-content: space-between;
+    div {
+        display: flex;
+        justify-content: flex-end;
+        gap: $gap-1;
+    }
+
+    &.main {
+        padding-top: $gap-4;
+    }
+}

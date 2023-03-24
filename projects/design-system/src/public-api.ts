@@ -58,6 +58,38 @@ export * from './lib/atoms/tabs/components/tabs.component';
 export * from './lib/atoms/tabs/models/tabs.model';
 export * from './lib/atoms/tabs/lib-tabs.module';
 
+/*
+    MOLECOLE
+*/
+export * from './lib/molecole/table/components/table/table.component';
+export * from './lib/molecole/table/components/actions-table/actions-table.component';
+export * from './lib/molecole/table/models/table.model';
+export * from './lib/molecole/table/components/table-desktop/table-desktop.component';
+export * from './lib/molecole/table/components/table-responsive/table-responsive.component';
+
+export * from './lib/molecole/header-items/components/cart/cart.component';
+export * from './lib/molecole/header-items/components/header-actions/header-actions.component';
+export * from './lib/molecole/header-items/components/language-selector/language-selector.component';
+export * from './lib/molecole/header-items/components/logo/logo.component';
+export * from './lib/molecole/header-items/components/search-bar/search-bar.component';
+export * from './lib/molecole/header-items/components/header-menu-user/header-menu-user.component';
+export * from './lib/molecole/header-items/components/header-notifications/header-notifications.component';
+export * from './lib/molecole/header-items/models/user-notification.model';
+export * from './lib/molecole/header-items/models/menuItem.model';
+export * from './lib/molecole/header-items/header-items.module';
+
+export * from './lib/molecole/messages/components/message/message.component';
+export * from './lib/molecole/messages/components/toast/toast.component';
+export * from './lib/molecole/messages/components/messages/messages.component';
+export * from './lib/molecole/messages/lib-messages.module';
+export * from './lib/molecole/messages/models/messages.model';
+
+export * from './lib/molecole/cta-bar/components/cta-bar.component';
+export * from './lib/molecole/cta-bar/cta-bar.module';
+
+
+export * from './lib/molecole/table/lib-table.module';
+
 
 
 

@@ -1,0 +1,9 @@
+<div class="actions">
+    <ng-container *ngFor="let icon of iconsTable">
+        <lib-button [icon]="icon.label" (click)="icon.items ? menu.toggle($event) : null" size="small" (click)=" icon.command ?  icon.command(rowData) : null"></lib-button>
+        <!-- <lib-button [icon]="icon.label" (click)="icon.items ? menu.toggle($event) : null" size="small" (click)=" icon.command ?  icon.command(rowData) : null"></lib-button>-->
+        <!-- <p-menu #menu [popup]="true" [model]="icon.items!" appendTo="body"></p-menu> -->
+        <!-- <p-panelMenu #menu [popup]="true" [model]="icon.items!" appendTo="body"></p-panelMenu> -->
+        <p-tieredMenu #menu [popup]="true" [hidden]="!icon.items" [model]="icon.items!" appendTo="body"></p-tieredMenu>
+    </ng-container>
+</div>

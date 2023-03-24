@@ -1,0 +1,15 @@
+<ng-container *ngIf="!isMobile; else responsiveView">
+    <nav *ngIf="menuNavbar">
+        <p-menubar [model]="menuNavbar">
+        </p-menubar>
+    </nav>
+</ng-container>
+
+
+<ng-template #responsiveView>
+    <ng-container *ngIf="menuNavbar">
+        <p-menu [model]="menuNavbar" #menu [popup]="true" styleClass="p-button-menu-top">
+        </p-menu>
+        <button pButton pRipple type="button" icon="pi pi-user " class="p-button-outlined p-button-rounded" (click)="menu.toggle($event)"></button>
+    </ng-container>
+</ng-template>

@@ -1,0 +1,8 @@
+<div class="search-bar">
+    <form [formGroup]="searchForm">
+        <lib-input-form type="dropdown" [valueInput]="['Item1','Item2', 'Item3']" placeholder="Categorie" formControlName="categorie"></lib-input-form>
+        <lib-input-form type="text" formControlName="text" placeholder="Cerca"></lib-input-form>
+        <lib-button type="primary" label="Cerca" size="small" icon="pi pi-search"></lib-button>
+    </form>
+
+</div>

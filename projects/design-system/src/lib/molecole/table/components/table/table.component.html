@@ -1,0 +1,13 @@
+<ng-container *ngIf="value">
+
+    <ng-container *ngIf="!isMobile; else responsiveView">
+        <!-- Componente desktop -->
+        <lib-table-desktop [columns]="columns" [(pageNumberBe)]="pageNumberBe" [allResponse]="allResponse" (pageChanged)="pageChangedValue($event)" (selectedTableValues)="onSelectedValues($event)" [isSelectable]="isSelectable" [value]="value" [totalRecords]="value.length"
+            [actions]="actions">
+        </lib-table-desktop>
+    </ng-container>
+    <ng-template #responsiveView>
+        <!-- componente responsive -->
+        <lib-table-responsive [value]="value" [isSelectable]="isSelectable" [columns]="columns" [totalRecords]="value.length" [actions]="actions"></lib-table-responsive>
+    </ng-template>
+</ng-container>
