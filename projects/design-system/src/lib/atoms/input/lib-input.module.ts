@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputComponent } from './components/input.component';
+import { CommonModule } from '@angular/common';
 
 
 const primeComponents = [
@@ -18,7 +19,8 @@ const exportComponent = [
     ...exportComponent
   ],
   imports: [
-    ...primeComponents
+    ...primeComponents,
+    CommonModule
   ],
   exports: [
     ...exportComponent,

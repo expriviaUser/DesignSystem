@@ -6,9 +6,7 @@ import { TextareaComponent } from './components/textarea.component';
 
 const primeComponents = [
     InputTextareaModule,
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule
+    
 ];
 
 const exportComponent = [
@@ -20,7 +18,10 @@ const exportComponent = [
     ...exportComponent
   ],
   imports: [
-    ...primeComponents
+    ...primeComponents,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     ...exportComponent,

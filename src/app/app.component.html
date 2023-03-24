@@ -9,5 +9,11 @@
 <lib-card [cHeader]="'Titolo card'" [cSubHeader]="'Questo è il sottotitolo di una card'">
 </lib-card>
 
-<lib-dropdown [label]="'prova'" [valueDropdown]="['prova1','prova2']"></lib-dropdown><br>
-<lib-autocomplete [valueAutocomplete]="['prova1', 'value2']"></lib-autocomplete>
+<!-- <lib-dropdown [label]="'prova'" [valueDropdown]="['prova1','prova2']"></lib-dropdown><br>
+<lib-autocomplete [valueAutocomplete]="['prova1', 'value2']"></lib-autocomplete> -->
+
+<form [formGroup]="form">
+    <lib-input-form type="text" [label]="'Nome'" formControlName="name" ></lib-input-form>
+    <lib-input-form type="number" [label]="'Età'" formControlName="age" ></lib-input-form>
+    <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']" formControlName="sex" ></lib-input-form>
+</form>

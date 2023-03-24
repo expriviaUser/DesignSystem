@@ -1,11 +1,6 @@
 <!-- <div class="dropdown-wrapper"> -->
 <!-- check se il valore della dropdown è un string[] oppure DropdownType[] -->
-<input *ngIf="type == 'number'" [placeholder]="placeholder" ()="emitValue($event)" [id]="label" class="p-inputtext-sm"
-    pInputText type="number" />
+<input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [id]="label" class="p-inputtext-sm"
+    pInputText />
 
-<input *ngIf="type == 'password'" [placeholder]="placeholder" ()="emitValue($event)" [id]="label" class="p-inputtext-sm"
-    pInputText type="password" />
-
-<input *ngIf="type == 'text'" [placeholder]="placeholder" (change)="emitValue($event)" [id]="label"
-    class="p-inputtext-sm" pInputText />
 <!-- </div> -->

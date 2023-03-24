@@ -1,3 +1,4 @@
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LibAutocompleteModule } from '../autocomplete/lib-autocomplete.module';
@@ -18,8 +19,6 @@ const primeComponents = [
     LibCheckboxModule,
     LibRadioButtonModule,
     LibTextareaModule,
-    FormsModule,
-    ReactiveFormsModule,
     LibInputModule,
     LibErrorInlineModule
 ];
@@ -33,7 +32,10 @@ const exportComponent = [
         ...exportComponent
     ],
     imports: [
-        ...primeComponents
+        ...primeComponents,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule
     ],
     exports: [
         ...exportComponent,
@@ -41,6 +43,7 @@ const exportComponent = [
     ],
     entryComponents: [
         ...exportComponent
-    ]
+    ],
+    providers: [DatePipe]
 })
 export class InputFormModule { }

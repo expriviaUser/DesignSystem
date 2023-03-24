@@ -23,6 +23,7 @@ export class InputComponent {
 @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
 
 @Input() value: any;
+@Input() type: string = '';
 
 disabled: boolean = false;
 onChange: any = () => { }

@@ -8,9 +8,7 @@ import { CheckboxButtonComponent } from './components/checkbox-button.component'
 
 const primeComponents = [
     CheckboxModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule
+   
 ];
 
 const exportComponent = [
@@ -22,7 +20,10 @@ const exportComponent = [
         ...exportComponent
     ],
     imports: [
-        ...primeComponents
+        ...primeComponents,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
         ...exportComponent,

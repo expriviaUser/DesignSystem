@@ -6,9 +6,7 @@ import { RadioButtonComponent } from './components/radio-button.component';
 
 const primeComponents = [
     RadioButtonModule,
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule
+    
 ];
 
 const exportComponent = [
@@ -20,7 +18,10 @@ const exportComponent = [
     ...exportComponent
   ],
   imports: [
-    ...primeComponents
+    ...primeComponents,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     ...exportComponent,

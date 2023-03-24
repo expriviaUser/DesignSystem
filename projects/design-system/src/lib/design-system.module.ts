@@ -10,6 +10,8 @@ import { LibAutocompleteModule } from './atoms/autocomplete/lib-autocomplete.mod
 import { LibCheckboxModule } from './atoms/checkbox/lib-checkbox.module';
 import { LibRadioButtonModule } from './atoms/radio-button/lib-radio-button.module';
 import { LibTextareaModule } from './atoms/textarea/lib-textarea.module';
+import { LibInputModule } from './atoms/input/lib-input.module';
+import { InputFormModule } from './atoms/input-form/input-form.module';
 
 const sharedModules = [
   LibTagModule,
@@ -21,7 +23,9 @@ const sharedModules = [
   LibAutocompleteModule,
   LibCheckboxModule,
   LibRadioButtonModule,
-  LibTextareaModule
+  LibTextareaModule,
+  InputFormModule,
+  LibInputModule
 ];
 
 @NgModule({

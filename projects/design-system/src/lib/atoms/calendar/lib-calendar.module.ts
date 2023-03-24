@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
@@ -7,9 +7,7 @@ import { CalendarComponent } from './components/calendar.component';
 
 const primeComponents = [
     CalendarModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule
+
 ];
 
 const exportComponent = [
@@ -21,7 +19,10 @@ const exportComponent = [
         ...exportComponent
     ],
     imports: [
-        ...primeComponents
+        ...primeComponents,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
         ...exportComponent,
@@ -29,7 +30,8 @@ const exportComponent = [
     ],
     entryComponents: [
         ...exportComponent
-    ]
+    ],
+    providers: [DatePipe]
 })
 
 export class LibCalendarModule { }

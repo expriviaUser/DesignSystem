@@ -11,9 +11,8 @@
         <div class="static" *ngSwitchCase="'static'">{{getValueControl()}}</div>
 
         <!-- Input number -->
-        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" (selectedValue)="emitValue($event)" [control]="control"
-            [id]="formControlName" class="p-inputtext-sm" pInputText
-            type="number" />
+        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" (selectedValue)="emitValue($event)"
+            [control]="control" [id]="formControlName" type="number" />
 
         <!-- dropdown  -->
         <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
@@ -40,15 +39,19 @@
         </div>
 
         <!-- dropdown sort -->
-       <!--  <lib-select-sort *ngSwitchCase="'dropdown-sort'" [sortParam]="sortParam"
+        <!--  <lib-select-sort *ngSwitchCase="'dropdown-sort'" [sortParam]="sortParam"
             (selectedValue)="emitValue($event, 'dropdown')" [control]="control" [groups]="valueInput"></lib-select-sort> -->
 
         <!-- Input Textarea  -->
         <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
             [placeholder]="placeholder"></lib-textarea>
 
-        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event)" [id]="formControlName"
-        [control]="control" class="p-inputtext-sm" pInputText />
+        <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder"
+            (selectedValue)="emitValue($event)" [label]="label" [control]="control"></lib-input>
+
+        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event)"
+            [label]="label" [control]="control"></lib-input>
+
     </div>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"

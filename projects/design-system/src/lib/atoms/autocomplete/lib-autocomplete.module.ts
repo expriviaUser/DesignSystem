@@ -8,9 +8,7 @@ import { AutocompleteComponent } from './components/autocomplete.component';
 
 const primeComponents = [
     AutoCompleteModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule
+
 ];
 
 const exportComponent = [
@@ -22,7 +20,10 @@ const exportComponent = [
         ...exportComponent
     ],
     imports: [
-        ...primeComponents
+        ...primeComponents,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
         ...exportComponent,
