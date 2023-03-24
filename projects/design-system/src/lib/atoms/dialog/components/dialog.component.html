@@ -1,0 +1,16 @@
+<p-dialog [header]="title" [(visible)]="visible" styleClass="'p-dialog--responsive'" [modal]="true" [draggable]="false"
+    [resizable]="true" [closable]="closable">
+
+    <ng-content select="[body]"></ng-content>
+
+    <ng-template pTemplate="footer">
+        <ng-content select="[footer]">
+            <!-- USE THIS METHOD OF INSERT CODE WHEN CALL LIB-DIALOG-MODULE -->
+            <!-- <ng-container footer>
+                <lib-button label="Torna all'iscrizione" size="small" type="secondary" [disabled]="false" (onClick)="reset()"></lib-button>
+                <lib-button label="Conferma" size="small" type="primary" [disabled]="false" (onClick)="submit()"></lib-button>
+            </ng-container> -->
+        </ng-content>
+    </ng-template>
+
+</p-dialog>

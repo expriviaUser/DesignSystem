@@ -1,7 +1,7 @@
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
 </div>
 <lib-tag [tagLabel]="'Label'" [tagSeverity]="'success'">
 </lib-tag>
@@ -12,8 +12,30 @@
 <!-- <lib-dropdown [label]="'prova'" [valueDropdown]="['prova1','prova2']"></lib-dropdown><br>
 <lib-autocomplete [valueAutocomplete]="['prova1', 'value2']"></lib-autocomplete> -->
 
-<form [formGroup]="form">
-    <lib-input-form type="text" [label]="'Nome'" formControlName="name" ></lib-input-form>
-    <lib-input-form type="number" [label]="'Età'" formControlName="age" ></lib-input-form>
-    <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']" formControlName="sex" ></lib-input-form>
-</form>
+
+
+<lib-badge [menuBadge]="'3'"></lib-badge>
+
+<app-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
+</app-breadcrumb>
+
+<lib-dialog [visible]="true" [title]="'form'">
+    <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
+        <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
+        <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
+        <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']" formControlName="sex"></lib-input-form>
+    
+    </form>
+    <div footer>
+
+        <lib-button #buttonSubmit [label]="'Prova'" [size]="'small'" [type]="'secondary'" (onClick)="submit()"></lib-button>
+    </div>
+</lib-dialog>
+
+
+<lib-tabs [sections]="tabsList" [contents]="externalContent">
+    <ng-template #externalContent let-data="data">
+        <h1>Prova esterna</h1>
+        <p>{{data}}</p>
+    </ng-template>
+</lib-tabs>

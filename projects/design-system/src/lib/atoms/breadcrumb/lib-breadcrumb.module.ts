@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb.component';
@@ -15,7 +16,8 @@ const exportComponent = [
     ...exportComponent
   ],
   imports: [
-    ...primeComponents
+    ...primeComponents,
+    CommonModule
   ],
   exports: [
     ...exportComponent,

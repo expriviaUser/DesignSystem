@@ -2,6 +2,9 @@
  * Public API Surface of design-system
  */
 
+/* 
+    ATOMS
+*/
 export * from './lib/atoms/card/components/card.component';
 export * from './lib/atoms/card/lib-card.module';
 
@@ -41,5 +44,21 @@ export * from './lib/atoms/input-form/input-form.module';
 
 export * from './lib/atoms/input/components/input.component';
 export * from './lib/atoms/input/lib-input.module';
+
+export * from './lib/atoms/badge/components/badge.component';
+export * from './lib/atoms/badge/lib-badge.module';
+
+export * from './lib/atoms/dialog/components/dialog.component';
+export * from './lib/atoms/dialog/lib-dialog.module';
+
+export * from './lib/atoms/icon-circle/components/icon-circle.component';
+export * from './lib/atoms/icon-circle/lib-icon-circle.module';
+
+export * from './lib/atoms/tabs/components/tabs.component';
+export * from './lib/atoms/tabs/models/tabs.model';
+export * from './lib/atoms/tabs/lib-tabs.module';
+
+
+
 
 export * from './lib/design-system.module';
