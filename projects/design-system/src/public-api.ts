@@ -36,4 +36,10 @@ export * from './lib/atoms/textarea/lib-textarea.module';
 export * from './lib/atoms/error-inline/components/error-inline.component';
 export * from './lib/atoms/error-inline/lib-error-inline.module';
 
+export * from './lib/atoms/input-form/components/input-form.component';
+export * from './lib/atoms/input-form/input-form.module';
+
+export * from './lib/atoms/input/components/input.component';
+export * from './lib/atoms/input/lib-input.module';
+
 export * from './lib/design-system.module';

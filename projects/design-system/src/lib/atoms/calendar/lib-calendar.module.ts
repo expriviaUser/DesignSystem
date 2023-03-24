@@ -1,10 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { CalendarComponent } from './components/calendar.component';
 
 
 const primeComponents = [
-    CalendarModule
+    CalendarModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
 ];
 
 const exportComponent = [

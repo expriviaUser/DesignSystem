@@ -1,9 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RadioButtonModule } from 'primeng/radiobutton'
 import { RadioButtonComponent } from './components/radio-button.component';
 
 const primeComponents = [
-    RadioButtonModule
+    RadioButtonModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
 ];
 
 const exportComponent = [

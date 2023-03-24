@@ -1,0 +1,12 @@
+.autocomplete {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: $gap-1;
+    p-autocomplete span {
+        width: 100%;
+        input {
+            width: 100%;
+        }
+    }
+}
