@@ -1,10 +1,4 @@
-<!-- <div class="dropdown-wrapper"> -->
-    <!-- check se il valore della dropdown è un string[] oppure DropdownType[] -->
-    <!-- <ng-container *ngIf="checkIsString(); else dropdownType">
-        <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [disabled]="!valueDropdown" [showClear]="clear" [options]="valueDropdown" (onChange)="emitValue(value)" [(ngModel)]="value"></p-dropdown>
-    </ng-container> -->
-
-    <ng-template #dropdownType>
-        <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [disabled]="!valueDropdown" [showClear]="clear" [options]="valueDropdownCustom" (onChange)="emitValue(value)" [(ngModel)]="value" optionValue="code" optionLabel="name"></p-dropdown>
-    </ng-template>
-<!-- </div> -->
+<div class="dropdown-wrapper">
+        <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [disabled]="!valueDropdown" [showClear]="clear" [options]="valueDropdown" (onChange)="emitValue($event)" 
+        [optionLabel]="isObject ? 'name' : ''" [optionValue]="isObject ? 'code' : ''"></p-dropdown>
+</div>

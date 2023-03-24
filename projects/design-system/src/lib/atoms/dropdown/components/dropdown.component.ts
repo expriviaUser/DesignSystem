@@ -18,88 +18,32 @@ export interface DropdownType {
         multi: true
     }]
 })
-export class DropdownComponent {
+export class DropdownComponent implements OnInit {
+    protected isObject: boolean = false;
 
     @Input() valueDropdown: DropdownType[] | string[] = [];
-    get valueDropdownCustom(): DropdownType[] {
-        
-            let dropdowns: DropdownType[] = [];
-            this.valueDropdown.forEach(item => {
-                if (typeof item == "string") {
-                    dropdowns.push({ code: item, name: item });
-                } else {
-                    dropdowns.push(item);
-                }
-            })
-            return dropdowns;
-      
-    }
     @Input() label!: string;
     @Input() placeholder!: string;
-    // @Input('controlName') formControlName: string = '';
     @Input() clear: boolean = false;
     @Input() control: AbstractControl = new FormControl();
+    @Input() disabled: boolean = false;
+    @Input() value: any;
 
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
 
-    @Input() value: any;
+    ngOnInit() {
+        this.isObject = typeof this.valueDropdown[0] !== "string";
 
-    disabled: boolean = false;
-    onChange: any = () => { }
-    onTouch: any = () => { }
-
-
-    // get control() {
-    //     return this.controlContainer.control?.get(this.formControlName);
-    // }
+    }
 
     get haveError() {
         return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
     }
 
-    /*constructor(private controlContainer: ControlContainer) { }
-    // ngOnChanges() {
-    //     this.checkIsString()
-    // } */
-
-    checkIsString(): boolean {
-        return (
-            this.valueDropdown && this.valueDropdown.some((item) => typeof item == "string")
-        );
-    }
-
-    // this method sets the value programmatically
-    writeValue(value: string) {
-        this.value = value;
-    }
-
-    // set UI element value changes emit function
-    registerOnChange(fn: any) {
-        this.onChange = fn;
-    }
-
-    // set touching element emit function
-    registerOnTouched(fn: any) {
-        this.onTouch = fn;
-    }
-
-    // upon disabled statu change, this method gets triggered
-    setDisabledState(isDisabled: boolean): void {
-        this.disabled = isDisabled;
-    }
 
     // upon UI element value change, this method gets triggered
-    emitValue(event: any) {
-        this.value = event;
-        this.onChange(event);
-        this.selectedValue.emit(event);
-        console.log('val', this.value)
-    }
-
-    // upon UI element value change, this method gets triggered
-    emitValueNg(event: any) {
-        this.value = event;
-        this.onChange(event);
-
+    protected emitValue(event: any) {
+        this.value = event.value;
+        this.selectedValue.emit(this.value);
     }
 }
