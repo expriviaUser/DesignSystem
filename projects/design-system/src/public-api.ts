@@ -100,7 +100,4 @@ export * from './lib/micro-organismi/filtri/lib-filtri.module';
 
 export * from './lib/molecole/table/lib-table.module';
 
-
-
-
 export * from './lib/design-system.module';
