@@ -90,7 +90,4 @@ export * from './lib/molecole/cta-bar/cta-bar.module';
 
 export * from './lib/molecole/table/lib-table.module';
 
-
-
-
 export * from './lib/design-system.module';
