@@ -33,6 +33,8 @@ $ipad-pro-max-width: 1366px;
 
 // Colors prj
 $color--primary-color: #FFD300;
+$color--white: #FFFFFF;
+$color--black: #000;
 
 // colors components
 // buttons
@@ -51,6 +53,15 @@ $color--radio-button-icon-selected: #1890FF;
 $color--radio-tile-card-selected-bg: #E2E9F5;
 $color--radio-tile-card-hover-border: #1890FF;
 $color--radio-tile-card-border: #E2E9F5;
+//chip
+$color--chip-text: $color--white;
+$color--chip-background: #0EA5E9;
+//filtri
+$color--filtri-dropdown-border: #B8B8B8;
+$color--filtri-dropdown-background: $color--white;
+$color--filtri-dropdown-title: $color--black;
+$color--filtri-chips-title: #737373;
+$color--filtri-dropdown-text: $color--black;
 // end colors components
 
 $color--surface-a: #FFFFFF;
@@ -85,7 +96,6 @@ $color--red-200: #DD0B0B;
 $color--red-900: #E24C4C;
 $color--black-50: #000;
 $color--white-50: #000;
-$color--white: #FFFFFF;
 
 $white: #FFFFFF;
 $grey-200: #D8D8D8;

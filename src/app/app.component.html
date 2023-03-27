@@ -1,7 +1,7 @@
 <div style="text-align:center">
-    <h1>
-        Welcome to {{ title }}!
-    </h1>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
 </div>
 <lib-tag [tagLabel]="'Label'" [tagSeverity]="'success'">
 </lib-tag>
@@ -20,30 +20,33 @@
 </app-breadcrumb>
 
 <lib-dialog [visible]="true" [title]="'form'">
-    <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
-        <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
-        <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
-        <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']" formControlName="sex"></lib-input-form>
-    
-    </form>
-    <div footer>
+  <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
+    <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
+    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
+    <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']" formControlName="sex"></lib-input-form>
 
-        <lib-button #buttonSubmit [label]="'Prova'" [size]="'small'" [type]="'secondary'" (onClick)="submit()"></lib-button>
-    </div>
+  </form>
+  <div footer>
+
+    <lib-button #buttonSubmit [label]="'Prova'" [size]="'small'" [type]="'secondary'" (onClick)="submit()"></lib-button>
+  </div>
 </lib-dialog>
 
 
 <lib-tabs [sections]="tabsList" [contents]="externalContent">
-    <ng-template #externalContent let-data="data">
-        <h1>Prova esterna</h1>
-        <p>{{data}}</p>
-    </ng-template>
+  <ng-template #externalContent let-data="data">
+    <h1>Prova esterna</h1>
+    <p>{{data}}</p>
+  </ng-template>
 </lib-tabs>
 
 
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions">
-    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
-    <ng-template #actions let-item="data">
-        <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
-    </ng-template>
+  <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+  <ng-template #actions let-item="data">
+    <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
+  </ng-template>
 </lib-table>
+
+<lib-radio-tile [tiles]="myTiles">
+</lib-radio-tile>

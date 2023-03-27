@@ -1,12 +1,6 @@
-import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { AbstractControl, ControlContainer, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-
-
-export interface DropdownType {
-    name: string;
-    code: String
-}
-
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DropdownType } from '../models/dropdown.model';
 
 @Component({
     selector: 'lib-dropdown',

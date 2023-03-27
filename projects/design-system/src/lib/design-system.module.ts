@@ -20,6 +20,9 @@ import { LibTableModule } from './molecole/table/lib-table.module';
 import { CtaBarModule } from './molecole/cta-bar/cta-bar.module';
 import { HeaderItemsModule } from './molecole/header-items/header-items.module';
 import { LibMessagesModule } from './molecole/messages/lib-messages.module';
+import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module';
+import { LibChipModule } from './atoms/chip/lib-chip.module';
+import { LibFiltriModule } from './micro-organismi/filtri/lib-filtri.module';
 
 const sharedModules = [
   LibTagModule,
@@ -31,6 +34,7 @@ const sharedModules = [
   LibAutocompleteModule,
   LibCheckboxModule,
   LibRadioButtonModule,
+  LibChipModule,
   LibTextareaModule,
   InputFormModule,
   LibInputModule,
@@ -41,7 +45,9 @@ const sharedModules = [
   LibTableModule,
   CtaBarModule,
   HeaderItemsModule,
-  LibMessagesModule
+  LibMessagesModule,
+  LibRadioTileModule,
+  LibFiltriModule
 ];
 
 @NgModule({

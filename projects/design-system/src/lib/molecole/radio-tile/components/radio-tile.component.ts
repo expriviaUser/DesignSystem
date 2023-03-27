@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RadioTile } from 'src/app/models/radio-tile.model';
+import { RadioTile } from '../models/radio-tile.model';
 
 @Component({
   selector: 'lib-radio-tile',
@@ -24,5 +24,5 @@ export class RadioTileComponent {
     console.log('emitCopyButtonClicked');
   }
 
-  buttonUpdateClicked(event: any) {}
+  buttonUpdateClicked(event: any) { }
 }

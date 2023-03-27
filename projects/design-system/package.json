@@ -1,6 +1,6 @@
 {
   "name": "@dnlcorti/design-system",
-  "version": "0.0.12",
+  "version": "1.0.0",
   "scripts": {
     "versioning": "npm --no-git-tag-version version patch --project=design-system && ng build design-system"
   },
@@ -10,7 +10,6 @@
     "bootstrap": "^5.2.3",
     "material-design-icons": "^3.0.1",
     "material-icons": "^1.13.1",
-    "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primeng": "^15.0.0"
   },

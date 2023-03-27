@@ -1,0 +1,10 @@
+<div>
+    <div class="dropdown-title">Filtra per</div>
+    <div class="dropdown-container">
+        <lib-dropdown-alt class="single-dropdown" #dropdown *ngFor="let dropdownValue of dropdownValues; let i = index" [options]="dropdownValue" (emitSelectedOption)="createChip($event, i)"></lib-dropdown-alt>
+    </div>
+    <div class="chips-title">Filtri attivi</div>
+    <div class="chips-container">
+        <lib-chip class="single-chip" *ngFor="let singleChip of chipsList; let j = index" (onRemove)="resetDropdown(j, singleChip)" [label]="singleChip.value" [removable]="true" removeIcon="pi pi-times"></lib-chip>
+    </div>
+</div>

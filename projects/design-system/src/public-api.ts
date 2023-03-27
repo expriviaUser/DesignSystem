@@ -18,6 +18,7 @@ export * from './lib/atoms/breadcrumb/lib-breadcrumb.module';
 export * from './lib/atoms/button/components/button.component';
 export * from './lib/atoms/button/lib-button.module';
 
+export * from './lib/atoms/dropdown/models/dropdown.model';
 export * from './lib/atoms/dropdown/components/dropdown.component';
 export * from './lib/atoms/dropdown/lib-dropdown.module';
 
@@ -47,6 +48,9 @@ export * from './lib/atoms/input/lib-input.module';
 
 export * from './lib/atoms/badge/components/badge.component';
 export * from './lib/atoms/badge/lib-badge.module';
+
+export * from './lib/atoms/chip/components/chip.component';
+export * from './lib/atoms/chip/lib-chip.module';
 
 export * from './lib/atoms/dialog/components/dialog.component';
 export * from './lib/atoms/dialog/lib-dialog.module';
@@ -87,6 +91,12 @@ export * from './lib/molecole/messages/models/messages.model';
 export * from './lib/molecole/cta-bar/components/cta-bar.component';
 export * from './lib/molecole/cta-bar/cta-bar.module';
 
+export * from './lib/molecole/radio-tile/models/radio-tile.model';
+export * from './lib/molecole/radio-tile/components/radio-tile.component';
+export * from './lib/molecole/radio-tile/lib-radio-tile.module';
+
+export * from './lib/micro-organismi/filtri/components/filtri.component';
+export * from './lib/micro-organismi/filtri/lib-filtri.module';
 
 export * from './lib/molecole/table/lib-table.module';
 
