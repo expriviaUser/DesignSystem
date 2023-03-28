@@ -23,10 +23,10 @@ export class FiltriComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    createChip(event: { originalEvent: PointerEvent, value: DropdownType }, dropdownIndex: number): void {
-        if (event.value) {
+    createChip(event: string, dropdownIndex: number): void {
+        if (event) {
             this.chipsList = this.chipsList.filter(chip => chip.dropdownIndex != dropdownIndex);
-            this.chipsList.push({ value: event.value.code, dropdownIndex: dropdownIndex });
+            this.chipsList.push({ value: event, dropdownIndex: dropdownIndex });
             this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
             const VALUES = this.chipsList.map((chip) => chip.value);
             this.filterValues.emit(VALUES);

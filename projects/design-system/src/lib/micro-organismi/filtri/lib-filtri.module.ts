@@ -16,13 +16,14 @@ const exportComponent = [
 
 @NgModule({
   declarations: [
-    ...exportComponent
+    ...exportComponent,
   ],
   imports: [
     ...primeComponents,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LibDropdownModule
   ],
   exports: [
     ...exportComponent,

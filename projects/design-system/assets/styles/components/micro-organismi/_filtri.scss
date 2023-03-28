@@ -1,0 +1,69 @@
+.dropdown-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.429rem;
+
+    color: $color--filtri-dropdown-title;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.dropdown-container {
+    margin-top: 0.714rem;
+    lib-dropdown-alt {
+        .p-dropdown {
+            background: $color--filtri-dropdown-background;
+            border: 1px solid $color--filtri-dropdown-border;
+            border-radius: 4px;
+
+
+            .p-dropdown-label {
+                padding-top: 7px;
+                padding-bottom: 7px;
+
+                &.p-inputtext {
+                    &.ng-star-inserted {
+                        color: $color--filtri-dropdown-text;
+                    }
+                }
+
+
+            }
+
+            .p-dropdown-trigger {
+
+                color: $color--filtri-dropdown-text;
+            }
+
+            .p-dropdown-clear-icon {
+                color: $color--filtri-dropdown-text;
+            }
+
+
+        }
+    }
+    .single-dropdown {
+        margin-right: 0.714rem;
+    }
+}
+
+.chips-title {
+    margin-top: 0.714rem;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.429rem;
+    color: $color--filtri-chips-title;
+}
+
+.chips-container {
+    margin-top: 0.357rem;
+    .single-chip {
+        margin-right: 0.357rem;
+    }
+}

@@ -1,0 +1,102 @@
+nav {
+    padding: 0;
+    width: 100%;
+    // height: 54px;
+    color: $color--black-900;
+    background: $color--primary-color;
+    .wrapper {
+        //max-width: 1440px;
+        margin: auto;
+
+        .align {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    p-menubar .p-menubar {
+        background-color: transparent;
+        border: 0;
+
+        .p-menubar-end {
+            width: 30%;
+        }
+
+        .p-dropdown {
+            background-color: $color--primary-color;
+            border: none;
+            width: fit-content;
+
+            .p-overlay {
+                left: unset !important;
+                right: 0;
+
+                max-height: none;
+                width: max-content;
+            }
+
+            .p-dropdown-label {
+                color: $black;
+                font-size: 0.857rem;
+                font-weight: 600;
+                max-width: fit-content;
+            }
+
+            .p-dropdown-trigger {
+                color: $black;
+                font-size: 0.857rem;
+                font-weight: 600;
+            }
+        }
+
+        .p-menubar-button {
+            color: $color--black-900;
+            &:hover {
+                background: transparent;
+            }
+        }
+        .p-menubar-root-list {
+            background-color: $color--primary-color;
+            .p-menuitem > .p-menuitem-link,
+            .p-menuitem.p-menuitem-active > .p-menuitem-link {
+                background: $color--primary-color;
+                color: $color--black-900;
+                height: 100%;
+                .p-menuitem-text,
+                .p-submenu-icon {
+                    color: $color--black-900;
+                }
+                &:not(.p-disabled):hover {
+                    background: $color--surface-a;
+                    font-weight: 600;
+                    .p-menuitem-text,
+                    .p-submenu-icon {
+                        color: $color--black-900;
+                    }
+                }
+            }
+        }
+
+        .p-submenu-list {
+            background-color: $color--primary-color; // li a {
+            //     background-color: #295F94;
+            // }
+        }
+        p-menubarsub .p-submenu-list {
+            width: 100%;
+        }
+        // p-menubarsub .p-menubar-root-list .p-menuitem>.p-menuitem-link {
+        //     background-color: $color--primary-color;
+        // }
+    }
+
+    .wrapper {
+        position: relative;
+        .label {
+            position: absolute;
+            top: -3px;
+            left: 3rem;
+        }
+    }
+}

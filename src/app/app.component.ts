@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActionTable, BreadcrumbModel } from 'projects/design-system/src/public-api';
+import { ActionTable, BreadcrumbModel, MenubarItem } from 'projects/design-system/src/public-api';
 
 @Component({
     selector: 'app-root',
@@ -36,6 +36,17 @@ export class AppComponent {
         { header: "Nome", field: "name" },
         { header: "Cognome", field: "surname" }
     ];
+
+    protected itemsMenu: MenubarItem[] = [
+        { label: 'Richieste' },
+        { label: 'Macero' },
+        { label: 'Fatturazione' },
+        { label: 'Logistica' },
+        { label: 'Reportistica' },
+        { label: 'Catalogazioni' }
+    ];
+    
+    protected dropdownValue: string[] = ['Ufficio', 'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED', 'ENI \\ CARTELLE_PERSONALE', 'ENI \\ ENI CORPORATE', 'ENI \\ ING E&P RAV', 'ENI \\ ORTONA', 'ENI \\ VIGGIANO'];
 
     iconsTable: ActionTable[] = [
         {

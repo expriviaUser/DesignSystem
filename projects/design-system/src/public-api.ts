@@ -88,6 +88,10 @@ export * from './lib/molecole/messages/components/messages/messages.component';
 export * from './lib/molecole/messages/lib-messages.module';
 export * from './lib/molecole/messages/models/messages.model';
 
+export * from './lib/molecole/header-menu/components/header-menu.component';
+export * from './lib/molecole/header-menu/header-menu.module';
+export * from './lib/molecole/header-menu/models/menu-item.model';
+
 export * from './lib/molecole/cta-bar/components/cta-bar.component';
 export * from './lib/molecole/cta-bar/cta-bar.module';
 

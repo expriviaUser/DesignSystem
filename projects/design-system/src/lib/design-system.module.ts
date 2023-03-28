@@ -23,6 +23,7 @@ import { LibMessagesModule } from './molecole/messages/lib-messages.module';
 import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module';
 import { LibChipModule } from './atoms/chip/lib-chip.module';
 import { LibFiltriModule } from './micro-organismi/filtri/lib-filtri.module';
+import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
 
 const sharedModules = [
   LibTagModule,
@@ -47,7 +48,8 @@ const sharedModules = [
   HeaderItemsModule,
   LibMessagesModule,
   LibRadioTileModule,
-  LibFiltriModule
+  LibFiltriModule,
+  HeaderMenuModule
 ];
 
 @NgModule({
