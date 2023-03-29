@@ -7,22 +7,18 @@ import { MenubarItem } from '../models/menu-item.model';
     styleUrls: ['./header-menu.component.scss']
 })
 export class HeaderMenuComponent {
-    constructor() { }
+    constructor() { /* TODO document why this constructor is empty */ }
 
     @Input() informationflows: string = '';
     @Input() usermanagement: string = '';
     @Input() items!: MenubarItem[];
 
-    /* control = new FormControl();
-    form = this.fb.group({
-        drop: ['Ufficio']
-    }) */
-
-    //dropdownValue: string[] = ['Ufficio', 'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED', 'ENI \\ CARTELLE_PERSONALE', 'ENI \\ ENI CORPORATE', 'ENI \\ ING E&P RAV', 'ENI \\ ORTONA', 'ENI \\ VIGGIANO'];
-
     ngOnDestroy() {
+        // TODO document why this method 'ngOnDestroy' is empty    
     }
+
     ngOnInit() {
+        // TODO document why this method 'ngOnInit' is empty
     }
 }
 
