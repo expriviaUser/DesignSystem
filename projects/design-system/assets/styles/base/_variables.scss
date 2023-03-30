@@ -31,8 +31,13 @@ $ipad-min-width: 768px;
 $ipad-pro-min-width: 1024px;
 $ipad-pro-max-width: 1366px;
 
+:root {
+  --primary-color-10: #FFD300;
+}
+
 // Colors prj
-$color--primary-color: #FFD300;
+// $color--primary-color: #FFD300;
+$color--primary-color: var(--primary-color-10);
 $color--white: #FFFFFF;
 $color--black: #000;
 
@@ -45,6 +50,9 @@ $color--searchbar-inputtype-border: #CBD5E1;
 
 // header-actions
 $color--headeractions-buttonlink-color: #1890FF;
+
+// menubar
+$color--menubar-link-active-background: $color--white;
 
 // radio-button
 $color--radio-button-border-default: #D4D5D8;
