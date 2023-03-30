@@ -1,0 +1,10 @@
+<div class="wrapper-file-list">
+    <div *ngFor="let file of fileList; let i = index">
+        <lib-file [checkable]="false" [file]="file">
+            <ng-container file-actions>
+                <lib-tag [tagSeverity]="file.status == 'OK' ? 'success' : 'danger'" [tagLabel]="file.status"></lib-tag>
+            </ng-container>
+        </lib-file>
+    </div>
+
+</div>

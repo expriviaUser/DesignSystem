@@ -1,0 +1,14 @@
+<div class="file-wrapper">
+    <div class="file-structure">
+        <lib-checkbox-button *ngIf="checkable" [checked]="checked" (emitChange)="fileToggle($event)"></lib-checkbox-button>
+        <img class="file-icon" *ngIf="srcIcon" [src]="srcIcon" alt="file icon" />
+        <div class="file-data">
+            <span [class]="srcIcon ? 'title-icon' : 'title'">{{file.title}}</span>
+            <span *ngIf="file.dimension" class="dimension">{{file.dimension}}</span>
+        </div>
+    </div>
+    <div class="file-actions">
+        <ng-content select="[file-actions]"></ng-content>
+    </div>
+
+</div>

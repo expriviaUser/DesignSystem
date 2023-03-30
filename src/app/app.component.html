@@ -27,10 +27,12 @@
 
 <lib-badge [menuBadge]="'3'"></lib-badge>
 
+<lib-file-status [fileList]="fileArray"></lib-file-status>
+
 <app-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </app-breadcrumb>
 
-<lib-dialog [visible]="true" [title]="'form'">
+<lib-dialog [visible]="false" [title]="'form'">
   <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
     <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
     <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>

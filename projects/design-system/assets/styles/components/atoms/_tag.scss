@@ -1,29 +1,31 @@
+@import 'projects/design-system/assets/styles/base/functions';
+
 .p-tag {
   background: $color--primary-color;
-  color: $color--surface-a;
-  font-size: 0.75rem;
-  font-weight: $font-weight;
-  padding: 0.25rem 0.4rem;
+  color: $color--tag-text;
+  padding: pxToRem(4px) pxToRem(8px);
   border-radius: $border-radius;
 
+  @include typography-text-xs-medium;
+
   &.p-tag-success {
-    background-color: #22C55E;
-    color: $color--surface-a;
+    background-color: $color--tag-success;
+    color: $color--tag-text;
   }
 
   &.p-tag-info {
     background-color: $color--primary-color;
-    color: $color--surface-a;
+    color: $color--tag-text;
   }
 
   &.p-tag-warning {
-    background-color: #F59E0B;
-    color: $color--surface-a;
+    background-color: $color--tag-warning;
+    color: $color--tag-text;
   }
 
   &.p-tag-danger {
-    background-color: $color--red-200;
-    color: $color--surface-a;
+    background-color: $color--tag-danger;
+    color: $color--tag-text;
   }
 
   & .p-tag-icon {

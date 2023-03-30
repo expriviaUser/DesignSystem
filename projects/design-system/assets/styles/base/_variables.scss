@@ -91,9 +91,26 @@ $ipad-pro-max-width: 1366px;
   --error-color-100: #F1EDEE;
 
   //SUCCESS
-  --error-color-10: #B21F27;
-  --error-color-50: #EF4444;
-  --error-color-100: #F1EDEE;
+  --success-color-10: #006612;
+  --success-color-50: #00B843;
+  --success-color-100: #D4FFDC;
+ 
+  //WARNING
+  --warning-color-10: #805100;
+  --warning-color-50: #F59B00;
+  --warning-color-100: #FFE8C0;
+  
+  //BADGE
+  --badge-color-10: #006612;
+  --badge-color-50: #00B843;
+  --badge-color-100: #D4FFDC;
+
+  //TEXT
+  --text-color-placeholder: #64748B;
+  --text-color-normal: #000000;
+  --text-color-disabled: #B8B8B8;
+  --text-color-hyperlink: #3B82F6;
+  --text-color-subtitle: #64748B;
 
 }
 
@@ -105,7 +122,15 @@ $color--black: #000;
 
 // colors components
 // buttons
-$color--button-primary-text: #000000;
+$color--button-primary-background: var(--primary-color-50);
+$color--button-primary-text: var(--base-color-black);
+$color--button-primary-background-disabled: var(--primary-color-60);
+$color--button-primary-background-hover: var(--primary-color-40);
+
+$color--button-secondary-background: var(--secondary-color-50);
+$color--button-secondary-background-hover: var(--secondary-color-30);
+$color--button-secondary-background-disabled: var(--secondary-color-70);
+$color--button-secondary-text: var(--base-color-white);
 
 // search-bar
 $color--searchbar-inputtype-border: #CBD5E1;
@@ -132,6 +157,15 @@ $color--filtri-dropdown-background: $color--white;
 $color--filtri-dropdown-title: $color--black;
 $color--filtri-chips-title: #737373;
 $color--filtri-dropdown-text: $color--black;
+//File
+$color--file-subtitle: var(--text-color-subtitle);
+$color--file-title: var(--base-color-black);
+//tag
+$color--tag-success: var(--success-color-50);
+$color--tag-info: #000000;
+$color--tag-warning: var(--warning-color-50);
+$color--tag-danger: var(--error-color-50);
+$color--tag-text: var(--base-color-white);
 // end colors components
 
 $color--surface-a: #FFFFFF;
@@ -166,6 +200,7 @@ $color--red-200: #DD0B0B;
 $color--red-900: #E24C4C;
 $color--black-50: #000;
 $color--white-50: #000;
+
 
 $white: #FFFFFF;
 $grey-200: #D8D8D8;

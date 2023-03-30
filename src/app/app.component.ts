@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActionTable, BreadcrumbModel, MenubarItem, SidebarItem } from 'projects/design-system/src/public-api';
+import { ActionTable, BreadcrumbModel, FileStatus, MenubarItem, SidebarItem } from 'projects/design-system/src/public-api';
 
 @Component({
     selector: 'app-root',
@@ -62,6 +62,12 @@ export class AppComponent {
             ]
         }
     ];
+
+    fileArray: FileStatus[] = [
+        {title: 'prova.pdf', dimension: '20MB', status: 'OK'},
+        {title: '20 File', status: 'OK'},
+        {title: '50 File', status: 'KO'},
+    ]
 
     protected dropdownValue: string[] = ['Ufficio', 'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED', 'ENI \\ CARTELLE_PERSONALE', 'ENI \\ ENI CORPORATE', 'ENI \\ ING E&P RAV', 'ENI \\ ORTONA', 'ENI \\ VIGGIANO'];
 

@@ -106,6 +106,14 @@ export * from './lib/molecole/radio-tile/lib-radio-tile.module';
 export * from './lib/micro-organismi/filtri/components/filtri.component';
 export * from './lib/micro-organismi/filtri/lib-filtri.module';
 
+export * from './lib/molecole/file/components/file.component';
+export * from './lib/molecole/file/models/file.model';
+export * from './lib/molecole/file/file.module';
+
+export * from './lib/molecole/file-status/components/file-status.component';
+export * from './lib/molecole/file-status/models/fileStatus.model';
+export * from './lib/molecole/file-status/file-status.module';
+
 export * from './lib/molecole/table/lib-table.module';
 
 export * from './lib/design-system.module';

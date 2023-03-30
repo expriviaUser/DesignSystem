@@ -29,7 +29,7 @@
 
 /// Fa la conversione da unità px a rem
 @function pxToRem($size) {
-  $remSize: $size / $global-font-size-in-px;
+  $remSize: $size / $font-size-in-px;
   @return #{$remSize}rem;
 }
 
@@ -41,4 +41,45 @@
 /// Aggiunge una property per il padding
 @mixin paddingCalc($position, $px) {
   padding-#{$position}: #{$px}
+}
+
+@mixin typography-body-regular {
+    font-weight: 400;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+@mixin typography-small-semibold {
+    font-weight: 600;
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+}
+
+@mixin typography-xs-small-regular {
+    font-weight: 400;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
+}
+
+@mixin typography-text-xs-medium {
+    font-weight: 500;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
+}
+
+@mixin typography-button-small {
+    font-weight: 600;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
+}
+
+@mixin typography-button-regular {
+    font-weight: 400;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+
+@mixin typography-button-large {
+    font-weight: 600;
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
 }

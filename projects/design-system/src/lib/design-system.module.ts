@@ -25,6 +25,8 @@ import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
 import { SidebarModule } from './atoms/sidebar/sidebar.module';
 import { CommonModule } from '@angular/common';
 import { LibTableModule } from './molecole/table/lib-table.module';
+import { FileModule } from './molecole/file/file.module';
+import { FileStatusModule } from './molecole/file-status/file-status.module';
 
 const sharedModules = [
   LibTagModule,
@@ -51,7 +53,9 @@ const sharedModules = [
   LibRadioTileModule,
   LibFiltriModule,
   HeaderMenuModule,
-  SidebarModule
+  SidebarModule,
+  FileModule,
+  FileStatusModule
 ];
 
 @NgModule({

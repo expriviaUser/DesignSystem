@@ -12,6 +12,7 @@ export class ButtonComponent {
     @Input() type: string = ""; //secondary, secondary-rounded, rounded, link, link-icon
     @Input() size: string = ""; //big, small or empty
     @Input() label: string = ""; //this is the label in the button
+    @Input() ariaLabel: string = this.label; //this is the label in the button
     @Input() icon: string = ""; //require css class for primeng icons
     @Input() disabled: boolean = false; //boolean to disable button events
     @Input() iconPosition: any = 'right'; //string to position the icon
@@ -45,10 +46,10 @@ export class ButtonComponent {
                 break;
             case "secondary":
                 console.log(this.type);
-                this.class += " p-button-outlined";
+                this.class += " p-button-secondary";
                 break;
             case "secondary-rounded":
-                this.class += " p-button-outlined p-button-rounded";
+                this.class += " p-button-secondary p-button-rounded";
                 break;
             case "rounded":
                 this.class += " p-button-rounded";

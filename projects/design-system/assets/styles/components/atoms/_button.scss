@@ -1,13 +1,16 @@
 .p-button {
     padding: 0.75rem 1.25rem;
-    border: 1px solid $color--primary-color;
+    border: 1px solid $color--button-primary-background;
     border-radius: $border-radius;
-    background: $color--primary-color;
-    font-size: 1rem;
+    background: $color--button-primary-background;
+    @include typography-button-regular;
     color: $color--button-primary-text;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     &:disabled {
         cursor: not-allowed;
+        border: 1px solid $color--button-primary-background-disabled;
+        color: $color--button-primary-text;
+        background: $color--button-primary-background-disabled;
     }
 }
 
@@ -17,14 +20,14 @@
     }
     &:enabled {
         &:hover {
-            background: $color--blue-600;
-            color: $color--surface-a;
-            border-color: $color--blue-600;
+            background: $color--button-primary-background-hover;
+            color: $color--button-primary-text;
+            border-color: $color--button-primary-background-hover;
         }
         &:active {
-            background: $color--blue-700;
-            color: $color--surface-a;
-            border-color: $color--blue-700;
+            background: $color--button-primary-background-hover;
+            color: $color--button-primary-text;
+            border-color: $color--button-primary-background-hover;
         }
     }
     &:focus {
@@ -123,7 +126,8 @@
 }
 
 .p-button.p-button-raised {
-    box-shadow: 0 3px 1px -2px rgba($color--black-50, 0.2), 0 2px 2px 0 rgba($color--black-50, 0.14), 0 1px 5px 0 rgba($color--black-50, 0.12);
+    box-shadow: 0 3px 1px -2px rgba($color--black-50, 0.2), 0 2px 2px 0 rgba($color--black-50, 0.14),
+        0 1px 5px 0 rgba($color--black-50, 0.12);
 }
 
 .p-button.p-button-rounded {
@@ -147,18 +151,18 @@
 }
 
 .p-button.p-button-sm {
-    font-size: 0.875rem;
+    @include typography-button-small;
     padding: 0.65625rem 1.09375rem;
     .p-button-icon {
-        font-size: 0.875rem;
+        @include typography-button-small;
     }
 }
 
 .p-button.p-button-lg {
-    font-size: 1.25rem;
+    @include typography-button-large;
     padding: 0.9375rem 1.5625rem;
     .p-button-icon {
-        font-size: 1.25rem;
+        @include typography-button-large;
     }
 }
 
@@ -171,44 +175,29 @@
     }
 }
 
-
-
 .p-button.p-button-secondary {
-    color: $color--surface-a;
-    background: $color--bluegray-500;
-    border: 1px solid #64748B;
+    color: $color--button-secondary-text;
+    background: $color--button-secondary-background;
+    border: 1px solid $color--button-secondary-background;
     &:enabled {
         &:hover {
-            background: #475569;
-            color: $color--surface-a;
-            border-color: #475569;
+            background: $color--button-secondary-background-hover;
+            color: $color--button-secondary-text;
+            border-color: $color--button-secondary-background-hover;
         }
         &:focus {
-            box-shadow: 0 0 0 0.2rem #E2E8F0;
+            box-shadow: 0 0 0 0.2rem #e2e8f0;
         }
         &:active {
-            background: #334155;
-            color: $color--surface-a;
-            border-color: #334155;
+            background: $color--button-secondary-background-hover;
+            color: $color--button-secondary-text;
+            border-color: $color--button-secondary-background-hover;
         }
     }
-}
-
-.p-button.p-button-secondary.p-button-outlined {
-    background-color: transparent;
-    color: $color--bluegray-500;
-    border: 1px solid;
-    &:enabled {
-        &:hover {
-            background: rgba(100, 116, 139, 0.04);
-            color: $color--bluegray-500;
-            border: 1px solid;
-        }
-        &:active {
-            background: rgba(100, 116, 139, 0.16);
-            color: $color--bluegray-500;
-            border: 1px solid;
-        }
+    &:disabled {
+        color: $color--button-secondary-text;
+        background: $color--button-secondary-background-disabled;
+        border: 1px solid $color--button-secondary-background-disabled;
     }
 }
 
@@ -289,38 +278,38 @@
 
 .p-button.p-button-success {
     color: $color--surface-a;
-    background: #22C55E;
-    border: 1px solid #22C55E;
+    background: #22c55e;
+    border: 1px solid #22c55e;
     &:enabled {
         &:hover {
-            background: #16A34A;
+            background: #16a34a;
             color: $color--surface-a;
-            border-color: #16A34A;
+            border-color: #16a34a;
         }
         &:focus {
-            box-shadow: 0 0 0 0.2rem #BBF7D0;
+            box-shadow: 0 0 0 0.2rem #bbf7d0;
         }
         &:active {
-            background: #15803D;
+            background: #15803d;
             color: $color--surface-a;
-            border-color: #15803D;
+            border-color: #15803d;
         }
     }
 }
 
 .p-button.p-button-success.p-button-outlined {
     background-color: transparent;
-    color: #22C55E;
+    color: #22c55e;
     border: 1px solid;
     &:enabled {
         &:hover {
             background: rgba(34, 197, 94, 0.04);
-            color: #22C55E;
+            color: #22c55e;
             border: 1px solid;
         }
         &:active {
             background: rgba(34, 197, 94, 0.16);
-            color: #22C55E;
+            color: #22c55e;
             border: 1px solid;
         }
     }
@@ -328,58 +317,56 @@
 
 .p-button.p-button-success.p-button-text {
     background-color: transparent;
-    color: #22C55E;
+    color: #22c55e;
     border-color: transparent;
     &:enabled {
         &:hover {
             background: rgba(34, 197, 94, 0.04);
             border-color: transparent;
-            color: #22C55E;
+            color: #22c55e;
         }
         &:active {
             background: rgba(34, 197, 94, 0.16);
             border-color: transparent;
-            color: #22C55E;
+            color: #22c55e;
         }
     }
 }
 
 .p-button.p-button-warning {
     color: $color--surface-a;
-    background: #F59E0B;
-    border: 1px solid #F59E0B;
+    background: #f59e0b;
+    border: 1px solid #f59e0b;
     &:enabled {
         &:hover {
-            background: #D97706;
+            background: #d97706;
             color: $color--surface-a;
-            border-color: #D97706;
+            border-color: #d97706;
         }
         &:focus {
-            box-shadow: 0 0 0 0.2rem #FDE68A;
+            box-shadow: 0 0 0 0.2rem #fde68a;
         }
         &:active {
-            background: #B45309;
+            background: #b45309;
             color: $color--surface-a;
-            border-color: #B45309;
+            border-color: #b45309;
         }
     }
 }
 
-
-
 .p-button.p-button-warning.p-button-outlined {
     background-color: transparent;
-    color: #F59E0B;
+    color: #f59e0b;
     border: 1px solid;
     &:enabled {
         &:hover {
             background: rgba(245, 158, 11, 0.04);
-            color: #F59E0B;
+            color: #f59e0b;
             border: 1px solid;
         }
         &:active {
             background: rgba(245, 158, 11, 0.16);
-            color: #F59E0B;
+            color: #f59e0b;
             border: 1px solid;
         }
     }
@@ -387,18 +374,18 @@
 
 .p-button.p-button-warning.p-button-text {
     background-color: transparent;
-    color: #F59E0B;
+    color: #f59e0b;
     border-color: transparent;
     &:enabled {
         &:hover {
             background: rgba(245, 158, 11, 0.04);
             border-color: transparent;
-            color: #F59E0B;
+            color: #f59e0b;
         }
         &:active {
             background: rgba(245, 158, 11, 0.16);
             border-color: transparent;
-            color: #F59E0B;
+            color: #f59e0b;
         }
     }
 }
@@ -409,22 +396,20 @@
     border: 1px solid $color--purple-500;
     &:enabled {
         &:hover {
-            background: #9333EA;
+            background: #9333ea;
             color: $color--surface-a;
-            border-color: #9333EA;
+            border-color: #9333ea;
         }
         &:focus {
-            box-shadow: 0 0 0 0.2rem #E9D5FF;
+            box-shadow: 0 0 0 0.2rem #e9d5ff;
         }
         &:active {
-            background: #7E22CE;
+            background: #7e22ce;
             color: $color--surface-a;
-            border-color: #7E22CE;
+            border-color: #7e22ce;
         }
     }
 }
-
-
 
 .p-button.p-button-help.p-button-outlined {
     background-color: transparent;
@@ -468,17 +453,17 @@
     border: 1px solid $color--red-50;
     &:enabled {
         &:hover {
-            background: #DC2626;
+            background: #dc2626;
             color: $color--surface-a;
-            border-color: #DC2626;
+            border-color: #dc2626;
         }
         &:focus {
-            box-shadow: 0 0 0 0.2rem #FECACA;
+            box-shadow: 0 0 0 0.2rem #fecaca;
         }
         &:active {
-            background: #B91C1C;
+            background: #b91c1c;
             color: $color--surface-a;
-            border-color: #B91C1C;
+            border-color: #b91c1c;
         }
     }
 }
