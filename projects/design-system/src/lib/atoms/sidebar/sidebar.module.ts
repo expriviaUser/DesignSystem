@@ -1,36 +1,36 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { SidebarComponent } from './components/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DropdownModule } from 'primeng/dropdown';
-import { DropdownComponent } from './components/dropdown.component';
 
 
 const primeComponents = [
-  DropdownModule
+    TieredMenuModule,
+    
 ];
 
 const exportComponent = [
-  DropdownComponent
+    SidebarComponent
 ];
 
 @NgModule({
   declarations: [
     ...exportComponent
   ],
-  imports: [...primeComponents
-    ,
+   imports: [ ...primeComponents
+     ,
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   exports: [
     ...exportComponent,
+     
   ],
   entryComponents: [
     ...exportComponent
   ]
 })
 
-export class LibDropdownModule { }
+
+export class SidebarModule { }

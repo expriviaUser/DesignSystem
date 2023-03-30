@@ -15,7 +15,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [],
-            imports: [CommonModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, ComponentsModule],
+             imports: [ ...primeComponentsCommonModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, ComponentsModule],
             providers: [DatePipe]
         }),
     ],

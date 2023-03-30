@@ -15,10 +15,12 @@ const exportComponent = [
     declarations: [
         ...exportComponent
     ],
-    imports: [
+    imports: [...primeComponents
+
     ],
     exports: [
         ...exportComponent,
+
     ],
     entryComponents: [
         ...exportComponent

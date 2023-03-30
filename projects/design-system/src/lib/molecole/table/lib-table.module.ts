@@ -25,8 +25,8 @@ const exportComponent = [
         TableDesktopComponent,
         TableResponsiveComponent,
     ],
-    imports: [
-        ...primeComponents,
+    imports: [...primeComponents
+        ,
         CommonModule,
         LibButtonModule,
         TieredMenuModule

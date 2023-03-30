@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { SidebarItem } from 'design-system';
 import { ActionTable, BreadcrumbModel, MenubarItem } from 'projects/design-system/src/public-api';
 
 @Component({
@@ -44,6 +45,23 @@ export class AppComponent {
         { label: 'Logistica' },
         { label: 'Reportistica' },
         { label: 'Catalogazioni' }
+    ];
+
+    sidebarItems: SidebarItem[] = [
+        { label: 'Etichette', style: { 'font-weight': 600 }, icon: 'pi pi-fw pi-plus', routerLink: 'app' },
+        { label: 'Contenitori', icon: 'pi pi-fw pi-download', items: [{ label: 'Prova' }] },
+        { label: 'Versamento', icon: 'pi pi-fw pi-download', items: [{ label: 'Prova' }] },
+        { label: 'Macero', icon: 'pi pi-fw pi-download', items: [{ label: 'Prova' }] },
+        { label: 'Proroga', icon: 'pi pi-fw pi-download', items: [{ label: 'Prova' }] },
+        { label: 'Materiale d\'uso', icon: 'pi pi-fw pi-download', items: [{ label: 'Prova' }] },
+
+        {
+            label: 'Edit',
+            items: [
+                { label: 'Add User', icon: 'pi pi-fw pi-user-plus' },
+                { label: 'Remove User', icon: 'pi pi-fw pi-user-minus' }
+            ]
+        }
     ];
     
     protected dropdownValue: string[] = ['Ufficio', 'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED', 'ENI \\ CARTELLE_PERSONALE', 'ENI \\ ENI CORPORATE', 'ENI \\ ING E&P RAV', 'ENI \\ ORTONA', 'ENI \\ VIGGIANO'];

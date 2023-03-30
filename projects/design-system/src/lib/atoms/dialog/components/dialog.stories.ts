@@ -17,7 +17,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [],
-            imports: [CommonModule, DialogModule, BrowserAnimationsModule, ComponentsModule],
+             imports: [ ...primeComponentsCommonModule, DialogModule, BrowserAnimationsModule, ComponentsModule],
         }),
     ]
 };

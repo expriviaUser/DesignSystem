@@ -16,12 +16,14 @@ import { LibRadioButtonModule } from './atoms/radio-button/lib-radio-button.modu
 import { LibTabsModule } from './atoms/tabs/lib-tabs.module';
 import { LibTagModule } from './atoms/tag/lib-tag.module';
 import { LibTextareaModule } from './atoms/textarea/lib-textarea.module';
-import { LibFiltriModule } from './micro-organismi/filtri/lib-filtri.module';
 import { CtaBarModule } from './molecole/cta-bar/cta-bar.module';
 import { HeaderItemsModule } from './molecole/header-items/header-items.module';
-import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
 import { LibMessagesModule } from './molecole/messages/lib-messages.module';
 import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module';
+import { LibFiltriModule } from './micro-organismi/filtri/lib-filtri.module';
+import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
+import { SidebarModule } from './atoms/sidebar/sidebar.module';
+import { CommonModule } from '@angular/common';
 import { LibTableModule } from './molecole/table/lib-table.module';
 
 const sharedModules = [
@@ -48,12 +50,14 @@ const sharedModules = [
   LibMessagesModule,
   LibRadioTileModule,
   LibFiltriModule,
-  HeaderMenuModule
+  HeaderMenuModule,
+  SidebarModule
 ];
 
 @NgModule({
   declarations: [],
   imports: [
+    CommonModule,
     ...sharedModules
   ],
   exports: [

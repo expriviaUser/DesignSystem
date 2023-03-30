@@ -18,7 +18,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [FiltriComponent, DropdownAltComponent, ChipComponent],
-            imports: [CommonModule, DropdownModule, ChipModule, FormsModule, BrowserAnimationsModule],
+             imports: [ ...primeComponentsCommonModule, DropdownModule, ChipModule, FormsModule, BrowserAnimationsModule],
         }),
     ]
 };
