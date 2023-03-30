@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { SidebarComponent } from './components/sidebar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const primeComponents = [
@@ -20,8 +19,7 @@ const exportComponent = [
   ],
   imports: [
     ...primeComponents,
-    CommonModule,
-    BrowserAnimationsModule
+    CommonModule
   ],
   exports: [
     ...exportComponent,
