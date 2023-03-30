@@ -6,26 +6,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const primeComponents = [
-    TieredMenuModule,
-    
+  TieredMenuModule,
+
 ];
 
 const exportComponent = [
-    SidebarComponent
+  SidebarComponent
 ];
 
 @NgModule({
   declarations: [
     ...exportComponent
   ],
-   imports: [ ...primeComponents
-     ,
+  imports: [
+    ...primeComponents,
     CommonModule,
     BrowserAnimationsModule
   ],
   exports: [
     ...exportComponent,
-     
+
   ],
   entryComponents: [
     ...exportComponent

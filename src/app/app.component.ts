@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { SidebarItem } from 'design-system';
-import { ActionTable, BreadcrumbModel, MenubarItem } from 'projects/design-system/src/public-api';
+import { ActionTable, BreadcrumbModel, MenubarItem, SidebarItem } from 'projects/design-system/src/public-api';
 
 @Component({
     selector: 'app-root',
@@ -63,7 +62,7 @@ export class AppComponent {
             ]
         }
     ];
-    
+
     protected dropdownValue: string[] = ['Ufficio', 'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED', 'ENI \\ CARTELLE_PERSONALE', 'ENI \\ ENI CORPORATE', 'ENI \\ ING E&P RAV', 'ENI \\ ORTONA', 'ENI \\ VIGGIANO'];
 
     iconsTable: ActionTable[] = [

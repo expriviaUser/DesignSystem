@@ -46,8 +46,8 @@ const exportComponent = [
     declarations: [
         ...exportComponent
     ],
-    imports: [...primeComponents
-        ,
+    imports: [
+        ...primeComponents,
         CommonModule,
         RouterModule,
         LibButtonModule,

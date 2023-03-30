@@ -19,8 +19,8 @@ const exportComponent = [
     declarations: [
         ...exportComponent
     ],
-    imports: [...primeComponents
-        ,
+    imports: [
+        ...primeComponents,
         CommonModule,
         FormsModule,
         ReactiveFormsModule

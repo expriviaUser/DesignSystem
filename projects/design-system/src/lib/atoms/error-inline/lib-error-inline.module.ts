@@ -15,8 +15,8 @@ const exportComponent = [
     declarations: [
         ...exportComponent
     ],
-    imports: [...primeComponents
-
+    imports: [
+        ...primeComponents
     ],
     exports: [
         ...exportComponent,
