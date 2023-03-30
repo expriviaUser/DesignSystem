@@ -5,12 +5,12 @@ import { InputTextareaModule } from 'primeng/inputtextarea'
 import { TextareaComponent } from './components/textarea.component';
 
 const primeComponents = [
-    InputTextareaModule,
-    
+  InputTextareaModule,
+
 ];
 
 const exportComponent = [
-    TextareaComponent
+  TextareaComponent
 ];
 
 @NgModule({
@@ -25,7 +25,6 @@ const exportComponent = [
   ],
   exports: [
     ...exportComponent,
-    ...primeComponents
   ],
   entryComponents: [
     ...exportComponent

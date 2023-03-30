@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
 
 
 const primeComponents = [
-    InputTextModule,
-    InputNumberModule
+  InputTextModule,
+  InputNumberModule
 ];
 
 const exportComponent = [
-    InputComponent
+  InputComponent
 ];
 
 @NgModule({
@@ -24,7 +24,6 @@ const exportComponent = [
   ],
   exports: [
     ...exportComponent,
-    ...primeComponents
   ],
   entryComponents: [
     ...exportComponent

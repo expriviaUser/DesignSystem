@@ -7,11 +7,11 @@ import { DropdownComponent } from './components/dropdown.component';
 
 
 const primeComponents = [
-    DropdownModule
+  DropdownModule
 ];
 
 const exportComponent = [
-    DropdownComponent
+  DropdownComponent
 ];
 
 @NgModule({
@@ -27,7 +27,6 @@ const exportComponent = [
   ],
   exports: [
     ...exportComponent,
-    ...primeComponents
   ],
   entryComponents: [
     ...exportComponent

@@ -5,12 +5,12 @@ import { RadioButtonModule } from 'primeng/radiobutton'
 import { RadioButtonComponent } from './components/radio-button.component';
 
 const primeComponents = [
-    RadioButtonModule,
-    
+  RadioButtonModule,
+
 ];
 
 const exportComponent = [
-    RadioButtonComponent
+  RadioButtonComponent
 ];
 
 @NgModule({
@@ -25,7 +25,6 @@ const exportComponent = [
   ],
   exports: [
     ...exportComponent,
-    ...primeComponents
   ],
   entryComponents: [
     ...exportComponent

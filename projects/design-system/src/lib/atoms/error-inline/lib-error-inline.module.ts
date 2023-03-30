@@ -16,11 +16,9 @@ const exportComponent = [
         ...exportComponent
     ],
     imports: [
-        ...primeComponents
     ],
     exports: [
         ...exportComponent,
-        ...primeComponents
     ],
     entryComponents: [
         ...exportComponent
