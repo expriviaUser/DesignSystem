@@ -32,12 +32,74 @@ $ipad-pro-min-width: 1024px;
 $ipad-pro-max-width: 1366px;
 
 :root {
-  --primary-color-10: #FFD300;
+    //PRIMARY
+  --primary-color-10: #856F00;
+  --primary-color-20: #9D8300;
+  --primary-color-30: #B89A00;
+  --primary-color-40: #D9B500;
+  --primary-color-50:#FFD300;
+  --primary-color-60: #FFDF40;
+  --primary-color-70: #FFE770;
+  --primary-color-80: #FFED93;
+  --primary-color-90: #FFF2AE;
+  --primary-color-100: #FFF5C2;
+
+  //SECONDARY
+  --secondary-color-10: #073F98;
+  --secondary-color-20: #084AB3;
+  --secondary-color-30: #0A57D3;
+  --secondary-color-40: #0F67F4;
+  --secondary-color-50:#3B82F6;
+  --secondary-color-60: #6CA2F8;
+  --secondary-color-70: #91B9FA;
+  --secondary-color-80: #ACCBFB;
+  --secondary-color-90: #C1D8FC;
+  --secondary-color-100: #D0E1FD;
+
+  //TERTIARY
+  --tertiary-color-10: #073F98;
+  --tertiary-color-20: #084AB3;
+  --tertiary-color-30: #0A57D3;
+  --tertiary-color-40: #0F67F4;
+  --tertiary-color-50:#3B82F6;
+  --tertiary-color-60: #6CA2F8;
+  --tertiary-color-70: #91B9FA;
+  --tertiary-color-80: #ACCBFB;
+  --tertiary-color-90: #C1D8FC;
+  --tertiary-color-100: #D0E1FD;
+
+  //BASE
+  --base-color-black: #000000;
+  --base-color-white: #FFFFFF;
+  --base-color-background: #F4F5F8;
+
+  //GRAY
+  --gray-color-10: #626D7D;
+  --gray-color-20: #748092;
+  --gray-color-30: #8E98A7;
+  --gray-color-40: #ADB4BF;
+  --gray-color-50:#D1D5DB;
+  --gray-color-60: #DCDFE4;
+  --gray-color-70: #E5E7EB;
+  --gray-color-80: #ECEDF0;
+  --gray-color-90: #F0F2F4;
+  --gray-color-100: #F4F5F6;
+
+  //ERROR
+  --error-color-10: #B21F27;
+  --error-color-50: #EF4444;
+  --error-color-100: #F1EDEE;
+
+  //SUCCESS
+  --error-color-10: #B21F27;
+  --error-color-50: #EF4444;
+  --error-color-100: #F1EDEE;
+
 }
 
 // Colors prj
 // $color--primary-color: #FFD300;
-$color--primary-color: var(--primary-color-10);
+$color--primary-color: var(--primary-color-50);
 $color--white: #FFFFFF;
 $color--black: #000;
 
