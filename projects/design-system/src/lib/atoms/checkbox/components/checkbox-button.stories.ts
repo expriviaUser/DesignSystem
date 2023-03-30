@@ -15,7 +15,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [CheckboxButtonComponent],
-            imports: [CommonModule, CheckboxModule, FormsModule],
+             imports: [ ...primeComponentsCommonModule, CheckboxModule, FormsModule],
         }),
     ],
     /* argTypes: {

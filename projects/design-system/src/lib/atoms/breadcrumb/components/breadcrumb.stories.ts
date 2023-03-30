@@ -12,7 +12,7 @@ export default {
     // The necessary modules for the component to work on Storybook
     moduleMetadata({
       declarations: [BreadcrumbComponent],
-      imports: [CommonModule],
+       imports: [ ...primeComponentsCommonModule],
     }),
   ]
 };

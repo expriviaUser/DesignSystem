@@ -14,7 +14,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [ButtonComponent],
-            imports: [CommonModule, ButtonModule],
+             imports: [ ...primeComponentsCommonModule, ButtonModule],
         }),
     ],
     argTypes: {

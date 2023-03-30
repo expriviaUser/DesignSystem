@@ -46,8 +46,8 @@ const exportComponent = [
     declarations: [
         ...exportComponent
     ],
-    imports: [
-        ...primeComponents,
+     imports: [ ...primeComponents
+         ,
         CommonModule,
         RouterModule,
         LibButtonModule,
@@ -58,8 +58,7 @@ const exportComponent = [
         InputFormModule
     ],
     exports: [
-        ...exportComponent,
-        ...primeComponents
+        ...exportComponent
     ],
     entryComponents: [
         ...exportComponent

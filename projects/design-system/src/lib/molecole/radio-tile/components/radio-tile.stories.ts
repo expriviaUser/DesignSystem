@@ -13,7 +13,7 @@ export default {
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            imports: [CommonModule, ComponentsModule],
+             imports: [ ...primeComponentsCommonModule, ComponentsModule],
         }),
     ]
 };

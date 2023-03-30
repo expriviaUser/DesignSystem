@@ -14,7 +14,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [RadioButtonComponent],
-            imports: [CommonModule, FormsModule, ReactiveFormsModule],
+             imports: [ ...primeComponentsCommonModule, FormsModule, ReactiveFormsModule],
         }),
     ],
     argTypes: {

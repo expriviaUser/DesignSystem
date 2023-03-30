@@ -15,13 +15,12 @@ const primeComponents = [
     declarations: [
       ...exportComponent
     ],
-    imports: [
-      ...primeComponents,
+     imports: [ ...primeComponents
+       ,
       CommonModule
     ],
     exports: [
-      ...exportComponent,
-      ...primeComponents
+      ...exportComponent
     ],
     entryComponents: [
       ...exportComponent

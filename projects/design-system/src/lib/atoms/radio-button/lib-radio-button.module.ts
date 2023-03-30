@@ -6,7 +6,7 @@ import { RadioButtonComponent } from './components/radio-button.component';
 
 const primeComponents = [
     RadioButtonModule,
-    
+
 ];
 
 const exportComponent = [
@@ -14,22 +14,22 @@ const exportComponent = [
 ];
 
 @NgModule({
-  declarations: [
-    ...exportComponent
-  ],
-  imports: [
-    ...primeComponents,
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
-  exports: [
-    ...exportComponent,
-    ...primeComponents
-  ],
-  entryComponents: [
-    ...exportComponent
-  ]
+    declarations: [
+        ...exportComponent
+    ],
+    imports: [
+        ...primeComponents,
+        CommonModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
+    exports: [
+        ...exportComponent,
+
+    ],
+    entryComponents: [
+        ...exportComponent
+    ]
 })
 
 export class LibRadioButtonModule { }

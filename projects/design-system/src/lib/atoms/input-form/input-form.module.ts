@@ -39,7 +39,7 @@ const exportComponent = [
     ],
     exports: [
         ...exportComponent,
-        ...primeComponents
+
     ],
     entryComponents: [
         ...exportComponent

@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LibTagModule } from './atoms/tag/lib-tag.module';
 import { LibCardModule } from './atoms/card/lib-card.module';
@@ -24,6 +23,8 @@ import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module'
 import { LibChipModule } from './atoms/chip/lib-chip.module';
 import { LibFiltriModule } from './micro-organismi/filtri/lib-filtri.module';
 import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
+import { SidebarModule } from './atoms/sidebar/sidebar.module';
+import { CommonModule } from '@angular/common';
 
 const sharedModules = [
   LibTagModule,
@@ -49,13 +50,14 @@ const sharedModules = [
   LibMessagesModule,
   LibRadioTileModule,
   LibFiltriModule,
-  HeaderMenuModule
+  HeaderMenuModule,
+  SidebarModule
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    BrowserModule,
+   imports: [ 
+    CommonModule,
     ...sharedModules
   ],
   exports: [

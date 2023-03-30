@@ -14,7 +14,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [TabsComponent],
-            imports: [CommonModule, TabViewModule],
+             imports: [ ...primeComponentsCommonModule, TabViewModule],
         }),
     ],
     argTypes: {

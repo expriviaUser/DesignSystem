@@ -92,6 +92,10 @@ export * from './lib/molecole/header-menu/components/header-menu.component';
 export * from './lib/molecole/header-menu/header-menu.module';
 export * from './lib/molecole/header-menu/models/menu-item.model';
 
+export * from './lib/atoms/sidebar/components/sidebar.component';
+export * from './lib/atoms/sidebar/sidebar.module';
+export * from './lib/atoms/sidebar/models/sidebar-item.model';
+
 export * from './lib/molecole/cta-bar/components/cta-bar.component';
 export * from './lib/molecole/cta-bar/cta-bar.module';
 

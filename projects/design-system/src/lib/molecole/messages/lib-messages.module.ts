@@ -24,13 +24,13 @@ const exportComponent = [
     declarations: [
         ...exportComponent
     ],
-    imports: [
-        ...primeComponents,
+     imports: [ ...primeComponents
+         ,
         CommonModule
     ],
     exports: [
         ...exportComponent,
-        ...primeComponents
+         
     ],
     entryComponents: [
         ...exportComponent

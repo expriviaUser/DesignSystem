@@ -13,7 +13,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [ChipComponent],
-            imports: [CommonModule, ChipModule],
+             imports: [ ...primeComponentsCommonModule, ChipModule],
         }),
     ]
 };

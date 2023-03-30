@@ -15,7 +15,7 @@ export default {
     // The necessary modules for the component to work on Storybook
     moduleMetadata({
       declarations: [LanguageSelectorComponent],
-      imports: [CommonModule, DropdownModule, FormsModule, BrowserAnimationsModule, ReactiveFormsModule],
+       imports: [ ...primeComponentsCommonModule, DropdownModule, FormsModule, BrowserAnimationsModule, ReactiveFormsModule],
     }),
   ],
 

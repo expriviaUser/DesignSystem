@@ -15,20 +15,20 @@ const exportComponent = [
 ];
 
 @NgModule({
-  declarations: [
-    ...exportComponent
-  ],
-  imports: [
-    ...primeComponents,
-    CommonModule
-  ],
-  exports: [
-    ...exportComponent,
-    ...primeComponents
-  ],
-  entryComponents: [
-    ...exportComponent
-  ]
+    declarations: [
+        ...exportComponent
+    ],
+    imports: [
+        ...primeComponents,
+        CommonModule
+    ],
+    exports: [
+        ...exportComponent,
+
+    ],
+    entryComponents: [
+        ...exportComponent
+    ]
 })
 
 export class LibInputModule { }
