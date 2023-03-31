@@ -1,0 +1,89 @@
+.dark {
+    width: max-content;
+    background-color: $color--text-normal;
+
+    .c-breadcrumb {
+        .c-breadcrumb-item {
+            color: white;
+
+            .c-bc {
+                &:hover {
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+
+                &:focus {
+                    border-bottom: 1px solid white;
+                    color: white;
+                }
+
+                &.active {
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+    }
+}
+
+.c-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+
+    @include typography-x-small-regular;
+
+    .c-breadcrumb-item {
+        padding-left: 0.5rem;
+        text-decoration: none;
+        padding-bottom: 0.125rem;
+        display: flex;
+        align-items: center;
+        color: $color--text-placeholder;
+
+        &::before {
+            display: inline-block;
+            padding-right: 0.5rem;
+            color: $color--text-placeholder;
+            content: "/";
+        }
+
+        .dots-bc {
+            color: $color--text-placeholder;
+            text-decoration: none;
+            padding-bottom: 1px;
+        }
+
+        .c-bc {
+            color: $color--text-placeholder;
+            text-decoration: none;
+            padding-bottom: 1px;
+
+            &:hover {
+                color: $color--text-normal;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            &:focus {
+                border-bottom: 1px solid $color--text-normal;
+                outline: none;
+                color: $color--text-normal;
+                text-decoration: none;
+            }
+
+            &.active {
+                color: $color--text-normal;
+            }
+        }
+
+        &:first-child {
+            &::before {
+                content: none;
+            }
+        }
+    }
+}

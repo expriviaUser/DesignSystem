@@ -1,6 +1,10 @@
 <!-- <div class="dropdown-wrapper"> -->
 <!-- check se il valore della dropdown è un string[] oppure DropdownType[] -->
-<input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [id]="label" class="p-inputtext-sm"
+<input *ngIf="!icon" [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [id]="label" class="p-inputtext-sm"
     pInputText />
-
+<span *ngIf="icon" [class]="iconPos">
+    <i *ngIf="icon" [class]="icon"></i>
+    <input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [id]="label" class="p-inputtext-sm"
+    pInputText />
+</span>
 <!-- </div> -->

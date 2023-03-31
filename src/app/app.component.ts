@@ -4,6 +4,7 @@ import {Table, TableService} from 'primeng/table';
 import {
   ActionTable,
   BreadcrumbModel,
+  Cols,
   FileStatus,
   MenubarItem,
   SidebarItem,
@@ -41,10 +42,10 @@ export class AppComponent {
     {name: 'Vincenzo', surname: 'Marretta'},
   ]
 
-  columns = [
+  columns: Cols[] = [
     {header: "Nome", field: "name", sort: true},
     {header: "Cognome", field: "surname"},
-    {header: "Cognome", field: "surname"},
+    {header: "Cognome", field: "surname", classes: 'long-field'},
     {header: "Cognome", field: "surname"},
   ];
 

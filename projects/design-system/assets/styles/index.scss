@@ -1,4 +1,5 @@
 @import './base/variables';
+@import './base/reset';
 @import './base/font';
 @import './base/media-queries';
 @import './base/utilities';
@@ -10,9 +11,6 @@
 // Componenti custom (ossia non di PrimeNG)
 @import './modules/registration-datas';
 @import './modules/footers';
-
-
-@import './icon-font/icon.scss';
 
 @import './theme.scss';
 @import './components/index.scss';

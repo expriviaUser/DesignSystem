@@ -4,26 +4,26 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb.component';
 
 const primeComponents = [
-  BreadcrumbModule
+    BreadcrumbModule
 ];
 
 const exportComponent = [
-  BreadcrumbComponent
+    BreadcrumbComponent
 ];
 
 @NgModule({
-  declarations: [
-    ...exportComponent
-  ],
-  imports: [
-    ...primeComponents,
-    CommonModule
-  ],
-  exports: [
-    ...exportComponent,
-  ],
-  entryComponents: [
-    ...exportComponent
-  ]
+    declarations: [
+        ...exportComponent
+    ],
+    imports: [
+        ...primeComponents,
+        CommonModule
+    ],
+    exports: [
+        ...exportComponent,
+    ],
+    entryComponents: [
+        ...exportComponent
+    ]
 })
 export class LibBreadcrumbModule { }

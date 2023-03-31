@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BreadcrumbModel } from '../models/breadcrumb.model';
 
 @Component({
-  selector: 'app-breadcrumb',
+  selector: 'lib-breadcrumb',
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })

@@ -9,6 +9,8 @@
 <lib-card [cHeader]="'Titolo card'" [cSubHeader]="'Questo è il sottotitolo di una card'">
 </lib-card>
 
+<h6>Catalogazione</h6>
+
 <lib-header-menu [items]="itemsMenu">
   <ng-container endTemp>
     <div class="align">
@@ -28,8 +30,8 @@
 
 <lib-file-status [fileList]="fileArray"></lib-file-status>
 
-<app-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
-</app-breadcrumb>
+<lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
+</lib-breadcrumb>
 
 <lib-dialog [visible]="false" [title]="'form'">
   <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
@@ -76,6 +78,9 @@
     <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
   </ng-template>
 </lib-table>
+
+
+<lib-input [iconPos]="'left'" icon="pi pi-user"></lib-input>
 
 <lib-radio-tile [tiles]="myTiles">
 </lib-radio-tile>

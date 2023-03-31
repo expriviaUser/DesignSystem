@@ -2,75 +2,88 @@ import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/cor
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'lib-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
-  providers: [{
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true
-  }]
+    selector: 'lib-input',
+    templateUrl: './input.component.html',
+    styleUrls: ['./input.component.scss'],
+    providers: [{
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() => InputComponent),
+        multi: true
+    }]
 })
 
 export class InputComponent {
 
-@Input() label!: string;
-@Input() placeholder!: string;
-// @Input('controlName') formControlName: string = '';
-@Input() clear: boolean = false;
-@Input() control: AbstractControl = new FormControl();
+    @Input() label: string = '';
+    @Input() placeholder: string = '';
+    // @Input('controlName') formControlName: string = '';
+    @Input() clear: boolean = false;
+    @Input() control: AbstractControl = new FormControl();
 
-@Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
+    @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
 
-@Input() value: any;
-@Input() type: string = '';
+    @Input() value: any;
+    @Input() type: string = 'text';
+    @Input() iconPos: string = 'left'
+    @Input() icon: string = '';
 
-disabled: boolean = false;
-onChange: any = () => { }
-onTouch: any = () => { }
-
-
-// get control() {
-//     return this.controlContainer.control?.get(this.formControlName);
-// }
-
- get haveError() {
-    return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
-}
+    disabled: boolean = false;
+    onChange: any = () => { }
+    onTouch: any = () => { }
 
 
-// this method sets the value programmatically
-writeValue(value: string) {
-    this.value = value;
-}
+    // get control() {
+    //     return this.controlContainer.control?.get(this.formControlName);
+    // }
 
-// set UI element value changes emit function
-registerOnChange(fn: any) {
-    this.onChange = fn;
-}
+    get haveError() {
+        return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
+    }
 
-// set touching element emit function
-registerOnTouched(fn: any) {
-    this.onTouch = fn;
-}
+    ngOnInit() {
+        switch(this.iconPos) {
+            case 'left':
+                this.iconPos = 'p-input-icon-left';
+                break;
+            case 'right':
+                this.iconPos = 'p-input-icon-right';
+                break;
+        }
+    }
 
-// upon disabled statu change, this method gets triggered
-setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
-}
 
-// upon UI element value change, this method gets triggered
-emitValue(event: any) {
-    this.value = event;
-    this.onChange(event);
-    this.selectedValue.emit(event);
-    console.log('val',this.value)
-}
+    // this method sets the value programmatically
+    writeValue(value: string) {
+        this.value = value;
+    }
 
-// upon UI element value change, this method gets triggered
-emitValueNg(event: any) {
-    this.value = event;
-    this.onChange(event);
-    
-}
+    // set UI element value changes emit function
+    registerOnChange(fn: any) {
+        this.onChange = fn;
+    }
+
+    // set touching element emit function
+    registerOnTouched(fn: any) {
+        this.onTouch = fn;
+    }
+
+    // upon disabled statu change, this method gets triggered
+    setDisabledState(isDisabled: boolean): void {
+        this.disabled = isDisabled;
+    }
+
+    // upon UI element value change, this method gets triggered
+    emitValue(event: any) {
+        this.value = event;
+        this.onChange(event);
+        this.selectedValue.emit(event);
+        console.log('val', this.value)
+    }
+
+    // upon UI element value change, this method gets triggered
+    emitValueNg(event: any) {
+        this.value = event;
+        this.onChange(event);
+
+    }
 }

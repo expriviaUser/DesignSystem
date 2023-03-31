@@ -1,9 +1,9 @@
 <div class="table-wrapper">
 
     <p-table selectionMode="multiple" (onRowSelect)="selectedEvent()" (onRowUnselect)="selectedEvent()"
-        [resizableColumns]="true" scrollDirection="both" [(selection)]="selectedValue" [scrollable]="true"
+        [resizableColumns]="false" [(selection)]="selectedValue" [scrollable]="false"
         [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="paginatorData.rows"
-        [rowsPerPageOptions]="rowsPerPage"
+        [rowsPerPageOptions]="rowsPerPage" 
         [currentPageReportTemplate]="reportString" [showCurrentPageReport]="showReportPage"
         [totalRecords]="totalRecords" [(first)]="paginatorData.first" [loading]="loading" (onPage)="paginate($event)">
         <ng-template pTemplate="header" let-columns>
@@ -38,7 +38,7 @@
     <td *ngIf="isSelectable">
         <p-tableCheckbox [value]="data"></p-tableCheckbox>
     </td>
-    <td *ngFor="let col of columns"> 
+    <td *ngFor="let col of columns" [class]="col.classes ? col.classes : ''"> 
         <!-- DATI DELLE COLONNE -->
         <span [innerHTML]="getFieldValue(data, col.field)">
         </span>

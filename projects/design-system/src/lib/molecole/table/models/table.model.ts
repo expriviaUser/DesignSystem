@@ -15,4 +15,5 @@ export interface Cols {
     header: string;
     field: string;
     sort?: boolean;
+    classes?: string;
 }

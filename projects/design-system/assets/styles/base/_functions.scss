@@ -1,32 +1,3 @@
-// $max: 5;
-// $offset: 8;
-// $unit: 'px'; // Feel free to change the unit.
-
-/// Stampa diverse classi CSS di utilità con margini e padding in tutte le direzioni.
-// @mixin list-loop($className, $styleName) {
-//   $i: 0;
-//   @while $i <= $max {
-//     #{$className + $i} {
-//       #{$styleName}: #{$i * $offset + $unit};
-//     }
-//     $i: $i + 1;
-//   }
-// }
-
-// // Margins
-// @include list-loop('.mt-', 'margin-top');
-// @include list-loop('.mr-', 'margin-right');
-// @include list-loop('.mb-', 'margin-bottom');
-// @include list-loop('.ml-', 'margin-left');
-// @include list-loop('.m-', 'margin');
-
-// // Paddings
-// @include list-loop('.pt-', 'padding-top');
-// @include list-loop('.pr-', 'padding-right');
-// @include list-loop('.pb-', 'padding-bottom');
-// @include list-loop('.pl-', 'padding-left');
-// @include list-loop('.p-', 'padding');
-
 /// Fa la conversione da unità px a rem
 @function pxToRem($size) {
   $remSize: $size / $font-size-in-px;
@@ -48,10 +19,10 @@
     font-size: pxToRem(14px);
     line-height: pxToRem(20px);
 }
-@mixin typography-small-semibold {
-    font-weight: 600;
-    font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
+@mixin typography-x-small-regular {
+    font-weight: 400;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
 }
 
 @mixin typography-xs-small-regular {
@@ -60,10 +31,10 @@
     line-height: pxToRem(16px);
 }
 
-@mixin typography-x-small-regular {
-    font-weight: 400;
-    font-size: pxToRem(14px);
-    line-height: pxToRem(20px);
+@mixin typography-small-semibold {
+    font-weight: 600;
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
 }
 
 @mixin typography-text-xs-medium {
@@ -94,4 +65,11 @@
     font-weight: 600;
     font-size: pxToRem(16px);
     line-height: pxToRem(24px);
+}
+
+@mixin h6 {
+    font-weight: 600;
+    font-size: pxToRem(24px);
+    line-height: pxToRem(28px);
+    margin: 0;
 }

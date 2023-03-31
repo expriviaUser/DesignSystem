@@ -5742,7 +5742,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     background: $color--surface-a;
     color: $color--text-color-secondary;
     padding: 1.25rem;
-    font-weight: $font-weight;
+    //font-weight: $font-weight;
     border-top-right-radius: $border-radius;
     border-top-left-radius: $border-radius;
     transition: box-shadow 0.2s;
@@ -7793,9 +7793,6 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     font-family: $font-family;
 }
 
-.p-button-label {
-    font-weight: $font-weight;
-}
 
 .p-accordion .p-accordion-header .p-accordion-header-link {
     transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;

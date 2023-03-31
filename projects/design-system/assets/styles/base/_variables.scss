@@ -128,6 +128,14 @@ $color--primary-color: var(--primary-color-50);
 $color--white: #FFFFFF;
 $color--black: #000;
 
+
+//Text colors
+$color--text-placeholder: var(--text-color-placeholder);
+$color--text-normal: var(--text-color-normal);
+$color--text-disabled: var(--text-color-disabled);
+$color--text-hyperlink: var(--text-color-hyperlink);
+$color--text-subtitle: var(--text-color-subtitle);
+
 // colors components
 // buttons
 $color--button-primary-background: var(--primary-color-50);
@@ -174,6 +182,12 @@ $color--tag-info: #000000;
 $color--tag-warning: var(--warning-color-50);
 $color--tag-danger: var(--error-color-50);
 $color--tag-text: var(--base-color-white);
+//tabs
+$color--tabs-background: var(--base-color-white);
+$color--tabs-text: #64748B;
+$color--tabs-border: #E2E8F0;
+$color--tabs-border-selected: var(--secondary-color-50);
+$color--tabs-text-selected: var(--secondary-color-50);
 // end colors components
 
 $color--surface-a: #FFFFFF;
