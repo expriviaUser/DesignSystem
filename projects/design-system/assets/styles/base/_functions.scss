@@ -78,6 +78,12 @@
   line-height: pxToRem(20px);
 }
 
+@mixin typography-small-bold {
+  font-weight: 700;
+  font-size: pxToRem(12px);
+  line-height: pxToRem(16px);
+}
+
 @mixin typography-button-small {
     font-weight: 600;
     font-size: pxToRem(12px);
