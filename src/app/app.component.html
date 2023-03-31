@@ -1,7 +1,7 @@
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
 </div>
 <lib-tag [tagLabel]="'Label'" [tagSeverity]="'success'">
 </lib-tag>
@@ -10,12 +10,12 @@
 </lib-card>
 
 <lib-header-menu [items]="itemsMenu">
-  <ng-container endTemp>
-    <div class="align">
-      <lib-cart [items]="'10'"></lib-cart>
-      <lib-dropdown [valueDropdown]="dropdownValue" [clear]="false"></lib-dropdown>
-    </div>
-  </ng-container>
+    <ng-container endTemp>
+        <div class="align">
+            <lib-cart [items]="'10'"></lib-cart>
+            <lib-dropdown [valueDropdown]="dropdownValue" [clear]="false"></lib-dropdown>
+        </div>
+    </ng-container>
 </lib-header-menu>
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
@@ -33,32 +33,49 @@
 </app-breadcrumb>
 
 <lib-dialog [visible]="false" [title]="'form'">
-  <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
-    <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
-    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
-    <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']" formControlName="sex"></lib-input-form>
+    <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
+        <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
+        <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
+        <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']"
+            formControlName="sex"></lib-input-form>
 
-  </form>
-  <div footer>
+    </form>
+    <div footer>
 
-    <lib-button #buttonSubmit [label]="'Prova'" [size]="'small'" [type]="'secondary'" (onClick)="submit()"></lib-button>
-  </div>
+        <lib-button #buttonSubmit [label]="'Prova'" [size]="'small'" [type]="'secondary'"
+            (onClick)="submit()"></lib-button>
+    </div>
 </lib-dialog>
 
 
 <lib-tabs [sections]="tabsList" [contents]="externalContent">
-  <ng-template #externalContent let-data="data">
-    <h1>Prova esterna</h1>
-    <p>{{data}}</p>
-  </ng-template>
+    <ng-template #externalContent let-data="data">
+        <h1>Prova esterna</h1>
+        <p>{{data}}</p>
+    </ng-template>
 </lib-tabs>
 
 
-<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions">
-  <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
-  <ng-template #actions let-item="data">
-    <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
-  </ng-template>
+<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body">
+    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+    <ng-template #body let-data="data" let-column="column">
+        <td>{{ data[column[0].field] }}</td>
+        <td>{{ data[column[1].field] }}</td>
+        <td>
+            <lib-tag [tagSeverity]="'danger'" [tagLabel]="data[column[1].field]"></lib-tag>
+        </td>
+        <td>
+            <p-tableCheckbox [value]="data"></p-tableCheckbox>
+        </td>
+
+    </ng-template>
+</lib-table>
+
+<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions" >
+    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+    <ng-template #actions let-item="data">
+        <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
+    </ng-template>
 </lib-table>
 
 <lib-radio-tile [tiles]="myTiles">

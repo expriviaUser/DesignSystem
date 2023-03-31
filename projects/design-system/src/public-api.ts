@@ -68,8 +68,7 @@ export * from './lib/atoms/tabs/lib-tabs.module';
 export * from './lib/molecole/table/components/table/table.component';
 export * from './lib/molecole/table/components/actions-table/actions-table.component';
 export * from './lib/molecole/table/models/table.model';
-export * from './lib/molecole/table/components/table-desktop/table-desktop.component';
-export * from './lib/molecole/table/components/table-responsive/table-responsive.component';
+export * from './lib/molecole/table/lib-table.module';
 
 export * from './lib/molecole/header-items/components/cart/cart.component';
 export * from './lib/molecole/header-items/components/header-actions/header-actions.component';
@@ -114,6 +113,6 @@ export * from './lib/molecole/file-status/components/file-status.component';
 export * from './lib/molecole/file-status/models/fileStatus.model';
 export * from './lib/molecole/file-status/file-status.module';
 
-export * from './lib/molecole/table/lib-table.module';
+
 
 export * from './lib/design-system.module';

@@ -14,4 +14,5 @@ export type PaginatorData = {
 export interface Cols {
     header: string;
     field: string;
+    sort?: boolean;
 }

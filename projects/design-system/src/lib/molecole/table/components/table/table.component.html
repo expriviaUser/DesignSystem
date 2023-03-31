@@ -1,13 +1,51 @@
-<ng-container *ngIf="value">
+<div class="table-wrapper">
 
-    <ng-container *ngIf="!isMobile; else responsiveView">
-        <!-- Componente desktop -->
-        <lib-table-desktop [columns]="columns" [(pageNumberBe)]="pageNumberBe" [allResponse]="allResponse" (pageChanged)="pageChangedValue($event)" (selectedTableValues)="onSelectedValues($event)" [isSelectable]="isSelectable" [value]="value" [totalRecords]="value.length"
-            [actions]="actions">
-        </lib-table-desktop>
-    </ng-container>
-    <ng-template #responsiveView>
-        <!-- componente responsive -->
-        <lib-table-responsive [value]="value" [isSelectable]="isSelectable" [columns]="columns" [totalRecords]="value.length" [actions]="actions"></lib-table-responsive>
-    </ng-template>
-</ng-container>
+    <p-table selectionMode="multiple" (onRowSelect)="selectedEvent()" (onRowUnselect)="selectedEvent()"
+        [resizableColumns]="true" scrollDirection="both" [(selection)]="selectedValue" [scrollable]="true"
+        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="paginatorData.rows"
+        [rowsPerPageOptions]="rowsPerPage"
+        [currentPageReportTemplate]="reportString" [showCurrentPageReport]="showReportPage"
+        [totalRecords]="totalRecords" [(first)]="paginatorData.first" [loading]="loading" (onPage)="paginate($event)">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <!-- LABEL DELLE COLONNE -->
+                <th *ngIf="isSelectable">
+                    <!-- <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox> -->
+                </th>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.sort ? col.field : null">
+                    {{col.header}}
+                    <p-sortIcon *ngIf="col.sort" [field]="col.field"></p-sortIcon>
+                </th>
+                <th *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
+                    Operazioni
+                </th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData let-i="rowIndex" let-columns="columns">
+            <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="i">
+                <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
+                    [ngTemplateOutletContext]="{data:rowData, column:columns}">
+
+                </ng-template>
+
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<ng-template #internalBody let-data="data" let-columns="column">
+    <td *ngIf="isSelectable">
+        <p-tableCheckbox [value]="data"></p-tableCheckbox>
+    </td>
+    <td *ngFor="let col of columns"> 
+        <!-- DATI DELLE COLONNE -->
+        <span [innerHTML]="getFieldValue(data, col.field)">
+        </span>
+    </td>
+
+    <td *ngIf=" actions" pFrozenColumn [frozen]="true" alignFrozen="right">
+        <ng-container [ngTemplateOutlet]="actions" [ngTemplateOutletContext]="{data:data}">
+        </ng-container>
+    </td>
+</ng-template>

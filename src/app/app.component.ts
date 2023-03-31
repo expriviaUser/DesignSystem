@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Table, TableService } from 'primeng/table';
 import { ActionTable, BreadcrumbModel, FileStatus, MenubarItem, SidebarItem } from 'projects/design-system/src/public-api';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+    providers: [Table, TableService]
 })
 export class AppComponent {
     title = 'dSystem';
@@ -33,8 +35,10 @@ export class AppComponent {
     ]
 
     columns = [
-        { header: "Nome", field: "name" },
-        { header: "Cognome", field: "surname" }
+        { header: "Nome", field: "name", sort: true },
+        { header: "Cognome", field: "surname" },
+        { header: "Cognome", field: "surname" },
+        { header: "Cognome", field: "surname" },
     ];
 
     protected itemsMenu: MenubarItem[] = [
