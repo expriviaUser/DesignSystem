@@ -94,12 +94,12 @@ $ipad-pro-max-width: 1366px;
   --success-color-10: #006612;
   --success-color-50: #00B843;
   --success-color-100: #D4FFDC;
- 
+
   //WARNING
   --warning-color-10: #805100;
   --warning-color-50: #F59B00;
   --warning-color-100: #FFE8C0;
-  
+
   //BADGE
   --badge-color-10: #006612;
   --badge-color-50: #00B843;
@@ -111,6 +111,14 @@ $ipad-pro-max-width: 1366px;
   --text-color-disabled: #B8B8B8;
   --text-color-hyperlink: #3B82F6;
   --text-color-subtitle: #64748B;
+
+  //FILTER
+  --filter-background: #0EA5E9;
+  --filter-warning: #FDE68A;
+  --filter-error: #FECACA;
+
+  //BASE
+  --base-gray-border: #B8B8B8;
 
 }
 
@@ -149,14 +157,14 @@ $color--radio-tile-card-selected-bg: #E2E9F5;
 $color--radio-tile-card-hover-border: #1890FF;
 $color--radio-tile-card-border: #E2E9F5;
 //chip
-$color--chip-text: $color--white;
-$color--chip-background: #0EA5E9;
+$color--chip-text: var(--base-color-white);
+$color--chip-background: var(--filter-background);
 //filtri
-$color--filtri-dropdown-border: #B8B8B8;
-$color--filtri-dropdown-background: $color--white;
-$color--filtri-dropdown-title: $color--black;
-$color--filtri-chips-title: #737373;
-$color--filtri-dropdown-text: $color--black;
+$color--filtri-dropdown-border: var(--base-gray-border);
+$color--filtri-dropdown-background: var(--base-color-white);
+$color--filtri-dropdown-title: var(--base-color-black);
+$color--filtri-chips-title: var(--text-color-subtitle);
+$color--filtri-dropdown-text: var(--base-color-black);
 //File
 $color--file-subtitle: var(--text-color-subtitle);
 $color--file-title: var(--base-color-black);

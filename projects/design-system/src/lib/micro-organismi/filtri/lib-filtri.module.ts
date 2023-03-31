@@ -2,11 +2,11 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LibChipModule } from "../../atoms/chip/lib-chip.module";
-import { LibDropdownModule } from "../../atoms/dropdown/lib-dropdown.module";
 import { FiltriComponent } from "./components/filtri.component";
+import {LibTreeSelectModule} from "../../atoms/tree-select/lib-tree-select.module";
 
 const primeComponents = [
-  LibDropdownModule,
+  LibTreeSelectModule,
   LibChipModule
 ];
 
@@ -23,7 +23,7 @@ const exportComponent = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    LibDropdownModule
+    LibTreeSelectModule
   ],
   exports: [
     ...exportComponent,

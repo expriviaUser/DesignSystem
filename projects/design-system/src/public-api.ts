@@ -2,7 +2,7 @@
  * Public API Surface of design-system
  */
 
-/* 
+/*
     ATOMS
 */
 export * from './lib/atoms/card/components/card.component';
@@ -61,6 +61,10 @@ export * from './lib/atoms/icon-circle/lib-icon-circle.module';
 export * from './lib/atoms/tabs/components/tabs.component';
 export * from './lib/atoms/tabs/models/tabs.model';
 export * from './lib/atoms/tabs/lib-tabs.module';
+
+export * from './lib/atoms/tree-select/components/tree-select.component';
+export * from './lib/atoms/tree-select/models/tree-select.model';
+export * from './lib/atoms/tree-select/lib-tree-select.module';
 
 /*
     MOLECOLE

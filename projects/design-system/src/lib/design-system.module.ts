@@ -27,6 +27,7 @@ import { CommonModule } from '@angular/common';
 import { LibTableModule } from './molecole/table/lib-table.module';
 import { FileModule } from './molecole/file/file.module';
 import { FileStatusModule } from './molecole/file-status/file-status.module';
+import {LibTreeSelectModule} from "./atoms/tree-select/lib-tree-select.module";
 
 const sharedModules = [
   LibTagModule,
@@ -55,7 +56,8 @@ const sharedModules = [
   HeaderMenuModule,
   SidebarModule,
   FileModule,
-  FileStatusModule
+  FileStatusModule,
+  LibTreeSelectModule
 ];
 
 @NgModule({

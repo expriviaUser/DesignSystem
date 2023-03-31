@@ -1,0 +1,10 @@
+<p-treeSelect (ngModelChange)="selectedValuesEmit($event)"
+              [(ngModel)]="selectedNodes"
+              [options]="nodes"
+              [metaKeySelection]="false"
+              selectionMode="multiple"
+              placeholder="{{placeholder}}"
+              (onNodeSelect)="optionEmit($event)"
+              (onNodeUnselect)="unselectEmit($event)">
+
+</p-treeSelect>

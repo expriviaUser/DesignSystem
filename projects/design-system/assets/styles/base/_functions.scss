@@ -60,10 +60,22 @@
     line-height: pxToRem(16px);
 }
 
+@mixin typography-x-small-regular {
+    font-weight: 400;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+
 @mixin typography-text-xs-medium {
     font-weight: 500;
     font-size: pxToRem(12px);
     line-height: pxToRem(16px);
+}
+
+@mixin typography-x-small-semibold {
+  font-weight: 600;
+  font-size: pxToRem(14px);
+  line-height: pxToRem(20px);
 }
 
 @mixin typography-button-small {
