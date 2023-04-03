@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import {TreeSelectModel} from "../../../atoms/tree-select/models/tree-select.model";
 import {TreeSelectComponent} from "../../../atoms/tree-select/components/tree-select.component";
+import {FiltriModel} from "../models/filtri.model";
 
 @Component({
     selector: 'lib-filtri',
@@ -17,7 +18,7 @@ import {TreeSelectComponent} from "../../../atoms/tree-select/components/tree-se
 })
 export class FiltriComponent implements OnInit {
 
-    @Input() dropdownValues: TreeSelectModel[][] = [];
+    @Input() dropdownValues: FiltriModel[] = [];
     @Input() inputSelectedValues: TreeSelectModel[][] = [];
 
     selectedValues: TreeSelectModel[][] = [];

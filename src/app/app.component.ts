@@ -10,6 +10,7 @@ import {
   SidebarItem,
   TreeSelectModel
 } from 'projects/design-system/src/public-api';
+import {FiltriModel} from "../../projects/design-system/src/lib/micro-organismi/filtri/models/filtri.model";
 
 @Component({
   selector: 'app-root',
@@ -207,21 +208,25 @@ export class AppComponent {
     {label: 'Tipologia richiesta4', data: 'Tipologia richiesta4', key: '3'},
   ];
 
-  dropdownValues: TreeSelectModel[][] = [
-    [
-      {label: 'Tipologia richiesta1', data: 'Tipologia richiesta1', key: '0'},
-      {label: 'Tipologia richiesta2', data: 'Tipologia richiesta2', key: '1'},
-      {label: 'Tipologia richiesta3', data: 'Tipologia richiesta3', key: '2'},
-      {label: 'Tipologia richiesta4', data: 'Tipologia richiesta4', key: '3'},
+  dropdownValues: FiltriModel[] = [
+    {
+      data: [
+        {label: 'Tipologia richiesta1', data: 'Tipologia richiesta1', key: '0'},
+        {label: 'Tipologia richiesta2', data: 'Tipologia richiesta2', key: '1'},
+        {label: 'Tipologia richiesta3', data: 'Tipologia richiesta3', key: '2'},
+        {label: 'Tipologia richiesta4', data: 'Tipologia richiesta4', key: '3'},
 
-    ],
-    [
-      {label: 'Tipologia richiesta5', data: 'Tipologia richiesta5', key: '4'},
-      {label: 'Tipologia richiesta6', data: 'Tipologia richiesta6', key: '5'},
-      {label: 'Tipologia richiesta7', data: 'Tipologia richiesta7', key: '6'},
-      {label: 'Tipologia richiesta8', data: 'Tipologia richiesta8', key: '7'}
-    ]
-  ];
+      ], placeholder: "Placeholder1"
+    },
+    {
+      data: [
+        {label: 'Tipologia richiesta5', data: 'Tipologia richiesta5', key: '4'},
+        {label: 'Tipologia richiesta6', data: 'Tipologia richiesta6', key: '5'},
+        {label: 'Tipologia richiesta7', data: 'Tipologia richiesta7', key: '6'},
+        {label: 'Tipologia richiesta8', data: 'Tipologia richiesta8', key: '7'}
+      ], placeholder: "Placeholder2"
+    }];
+
 
   constructor(private fb: FormBuilder) {
   }
