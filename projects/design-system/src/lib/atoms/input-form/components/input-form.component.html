@@ -29,13 +29,13 @@
 
         <!-- Input checkbox -->
         <div class="field-checkbox" *ngSwitchCase="'checkbox'">
-            <p-checkbox (change)="emitValue($event)" [label]="label" [formControl]="control" [binary]="true"
-                inputId="{{formControlName}}-label'"></p-checkbox>
+            <lib-checkbox-button (change)="emitValue($event)" [label]="label" 
+                ></lib-checkbox-button>
         </div>
 
         <!-- Input radio -->
         <div class="field-radio" *ngSwitchCase="'radio'">
-            <p-radioButton [value]="value" [formControl]="control" (change)="emitValue($event)"></p-radioButton>
+            <lib-radio-button [control]="control" [disabled]="disabled" [id]="formControlName+'-label'" ></lib-radio-button>
         </div>
 
         <!-- dropdown sort -->

@@ -21,6 +21,7 @@ export class InputComponent {
     @Input() control: AbstractControl = new FormControl();
 
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
+    @Output() iconClicked: EventEmitter<any> = new EventEmitter<any>();
 
     @Input() value: any;
     @Input() type: string = 'text';
@@ -41,7 +42,7 @@ export class InputComponent {
     }
 
     ngOnInit() {
-        switch(this.iconPos) {
+        switch (this.iconPos) {
             case 'left':
                 this.iconPos = 'p-input-icon-left';
                 break;
@@ -49,6 +50,10 @@ export class InputComponent {
                 this.iconPos = 'p-input-icon-right';
                 break;
         }
+    }
+
+    iconClick() {
+        this.iconClicked.emit();
     }
 
 

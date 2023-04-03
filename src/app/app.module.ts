@@ -7,6 +7,7 @@ import { DesignSystemModule } from 'projects/design-system/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     DesignSystemModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

@@ -17,7 +17,10 @@ export class AutocompleteComponent {
     @Input() placeholder: string = '';
     @Input() value: any ;
     @Input() label: string = '';
+    @Input() icon: string = '';
     @Input() disabled: boolean = false;
+    @Input() showClear: boolean = false;
+    @Input() minLength: number = 3;
     @Input() control: AbstractControl = new FormControl();
 
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
@@ -44,7 +47,7 @@ export class AutocompleteComponent {
     constructor() { }
     
     filter(event: any) {
-        if (event.query.length > 2) {
+        if (event.query.length > this.minLength-1) {
             let filtered: any[] = [];
             let query = event.query.toString();
             for (let i = 0; i < this.valueAutocomplete.length; i++) {

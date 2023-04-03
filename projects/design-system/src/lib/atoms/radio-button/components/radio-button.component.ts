@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input, Output } from '@angular/core';
 import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -22,6 +22,7 @@ export class RadioButtonComponent {
     @Input() name: string = '';
     @Input() value: string = '';
     @Input() control: FormControl = new FormControl();
+
     
     
     id: string = '';

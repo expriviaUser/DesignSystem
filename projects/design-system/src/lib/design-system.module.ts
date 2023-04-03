@@ -30,6 +30,7 @@ import { FileStatusModule } from './molecole/file-status/file-status.module';
 import {LibTreeSelectModule} from "./atoms/tree-select/lib-tree-select.module";
 import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
 import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
+import { ChooseFileModule } from './atoms/choose-file/choose-file.module';
 
 const sharedModules = [
   LibTagModule,
@@ -61,7 +62,8 @@ const sharedModules = [
   FileStatusModule,
   LibTreeSelectModule,
   LibProgressBarModule,
-  LibUploadFileModule
+  LibUploadFileModule,
+  ChooseFileModule
 ];
 
 @NgModule({

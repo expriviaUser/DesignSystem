@@ -163,6 +163,14 @@ $color--menubar-link-active-background: $color--white;
 $color--radio-button-border-default: #D4D5D8;
 $color--radio-button-icon-selected: #1890FF;
 
+//autocomplete
+$color--autocomplete-button-background: var(--base-color-transparent); 
+$color--autocomplete-button-border: var(--base-color-black); 
+
+//upload file
+$color--uploadfile-button-background: var(--secondary-color-50); 
+$color--uploadfile-button-text: var(--base-color-white); 
+
 // radio-tiles
 $color--radio-tile-card-selected-bg: #E2E9F5;
 $color--radio-tile-card-hover-border: #1890FF;

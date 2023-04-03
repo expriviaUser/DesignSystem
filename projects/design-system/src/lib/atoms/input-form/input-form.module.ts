@@ -1,8 +1,5 @@
-import { CheckboxModule } from 'primeng/checkbox';
-import { RadioButtonModule } from 'primeng/radiobutton';
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LibAutocompleteModule } from '../autocomplete/lib-autocomplete.module';
 import { LibCalendarModule } from '../calendar/lib-calendar.module';
 import { LibCheckboxModule } from '../checkbox/lib-checkbox.module';
@@ -22,9 +19,7 @@ const primeComponents = [
     LibRadioButtonModule,
     LibTextareaModule,
     LibInputModule,
-    LibErrorInlineModule,
-    RadioButtonModule,
-    CheckboxModule
+    LibErrorInlineModule
 ];
 
 const exportComponent = [
@@ -37,8 +32,7 @@ const exportComponent = [
     ],
     imports: [
         ...primeComponents,
-        FormsModule,
-        ReactiveFormsModule,
+
         CommonModule
     ],
     exports: [
