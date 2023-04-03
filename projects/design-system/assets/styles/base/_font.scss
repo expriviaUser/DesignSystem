@@ -6,6 +6,17 @@ html {
 }
 
 @font-face {
+    font-family: 'EniExpBold';
+    src: url('../../font/EniExpBold.eot');
+    src: url('../../font/EniExpBold.eot?#iefix') format('embedded-opentype'),
+    url('../../font/EniExpBold.woff2') format('woff2'),
+    url('../../font/EniExpBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+/* 
+@font-face {
     font-family: "Roboto";
     src: local(Roboto-Regular), url("../../font/Roboto-Regular.ttf") format("truetype");
     font-weight: normal;
@@ -35,4 +46,28 @@ html {
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
+} */
+
+.small-regular {
+    @include typography-small-regular;
+}
+
+.small-semibold {
+    @include typography-small-semibold;
+}
+
+.small-bold {
+    @include typography-small-bold;
+}
+
+.x-small-regular {
+    @include typography-x-small-regular;
+}
+
+.x-small-semibold {
+    @include typography-x-small-semibold;
+}
+
+.xs-small-regular {
+    @include typography-xs-small-regular;
 }

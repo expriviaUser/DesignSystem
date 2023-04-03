@@ -72,6 +72,7 @@ $ipad-pro-max-width: 1366px;
   --base-color-black: #000000;
   --base-color-white: #FFFFFF;
   --base-color-background: #F4F5F8;
+  --base-color-transparent: transparent;
 
   //GRAY
   --gray-color-10: #626D7D;
@@ -160,34 +161,47 @@ $color--menubar-link-active-background: $color--white;
 // radio-button
 $color--radio-button-border-default: #D4D5D8;
 $color--radio-button-icon-selected: #1890FF;
+
 // radio-tiles
 $color--radio-tile-card-selected-bg: #E2E9F5;
 $color--radio-tile-card-hover-border: #1890FF;
 $color--radio-tile-card-border: #E2E9F5;
+
 //chip
 $color--chip-text: var(--base-color-white);
 $color--chip-background: var(--filter-background);
+
 //filtri
 $color--filtri-dropdown-border: var(--base-gray-border);
 $color--filtri-dropdown-background: var(--base-color-white);
 $color--filtri-dropdown-title: var(--base-color-black);
 $color--filtri-chips-title: var(--text-color-subtitle);
 $color--filtri-dropdown-text: var(--base-color-black);
+
 //File
 $color--file-subtitle: var(--text-color-subtitle);
 $color--file-title: var(--base-color-black);
+
 //tag
 $color--tag-success: var(--success-color-50);
-$color--tag-info: #000000;
+$color--tag-info: var(--secondary-color-50);
 $color--tag-warning: var(--warning-color-50);
 $color--tag-danger: var(--error-color-50);
 $color--tag-text: var(--base-color-white);
+
 //tabs
 $color--tabs-background: var(--base-color-white);
+$color--tabs-panel-background: var(--base-color-transparent);
 $color--tabs-text: #64748B;
 $color--tabs-border: #E2E8F0;
 $color--tabs-border-selected: var(--secondary-color-50);
 $color--tabs-text-selected: var(--secondary-color-50);
+
+//paginator
+$color--paginator-border-transparent: var(--base-color-transparent);
+$color--paginator-background-transparent: var(--base-color-transparent);
+$color--paginator-text: var(--gray-color-40);
+
 // end colors components
 
 $color--surface-a: #FFFFFF;
