@@ -1,17 +1,29 @@
 /// Fa la conversione da unità px a rem
 @function pxToRem($size) {
-  $remSize: $size / $font-size-in-px;
-  @return #{$remSize}rem;
+    $remSize: $size / $font-size-in-px;
+    @return #{$remSize}rem;
 }
 
 /// Aggiunge una property per il margin
 @mixin marginCalc($position, $px) {
-  margin-#{$position}: #{$px}
+    margin-#{$position}: #{$px};
 }
 
 /// Aggiunge una property per il padding
 @mixin paddingCalc($position, $px) {
-  padding-#{$position}: #{$px}
+    padding-#{$position}: #{$px};
+}
+
+@mixin typography-xs-small-regular {
+    font-weight: 400;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
+}
+
+@mixin typography-text-xs-medium {
+    font-weight: 500;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
 }
 
 @mixin typography-body-regular {
@@ -25,34 +37,28 @@
     line-height: pxToRem(20px);
 }
 
-@mixin typography-xs-small-regular {
-    font-weight: 400;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(16px);
-}
-
 @mixin typography-small-semibold {
     font-weight: 600;
     font-size: pxToRem(16px);
     line-height: pxToRem(24px);
 }
 
-@mixin typography-text-xs-medium {
-    font-weight: 500;
+@mixin typography-x-small-semibold {
+    font-weight: 600;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+
+@mixin typography-small-bold {
+    font-weight: 700;
     font-size: pxToRem(12px);
     line-height: pxToRem(16px);
 }
 
-@mixin typography-x-small-semibold {
-  font-weight: 600;
-  font-size: pxToRem(14px);
-  line-height: pxToRem(20px);
-}
-
-@mixin typography-small-bold {
-  font-weight: 700;
-  font-size: pxToRem(12px);
-  line-height: pxToRem(16px);
+@mixin typography-small-regular {
+    font-weight: 400;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
 }
 
 @mixin typography-button-small {

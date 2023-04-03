@@ -3,7 +3,6 @@
 }
 
 .p-component {
-    font-family: $font-family;
     font-size: 0.875rem;
     font-weight: $font-weight;
 }
@@ -32,7 +31,6 @@
 
 .p-link {
     font-size: 1rem;
-    font-family: $font-family;
     border-radius: $border-radius;
 }
 
@@ -97,7 +95,6 @@
             padding: 0.375rem 0;
 
             input {
-                font-family: $font-family;
                 font-size: 1rem;
                 color: $color--text-color;
                 padding: 0;
@@ -818,7 +815,6 @@ p-checkbox.ng-dirty.ng-invalid {
 }
 
 .p-chips .p-chips-multiple-container .p-chips-input-token input {
-    font-family: $font-family;
     font-size: 1rem;
     color: $color--text-color;
     padding: 0;
@@ -1157,7 +1153,6 @@ p-inputswitch.ng-dirty.ng-invalid>.p-inputswitch {
 
 // PrimeNG inputtext component
 .p-inputtext {
-    font-family: $font-family;
     font-size: 1rem;
     color: $color--text-color;
     background: $color--surface-a;
@@ -4826,10 +4821,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     align-items: center;
     flex-wrap: wrap;
     border-width: 0;
-    border: solid $color--surface-c;
+    border: solid $color--paginator-border-transparent;
     border-radius: $border-radius;
-    background: $color--surface-a;
-    color: $color--text-color-secondary;
+    background: $color--paginator-background-transparent;
+    color: $color--paginator-text;
 
     button {
         min-width: 40px;
@@ -7790,7 +7785,6 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
 .p-terminal .p-terminal-input {
     font-size: 1rem;
-    font-family: $font-family;
 }
 
 
