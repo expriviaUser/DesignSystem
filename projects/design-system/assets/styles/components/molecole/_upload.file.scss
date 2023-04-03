@@ -1,0 +1,39 @@
+.upload-file-progress {
+    display: flex;
+    flex-direction: column;
+
+    .file-structure {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: $gap-1;
+        padding: 1rem;
+
+        .file-icon {
+            height: 100%;
+        }
+    
+        .file-data {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: $gap-1;
+    
+            .title-icon {
+                color: $color--file-title;
+                @include typography-small-semibold;
+            }
+    
+            .title {
+                color: $color--file-title;
+                @include typography-body-regular;
+            }
+    
+            .dimension {
+                @include typography-xs-small-regular;
+            }
+        }
+    }
+
+    
+}

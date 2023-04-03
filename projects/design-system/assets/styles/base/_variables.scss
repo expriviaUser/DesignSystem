@@ -73,6 +73,7 @@ $ipad-pro-max-width: 1366px;
   --base-color-white: #FFFFFF;
   --base-color-background: #F4F5F8;
   --base-color-transparent: transparent;
+  --base-color-border: #B8B8B8;
 
   //GRAY
   --gray-color-10: #626D7D;
@@ -118,8 +119,8 @@ $ipad-pro-max-width: 1366px;
   --filter-warning: #FDE68A;
   --filter-error: #FECACA;
 
-  //BASE
-  --base-gray-border: #B8B8B8;
+  //BORDERS
+  --progressbar-border-radius: 10px;
 
 }
 
@@ -172,7 +173,7 @@ $color--chip-text: var(--base-color-white);
 $color--chip-background: var(--filter-background);
 
 //filtri
-$color--filtri-dropdown-border: var(--base-gray-border);
+$color--filtri-dropdown-border: var(--base-color-border);
 $color--filtri-dropdown-background: var(--base-color-white);
 $color--filtri-dropdown-title: var(--base-color-black);
 $color--filtri-chips-title: var(--text-color-subtitle);
@@ -188,6 +189,9 @@ $color--tag-info: var(--secondary-color-50);
 $color--tag-warning: var(--warning-color-50);
 $color--tag-danger: var(--error-color-50);
 $color--tag-text: var(--base-color-white);
+$color--tag-disabled-background: var(--gray-color-10);
+$color--tag-light-information-background: var(--filter-background);
+$color--tag-light-danger-background: var(--error-color-100);
 
 //tabs
 $color--tabs-background: var(--base-color-white);
@@ -204,6 +208,17 @@ $color--paginator-text: var(--gray-color-40);
 $color-paginator-button-background: var(--base-color-white);
 $color-paginator-button-border: var(--gray-color-50);
 $color-paginator-button-text: var(--gray-color-30);
+
+//dialog
+$color--dialog-background-header: var(--base-color-white);
+$color--dialog-text-header: var(--base-color-black);
+
+//progress-bar
+$color--progressbar-background: var(--gray-color-80);
+$color--progressbar-background-progress: var(--secondary-color-50);
+$color--progressbar-text: var(--base-color-white);
+$color--progressbar-border: var(--base-color-border);
+$progressbar-border-radius: var(--progressbar-border-radius);
 
 // end colors components
 

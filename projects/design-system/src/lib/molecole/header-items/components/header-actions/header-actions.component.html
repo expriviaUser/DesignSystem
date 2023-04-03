@@ -5,8 +5,18 @@
     <div>
         <lib-icon-circle icon="pi pi-question-circle" type="help" size="small"></lib-icon-circle>
     </div>
+    <div *ngIf="fileUpload.length > 0">
+        <lib-icon-circle icon="pi pi-upload" type="help" size="small" (click)="op.toggle($event)"></lib-icon-circle>
+        <p-overlayPanel #op>
+            <ng-template pTemplate="content">
+                <span *ngFor="let file of fileUpload">
+                    <lib-upload-file [file]="file"></lib-upload-file>
+                </span>
+            </ng-template>
+        </p-overlayPanel>
+    </div>
     <div>
-        <lib-header-notifications [notifications]="notifs" *ngIf="user" ></lib-header-notifications>
+        <lib-header-notifications [notifications]="notifs" *ngIf="user"></lib-header-notifications>
     </div>
     <div>
         <lib-language-selector [options]="languages" placeholder="Seleziona lingua"></lib-language-selector>

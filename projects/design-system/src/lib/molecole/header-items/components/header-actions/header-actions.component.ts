@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuItem } from '../../models/menuItem.model';
 import { UserNotification } from '../../models/user-notification.model';
+import { FileUpload } from '../../../upload-file/models/file-upload.model';
 
 @Component({
     selector: 'lib-header-actions',
@@ -8,7 +9,9 @@ import { UserNotification } from '../../models/user-notification.model';
     styleUrls: ['./header-actions.component.scss']
 })
 export class HeaderActionsComponent {
-    notifs: UserNotification[] = [
+    @Input() fileUpload: FileUpload[] = [];
+     
+    @Input() notifs: UserNotification[] = [
         {
             title: 'Avviso generale dal team di Roberto Burioni',
             subtitle: 'Questi risultati indicano che, sebbene i vaccinati e/o guariti rimangono altamente infettivi, la loro infettività è ridotta rispetto agli individui mai infettati o vaccinati.',
@@ -28,7 +31,7 @@ export class HeaderActionsComponent {
         }
     ];
 
-    user: MenuItem[] = [
+    @Input() user: MenuItem[] = [
         {
             label: "Jonh Doe",
             items: [
@@ -41,7 +44,7 @@ export class HeaderActionsComponent {
         },
     ];
 
-    languages: {code: string, name: string}[] = [
+    @Input() languages: {code: string, name: string}[] = [
         {code: 'it', name:'it'},
         {code: 'en', name:'en'},
     ]

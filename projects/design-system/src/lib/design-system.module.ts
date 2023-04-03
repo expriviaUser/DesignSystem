@@ -28,6 +28,8 @@ import { LibTableModule } from './molecole/table/lib-table.module';
 import { FileModule } from './molecole/file/file.module';
 import { FileStatusModule } from './molecole/file-status/file-status.module';
 import {LibTreeSelectModule} from "./atoms/tree-select/lib-tree-select.module";
+import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
+import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
 
 const sharedModules = [
   LibTagModule,
@@ -57,7 +59,9 @@ const sharedModules = [
   SidebarModule,
   FileModule,
   FileStatusModule,
-  LibTreeSelectModule
+  LibTreeSelectModule,
+  LibProgressBarModule,
+  LibUploadFileModule
 ];
 
 @NgModule({

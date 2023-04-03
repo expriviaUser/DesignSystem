@@ -110,6 +110,13 @@ export * from './lib/micro-organismi/filtri/components/filtri.component';
 export * from './lib/micro-organismi/filtri/models/filtri.model';
 export * from './lib/micro-organismi/filtri/lib-filtri.module';
 
+export * from './lib/atoms/progress-bar/components/progress-bar.component';
+export * from './lib/atoms/progress-bar/lib-progress-bar.module';
+
+export * from './lib/molecole/upload-file/components/upload-file.component';
+export * from './lib/molecole/upload-file/models/file-upload.model';
+export * from './lib/molecole/upload-file/lib-upload-file.module';
+
 export * from './lib/molecole/file/components/file.component';
 export * from './lib/molecole/file/models/file.model';
 export * from './lib/molecole/file/file.module';

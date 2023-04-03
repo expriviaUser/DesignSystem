@@ -11,6 +11,9 @@
 @import './atoms/chip';
 @import './atoms/tabs';
 @import './atoms/breadcrumb';
+@import './atoms/dialog';
+@import './atoms/progress-bar';
+@import './atoms/overlay-panel';
 
 
 @import './molecole/search-bar';
@@ -25,6 +28,7 @@
 @import './molecole/file';
 @import './molecole/file-status';
 @import './molecole/cart';
+@import './molecole/upload.file';
 
 
 @import './micro-organismi/filtri';

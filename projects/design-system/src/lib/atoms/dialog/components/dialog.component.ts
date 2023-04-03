@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, TemplateRef } from "@angular/core";
 
 @Component({
   selector: "lib-dialog",
@@ -8,5 +8,7 @@ import { Component, Input } from "@angular/core";
 export class DialogComponent {
   @Input() visible: boolean = false;
   @Input() title: string = "";
+  @Input() subtitle: string = "";
   @Input() closable: boolean = true;
+  @Input() externalHeader?: TemplateRef<any>;
 }

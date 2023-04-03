@@ -20,6 +20,7 @@ import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
 import { InputFormModule } from '../../atoms/input-form/input-form.module';
+import { LibUploadFileModule } from '../upload-file/lib-upload-file.module';
 
 
 const primeComponents = [
@@ -55,7 +56,8 @@ const exportComponent = [
         FormsModule,
         ReactiveFormsModule,
         LibBadgeModule,
-        InputFormModule
+        InputFormModule,
+        LibUploadFileModule
     ],
     exports: [
         ...exportComponent,

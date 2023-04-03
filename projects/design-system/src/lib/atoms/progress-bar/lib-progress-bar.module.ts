@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogModule } from 'primeng/dialog';
-import { DialogComponent } from './components/dialog.component';
-
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ProgressBarComponent } from './components/progress-bar.component';
 
 const primeComponents = [
-    DialogModule
+    ProgressBarModule
 ];
 
 const exportComponent = [
-    DialogComponent
+    ProgressBarComponent
 ];
 
 @NgModule({
@@ -28,4 +27,4 @@ const exportComponent = [
     ]
 })
 
-export class LibDialogModule { }
+export class LibProgressBarModule { }

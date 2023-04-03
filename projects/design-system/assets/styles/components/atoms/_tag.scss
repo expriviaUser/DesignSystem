@@ -1,80 +1,72 @@
-
-
 .p-tag {
-  background: $color--primary-color;
-  color: $color--tag-text;
-  padding: pxToRem(4px) pxToRem(8px);
-  border-radius: $border-radius;
-
-  @include typography-text-xs-medium;
-
-  &.p-tag-success {
-    background-color: $color--tag-success;
+    background: $color--primary-color;
     color: $color--tag-text;
-  }
+    padding: pxToRem(4px) pxToRem(8px);
+    border-radius: $border-radius;
 
-  &.p-tag-info {
-    background-color: $color--tag-info;
-    color: $color--tag-text;
-  }
+    @include typography-text-xs-medium;
 
-  &.p-tag-warning {
-    background-color: $color--tag-warning;
-    color: $color--tag-text;
-  }
+    &.p-tag-success {
+        background-color: $color--tag-success;
+        color: $color--tag-text;
+    }
 
-  &.p-tag-danger {
-    background-color: $color--tag-danger;
-    color: $color--tag-text;
-  }
+    &.p-tag-info {
+        background-color: $color--tag-info;
+        color: $color--tag-text;
+    }
 
-  & .p-tag-icon {
-    margin-right: 0.25rem;
-    font-size: 0.75rem;
-  }
+    &.p-tag-warning {
+        background-color: $color--tag-warning;
+        color: $color--tag-text;
+    }
+
+    &.p-tag-danger {
+        background-color: $color--tag-danger;
+        color: $color--tag-text;
+    }
+
+    & .p-tag-icon {
+        margin-right: 0.25rem;
+        font-size: 0.75rem;
+    }
 }
 
 .app-tag {
+    &.app-tag- {
+        &disable {
+            .p-tag {
+                background: $color--tag-disabled-background;
+            }
+        }
 
-  &.app-tag- {
-    &disable {
+        &lightInformation {
+            .p-tag {
+                background: $color--tag-light-information-background;
+            }
+        }
 
-      .p-tag {
-        background: #64748B;   
-      }
+        &lightAlert {
+            .p-tag {
+                background: $color--tag-light-danger-background ;
+                color: $color--tag-danger;
+            }
+        }
+
+        &informationReverse {
+            .p-tag {
+                background: $color--tag-text;
+                color: $color--tag-info;
+                border: 1px solid $color--tag-info;
+            }
+        }
+
+        &successReverse {
+            .p-tag {
+                background: $color--tag-text;
+                color: $color--tag-success;
+                border: 1px solid $color--tag-success;
+            }
+        }
     }
-
-    &lightInformation {
-
-      .p-tag {
-        background: #0EA5E9;
-      }
-    }
-
-    &lightAlert {
-
-      .p-tag {
-        background: #EF444426;
-        color: #EC445A;
-      }
-    }
-
-    &informationReverse {
-
-      .p-tag {
-        background: #FFFFFF;
-        color: #3B82F6;
-        border: 1px solid #3B82F6;
-      }
-    }
-
-    &successReverse {
-
-      .p-tag {
-        background: #FFFFFF;
-        color: #22C55E;
-        border: 1px solid #22C55E;
-      }
-    }
-  }
 }

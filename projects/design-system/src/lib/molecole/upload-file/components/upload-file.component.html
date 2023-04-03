@@ -1,0 +1,12 @@
+<div class="upload-file-progress">
+    <div class="file-structure">
+        <img class="file-icon" *ngIf="srcIcon" [src]="srcIcon" alt="file icon" />
+        <div class="file-data">
+            <span [class]="srcIcon ? 'title-icon' : 'title'">{{file.title}}</span>
+            <span *ngIf="file.dimension" class="dimension">{{file.dimension}}</span>
+        </div>
+    </div>
+    <div>
+        <lib-progress-bar [progress]="file.progress"></lib-progress-bar>
+    </div>
+</div>
