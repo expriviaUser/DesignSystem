@@ -4829,10 +4829,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     button {
         min-width: 40px;
         height: 40px;
-        background-color: transparent;
-        border: 1px solid $color--black-700;
-        color: $color--text-color-secondary;
-        margin: 0.143rem;
+        background-color: $color-paginator-button-background;
+        border: 1px solid $color-paginator-button-border;
+        color: $color-paginator-button-text;
+        //margin: 0.143rem;
         transition: box-shadow 0.2s;
 
         &:not(.p-disabled) {
