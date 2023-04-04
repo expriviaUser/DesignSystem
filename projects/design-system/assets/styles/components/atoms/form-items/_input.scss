@@ -7,6 +7,11 @@
         color: $color--primary-color;
     }
 
+    label {
+        @include typography-form-label;
+        color: $color--form-label-text;
+    }
+
     // TODO: refactor di questo sotto.
     &:has(.field-checkbox) {
         min-height: 50px;

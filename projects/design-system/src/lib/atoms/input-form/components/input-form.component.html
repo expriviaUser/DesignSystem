@@ -1,6 +1,6 @@
 <div class="field">
     <!-- <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'" [class.hasStatic]="hasStatic">{{label}}</label> -->
-    <label *ngIf="label && type!='checkbox'" [ngStyle]="{'font-weight': type=='static' ? '800':'400'}"
+    <label *ngIf="label && type!='checkbox'"
         [for]="formControlName" id="{{formControlName}}-label'">{{label}}</label>
 
     <div [ngSwitch]="type" [class.p-input-icon-right]="icon !== ''">

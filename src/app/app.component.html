@@ -42,7 +42,7 @@
 <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </lib-breadcrumb>
 
-<lib-dialog [visible]="false" [title]="'form'" [subtitle]="'Prova form'">
+<lib-dialog [visible]="true" [title]="'form'" [subtitle]="'Prova form'">
 
     <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
         <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>

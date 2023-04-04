@@ -79,9 +79,22 @@
     line-height: pxToRem(24px);
 }
 
+@mixin typography-generate($font-size, $line-height, $font-weight) {
+    font-weight: $font-weight;
+    font-size: pxToRem($font-size);
+    line-height: pxToRem($line-height);
+}
+
+@mixin typography-form-label {
+    font-weight: 600;
+    font-size: pxToRem(16px);
+    line-height: pxToRem(28px);
+}
+
 @mixin h6 {
     font-weight: 600;
     font-size: pxToRem(24px);
     line-height: pxToRem(28px);
     margin: 0;
 }
+
