@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownModule } from 'primeng/dropdown';
 import { DropdownComponent } from './components/dropdown.component';
 
@@ -22,8 +21,7 @@ const exportComponent = [
     ...primeComponents,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule
   ],
   exports: [
     ...exportComponent,
