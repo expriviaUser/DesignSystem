@@ -6,19 +6,28 @@
 
     form {
         display: flex;
-        flex-shrink: 1;
-
+        flex: 0 0 auto;
+        height: 100%;
         //X GlobalDoc
+
+        .field {
+            height: 100%;
+
+            div {
+                height: 100%;
+            }
+        }
         .p-dropdown {
             line-height: 0;
             border-bottom-right-radius: 0;
             border-top-right-radius: 0;
+            height: 100%;
         }
 
         .p-inputtext {
             border-radius: 0;
             line-height: 0.875;
-            max-height: 48px;
+            height: 100%;
         }
 
         .p-button {

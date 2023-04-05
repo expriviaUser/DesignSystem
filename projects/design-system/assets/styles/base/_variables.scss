@@ -165,10 +165,20 @@ $color--button-primary-text: var(--base-color-black);
 $color--button-primary-background-disabled: var(--primary-color-60);
 $color--button-primary-background-hover: var(--primary-color-40);
 
-$color--button-secondary-background: var(--secondary-color-50);
-$color--button-secondary-background-hover: var(--secondary-color-30);
-$color--button-secondary-background-disabled: var(--secondary-color-70);
-$color--button-secondary-text: var(--base-color-white);
+$color--button-secondary-raised-background: var(--secondary-color-50);
+$color--button-secondary-raised-background-hover: var(--secondary-color-30);
+$color--button-secondary-raised-background-disabled: var(--secondary-color-70);
+$color--button-secondary-raised-text: var(--base-color-white);
+
+$color--button-secondary-background: var(--base-color-white);
+$color--button-secondary-background-disabled: var(--base-color-background);
+$color--button-secondary-border-hover: var(--secondary-color-50);
+$color--button-secondary-border: var(--base-color-border);
+$color--button-secondary-border-disabled: var(--base-color-border);
+$color--button-secondary-text-disabled: var(--base-color-border);
+$color--button-secondary-text: var(--base-color-black);
+
+$color--button-text-secondary-background: var(--base-color-white);
 
 // search-bar
 $color--searchbar-inputtype-border: #cbd5e1;
@@ -234,6 +244,7 @@ $color--paginator-border-transparent: var(--base-color-transparent);
 $color--paginator-background-transparent: var(--base-color-transparent);
 $color--paginator-text: var(--gray-color-40);
 $color-paginator-button-background: var(--base-color-white);
+$color-paginator-button-active: var(--secondary-color-50);
 $color-paginator-button-border: var(--gray-color-50);
 $color-paginator-button-text: var(--gray-color-30);
 

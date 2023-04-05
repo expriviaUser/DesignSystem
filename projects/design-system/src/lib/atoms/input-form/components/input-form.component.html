@@ -5,13 +5,13 @@
 
     <div [ngSwitch]="type" [class.p-input-icon-right]="icon !== ''">
 
-        <i *ngIf="icon !== ''" class="pi" [class]="icon"></i>
+        <!-- <i *ngIf="icon !== ''" class="pi" [class]="icon"></i> -->
 
         <!-- Input statica -->
         <div class="static" *ngSwitchCase="'static'">{{getValueControl()}}</div>
 
         <!-- Input number -->
-        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" (selectedValue)="emitValue($event)"
+        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos" (selectedValue)="emitValue($event)"
             [control]="control" [id]="formControlName" type="number" />
 
         <!-- dropdown  -->
@@ -25,7 +25,7 @@
         <!-- Input autocomplete  -->
         <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
             (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
-            [disabled]="inputDisabled"></lib-autocomplete>
+            [disabled]="inputDisabled" [icon]="icon" ></lib-autocomplete>
 
         <!-- Input checkbox -->
         <div class="field-checkbox" *ngSwitchCase="'checkbox'">

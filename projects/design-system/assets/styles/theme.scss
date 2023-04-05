@@ -4746,15 +4746,15 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
         background-color: transparent;
         border: 0 none;
         color: $color--black-700;
+        height: 100%;
     }
 
     .p-paginator-pages {
         .p-paginator-page {}
 
         .p-paginator-page.p-highlight {
-            border-color: 1px solid $color--blue-100;
-            background: $color--blue-800;
-            color: $color--blue-100;
+            border-color: $color-paginator-button-active;
+            color: $color-paginator-button-active;
         }
     }
 }

@@ -58,6 +58,12 @@ export class ButtonComponent {
             case "link-icon":
                 this.class += " p-button-link";
                 break;
+            case "link-secondary":
+                this.class += " p-button-link p-button-secondary";
+                break;
+            case "secondary-raised":
+                this.class += " p-button-raised p-button-secondary";
+                break;
         }
 
         // Gestione della dimensione del button

@@ -109,6 +109,11 @@
             border-color: transparent;
         }
     }
+    &-secondary {
+        background-color: $color--button-text-secondary-background;
+        color: $color--primary-color;
+        border-color: $color--button-text-secondary-background;
+    }
 }
 
 .p-button.p-button-text.p-button-plain {
@@ -128,6 +133,32 @@
 .p-button.p-button-raised {
     box-shadow: 0 3px 1px -2px rgba($color--black-50, 0.2), 0 2px 2px 0 rgba($color--black-50, 0.14),
         0 1px 5px 0 rgba($color--black-50, 0.12);
+
+    &.p-button-secondary {
+        color: $color--button-secondary-raised-text;
+        background: $color--button-secondary-raised-background;
+        border: 1px solid $color--button-secondary-raised-background;
+        &:enabled {
+            &:hover {
+                background: $color--button-secondary-raised-background-hover;
+                color: $color--button-secondary-raised-text;
+                border-color: $color--button-secondary-raised-background-hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 0.2rem #e2e8f0;
+            }
+            &:active {
+                background: $color--button-secondary-raised-background-hover;
+                color: $color--button-secondary-raised-text;
+                border-color: $color--button-secondary-raised-background-hover;
+            }
+        }
+        &:disabled {
+            color: $color--button-secondary-raised-text;
+            background: $color--button-secondary-raised-background-disabled;
+            border: 1px solid $color--button-secondary-raised-background-disabled;
+        }
+    }
 }
 
 .p-button.p-button-rounded {
@@ -178,26 +209,22 @@
 .p-button.p-button-secondary {
     color: $color--button-secondary-text;
     background: $color--button-secondary-background;
-    border: 1px solid $color--button-secondary-background;
+    border: 1px solid $color--button-secondary-border;
     &:enabled {
         &:hover {
-            background: $color--button-secondary-background-hover;
-            color: $color--button-secondary-text;
-            border-color: $color--button-secondary-background-hover;
+            border-color: $color--button-secondary-border-hover;
         }
         &:focus {
             box-shadow: 0 0 0 0.2rem #e2e8f0;
         }
         &:active {
-            background: $color--button-secondary-background-hover;
-            color: $color--button-secondary-text;
-            border-color: $color--button-secondary-background-hover;
+            border-color: $color--button-secondary-border-hover;
         }
     }
     &:disabled {
-        color: $color--button-secondary-text;
+        color: $color--button-secondary-text-disabled;
         background: $color--button-secondary-background-disabled;
-        border: 1px solid $color--button-secondary-background-disabled;
+        border: 1px solid $color--button-secondary-border-disabled;
     }
 }
 

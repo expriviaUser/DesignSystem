@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, Input, SimpleChanges, TemplateRef } from '@angular/core';
 import { Tabs } from '../models/tabs.model';
 
 @Component({
@@ -10,7 +10,14 @@ export class TabsComponent {
 
     @Input() sections!: Tabs[];
     @Input() contents!: TemplateRef<any>;
-
+    @Input() index: number = 0;
+    indexValue: number = 0;
+    
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes['input']) {
+            this.index = changes['input'].currentValue;
+        }
+    }
     ngOnInit() {
 
     }

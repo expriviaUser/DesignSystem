@@ -42,10 +42,11 @@
 <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </lib-breadcrumb>
 
-<lib-dialog [visible]="true" [title]="'form'" [subtitle]="'Prova form'">
+<lib-dialog [visible]="false" [title]="'form'" [subtitle]="'Prova form'">
 
     <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
-        <lib-input-form type="text" [label]="'Nome'" formControlName="name"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name"
+                        [label]="'Utente richiedente'" [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
         <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
         <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']"
             formControlName="sex"></lib-input-form>
@@ -58,8 +59,10 @@
     </div>
 </lib-dialog>
 
+<lib-search-bar></lib-search-bar>
 
-<lib-tabs [sections]="tabsList" [contents]="externalContent">
+
+<lib-tabs [sections]="tabsList" [contents]="externalContent" [index]="index">
     <ng-template #externalContent let-data="data">
         <h1>Prova esterna</h1>
         <p>{{data}}</p>

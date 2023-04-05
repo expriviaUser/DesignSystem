@@ -49,6 +49,12 @@
     .p-autocomplete-loader {
         right: 3.75rem;
     }
+
+    &:has(.ng-dirty) {
+        .p-button {
+            border-color: red;
+        }
+    }
 }
 
 p-autocomplete.ng-dirty.ng-invalid {

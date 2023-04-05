@@ -1,33 +1,43 @@
 .file-choose {
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    gap: $gap-1;
 
-    .lib-input {
-        flex: 1 1 auto;
-
-        input {
-            height: 100%;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border-right: 0;
+    .input {
+        display: flex;
+        width: 100%;
+        .lib-input {
+            flex: 1 1 auto;
+    
+            input {
+                height: 100%;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-right: 0;
+            }
         }
-    }
 
-    label {
-        @include typography-form-label;
-    }
-
-    .p-button {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        background-color: $color--uploadfile-button-background;
-        color: $color--uploadfile-button-text;
-        border-color: $color--uploadfile-button-background;
-
-        &:hover {
+        .p-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
             background-color: $color--uploadfile-button-background;
             color: $color--uploadfile-button-text;
             border-color: $color--uploadfile-button-background;
+    
+            &:hover {
+                background-color: $color--uploadfile-button-background;
+                color: $color--uploadfile-button-text;
+                border-color: $color--uploadfile-button-background;
+            }
         }
     }
+
+    .label {
+        label {
+            @include typography-form-label;
+            color: $color--form-label-text;
+        }
+    }
+
+    
 }

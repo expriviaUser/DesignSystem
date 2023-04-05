@@ -19,6 +19,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges  {
     @Input() valueInput: any[] = [];
     @Input() clear: boolean = false;
     @Input() icon: string = "";
+    @Input() iconPos: string = "";
     @Input() sortParam: string = "nome";
     @Input() label: string = "";
     @Input() type: string = "text";
