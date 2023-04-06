@@ -145,9 +145,9 @@ export class AppComponent {
                     label: "Produrre certificato sostitutivo provvisorio TEAM",
                     command: (event: any) => {
                         /* this.router.navigate(
-            
+
                             [`/assisted-registry/assisted/creazione-certificato-sostitutivo/${event.codFiscale}`],
-            
+
                             {
                                 relativeTo: this.activatedRoute,
                             }
@@ -160,7 +160,7 @@ export class AppComponent {
                         /* this.router.navigate(
                             [
                                 `/assisted-registry/assisted/gestire-importo-buono-celiaco-fuori-regione/${event.codFiscale}`,
-            
+
                             ],
                             {
                                 relativeTo: this.activatedRoute,
@@ -250,5 +250,9 @@ export class AppComponent {
             item.isSelected = false;
         });
         this.tabsList.filter(item => item.header == 'Prova3')[0].isSelected = true;
+    }
+
+    print(data: any): void {
+      console.log(data);
     }
 }

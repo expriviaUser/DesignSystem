@@ -39,7 +39,7 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() selectionType!: string;
     //    ritorno tutta la response della chiamata
     @Input() allResponse!: any;
-    
+
     @Input() rowsPerPage: number[] = [10,25,50];
 
     @Input() showPaginator: boolean = true;
@@ -47,6 +47,9 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() showReportPage: boolean = true;
 
     @Input() reportString: string = 'Showing {first} to {last} of {totalRecords} entries';
+
+    //Abilita il sorting lato backend
+    @Input() serverSort: boolean = false;
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged = new EventEmitter<any>();
@@ -57,6 +60,9 @@ export class TableComponent implements OnInit, OnChanges {
     //    Output per aggiornare il valore delle checkbox in tabella
     @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]
     >();
+
+    //    Output per segnalare l'evento di sorting
+    @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
 
 
     selectedValue: any[] = [];
@@ -163,10 +169,13 @@ export class TableComponent implements OnInit, OnChanges {
 
     }
 
-
-
-
     selectedEvent() {
         this.selectedTableValues.emit(this.selectedValue);
+    }
+
+    emitSort(event: { field: string, order: number }): void {
+      if(this.serverSort) {
+      this.sortValues.emit(event);
+      }
     }
 }
