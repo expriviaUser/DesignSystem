@@ -78,9 +78,10 @@ p-tabview {
 }
 
 .p-tabview .p-tabview-panels {
+    position: relative;
     background: $color--tabs-panel-background;
-    padding: 1.25rem;
     border: 0 none;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
 }
+

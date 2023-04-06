@@ -35,6 +35,8 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() sortable: boolean = false;
     //    booleano se la tabella ha le checkbox
     @Input() isSelectable!: boolean;
+    //    tipo di selezione della tabella, single o multiple
+    @Input() selectionType!: string;
     //    ritorno tutta la response della chiamata
     @Input() allResponse!: any;
     
