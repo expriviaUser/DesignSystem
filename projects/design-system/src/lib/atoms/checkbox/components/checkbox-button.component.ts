@@ -10,6 +10,7 @@ export class CheckboxButtonComponent implements OnInit, OnChanges {
     @Input() checked: boolean = false;
     @Input() disabled: boolean = false;
     @Input() label: string = '';
+    @Input() rounded: boolean = false;
 
     protected check: boolean = false;
 
@@ -44,7 +45,7 @@ export class CheckboxButtonComponent implements OnInit, OnChanges {
     @Output() emitChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     changed() {
-        this.check = !this.check;
+       // this.check = !this.check;
         this.emitChange.emit(this.check);
     }
 

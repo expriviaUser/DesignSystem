@@ -42,14 +42,15 @@
 <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </lib-breadcrumb>
 
-<lib-dialog [visible]="false" [title]="'form'" [subtitle]="'Prova form'">
+<lib-checkbox-button ></lib-checkbox-button>
+
+<lib-dialog [visible]="true" [title]="'form'" [subtitle]="'Prova form'">
 
     <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
         <lib-input-form [type]="'autocomplete'" formControlName="name"
                         [label]="'Utente richiedente'" [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
-        <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form>
-        <lib-input-form type="dropdown" [label]="'Sesso'" [valueInput]="['M', 'F']"
-            formControlName="sex"></lib-input-form>
+     <!--    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form> -->
+        <lib-input-form type="calendar" formControlName="age"></lib-input-form>
 
     </form>
     <div footer>
@@ -105,3 +106,4 @@
 
 <lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">
 </lib-chip>
+

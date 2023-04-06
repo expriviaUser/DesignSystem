@@ -150,6 +150,7 @@ $ipad-pro-max-width: 1366px;
 $color--primary-color: var(--primary-color-50);
 $color--white: #ffffff;
 $color--black: #000;
+$color--error: var(--error-color-50);
 
 //Text colors
 $color--text-placeholder: var(--text-color-placeholder);
@@ -258,6 +259,13 @@ $color--progressbar-background-progress: var(--secondary-color-50);
 $color--progressbar-text: var(--base-color-white);
 $color--progressbar-border: var(--base-color-border);
 $progressbar-border-radius: var(--progressbar-border-radius);
+
+//checkbox
+$color--checkbox-background: var(--base-color-white);
+$color--checkbox-background-checked: var(--secondary-color-50);
+$color--checkbox-border: var(--base-color-border);
+$color--checkbox-border-checked: var(--secondary-color-50);
+$color--checkbox-text: var(--base-color-white);
 
 //form
 $color--form-label-text: var(--text-color-normal);

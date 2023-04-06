@@ -31,7 +31,7 @@ export class AppComponent {
         { active: true, link: '', name: 'Prova3' },
     ];
     tabsList = [
-        { header: 'Prova1', isDisabled: false, content: '1', isSelected: false },
+        { header: 'Prova1', isDisabled: true, content: '1', isSelected: false },
         { header: 'Prova2', isDisabled: false, content: '2', isSelected: true },
         { header: 'Prova3', isDisabled: false, content: '3', isSelected: false },
 
