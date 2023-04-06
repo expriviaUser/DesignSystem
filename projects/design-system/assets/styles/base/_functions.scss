@@ -72,6 +72,11 @@
     font-size: pxToRem(14px);
     line-height: pxToRem(20px);
 }
+@mixin typography-button-semibold {
+    font-weight: 600;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
 
 @mixin typography-button-large {
     font-weight: 600;

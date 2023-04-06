@@ -44,7 +44,7 @@
 
 <lib-checkbox-button ></lib-checkbox-button>
 
-<lib-dialog [visible]="true" [title]="'form'" [subtitle]="'Prova form'">
+<lib-dialog [visible]="false" [title]="'form'" [subtitle]="'Prova form'">
 
     <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
         <lib-input-form [type]="'autocomplete'" formControlName="name"
@@ -69,6 +69,8 @@
         <p>{{data}}</p>
     </ng-template>
 </lib-tabs>
+
+<lib-calendar [inlineCal]="true" [selectionType]="'range'" [value]="'02/04/2023' | date: 'dd/MM/yyyy'" [showButtonBar]="true"></lib-calendar>
 
 
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body">

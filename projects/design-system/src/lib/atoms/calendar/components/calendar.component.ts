@@ -1,4 +1,4 @@
-import { Component, forwardRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, forwardRef, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AbstractControl, ControlContainer, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
@@ -18,83 +18,95 @@ export class CalendarComponent implements OnDestroy, OnInit {
     @Input() value!: any
     @Input() label!: string
     @Input() disabled: boolean = false;
+    @Input() inlineCal: boolean = false;
+    @Input() showIcon: boolean = false;
+    @Input() showButtonBar: boolean = false;
+    @Input() selectionType: string = 'single';
     @Input() control: AbstractControl = new FormControl();
 
-    // @Input('controlName') formControlName: any = '';
+    @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
 
-    @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
-
+    calendarDate!: Date;
+    formData!: FormGroup;
 
     destroySub$ = new Subject<void>()
-
     onChange: any = () => { }
     onTouch: any = () => { }
 
-    // get control() {
-    //   return this.controlContainer.control?.get(this.formControlName);
-    // }
-
     get haveError() {
         return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
-
     }
+
     get haveErrorParent() {
         return this.control.parent && this.control.parent.errors && (!this.control.pristine || this.control.touched);
-
     }
-    calendarDate!: Date
-
+    
     constructor(
-        private fb: FormBuilder, 
+        private fb: FormBuilder,
         private datePipe: DatePipe
     ) { }
 
-    ngOnChanges() {
-        if (this.value) {
-            this.value = new Date(this.value);
-            this.formData.get('date')?.setValue(this.value.getDate())
-            this.formData.get('month')?.setValue(this.value.getMonth()+1)
-            this.formData.get('year')?.setValue(this.value.getFullYear())
+    ngOnChanges(changes: SimpleChanges) {
+        if (!(this.inlineCal || this.showIcon)) { 
+            if (changes['value'].firstChange) {
+                this.formData = this.fb.group({
+                    date: [null, [Validators.required, Validators.min(1), Validators.max(31)]],
+                    month: [null, [Validators.required, Validators.min(1), Validators.max(12)]],
+                    year: [null, [Validators.required, Validators.max(2999), Validators.min(1800)]]
+                }, { validators: this.validDate() });
+            }
+            if (this.value) {
+                this.value = new Date(this.value);
+                this.formData.get('date')?.setValue(this.value.getDate())
+                this.formData.get('month')?.setValue(this.value.getMonth() + 1)
+                this.formData.get('year')?.setValue(this.value.getFullYear())
+            } else {
+                this.formData.get('date')?.setValue(null)
+                this.formData.get('month')?.setValue(null)
+                this.formData.get('year')?.setValue(null)
+            }
         } else {
-            this.formData.get('date')?.setValue(null)
-            this.formData.get('month')?.setValue(null)
-            this.formData.get('year')?.setValue(null)
+            this.calendarDate = this.value;
         }
+
     }
 
     ngOnInit() {
-        if (this.value) {
-            this.value = new Date(this.value);
-            this.formData.get('date')?.setValue(this.value.getDate())
-            this.formData.get('month')?.setValue(this.value.getMonth()+1)
-            this.formData.get('year')?.setValue(this.value.getFullYear())
-        }
-        this.formData.valueChanges
-            .pipe(
-                takeUntil(this.destroySub$),
-                map((value) => {
-                    const d = new Date(value.year, (value.month - 1), value.date)
-                    return this.formData.valid ? d : null
+        if (!(this.inlineCal || this.showIcon)) {
+
+            if (this.value) {
+                this.value = new Date(this.value);
+                this.formData.get('date')?.setValue(this.value.getDate())
+                this.formData.get('month')?.setValue(this.value.getMonth() + 1)
+                this.formData.get('year')?.setValue(this.value.getFullYear())
+            }
+            this.formData.valueChanges
+                .pipe(
+                    takeUntil(this.destroySub$),
+                    map((value) => {
+                        const d = new Date(value.year, (value.month - 1), value.date)
+                        return this.formData.valid ? d : null
+                    })
+                ).subscribe((value) => {
+                    this.emitValue(value)
                 })
-            ).subscribe((value) => {
-                this.emitValue(value)
-            })
+        } else {
+            this.calendarDate = this.value;
+        }
     }
     ngOnDestroy() {
         this.destroySub$.next()
         this.destroySub$.complete()
     }
 
-    formData: FormGroup = this.fb.group({
-        date: [null, [Validators.required, Validators.min(1), Validators.max(31)]],
-        month: [null, [Validators.required, Validators.min(1), Validators.max(12)]],
-        year: [null, [Validators.required, Validators.max(2999), Validators.min(1800)]]
-    }, { validators: this.validDate() })
-
-    selectDate(date: Date) {
-        this.formData.get('date')?.setValue(date.getDate())
-        this.formData.get('month')?.setValue(date.getMonth() + 1)
-        this.formData.get('year')?.setValue(date.getFullYear())
+    selectDate(date: any) {
+        if (!(this.inlineCal || this.showIcon)) {
+            this.formData.get('date')?.setValue(date.getDate())
+            this.formData.get('month')?.setValue(date.getMonth() + 1)
+            this.formData.get('year')?.setValue(date.getFullYear())
+        } else {
+            this.selectedValue.emit(date);
+        }
     }
 
     validDate(): ValidatorFn {
@@ -133,7 +145,7 @@ export class CalendarComponent implements OnDestroy, OnInit {
         this.value = event;
         this.onChange(event);
         let date = this.datePipe.transform(event, 'yyyy-MM-dd') || '';
-        this.selectedValue.emit( date );
+        this.selectedValue.emit(date);
     }
 
     // upon UI element value change, this method gets triggered
@@ -142,7 +154,7 @@ export class CalendarComponent implements OnDestroy, OnInit {
         this.value = event;
         this.onChange(event);
         let date = this.datePipe.transform(event, 'yyyy-MM-dd') || '';
-        this.selectedValue.emit( date );
+        this.selectedValue.emit(date);
     }
 
 

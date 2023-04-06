@@ -11,6 +11,7 @@ import {
     TreeSelectModel
 } from 'projects/design-system/src/public-api';
 import { FiltriModel } from "../../projects/design-system/src/lib/micro-organismi/filtri/models/filtri.model";
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
     selector: 'app-root',
@@ -232,7 +233,17 @@ export class AppComponent {
         }];
 
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
+        this.config.setTranslation({ 
+            accept: 'Accept', 
+            reject: 'Cancel', 
+            monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'], 
+            monthNamesShort:['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'], 
+            dayNames: ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'],
+            today: 'Oggi', 
+            clear: 'Svuota'}) //translations });
     }
 
     goTo(event: any) {

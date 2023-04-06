@@ -1,13 +1,26 @@
-<div class="field-data">
+<div class="field-data" *ngIf="!(inlineCal || showIcon)">
     <!-- <label> {{label}}</label> -->
     <form class="data-wrapper" [formGroup]="formData">
 
-        <input type="number" [ngClass]="{'ng-invalid ng-dirty': haveErrorParent || haveError}" formControlName="date" pInputText placeholder="gg" max="31" min="1" />
-        <input type="number" [ngClass]="{'ng-invalid ng-dirty':haveErrorParent ||  haveError}" formControlName="month" pInputText placeholder="mm" max="12" min="1" />
-        <input type="number" [ngClass]="{'ng-invalid ng-dirty':haveErrorParent ||  haveError}" formControlName="year" pInputText placeholder="aaaa" />
+        <input type="number" [ngClass]="{'ng-invalid ng-dirty': haveErrorParent || haveError}" formControlName="date"
+            pInputText placeholder="gg" max="31" min="1" />
+        <input type="number" [ngClass]="{'ng-invalid ng-dirty':haveErrorParent ||  haveError}" formControlName="month"
+            pInputText placeholder="mm" max="12" min="1" />
+        <input type="number" [ngClass]="{'ng-invalid ng-dirty':haveErrorParent ||  haveError}" formControlName="year"
+            pInputText placeholder="aaaa" />
 
-        <p-calendar appendTo="body" (onSelect)="selectDate(calendarDate)" [ngModelOptions]="{standalone: true}" [(ngModel)]="calendarDate" [showIcon]="true" inputId="icon"></p-calendar>
+        <p-calendar appendTo="body" (onSelect)="selectDate(calendarDate)" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="calendarDate" [showIcon]="true" inputId="icon"></p-calendar>
     </form>
     <span class="p-error" *ngIf="formData.errors?.['invalidDate']">Data non valida</span>
+
+</div>
+
+<div class="field-data" *ngIf="inlineCal || showIcon">
+    <label> {{label}}</label>
+
+    <p-calendar (onSelect)="selectDate(calendarDate)" [showButtonBar]="showButtonBar"
+        [(ngModel)]="calendarDate" [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" [ngClass]="{'max-w-full' : inlineCal}" [selectionMode]="selectionType" [readonlyInput]="true"></p-calendar>
+
 
 </div>
