@@ -2,6 +2,7 @@
 p-calendar {
     &.ng-dirty.ng-invalid {
         > .p-calendar {
+            width: 100%;
             > .p-inputtext {
                 border-color: $color--red-900;
             }
