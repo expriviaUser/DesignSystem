@@ -1,8 +1,29 @@
+
+.field-data {
+    display: flex;
+    flex-direction: column;
+    // gap: $gap-1;
+    span.p-error {
+        position: relative;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+
+    label {
+        @include typography-form-label;
+        color: $color--form-label-text;
+    }
+}
+
 // PrimeNG pcalendar component
 p-calendar {
+
+    .p-calendar {
+        width: 100%;
+    }
     &.ng-dirty.ng-invalid {
         > .p-calendar {
-            width: 100%;
+            
             > .p-inputtext {
                 border-color: $color--red-900;
             }
