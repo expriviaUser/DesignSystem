@@ -73,7 +73,7 @@
 <lib-calendar [inlineCal]="true" [selectionType]="'range'" [value]="'02/04/2023' | date: 'dd/MM/yyyy'" [showButtonBar]="true"></lib-calendar>
 
 
-<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body">
+<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [filters]="filterValue" [selectionType]="'single'">
     <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
     <ng-template #body let-data="data" let-column="column">
         <td>{{ data[column[0].field] }}</td>

@@ -50,6 +50,10 @@ export class TableComponent implements OnInit, OnChanges {
 
     //Abilita il sorting lato backend
     @Input() serverSort: boolean = false;
+    // righe della tabella preselezionate
+    @Input() selectedValue!: any;
+
+    @Input() filters!: any;
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged = new EventEmitter<any>();
@@ -65,7 +69,6 @@ export class TableComponent implements OnInit, OnChanges {
     @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
 
 
-    selectedValue: any[] = [];
     loading: boolean = false;
     pageIndex: number = 0
     paginatorData: PaginatorData

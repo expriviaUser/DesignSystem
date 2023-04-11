@@ -246,6 +246,10 @@ export class AppComponent {
             clear: 'Svuota'}) //translations });
     }
 
+    selectedValue = [ { name: 'Simone', surname: 'Giannuario' }, { name: 'Daniele', surname: 'Corti' },];
+
+    filterValue =  { name: 'Simone', surname: 'Giannuario' };
+
     goTo(event: any) {
 
     }
