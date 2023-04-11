@@ -40,11 +40,13 @@ export class TableComponent implements OnInit, OnChanges {
     //    ritorno tutta la response della chiamata
     @Input() allResponse!: any;
 
-    @Input() rowsPerPage: number[] = [10,25,50];
+    @Input() rowsPerPage: any = [10,25,50];
 
     @Input() showPaginator: boolean = true;
 
     @Input() showReportPage: boolean = true;
+
+    @Input() nRowsPerPage: number = 50;
 
     @Input() reportString: string = 'Showing {first} to {last} of {totalRecords} entries';
 
@@ -77,7 +79,7 @@ export class TableComponent implements OnInit, OnChanges {
     constructor() {
         this.paginatorData = {
             first: 0,
-            rows: 5,
+            rows: this.nRowsPerPage > 0 ? this.nRowsPerPage : 5,
             totalRecords: this.totalRecords
         }
     }
