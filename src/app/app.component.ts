@@ -231,24 +231,31 @@ export class AppComponent {
                 { label: 'Tipologia richiesta8', data: 'Tipologia richiesta8', key: '7' }
             ], placeholder: "Placeholder2"
         }];
-
+    dialogVisibility: boolean = true;
 
     constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
-        this.config.setTranslation({ 
-            accept: 'Accept', 
-            reject: 'Cancel', 
-            monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'], 
-            monthNamesShort:['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'], 
+        this.config.setTranslation({
+            accept: 'Accept',
+            reject: 'Cancel',
+            monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+            monthNamesShort: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
             dayNames: ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
             dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
             dayNamesMin: ['Do', 'Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'],
-            today: 'Oggi', 
-            clear: 'Svuota'}) //translations });
+            today: 'Oggi',
+            clear: 'Svuota'
+        }) //translations });
     }
 
-    selectedValue = [ { name: 'Simone', surname: 'Giannuario' }, { name: 'Daniele', surname: 'Corti' },];
+    selectedValue = [{ name: 'Simone', surname: 'Giannuario' }, { name: 'Daniele', surname: 'Corti' },];
 
-    filterValue =  { name: 'Simone', surname: 'Giannuario' };
+    filterValue = { name: 'Simone', surname: 'Giannuario' };
+
+    dialog() {
+        console.log(this.dialogVisibility);
+        this.dialogVisibility = !this.dialogVisibility;
+        console.log(this.dialogVisibility);
+    }
 
     goTo(event: any) {
 
@@ -268,6 +275,6 @@ export class AppComponent {
     }
 
     print(data: any): void {
-      console.log(data);
+        console.log(data);
     }
 }

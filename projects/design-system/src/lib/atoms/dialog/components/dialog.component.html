@@ -1,5 +1,5 @@
 <p-dialog [header]="title" [(visible)]="visible" styleClass="'p-dialog--responsive'" [modal]="true" [draggable]="false"
-    [resizable]="true" [closable]="closable">
+    [resizable]="true" [closable]="closable" (onHide)="hideDialog()">
     <ng-template pTemplate="header">
         <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : defaultHeader">
 

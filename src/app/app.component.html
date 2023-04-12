@@ -44,7 +44,9 @@
 
 <lib-checkbox-button ></lib-checkbox-button>
 
-<lib-dialog [visible]="false" [title]="'form'" [subtitle]="'Prova form'">
+<lib-button [label]="'dialog'" [size]="'small'" [type]="'primary'" (onClick)="dialog()"></lib-button>
+
+<lib-dialog [(visible)]="dialogVisibility" [title]="'form'" [subtitle]="'Prova form'">
 
     <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
         <lib-input-form [type]="'autocomplete'" formControlName="name"
