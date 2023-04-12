@@ -1,4 +1,3 @@
-
 .field-data {
     display: flex;
     flex-direction: column;
@@ -13,17 +12,41 @@
         @include typography-form-label;
         color: $color--form-label-text;
     }
+
+    p-calendar {
+        button {
+            background-color: $color--calendar-button-background;
+            color: $color--calendar-button-text;
+            border-radius: $border-radius;
+            border-color: $color--calendar-button-background;
+
+            span {
+                font-size: 1.2rem;
+            }
+
+            &:enabled:hover {
+                background-color: $color--calendar-button-background-hover;
+                color: $color--calendar-button-text-hover;
+                border-radius: $border-radius;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-color: $color--calendar-button-background;
+            }
+        }
+
+        .p-datepicker {
+            box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        }
+    }
 }
 
 // PrimeNG pcalendar component
 p-calendar {
-
     .p-calendar {
         width: 100%;
     }
     &.ng-dirty.ng-invalid {
         > .p-calendar {
-            
             > .p-inputtext {
                 border-color: $color--red-900;
             }
@@ -182,6 +205,7 @@ p-calendar {
 .p-datepicker .p-datepicker-buttonbar .p-button {
     width: auto;
     color: $color--calendar-button-text;
+    background-color: $color--calendar-button-background;
 
     @include typography-button-semibold;
 
@@ -347,7 +371,7 @@ span {
             }
 
             button {
-                background-color: $color--blue-100;
+                background-color: $color--calendar-button-background;
                 border: none;
                 color: $color--surface-a;
                 border-radius: $border-radius;
@@ -361,7 +385,7 @@ span {
                 }
 
                 &:hover {
-                    background-color: $color--blue-500;
+                    background-color: $color--calendar-button-background-hover;
                 }
             }
         }
