@@ -4,5 +4,6 @@ import { TreeSelectModel } from "../../../atoms/tree-select/models/tree-select.m
 
 export interface FiltriModel {
     data: TreeSelectModel[],
-    placeholder: string
+    placeholder: string,
+    field: string
 }

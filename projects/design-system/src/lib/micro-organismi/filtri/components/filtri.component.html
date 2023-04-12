@@ -4,11 +4,11 @@
 
     <lib-tree-select
       class="single-dropdown"
-      #dropdown *ngFor="let dropdownOptions of dropdownValues; let i = index"
+      *ngFor="let dropdownOptions of dropdownValues; let i = index"
       [nodes]="dropdownOptions.data"
-      (emitSelectedOption)="createChip($event, i)"
+      (emitSelectedOption)="createChip($event, i, dropdownOptions.field)"
       [(selectedNodes)]="selectedValues[i]"
-      (emitUnselect)="unselectOption($event, i)"
+      (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
       [placeholder]="dropdownOptions.placeholder">
     </lib-tree-select>
 

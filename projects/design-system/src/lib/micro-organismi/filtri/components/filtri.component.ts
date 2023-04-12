@@ -1,69 +1,74 @@
 import {
-    Component,
-    EventEmitter,
-    Input,
-    OnInit,
-    Output,
-    QueryList,
-    ViewChildren
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  QueryList,
+  ViewChildren
 } from '@angular/core';
 import {TreeSelectModel} from "../../../atoms/tree-select/models/tree-select.model";
 import {TreeSelectComponent} from "../../../atoms/tree-select/components/tree-select.component";
 import {FiltriModel} from "../models/filtri.model";
 
 @Component({
-    selector: 'lib-filtri',
-    templateUrl: './filtri.component.html',
-    styleUrls: ['./filtri.component.scss']
+  selector: 'lib-filtri',
+  templateUrl: './filtri.component.html',
+  styleUrls: ['./filtri.component.scss']
 })
 export class FiltriComponent implements OnInit {
 
-    @Input() dropdownValues: FiltriModel[] = [];
-    @Input() inputSelectedValues: TreeSelectModel[][] = [];
+  @Input() dropdownValues: FiltriModel[] = [];
+  @Input() inputSelectedValues: TreeSelectModel[][] = [];
 
-    selectedValues: TreeSelectModel[][] = [];
-    @Output() filterValues: EventEmitter<string[]> = new EventEmitter<string[]>();
+  selectedValues: TreeSelectModel[][] = [];
+  @Output() filterValues: EventEmitter<any[]> = new EventEmitter<any[]>();
 
-    @ViewChildren('dropdown') dropdown!: QueryList<TreeSelectComponent>;
+  chipsList: { value: string, dropdownIndex: number, field: string }[] = [];
+  chipsExport: any = {};
 
-    chipsList: { value: string, dropdownIndex: number }[] = [];
+  constructor() {
+  }
 
-    constructor() {
+  ngOnInit(): void {
+    if (this.inputSelectedValues) {
+      this.selectedValues = this.inputSelectedValues;
     }
+    this.dropdownValues.forEach((item) => this.chipsExport[item.field] = []);
+  }
 
-    ngOnInit(): void {
-        if (this.inputSelectedValues) {
-            this.selectedValues = this.inputSelectedValues;
-        }
+
+  createChip(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string): void {
+    if (event.node) {
+      this.chipsList.push({value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField});
+      this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
+      this.chipsExport[dropdownField].push(event.node.data);
+      this.filterValues.emit(this.chipsExport);
+      if (this.selectedValues[dropdownIndex] == undefined || this.selectedValues[dropdownIndex].length == 0) {
+        this.selectedValues[dropdownIndex] = [];
+      }
+      this.selectedValues[dropdownIndex].push(event.node);
     }
+  }
 
+  unselectOption(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string): void {
+    const C_INDEX = this.chipsList.findIndex(c => c.value == event.node.label);
+    this.chipsList.splice(C_INDEX, 1);
+    const E_INDEX = this.chipsExport[dropdownField].findIndex((d: string) => d == event.node.data);
+    this.chipsExport[dropdownField].splice(E_INDEX, 1);
+    this.filterValues.emit(this.chipsExport);
+    const N_INDEX = this.selectedValues[dropdownIndex].indexOf(event.node);
+    this.selectedValues[dropdownIndex].splice(N_INDEX, 1);
+  }
 
-    createChip(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number): void {
-        if (event.node) {
-            //this.chipsList = this.chipsList.filter(chip => chip.dropdownIndex != dropdownIndex);
-            this.chipsList.push({value: event.node.data, dropdownIndex: dropdownIndex});
-            this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
-            const VALUES = this.chipsList.map((chip) => chip.value);
-            this.filterValues.emit(VALUES);
-            if(this.selectedValues[dropdownIndex]==undefined || this.selectedValues[dropdownIndex].length == 0){
-                this.selectedValues[dropdownIndex] = [];
-            }
-            this.selectedValues[dropdownIndex].push(event.node);
-        }
-    }
-
-    unselectOption(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number): void {
-        const C_INDEX = this.chipsList.findIndex(c => c.value == event.node.data);
-        this.chipsList.splice(C_INDEX, 1);
-        const N_INDEX = this.selectedValues[dropdownIndex].indexOf(event.node);
-        this.selectedValues[dropdownIndex].splice(N_INDEX, 1);
-    }
-
-    resetDropdown(chipIndex: number, chipValue: { value: string, dropdownIndex: number }): void {
-        this.chipsList.splice(chipIndex, 1);
-        const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.data == chipValue.value);
-        this.selectedValues[chipValue.dropdownIndex].splice(N_INDEX, 1);
-        this.selectedValues[chipValue.dropdownIndex] = [...this.selectedValues[chipValue.dropdownIndex]];
-    }
+  resetDropdown(chipIndex: number, chipValue: { value: string, dropdownIndex: number, field: string }): void {
+    this.chipsList.splice(chipIndex, 1);
+    const E_INDEX = this.chipsExport[chipValue.field].findIndex((d: string) => d == chipValue.value);
+    this.filterValues.emit(this.chipsExport);
+    this.chipsExport[chipValue.field].splice(E_INDEX, 1);
+    const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.data == chipValue.value);
+    this.selectedValues[chipValue.dropdownIndex].splice(N_INDEX, 1);
+    this.selectedValues[chipValue.dropdownIndex] = [...this.selectedValues[chipValue.dropdownIndex]];
+  }
 
 }

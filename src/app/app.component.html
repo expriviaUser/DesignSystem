@@ -106,7 +106,7 @@
 <lib-tree-select [nodes]="treeSelectNodes">
 </lib-tree-select>
 
-<lib-filtri [dropdownValues]="dropdownValues"></lib-filtri>
+<lib-filtri [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filtri>
 
 <lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">
 </lib-chip>

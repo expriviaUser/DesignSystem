@@ -213,24 +213,24 @@ export class AppComponent {
         { label: 'Tipologia richiesta4', data: 'Tipologia richiesta4' },
     ];
 
-    dropdownValues: FiltriModel[] = [
-        {
-            data: [
-                { label: 'Tipologia richiesta1', data: 'Tipologia richiesta1' },
-                { label: 'Tipologia richiesta2', data: 'Tipologia richiesta2' },
-                { label: 'Tipologia richiesta3', data: 'Tipologia richiesta3' },
-                { label: 'Tipologia richiesta4', data: 'Tipologia richiesta4' },
+  dropdownValues: FiltriModel[] = [
+    {
+      data: [
+        { label: 'Tipologia richiesta1', data: 'Data richiesta1'},
+        { label: 'Tipologia richiesta2', data: 'Data richiesta2'},
+        { label: 'Tipologia richiesta3', data: 'Data richiesta3'},
+        { label: 'Tipologia richiesta4', data: 'Data richiesta4'}
 
-            ], placeholder: "Placeholder1"
-        },
-        {
-            data: [
-                { label: 'Tipologia richiesta5', data: 'Tipologia richiesta5' },
-                { label: 'Tipologia richiesta6', data: 'Tipologia richiesta6' },
-                { label: 'Tipologia richiesta7', data: 'Tipologia richiesta7' },
-                { label: 'Tipologia richiesta8', data: 'Tipologia richiesta8' }
-            ], placeholder: "Placeholder2"
-        }];
+      ], placeholder: "Placeholder1", field: "filter1"
+    },
+    {
+      data: [
+        { label: 'Tipologia richiesta5', data: 'Data richiesta5'},
+        { label: 'Tipologia richiesta6', data: 'Data richiesta6'},
+        { label: 'Tipologia richiesta7', data: 'Data richiesta7'},
+        { label: 'Tipologia richiesta8', data: 'Data richiesta8'}
+      ], placeholder: "Placeholder2", field: "filter2"
+    }];
     dialogVisibility: boolean = true;
 
     constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
