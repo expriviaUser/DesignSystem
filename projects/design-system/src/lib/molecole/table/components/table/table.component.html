@@ -1,7 +1,7 @@
 <div class="table-wrapper">
 
     <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent()" (onRowUnselect)="selectedEvent()"
-        [resizableColumns]="false" [(selection)]="selectedValue" [scrollable]="false"
+        [resizableColumns]="false" [(selection)]="selectedValue" [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
         [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="paginatorData.rows"
         [rowsPerPageOptions]="rowsPerPage"
         [currentPageReportTemplate]="reportString" [showCurrentPageReport]="showReportPage"

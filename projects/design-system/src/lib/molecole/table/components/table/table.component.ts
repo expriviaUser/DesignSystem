@@ -57,6 +57,12 @@ export class TableComponent implements OnInit, OnChanges {
 
     @Input() filters!: any;
 
+    @Input() isScrollable!: boolean;
+
+    @Input() scrollHeight!: string;
+    
+    @Input() alwaysShowPaginator!: boolean;
+
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged = new EventEmitter<any>();
     //    Output per aggiornare il paramentro Page da passare al be
