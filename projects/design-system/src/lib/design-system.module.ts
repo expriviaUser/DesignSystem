@@ -20,7 +20,7 @@ import { CtaBarModule } from './molecole/cta-bar/cta-bar.module';
 import { HeaderItemsModule } from './molecole/header-items/header-items.module';
 import { LibMessagesModule } from './molecole/messages/lib-messages.module';
 import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module';
-import { LibFiltriModule } from './micro-organismi/filtri/lib-filtri.module';
+import { LibFiltersModule} from "./micro-organismi/filters/lib-filters.module";
 import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
 import { SidebarModule } from './atoms/sidebar/sidebar.module';
 import { CommonModule } from '@angular/common';
@@ -55,7 +55,7 @@ const sharedModules = [
   HeaderItemsModule,
   LibMessagesModule,
   LibRadioTileModule,
-  LibFiltriModule,
+  LibFiltersModule,
   HeaderMenuModule,
   SidebarModule,
   FileModule,

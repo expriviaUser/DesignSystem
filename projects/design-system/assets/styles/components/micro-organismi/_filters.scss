@@ -1,8 +1,8 @@
-.filtri-wrapper {
+.filters-wrapper {
 
 .dropdown-title {
   @include typography-x-small-semibold;
-  color: $color--filtri-dropdown-title;
+  color: $color--filters-dropdown-title;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -13,8 +13,8 @@
 
   lib-tree-select {
      .p-treeselect {
-      background: $color--filtri-dropdown-background;
-      border: 1px solid $color--filtri-dropdown-border;
+      background: $color--filters-dropdown-background;
+      border: 1px solid $color--filters-dropdown-border;
       border-radius: 4px;
 
 
@@ -35,12 +35,12 @@
         padding-bottom: 7px;
 
         &.p-placeholder {
-          color: $color--filtri-dropdown-text;
+          color: $color--filters-dropdown-text;
         }
 
         &.p-inputtext {
           &.ng-star-inserted {
-            color: $color--filtri-dropdown-text;
+            color: $color--filters-dropdown-text;
           }
         }
 
@@ -49,11 +49,11 @@
 
       .p-treeselect-trigger {
 
-        color: $color--filtri-dropdown-text;
+        color: $color--filters-dropdown-text;
       }
 
       .p-treeselect-clear-icon {
-        color: $color--filtri-dropdown-text;
+        color: $color--filters-dropdown-text;
       }
 
 
@@ -68,7 +68,7 @@
 .chips-title {
   margin-top: 0.714rem;
   @include typography-x-small-regular;
-  color: $color--filtri-chips-title;
+  color: $color--filters-chips-title;
 }
 
 .chips-container {

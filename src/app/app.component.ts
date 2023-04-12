@@ -10,7 +10,7 @@ import {
     SidebarItem,
     TreeSelectModel
 } from 'projects/design-system/src/public-api';
-import { FiltriModel } from "../../projects/design-system/src/lib/micro-organismi/filtri/models/filtri.model";
+import { FiltersModel} from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -213,7 +213,7 @@ export class AppComponent {
         { label: 'Tipologia richiesta4', data: 'Tipologia richiesta4' },
     ];
 
-  dropdownValues: FiltriModel[] = [
+  dropdownValues: FiltersModel[] = [
     {
       data: [
         { label: 'Tipologia richiesta1', data: 'Data richiesta1'},

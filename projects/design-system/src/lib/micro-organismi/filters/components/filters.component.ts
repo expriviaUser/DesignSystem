@@ -9,16 +9,16 @@ import {
 } from '@angular/core';
 import {TreeSelectModel} from "../../../atoms/tree-select/models/tree-select.model";
 import {TreeSelectComponent} from "../../../atoms/tree-select/components/tree-select.component";
-import {FiltriModel} from "../models/filtri.model";
+import {FiltersModel} from "../models/filters.model";
 
 @Component({
-  selector: 'lib-filtri',
-  templateUrl: './filtri.component.html',
-  styleUrls: ['./filtri.component.scss']
+  selector: 'lib-filters',
+  templateUrl: './filters.component.html',
+  styleUrls: ['./filters.component.scss']
 })
-export class FiltriComponent implements OnInit {
+export class FiltersComponent implements OnInit {
 
-  @Input() dropdownValues: FiltriModel[] = [];
+  @Input() dropdownValues: FiltersModel[] = [];
   @Input() inputSelectedValues: TreeSelectModel[][] = [];
 
   selectedValues: TreeSelectModel[][] = [];
