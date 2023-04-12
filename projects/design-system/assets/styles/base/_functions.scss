@@ -20,6 +20,12 @@
     line-height: pxToRem(16px);
 }
 
+@mixin typography-xs-small-semibold {
+    font-weight: 600;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
+}
+
 @mixin typography-text-xs-medium {
     font-weight: 500;
     font-size: pxToRem(12px);
@@ -102,4 +108,3 @@
     line-height: pxToRem(28px);
     margin: 0;
 }
-

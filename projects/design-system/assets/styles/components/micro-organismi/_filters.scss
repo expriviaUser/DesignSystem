@@ -1,81 +1,74 @@
 .filters-wrapper {
-
-.dropdown-title {
-  @include typography-x-small-semibold;
-  color: $color--filters-dropdown-title;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.dropdown-container {
-  margin-top: 0.714rem;
-
-  lib-tree-select {
-     .p-treeselect {
-      background: $color--filters-dropdown-background;
-      border: 1px solid $color--filters-dropdown-border;
-      border-radius: 4px;
-
-
-      .p-tree {
-        .p-tree-container {
-          .p-treenode {
-            .p-treenode-content {
-              .p-tree-toggler {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-
-      .p-treeselect-label {
-        padding-top: 7px;
-        padding-bottom: 7px;
-
-        &.p-placeholder {
-          color: $color--filters-dropdown-text;
-        }
-
-        &.p-inputtext {
-          &.ng-star-inserted {
-            color: $color--filters-dropdown-text;
-          }
-        }
-
-
-      }
-
-      .p-treeselect-trigger {
-
-        color: $color--filters-dropdown-text;
-      }
-
-      .p-treeselect-clear-icon {
-        color: $color--filters-dropdown-text;
-      }
-
-
+    .dropdown-title {
+        @include typography-x-small-semibold;
+        color: $color--filters-dropdown-title;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
     }
-  }
 
-  .single-dropdown {
-    margin-right: 0.714rem;
-  }
-}
+    .dropdown-container {
+        margin-top: 0.714rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.357rem;
 
-.chips-title {
-  margin-top: 0.714rem;
-  @include typography-x-small-regular;
-  color: $color--filters-chips-title;
-}
+        lib-tree-select {
+            .p-treeselect {
+                background: $color--filters-dropdown-background;
+                border: 1px solid $color--filters-dropdown-border;
+                border-radius: 4px;
 
-.chips-container {
-  margin-top: 0.357rem;
+                .p-tree {
+                    .p-tree-container {
+                        .p-treenode {
+                            .p-treenode-content {
+                                .p-tree-toggler {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
 
-  .single-chip {
-    margin-right: 0.357rem;
-  }
-}
+                .p-treeselect-label {
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+
+                    &.p-placeholder {
+                        color: $color--filters-dropdown-text;
+                    }
+
+                    &.p-inputtext {
+                        &.ng-star-inserted {
+                            color: $color--filters-dropdown-text;
+                        }
+                    }
+                }
+
+                .p-treeselect-trigger {
+                    color: $color--filters-dropdown-text;
+                }
+
+                .p-treeselect-clear-icon {
+                    color: $color--filters-dropdown-text;
+                }
+            }
+        }
+    }
+
+    .chips-title {
+        margin-top: 0.714rem;
+        @include typography-x-small-regular;
+        color: $color--filters-chips-title;
+    }
+
+    .chips-container {
+        margin-top: 0.357rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.357rem;
+    }
 }

@@ -8,6 +8,9 @@
 export * from './lib/atoms/card/components/card.component';
 export * from './lib/atoms/card/lib-card.module';
 
+export * from './lib/atoms/switch/components/switch.component';
+export * from './lib/atoms/switch/switch.module';
+
 export * from './lib/atoms/tag/components/tag.component';
 export * from './lib/atoms/tag/lib-tag.module';
 

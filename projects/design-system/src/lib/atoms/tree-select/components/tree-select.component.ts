@@ -1,14 +1,16 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {TreeSelectModel} from "../models/tree-select.model";
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { TreeSelectModel } from "../models/tree-select.model";
 
 @Component({
-  selector: 'lib-tree-select',
-  templateUrl: './tree-select.component.html',
-  styleUrls: ['./tree-select.component.scss']
+    selector: 'lib-tree-select',
+    templateUrl: './tree-select.component.html',
+    styleUrls: ['./tree-select.component.scss']
 })
 export class TreeSelectComponent {
 
     @Input() nodes: TreeSelectModel[] = [];
+
+    @Input() valueTemplate!: TemplateRef<any>;
 
     @Input() selectedNodes: TreeSelectModel[] = [];
     @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();
@@ -30,7 +32,7 @@ export class TreeSelectComponent {
         this.emitUnselect.emit(event);
     }
 
-    selectedValuesEmit(event : Array<TreeSelectModel>): void {
+    selectedValuesEmit(event: Array<TreeSelectModel>): void {
         this.emitSelectedValues.emit(event);
     }
 

@@ -1,22 +1,22 @@
 <div class="filters-wrapper">
-  <div class="dropdown-title">Filtra per</div>
-  <div class="dropdown-container">
+    <div class="dropdown-title">Filtra per</div>
+    <div class="dropdown-container">
 
-    <lib-tree-select
-      class="single-dropdown"
-      *ngFor="let dropdownOptions of dropdownValues; let i = index"
-      [nodes]="dropdownOptions.data"
-      (emitSelectedOption)="createChip($event, i, dropdownOptions.field)"
-      [(selectedNodes)]="selectedValues[i]"
-      (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
-      [placeholder]="dropdownOptions.placeholder">
-    </lib-tree-select>
+        <lib-tree-select class="single-dropdown" *ngFor="let dropdownOptions of dropdownValues; let i = index"
+            [nodes]="dropdownOptions.data" (emitSelectedOption)="createChip($event, i, dropdownOptions.field)"
+            [(selectedNodes)]="selectedValues[i]" (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
+            [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate">
 
-  </div>
-  <div *ngIf="chipsList.length>0" class="chips-title">Filtri attivi</div>
-  <div class="chips-container">
-    <lib-chip class="single-chip" *ngFor="let singleChip of chipsList; let j = index"
-              (onRemove)="resetDropdown(j, singleChip)" [label]="singleChip.value" [removable]="true"
-              removeIcon="pi pi-times"></lib-chip>
-  </div>
+            <ng-template #valueTemplate value>
+                {{dropdownOptions.placeholder}}
+            </ng-template>
+        </lib-tree-select>
+
+    </div>
+    <div *ngIf="chipsList.length>0" class="chips-title">Filtri attivi</div>
+    <div class="chips-container">
+        <lib-chip class="single-chip" *ngFor="let singleChip of chipsList; let j = index"
+            (onRemove)="resetDropdown(j, singleChip)" [label]="singleChip.value" [removable]="true"
+            removeIcon="pi pi-times"></lib-chip>
+    </div>
 </div>

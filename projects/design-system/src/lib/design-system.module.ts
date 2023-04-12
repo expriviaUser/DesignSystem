@@ -20,60 +20,62 @@ import { CtaBarModule } from './molecole/cta-bar/cta-bar.module';
 import { HeaderItemsModule } from './molecole/header-items/header-items.module';
 import { LibMessagesModule } from './molecole/messages/lib-messages.module';
 import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module';
-import { LibFiltersModule} from "./micro-organismi/filters/lib-filters.module";
+import { LibFiltersModule } from "./micro-organismi/filters/lib-filters.module";
 import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
 import { SidebarModule } from './atoms/sidebar/sidebar.module';
 import { CommonModule } from '@angular/common';
 import { LibTableModule } from './molecole/table/lib-table.module';
 import { FileModule } from './molecole/file/file.module';
 import { FileStatusModule } from './molecole/file-status/file-status.module';
-import {LibTreeSelectModule} from "./atoms/tree-select/lib-tree-select.module";
+import { LibTreeSelectModule } from "./atoms/tree-select/lib-tree-select.module";
 import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
 import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
 import { ChooseFileModule } from './atoms/choose-file/choose-file.module';
+import { SwitchModule } from './atoms/switch/switch.module';
 
 const sharedModules = [
-  LibTagModule,
-  LibCardModule,
-  LibBreadcrumbModule,
-  LibButtonModule,
-  LibDropdownModule,
-  LibCalendarModule,
-  LibAutocompleteModule,
-  LibCheckboxModule,
-  LibRadioButtonModule,
-  LibChipModule,
-  LibTextareaModule,
-  InputFormModule,
-  LibInputModule,
-  LibBadgeModule,
-  LibDialogModule,
-  LibIconCircleModule,
-  LibTabsModule,
-  LibTableModule,
-  CtaBarModule,
-  HeaderItemsModule,
-  LibMessagesModule,
-  LibRadioTileModule,
-  LibFiltersModule,
-  HeaderMenuModule,
-  SidebarModule,
-  FileModule,
-  FileStatusModule,
-  LibTreeSelectModule,
-  LibProgressBarModule,
-  LibUploadFileModule,
-  ChooseFileModule
+    LibTagModule,
+    LibCardModule,
+    LibBreadcrumbModule,
+    LibButtonModule,
+    LibDropdownModule,
+    LibCalendarModule,
+    LibAutocompleteModule,
+    LibCheckboxModule,
+    LibRadioButtonModule,
+    LibChipModule,
+    LibTextareaModule,
+    InputFormModule,
+    LibInputModule,
+    LibBadgeModule,
+    LibDialogModule,
+    LibIconCircleModule,
+    LibTabsModule,
+    LibTableModule,
+    CtaBarModule,
+    HeaderItemsModule,
+    LibMessagesModule,
+    LibRadioTileModule,
+    LibFiltersModule,
+    HeaderMenuModule,
+    SidebarModule,
+    FileModule,
+    FileStatusModule,
+    LibTreeSelectModule,
+    LibProgressBarModule,
+    LibUploadFileModule,
+    ChooseFileModule,
+    SwitchModule
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    ...sharedModules
-  ],
-  exports: [
-    ...sharedModules
-  ]
+    declarations: [],
+    imports: [
+        CommonModule,
+        ...sharedModules
+    ],
+    exports: [
+        ...sharedModules
+    ]
 })
 export class DesignSystemModule { }

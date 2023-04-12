@@ -19,8 +19,9 @@
 <div class="field-data" *ngIf="inlineCal || showIcon">
     <label> {{label}}</label>
 
-    <p-calendar (onSelect)="selectDate(calendarDate)" [showButtonBar]="showButtonBar"
-        [(ngModel)]="calendarDate" [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" [ngClass]="{'max-w-full' : inlineCal}" [selectionMode]="selectionType" [readonlyInput]="true"></p-calendar>
+    <p-calendar (onSelect)="selectDate(calendarDate)" [showButtonBar]="showButtonBar" [disabled]="disabled"
+        [(ngModel)]="calendarDate" [showIcon]="showIcon" inputId="icon" [inline]="inlineCal"
+        [ngClass]="{'max-w-full' : inlineCal}" [selectionMode]="selectionType" [readonlyInput]="true"></p-calendar>
 
 
 </div>

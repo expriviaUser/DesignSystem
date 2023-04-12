@@ -27,9 +27,7 @@ $ipad-min-width: 768px;
 $ipad-pro-min-width: 1024px;
 $ipad-pro-max-width: 1366px;
 
-
 :root {
-
     //PRIMARY
     --primary-color-10: #856f00;
     --primary-color-20: #9d8300;
@@ -142,7 +140,6 @@ $ipad-pro-max-width: 1366px;
     --line-height-m: 24px;
     --line-height-l: 28px;
     --typography-form-label-line-height: 28px;
-
 }
 
 // Colors prj
@@ -270,6 +267,10 @@ $color--checkbox-text: var(--base-color-white);
 //calendar
 $color--calendar-button-text: var(--secondary-color-50);
 $color--calendar-header-text: var(--gray-color-30);
+
+//switch
+$color--switch-active: var(--tertiary-color-50);
+$color--switch-hover: var(--tertiary-color-50);
 
 //form
 $color--form-label-text: var(--text-color-normal);
