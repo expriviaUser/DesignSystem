@@ -32,6 +32,15 @@
                 border-bottom-left-radius: 0;
                 border-color: $color--calendar-button-background;
             }
+
+            &:disabled {
+                background-color: $color--calendar-button-background;
+                color: $color--calendar-button-text;
+                border-radius: $border-radius;
+                border-color: $color--calendar-button-background;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
         }
 
         .p-datepicker {
