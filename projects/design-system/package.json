@@ -1,6 +1,6 @@
 {
   "name": "@dnlcorti/design-system",
-  "version": "1.0.64",
+  "version": "1.0.65",
   "scripts": {
     "versioning": "npm --no-git-tag-version version patch --project=design-system && ng build design-system"
   },
