@@ -1,4 +1,4 @@
 export interface TreeSelectModel {
     label: string,
-    data: string
+    data: string | number
 }

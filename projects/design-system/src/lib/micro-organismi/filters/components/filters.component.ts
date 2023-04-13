@@ -22,7 +22,7 @@ export class FiltersComponent implements OnInit {
     @Input() inputSelectedValues: TreeSelectModel[][] = [];
 
     selectedValues: TreeSelectModel[][] = [];
-    @Output() filterValues: EventEmitter<FiltersResult[]> = new EventEmitter<FiltersResult[]>();
+    @Output() filterValues: EventEmitter<FiltersResult> = new EventEmitter<FiltersResult>();
 
     chipsList: { value: string, dropdownIndex: number, field: string }[] = [];
     chipsExport: any = {};
