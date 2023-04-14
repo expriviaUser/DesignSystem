@@ -1,5 +1,6 @@
 <div [ngClass]="{'treemenu-wrapper':true, 'checkbox-on-leaf': checkboxOnlyLeaf}">
     <p-tree [value]="items" [filter]="filter" [selectionMode]="selectionMode" [filterPlaceholder]="filterPlaceholder"
         [filterMode]="filterMode" [(selection)]="selected" (selectionChange)="changedSelection()"
-        [propagateSelectionUp]="propagateSelectionUp" [propagateSelectionDown]="propagateSelectionDown"></p-tree>
+        [propagateSelectionUp]="propagateSelectionUp" [propagateSelectionDown]="propagateSelectionDown"
+        [scrollHeight]="scrollHeight"></p-tree>
 </div>

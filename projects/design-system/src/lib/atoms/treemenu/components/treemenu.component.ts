@@ -9,6 +9,7 @@ import { TreeMenu } from '../models/treemenu.model';
 export class TreemenuComponent {
     @Input() items!: TreeMenu[];
     @Input() filter: boolean = false;
+    @Input() scrollHeight!: string;
     @Input() checkboxOnlyLeaf: boolean = false;
     @Input() propagateSelectionUp: boolean = true;
     @Input() propagateSelectionDown: boolean = true;
