@@ -228,12 +228,14 @@
     &:enabled {
         &:hover {
             border-color: $color--button-secondary-border-hover;
+            background: $color--button-secondary-background;
         }
         &:focus {
             box-shadow: 0 0 0 0.2rem #e2e8f0;
         }
         &:active {
             border-color: $color--button-secondary-border-hover;
+            background: $color--button-secondary-background;
         }
     }
     &:disabled {
