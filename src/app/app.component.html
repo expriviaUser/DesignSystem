@@ -116,5 +116,9 @@
 
 <lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
 
-<lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">
-</lib-chip>
+<!-- <lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">
+</lib-chip> -->
+
+<lib-treemenu [filter]="true" [selectionMode]="'checkbox'" [filterPlaceholder]="'Cerca'" [items]="treemenuItems"
+    [(selected)]="selectedItems" (selectedChange)="selectedMenu($event)" [checkboxOnlyLeaf]="true"
+    [propagateSelectionUp]="false"></lib-treemenu>

@@ -24,7 +24,7 @@ export class FiltersComponent implements OnInit {
     selectedValues: TreeSelectModel[][] = [];
     @Output() filterValues: EventEmitter<FiltersResult> = new EventEmitter<FiltersResult>();
 
-    chipsList: { value: string, dropdownIndex: number, field: string }[] = [];
+    chipsList: { value: string, dropdownIndex: number, field: string, data: string | number }[] = [];
     chipsExport: any = {};
 
     constructor() {
@@ -40,7 +40,7 @@ export class FiltersComponent implements OnInit {
 
     createChip(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string): void {
         if (event.node) {
-            this.chipsList.push({ value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField });
+            this.chipsList.push({ value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data });
             this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
             this.chipsExport[dropdownField].push(event.node.data);
             this.filterValues.emit(this.chipsExport);
@@ -61,12 +61,12 @@ export class FiltersComponent implements OnInit {
         this.selectedValues[dropdownIndex].splice(N_INDEX, 1);
     }
 
-    resetDropdown(chipIndex: number, chipValue: { value: string, dropdownIndex: number, field: string }): void {
+    resetDropdown(chipIndex: number, chipValue: { value: string, dropdownIndex: number, field: string, data: string | number }): void {
         this.chipsList.splice(chipIndex, 1);
-        const E_INDEX = this.chipsExport[chipValue.field].findIndex((d: string) => d == chipValue.value);
+        const E_INDEX = this.chipsExport[chipValue.field].findIndex((d: string) => d == chipValue.data); //add data to chipValue
         this.filterValues.emit(this.chipsExport);
         this.chipsExport[chipValue.field].splice(E_INDEX, 1);
-        const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.data == chipValue.value);
+        const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.label == chipValue.value);
         this.selectedValues[chipValue.dropdownIndex].splice(N_INDEX, 1);
         this.selectedValues[chipValue.dropdownIndex] = [...this.selectedValues[chipValue.dropdownIndex]];
     }

@@ -1,0 +1,13 @@
+.treemenu-wrapper {
+    &.checkbox-on-leaf {
+        .p-checkbox {
+            display: none;
+        }
+
+        .p-treenode-leaf {
+            .p-checkbox {
+                display: unset;
+            }
+        }
+    }
+}
