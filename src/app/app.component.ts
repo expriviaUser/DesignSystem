@@ -8,9 +8,10 @@ import {
     FileStatus,
     MenubarItem,
     SidebarItem,
+    TreeMenu,
     TreeSelectModel
 } from 'projects/design-system/src/public-api';
-import { FiltersModel} from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
+import { FiltersModel } from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -213,25 +214,79 @@ export class AppComponent {
         { label: 'Tipologia richiesta4', data: 'Tipologia richiesta4' },
     ];
 
-  dropdownValues: FiltersModel[] = [
-    {
-      data: [
-        { label: 'Tipologia richiesta1', data: 'Data richiesta1'},
-        { label: 'Tipologia richiesta2', data: 'Data richiesta2'},
-        { label: 'Tipologia richiesta3', data: 'Data richiesta3'},
-        { label: 'Tipologia richiesta4', data: 'Data richiesta4'}
+    dropdownValues: FiltersModel[] = [
+        {
+            data: [
+                { label: 'Tipologia richiesta1', data: 0 },
+                { label: 'Tipologia richiesta2', data: 1 },
+                { label: 'Tipologia richiesta3', data: 2 },
+                { label: 'Tipologia richiesta4', data: 3 }
 
-      ], placeholder: "Placeholder1", field: "filter1"
-    },
-    {
-      data: [
-        { label: 'Tipologia richiesta5', data: 'Data richiesta5'},
-        { label: 'Tipologia richiesta6', data: 'Data richiesta6'},
-        { label: 'Tipologia richiesta7', data: 'Data richiesta7'},
-        { label: 'Tipologia richiesta8', data: 'Data richiesta8'}
-      ], placeholder: "Placeholder2", field: "filter2"
-    }];
+            ], placeholder: "Placeholder1", field: "filter1"
+        },
+        {
+            data: [
+                { label: 'Tipologia richiesta5', data: 'Data richiesta5' },
+                { label: 'Tipologia richiesta6', data: 'Data richiesta6' },
+                { label: 'Tipologia richiesta7', data: 'Data richiesta7' },
+                { label: 'Tipologia richiesta8', data: 'Data richiesta8' }
+            ], placeholder: "Placeholder2", field: "filter2"
+        }];
     dialogVisibility: boolean = true;
+
+    treemenuItems: TreeMenu[] = [
+        {
+            label: 'Prova 1',
+            data: 1,
+            selectable: false,
+            children: [
+                {
+                    label: 'Prova 1.1',
+                    data: 2,
+                    children: [
+                        {
+                            label: 'Prova 1.1.1',
+                            data: 3,
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            label: 'Prova 2',
+            data: 4,
+            children: [
+                {
+                    label: 'Prova 2.1',
+                    data: 5,
+                    children: [
+                        {
+                            label: 'Prova 2.1.1',
+                            data: 6,
+                        }
+                    ]
+                },
+                {
+                    label: 'Prova 2.1',
+                    data: 5,
+                    children: [
+                        {
+                            label: 'Prova 2.1.1',
+                            data: 6,
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    selectedItems: TreeMenu[] = [];
+
+    selectedMenu(event: any) {
+        console.log(event);
+
+        console.log(this.selectedItems);
+    }
 
     constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
         this.config.setTranslation({
@@ -276,5 +331,6 @@ export class AppComponent {
 
     print(data: any): void {
         console.log(data);
+        console.log(data[this.dropdownValues[0].field]);
     }
 }

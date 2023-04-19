@@ -37,6 +37,13 @@
     font-size: pxToRem(14px);
     line-height: pxToRem(20px);
 }
+
+@mixin typography-body-bold {
+    font-weight: 700;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+
 @mixin typography-x-small-regular {
     font-weight: 400;
     font-size: pxToRem(14px);

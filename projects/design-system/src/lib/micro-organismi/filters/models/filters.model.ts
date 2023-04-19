@@ -7,3 +7,7 @@ export interface FiltersModel {
     placeholder: string,
     field: string
 }
+
+export interface FiltersResult {
+    [x: string]: string[] | number[];
+}

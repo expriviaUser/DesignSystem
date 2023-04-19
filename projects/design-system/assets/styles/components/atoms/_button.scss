@@ -17,17 +17,17 @@
 .p-button {
     &:not(.p-button-link) {
         //text-transform: uppercase;
-    }
-    &:enabled {
-        &:hover {
-            background: $color--button-primary-background-hover;
-            color: $color--button-primary-text;
-            border-color: $color--button-primary-background-hover;
-        }
-        &:active {
-            background: $color--button-primary-background-hover;
-            color: $color--button-primary-text;
-            border-color: $color--button-primary-background-hover;
+        &:enabled {
+            &:hover {
+                background: $color--button-primary-background-hover;
+                color: $color--button-primary-text;
+                border-color: $color--button-primary-background-hover;
+            }
+            &:active {
+                background: $color--button-primary-background-hover;
+                color: $color--button-primary-text;
+                border-color: $color--button-primary-background-hover;
+            }
         }
     }
     &:focus {
@@ -93,26 +93,33 @@
     }
 }
 
-.p-button.p-button-text {
-    background-color: transparent;
-    color: $color--primary-color;
-    border-color: transparent;
-    &:enabled {
-        &:hover {
-            background: rgba(59, 130, 246, 0.04);
+.p-button {
+    &.p-button-text,
+    .p-button-link {
+        background-color: transparent;
+        color: $color--primary-color;
+        border-color: transparent;
+        &:enabled {
+            &:hover {
+                background: rgba(59, 130, 246, 0.04);
+                color: $color--primary-color;
+                border-color: transparent;
+            }
+            &:active {
+                background: rgba(59, 130, 246, 0.16);
+                color: $color--primary-color;
+                border-color: transparent;
+            }
+        }
+        &:enabled:hover {
             color: $color--primary-color;
             border-color: transparent;
         }
-        &:active {
-            background: rgba(59, 130, 246, 0.16);
-            color: $color--primary-color;
-            border-color: transparent;
-        }
-    }
-    &-secondary {
+        /* &-secondary {
         background-color: $color--button-text-secondary-background;
         color: $color--primary-color;
         border-color: $color--button-text-secondary-background;
+    } */
     }
 }
 
@@ -189,6 +196,14 @@
     }
 }
 
+.p-button {
+    @include typography-button-regular;
+    padding: 1rem;
+    .p-button-icon {
+        @include typography-button-regular;
+    }
+}
+
 .p-button.p-button-lg {
     @include typography-button-large;
     padding: 0.9375rem 1.5625rem;
@@ -213,12 +228,14 @@
     &:enabled {
         &:hover {
             border-color: $color--button-secondary-border-hover;
+            background: $color--button-secondary-background;
         }
         &:focus {
             box-shadow: 0 0 0 0.2rem #e2e8f0;
         }
         &:active {
             border-color: $color--button-secondary-border-hover;
+            background: $color--button-secondary-background;
         }
     }
     &:disabled {
@@ -532,27 +549,14 @@
 }
 
 .p-button.p-button-link {
-    color: $color--primary-color;
+    color: $color--button-text-color;
     background: transparent;
     border: transparent;
     &:enabled {
         &:hover {
-            background: transparent;
-            color: $color--blue-600;
-            border-color: transparent;
             .p-button-label {
                 text-decoration: underline;
             }
-        }
-        &:focus {
-            background: transparent;
-            box-shadow: $shadow--focus-ring;
-            border-color: transparent;
-        }
-        &:active {
-            background: transparent;
-            color: $color--blue-700;
-            border-color: transparent;
         }
     }
 }
