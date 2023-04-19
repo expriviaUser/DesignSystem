@@ -3,9 +3,10 @@ import { TreeSelectModel } from "../../../atoms/tree-select/models/tree-select.m
 
 
 export interface FiltersModel {
-    data: TreeSelectModel[],
+    data?: TreeSelectModel[],
     placeholder: string,
-    field: string
+    field: string,
+    type: "calendar" | "treeselect"
 }
 
 export interface FiltersResult {

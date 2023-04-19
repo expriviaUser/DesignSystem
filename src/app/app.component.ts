@@ -215,7 +215,7 @@ export class AppComponent {
     ];
 
     dropdownValues: FiltersModel[] = [
-        {
+        { type: "treeselect",
             data: [
                 { label: 'Tipologia richiesta1', data: 0 },
                 { label: 'Tipologia richiesta2', data: 1 },
@@ -224,14 +224,20 @@ export class AppComponent {
 
             ], placeholder: "Placeholder1", field: "filter1"
         },
-        {
+      {
+        type: "calendar",
+        placeholder:"Date",
+        field:"filterDate"
+      },
+        { type: "treeselect",
             data: [
                 { label: 'Tipologia richiesta5', data: 'Data richiesta5' },
                 { label: 'Tipologia richiesta6', data: 'Data richiesta6' },
                 { label: 'Tipologia richiesta7', data: 'Data richiesta7' },
                 { label: 'Tipologia richiesta8', data: 'Data richiesta8' }
             ], placeholder: "Placeholder2", field: "filter2"
-        }];
+        }
+        ];
     dialogVisibility: boolean = true;
 
     treemenuItems: TreeMenu[] = [

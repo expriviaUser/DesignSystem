@@ -1,8 +1,19 @@
-import { Component, forwardRef, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  forwardRef,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+  OnChanges
+} from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AbstractControl, ControlContainer, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { map, Subject, takeUntil } from 'rxjs';
+import {TreeSelectModel} from "../../tree-select/models/tree-select.model";
 
 @Component({
     selector: 'lib-calendar',
@@ -14,19 +25,22 @@ import { map, Subject, takeUntil } from 'rxjs';
         multi: true
     }]
 })
-export class CalendarComponent implements OnDestroy, OnInit {
+export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
     @Input() value!: any
     @Input() label!: string
     @Input() disabled: boolean = false;
     @Input() inlineCal: boolean = false;
     @Input() showIcon: boolean = false;
+    @Input() dropdownMode: boolean = false;
     @Input() showButtonBar: boolean = false;
     @Input() selectionType: string = 'single';
     @Input() control: AbstractControl = new FormControl();
+    @Input() placeholder: string = '';
 
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
 
     calendarDate!: Date;
+
     formData!: FormGroup;
 
     destroySub$ = new Subject<void>()
@@ -40,14 +54,14 @@ export class CalendarComponent implements OnDestroy, OnInit {
     get haveErrorParent() {
         return this.control.parent && this.control.parent.errors && (!this.control.pristine || this.control.touched);
     }
-    
+
     constructor(
         private fb: FormBuilder,
         private datePipe: DatePipe
     ) { }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (!(this.inlineCal || this.showIcon)) { 
+        if (!(this.inlineCal || this.showIcon || this.dropdownMode)) {
             if (changes['value'].firstChange) {
                 this.formData = this.fb.group({
                     date: [null, [Validators.required, Validators.min(1), Validators.max(31)]],
@@ -72,7 +86,7 @@ export class CalendarComponent implements OnDestroy, OnInit {
     }
 
     ngOnInit() {
-        if (!(this.inlineCal || this.showIcon)) {
+        if (!(this.inlineCal || this.showIcon|| this.dropdownMode)) {
 
             if (this.value) {
                 this.value = new Date(this.value);
@@ -100,7 +114,7 @@ export class CalendarComponent implements OnDestroy, OnInit {
     }
 
     selectDate(date: any) {
-        if (!(this.inlineCal || this.showIcon)) {
+        if (!(this.inlineCal || this.showIcon|| this.dropdownMode)) {
             this.formData.get('date')?.setValue(date.getDate())
             this.formData.get('month')?.setValue(date.getMonth() + 1)
             this.formData.get('year')?.setValue(date.getFullYear())

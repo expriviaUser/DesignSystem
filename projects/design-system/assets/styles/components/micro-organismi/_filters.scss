@@ -56,6 +56,38 @@
                 }
             }
         }
+
+      p-calendar {
+        .p-calendar {
+          height: 2.176rem;
+          &:after {
+            font-family: "primeicons";
+            content: "\e902";
+            top: 0.571rem;
+            right: 1.143rem;
+            position: absolute;
+          }
+          .p-inputtext {
+            border-color:$color--filters-dropdown-border;
+            font-size: 0.875rem;
+            cursor: pointer;
+
+
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: $color--black;
+              opacity: 1; /* Firefox */
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: $color--black;
+            }
+
+            &::-ms-input-placeholder { /* Microsoft Edge */
+              color: $color--black;
+            }
+          }
+        }
+      }
     }
 
     .chips-title {
