@@ -10,5 +10,5 @@ export interface FiltersModel {
 }
 
 export interface FiltersResult {
-    [x: string]: string[] | number[];
+    [x: string]: string[] | number[] | Date[];
 }
