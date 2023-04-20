@@ -236,7 +236,12 @@ export class AppComponent {
                 { label: 'Tipologia richiesta7', data: 'Data richiesta7' },
                 { label: 'Tipologia richiesta8', data: 'Data richiesta8' }
             ], placeholder: "Placeholder2", field: "filter2"
-        }
+        },
+      {
+        type: "calendar",
+        placeholder:"Date2",
+        field:"filterDate2"
+      }
         ];
     dialogVisibility: boolean = true;
 

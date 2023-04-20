@@ -19,7 +19,7 @@
 <div class="field-data" *ngIf="inlineCal || showIcon || this.dropdownMode">
     <label> {{label}}</label>
 
-    <p-calendar (onSelect)="selectDate(calendarDate)" [showButtonBar]="showButtonBar" [disabled]="disabled"
+    <p-calendar #calendar (onSelect)="selectDate(calendarDate)" [showButtonBar]="showButtonBar" [disabled]="disabled"
         [(ngModel)]="calendarDate" [showIcon]="showIcon" inputId="icon" [inline]="inlineCal"
         [ngClass]="{'max-w-full' : inlineCal}" [selectionMode]="selectionType" [readonlyInput]="true" [placeholder]="placeholder">
     </p-calendar>

@@ -7,13 +7,14 @@ import {
   OnInit,
   Output,
   SimpleChanges,
-  OnChanges
+  OnChanges, ViewChild
 } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AbstractControl, ControlContainer, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { map, Subject, takeUntil } from 'rxjs';
 import {TreeSelectModel} from "../../tree-select/models/tree-select.model";
+import {Calendar} from "primeng/calendar";
 
 @Component({
     selector: 'lib-calendar',
@@ -38,6 +39,8 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
     @Input() placeholder: string = '';
 
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
+
+    @ViewChild('calendar') pcalendar!: Calendar;
 
     calendarDate!: Date;
 
@@ -171,6 +174,8 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
         this.selectedValue.emit(date);
     }
 
-
+toggleCalendar(): void {
+      this.pcalendar.toggle();
+}
 
 }

@@ -12,7 +12,7 @@
                 {{dropdownOptions.placeholder}}
             </ng-template>
         </lib-tree-select>
-        <lib-calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true" [placeholder]="dropdownOptions.placeholder" [value]="resetCalendarValue" [selectionType]="'range'" (selectedValue)="createCalendarChip($event, i, dropdownOptions.field)"></lib-calendar>
+        <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true" [placeholder]="dropdownOptions.placeholder" [value]="resetCalendarValue" [selectionType]="'range'" (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
       </div>
 
     </div>
