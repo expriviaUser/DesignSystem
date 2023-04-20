@@ -45,7 +45,7 @@ export class AutocompleteComponent {
     onTouch: any = () => { }
 
     constructor() { }
-    
+
     filter(event: any) {
         if (event.query.length > this.minLength-1) {
             let filtered: any[] = [];
@@ -85,13 +85,24 @@ export class AutocompleteComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any, type?: string) {
-        console.log('auto', event)
-      
             this.value = event;
             this.onChange(event);
             this.selectedValue.emit(event);
-      
     }
- 
+
+    emitValueIfExist(event: any) {
+      if(this.valueAutocomplete.includes(event.target.value)) {
+        this.value = event.target.value;
+        this.control.setErrors(null);
+        this.onChange(event.target.value);
+        this.selectedValue.emit(event.target.value);
+      }
+      else if(this.value){
+          this.onChange("");
+          this.selectedValue.emit("");
+          this.control.setErrors({'incorrect': true});
+          this.control.markAsTouched();
+        }
+    }
 
 }

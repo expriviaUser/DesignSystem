@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Table, TableService } from 'primeng/table';
 import {
     ActionTable,
@@ -299,6 +299,11 @@ export class AppComponent {
         console.log(this.selectedItems);
     }
 
+
+  autocompleteForm: FormGroup = this.fb.group({
+    autocomplete: ['']
+  });
+
     constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
         this.config.setTranslation({
             accept: 'Accept',
@@ -344,4 +349,9 @@ export class AppComponent {
         console.log(data);
         console.log(data[this.dropdownValues[0].field]);
     }
+
+    formEmit(){
+      console.log(this.autocompleteForm);
+    }
+
 }

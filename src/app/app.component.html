@@ -29,10 +29,11 @@
 </lib-header-menu>
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
-
+<form [formGroup]="autocompleteForm">
 <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
-    [showClear]="true"></lib-autocomplete>
-
+    [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
+</form>
+<lib-button [label]="'submit'" (click)="formEmit()"></lib-button>
 
 <lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file>
 
