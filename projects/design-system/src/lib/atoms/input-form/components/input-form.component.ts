@@ -28,6 +28,11 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
     @Input() placeholder: string = "Inserisci un valore";
     @Input() formControlName: string = "";
     @Input() field: string = "";
+    @Input() inlineCal!: boolean;
+    @Input() selectionType: string = '';
+    @Input() minDate!: Date;
+    @Input() maxDate!: Date;
+    @Input() showButtonBar!: boolean;
 
     //@Input() formControl: FormControl = new FormControl();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();

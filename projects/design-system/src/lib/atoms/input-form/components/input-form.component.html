@@ -19,7 +19,8 @@
 
     <!-- Input calendar -->
     <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
-      (selectedValue)="emitValue($event, 'calendar')"></lib-calendar>
+      (selectedValue)="emitValue($event, 'calendar')" [inlineCal]="inlineCal" [selectionType]="selectionType"
+      [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"></lib-calendar>
 
     <!-- Input autocomplete  -->
     <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
