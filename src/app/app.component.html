@@ -33,7 +33,7 @@
 <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
     [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
-<lib-button [label]="'submit'" (click)="formEmit()"></lib-button>
+<lib-button [label]="'submit'" (click)="formEmit('autocomplete')"></lib-button>
 
 <lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file>
 
@@ -61,6 +61,9 @@
         <lib-input-form type="calendar" formControlName="age"></lib-input-form>
 
     </form>
+
+
+
     <div footer>
 
         <lib-button #buttonSubmit [label]="'Prova'" [size]="'small'" [type]="'secondary'"
@@ -78,8 +81,18 @@
     </ng-template>
 </lib-tabs>
 
-<lib-calendar [inlineCal]="true" [selectionType]="'range'" [value]="'02/04/2023' | date: 'dd/MM/yyyy'"
-    [showButtonBar]="true"></lib-calendar>
+<form [formGroup]="calendarForm">
+  <lib-calendar [inlineCal]="true" [selectionType]="'range'"
+                [showButtonBar]="true" formControlName="calendar" [minDate]="minDate" [maxDate]="maxDate"></lib-calendar>
+  <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
+                    [showClear]="true" formControlName="calendarAutoComplete"></lib-autocomplete>
+  <span style="color: red"
+        *ngIf="(calendarFormControl['calendar'].touched || calendarFormSubmitted) && this.calendarForm.invalid">
+                                Date is required
+                            </span>
+</form>
+<lib-button [label]="'submitCalendar'" (click)="formEmit('calendar')"></lib-button>
+
 
 
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="null"
@@ -94,7 +107,6 @@
         <td>
             <p-tableCheckbox [value]="data"></p-tableCheckbox>
         </td>
-
     </ng-template>
 </lib-table>
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Table, TableService } from 'primeng/table';
 import {
     ActionTable,
@@ -304,6 +304,23 @@ export class AppComponent {
     autocomplete: ['']
   });
 
+  calendarForm: FormGroup = this.fb.group({
+    calendar: ['', Validators.required],
+    calendarAutoComplete: ['']
+  });
+
+  get calendarFormControl() {
+    return this.calendarForm.controls;
+  }
+
+  calendarFormSubmitted = false;
+
+  minDate: Date = new Date(2023, 2, 31);
+  maxDate: Date = new Date(2023, 3, 31);
+
+
+
+
     constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
         this.config.setTranslation({
             accept: 'Accept',
@@ -315,7 +332,7 @@ export class AppComponent {
             dayNamesMin: ['Do', 'Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'],
             today: 'Oggi',
             clear: 'Svuota'
-        }) //translations });
+        }); //translations });
     }
 
     selectedValue = [{ name: 'Simone', surname: 'Giannuario' }, { name: 'Daniele', surname: 'Corti' },];
@@ -350,8 +367,14 @@ export class AppComponent {
         console.log(data[this.dropdownValues[0].field]);
     }
 
-    formEmit(){
-      console.log(this.autocompleteForm);
+    formEmit(name: string){
+      if(name=='autocomplete') {
+        console.log(this.autocompleteForm);
+      } else if (name =='calendar') {
+        this.calendarFormSubmitted = true;
+        console.log(this.calendarForm);
+      }
     }
+
 
 }
