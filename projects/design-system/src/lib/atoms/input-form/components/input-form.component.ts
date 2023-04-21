@@ -27,6 +27,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
     @Input() inputDisabled: boolean = false;
     @Input() placeholder: string = "Inserisci un valore";
     @Input() formControlName: string = "";
+    @Input() field: string = "";
 
     //@Input() formControl: FormControl = new FormControl();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
