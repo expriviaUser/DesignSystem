@@ -104,7 +104,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
     // upon UI element value change, this method gets triggered
     emitValue(event: any, type?: string) {
         if (type) {
-            if ((event !== "" && type == 'autocomplete') || type !== "autocomplete")
+            if ((event && type == 'autocomplete') || type !== "autocomplete")
                 this.value = event;
 
             this.onChange(event);

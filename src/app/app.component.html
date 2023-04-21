@@ -30,8 +30,13 @@
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
 <form [formGroup]="autocompleteForm">
-<lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
-    [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
+    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
+        [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
+</form>
+<form [formGroup]="autocompleteForm">
+    <lib-autocomplete [label]="'prova'"
+        [valueAutocomplete]="[{name: 'ciao', code: 1},{name: 'ciao1', code: 2}, {name: 'ciao2', code: 3}]"
+        [icon]="'pi pi-search'" [showClear]="true" formControlName="autocomplete" [field]="'name'"></lib-autocomplete>
 </form>
 <lib-button [label]="'submit'" (click)="formEmit('autocomplete')"></lib-button>
 

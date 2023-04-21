@@ -13,95 +13,103 @@ import { FilterService } from "primeng/api";
     }, FilterService]
 })
 export class AutocompleteComponent {
-    @Input() valueAutocomplete: string[] = [];
+    @Input() valueAutocomplete: string[] | any[] = [];
     @Input() placeholder: string = '';
-    @Input() value: any ;
+    @Input() value: any;
     @Input() label: string = '';
     @Input() icon: string = '';
     @Input() disabled: boolean = false;
     @Input() showClear: boolean = false;
     @Input() minLength: number = 3;
     @Input() control: AbstractControl = new FormControl();
+    @Input() field: string = '';
 
-    @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
+    @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
 
-
-
-    filteredList: any[] = [];
-
-    // @Input('controlName') formControlName: string = '';
-    // get control() {
-    //     return this.controlContainer.control?.get(this.formControlName);
-    // }
+    private onChange: any = () => { }
+    private onTouch: any = () => { }
+    protected filteredList: any[] = [];
 
     get haveError() {
         return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
     }
 
-
-    touched = false;
-
-    onChange: any = () => { }
-    onTouch: any = () => { }
-
     constructor() { }
 
-    filter(event: any) {
-        if (event.query.length > this.minLength-1) {
+    protected filter(event: any) {
+        if (event.query.length > this.minLength - 1) {
             let filtered: any[] = [];
             let query = event.query.toString();
             for (let i = 0; i < this.valueAutocomplete.length; i++) {
-                let country = this.valueAutocomplete[i];
-                if (country.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-                    filtered.push(country);
+                let value = this.valueAutocomplete[i];
+                if (!this.field && typeof value === 'string') {
+                    if (value.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                        filtered.push(value);
+                    }
+                } else {
+                    if (value[this.field].toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                        filtered.push(value);
+                    }
                 }
             }
             this.filteredList = filtered;
-
         }
-
     }
 
-
     // this method sets the value programmatically
-    writeValue(value: string) {
+    protected writeValue(value: string) {
         this.value = value;
     }
 
     // set UI element value changes emit function
-    registerOnChange(fn: any) {
+    protected registerOnChange(fn: any) {
         this.onChange = fn
     }
 
     // set touching element emit function
-    registerOnTouched(fn: any) {
+    protected registerOnTouched(fn: any) {
         this.onTouch = fn
     }
 
     // upon disabled statu change, this method gets triggered
-    setDisabledState(isDisabled: boolean): void {
+    protected setDisabledState(isDisabled: boolean): void {
         this.disabled = isDisabled;
     }
 
     // upon UI element value change, this method gets triggered
-    emitValue(event: any, type?: string) {
-            this.value = event;
-            this.onChange(event);
-            this.selectedValue.emit(event);
+    protected emitValue(event: any, type?: string) {
+        this.value = event;
+        this.onChange(event);
+        this.selectedValue.emit(event);
     }
 
-    emitValueIfExist(event: any) {
-      if(this.valueAutocomplete.includes(event.target.value)) {
-        this.value = event.target.value;
-        this.control.setErrors(null);
-        this.onChange(event.target.value);
-        this.selectedValue.emit(event.target.value);
-      }
-      else if(this.value){
-          this.onChange("");
-          this.selectedValue.emit("");
-          this.control.setErrors({'incorrect': true});
-          this.control.markAsTouched();
+    protected emitValueIfExist(event: any) {
+        if (!this.field) {
+            if (this.valueAutocomplete.includes(event.target.value)) {
+                this.value = event.target.value;
+                this.control.setErrors(null);
+                this.onChange(event.target.value);
+                this.selectedValue.emit(event.target.value);
+            }
+            else if (this.value) {
+                this.onChange("");
+                this.selectedValue.emit("");
+                this.control.setErrors({ 'incorrect': true });
+                this.control.markAsTouched();
+            }
+        } else {
+            if (this.valueAutocomplete.filter(item => item[this.field] == event.target.value).length > 0) {
+                this.value = this.valueAutocomplete.filter(item => item[this.field] == event.target.value)[0];
+                this.control.setErrors(null);
+                this.onChange(this.value);
+                this.selectedValue.emit(this.value);
+            }
+            else if (this.value) {
+                this.onChange("");
+                this.selectedValue.emit("");
+                this.control.setErrors({ 'incorrect': true });
+                this.control.markAsTouched();
+            }
         }
     }
 
