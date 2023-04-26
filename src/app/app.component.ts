@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Table, TableService } from 'primeng/table';
 import {
     ActionTable,
@@ -215,7 +215,8 @@ export class AppComponent {
     ];
 
     dropdownValues: FiltersModel[] = [
-        { type: "treeselect",
+        {
+            type: "treeselect",
             data: [
                 { label: 'Tipologia richiesta1', data: 0 },
                 { label: 'Tipologia richiesta2', data: 1 },
@@ -224,12 +225,13 @@ export class AppComponent {
 
             ], placeholder: "Placeholder1", field: "filter1"
         },
-      {
-        type: "calendar",
-        placeholder:"Date",
-        field:"filterDate"
-      },
-        { type: "treeselect",
+        {
+            type: "calendar",
+            placeholder: "Date",
+            field: "filterDate"
+        },
+        {
+            type: "treeselect",
             data: [
                 { label: 'Tipologia richiesta5', data: 'Data richiesta5' },
                 { label: 'Tipologia richiesta6', data: 'Data richiesta6' },
@@ -237,12 +239,12 @@ export class AppComponent {
                 { label: 'Tipologia richiesta8', data: 'Data richiesta8' }
             ], placeholder: "Placeholder2", field: "filter2"
         },
-      {
-        type: "calendar",
-        placeholder:"Date2",
-        field:"filterDate2"
-      }
-        ];
+        {
+            type: "calendar",
+            placeholder: "Date2",
+            field: "filterDate2"
+        }
+    ];
     dialogVisibility: boolean = true;
 
     treemenuItems: TreeMenu[] = [
@@ -300,23 +302,23 @@ export class AppComponent {
     }
 
 
-  autocompleteForm: FormGroup = this.fb.group({
-    autocomplete: ['']
-  });
+    autocompleteForm: FormGroup = this.fb.group({
+        autocomplete: ['']
+    });
 
-  calendarForm: FormGroup = this.fb.group({
-    calendar: ['', Validators.required],
-    calendarAutoComplete: ['']
-  });
+    calendarForm: FormGroup = this.fb.group({
+        calendar: ['', Validators.required],
+        calendarAutoComplete: ['']
+    });
 
-  get calendarFormControl() {
-    return this.calendarForm.controls;
-  }
+    get calendarFormControl() {
+        return this.calendarForm.controls;
+    }
 
-  calendarFormSubmitted = false;
+    calendarFormSubmitted = false;
 
-  minDate: Date = new Date(2023, 2, 31);
-  maxDate: Date = new Date(2023, 3, 31);
+    minDate: Date = new Date(2023, 2, 31);
+    maxDate: Date = new Date(2023, 3, 31);
 
 
 
@@ -367,13 +369,13 @@ export class AppComponent {
         console.log(data[this.dropdownValues[0].field]);
     }
 
-    formEmit(name: string){
-      if(name=='autocomplete') {
-        console.log(this.autocompleteForm);
-      } else if (name =='calendar') {
-        this.calendarFormSubmitted = true;
-        console.log(this.calendarForm);
-      }
+    formEmit(name: string) {
+        if (name == 'autocomplete') {
+            console.log(this.autocompleteForm);
+        } else if (name == 'calendar') {
+            this.calendarFormSubmitted = true;
+            console.log(this.calendarForm);
+        }
     }
 
 

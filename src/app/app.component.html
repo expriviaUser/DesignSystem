@@ -30,12 +30,12 @@
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
 <form [formGroup]="autocompleteForm">
-    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
+    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['CIAO','CIAO1', 'CIAO2']" [icon]="'pi pi-search'"
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
 <form [formGroup]="autocompleteForm">
     <lib-autocomplete [label]="'prova'"
-        [valueAutocomplete]="[{name: 'ciao', code: 1},{name: 'ciao1', code: 2}, {name: 'ciao2', code: 3}]"
+        [valueAutocomplete]="[{name: 'CI', code: 1},{name: 'CIAO1', code: 2}, {name: 'CIAO2', code: 3}]" [minLength]="2"
         [icon]="'pi pi-search'" [showClear]="true" formControlName="autocomplete" [field]="'name'"></lib-autocomplete>
 </form>
 <lib-button [label]="'submit'" (click)="formEmit('autocomplete')"></lib-button>
@@ -87,14 +87,14 @@
 </lib-tabs>
 
 <form [formGroup]="calendarForm">
-  <lib-calendar [inlineCal]="true" [selectionType]="'range'"
-                [showButtonBar]="true" formControlName="calendar" [minDate]="minDate" [maxDate]="maxDate"></lib-calendar>
-  <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
-                    [showClear]="true" formControlName="calendarAutoComplete"></lib-autocomplete>
-  <span style="color: red"
+    <lib-calendar [inlineCal]="true" [selectionType]="'range'" [showButtonBar]="true" formControlName="calendar"
+        [minDate]="minDate" [maxDate]="maxDate"></lib-calendar>
+    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
+        [showClear]="true" formControlName="calendarAutoComplete"></lib-autocomplete>
+    <span style="color: red"
         *ngIf="(calendarFormControl['calendar'].touched || calendarFormSubmitted) && this.calendarForm.invalid">
-                                Date is required
-                            </span>
+        Date is required
+    </span>
 </form>
 <lib-button [label]="'submitCalendar'" (click)="formEmit('calendar')"></lib-button>
 

@@ -33,6 +33,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() showButtonBar!: boolean;
+    @Input() minLenghtDigits: number = 3;
 
     //@Input() formControl: FormControl = new FormControl();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();

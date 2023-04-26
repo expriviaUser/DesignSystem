@@ -43,11 +43,11 @@ export class AutocompleteComponent {
             for (let i = 0; i < this.valueAutocomplete.length; i++) {
                 let value = this.valueAutocomplete[i];
                 if (!this.field && typeof value === 'string') {
-                    if (value.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                    if (value.toLowerCase().includes(query.toLowerCase())) {
                         filtered.push(value);
                     }
                 } else {
-                    if (value[this.field].toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                    if (value[this.field].toLowerCase().includes(query.toLowerCase())) {
                         filtered.push(value);
                     }
                 }
@@ -85,11 +85,12 @@ export class AutocompleteComponent {
 
     protected emitValueIfExist(event: any) {
         if (!this.field) {
-            if (this.valueAutocomplete.includes(event.target.value)) {
-                this.value = event.target.value;
+            let valueLowerCase: string[] = this.valueAutocomplete.map(item => item.toLowerCase());
+            if (valueLowerCase && valueLowerCase.includes(event.target.value.toLowerCase())) {
+                this.value = this.valueAutocomplete.filter(item => item.toLowerCase() === event.target.value.toLowerCase())[0];
                 this.control.setErrors(null);
-                this.onChange(event.target.value);
-                this.selectedValue.emit(event.target.value);
+                this.onChange(this.value);
+                this.selectedValue.emit(this.value);
             }
             else if (this.value) {
                 this.onChange("");
@@ -98,8 +99,8 @@ export class AutocompleteComponent {
                 this.control.markAsTouched();
             }
         } else {
-            if (this.valueAutocomplete.filter(item => item[this.field] == event.target.value).length > 0) {
-                this.value = this.valueAutocomplete.filter(item => item[this.field] == event.target.value)[0];
+            if (this.valueAutocomplete.filter(item => typeof item[this.field] === 'string' && typeof event.target.value === 'string' && item[this.field].toLowerCase() === event.target.value.toLowerCase()).length > 0) {
+                this.value = this.valueAutocomplete.filter(item => typeof item[this.field] === 'string' && typeof event.target.value === 'string' && item[this.field].toLowerCase() === event.target.value.toLowerCase())[0];
                 this.control.setErrors(null);
                 this.onChange(this.value);
                 this.selectedValue.emit(this.value);
