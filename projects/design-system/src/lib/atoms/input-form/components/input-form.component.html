@@ -25,7 +25,8 @@
         <!-- Input autocomplete  -->
         <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
             [minLength]="minLenghtDigits" (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control"
-            [valueAutocomplete]="valueInput" [disabled]="inputDisabled" [icon]="icon"></lib-autocomplete>
+            [valueAutocomplete]="valueInput" [disabled]="inputDisabled" [icon]="icon"
+            [field]="field"></lib-autocomplete>
 
         <!-- Input checkbox -->
         <div class="field-checkbox" *ngSwitchCase="'checkbox'">
