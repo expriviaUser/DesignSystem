@@ -34,9 +34,8 @@
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
 <form [formGroup]="autocompleteForm">
-    <lib-autocomplete [label]="'prova'"
-        [valueAutocomplete]="[{name: 'CI', code: 1},{name: 'CIAO1', code: 2}, {name: 'CIAO2', code: 3}]" [minLength]="2"
-        [icon]="'pi pi-search'" [showClear]="true" formControlName="autocomplete" [field]="'name'"></lib-autocomplete>
+    <lib-input-form [label]="'prova'" [icon]="'pi pi-search'" [clear]="true" formControlName="autocomplete"
+        [iconPos]="'left'"></lib-input-form>
 </form>
 <lib-button [label]="'submit'" (click)="formEmit('autocomplete')"></lib-button>
 

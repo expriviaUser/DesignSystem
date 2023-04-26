@@ -51,8 +51,8 @@
         <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder" [clear]="clear"
             (selectedValue)="emitValue($event)" [label]="label" [control]="control"></lib-input>
 
-        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event)"
-            [clear]="clear" [label]="label" [control]="control"></lib-input>
+        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
+            [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label" [control]="control"></lib-input>
     </div>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
