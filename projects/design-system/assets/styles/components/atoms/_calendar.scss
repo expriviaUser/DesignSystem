@@ -27,6 +27,7 @@
             &:enabled:hover {
                 background-color: $color--calendar-button-background-hover;
                 color: $color--calendar-button-text-hover;
+                text-decoration: underline;
                 border-radius: $border-radius;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
