@@ -11,7 +11,8 @@
 
         <!-- Input number -->
         <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos"
-            (selectedValue)="emitValue($event)" [control]="control" [id]="formControlName" type="number" />
+            [clear]="clear" (selectedValue)="emitValue($event)" [control]="control" [id]="formControlName"
+            type="number" />
 
         <!-- dropdown  -->
         <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
@@ -47,34 +48,11 @@
         <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
             [placeholder]="placeholder"></lib-textarea>
 
-        <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder"
+        <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder" [clear]="clear"
             (selectedValue)="emitValue($event)" [label]="label" [control]="control"></lib-input>
 
         <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event)"
-            [label]="label" [control]="control"></lib-input>
-
-        <!-- Input checkbox -->
-        <div class="field-checkbox" *ngSwitchCase="'checkbox'">
-            <lib-checkbox-button (change)="emitValue($event)" [label]="label"></lib-checkbox-button>
-        </div>
-
-        <!-- Input radio -->
-        <div class="field-radio" *ngSwitchCase="'radio'">
-            <lib-radio-button [control]="control" [disabled]="disabled"
-                [id]="formControlName+'-label'"></lib-radio-button>
-        </div>
-
-        <!-- dropdown sort -->
-        <!--  <lib-select-sort *ngSwitchCase="'dropdown-sort'" [sortParam]="sortParam"
-            (selectedValue)="emitValue($event, 'dropdown')" [control]="control" [groups]="valueInput"></lib-select-sort> -->
-
-        <!-- Input Textarea  -->
-        <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
-            [placeholder]="placeholder"></lib-textarea>
-
-        <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder"
-            (selectedValue)="emitValue($event)" [label]="label" [control]="control"></lib-input>
-
+            [clear]="clear" [label]="label" [control]="control"></lib-input>
     </div>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
