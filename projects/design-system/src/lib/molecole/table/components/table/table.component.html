@@ -1,11 +1,12 @@
 <div class="table-wrapper">
 
-    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent()" (onRowUnselect)="selectedEvent()"
-        [resizableColumns]="false" [(selection)]="selectedValue" [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
-        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="paginatorData.rows"
-        [rowsPerPageOptions]="rowsPerPage"
-        [currentPageReportTemplate]="reportString" [showCurrentPageReport]="showReportPage"
-        [totalRecords]="totalRecords" [(first)]="paginatorData.first" [loading]="loading" (onPage)="paginate($event)" [customSort]="serverSort" (onSort)="emitSort($event)">
+    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent()"
+        (onRowUnselect)="selectedEvent()" [resizableColumns]="false" [(selection)]="selectedValue"
+        [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
+        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="nRowsPerPage"
+        [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString"
+        [loading]="loading" [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy"
+        [customSort]="serverSort" (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <!-- LABEL DELLE COLONNE -->

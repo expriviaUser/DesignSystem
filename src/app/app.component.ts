@@ -38,6 +38,11 @@ export class AppComponent {
         { name: 'Daniele', surname: 'Corti', status: { id: 0, description: 'prova' } },
         { name: 'Vincenzo', surname: 'Marretta', status: { id: 0, description: 'prova' } },
     ]
+    items2: any[] = [
+        { name: 'Simone', surname: 'Giannuario', status: { id: 0, description: 'prova' } },
+        { name: 'Daniele', surname: 'Corti', status: { id: 0, description: 'prova' } },
+        { name: 'Vincenzo', surname: 'Marretta', status: { id: 0, description: 'prova' } },
+    ]
 
     columns: Cols[] = [
         { header: "Nome", field: "name", sort: true },
