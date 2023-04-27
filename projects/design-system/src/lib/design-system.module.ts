@@ -33,6 +33,7 @@ import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.modu
 import { ChooseFileModule } from './atoms/choose-file/choose-file.module';
 import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
+import { LibTableService } from '../public-api';
 
 const sharedModules = [
     LibTagModule,
@@ -78,6 +79,7 @@ const sharedModules = [
     ],
     exports: [
         ...sharedModules
-    ]
+    ],
+    providers: [LibTableService]
 })
 export class DesignSystemModule { }

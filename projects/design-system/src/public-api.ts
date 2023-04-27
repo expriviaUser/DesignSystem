@@ -77,6 +77,7 @@ export * from './lib/atoms/tree-select/lib-tree-select.module';
     MOLECOLE
 */
 export * from './lib/molecole/table/components/table/table.component';
+export * from './lib/molecole/table/services/lib-table.service';
 export * from './lib/molecole/table/components/actions-table/actions-table.component';
 export * from './lib/molecole/table/models/table.model';
 export * from './lib/molecole/table/lib-table.module';

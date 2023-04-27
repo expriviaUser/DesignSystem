@@ -106,7 +106,8 @@
         <td>{{ data[column[0].field] }}</td>
         <td>{{ data[column[1].field] }}</td>
         <td>
-            <lib-tag [tagSeverity]="'danger'" [tagLabel]="data[column[1].field]"></lib-tag>
+            {{column[3].field | json}}
+            <lib-tag [tagSeverity]="'danger'" [tagLabel]="getFieldValue(data, column[3].field)"></lib-tag>
         </td>
         <td>
             <p-tableCheckbox [value]="data"></p-tableCheckbox>

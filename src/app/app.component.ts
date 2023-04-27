@@ -1,18 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Table, TableService } from 'primeng/table';
-import {
-    ActionTable,
-    BreadcrumbModel,
-    Cols,
-    FileStatus,
-    MenubarItem,
-    SidebarItem,
-    TreeMenu,
-    TreeSelectModel
-} from 'projects/design-system/src/public-api';
-import { FiltersModel } from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
 import { PrimeNGConfig } from 'primeng/api';
+import { ActionTable, BreadcrumbModel, Cols, FileStatus, FiltersModel, LibTableService, MenubarItem, SidebarItem, TreeMenu, TreeSelectModel } from '@dnlcorti/design-system';
 
 @Component({
     selector: 'app-root',
@@ -44,16 +34,16 @@ export class AppComponent {
     }
 
     items: any[] = [
-        { name: 'Simone', surname: 'Giannuario' },
-        { name: 'Daniele', surname: 'Corti' },
-        { name: 'Vincenzo', surname: 'Marretta' },
+        { name: 'Simone', surname: 'Giannuario', status: { id: 0, description: 'prova' } },
+        { name: 'Daniele', surname: 'Corti', status: { id: 0, description: 'prova' } },
+        { name: 'Vincenzo', surname: 'Marretta', status: { id: 0, description: 'prova' } },
     ]
 
     columns: Cols[] = [
         { header: "Nome", field: "name", sort: true },
         { header: "Cognome", field: "surname" },
         { header: "Cognome", field: "surname", classes: 'long-field' },
-        { header: "Cognome", field: "surname" },
+        { header: "Description", field: "status.description" },
     ];
 
     protected itemsMenu: MenubarItem[] = [
@@ -323,7 +313,7 @@ export class AppComponent {
 
 
 
-    constructor(private fb: FormBuilder, private config: PrimeNGConfig) {
+    constructor(private fb: FormBuilder, private config: PrimeNGConfig, private tableService: LibTableService) {
         this.config.setTranslation({
             accept: 'Accept',
             reject: 'Cancel',
@@ -335,6 +325,10 @@ export class AppComponent {
             today: 'Oggi',
             clear: 'Svuota'
         }); //translations });
+    }
+
+    getFieldValue(data: { [key: string]: any }, field: string) {
+        return this.tableService.getFieldValue(data, field);
     }
 
     selectedValue = [{ name: 'Simone', surname: 'Giannuario' }, { name: 'Daniele', surname: 'Corti' },];

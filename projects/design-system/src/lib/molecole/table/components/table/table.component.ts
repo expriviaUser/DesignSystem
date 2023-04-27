@@ -7,9 +7,11 @@ import {
     TemplateRef,
     SimpleChanges,
     OnChanges,
-    ViewChild} from "@angular/core";
+    ViewChild
+} from "@angular/core";
 import { Table, TableService } from "primeng/table";
 import { Cols, PaginatorData } from "../../models/table.model";
+import { LibTableService } from "../../services/lib-table.service";
 
 
 
@@ -40,7 +42,7 @@ export class TableComponent implements OnInit, OnChanges {
     //    ritorno tutta la response della chiamata
     @Input() allResponse!: any;
 
-    @Input() rowsPerPage: any = [10,25,50];
+    @Input() rowsPerPage: any = [10, 25, 50];
 
     @Input() showPaginator: boolean = true;
 
@@ -60,7 +62,7 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() isScrollable!: boolean;
 
     @Input() scrollHeight!: string;
-    
+
     @Input() alwaysShowPaginator!: boolean;
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
@@ -82,7 +84,7 @@ export class TableComponent implements OnInit, OnChanges {
     paginatorData: PaginatorData
     //environment = environment
 
-    constructor() {
+    constructor(private tableService: LibTableService) {
         this.paginatorData = {
             first: 0,
             rows: this.nRowsPerPage > 0 ? this.nRowsPerPage : 5,
@@ -125,37 +127,9 @@ export class TableComponent implements OnInit, OnChanges {
             this.pageIncrement == 0 ? this.paginatorData.first = 0 : null
     }
 
-    getFieldValue(data: { [key: string]: any }, field: string): any {
+    protected getFieldValue(data: { [key: string]: any }, field: string): any {
         // esempio con --> field country.name
-        if (field) {
-            const props = field.split("."); //[country, name] ---> [name] ----> []
-            const prop = props.shift() as string; //country----> name
-
-            if (props.length) {
-                return this.getFieldValue(data[prop], props.join("."));
-            }
-            else {
-                if (
-                    data[prop] &&
-                    data[prop].toString().length > 10 &&
-                    typeof data[prop] == "number"
-                ) {
-                    let date =
-                        new Date(data[prop]).getDay() +
-                        "/" +
-                        (new Date(data[prop]).getMonth() + 1) +
-                        "/" +
-                        new Date(data[prop]).getFullYear();
-                    return date;
-                } else {
-                    if (data[prop]) {
-                        return data[prop];
-                    } else {
-                        return '--';
-                    }
-                }
-            }
-        }
+        return this.tableService.getFieldValue(data, field);
     }
 
     onPageChange(ev: any) {
@@ -185,8 +159,8 @@ export class TableComponent implements OnInit, OnChanges {
     }
 
     emitSort(event: { field: string, order: number }): void {
-      if(this.serverSort) {
-      this.sortValues.emit(event);
-      }
+        if (this.serverSort) {
+            this.sortValues.emit(event);
+        }
     }
 }
