@@ -34,6 +34,7 @@ import { ChooseFileModule } from './atoms/choose-file/choose-file.module';
 import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
 import { LibTableService } from '../public-api';
+import { PipesModule } from './pipes/pipes.module';
 
 const sharedModules = [
     LibTagModule,
@@ -68,7 +69,8 @@ const sharedModules = [
     LibUploadFileModule,
     ChooseFileModule,
     SwitchModule,
-    LibTreemenuModule
+    LibTreemenuModule,
+    PipesModule
 ];
 
 @NgModule({

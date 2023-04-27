@@ -136,6 +136,8 @@ export * from './lib/molecole/file-status/components/file-status.component';
 export * from './lib/molecole/file-status/models/fileStatus.model';
 export * from './lib/molecole/file-status/file-status.module';
 
-
+//PIPES
+export * from './lib/pipes/pipes.module';
+export * from './lib/pipes/byte.pipe';
 
 export * from './lib/design-system.module';
