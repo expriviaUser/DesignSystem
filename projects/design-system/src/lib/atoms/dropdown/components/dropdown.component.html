@@ -1,5 +1,5 @@
 <div class="dropdown-wrapper">
-  <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [disabled]="!valueDropdown"
+  <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [disabled]="!valueDropdown || disabled"
     [showClear]="clear" [options]="valueDropdown" (onChange)="emitValue($event)" [optionLabel]="isObject ? 'name' : ''"
     [optionValue]="isObject ? 'code' : ''"></p-dropdown>
 </div>

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import { FileUpload } from 'primeng/fileupload';
 
 @Component({
@@ -12,6 +12,8 @@ export class ChooseFileComponent {
     @Input() maxFileSize!: number;
     @Input() icon!: string;
 
+    @Output() onLoadFile: EventEmitter<any> = new EventEmitter<any>();
+
     get inputValue(): string {
         return this.returnFileName();
     };
@@ -20,13 +22,14 @@ export class ChooseFileComponent {
     @ViewChild('uploader', { static: false }) protected uploader!: FileUpload;
 
     onSelect(event: any) {
-        let filesName: string[] = [];
+        /*let filesName: string[] = [];
         console.log(event.currentFiles);
         event.currentFiles.forEach((file: File) => {
             this.arrayFiles.push(file);
             filesName.push(file.name);
         })
-        this.uploader.clear();
+        this.uploader.clear();*/
+      this.onLoadFile.emit(event);
     }
 
     clearFile() {

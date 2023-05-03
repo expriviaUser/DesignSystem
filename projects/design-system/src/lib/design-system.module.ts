@@ -30,7 +30,7 @@ import { FileStatusModule } from './molecole/file-status/file-status.module';
 import { LibTreeSelectModule } from "./atoms/tree-select/lib-tree-select.module";
 import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
 import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
-import { ChooseFileModule } from './atoms/choose-file/choose-file.module';
+import { LibChooseFileModule } from './atoms/choose-file/choose-file.module';
 import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
 
@@ -65,7 +65,7 @@ const sharedModules = [
     LibTreeSelectModule,
     LibProgressBarModule,
     LibUploadFileModule,
-    ChooseFileModule,
+    LibChooseFileModule,
     SwitchModule,
     LibTreemenuModule
 ];
