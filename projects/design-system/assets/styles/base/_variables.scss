@@ -265,9 +265,9 @@ $color--checkbox-border-checked: var(--secondary-color-50);
 $color--checkbox-text: var(--base-color-white);
 
 //calendar
-$color--calendar-button-text: var(--base-color-white);
+$color--calendar-button-text: var(--secondary-color-50);
 $color--calendar-button-text-hover: var(--secondary-color-50);
-$color--calendar-button-background: var(--secondary-color-50);
+$color--calendar-button-background: var(--base-color-transparent);
 $color--calendar-button-background-hover: var(--base-color-white);
 $color--calendar-header-text: var(--gray-color-30);
 
@@ -277,6 +277,9 @@ $color--switch-hover: var(--tertiary-color-50);
 
 //form
 $color--form-label-text: var(--text-color-normal);
+
+// header menu subheader
+$color--item-menu-active: var(--base-color-white);
 
 // end colors components
 

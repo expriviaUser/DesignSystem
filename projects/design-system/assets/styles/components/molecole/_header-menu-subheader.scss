@@ -78,6 +78,13 @@
                     }
                 }
             }
+            
+            .p-menuitem > .p-menuitem-link {
+                &.p-menuitem-link-active {
+                    background: $color--item-menu-active;
+                    font-weight: 600;
+                }
+            }
         }
 
         .p-submenu-list {

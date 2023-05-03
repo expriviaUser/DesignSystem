@@ -33,6 +33,8 @@ import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.modu
 import { LibChooseFileModule } from './atoms/choose-file/choose-file.module';
 import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
+import { LibTableService } from '../public-api';
+import { PipesModule } from './pipes/pipes.module';
 
 const sharedModules = [
     LibTagModule,
@@ -67,7 +69,8 @@ const sharedModules = [
     LibUploadFileModule,
     LibChooseFileModule,
     SwitchModule,
-    LibTreemenuModule
+    LibTreemenuModule,
+    PipesModule
 ];
 
 @NgModule({
@@ -78,6 +81,7 @@ const sharedModules = [
     ],
     exports: [
         ...sharedModules
-    ]
+    ],
+    providers: [LibTableService]
 })
 export class DesignSystemModule { }

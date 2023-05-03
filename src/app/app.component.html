@@ -30,13 +30,12 @@
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
 <form [formGroup]="autocompleteForm">
-    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
+    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['CIAO','CIAO1', 'CIAO2']" [icon]="'pi pi-search'"
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
 <form [formGroup]="autocompleteForm">
-    <lib-autocomplete [label]="'prova'"
-        [valueAutocomplete]="[{name: 'ciao', code: 1},{name: 'ciao1', code: 2}, {name: 'ciao2', code: 3}]"
-        [icon]="'pi pi-search'" [showClear]="true" formControlName="autocomplete" [field]="'name'"></lib-autocomplete>
+    <lib-input-form [label]="'prova'" [icon]="'pi pi-search'" [clear]="true" formControlName="autocomplete"
+        [iconPos]="'left'"></lib-input-form>
 </form>
 <lib-button [label]="'submit'" (click)="formEmit('autocomplete')"></lib-button>
 
@@ -87,27 +86,28 @@
 </lib-tabs>
 
 <form [formGroup]="calendarForm">
-  <lib-calendar [inlineCal]="true" [selectionType]="'range'"
-                [showButtonBar]="true" formControlName="calendar" [minDate]="minDate" [maxDate]="maxDate"></lib-calendar>
-  <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
-                    [showClear]="true" formControlName="calendarAutoComplete"></lib-autocomplete>
-  <span style="color: red"
+    <lib-calendar [inlineCal]="true" [selectionType]="'range'" [showButtonBar]="true" formControlName="calendar"
+        [minDate]="minDate" [maxDate]="maxDate"></lib-calendar>
+    <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['ciao','ciao1', 'ciao2']" [icon]="'pi pi-search'"
+        [showClear]="true" formControlName="calendarAutoComplete"></lib-autocomplete>
+    <span style="color: red"
         *ngIf="(calendarFormControl['calendar'].touched || calendarFormSubmitted) && this.calendarForm.invalid">
-                                Date is required
-                            </span>
+        Date is required
+    </span>
 </form>
 <lib-button [label]="'submitCalendar'" (click)="formEmit('calendar')"></lib-button>
 
 
 
-<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="null"
-    [filters]="filterValue" [selectionType]="'single'">
+<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="2"
+    [totalRecords]="115" [filters]="filterValue" [selectionType]="'single'">
     <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
     <ng-template #body let-data="data" let-column="column">
         <td>{{ data[column[0].field] }}</td>
         <td>{{ data[column[1].field] }}</td>
         <td>
-            <lib-tag [tagSeverity]="'danger'" [tagLabel]="data[column[1].field]"></lib-tag>
+            {{column[3].field | json}}
+            <lib-tag [tagSeverity]="'danger'" [tagLabel]="getFieldValue(data, column[3].field)"></lib-tag>
         </td>
         <td>
             <p-tableCheckbox [value]="data"></p-tableCheckbox>
