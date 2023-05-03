@@ -43,3 +43,9 @@ small {
     right: 0.75rem;
     cursor: pointer;
 }
+
+.showClear {
+    & > .p-inputtext {
+        padding-right: 2.5rem;
+    }
+}
