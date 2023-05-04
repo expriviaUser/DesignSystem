@@ -79,7 +79,7 @@ export class InputComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any) {
-        this.value = event.target.value;
+        this.value = event ? event.target.value : '';
         this.onChange(this.value);
         this.selectedValue.emit(this.value);
         console.log('value', this.value)
