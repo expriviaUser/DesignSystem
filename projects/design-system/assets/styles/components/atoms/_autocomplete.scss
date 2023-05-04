@@ -147,12 +147,12 @@ p-autocomplete.p-autocomplete-clearable {
         }
     }
 
-    .p-button {
+    .p-button:not(.p-button-link) {
         background-color: $color--autocomplete-button-background;
         border-left: 0;
         border-color: $color--autocomplete-button-border;
 
-        &:hover {
+        &:enabled:hover {
             background-color: $color--autocomplete-button-background;
             border-color: $color--autocomplete-button-border;
         }
