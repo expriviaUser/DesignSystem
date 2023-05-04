@@ -28,7 +28,7 @@ export class InputComponent {
     @Input() iconPos: string = 'left'
     @Input() icon: string = '';
 
-    disabled: boolean = false;
+    @Input() disabled: boolean = false;
     onChange: any = () => { }
     onTouch: any = () => { }
 

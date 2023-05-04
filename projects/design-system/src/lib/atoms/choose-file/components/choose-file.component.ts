@@ -22,13 +22,13 @@ export class ChooseFileComponent {
     @ViewChild('uploader', { static: false }) protected uploader!: FileUpload;
 
     onSelect(event: any) {
-        /*let filesName: string[] = [];
+        let filesName: string[] = [];
         console.log(event.currentFiles);
         event.currentFiles.forEach((file: File) => {
             this.arrayFiles.push(file);
             filesName.push(file.name);
         })
-        this.uploader.clear();*/
+        this.uploader.clear();
       this.onLoadFile.emit(event);
     }
 
@@ -42,6 +42,10 @@ export class ChooseFileComponent {
         let filesNames = this.arrayFiles.reduce((accumulator, currentValue, index) => accumulator + currentValue.name + (this.arrayFiles.length-1 > index ? ', ' : ''), initValue);
 
         return filesNames;
+    }
+
+    uploadFiles() {
+      this.uploader.upload();
     }
 
 
