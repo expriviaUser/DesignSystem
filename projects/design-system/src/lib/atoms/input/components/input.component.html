@@ -1,12 +1,12 @@
 <!-- <div class="dropdown-wrapper"> -->
 <!-- check se il valore della dropdown è un string[] oppure DropdownType[] -->
 <input *ngIf="!(icon || clear)" [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}"
-    (change)="emitValue($event)" [(ngModel)]="value" [id]="label" [disabled]="disabled" class="p-inputtext-sm" pInputText />
-<span *ngIf="icon || clear" [class]="iconPos">
+       (change)="emitValue($event)" [(ngModel)]="value" [id]="label" [disabled]="disabled" class="p-inputtext-sm" pInputText />
+<span *ngIf="icon || clear" [class]="iconPos" [ngClass]="{iconPos: true, 'showClear': clear}">
     <i *ngIf="icon && iconPos.includes('left')" [class]="icon" (click)="iconClick()"></i>
     <input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}"
-        (change)="emitValue($event)" [(ngModel)]="value" [id]="label" [disabled]="disabled" class="p-inputtext-sm" pInputText />
-    <i *ngIf="value && clear == true" [class]="'pi pi-times icon-clear'" (click)="value = ''"></i>
+           (change)="emitValue($event)" [(ngModel)]="value" [id]="label" [disabled]="disabled" class="p-inputtext-sm" pInputText />
+    <i *ngIf="value && clear == true" [class]="'pi pi-times icon-clear'" (click)="emitValue($event)"></i>
     <i *ngIf="value && iconPos.includes('right')" [class]="icon" (click)="iconClick()"></i>
 </span>
 <!-- </div> -->
