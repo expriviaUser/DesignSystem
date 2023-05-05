@@ -19,7 +19,9 @@ export * from './lib/atoms/tag/components/tag.component';
 export * from './lib/atoms/tag/lib-tag.module';
 
 export * from './lib/atoms/breadcrumb/models/breadcrumb.model';
+export * from './lib/atoms/breadcrumb/directives/breadcrumb.directive';
 export * from './lib/atoms/breadcrumb/components/breadcrumb.component';
+export * from './lib/atoms/breadcrumb/services/breadcrumb.service';
 export * from './lib/atoms/breadcrumb/lib-breadcrumb.module';
 
 export * from './lib/atoms/button/components/button.component';

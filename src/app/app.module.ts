@@ -9,21 +9,25 @@ import { DesignSystemModule } from 'projects/design-system/src/public-api';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AboutComponent } from './components/about/about.component';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-   imports: [ 
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    DesignSystemModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  providers: [DatePipe],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AboutComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        DesignSystemModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        BreadcrumbModule
+    ],
+    providers: [DatePipe],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

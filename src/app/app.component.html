@@ -1,3 +1,8 @@
+<lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
+<router-outlet></router-outlet>
+
+
+
 <div style="text-align:center">
     <h1>
         Welcome to {{ title }}!
@@ -49,8 +54,8 @@
 
 <lib-file-status [fileList]="fileArray"></lib-file-status>
 
-<lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
-</lib-breadcrumb>
+<!-- <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
+</lib-breadcrumb> -->
 
 <lib-checkbox-button></lib-checkbox-button>
 

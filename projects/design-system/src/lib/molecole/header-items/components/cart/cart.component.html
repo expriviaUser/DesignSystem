@@ -1,5 +1,23 @@
-<div class="cart">
+<div class="cart" (click)="openCart = !openCart">
     <span class="pi pi-shopping-cart"></span>
     <span>Carrello</span>
     <span><p-badge [value]="items" severity="danger"></p-badge></span>
 </div>
+
+<div class="cart-popup" *ngIf="openCart">
+    <div class="container">
+        <div *ngFor="let row of rows; let i = index">
+            <ng-template let-rowData="row" let-index="i">
+                <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
+                    [ngTemplateOutletContext]="{data:rowData}">
+
+                </ng-template>
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+
+<ng-template #internalBody let-data="data" let-columns="column">
+    <lib-button [size]="'small'" [label]="'Richiedi consultazione'" [type]="'primary'"></lib-button>
+</ng-template>
