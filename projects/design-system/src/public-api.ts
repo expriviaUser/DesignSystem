@@ -27,6 +27,10 @@ export * from './lib/atoms/breadcrumb/lib-breadcrumb.module';
 export * from './lib/atoms/button/components/button.component';
 export * from './lib/atoms/button/lib-button.module';
 
+export * from './lib/atoms/loader/components/loader.component';
+export * from './lib/atoms/loader/services/loader.service';
+export * from './lib/atoms/loader/lib-loader.module';
+
 export * from './lib/atoms/dropdown/models/dropdown.model';
 export * from './lib/atoms/dropdown/components/dropdown.component';
 export * from './lib/atoms/dropdown/lib-dropdown.module';

@@ -35,6 +35,7 @@ import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
 import { LibTableService } from '../public-api';
 import { PipesModule } from './pipes/pipes.module';
+import { LibLoaderModule } from './atoms/loader/lib-loader.module';
 
 const sharedModules = [
     LibTagModule,
@@ -70,7 +71,8 @@ const sharedModules = [
     LibChooseFileModule,
     SwitchModule,
     LibTreemenuModule,
-    PipesModule
+    PipesModule,
+    LibLoaderModule
 ];
 
 @NgModule({

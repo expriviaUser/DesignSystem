@@ -3,13 +3,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Table, TableService } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
 import { ActionTable, BreadcrumbModel, Cols } from '@dnlcorti/design-system';
-import {TreeMenu} from "../../projects/design-system/src/lib/atoms/treemenu/models/treemenu.model";
-import {MenubarItem} from "../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model";
-import {SidebarItem} from "../../projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model";
-import {FileStatus} from "../../projects/design-system/src/lib/molecole/file-status/models/fileStatus.model";
-import {TreeSelectModel} from "../../projects/design-system/src/lib/atoms/tree-select/models/tree-select.model";
-import {FiltersModel} from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
-import {LibTableService} from "../../projects/design-system/src/lib/molecole/table/services/lib-table.service";
+import { TreeMenu } from "../../projects/design-system/src/lib/atoms/treemenu/models/treemenu.model";
+import { MenubarItem } from "../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model";
+import { SidebarItem } from "../../projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model";
+import { FileStatus } from "../../projects/design-system/src/lib/molecole/file-status/models/fileStatus.model";
+import { TreeSelectModel } from "../../projects/design-system/src/lib/atoms/tree-select/models/tree-select.model";
+import { FiltersModel } from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
+import { LibTableService } from "../../projects/design-system/src/lib/molecole/table/services/lib-table.service";
+import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
 
 @Component({
     selector: 'app-root',
@@ -323,7 +324,7 @@ export class AppComponent {
 
 
 
-    constructor(private fb: FormBuilder, private config: PrimeNGConfig, private tableService: LibTableService) {
+    constructor(private fb: FormBuilder, private config: PrimeNGConfig, private tableService: LibTableService, private loaderService: LoaderService) {
         this.config.setTranslation({
             accept: 'Accept',
             reject: 'Cancel',
@@ -335,6 +336,10 @@ export class AppComponent {
             today: 'Oggi',
             clear: 'Svuota'
         }); //translations });
+
+        setTimeout(() => {
+            this.loaderService.showHide(false);
+        }, 3600);
     }
 
     getFieldValue(data: { [key: string]: any }, field: string) {
