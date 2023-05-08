@@ -83,7 +83,7 @@
 <lib-search-bar></lib-search-bar>
 
 
-<lib-tabs [sections]="tabsList" [contents]="externalContent" [index]="index">
+<lib-tabs [sections]="tabsList" [contents]="externalContent" [(index)]="index">
     <ng-template #externalContent let-data="data">
         <h1>Prova esterna</h1>
         <p>{{data}}</p>

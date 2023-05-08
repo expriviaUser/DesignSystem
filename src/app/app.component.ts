@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Table, TableService } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
-import { ActionTable, BreadcrumbModel, Cols, FileStatus, FiltersModel, LibTableService, MenubarItem, SidebarItem, TreeMenu, TreeSelectModel } from '@dnlcorti/design-system';
+import { ActionTable, BreadcrumbModel, Cols } from '@dnlcorti/design-system';
+import {TreeMenu} from "../../projects/design-system/src/lib/atoms/treemenu/models/treemenu.model";
+import {MenubarItem} from "../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model";
+import {SidebarItem} from "../../projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model";
+import {FileStatus} from "../../projects/design-system/src/lib/molecole/file-status/models/fileStatus.model";
+import {TreeSelectModel} from "../../projects/design-system/src/lib/atoms/tree-select/models/tree-select.model";
+import {FiltersModel} from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
+import {LibTableService} from "../../projects/design-system/src/lib/molecole/table/services/lib-table.service";
 
 @Component({
     selector: 'app-root',
@@ -29,9 +36,7 @@ export class AppComponent {
 
     ];
 
-    get index(): number {
-        return this.tabsList.findIndex(item => item.isSelected);
-    }
+    index = 0;
 
     items: any[] = [
         { name: 'Simone', surname: 'Giannuario', status: { id: 0, description: 'prova' } },
@@ -45,9 +50,9 @@ export class AppComponent {
     ]
 
     columns: Cols[] = [
-        { header: "Nome", field: "name", sort: true },
+        { header: "Nome", field: "name" },
         { header: "Cognome", field: "surname" },
-        { header: "Cognome", field: "surname", classes: 'long-field' },
+        { header: "Cognome", field: "surname" },
         { header: "Description", field: "status.description" },
     ];
 
