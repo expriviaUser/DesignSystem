@@ -25,6 +25,8 @@ export class TableComponent implements OnInit {
     @Input() actions?: TemplateRef<any>;
     // campi della tabella
     @Input() externalBody!: TemplateRef<any>;
+    // header tabella
+    @Input() externalHeader!: TemplateRef<any>;
     //   valori della tabella
     @Input() value!: any[];
     //   colonne della tabella

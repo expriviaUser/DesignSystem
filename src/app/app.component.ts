@@ -8,9 +8,10 @@ import { MenubarItem } from "../../projects/design-system/src/lib/molecole/heade
 import { SidebarItem } from "../../projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model";
 import { FileStatus } from "../../projects/design-system/src/lib/molecole/file-status/models/fileStatus.model";
 import { TreeSelectModel } from "../../projects/design-system/src/lib/atoms/tree-select/models/tree-select.model";
-import { FiltersModel } from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
+import { FiltersModel, OnlyFiltersChip, OnlyFiltersModel } from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
 import { LibTableService } from "../../projects/design-system/src/lib/molecole/table/services/lib-table.service";
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
+import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/filters/services/filters.service';
 
 @Component({
     selector: 'app-root',
@@ -218,6 +219,7 @@ export class AppComponent {
     dropdownValues: FiltersModel[] = [
         {
             type: "treeselect",
+            selectionType: 'single',
             data: [
                 { label: 'Tipologia richiesta1', data: 0 },
                 { label: 'Tipologia richiesta2', data: 1 },
@@ -246,6 +248,40 @@ export class AppComponent {
             field: "filterDate2"
         }
     ];
+    filtersResult: OnlyFiltersChip[] = [];
+    dropdownValuesSecond: OnlyFiltersModel = {
+        id: 0,
+        filters: [{
+            type: "treeselect",
+            selectionType: 'single',
+            data: [
+                { label: 'Tipologia richiesta1', data: 0 },
+                { label: 'Tipologia richiesta2', data: 1 },
+                { label: 'Tipologia richiesta3', data: 2 },
+                { label: 'Tipologia richiesta4', data: 3 }
+
+            ], placeholder: "Placeholder1", field: "filter1"
+        },
+        {
+            type: "calendar",
+            placeholder: "Date",
+            field: "filterDate"
+        },
+        {
+            type: "treeselect",
+            data: [
+                { label: 'Tipologia richiesta5', data: 'Data richiesta5' },
+                { label: 'Tipologia richiesta6', data: 'Data richiesta6' },
+                { label: 'Tipologia richiesta7', data: 'Data richiesta7' },
+                { label: 'Tipologia richiesta8', data: 'Data richiesta8' }
+            ], placeholder: "Placeholder2", field: "filter2"
+        },
+        {
+            type: "calendar",
+            placeholder: "Date2",
+            field: "filterDate2"
+        }]
+    };
     dialogVisibility: boolean = true;
 
     treemenuItems: TreeMenu[] = [
@@ -321,10 +357,46 @@ export class AppComponent {
     minDate: Date = new Date(2023, 2, 31);
     maxDate: Date = new Date(2023, 3, 31);
 
+    changeFiltersResult(event: OnlyFiltersChip) {
+        let result = [...this.getFiltersResult(event, this.filtersResult)];
+        this.filtersResult = [];
+        this.filtersResult = [...result];
+    }
 
+    removeFilterChip(event: OnlyFiltersChip) {
+        let result = [...this.removeFiltersChip(event, this.filtersResult)];
+        this.filtersResult = [];
+        this.filtersResult = [...result];
+    }
 
+    getFiltersResult(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
+        let indexFilter = filtersResult.findIndex(item => item.id == event.id);
+        if (indexFilter < 0)
+            filtersResult.push(event);
+        else {
+            filtersResult[indexFilter].result = event.result;
+            filtersResult[indexFilter].data = event.data;
+        }
 
-    constructor(private fb: FormBuilder, private config: PrimeNGConfig, private tableService: LibTableService, private loaderService: LoaderService) {
+        return filtersResult;
+    }
+    get values(): TreeSelectModel[][] {
+        return (this.filtersResult && this.filtersResult[this.dropdownValuesSecond.id] && this.filtersResult[this.dropdownValuesSecond.id].data) ? this.filtersResult[this.dropdownValuesSecond.id].data : [];
+    }
+
+    removeFiltersChip(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
+        let indexFilter = filtersResult.findIndex(item => item.id == event.id);
+        if (indexFilter >= 0) {
+            let indexToRemoveResult = filtersResult[indexFilter].result.findIndex(item => item.value == event.result[0].value);
+            filtersResult[indexFilter].result.splice(indexToRemoveResult, 1);
+            let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
+            filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
+        }
+
+        return filtersResult;
+    }
+
+    constructor(private fb: FormBuilder, private config: PrimeNGConfig, private tableService: LibTableService, private loaderService: LoaderService, private filtersService: FiltersService) {
         this.config.setTranslation({
             accept: 'Accept',
             reject: 'Cancel',

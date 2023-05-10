@@ -4,10 +4,11 @@
 
         <div *ngFor="let dropdownOptions of dropdownValues; let i = index">
             <lib-tree-select class="single-dropdown"
-                *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data" [nodes]="dropdownOptions.data"
-                (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field)"
+                *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
+                [selectionType]="dropdownOptions.selectionType || 'multiple'" [nodes]="dropdownOptions.data"
+                (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
                 [(selectedNodes)]="selectedValues[i]" (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
-                [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate">
+                [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate || null">
 
                 <ng-template #valueTemplate value>
                     {{dropdownOptions.placeholder}}

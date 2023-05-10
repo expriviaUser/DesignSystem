@@ -7,9 +7,9 @@ import {
     QueryList,
     ViewChildren
 } from '@angular/core';
-import { TreeSelectModel } from "../../../atoms/tree-select/models/tree-select.model";
-import { FiltersModel, FiltersResult } from "../models/filters.model";
-import { CalendarComponent } from "../../../atoms/calendar/components/calendar.component";
+import { FiltersChip, FiltersModel, FiltersResult } from '../../models/filters.model';
+import { TreeSelectModel } from 'projects/design-system/src/lib/atoms/tree-select/models/tree-select.model';
+import { CalendarComponent } from 'projects/design-system/src/lib/atoms/calendar/components/calendar.component';
 
 @Component({
     selector: 'lib-filters',
@@ -17,14 +17,14 @@ import { CalendarComponent } from "../../../atoms/calendar/components/calendar.c
     styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
-
     @Input() dropdownValues: FiltersModel[] = [];
     @Input() inputSelectedValues: TreeSelectModel[][] = [];
 
     selectedValues: TreeSelectModel[][] = [];
     @Output() filterValues: EventEmitter<FiltersResult> = new EventEmitter<FiltersResult>();
+    @Output() chipsValues: EventEmitter<FiltersChip[]> = new EventEmitter<FiltersChip[]>();
 
-    chipsList: { value: string, dropdownIndex: number, field: string, data: string | number | Array<object>, type: "treeselect" | "calendar" }[] = [];
+    chipsList: FiltersChip[] = [];
     chipsExport: any = {};
 
     resetCalendarValue!: Array<Date> | null;
@@ -39,19 +39,36 @@ export class FiltersComponent implements OnInit {
             this.selectedValues = this.inputSelectedValues;
         }
         this.dropdownValues.forEach((item) => this.chipsExport[item.field] = []);
+        this.dropdownValues.filter((item, index) => {
+            if (item.type == 'treeselect')
+                this.selectedValues[index] = []
+        });
     }
 
 
-    createTreeChip(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string): void {
+    createTreeChip(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string, selectionType: string): void {
         if (event.node) {
+            if (selectionType === 'single') {
+                let indexToRemove = this.chipsList.findIndex(item => item.field == dropdownField);
+                if (indexToRemove !== -1)
+                    this.chipsList.splice(indexToRemove, 1);
+            }
             this.chipsList.push({ value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect" });
             this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
-            this.chipsExport[dropdownField].push(event.node.data);
+            if (selectionType === 'single')
+                this.chipsExport[dropdownField][0] = event.node.data;
+            else
+                this.chipsExport[dropdownField].push(event.node.data);
             this.filterValues.emit(this.chipsExport);
-            if (this.selectedValues[dropdownIndex] == undefined || this.selectedValues[dropdownIndex].length == 0) {
-                this.selectedValues[dropdownIndex] = [];
-            }
             this.selectedValues[dropdownIndex].push(event.node);
+            /* if (selectionType !== 'single') {
+                if (this.selectedValues[dropdownIndex] == undefined || this.selectedValues[dropdownIndex].length == 0) {
+                    this.selectedValues[dropdownIndex] = [];
+                }
+            } else {
+                this.selectedValues[dropdownIndex] = [];
+                this.selectedValues[dropdownIndex][0] = event.node;
+            } */
         }
     }
 
@@ -90,7 +107,7 @@ export class FiltersComponent implements OnInit {
         this.selectedValues[dropdownIndex].splice(N_INDEX, 1);
     }
 
-    resetDropdown(chipIndex: number, chipValue: { value: string, dropdownIndex: number, field: string, data: string | number | Array<object>, type: "treeselect" | "calendar" }): void {
+    resetDropdown(chipIndex: number, chipValue: FiltersChip): void {
         this.chipsList.splice(chipIndex, 1);
         const E_INDEX = this.chipsExport[chipValue.field].findIndex((d: string) => d == chipValue.data); //add data to chipValue
 
