@@ -8,6 +8,9 @@ import { LibCalendarModule } from "../../atoms/calendar/lib-calendar.module";
 import { FiltersChipsComponent } from './components/filters-chips/filters-chips.component';
 import { OnlyFiltersComponent } from './components/only-filters/only-filters.component';
 import { TreeSelectModule } from "primeng/treeselect";
+import { LibDropdownModule } from "../../atoms/dropdown/lib-dropdown.module";
+import { LibInputModule } from "../../atoms/input/lib-input.module";
+import { LibButtonModule } from "../../atoms/button/lib-button.module";
 
 const primeComponents = [
     LibTreeSelectModule,
@@ -32,7 +35,10 @@ const exportComponent = [
         ReactiveFormsModule,
         LibTreeSelectModule,
         LibCalendarModule,
-        TreeSelectModule
+        TreeSelectModule,
+        LibDropdownModule,
+        LibInputModule,
+        LibButtonModule
     ],
     exports: [
         ...exportComponent,

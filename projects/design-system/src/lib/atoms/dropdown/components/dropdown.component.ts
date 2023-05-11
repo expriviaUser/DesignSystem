@@ -15,8 +15,10 @@ import { DropdownType } from '../models/dropdown.model';
 export class DropdownComponent implements OnInit {
     protected isObject: boolean = false;
 
-    @Input() valueDropdown: DropdownType[] | string[] = [];
+    @Input() valueDropdown: DropdownType[] | string[] | any = [];
     @Input() label!: string;
+    @Input() codeString: string = 'code';
+    @Input() nameString: string = 'name';
     @Input() placeholder!: string;
     @Input() clear: boolean = false;
     @Input() control: AbstractControl = new FormControl();

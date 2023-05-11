@@ -362,7 +362,7 @@ export class AppComponent {
         let result = [...this.getFiltersResult(event, this.filtersResult)];
         this.filtersResult = [];
         this.filtersResult = [...result];
-        if (this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result[0].value == 'Tipologia richiesta1' && !this.dropdownValuesThird)
+        if (this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result.filter(item => item.value == 'Tipologia richiesta1').length > 0 && !this.dropdownValuesThird)
             this.dropdownValuesThird = {
                 id: 1,
                 filters: [{
@@ -377,29 +377,22 @@ export class AppComponent {
                     ], placeholder: "Placeholder5", field: "filter5"
                 },
                 {
-                    type: "treeselect",
+                    type: "children",
                     selectionType: 'single',
                     data: [
-                        { label: 'richiesta5', data: 'Data richiesta5' },
-                        { label: 'richiesta6', data: 'Data richiesta6' },
-                        { label: 'richiesta7', data: 'Data richiesta7' },
-                        { label: 'richiesta8', data: 'Data richiesta8' }
+                        { label: 'richiesta5', data: 'Data richiesta5', type: 'text' },
+                        {
+                            label: 'richiesta6', data: 'Data richiesta6', type: 'enum', enumValues: [{ label: 'richiesta1', data: 0 },
+                            { label: 'richiesta2', data: 1 },
+                            { label: 'richiesta3', data: 2 },
+                            { label: 'richiesta4', data: 3 }]
+                        },
+                        { label: 'richiesta7', data: 'Data richiesta7', type: 'number' },
+                        { label: 'richiesta8', data: 'Data richiesta8', type: 'calendar', config: { selection: 'range' } }
                     ], placeholder: "Metadata", field: "metadata",
-                    /* children: {
-                        data: [
-                            { label: 'richiesta5', data: 'Data richiesta5' },
-                            { label: 'richiesta6', data: 'Data richiesta6' },
-                            { label: 'richiesta7', data: 'Data richiesta7' },
-                            { label: 'richiesta8', data: 'Data richiesta8' }
-                        ], placeholder: 'Metadata1', type: 'treeselect', selectionType: 'single', field: 'metadata1'
-                    },
-                    { label: 'richiesta6', data: 'Data richiesta6', placeholder: 'Metadata2' },
-                { label: 'richiesta7', data: 'Data richiesta7', placeholder: 'Metadata3' },
-                { label: 'richiesta8', data: 'Data richiesta8', placeholder: 'Metadata4' }
-                    } */
                 }]
             };
-        else if (!(this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result[0].value == 'Tipologia richiesta1'))
+        else if (!(this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result.filter(item => item.value == 'Tipologia richiesta1').length > 0))
             this.dropdownValuesThird = undefined;
     }
 
@@ -407,6 +400,8 @@ export class AppComponent {
         let result = [...this.removeFiltersChip(event, this.filtersResult)];
         this.filtersResult = [];
         this.filtersResult = [...result];
+        if (!(this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result.filter(item => item.value == 'Tipologia richiesta1').length > 0))
+            this.dropdownValuesThird = undefined;
     }
 
     getFiltersResult(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {

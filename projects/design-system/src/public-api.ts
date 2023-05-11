@@ -121,6 +121,8 @@ export * from './lib/molecole/radio-tile/components/radio-tile.component';
 export * from './lib/molecole/radio-tile/lib-radio-tile.module';
 
 export * from './lib/micro-organismi/filters/components/filters/filters.component';
+export * from './lib/micro-organismi/filters/components/only-filters/only-filters.component';
+export * from './lib/micro-organismi/filters/components/filters-chips/filters-chips.component';
 export * from './lib/micro-organismi/filters/models/filters.model';
 export * from './lib/micro-organismi/filters/lib-filters.module';
 

@@ -95,6 +95,31 @@
         @include typography-x-small-regular;
         color: $color--filters-chips-title;
     }
+
+    .align-children {
+        display: flex;
+        gap: 1rem;
+
+        .same-line {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            .p-dropdown {
+                background: $color--filters-dropdown-background;
+                border: 1px solid $color--filters-dropdown-border;
+
+                .p-dropdown-label {
+                    font-size: 0.875rem;
+                    padding: 0.65625rem 0.65625rem;
+                    color: $color--filters-dropdown-text;
+                    &.p-placeholder {
+                        color: $color--filters-dropdown-text;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .chips-container {
@@ -103,4 +128,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.357rem;
+}
+
+lib-only-filters {
+    display: flex;
+    align-items: flex-end;
 }
