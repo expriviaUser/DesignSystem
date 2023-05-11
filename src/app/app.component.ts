@@ -282,6 +282,7 @@ export class AppComponent {
             field: "filterDate2"
         }]
     };
+    dropdownValuesThird: OnlyFiltersModel | undefined = undefined;
     dialogVisibility: boolean = true;
 
     treemenuItems: TreeMenu[] = [
@@ -361,6 +362,45 @@ export class AppComponent {
         let result = [...this.getFiltersResult(event, this.filtersResult)];
         this.filtersResult = [];
         this.filtersResult = [...result];
+        if (this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result[0].value == 'Tipologia richiesta1' && !this.dropdownValuesThird)
+            this.dropdownValuesThird = {
+                id: 1,
+                filters: [{
+                    type: "treeselect",
+                    selectionType: 'single',
+                    data: [
+                        { label: 'richiesta1', data: 0 },
+                        { label: 'richiesta2', data: 1 },
+                        { label: 'richiesta3', data: 2 },
+                        { label: 'richiesta4', data: 3 }
+
+                    ], placeholder: "Placeholder5", field: "filter5"
+                },
+                {
+                    type: "treeselect",
+                    selectionType: 'single',
+                    data: [
+                        { label: 'richiesta5', data: 'Data richiesta5' },
+                        { label: 'richiesta6', data: 'Data richiesta6' },
+                        { label: 'richiesta7', data: 'Data richiesta7' },
+                        { label: 'richiesta8', data: 'Data richiesta8' }
+                    ], placeholder: "Metadata", field: "metadata",
+                    /* children: {
+                        data: [
+                            { label: 'richiesta5', data: 'Data richiesta5' },
+                            { label: 'richiesta6', data: 'Data richiesta6' },
+                            { label: 'richiesta7', data: 'Data richiesta7' },
+                            { label: 'richiesta8', data: 'Data richiesta8' }
+                        ], placeholder: 'Metadata1', type: 'treeselect', selectionType: 'single', field: 'metadata1'
+                    },
+                    { label: 'richiesta6', data: 'Data richiesta6', placeholder: 'Metadata2' },
+                { label: 'richiesta7', data: 'Data richiesta7', placeholder: 'Metadata3' },
+                { label: 'richiesta8', data: 'Data richiesta8', placeholder: 'Metadata4' }
+                    } */
+                }]
+            };
+        else if (!(this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result[0].value == 'Tipologia richiesta1'))
+            this.dropdownValuesThird = undefined;
     }
 
     removeFilterChip(event: OnlyFiltersChip) {
@@ -380,17 +420,23 @@ export class AppComponent {
 
         return filtersResult;
     }
-    get values(): TreeSelectModel[][] {
-        return (this.filtersResult && this.filtersResult[this.dropdownValuesSecond.id] && this.filtersResult[this.dropdownValuesSecond.id].data) ? this.filtersResult[this.dropdownValuesSecond.id].data : [];
+    values(index: number): OnlyFiltersChip {
+        return (this.filtersResult && this.filtersResult[index] && this.filtersResult[index].data) ? { ...this.filtersResult[index] } : {} as OnlyFiltersChip;
     }
+
+
 
     removeFiltersChip(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
         let indexFilter = filtersResult.findIndex(item => item.id == event.id);
         if (indexFilter >= 0) {
             let indexToRemoveResult = filtersResult[indexFilter].result.findIndex(item => item.value == event.result[0].value);
             filtersResult[indexFilter].result.splice(indexToRemoveResult, 1);
-            let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
-            filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
+            if (Array.isArray(filtersResult[indexFilter].data[event.result[0].dropdownIndex])) {
+                let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
+                filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
+            } else if (typeof filtersResult[indexFilter].data[event.result[0].dropdownIndex] === 'object') {
+                filtersResult[indexFilter].data[event.result[0].dropdownIndex] = [];
+            }
         }
 
         return filtersResult;
@@ -434,7 +480,7 @@ export class AppComponent {
 
     submit() {
         /* if (this.form.valid) {
-
+    
         } else {
             this.form.markAsTouched();
         } */

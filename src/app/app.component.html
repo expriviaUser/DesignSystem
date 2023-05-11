@@ -138,8 +138,10 @@
 </lib-tree-select>
 
 <lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
-<lib-only-filters [dropdownValues]="dropdownValuesSecond" [data]="values"
-    (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
+<lib-only-filters [dropdownValues]="dropdownValuesSecond" [chipsList]="values(dropdownValuesSecond.id)"
+    [title]="'Filtra per'" (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
+<lib-only-filters *ngIf="dropdownValuesThird" [dropdownValues]="dropdownValuesThird"
+    [chipsList]="values(dropdownValuesThird.id)" (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
 <lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips>
 
 <!-- <lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">

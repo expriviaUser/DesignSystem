@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/filters/services/filters.service';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
         HttpClientModule,
         BreadcrumbModule
     ],
-    providers: [DatePipe],
+    providers: [DatePipe, FiltersService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

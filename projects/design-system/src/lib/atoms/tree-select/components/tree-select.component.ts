@@ -1,17 +1,18 @@
-import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { TreeSelectModel } from "../models/tree-select.model";
 
 @Component({
     selector: 'lib-tree-select',
     templateUrl: './tree-select.component.html',
-    styleUrls: ['./tree-select.component.scss']
+    styleUrls: ['./tree-select.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class TreeSelectComponent {
 
     @Input() nodes: TreeSelectModel[] = [];
 
     @Input() valueTemplate!: TemplateRef<any>;
-
+    valueSelection: TreeSelectModel[] = [];
     @Input() selectedNodes: TreeSelectModel[] = [];
     @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();
 
@@ -24,6 +25,7 @@ export class TreeSelectComponent {
     constructor() {
     }
 
+
     optionEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {
         this.emitSelectedOption.emit(event);
     }
@@ -34,7 +36,8 @@ export class TreeSelectComponent {
     }
 
     selectedValuesEmit(event: Array<TreeSelectModel>): void {
-        this.emitSelectedValues.emit(event);
+        this.valueSelection = event;
+        this.emitSelectedValues.emit(this.valueSelection);
     }
 
 

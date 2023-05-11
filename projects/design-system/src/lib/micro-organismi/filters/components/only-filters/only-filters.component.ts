@@ -12,6 +12,7 @@ import {
 import { FiltersChip, FiltersModel, FiltersResult, OnlyFiltersChip, OnlyFiltersModel } from '../../models/filters.model';
 import { TreeSelectModel } from 'projects/design-system/src/lib/atoms/tree-select/models/tree-select.model';
 import { CalendarComponent } from 'projects/design-system/src/lib/atoms/calendar/components/calendar.component';
+import { TreeSelectComponent } from 'projects/design-system/src/lib/atoms/tree-select/components/tree-select.component';
 
 
 @Component({
@@ -19,29 +20,25 @@ import { CalendarComponent } from 'projects/design-system/src/lib/atoms/calendar
     templateUrl: './only-filters.component.html',
     styleUrls: ['./only-filters.component.scss']
 })
-export class OnlyFiltersComponent implements OnInit, OnChanges {
+export class OnlyFiltersComponent implements OnInit {
     @Input() dropdownValues: OnlyFiltersModel = {} as OnlyFiltersModel;
-    @Input() data!: TreeSelectModel[][];
+    @Input() title: string = '';
+    data: TreeSelectModel[][] = [];
 
     @Output() chipsListChange: EventEmitter<OnlyFiltersChip> = new EventEmitter<OnlyFiltersChip>();
 
-    chipsList: OnlyFiltersChip = {} as OnlyFiltersChip;
+    @Input() chipsList: OnlyFiltersChip = {} as OnlyFiltersChip;
 
     resetCalendarValue!: Array<Date> | null;
 
-    selectedValues(index: number): TreeSelectModel[] {
-        return (this.chipsList && this.chipsList.data && this.chipsList.data[index] ? this.chipsList.data[index] : []);
+    get selectedValues(): TreeSelectModel[][] {
+        return [...this.chipsList.data];
     }
 
     @ViewChildren('calendar') calendar!: QueryList<CalendarComponent>;
+    @ViewChildren('treeSelect') treeSelect!: TreeSelectComponent;
 
     constructor() {
-    }
-
-    ngOnChanges(changes: SimpleChanges) {
-        if (changes && changes['data'].currentValue) {
-            this.chipsList.data = changes['data'].currentValue;
-        }
     }
 
     ngOnInit(): void {
@@ -49,9 +46,12 @@ export class OnlyFiltersComponent implements OnInit, OnChanges {
         this.chipsList.result = [];
         this.chipsList.data = [];
 
+
         this.dropdownValues.filters.filter((item, index) => {
-            if (item.type == 'treeselect')
+            if (item.type == 'treeselect') {
                 this.chipsList.data[index] = []
+                this.data[index] = []
+            }
         });
 
         this.chipsListChange.emit(this.chipsList);
@@ -65,6 +65,8 @@ export class OnlyFiltersComponent implements OnInit, OnChanges {
                 let indexToRemove = this.chipsList.result.findIndex(item => item.field == dropdownField);
                 if (indexToRemove !== -1)
                     this.chipsList.result.splice(indexToRemove, 1);
+
+                this.chipsList.data[dropdownIndex] = [];
             }
             this.chipsList.result.push({ value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect" });
             // this.chipsList.result.sort((a, b) => a.dropdownIndex - b.dropdownIndex);

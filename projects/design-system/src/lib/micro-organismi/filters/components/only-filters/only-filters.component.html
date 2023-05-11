@@ -1,22 +1,33 @@
 <div class="filters-wrapper">
-    <div class="dropdown-title">Filtra per</div>
+    <div class="dropdown-title" *ngIf="title">{{title}}</div>
     <div class="dropdown-container">
 
         <div *ngFor="let dropdownOptions of dropdownValues.filters; let i = index">
-            <lib-tree-select class="single-dropdown"
+            <!-- <lib-tree-select #treeSelect class="single-dropdown"
                 *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
                 [selectionType]="dropdownOptions.selectionType || 'multiple'" [nodes]="dropdownOptions.data"
                 (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-                [(selectedNodes)]="chipsList.data[i]" (emitUnselect)="unselectOption($event, i)"
+                [(selectedNodes)]="data[i]" (emitUnselect)="unselectOption($event, i)"
                 [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate || null">
 
                 <ng-template #valueTemplate value>
                     {{dropdownOptions.placeholder}}
                 </ng-template>
-            </lib-tree-select>
+            </lib-tree-select> -->
+            <p-treeSelect class="single-dropdown" *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
+                [(ngModel)]="chipsList.data[i]" [options]="dropdownOptions.data || []" [metaKeySelection]="false"
+                [selectionMode]="dropdownOptions.selectionType || 'multiple'"
+                [placeholder]="dropdownOptions.placeholder"
+                (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                (onNodeUnselect)="unselectOption($event, i)">
+                <ng-template #valueTemplate pTemplate="value">
+                    {{dropdownOptions.placeholder}}
+                </ng-template>
+            </p-treeSelect>
             <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"
                 [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
                 (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
+
         </div>
     </div>
 </div>

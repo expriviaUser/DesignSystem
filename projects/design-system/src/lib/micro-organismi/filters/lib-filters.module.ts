@@ -7,6 +7,7 @@ import { LibTreeSelectModule } from "../../atoms/tree-select/lib-tree-select.mod
 import { LibCalendarModule } from "../../atoms/calendar/lib-calendar.module";
 import { FiltersChipsComponent } from './components/filters-chips/filters-chips.component';
 import { OnlyFiltersComponent } from './components/only-filters/only-filters.component';
+import { TreeSelectModule } from "primeng/treeselect";
 
 const primeComponents = [
     LibTreeSelectModule,
@@ -30,7 +31,8 @@ const exportComponent = [
         FormsModule,
         ReactiveFormsModule,
         LibTreeSelectModule,
-        LibCalendarModule
+        LibCalendarModule,
+        TreeSelectModule
     ],
     exports: [
         ...exportComponent,

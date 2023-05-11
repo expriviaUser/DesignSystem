@@ -7,7 +7,8 @@ export interface FiltersModel {
     placeholder: string,
     field: string,
     type: "calendar" | "treeselect",
-    selectionType?: "single" | "multiple" | "checkbox"
+    selectionType?: "single" | "multiple" | "checkbox",
+    children?: FiltersModel
 }
 
 export interface OnlyFiltersModel {
