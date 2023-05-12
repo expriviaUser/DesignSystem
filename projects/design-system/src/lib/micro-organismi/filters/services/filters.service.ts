@@ -6,7 +6,6 @@ import { TreeSelectModel } from '../../../atoms/tree-select/models/tree-select.m
     providedIn: 'root'
 })
 export class FiltersService {
-    data: TreeSelectModel[][] = [];
     constructor() { }
 
     getFiltersResult(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
@@ -15,18 +14,24 @@ export class FiltersService {
             filtersResult.push(event);
         else {
             filtersResult[indexFilter].result = event.result;
-            // filtersResult[indexFilter].data = event.data;
+            filtersResult[indexFilter].data = event.data;
         }
 
         return filtersResult;
     }
 
+
     removeFiltersChip(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
         let indexFilter = filtersResult.findIndex(item => item.id == event.id);
         if (indexFilter >= 0) {
-            filtersResult[indexFilter].result.splice(event.result[0].dropdownIndex);
-            //let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
-            //filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
+            let indexToRemoveResult = filtersResult[indexFilter].result.findIndex(item => item.value == event.result[0].value);
+            filtersResult[indexFilter].result.splice(indexToRemoveResult, 1);
+            if (Array.isArray(filtersResult[indexFilter].data[event.result[0].dropdownIndex])) {
+                let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
+                filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
+            } else if (typeof filtersResult[indexFilter].data[event.result[0].dropdownIndex] === 'object') {
+                filtersResult[indexFilter].data[event.result[0].dropdownIndex] = [];
+            }
         }
 
         return filtersResult;

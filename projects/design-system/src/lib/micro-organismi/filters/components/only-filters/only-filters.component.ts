@@ -22,7 +22,7 @@ export class OnlyFiltersComponent implements OnInit {
     @Input() dropdownValues: OnlyFiltersModel = {} as OnlyFiltersModel;
     @Input() title: string = '';
     data: TreeSelectModel[][] = [];
-    dropdownSelectedValues: { label: string, value: any }[] = [];
+    dropdownSelectedValues: { label: string, value: any, childValue: string | number }[] = [];
 
     @Output() chipsListChange: EventEmitter<OnlyFiltersChip> = new EventEmitter<OnlyFiltersChip>();
 
@@ -36,11 +36,22 @@ export class OnlyFiltersComponent implements OnInit {
 
     getChildType(dropdownOption: FiltersModel, value: string): string {
         if (dropdownOption && dropdownOption.data && value !== '') {
-            let index = dropdownOption.data?.findIndex(item => item.data == value);
-            console.log(dropdownOption.data[index].type);
-            return dropdownOption.data[index].type || '';
+            let index = dropdownOption.data.findIndex(item => item.data == value);
+            if (index !== -1)
+                return dropdownOption.data[index].type || '';
+            else return '';
         } else
             return '';
+    }
+
+    getTreeSelectValue(dropdownIndex: number): string {
+        if (this.chipsList.result.length > 0) {
+            let value = this.chipsList.result.filter(item => item.dropdownIndex == dropdownIndex);
+            if (value.length > 0)
+                return value[0].value;
+            else return '';
+        }
+        else return '';
     }
 
     getChildEnum(dropdownOption: FiltersModel, value: string): TreeSelectModel[] {
@@ -97,24 +108,29 @@ export class OnlyFiltersComponent implements OnInit {
                 this.data[index] = []
             }
             if (item.type == 'children')
-                this.dropdownSelectedValues[index] = { label: '', value: null };
+                this.dropdownSelectedValues[index] = { label: '', value: null, childValue: '' };
         });
 
         this.chipsListChange.emit(this.chipsList);
 
     }
 
-    printData(dropdownIndex: number, field: string) {
+    setChildValue(event: string | number, dropdownIndex: number) {
+        this.dropdownSelectedValues[dropdownIndex].value = event;
+        this.dropdownSelectedValues[dropdownIndex].label = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.data == event)[0].label || '';
+    }
+
+    printData(dropdownIndex: number) {
         this.chipsList.result.push({
             dropdownIndex: dropdownIndex,
             data: this.dropdownSelectedValues[dropdownIndex].value,
             field: this.dropdownSelectedValues[dropdownIndex].label,
             type: 'children',
-            value: `${this.dropdownSelectedValues[dropdownIndex].label}: ${this.dropdownSelectedValues[dropdownIndex].value}`
+            value: `${this.dropdownSelectedValues[dropdownIndex].label}: ${this.dropdownSelectedValues[dropdownIndex].childValue}`
         });
-        this.dropdownSelectedValues[dropdownIndex] = {
-            label: '', value: null
-        }
+        this.dropdownSelectedValues[dropdownIndex] = JSON.parse(JSON.stringify({
+            label: '', value: null, childValue: ''
+        }));
         console.log(this.chipsList);
         this.chipsListChange.emit(this.chipsList);
     }
@@ -139,7 +155,7 @@ export class OnlyFiltersComponent implements OnInit {
 
 
     setCalendarChild(event: Array<object>, dropdownIndex: number) {
-        this.dropdownSelectedValues[dropdownIndex].value = event[0].toLocaleString().split(',')[0] + " - " + event[1].toLocaleString().split(',')[0]
+        this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toLocaleString().split(',')[0] + " - " + event[1].toLocaleString().split(',')[0]
     }
 
     createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {

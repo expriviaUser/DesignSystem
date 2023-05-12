@@ -8,8 +8,8 @@ import {
     ViewChildren
 } from '@angular/core';
 import { FiltersChip, FiltersModel, FiltersResult } from '../../models/filters.model';
-import { TreeSelectModel } from 'projects/design-system/src/lib/atoms/tree-select/models/tree-select.model';
-import { CalendarComponent } from 'projects/design-system/src/lib/atoms/calendar/components/calendar.component';
+import { TreeSelectModel } from '../../../../../public-api';
+import { CalendarComponent } from '../../../../../public-api';
 
 @Component({
     selector: 'lib-filters',

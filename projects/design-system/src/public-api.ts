@@ -124,6 +124,7 @@ export * from './lib/micro-organismi/filters/components/filters/filters.componen
 export * from './lib/micro-organismi/filters/components/only-filters/only-filters.component';
 export * from './lib/micro-organismi/filters/components/filters-chips/filters-chips.component';
 export * from './lib/micro-organismi/filters/models/filters.model';
+export * from './lib/micro-organismi/filters/services/filters.service';
 export * from './lib/micro-organismi/filters/lib-filters.module';
 
 export * from './lib/atoms/progress-bar/components/progress-bar.component';

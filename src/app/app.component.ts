@@ -359,7 +359,7 @@ export class AppComponent {
     maxDate: Date = new Date(2023, 3, 31);
 
     changeFiltersResult(event: OnlyFiltersChip) {
-        let result = [...this.getFiltersResult(event, this.filtersResult)];
+        let result = [...this.filtersService.getFiltersResult(event, this.filtersResult)];
         this.filtersResult = [];
         this.filtersResult = [...result];
         if (this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result.filter(item => item.value == 'Tipologia richiesta1').length > 0 && !this.dropdownValuesThird)
@@ -379,17 +379,7 @@ export class AppComponent {
                 {
                     type: "children",
                     selectionType: 'single',
-                    data: [
-                        { label: 'richiesta5', data: 'Data richiesta5', type: 'text' },
-                        {
-                            label: 'richiesta6', data: 'Data richiesta6', type: 'enum', enumValues: [{ label: 'richiesta1', data: 0 },
-                            { label: 'richiesta2', data: 1 },
-                            { label: 'richiesta3', data: 2 },
-                            { label: 'richiesta4', data: 3 }]
-                        },
-                        { label: 'richiesta7', data: 'Data richiesta7', type: 'number' },
-                        { label: 'richiesta8', data: 'Data richiesta8', type: 'calendar', config: { selection: 'range' } }
-                    ], placeholder: "Metadata", field: "metadata",
+                    data: [{ "data": 75, "label": "Codice Cliente", "type": "text" }, { "data": 76, "label": "Tipologia Documento", "type": "text" }, { "data": 77, "label": "Contratto Fornitore", "type": "number" }, { "data": 1, "label": "Campo fisso ENIU", "type": "text" }, { "data": 52, "label": "Cognome", "type": "text" }, { "data": 53, "label": "Nome", "type": "text" }, { "data": 55, "label": "Luogo di Nascita", "type": "text" }, { "data": 74, "label": "Provincia di Nascita", "type": "text" }, { "data": 54, "label": "Data di Nascita", "type": "calendar", "config": { "selection": "single" } }, { "data": 17, "label": "Codice Fiscale", "type": "text" }, { "data": 70, "label": "Data Produzione", "type": "" }, { "data": 71, "label": "Data Pubblicazione", "type": "" }, { "data": 50, "label": "File (formato: folder\\\\nomefile)", "type": "text" }, { "data": 2, "label": "Protocollo assegnato", "type": "number" }, { "data": 93, "label": "Carattere separatore fatturazione", "type": "text" }, { "data": 78, "label": "Data Esportazione verso GD (data invio flusso)", "type": "calendar", "config": { "selection": "single" } }, { "data": 79, "label": "Pratica (modalità manuale  modalità automatica)", "type": "number" }, { "data": 80, "label": "Scansione fogli A4 A3", "type": "number" }, { "data": 81, "label": "Scansione fogli A0", "type": "number" }, { "data": 82, "label": "Scansione fogli A1", "type": "number" }, { "data": 83, "label": "Scansione fogli A2", "type": "number" }, { "data": 84, "label": "Scansione fogli formato non standard", "type": "number" }, { "data": 85, "label": "Rilevazione inf. dati dai moduli catastali", "type": "number" }, { "data": 86, "label": "Rilevazione dati da altri documenti", "type": "number" }, { "data": 87, "label": "Preparazione pratica A4 A3 classe A fino a 100 fogli", "type": "number" }, { "data": 88, "label": "Preparazione pratica A4 A3 classe B fino a 100 fogli", "type": "number" }, { "data": 89, "label": "Preparazione pratica A4 A3 classe C fino a 100 fogli", "type": "number" }, { "data": 90, "label": "Preparazione pratica maggiore A3 classe A fino a 100 fogli", "type": "number" }, { "data": 91, "label": "Preparazione pratica maggiore A3 classe B fino a 100 fogli", "type": "number" }, { "data": 92, "label": "Preparazione pratica maggiore A3 classe C fino a 100 fogli", "type": "number" }], placeholder: "Metadata", field: "metadata",
                 }]
             };
         else if (!(this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result.filter(item => item.value == 'Tipologia richiesta1').length > 0))
@@ -397,45 +387,17 @@ export class AppComponent {
     }
 
     removeFilterChip(event: OnlyFiltersChip) {
-        let result = [...this.removeFiltersChip(event, this.filtersResult)];
+        let result = [...this.filtersService.removeFiltersChip(event, this.filtersResult)];
         this.filtersResult = [];
         this.filtersResult = [...result];
         if (!(this.filtersResult[0] && this.filtersResult[0].result[0] && this.filtersResult[0].result.filter(item => item.value == 'Tipologia richiesta1').length > 0))
             this.dropdownValuesThird = undefined;
     }
 
-    getFiltersResult(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
-        let indexFilter = filtersResult.findIndex(item => item.id == event.id);
-        if (indexFilter < 0)
-            filtersResult.push(event);
-        else {
-            filtersResult[indexFilter].result = event.result;
-            filtersResult[indexFilter].data = event.data;
-        }
-
-        return filtersResult;
-    }
     values(index: number): OnlyFiltersChip {
         return (this.filtersResult && this.filtersResult[index] && this.filtersResult[index].data) ? { ...this.filtersResult[index] } : {} as OnlyFiltersChip;
     }
 
-
-
-    removeFiltersChip(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
-        let indexFilter = filtersResult.findIndex(item => item.id == event.id);
-        if (indexFilter >= 0) {
-            let indexToRemoveResult = filtersResult[indexFilter].result.findIndex(item => item.value == event.result[0].value);
-            filtersResult[indexFilter].result.splice(indexToRemoveResult, 1);
-            if (Array.isArray(filtersResult[indexFilter].data[event.result[0].dropdownIndex])) {
-                let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
-                filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
-            } else if (typeof filtersResult[indexFilter].data[event.result[0].dropdownIndex] === 'object') {
-                filtersResult[indexFilter].data[event.result[0].dropdownIndex] = [];
-            }
-        }
-
-        return filtersResult;
-    }
 
     constructor(private fb: FormBuilder, private config: PrimeNGConfig, private tableService: LibTableService, private loaderService: LoaderService, private filtersService: FiltersService) {
         this.config.setTranslation({

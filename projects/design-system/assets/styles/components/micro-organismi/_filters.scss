@@ -98,12 +98,12 @@
 
     .align-children {
         display: flex;
-        gap: 1rem;
+        gap: 0.357rem;
 
         .same-line {
             display: flex;
             flex-direction: row;
-            gap: 1rem;
+            gap: 0.357rem;
 
             .p-dropdown {
                 background: $color--filters-dropdown-background;
@@ -118,6 +118,10 @@
                     }
                 }
             }
+        }
+
+        .p-button {
+            border: 0 none;
         }
     }
 }
