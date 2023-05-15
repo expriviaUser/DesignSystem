@@ -15,7 +15,6 @@
 <lib-calendar [showIcon]="true" [disabled]="true"></lib-calendar>
 
 <lib-progress-bar [progress]="30" [showValue]="false"></lib-progress-bar>
-<lib-header-actions></lib-header-actions>
 
 <h6>Catalogazione</h6>
 
@@ -122,3 +121,6 @@
 <lib-treemenu [filter]="true" [selectionMode]="'checkbox'" [filterPlaceholder]="'Cerca'" [items]="treemenuItems"
     [(selected)]="selectedItems" (selectedChange)="selectedMenu($event)" [checkboxOnlyLeaf]="true"
     [propagateSelectionUp]="false"></lib-treemenu>
+
+<lib-language-selector [options]="languages" (selectedOptionChange)="catchChange($event)"></lib-language-selector>
+<lib-header-actions [languages]="languages" (languageChange)="catchChange($event)"></lib-header-actions>

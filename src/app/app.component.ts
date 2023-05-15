@@ -13,6 +13,7 @@ import {
 } from 'projects/design-system/src/public-api';
 import { FiltersModel } from "../../projects/design-system/src/lib/micro-organismi/filters/models/filters.model";
 import { PrimeNGConfig } from 'primeng/api';
+import { Language } from 'projects/design-system/src/lib/molecole/header-items/models/language.model';
 
 @Component({
     selector: 'app-root',
@@ -333,4 +334,27 @@ export class AppComponent {
         console.log(data);
         console.log(data[this.dropdownValues[0].field]);
     }
+
+	languages = [
+		{
+			name: 'it',
+			code: 'it'
+		},
+		{
+			name: 'fr',
+			code: 'fr'
+		},
+		{
+			name: 'sp',
+			code: 'sp'
+		},
+		{
+			name: 'en',
+			code: 'en'
+		}
+	];
+
+	public catchChange(lang: Language): void {
+		console.log(lang);		
+	}
 }
