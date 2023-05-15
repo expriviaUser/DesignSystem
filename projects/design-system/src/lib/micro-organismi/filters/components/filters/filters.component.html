@@ -1,0 +1,29 @@
+<div class="filters-wrapper">
+    <div class="dropdown-title">Filtra per</div>
+    <div class="dropdown-container">
+
+        <div *ngFor="let dropdownOptions of dropdownValues; let i = index">
+            <lib-tree-select class="single-dropdown"
+                *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
+                [selectionType]="dropdownOptions.selectionType || 'multiple'" [nodes]="dropdownOptions.data"
+                (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                [(selectedNodes)]="selectedValues[i]" (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
+                [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate || null">
+
+                <ng-template #valueTemplate value>
+                    {{dropdownOptions.placeholder}}
+                </ng-template>
+            </lib-tree-select>
+            <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"
+                [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
+                (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
+        </div>
+
+    </div>
+    <div *ngIf="chipsList.length>0" class="chips-title">Filtri attivi</div>
+    <div class="chips-container">
+        <lib-chip class="single-chip" *ngFor="let singleChip of chipsList; let j = index"
+            (onRemove)="resetDropdown(j, singleChip)" [label]="singleChip.value" [removable]="true"
+            removeIcon="pi pi-times"></lib-chip>
+    </div>
+</div>

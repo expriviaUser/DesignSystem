@@ -193,7 +193,7 @@ $color--radio-button-icon-selected: #1890ff;
 
 //autocomplete
 $color--autocomplete-button-background: var(--base-color-transparent);
-$color--autocomplete-button-border: var(--base-color-black);
+$color--autocomplete-button-border: var(--base-color-border);
 
 //upload file
 $color--uploadfile-button-background: var(--secondary-color-50);
@@ -266,10 +266,11 @@ $color--checkbox-text: var(--base-color-white);
 
 //calendar
 $color--calendar-button-text: var(--base-color-white);
-$color--calendar-button-text-hover: var(--secondary-color-50);
+$color--calendar-button-text-hover: var(--base-color-white);
 $color--calendar-button-background: var(--secondary-color-50);
-$color--calendar-button-background-hover: var(--base-color-white);
+$color--calendar-button-background-hover: var(--secondary-color-50);
 $color--calendar-header-text: var(--gray-color-30);
+$color--calendar-button-border: var(--secondary-color-50);
 
 //switch
 $color--switch-active: var(--tertiary-color-50);
@@ -278,6 +279,11 @@ $color--switch-hover: var(--tertiary-color-50);
 //form
 $color--form-label-text: var(--text-color-normal);
 
+// header menu subheader
+$color--item-menu-active: var(--base-color-white);
+
+// input-text
+$color--input-border: var(--base-color-border);
 // end colors components
 
 $color--surface-a: #ffffff;

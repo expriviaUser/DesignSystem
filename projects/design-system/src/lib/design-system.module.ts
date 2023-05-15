@@ -30,9 +30,12 @@ import { FileStatusModule } from './molecole/file-status/file-status.module';
 import { LibTreeSelectModule } from "./atoms/tree-select/lib-tree-select.module";
 import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
 import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
-import { ChooseFileModule } from './atoms/choose-file/choose-file.module';
+import { LibChooseFileModule } from './atoms/choose-file/choose-file.module';
 import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
+import { LibTableService } from '../public-api';
+import { PipesModule } from './pipes/pipes.module';
+import { LibLoaderModule } from './atoms/loader/lib-loader.module';
 
 const sharedModules = [
     LibTagModule,
@@ -65,9 +68,11 @@ const sharedModules = [
     LibTreeSelectModule,
     LibProgressBarModule,
     LibUploadFileModule,
-    ChooseFileModule,
+    LibChooseFileModule,
     SwitchModule,
-    LibTreemenuModule
+    LibTreemenuModule,
+    PipesModule,
+    LibLoaderModule
 ];
 
 @NgModule({
@@ -78,6 +83,7 @@ const sharedModules = [
     ],
     exports: [
         ...sharedModules
-    ]
+    ],
+    providers: [LibTableService]
 })
 export class DesignSystemModule { }

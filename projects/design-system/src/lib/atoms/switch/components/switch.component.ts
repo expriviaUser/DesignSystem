@@ -20,7 +20,6 @@ export class SwitchComponent {
     @Output() checkedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     onToggle(event: any) {
-        this.checked = event.value;
         this.checkedChange.emit(this.checked);
     }
 

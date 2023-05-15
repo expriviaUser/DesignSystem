@@ -32,4 +32,4 @@ const exportComponent = [
 })
 
 
-export class ChooseFileModule { }
+export class LibChooseFileModule { }

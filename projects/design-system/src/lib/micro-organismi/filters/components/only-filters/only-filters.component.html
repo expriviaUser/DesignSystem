@@ -1,0 +1,80 @@
+<div class="filters-wrapper">
+    <div class="dropdown-title">{{title}}</div>
+    <div class="dropdown-container">
+
+        <div *ngFor="let dropdownOptions of dropdownValues.filters; let i = index">
+            <!-- <lib-tree-select #treeSelect class="single-dropdown"
+                *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
+                [selectionType]="dropdownOptions.selectionType || 'multiple'" [nodes]="dropdownOptions.data"
+                (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                [(selectedNodes)]="data[i]" (emitUnselect)="unselectOption($event, i)"
+                [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate || null">
+
+                <ng-template #valueTemplate value>
+                    {{dropdownOptions.placeholder}}
+                </ng-template>
+            </lib-tree-select> -->
+            <ng-container [ngSwitch]="dropdownOptions.type">
+                <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
+                    [options]="dropdownOptions.data || []" [metaKeySelection]="false"
+                    [selectionMode]="dropdownOptions.selectionType || 'multiple'"
+                    [placeholder]="dropdownOptions.placeholder"
+                    (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                    (onNodeUnselect)="unselectOption($event, i)">
+                    <!-- *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data" -->
+                    <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
+                        <ng-template pTemplate="value">
+                            {{dropdownOptions.placeholder}}
+                        </ng-template>
+                    </ng-container>
+                    <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+                        <ng-template pTemplate="value">
+                            {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+                        </ng-template>
+                    </ng-container>
+                </p-treeSelect>
+                <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true"
+                    [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
+                    (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
+                <!-- *ngIf="dropdownOptions.type == 'calendar'" -->
+
+                <div *ngSwitchCase="'children'" class="align-children">
+                    <div class="same-line">
+                        <lib-dropdown [valueDropdown]="getAvailableData(dropdownOptions.data || [], i)"
+                            [placeholder]="dropdownOptions.placeholder" [codeString]="'data'" [nameString]="'label'"
+                            [selectedItemTemplate]="selectedItemTemplate" (selectedValue)="setChildValue($event, i)">
+                            <ng-template #selectedItemTemplate pTemplate="selectedItem">
+                                {{dropdownSelectedValues[i].label || dropdownOptions.placeholder}}
+                            </ng-template>
+                        </lib-dropdown>
+                        <ng-container [ngSwitch]="getChildType(dropdownOptions, dropdownSelectedValues[i].value)">
+                            <div *ngSwitchCase="'text'">
+                                <lib-input [placeholder]="'Valore per ' + dropdownSelectedValues[i].label"
+                                    (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
+                            </div>
+                            <div *ngSwitchCase="'number'">
+                                <lib-input [type]="'number'"
+                                    (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
+                            </div>
+                            <div *ngSwitchCase="'enum'">
+                                <lib-dropdown
+                                    [valueDropdown]="getChildEnum(dropdownOptions, dropdownSelectedValues[i].value)"
+                                    [codeString]="'data'" [nameString]="'label'"
+                                    (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-dropdown>
+                            </div>
+                            <div *ngSwitchCase="'calendar'">
+                                <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
+                                    (selectedValue)="setCalendarChild($event, i)"
+                                    [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).selection"></lib-calendar>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="button-filtri">
+                        <lib-button *ngIf="dropdownSelectedValues[i].label" [label]="'Aggiungi filtro'"
+                            (onClick)="printData(i)" [size]="'small'"></lib-button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,24 +1,20 @@
 <div class="table-wrapper">
 
-    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent()" (onRowUnselect)="selectedEvent()"
-        [resizableColumns]="false" [(selection)]="selectedValue" [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
-        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="paginatorData.rows"
-        [rowsPerPageOptions]="rowsPerPage"
-        [currentPageReportTemplate]="reportString" [showCurrentPageReport]="showReportPage"
-        [totalRecords]="totalRecords" [(first)]="paginatorData.first" [loading]="loading" (onPage)="paginate($event)" [customSort]="serverSort" (onSort)="emitSort($event)">
+    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent()"
+        (onRowUnselect)="selectedEvent()" [resizableColumns]="false" [(selection)]="selectedValue"
+        [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
+        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="nRowsPerPage"
+        [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString"
+        [loading]="loading" [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy"
+        [customSort]="serverSort" (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <!-- LABEL DELLE COLONNE -->
-                <th *ngIf="isSelectable">
-                    <!-- <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox> -->
-                </th>
-                <th *ngFor="let col of columns" [pSortableColumn]="col.sort ? col.field : null">
-                    {{col.header}}
-                    <p-sortIcon *ngIf="col.sort" [field]="col.field"></p-sortIcon>
-                </th>
-                <th *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
-                    Operazioni
-                </th>
+
+                <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : internalHeader"
+                    [ngTemplateOutletContext]="{columns:columns}">
+
+                </ng-template>
             </tr>
         </ng-template>
 
@@ -33,6 +29,19 @@
         </ng-template>
     </p-table>
 </div>
+
+<ng-template #internalHeader let-columns="columns">
+    <th *ngIf="isSelectable">
+        <!-- <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox> -->
+    </th>
+    <th *ngFor="let col of columns" [pSortableColumn]="col.sort ? col.field : null">
+        {{col.header}}
+        <p-sortIcon *ngIf="col.sort" [field]="col.field"></p-sortIcon>
+    </th>
+    <th *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
+        Operazioni
+    </th>
+</ng-template>
 
 <ng-template #internalBody let-data="data" let-columns="column">
     <td *ngIf="isSelectable">

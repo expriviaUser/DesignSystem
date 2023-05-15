@@ -1,15 +1,15 @@
 import {
     Component,
     EventEmitter,
-    OnInit,
     Input,
+    OnInit,
     Output,
-    TemplateRef,
-    SimpleChanges,
-    OnChanges,
-    ViewChild} from "@angular/core";
+    TemplateRef
+} from "@angular/core";
+import { LazyLoadEvent } from "primeng/api";
 import { Table, TableService } from "primeng/table";
-import { Cols, PaginatorData } from "../../models/table.model";
+import { Cols } from "../../models/table.model";
+import { LibTableService } from "../../services/lib-table.service";
 
 
 
@@ -20,11 +20,13 @@ import { Cols, PaginatorData } from "../../models/table.model";
     providers: [Table, TableService]
 })
 
-export class TableComponent implements OnInit, OnChanges {
+export class TableComponent implements OnInit {
     // azioni della tabella
     @Input() actions?: TemplateRef<any>;
     // campi della tabella
     @Input() externalBody!: TemplateRef<any>;
+    // header tabella
+    @Input() externalHeader!: TemplateRef<any>;
     //   valori della tabella
     @Input() value!: any[];
     //   colonne della tabella
@@ -37,10 +39,8 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() isSelectable!: boolean;
     //    tipo di selezione della tabella, single o multiple
     @Input() selectionType!: string;
-    //    ritorno tutta la response della chiamata
-    @Input() allResponse!: any;
 
-    @Input() rowsPerPage: any = [10,25,50];
+    @Input() rowsPerPage: any = [10, 25, 50];
 
     @Input() showPaginator: boolean = true;
 
@@ -60,105 +60,53 @@ export class TableComponent implements OnInit, OnChanges {
     @Input() isScrollable!: boolean;
 
     @Input() scrollHeight!: string;
-    
+
     @Input() alwaysShowPaginator!: boolean;
 
+    @Input() loading!: boolean;
+
+    @Input() lazy!: boolean;
+
+    @Input() emitLazy!: boolean;
+
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
-    @Output() pageChanged = new EventEmitter<any>();
-    //    Output per aggiornare il paramentro Page da passare al be
-    @Input('pageNumberBe') pageIncrement: number = 0
-    @Output('pageNumberBeChange') pageIncrementChange = new EventEmitter<number>()
+    @Output() pageChanged: EventEmitter<{ pageNumber: number, field: string, order: number }> = new EventEmitter<{ pageNumber: number, field: string, order: number }>();
+
+    @Output() lazyLoadChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per aggiornare il valore delle checkbox in tabella
-    @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]
-    >();
+    @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     //    Output per segnalare l'evento di sorting
     @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
 
-
-    loading: boolean = false;
-    pageIndex: number = 0
-    paginatorData: PaginatorData
+    pageIndex: number = 0;
+    firstRowInPage: number = 0;
     //environment = environment
 
-    constructor() {
-        this.paginatorData = {
-            first: 0,
-            rows: this.nRowsPerPage > 0 ? this.nRowsPerPage : 5,
-            totalRecords: this.totalRecords
-        }
-    }
-
-    paginate(ev: any) {
-        this.pageIndex = ev.first / ev.rows + 1 // Index of the new page if event.page not defined.
-
-        let page_size_backend = this.value.length
-        let page_size_frontend = ev.rows
-        let current_page_frontend = this.pageIndex
-        let total_count_be = this.allResponse.totalElements
-
-        console.log('page_size_backend', page_size_backend)
-        console.log('page_size_frontend', page_size_frontend)
-        console.log('current_page_frontend', current_page_frontend)
-        console.log('total_count_be', total_count_be)
-
-        if (page_size_backend == page_size_frontend * current_page_frontend && page_size_backend < total_count_be) {
-
-            this.pageIncrement += 1;
-            this.pageIncrementChange.emit(this.pageIncrement)
-            let pagination = {
-                page: this.pageIncrement,
-                size: 30
-            }
-            this.pageChanged.emit(pagination);
-        }
-
-    }
+    constructor(private tableService: LibTableService) { }
 
     ngOnInit() {
         console.log(this.value)
     }
 
-    ngOnChanges(changes: SimpleChanges) {
-        if (changes['pageIncrement'])
-            this.pageIncrement == 0 ? this.paginatorData.first = 0 : null
+
+    protected getFieldValue(data: { [key: string]: any }, field: string): any {
+        // esempio con --> field country.name
+        return this.tableService.getFieldValue(data, field);
     }
 
-    getFieldValue(data: { [key: string]: any }, field: string): any {
-        // esempio con --> field country.name
-        if (field) {
-            const props = field.split("."); //[country, name] ---> [name] ----> []
-            const prop = props.shift() as string; //country----> name
+    protected lazyLoading(event: LazyLoadEvent) {
+        let pageNumber = event.first && event.rows ? (event.first / event.rows + 1) : 1;
 
-            if (props.length) {
-                return this.getFieldValue(data[prop], props.join("."));
-            }
-            else {
-                if (
-                    data[prop] &&
-                    data[prop].toString().length > 10 &&
-                    typeof data[prop] == "number"
-                ) {
-                    let date =
-                        new Date(data[prop]).getDay() +
-                        "/" +
-                        (new Date(data[prop]).getMonth() + 1) +
-                        "/" +
-                        new Date(data[prop]).getFullYear();
-                    return date;
-                } else {
-                    if (data[prop]) {
-                        return data[prop];
-                    } else {
-                        return '--';
-                    }
-                }
-            }
+        if (!this.emitLazy) {
+            this.pageChanged.emit({ pageNumber: pageNumber, field: event.sortField ? event.sortField : '', order: event.sortOrder ? event.sortOrder : 0 });
+        } else {
+            this.lazyLoadChange.emit(event);
         }
     }
 
-    onPageChange(ev: any) {
+    /* onPageChange(ev: any) {
 
         // console.log('dataTable',this.dataTable)
         console.log('pageChange', ev)
@@ -178,15 +126,15 @@ export class TableComponent implements OnInit, OnChanges {
         }
 
 
-    }
+    } */
 
     selectedEvent() {
         this.selectedTableValues.emit(this.selectedValue);
     }
 
     emitSort(event: { field: string, order: number }): void {
-      if(this.serverSort) {
-      this.sortValues.emit(event);
-      }
+        if (!this.lazy) {
+            this.sortValues.emit(event);
+        }
     }
 }

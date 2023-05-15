@@ -28,7 +28,7 @@ export class InputComponent {
     @Input() iconPos: string = 'left'
     @Input() icon: string = '';
 
-    disabled: boolean = false;
+    @Input() disabled: boolean = false;
     onChange: any = () => { }
     onTouch: any = () => { }
 
@@ -79,10 +79,10 @@ export class InputComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any) {
-        this.value = event;
-        this.onChange(event);
-        this.selectedValue.emit(event);
-        console.log('val', this.value)
+        this.value = event ? event.target.value : '';
+        this.onChange(this.value);
+        this.selectedValue.emit(this.value);
+        console.log('value', this.value)
     }
 
     // upon UI element value change, this method gets triggered
