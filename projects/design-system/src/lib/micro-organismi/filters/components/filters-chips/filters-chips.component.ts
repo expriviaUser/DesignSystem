@@ -16,7 +16,7 @@ export class FiltersChipsComponent {
         return (this.chipsList.filter(item => item.result.length > 0).length > 0);
     }
 
-    resetDropdown(chipValue: FiltersChip, filterIndex: number): void {
-        this.onRemove.emit({ id: filterIndex, result: [chipValue], data: this.chipsList[filterIndex].data });
+    resetDropdown(chipValue: FiltersChip, filterId: number): void {
+        this.onRemove.emit({ id: filterId, result: [chipValue], data: [] });
     }
 }

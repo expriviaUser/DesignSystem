@@ -111,7 +111,6 @@ export class OnlyFiltersComponent implements OnInit {
                 this.dropdownSelectedValues[index] = { label: '', value: null, childValue: '' };
         });
 
-        this.chipsListChange.emit(this.chipsList);
 
     }
 
