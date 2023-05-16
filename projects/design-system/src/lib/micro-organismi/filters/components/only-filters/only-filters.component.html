@@ -40,7 +40,7 @@
 
                 <div *ngSwitchCase="'children'" class="align-children">
                     <div class="same-line">
-                        <lib-dropdown [valueDropdown]="getAvailableData(dropdownOptions.data || [], i)"
+                        <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data"
                             [placeholder]="dropdownOptions.placeholder" [codeString]="'data'" [nameString]="'label'"
                             [selectedItemTemplate]="selectedItemTemplate" (selectedValue)="setChildValue($event, i)">
                             <ng-template #selectedItemTemplate pTemplate="selectedItem">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="button-filtri">
                         <lib-button *ngIf="dropdownSelectedValues[i].label" [label]="'Aggiungi filtro'"
-                            (onClick)="printData(i)" [size]="'small'"></lib-button>
+                            (onClick)="printData(i, dropdown)" [size]="'small'"></lib-button>
                     </div>
                 </div>
             </ng-container>

@@ -7,7 +7,7 @@ import {
     QueryList,
     ViewChildren
 } from '@angular/core';
-import { CalendarComponent } from '../../../../../public-api';
+import { CalendarComponent, DropdownComponent } from '../../../../../public-api';
 import { TreeSelectComponent } from '../../../../../public-api';
 import { TreeSelectModel } from '../../../../../public-api';
 import { FiltersData, FiltersModel, OnlyFiltersChip, OnlyFiltersModel } from '../../models/filters.model';
@@ -23,7 +23,6 @@ export class OnlyFiltersComponent implements OnInit {
     @Input() title: string = '';
     data: TreeSelectModel[][] = [];
     dropdownSelectedValues: { label: string, value: any, childValue: string | number }[] = [];
-
     @Output() chipsListChange: EventEmitter<OnlyFiltersChip> = new EventEmitter<OnlyFiltersChip>();
 
     @Input() chipsList: OnlyFiltersChip = {} as OnlyFiltersChip;
@@ -71,23 +70,12 @@ export class OnlyFiltersComponent implements OnInit {
             return null;
     }
 
-    getAvailableData(data: FiltersData[], dropdownIndex: number): FiltersData[] {
-        let tempData: FiltersData[] = [];
-        if (this.chipsList.result.length > 0) {
-
-            data.forEach(item => {
-                if (!(this.chipsList.result.filter(value => value.dropdownIndex == dropdownIndex).map(element => element.field.toString()).includes(item.data.toString())))
-
-                    tempData.push(item);
-
-            })
-        } else {
-            tempData = [...data];
-        }
-        return tempData;
-
-
+    getAvailableData(data: string | number): boolean {
+        //let tempData: FiltersData[] = [];
+        return this.chipsList.result.filter(value => value.data === data).length > 0;
     }
+
+
 
 
     @ViewChildren('calendar') calendar!: QueryList<CalendarComponent>;
@@ -104,11 +92,13 @@ export class OnlyFiltersComponent implements OnInit {
 
         this.dropdownValues.filters.filter((item, index) => {
             if (item.type == 'treeselect') {
-                this.chipsList.data[index] = []
-                this.data[index] = []
+
+                this.chipsList.data[index] = item.selectionType === 'single' ? {} as TreeSelectModel[] : [];
+                this.data[index] = [];
             }
-            if (item.type == 'children')
+            if (item.type == 'children') {
                 this.dropdownSelectedValues[index] = { label: '', value: null, childValue: '' };
+            }
         });
 
 
@@ -117,9 +107,10 @@ export class OnlyFiltersComponent implements OnInit {
     setChildValue(event: string | number, dropdownIndex: number) {
         this.dropdownSelectedValues[dropdownIndex].value = event;
         this.dropdownSelectedValues[dropdownIndex].label = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.data == event)[0].label || '';
+
     }
 
-    printData(dropdownIndex: number) {
+    printData(dropdownIndex: number, dropdown: DropdownComponent) {
         this.chipsList.result.push({
             dropdownIndex: dropdownIndex,
             data: this.dropdownSelectedValues[dropdownIndex].value,
@@ -127,9 +118,16 @@ export class OnlyFiltersComponent implements OnInit {
             type: 'children',
             value: `${this.dropdownSelectedValues[dropdownIndex].label}: ${this.dropdownSelectedValues[dropdownIndex].childValue}`
         });
+        this.dropdownValues.filters[dropdownIndex].data?.forEach(item => {
+            this.chipsList.result.forEach(element => {
+                if (element.data == item.data)
+                    item.disabled = true;
+            })
+        })
         this.dropdownSelectedValues[dropdownIndex] = JSON.parse(JSON.stringify({
             label: '', value: null, childValue: ''
         }));
+        dropdown.value = null;
         console.log(this.chipsList);
         this.chipsListChange.emit(this.chipsList);
     }

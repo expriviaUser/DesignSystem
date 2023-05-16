@@ -12,6 +12,7 @@ export interface FiltersModel {
 
 export interface FiltersData extends TreeSelectModel {
     type?: string,
+    disabled?: boolean,
     enumValues?: TreeSelectModel[],
     config?: {
         [x: string]: any
