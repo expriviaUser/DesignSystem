@@ -60,15 +60,11 @@ export class FiltersComponent implements OnInit {
             else
                 this.chipsExport[dropdownField].push(event.node.data);
             this.filterValues.emit(this.chipsExport);
-            this.selectedValues[dropdownIndex].push(event.node);
-            /* if (selectionType !== 'single') {
-                if (this.selectedValues[dropdownIndex] == undefined || this.selectedValues[dropdownIndex].length == 0) {
-                    this.selectedValues[dropdownIndex] = [];
-                }
-            } else {
-                this.selectedValues[dropdownIndex] = [];
+            if (selectionType == 'single') {
                 this.selectedValues[dropdownIndex][0] = event.node;
-            } */
+            } else {
+                this.selectedValues[dropdownIndex].push(event.node);
+            }
         }
     }
 

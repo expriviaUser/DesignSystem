@@ -4,15 +4,13 @@ import { TreeSelectModel } from "../models/tree-select.model";
 @Component({
     selector: 'lib-tree-select',
     templateUrl: './tree-select.component.html',
-    styleUrls: ['./tree-select.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Default
+    styleUrls: ['./tree-select.component.scss']
 })
 export class TreeSelectComponent {
 
     @Input() nodes: TreeSelectModel[] = [];
 
     @Input() valueTemplate!: TemplateRef<any>;
-    valueSelection: TreeSelectModel[] = [];
     @Input() selectedNodes: TreeSelectModel[] = [];
     @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();
 
@@ -36,8 +34,7 @@ export class TreeSelectComponent {
     }
 
     selectedValuesEmit(event: Array<TreeSelectModel>): void {
-        this.valueSelection = event;
-        this.emitSelectedValues.emit(this.valueSelection);
+        this.emitSelectedValues.emit(event);
     }
 
 
