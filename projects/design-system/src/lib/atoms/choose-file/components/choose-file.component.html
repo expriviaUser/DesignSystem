@@ -3,7 +3,7 @@
         <label [for]="uploader">{{label}}</label>
     </div>
     <div class="input">
-        <lib-input class="lib-input" [icon]="arrayFiles.length > 0 ? 'pi pi-times' : ''" (iconClicked)="clearFile()" [iconPos]="'right'" [value]="inputValue" [placeholder]="'Nome File'"></lib-input>
+        <lib-input [disabled]="true" class="lib-input" [icon]="arrayFiles.length > 0 ? 'pi pi-times' : ''" (iconClicked)="clearFile()" [iconPos]="'right'" [value]="inputValue" [placeholder]="'Nome File'"></lib-input>
         <p-fileUpload #uploader mode="basic" [chooseLabel]="''" [accept]="acceptExtensions" [multiple]="true"  [maxFileSize]="maxFileSize" [customUpload]="true" [chooseIcon]="icon" (onSelect)="onSelect($event)" [showCancelButton]="true" [cancelIcon]="'pi pi-close'" [showUploadButton]="false" [uploadLabel]="''"></p-fileUpload>
     </div>
 </div>

@@ -6,6 +6,7 @@ import { ActionsTableComponent } from './components/actions-table/actions-table.
 import { PaginatorModule } from 'primeng/paginator';
 import { LibButtonModule } from '../../atoms/button/lib-button.module';
 import { TieredMenuModule } from 'primeng/tieredmenu';
+import { LibTableService } from './services/lib-table.service';
 
 const primeComponents = [
     TableModule,
@@ -33,7 +34,8 @@ const exportComponent = [
     ],
     entryComponents: [
         ...exportComponent
-    ]
+    ],
+    providers: [LibTableService]
 })
 
 export class LibTableModule { }

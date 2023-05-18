@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { TreeSelectModel } from "../models/tree-select.model";
 
 @Component({
@@ -11,17 +11,18 @@ export class TreeSelectComponent {
     @Input() nodes: TreeSelectModel[] = [];
 
     @Input() valueTemplate!: TemplateRef<any>;
-
     @Input() selectedNodes: TreeSelectModel[] = [];
     @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();
 
     @Input() placeholder = "Select Item";
+    @Input() selectionType = "multiple";
     @Output() emitSelectedOption: EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }> = new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>();
     @Output() emitUnselect: EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }> = new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>();
     @Output() emitSelectedValues: EventEmitter<Array<TreeSelectModel>> = new EventEmitter<Array<TreeSelectModel>>();
 
     constructor() {
     }
+
 
     optionEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {
         this.emitSelectedOption.emit(event);

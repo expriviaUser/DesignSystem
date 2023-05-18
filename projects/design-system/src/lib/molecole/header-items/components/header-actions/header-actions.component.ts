@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuItem } from '../../models/menuItem.model';
 import { UserNotification } from '../../models/user-notification.model';
 import { FileUpload } from '../../../upload-file/models/file-upload.model';
+import { Language } from '../../models/language.model';
 
 @Component({
     selector: 'lib-header-actions',
@@ -44,8 +45,12 @@ export class HeaderActionsComponent {
         },
     ];
 
-    @Input() languages: {code: string, name: string}[] = [
+    @Input() languages: Language[] = [
         {code: 'it', name:'it'},
         {code: 'en', name:'en'},
     ]
+
+		@Input() selectedOption: Language = {code: 'fr', name:'fr'};
+
+		@Output() languageChange: EventEmitter<Language> = new EventEmitter<Language>();
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DropdownType } from '../models/dropdown.model';
 
@@ -15,13 +15,16 @@ import { DropdownType } from '../models/dropdown.model';
 export class DropdownComponent implements OnInit {
     protected isObject: boolean = false;
 
-    @Input() valueDropdown: DropdownType[] | string[] = [];
+    @Input() valueDropdown: DropdownType[] | string[] | any = [];
     @Input() label!: string;
+    @Input() codeString: string = 'code';
+    @Input() nameString: string = 'name';
     @Input() placeholder!: string;
     @Input() clear: boolean = false;
     @Input() control: AbstractControl = new FormControl();
     @Input() disabled: boolean = false;
     @Input() value: any;
+    @Input() selectedItemTemplate!: TemplateRef<any>;
 
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
 

@@ -14,45 +14,79 @@
         flex-wrap: wrap;
         gap: 0.357rem;
 
-        lib-tree-select {
-            .p-treeselect {
-                background: $color--filters-dropdown-background;
-                border: 1px solid $color--filters-dropdown-border;
-                border-radius: 4px;
+        .p-treeselect {
+            background: $color--filters-dropdown-background;
+            border: 1px solid $color--filters-dropdown-border;
 
-                .p-tree {
-                    .p-tree-container {
-                        .p-treenode {
-                            .p-treenode-content {
-                                .p-tree-toggler {
-                                    display: none;
-                                }
+            .p-tree {
+                width: max-content;
+
+                .p-tree-container {
+                    .p-treenode {
+                        .p-treenode-content {
+                            .p-tree-toggler {
+                                display: none;
                             }
                         }
                     }
                 }
+            }
 
-                .p-treeselect-label {
-                    padding-top: 7px;
-                    padding-bottom: 7px;
+            .p-treeselect-label {
+                padding: 0.65625rem 0.65625rem;
 
-                    &.p-placeholder {
+                &.p-placeholder {
+                    color: $color--filters-dropdown-text;
+                }
+
+                &.p-inputtext {
+                    &.ng-star-inserted {
                         color: $color--filters-dropdown-text;
                     }
+                }
+            }
 
-                    &.p-inputtext {
-                        &.ng-star-inserted {
-                            color: $color--filters-dropdown-text;
-                        }
+            .p-treeselect-trigger {
+                color: $color--filters-dropdown-text;
+            }
+
+            .p-treeselect-clear-icon {
+                color: $color--filters-dropdown-text;
+            }
+        }
+
+        p-calendar {
+            .p-calendar {
+                .p-inputtext {
+                    border-color: $color--filters-dropdown-border;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                    padding: 0.65625rem 0.65625rem;
+
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: $color--black;
+                        opacity: 1; /* Firefox */
+                    }
+
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: $color--black;
+                    }
+
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: $color--black;
                     }
                 }
 
-                .p-treeselect-trigger {
-                    color: $color--filters-dropdown-text;
-                }
-
-                .p-treeselect-clear-icon {
-                    color: $color--filters-dropdown-text;
+                &:after {
+                    font-family: "primeicons";
+                    content: "\e902";
+                    top: 0.65625rem;
+                    right: 1.143rem;
+                    position: absolute;
+                    font-size: 1rem;
                 }
             }
         }
@@ -64,11 +98,45 @@
         color: $color--filters-chips-title;
     }
 
-    .chips-container {
-        margin-top: 0.357rem;
+    .align-children {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         gap: 0.357rem;
+
+        .same-line {
+            display: flex;
+            flex-direction: row;
+            gap: 0.357rem;
+
+            .p-dropdown {
+                background: $color--filters-dropdown-background;
+                border: 1px solid $color--filters-dropdown-border;
+
+                .p-dropdown-label {
+                    font-size: 0.875rem;
+                    padding: 0.65625rem 0.65625rem;
+                    color: $color--filters-dropdown-text;
+                    &.p-placeholder {
+                        color: $color--filters-dropdown-text;
+                    }
+                }
+            }
+        }
+
+        .p-button {
+            border: 0 none;
+        }
     }
+}
+
+.chips-container {
+    margin-top: 0.357rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.357rem;
+}
+
+lib-only-filters {
+    display: flex;
+    align-items: flex-end;
 }

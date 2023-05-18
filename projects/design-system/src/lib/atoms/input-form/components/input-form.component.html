@@ -1,7 +1,6 @@
 <div class="field">
     <!-- <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'" [class.hasStatic]="hasStatic">{{label}}</label> -->
-    <label *ngIf="label && type!='checkbox'"
-        [for]="formControlName" id="{{formControlName}}-label'">{{label}}</label>
+    <label *ngIf="label && type!='checkbox'" [for]="formControlName" id="{{formControlName}}-label'">{{label}}</label>
 
     <div [ngSwitch]="type" [class.p-input-icon-right]="icon !== ''">
 
@@ -11,8 +10,9 @@
         <div class="static" *ngSwitchCase="'static'">{{getValueControl()}}</div>
 
         <!-- Input number -->
-        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos" (selectedValue)="emitValue($event)"
-            [control]="control" [id]="formControlName" type="number" />
+        <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos"
+            [clear]="clear" (selectedValue)="emitValue($event)" [control]="control" [id]="formControlName"
+            type="number" />
 
         <!-- dropdown  -->
         <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
@@ -20,22 +20,24 @@
 
         <!-- Input calendar -->
         <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
-            (selectedValue)="emitValue($event, 'calendar')"></lib-calendar>
+            (selectedValue)="emitValue($event, 'calendar')" [inlineCal]="inlineCal" [selectionType]="selectionType"
+            [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"></lib-calendar>
 
         <!-- Input autocomplete  -->
         <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
-            (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
-            [disabled]="inputDisabled" [icon]="icon" ></lib-autocomplete>
+            [minLength]="minLenghtDigits" (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control"
+            [valueAutocomplete]="valueInput" [disabled]="inputDisabled" [icon]="icon"
+            [field]="field"></lib-autocomplete>
 
         <!-- Input checkbox -->
         <div class="field-checkbox" *ngSwitchCase="'checkbox'">
-            <lib-checkbox-button (change)="emitValue($event)" [label]="label" 
-                ></lib-checkbox-button>
+            <lib-checkbox-button (change)="emitValue($event)" [label]="label"></lib-checkbox-button>
         </div>
 
         <!-- Input radio -->
         <div class="field-radio" *ngSwitchCase="'radio'">
-            <lib-radio-button [control]="control" [disabled]="disabled" [id]="formControlName+'-label'" ></lib-radio-button>
+            <lib-radio-button [control]="control" [disabled]="disabled"
+                [id]="formControlName+'-label'"></lib-radio-button>
         </div>
 
         <!-- dropdown sort -->
@@ -46,12 +48,11 @@
         <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
             [placeholder]="placeholder"></lib-textarea>
 
-        <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder"
+        <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder" [clear]="clear"
             (selectedValue)="emitValue($event)" [label]="label" [control]="control"></lib-input>
 
-        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event)"
-            [label]="label" [control]="control"></lib-input>
-
+        <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
+            [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label" [control]="control"></lib-input>
     </div>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"

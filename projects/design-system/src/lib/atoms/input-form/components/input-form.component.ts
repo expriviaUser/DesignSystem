@@ -14,7 +14,7 @@ import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR 
         },
     ],
 })
-export class InputFormComponent implements ControlValueAccessor, OnChanges  {
+export class InputFormComponent implements ControlValueAccessor, OnChanges {
     @Input() value!: string;
     @Input() valueInput: any[] = [];
     @Input() clear: boolean = false;
@@ -27,6 +27,13 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges  {
     @Input() inputDisabled: boolean = false;
     @Input() placeholder: string = "Inserisci un valore";
     @Input() formControlName: string = "";
+    @Input() field: string = "";
+    @Input() inlineCal!: boolean;
+    @Input() selectionType: string = '';
+    @Input() minDate!: Date;
+    @Input() maxDate!: Date;
+    @Input() showButtonBar!: boolean;
+    @Input() minLenghtDigits: number = 3;
 
     //@Input() formControl: FormControl = new FormControl();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
@@ -44,7 +51,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges  {
 
     ngOnChanges(changes: SimpleChanges) {
         console.log('InputComponent', changes);
-      }
+    }
 
     get control() {
         return this.controlContainer.control!.get(
@@ -67,7 +74,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges  {
         );
     }
 
-    ngOnInit() {}
+    ngOnInit() { }
 
     getValueControl() {
         if (this.control!.value) {
@@ -104,7 +111,9 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges  {
     // upon UI element value change, this method gets triggered
     emitValue(event: any, type?: string) {
         if (type) {
-            this.value = event;
+            if ((event && type == 'autocomplete') || type !== "autocomplete")
+                this.value = event;
+
             this.onChange(event);
             this.selectedValue.emit(event);
         } else {

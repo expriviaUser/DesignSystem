@@ -1,0 +1,8 @@
+<div *ngIf="resultsActive" class="chips-title">{{title}}</div>
+<div class="chips-container">
+    <span *ngFor="let singleFilter of chipsList; let j = index" class="chips-container">
+        <lib-chip class="single-chip" *ngFor="let singleChip of singleFilter.result; let i = index"
+            (onRemove)="resetDropdown(singleChip, singleFilter.id)" [label]="singleChip.chipsLabel" [removable]="true"
+            removeIcon="pi pi-times"></lib-chip>
+    </span>
+</div>

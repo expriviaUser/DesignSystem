@@ -1,6 +1,8 @@
 <div [ngClass]="{'autocomplete':true, 'dropdown':icon}">
-    <!-- <label for="name" class="block"> {{label}} </label> -->
-    <p-autoComplete [showClear]="showClear && !icon" [inputStyleClass]="haveError? 'ng-invalid ng-dirty':''" [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList" (onSelect)="emitValue($event)" (onClear)="emitValue('')" (completeMethod)="filter($event)"
-        [minLength]="minLength" [disabled]="disabled" [dropdownIcon]="icon"  [dropdown]="icon ? true : false" dropdownMode="current"></p-autoComplete>
+    <p-autoComplete [showClear]="showClear && !icon" [inputStyleClass]="haveError ? 'ng-invalid ng-dirty':''"
+        [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList" (change)="emitValueIfExist($event)"
+        (onSelect)="emitValue($event)" (onClear)="emitValue('')" (completeMethod)="filter($event)"
+        [minLength]="minLength" [disabled]="disabled" [dropdownIcon]="icon" [dropdown]="icon ? true : false"
+        dropdownMode="current" [field]="field ? field : ''"></p-autoComplete>
 
 </div>

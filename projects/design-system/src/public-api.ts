@@ -19,11 +19,17 @@ export * from './lib/atoms/tag/components/tag.component';
 export * from './lib/atoms/tag/lib-tag.module';
 
 export * from './lib/atoms/breadcrumb/models/breadcrumb.model';
+export * from './lib/atoms/breadcrumb/directives/breadcrumb.directive';
 export * from './lib/atoms/breadcrumb/components/breadcrumb.component';
+export * from './lib/atoms/breadcrumb/services/breadcrumb.service';
 export * from './lib/atoms/breadcrumb/lib-breadcrumb.module';
 
 export * from './lib/atoms/button/components/button.component';
 export * from './lib/atoms/button/lib-button.module';
+
+export * from './lib/atoms/loader/components/loader.component';
+export * from './lib/atoms/loader/services/loader.service';
+export * from './lib/atoms/loader/lib-loader.module';
 
 export * from './lib/atoms/dropdown/models/dropdown.model';
 export * from './lib/atoms/dropdown/components/dropdown.component';
@@ -77,6 +83,7 @@ export * from './lib/atoms/tree-select/lib-tree-select.module';
     MOLECOLE
 */
 export * from './lib/molecole/table/components/table/table.component';
+export * from './lib/molecole/table/services/lib-table.service';
 export * from './lib/molecole/table/components/actions-table/actions-table.component';
 export * from './lib/molecole/table/models/table.model';
 export * from './lib/molecole/table/lib-table.module';
@@ -113,8 +120,11 @@ export * from './lib/molecole/radio-tile/models/radio-tile.model';
 export * from './lib/molecole/radio-tile/components/radio-tile.component';
 export * from './lib/molecole/radio-tile/lib-radio-tile.module';
 
-export * from './lib/micro-organismi/filters/components/filters.component';
+export * from './lib/micro-organismi/filters/components/filters/filters.component';
+export * from './lib/micro-organismi/filters/components/only-filters/only-filters.component';
+export * from './lib/micro-organismi/filters/components/filters-chips/filters-chips.component';
 export * from './lib/micro-organismi/filters/models/filters.model';
+export * from './lib/micro-organismi/filters/services/filters.service';
 export * from './lib/micro-organismi/filters/lib-filters.module';
 
 export * from './lib/atoms/progress-bar/components/progress-bar.component';
@@ -135,6 +145,8 @@ export * from './lib/molecole/file-status/components/file-status.component';
 export * from './lib/molecole/file-status/models/fileStatus.model';
 export * from './lib/molecole/file-status/file-status.module';
 
-
+//PIPES
+export * from './lib/pipes/pipes.module';
+export * from './lib/pipes/byte.pipe';
 
 export * from './lib/design-system.module';
