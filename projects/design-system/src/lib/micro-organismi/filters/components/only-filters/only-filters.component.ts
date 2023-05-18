@@ -7,10 +7,9 @@ import {
     QueryList,
     ViewChildren
 } from '@angular/core';
-import { CalendarComponent, DropdownComponent } from '../../../../../public-api';
-import { TreeSelectComponent } from '../../../../../public-api';
-import { TreeSelectModel } from '../../../../../public-api';
-import { FiltersData, FiltersModel, OnlyFiltersChip, OnlyFiltersModel } from '../../models/filters.model';
+import { CalendarComponent, DropdownComponent, InputComponent, TreeSelectComponent, TreeSelectModel } from '../../../../../public-api';
+import { FiltersModel, OnlyFiltersChip, OnlyFiltersModel } from '../../models/filters.model';
+import { FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -47,7 +46,7 @@ export class OnlyFiltersComponent implements OnInit {
         if (this.chipsList.result.length > 0) {
             let value = this.chipsList.result.filter(item => item.dropdownIndex == dropdownIndex);
             if (value.length > 0)
-                return value[0].value;
+                return value[0].chipsLabel;
             else return '';
         }
         else return '';
@@ -71,12 +70,8 @@ export class OnlyFiltersComponent implements OnInit {
     }
 
     getAvailableData(data: string | number): boolean {
-        //let tempData: FiltersData[] = [];
         return this.chipsList.result.filter(value => value.data === data).length > 0;
     }
-
-
-
 
     @ViewChildren('calendar') calendar!: QueryList<CalendarComponent>;
     @ViewChildren('treeSelect') treeSelect!: TreeSelectComponent;
@@ -110,17 +105,36 @@ export class OnlyFiltersComponent implements OnInit {
 
     }
 
-    printData(dropdownIndex: number, dropdown: DropdownComponent) {
+    requiredDa: boolean = false;
+    requiredA: boolean = false;
+    printData(dropdownIndex: number, dropdown: DropdownComponent, type: string) {
+        if (type === 'interval') {
+            let splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
+            if (!(splittedValue[0])) {
+                this.requiredDa = true;
+            } else {
+                this.requiredDa = false;
+            }
+            if (!(splittedValue[1])) {
+                this.requiredA = true;
+            } else {
+                this.requiredA = false;
+            }
+            if (this.requiredDa || this.requiredA) {
+                return;
+            }
+        }
         this.chipsList.result.push({
             dropdownIndex: dropdownIndex,
             data: this.dropdownSelectedValues[dropdownIndex].value,
-            field: this.dropdownSelectedValues[dropdownIndex].label,
+            field: this.dropdownValues.filters[dropdownIndex].field,
             type: 'children',
-            value: `${this.dropdownSelectedValues[dropdownIndex].label}: ${this.dropdownSelectedValues[dropdownIndex].childValue}`
+            chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${this.dropdownSelectedValues[dropdownIndex].childValue}`,
+            value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
         });
         this.dropdownValues.filters[dropdownIndex].data?.forEach(item => {
             this.chipsList.result.forEach(element => {
-                if (element.data == item.data)
+                if (element.data === item.data)
                     item.disabled = true;
             })
         })
@@ -132,7 +146,6 @@ export class OnlyFiltersComponent implements OnInit {
         this.chipsListChange.emit(this.chipsList);
     }
 
-
     createTreeChip(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string, selectionType: string): void {
         if (event.node) {
             if (selectionType === 'single') {
@@ -142,7 +155,7 @@ export class OnlyFiltersComponent implements OnInit {
 
                 this.chipsList.data[dropdownIndex] = [];
             }
-            this.chipsList.result.push({ value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect" });
+            this.chipsList.result.push({ chipsLabel: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect", value: event.node.label });
             // this.chipsList.result.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
             this.chipsList.data[dropdownIndex].push(event.node);
             this.chipsListChange.emit(this.chipsList);
@@ -153,6 +166,17 @@ export class OnlyFiltersComponent implements OnInit {
 
     setCalendarChild(event: Array<object>, dropdownIndex: number) {
         this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toLocaleString().split(',')[0] + " - " + event[1].toLocaleString().split(',')[0]
+    }
+
+    setInterval(dropdownIndex: number, event: string, isMin: boolean) {
+        let val = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
+        if (isMin)
+            val[0] = event;
+
+        else
+            val[1] = event;
+
+        this.dropdownSelectedValues[dropdownIndex].childValue = val.join(' - ');
     }
 
     createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
@@ -166,7 +190,7 @@ export class OnlyFiltersComponent implements OnInit {
                 this.chipsList.result.splice(C_INDEX, 1);
             }
             //Crea il chip
-            this.chipsList.result.push({ value: DATE_RANGE, dropdownIndex: dropdownIndex, field: dropdownOption.field, data: event, type: "calendar" });
+            this.chipsList.result.push({ chipsLabel: DATE_RANGE, dropdownIndex: dropdownIndex, field: dropdownOption.field, data: event, type: "calendar", value: DATE_RANGE });
             //this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
             this.chipsListChange.emit(this.chipsList);
             //this.resetCalendarValue = null;
@@ -181,7 +205,7 @@ export class OnlyFiltersComponent implements OnInit {
     }
 
     unselectOption(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number): void {
-        const C_INDEX = this.chipsList.result.findIndex(c => c.value == event.node.label && c.dropdownIndex == dropdownIndex);
+        const C_INDEX = this.chipsList.result.findIndex(c => c.chipsLabel == event.node.label && c.dropdownIndex == dropdownIndex);
         this.chipsList.result.splice(C_INDEX, 1);
         const N_INDEX = this.chipsList.data[dropdownIndex].indexOf(event.node);
         this.chipsList.data[dropdownIndex].splice(N_INDEX, 1);

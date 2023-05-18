@@ -19,6 +19,8 @@
             border: 1px solid $color--filters-dropdown-border;
 
             .p-tree {
+                width: max-content;
+
                 .p-tree-container {
                     .p-treenode {
                         .p-treenode-content {

@@ -24,10 +24,10 @@ export class FiltersService {
     removeFiltersChip(event: OnlyFiltersChip, filtersResult: OnlyFiltersChip[]) {
         let indexFilter = filtersResult.findIndex(item => item.id == event.id);
         if (indexFilter >= 0) {
-            let indexToRemoveResult = filtersResult[indexFilter].result.findIndex(item => item.value == event.result[0].value);
+            let indexToRemoveResult = filtersResult[indexFilter].result.findIndex(item => item.chipsLabel == event.result[0].chipsLabel);
             filtersResult[indexFilter].result.splice(indexToRemoveResult, 1);
             if (Array.isArray(filtersResult[indexFilter].data[event.result[0].dropdownIndex])) {
-                let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].value);
+                let indexToRemoveData = filtersResult[indexFilter].data[event.result[0].dropdownIndex].findIndex(item => item.label == event.result[0].chipsLabel);
                 filtersResult[indexFilter].data[event.result[0].dropdownIndex].splice(indexToRemoveData, 1);
             } else if (typeof filtersResult[indexFilter].data[event.result[0].dropdownIndex] === 'object') {
                 filtersResult[indexFilter].data[event.result[0].dropdownIndex] = [];

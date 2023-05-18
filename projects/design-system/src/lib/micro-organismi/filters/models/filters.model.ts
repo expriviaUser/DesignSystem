@@ -8,6 +8,7 @@ export interface FiltersModel {
     field: string,
     type: "calendar" | "treeselect" | "children",
     selectionType?: "single" | "multiple" | "checkbox",
+    filter?: boolean
 }
 
 export interface FiltersData extends TreeSelectModel {
@@ -29,11 +30,12 @@ export interface FiltersResult {
 }
 
 export interface FiltersChip {
-    value: string,
+    chipsLabel: string,
     dropdownIndex: number,
     field: string,
     data: string | number | Array<object>,
-    type: "treeselect" | "calendar" | 'children'
+    type: "treeselect" | "calendar" | 'children',
+    value: string
 }
 
 export interface OnlyFiltersChip {

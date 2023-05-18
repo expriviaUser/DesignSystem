@@ -17,6 +17,7 @@
             <ng-container [ngSwitch]="dropdownOptions.type">
                 <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
                     [options]="dropdownOptions.data || []" [metaKeySelection]="false"
+                    [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
                     [selectionMode]="dropdownOptions.selectionType || 'multiple'"
                     [placeholder]="dropdownOptions.placeholder"
                     (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
@@ -67,11 +68,18 @@
                                     (selectedValue)="setCalendarChild($event, i)"
                                     [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).selection"></lib-calendar>
                             </div>
+                            <div *ngSwitchCase="'interval'" class="same-line">
+                                <lib-input #inputDa [placeholder]="'Da:'" [ngClass]="{'required-da': requiredDa}"
+                                    (selectedValue)="setInterval(i, $event, true)"></lib-input>
+                                <lib-input #inputA [placeholder]="'A:'" [ngClass]="{'required-a': requiredA}"
+                                    (selectedValue)="setInterval(i, $event, false)"></lib-input>
+                            </div>
                         </ng-container>
                     </div>
                     <div class="button-filtri">
                         <lib-button *ngIf="dropdownSelectedValues[i].label" [label]="'Aggiungi filtro'"
-                            (onClick)="printData(i, dropdown)" [size]="'small'"></lib-button>
+                            (onClick)="printData(i, dropdown, getChildType(dropdownOptions, dropdownSelectedValues[i].value))"
+                            [size]="'small'"></lib-button>
                     </div>
                 </div>
             </ng-container>

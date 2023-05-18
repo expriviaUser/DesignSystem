@@ -13,7 +13,7 @@ export class FiltersChipsComponent {
     @Output() onRemove: EventEmitter<OnlyFiltersChip> = new EventEmitter<OnlyFiltersChip>();
 
     get resultsActive(): boolean {
-        return (this.chipsList.filter(item => item.result.length > 0).length > 0);
+        return (this.chipsList && this.chipsList.length > 0 && this.chipsList.filter(item => item && item.result && item.result.length > 0).length > 0);
     }
 
     resetDropdown(chipValue: FiltersChip, filterId: number): void {

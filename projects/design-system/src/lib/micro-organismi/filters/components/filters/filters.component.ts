@@ -53,7 +53,7 @@ export class FiltersComponent implements OnInit {
                 if (indexToRemove !== -1)
                     this.chipsList.splice(indexToRemove, 1);
             }
-            this.chipsList.push({ value: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect" });
+            this.chipsList.push({ chipsLabel: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect", value: event.node.label });
             this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
             if (selectionType === 'single')
                 this.chipsExport[dropdownField][0] = event.node.data;
@@ -79,7 +79,7 @@ export class FiltersComponent implements OnInit {
                 this.chipsList.splice(C_INDEX, 1);
             }
             //Crea il chip
-            this.chipsList.push({ value: DATE_RANGE, dropdownIndex: dropdownIndex, field: dropdownOption.field, data: event, type: "calendar" });
+            this.chipsList.push({ chipsLabel: DATE_RANGE, dropdownIndex: dropdownIndex, field: dropdownOption.field, data: event, type: "calendar", value: DATE_RANGE });
             this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
             //Emette il valore
             this.chipsExport[dropdownOption.field] = event;
@@ -94,7 +94,7 @@ export class FiltersComponent implements OnInit {
     }
 
     unselectOption(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number, dropdownField: string): void {
-        const C_INDEX = this.chipsList.findIndex(c => c.value == event.node.label);
+        const C_INDEX = this.chipsList.findIndex(c => c.chipsLabel == event.node.label);
         this.chipsList.splice(C_INDEX, 1);
         const E_INDEX = this.chipsExport[dropdownField].findIndex((d: string) => d == event.node.data);
         this.chipsExport[dropdownField].splice(E_INDEX, 1);
@@ -110,7 +110,7 @@ export class FiltersComponent implements OnInit {
 
         if (chipValue.type == "treeselect") {
             this.chipsExport[chipValue.field].splice(E_INDEX, 1);
-            const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.label == chipValue.value);
+            const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.label == chipValue.chipsLabel);
             this.selectedValues[chipValue.dropdownIndex].splice(N_INDEX, 1);
             this.selectedValues[chipValue.dropdownIndex] = [...this.selectedValues[chipValue.dropdownIndex]];
         }
