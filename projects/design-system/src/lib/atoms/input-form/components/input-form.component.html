@@ -16,7 +16,7 @@
 
         <!-- dropdown  -->
         <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
-            [clear]="clear" [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"></lib-dropdown>
+            [clear]="clear" [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput" [disabled]="inputDisabled"></lib-dropdown>
 
         <!-- Input calendar -->
         <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
