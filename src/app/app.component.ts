@@ -318,7 +318,7 @@ export class AppComponent {
             field: 'filterDate2',
         },
     ];
-    filtersResult: OnlyFiltersChip[] = [{} as OnlyFiltersChip, {} as OnlyFiltersChip];
+    filtersResult: OnlyFiltersChip[] = [];
     dropdownValuesSecond: OnlyFiltersModel = {
         id: 0,
         filters: [
@@ -354,11 +354,12 @@ export class AppComponent {
             {
                 type: 'children',
                 data: [
-                    { data: 74, label: 'Intervallo alfabetico', type: 'interval' },
+                    { data: 74, label: 'Intervallo alfabetico', type: 'interval', config: { placeholderDa: 'Da: ', placeholderA: 'A: ' } },
                     { data: 75, label: 'Intervallo numerico', type: 'interval' },
                 ],
                 placeholder: 'Placeholder2',
                 field: 'filter2',
+                addFilterButtonLabel: 'Aggiungi'
             },
             {
                 type: 'calendar',
@@ -472,6 +473,7 @@ export class AppComponent {
                         field: 'filter5',
                     },
                     {
+                        addFilterButtonLabel: 'Aggiungi metadato',
                         type: 'children',
                         selectionType: 'single',
                         data: [

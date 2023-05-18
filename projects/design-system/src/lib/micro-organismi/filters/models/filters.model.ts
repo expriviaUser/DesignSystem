@@ -8,7 +8,8 @@ export interface FiltersModel {
     field: string,
     type: "calendar" | "treeselect" | "children",
     selectionType?: "single" | "multiple" | "checkbox",
-    filter?: boolean
+    filter?: boolean,
+    addFilterButtonLabel?: string
 }
 
 export interface FiltersData extends TreeSelectModel {
