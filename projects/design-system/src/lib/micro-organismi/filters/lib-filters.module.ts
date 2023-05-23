@@ -11,6 +11,8 @@ import { TreeSelectModule } from "primeng/treeselect";
 import { LibDropdownModule } from "../../atoms/dropdown/lib-dropdown.module";
 import { LibInputModule } from "../../atoms/input/lib-input.module";
 import { LibButtonModule } from "../../atoms/button/lib-button.module";
+import { LibDialogModule } from "../../atoms/dialog/lib-dialog.module";
+import { LibTreemenuModule } from "../../atoms/treemenu/lib-treemenu.module";
 
 const primeComponents = [
     LibTreeSelectModule,
@@ -38,7 +40,9 @@ const exportComponent = [
         TreeSelectModule,
         LibDropdownModule,
         LibInputModule,
-        LibButtonModule
+        LibButtonModule,
+        LibDialogModule,
+        LibTreemenuModule
     ],
     exports: [
         ...exportComponent,

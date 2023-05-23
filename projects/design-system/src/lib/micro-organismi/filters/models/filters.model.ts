@@ -1,4 +1,5 @@
 import { TreeSelectModel } from "../../../atoms/tree-select/models/tree-select.model";
+import { TreeMenu } from "../../../atoms/treemenu/models/treemenu.model";
 
 
 
@@ -6,16 +7,18 @@ export interface FiltersModel {
     data?: FiltersData[],
     placeholder: string,
     field: string,
-    type: "calendar" | "treeselect" | "children",
+    type: "calendar" | "treeselect" | "children" | "dialog",
     selectionType?: "single" | "multiple" | "checkbox",
     filter?: boolean,
-    addFilterButtonLabel?: string
+    addFilterButtonLabel?: string,
+    children?: any
 }
 
 export interface FiltersData extends TreeSelectModel {
     type?: string,
     disabled?: boolean,
     enumValues?: TreeSelectModel[],
+    key?: string,
     config?: {
         [x: string]: any
     }
@@ -35,12 +38,12 @@ export interface FiltersChip {
     dropdownIndex: number,
     field: string,
     data: string | number | Array<object>,
-    type: "treeselect" | "calendar" | 'children',
+    type: "treeselect" | "calendar" | 'children' | 'dialog',
     value: string
 }
 
 export interface OnlyFiltersChip {
     id: number,
     result: FiltersChip[],
-    data: TreeSelectModel[][]
+    data: any
 }

@@ -16,12 +16,12 @@ export class TreemenuComponent {
     @Input() selectionMode: string = 'single';
     @Input() filterPlaceholder: string = 'Search';
     @Input() filterMode: string = 'lenient';
-    @Input() selected!: TreeMenu[];
+    @Input() selected!: any;
 
     @Output() selectedChange: EventEmitter<TreeMenu[]> = new EventEmitter<TreeMenu[]>();
 
-    changedSelection() {
-        this.selectedChange.emit(this.selected);
+    changedSelection(event: any) {
+        this.selectedChange.emit(event);
     }
 
 

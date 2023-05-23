@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
-import { CalendarComponent, DropdownComponent, TreeSelectComponent, TreeSelectModel } from '../../../../../public-api';
+import { CalendarComponent, DropdownComponent, TreeMenu, TreeSelectComponent, TreeSelectModel } from '../../../../../public-api';
 import { FiltersModel, OnlyFiltersChip, OnlyFiltersModel } from '../../models/filters.model';
 
 
@@ -12,6 +12,7 @@ export class OnlyFiltersComponent implements OnInit {
     protected dropdownSelectedValues: { label: string, value: any, childValue: string | number }[] = [];
     protected requiredDa: boolean = false;
     protected requiredA: boolean = false;
+    protected showDialog: boolean = false;
 
     @Input() title: string = '';
     @Input() dropdownValues: OnlyFiltersModel = {} as OnlyFiltersModel;
@@ -21,11 +22,6 @@ export class OnlyFiltersComponent implements OnInit {
 
     @ViewChildren('calendar') calendar!: QueryList<CalendarComponent>;
     @ViewChildren('treeSelect') treeSelect!: TreeSelectComponent;
-
-
-    get selectedValues(): TreeSelectModel[][] {
-        return [...this.chipsList.data];
-    }
 
     protected getChildType(dropdownOption: FiltersModel, value: string): string {
         if (dropdownOption && dropdownOption.data && value !== '') {
@@ -100,7 +96,11 @@ export class OnlyFiltersComponent implements OnInit {
         this.dropdownValues.filters.filter((item, index) => {
             if (item.type == 'treeselect') {
 
-                this.chipsList.data[index] = item.selectionType === 'single' ? {} as TreeSelectModel[] : [];
+                this.chipsList.data[index] = [];
+            }
+            if (item.type == 'dialog') {
+
+                this.chipsList.data[index] = {} as TreeSelectModel[];
             }
             if (item.type == 'children') {
                 this.dropdownSelectedValues[index] = { label: '', value: null, childValue: '' };
@@ -154,13 +154,18 @@ export class OnlyFiltersComponent implements OnInit {
                 if (indexToRemove !== -1)
                     this.chipsList.result.splice(indexToRemove, 1);
 
-                this.chipsList.data[dropdownIndex] = [];
+                //this.chipsList.data[dropdownIndex] = [];
             }
             this.chipsList.result.push({ chipsLabel: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect", value: event.node.label });
-            this.chipsList.data[dropdownIndex].push(event.node);
+            //(this.chipsList.data[dropdownIndex] as TreeSelectModel[]).push(event.node);
             this.chipsListChange.emit(this.chipsList);
             console.log(this.chipsList);
         }
+    }
+
+    expandNode(event: any) {
+        console.log(event);
+        event.node.children.push({ label: 'Tipologia richiesta8', data: 'Data richiesta8', key: '3' });
     }
 
     protected createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
@@ -185,9 +190,49 @@ export class OnlyFiltersComponent implements OnInit {
     protected unselectOption(event: { originalEvent: PointerEvent, node: TreeSelectModel }, dropdownIndex: number): void {
         const C_INDEX = this.chipsList.result.findIndex(c => c.chipsLabel == event.node.label && c.dropdownIndex == dropdownIndex);
         this.chipsList.result.splice(C_INDEX, 1);
-        const N_INDEX = this.chipsList.data[dropdownIndex].indexOf(event.node);
-        this.chipsList.data[dropdownIndex].splice(N_INDEX, 1);
+        const N_INDEX = (this.chipsList.data[dropdownIndex] as TreeSelectModel[]).indexOf(event.node);
+        (this.chipsList.data[dropdownIndex] as TreeSelectModel[]).splice(N_INDEX, 1);
         this.chipsListChange.emit(this.chipsList);
         console.log(this.chipsList);
+    }
+
+    protected selectedDialog(event: any, dropdownIndex: number, dropdownField: string, selectionType: string) {
+        console.log(event);
+        if (event) {
+            if (event) {
+                /* if (selectionType === 'single') {
+                    let indexToRemove = this.chipsList.result.findIndex(item => item.field == dropdownField);
+                    if (indexToRemove !== -1)
+                        this.chipsList.result.splice(indexToRemove, 1);
+
+                    //this.chipsList.data[dropdownIndex] = [];
+                } */
+                let indexToRemove = this.chipsList.result.findIndex(item => item.field == dropdownField);
+                this.chipsList.result.splice(indexToRemove, 1);
+                this.chipsList.result.push({ chipsLabel: event.label || '', dropdownIndex: dropdownIndex, field: dropdownField, data: event.data, type: "dialog", value: event.label || '' });
+                (this.chipsList.data[dropdownIndex]) = { label: event.label || '', data: event.data };
+                this.chipsListChange.emit(this.chipsList);
+                console.log(this.chipsList);
+            }
+            this.chipsListChange.emit(this.chipsList);
+            console.log(this.chipsList);
+        }
+    }
+
+    protected setDropdownValue(event: any, dropdownField: string, dropdownIndex: number) {
+        let indexToRemove = this.chipsList.result.findIndex(item => item.field == dropdownField);
+        if (indexToRemove !== -1)
+            this.chipsList.result.splice(indexToRemove, 1);
+
+        let value = this.dropdownValues.filters.filter(item => item.field == dropdownField)[0].data?.filter(element => element.data == event)[0];
+        (this.chipsList.data[dropdownIndex]) = { label: value?.label || '', data: value?.data };
+        this.chipsList.result.push({ chipsLabel: value?.label || '', dropdownIndex: dropdownIndex, field: dropdownField, data: value?.data || '', type: "dialog", value: value?.label || '' });
+        this.chipsListChange.emit(this.chipsList);
+        console.log(this.chipsList);
+        //(this.chipsList.data[dropdownIndex]) = { label: value?.label || '', data: value?.data };
+    }
+
+    protected getTreeValue(indexDropdown: number, field: string) {
+        return this.dropdownValues.filters[indexDropdown].children?.filter((element: any) => element.data === this.chipsList.data[indexDropdown].data);
     }
 }

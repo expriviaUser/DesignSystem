@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/filters/services/filters.service';
+import { TreeModule } from 'primeng/tree';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/f
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        BreadcrumbModule
+        BreadcrumbModule,
+        TreeModule
     ],
     providers: [DatePipe, FiltersService],
     bootstrap: [AppComponent]
