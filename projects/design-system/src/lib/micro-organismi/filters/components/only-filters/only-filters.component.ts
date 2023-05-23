@@ -165,7 +165,6 @@ export class OnlyFiltersComponent implements OnInit {
 
     expandNode(event: any) {
         console.log(event);
-        event.node.children.push({ label: 'Tipologia richiesta8', data: 'Data richiesta8', key: '3' });
     }
 
     protected createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
