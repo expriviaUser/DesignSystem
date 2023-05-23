@@ -23,6 +23,49 @@
                         </ng-template>
                     </ng-container>
                 </p-treeSelect>
+                <div *ngSwitchCase="'dialog'" class="align-children">
+                    <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []"
+                        [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
+                        [filterInputAutoFocus]="dropdownOptions.filter || false"
+                        [selectionMode]="dropdownOptions.selectionType || 'multiple'"
+                        [placeholder]="dropdownOptions.placeholder" (onNodeExpand)="expandNode($event)"
+                        (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                        (onNodeUnselect)="unselectOption($event, i)">
+                        <!--  <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
+                            <ng-template pTemplate="value">
+                                {{dropdownOptions.placeholder}}
+                            </ng-template>
+                        </ng-container> -->
+                        <!-- <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+                            <ng-template pTemplate="value">
+                                {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+                            </ng-template>
+                        </ng-container> -->
+                    </p-treeSelect>
+                    <!-- <div class="same-line">
+                        <lib-dropdown #dropdown [value]="chipsList.data[i].data" [valueDropdown]="dropdownOptions.data"
+                            [placeholder]="dropdownOptions.placeholder" [codeString]="'data'" [nameString]="'label'"
+                            [selectedItemTemplate]="selectedItemTemplate"
+                            (selectedValue)="setDropdownValue($event, dropdownOptions.field, i)">
+                            <ng-template #selectedItemTemplate pTemplate="selectedItem">
+                                {{chipsList.data[i].label || dropdownOptions.placeholder}}
+                            </ng-template>
+                        </lib-dropdown>
+                        <lib-button *ngIf="dropdownOptions.addFilterButtonLabel"
+                            [icon]="dropdownOptions.addFilterButtonLabel" [size]="'small'"
+                            (onClick)="showDialog = true"></lib-button>
+                        <lib-dialog [closable]="true" [title]="'Seleziona titolario'" [(visible)]="showDialog">
+                            <div body>
+
+                                {{chipsList.data[i] | json}}
+                                <p-tree [value]="dropdownOptions.children || []" [filter]="true"
+                                    [selectionMode]="'single'" [(selection)]="chipsList.data[i]"
+                                    (selectionChange)="selectedDialog($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                                    [propagateSelectionUp]="false" [propagateSelectionDown]="false"></p-tree>
+                            </div>
+                        </lib-dialog>
+                    </div> -->
+                </div>
                 <!-- CALENDAR -->
                 <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true"
                     [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"

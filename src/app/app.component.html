@@ -152,6 +152,9 @@
     [(selected)]="selectedItems" (selectedChange)="selectedMenu($event)" [checkboxOnlyLeaf]="true"
     [propagateSelectionUp]="false"></lib-treemenu>
 
+<p-tree [value]="treemenuItems" [filter]="true" [selectionMode]="'checkbox'" [(selection)]="selectedItems"
+    (selectionChange)="selectedMenu($event)" [propagateSelectionUp]="false" [propagateSelectionDown]="false"></p-tree>
+
 <lib-language-selector [options]="languages" (selectedOptionChange)="catchChange($event)"></lib-language-selector>
 <lib-header-actions [languages]="languages" (languageChange)="catchChange($event)"></lib-header-actions>
 
