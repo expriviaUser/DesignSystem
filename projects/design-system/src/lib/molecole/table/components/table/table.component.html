@@ -6,7 +6,8 @@
         [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="nRowsPerPage"
         [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString"
         [loading]="loading" [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy"
-        [customSort]="serverSort" (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)">
+        [lazyLoadOnInit]="lazyOnInit" [customSort]="serverSort" (onSort)="emitSort($event)"
+        (onLazyLoad)="lazyLoading($event)">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <!-- LABEL DELLE COLONNE -->
