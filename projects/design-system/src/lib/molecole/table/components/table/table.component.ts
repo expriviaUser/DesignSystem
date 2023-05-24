@@ -67,6 +67,8 @@ export class TableComponent implements OnInit {
 
     @Input() lazy!: boolean;
 
+    @Input() lazyOnInit: boolean = true;
+
     @Input() emitLazy!: boolean;
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
