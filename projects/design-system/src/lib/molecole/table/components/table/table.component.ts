@@ -101,7 +101,6 @@ export class TableComponent implements OnInit {
     }
 
     protected lazyLoading(event: LazyLoadEvent) {
-        debugger;
         let pageNumber = event.first && event.rows ? (event.first / event.rows + 1) : 1;
 
         if (!this.emitLazy) {

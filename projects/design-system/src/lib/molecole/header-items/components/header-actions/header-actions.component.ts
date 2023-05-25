@@ -3,6 +3,7 @@ import { MenuItem } from '../../models/menuItem.model';
 import { UserNotification } from '../../models/user-notification.model';
 import { FileUpload } from '../../../upload-file/models/file-upload.model';
 import { Language } from '../../models/language.model';
+import { HeaderItemsService } from '../../services/header-items.service';
 
 @Component({
     selector: 'lib-header-actions',
@@ -10,27 +11,7 @@ import { Language } from '../../models/language.model';
     styleUrls: ['./header-actions.component.scss']
 })
 export class HeaderActionsComponent {
-    @Input() fileUpload: FileUpload[] = [];
-     
-    @Input() notifs: UserNotification[] = [
-        {
-            title: 'Avviso generale dal team di Roberto Burioni',
-            subtitle: 'Questi risultati indicano che, sebbene i vaccinati e/o guariti rimangono altamente infettivi, la loro infettività è ridotta rispetto agli individui mai infettati o vaccinati.',
-            id: 3,
-            isRead: false,
-        },
-        {
-            title: 'Esito risultati Younan Nowzaradan',
-            subtitle: 'During this time it\'s important to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
-            id: 5,
-            isRead: false,
-        },
-        {
-            title: 'Mario Rossi',
-            subtitle: 'Notifica non da leggere, to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
-            isRead: true,
-        }
-    ];
+    fileUpload: FileUpload[] = [];
 
     @Input() user: MenuItem[] = [
         {
@@ -46,11 +27,19 @@ export class HeaderActionsComponent {
     ];
 
     @Input() languages: Language[] = [
-        {code: 'it', name:'it'},
-        {code: 'en', name:'en'},
+        { code: 'it', name: 'it' },
+        { code: 'en', name: 'en' },
     ]
 
-		@Input() selectedOption: Language = {code: 'fr', name:'fr'};
+    @Input() selectedOption: Language = { code: 'fr', name: 'fr' };
 
-		@Output() languageChange: EventEmitter<Language> = new EventEmitter<Language>();
+    @Output() languageChange: EventEmitter<Language> = new EventEmitter<Language>();
+
+    constructor(private headerItemsService: HeaderItemsService) { }
+
+    ngOnInit() {
+        this.headerItemsService.uploadFiles$.subscribe(values => {
+            this.fileUpload = [...values];
+        })
+    }
 }

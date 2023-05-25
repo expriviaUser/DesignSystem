@@ -22,6 +22,7 @@ import {
 import { LibTableService } from '../../projects/design-system/src/lib/molecole/table/services/lib-table.service';
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
 import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/filters/services/filters.service';
+import { HeaderItemsService } from 'projects/design-system/src/lib/molecole/header-items/services/header-items.service';
 
 @Component({
     selector: 'app-root',
@@ -62326,7 +62327,8 @@ export class AppComponent {
         private config: PrimeNGConfig,
         private tableService: LibTableService,
         private loaderService: LoaderService,
-        private filtersService: FiltersService
+        private filtersService: FiltersService,
+        private headerItemsService: HeaderItemsService
     ) {
         this.config.setTranslation({
             accept: 'Accept',
@@ -62391,9 +62393,11 @@ export class AppComponent {
     filterValue = { name: 'Simone', surname: 'Giannuario' };
 
     dialog() {
-        console.log(this.dialogVisibility);
+        /* console.log(this.dialogVisibility);
         this.dialogVisibility = !this.dialogVisibility;
-        console.log(this.dialogVisibility);
+        console.log(this.dialogVisibility); */
+        this.headerItemsService.cartItems = { id: 1, title: 'prova' };
+        this.headerItemsService.cartItems = { id: 2, title: 'prova2' };
     }
 
     goTo(event: any) { }

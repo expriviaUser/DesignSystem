@@ -1,14 +1,28 @@
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { HeaderItemsService } from '../../services/header-items.service';
 
 @Component({
     selector: 'lib-cart',
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.scss']
 })
-export class CartComponent {
-    @Input() items: string = '0';
-    @Input() rows: any[] = [{ id: 1, description: 'ciao' }, { id: 2, description: 'ciao-2' }];
+export class CartComponent implements OnInit {
+    protected rows: any[] = [];
     @Input() externalBody!: TemplateRef<any>;
 
-    protected openCart = false;
+
+    constructor(private headerItemsService: HeaderItemsService) {
+
+    }
+
+    ngOnInit() {
+        this.headerItemsService.cartItems$.subscribe((value: any) => {
+            this.rows = [...value];
+        })
+    }
+
+    protected openOverlay(op: any, event: any) {
+        if (this.rows.length > 0)
+            op.toggle(event);
+    }
 }

@@ -1,42 +1,38 @@
+<lib-badge (click)="overlaynotifications.toggle($event); notificationsNumber = '0';"
+    [menuBadge]="notificationsNumber"></lib-badge>
+
 <p-overlayPanel styleClass="p-overlaypanel p-overlaypanel--notifications" #overlaynotifications>
 
-  <ng-template pTemplate>
+    <ng-template pTemplate>
 
-    <p-listbox
-      [options]="notifications"
-      [(ngModel)]="selectedNotification"
-      optionLabel="title"
-      optionValue="id"
-      optionDisabled="isRead"
-      styleClass="p-listbox p-listbox--notifications">
+        <p-listbox [options]="notifications" [(ngModel)]="selectedNotification" optionLabel="title" optionValue="id"
+            optionDisabled="isRead" styleClass="p-listbox p-listbox--notifications">
 
-      <ng-template let-notification pTemplate="item">
-        <a *ngIf="notification.id; else noLink" class="notification" routerLink="{{ 'pagina/notifiche/' + notification.id }}" title="{{ 'Apri la notifica: ' + notification.title }}">
-          <strong>{{ notification.title }}</strong>
-          <p *ngIf="notification.subtitle !== ''" >{{ notification.subtitle }}</p>
-        </a>
-        <div *ngIf="!notification.isRead" class="p-listbox-dot">!</div>
+            <ng-template let-notification pTemplate="item">
+                <a *ngIf="notification.id; else noLink" class="notification"
+                    routerLink="{{ 'pagina/notifiche/' + notification.id }}"
+                    title="{{ 'Apri la notifica: ' + notification.title }}">
+                    <strong>{{ notification.title }}</strong>
+                    <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
+                </a>
+                <div *ngIf="!notification.isRead" class="p-listbox-dot">!</div>
 
-        <ng-template #noLink>
-          <div class="notification">
-            <strong>{{ notification.title }}</strong>
-            <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
-          </div>
-        </ng-template>
-      </ng-template>
+                <ng-template #noLink>
+                    <div class="notification">
+                        <strong>{{ notification.title }}</strong>
+                        <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
+                    </div>
+                </ng-template>
+            </ng-template>
 
-      <ng-template pTemplate="footer">
-        <strong>
-          <a routerLink="pagina/notifiche" title="Leggi tutte le notifiche">Mostra di più…</a>
-        </strong>
-      </ng-template>
+            <ng-template pTemplate="footer">
+                <strong>
+                    <a routerLink="pagina/notifiche" title="Leggi tutte le notifiche">Mostra di più…</a>
+                </strong>
+            </ng-template>
 
-    </p-listbox>
+        </p-listbox>
 
-  </ng-template>
+    </ng-template>
 
 </p-overlayPanel>
-
-<lib-badge
-  (click)="overlaynotifications.toggle($event); notificationsNumber = '0';"
-  [menuBadge]="notificationsNumber"></lib-badge>

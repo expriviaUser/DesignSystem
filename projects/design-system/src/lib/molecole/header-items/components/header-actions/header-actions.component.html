@@ -16,10 +16,11 @@
         </p-overlayPanel>
     </div>
     <div>
-        <lib-header-notifications [notifications]="notifs" *ngIf="user"></lib-header-notifications>
+        <lib-header-notifications *ngIf="user"></lib-header-notifications>
     </div>
     <div>
-        <lib-language-selector [options]="languages" [selectedOption]="selectedOption" placeholder="Seleziona lingua" (selectedOptionChange)="languageChange.next($event)"></lib-language-selector>
+        <lib-language-selector [options]="languages" [selectedOption]="selectedOption" placeholder="Seleziona lingua"
+            (selectedOptionChange)="languageChange.next($event)"></lib-language-selector>
     </div>
     <div>
         <lib-header-menu-user [menuNavbar]="user"></lib-header-menu-user>
