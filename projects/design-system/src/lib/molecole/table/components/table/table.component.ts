@@ -35,6 +35,8 @@ export class TableComponent implements OnInit {
     @Input() totalRecords!: number;
     //   boolenao se le colonne sono ordinabili o meno
     @Input() sortable: boolean = false;
+
+    @Input() showHeader: boolean = true;
     //    booleano se la tabella ha le checkbox
     @Input() isSelectable!: boolean;
     //    tipo di selezione della tabella, single o multiple
@@ -99,6 +101,7 @@ export class TableComponent implements OnInit {
     }
 
     protected lazyLoading(event: LazyLoadEvent) {
+        debugger;
         let pageNumber = event.first && event.rows ? (event.first / event.rows + 1) : 1;
 
         if (!this.emitLazy) {
@@ -135,6 +138,7 @@ export class TableComponent implements OnInit {
     }
 
     emitSort(event: { field: string, order: number }): void {
+        console.log(event);
         if (!this.lazy) {
             this.sortValues.emit(event);
         }

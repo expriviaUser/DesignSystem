@@ -85,7 +85,7 @@ export class AppComponent {
     ];
 
     columns: Cols[] = [
-        { header: 'Nome', field: 'name' },
+        { header: 'Nome', field: 'name', sort: true },
         { header: 'Cognome', field: 'surname' },
         { header: 'Cognome', field: 'surname' },
         { header: 'Description', field: 'status.description' },

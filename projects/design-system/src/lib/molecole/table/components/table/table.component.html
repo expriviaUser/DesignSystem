@@ -10,12 +10,18 @@
         (onLazyLoad)="lazyLoading($event)">
         <ng-template pTemplate="header" let-columns>
             <tr>
-                <!-- LABEL DELLE COLONNE -->
-
-                <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : internalHeader"
-                    [ngTemplateOutletContext]="{columns:columns}">
-
-                </ng-template>
+                <ng-container *ngIf="showHeader">
+                    <th *ngIf="isSelectable">
+                        <!-- <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox> -->
+                    </th>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.sort ? col.field : null">
+                        {{col.header}}
+                        <p-sortIcon *ngIf="col.sort" [field]="col.field"></p-sortIcon>
+                    </th>
+                    <th *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
+                        Operazioni
+                    </th>
+                </ng-container>
             </tr>
         </ng-template>
 
