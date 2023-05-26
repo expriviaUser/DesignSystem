@@ -25,8 +25,11 @@ export class FileComponent implements OnInit {
 
     ngOnInit() {
         let lastIndex = this.file.title.lastIndexOf('.');
-        if (lastIndex > 0)
-            this.srcIcon = this.iconArray.filter(item => item.extensions.includes(this.file.title.substring(lastIndex + 1, this.file.title.length).toLocaleLowerCase()))[0].path;
+        if (lastIndex > 0) {
+            const extension = this.iconArray.filter(item => item.extensions.includes(this.file.title.substring(lastIndex + 1, this.file.title.length).toLocaleLowerCase()));
+            if (extension.length > 0)
+                this.srcIcon = extension[0].path;
+        }
 
     }
 

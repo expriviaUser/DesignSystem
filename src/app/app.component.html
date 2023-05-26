@@ -67,6 +67,13 @@
 
 <lib-file-status [fileList]="fileArray"></lib-file-status>
 
+<lib-file
+    [file]="{title:'/globaldoc-afs-pr/documentiDigitali/31/20200611100803/0434-42034 ENIU3065278.tif', dimension: '50'}">
+    <ng-container file-actions>
+        <lib-button [icon]="'pi pi-download'" [type]="'secondary-raised'" [size]="'small'"></lib-button>
+    </ng-container>
+</lib-file>
+
 <!-- <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </lib-breadcrumb> -->
 
