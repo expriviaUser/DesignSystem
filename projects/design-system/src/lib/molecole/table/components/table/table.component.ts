@@ -79,6 +79,8 @@ export class TableComponent implements OnInit {
     @Output() lazyLoadChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per aggiornare il valore delle checkbox in tabella
+    @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]>();
+
     @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per segnalare l'evento di sorting
@@ -111,7 +113,7 @@ export class TableComponent implements OnInit {
     }
 
     selectedEvent() {
-        this.selectedValueChange.emit(this.selectedValue);
+        this.selectedTableValues.emit(this.selectedValue);
     }
 
     emitSort(event: { field: string, order: number }): void {
