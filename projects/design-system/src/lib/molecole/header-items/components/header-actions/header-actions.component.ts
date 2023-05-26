@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MenuItem } from '../../models/menuItem.model';
-import { UserNotification } from '../../models/user-notification.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FileUpload } from '../../../upload-file/models/file-upload.model';
 import { Language } from '../../models/language.model';
+import { MenuItem } from '../../models/menuItem.model';
 import { HeaderItemsService } from '../../services/header-items.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { HeaderItemsService } from '../../services/header-items.service';
     templateUrl: './header-actions.component.html',
     styleUrls: ['./header-actions.component.scss']
 })
-export class HeaderActionsComponent {
+export class HeaderActionsComponent implements OnInit {
     fileUpload: FileUpload[] = [];
 
     @Input() user: MenuItem[] = [

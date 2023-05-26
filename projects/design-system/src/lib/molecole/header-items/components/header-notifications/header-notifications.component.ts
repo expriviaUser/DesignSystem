@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserNotification } from '../../models/user-notification.model';
 import { HeaderItemsService } from '../../services/header-items.service';
 
@@ -7,7 +7,7 @@ import { HeaderItemsService } from '../../services/header-items.service';
     templateUrl: './header-notifications.component.html',
     styleUrls: ['./header-notifications.component.scss']
 })
-export class HeaderNotificationsComponent {
+export class HeaderNotificationsComponent implements OnInit {
     notifications!: UserNotification[];
     notificationsNumber!: string;
     selectedNotification!: UserNotification;

@@ -21,6 +21,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
 import { InputFormModule } from '../../atoms/input-form/input-form.module';
 import { LibUploadFileModule } from '../upload-file/lib-upload-file.module';
+import { HeaderItemsService } from './services/header-items.service';
 
 
 const primeComponents = [
@@ -64,7 +65,8 @@ const exportComponent = [
     ],
     entryComponents: [
         ...exportComponent
-    ]
+    ],
+    providers: [HeaderItemsService]
 })
 
 export class HeaderItemsModule { }

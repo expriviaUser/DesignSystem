@@ -79,7 +79,7 @@ export class TableComponent implements OnInit {
     @Output() lazyLoadChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per aggiornare il valore delle checkbox in tabella
-    @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]>();
+    @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per segnalare l'evento di sorting
     @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
@@ -110,30 +110,8 @@ export class TableComponent implements OnInit {
         }
     }
 
-    /* onPageChange(ev: any) {
-
-        // console.log('dataTable',this.dataTable)
-        console.log('pageChange', ev)
-
-        let page_size_backend = this.allResponse.size
-        let page_size_frontend = ev.first
-        let current_page_frontend = ev.pageCount
-        let total_count_be = this.allResponse.totalElements
-
-        console.log('page_size_backend', page_size_backend)
-        console.log('page_size_frontend', page_size_frontend)
-        console.log('current_page_frontend', current_page_frontend)
-
-        if (page_size_backend == page_size_frontend * current_page_frontend && page_size_backend < total_count_be) {
-
-            this.pageChanged.emit(ev);
-        }
-
-
-    } */
-
     selectedEvent() {
-        this.selectedTableValues.emit(this.selectedValue);
+        this.selectedValueChange.emit(this.selectedValue);
     }
 
     emitSort(event: { field: string, order: number }): void {

@@ -62392,6 +62392,16 @@ export class AppComponent {
 
     filterValue = { name: 'Simone', surname: 'Giannuario' };
 
+    selectionTable!: any;
+
+    selectVal() {
+        this.selectionTable = this.items[0];
+    }
+
+    deselectVal() {
+        this.selectionTable = null;
+    }
+
     dialog() {
         /* console.log(this.dialogVisibility);
         this.dialogVisibility = !this.dialogVisibility;

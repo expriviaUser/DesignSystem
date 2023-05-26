@@ -88,6 +88,7 @@ export * from './lib/molecole/table/components/actions-table/actions-table.compo
 export * from './lib/molecole/table/models/table.model';
 export * from './lib/molecole/table/lib-table.module';
 
+export * from './lib/molecole/header-items/services/header-items.service';
 export * from './lib/molecole/header-items/components/cart/cart.component';
 export * from './lib/molecole/header-items/components/header-actions/header-actions.component';
 export * from './lib/molecole/header-items/components/language-selector/language-selector.component';
