@@ -20,6 +20,7 @@ export class InputComponent {
     @Input() clear: boolean = false;
     @Input() control: AbstractControl = new FormControl();
 
+    @Output() emitInput: EventEmitter<string> = new EventEmitter<string>();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
     @Output() iconClicked: EventEmitter<any> = new EventEmitter<any>();
 

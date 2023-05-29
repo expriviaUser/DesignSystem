@@ -27,10 +27,14 @@
                 text-overflow: ellipsis;
                 max-width: 80%;
                 white-space: nowrap;
-                &-icon {
-                    @include typography-small-semibold;
-                    max-width: 70%;
-                }
+            }
+            .title-icon {
+                @include typography-small-semibold;
+                color: $color--file-title;
+                max-width: 70%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
 
             .dimension {
