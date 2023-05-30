@@ -16,12 +16,14 @@
 
         <!-- dropdown  -->
         <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
-            [clear]="clear" [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput" [disabled]="inputDisabled"></lib-dropdown>
+            [clear]="clear" [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"
+            [disabled]="inputDisabled"></lib-dropdown>
 
         <!-- Input calendar -->
         <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
-            (selectedValue)="emitValue($event, 'calendar')" [inlineCal]="inlineCal" [selectionType]="selectionType"
-            [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"></lib-calendar>
+            (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')"
+            [inlineCal]="inlineCal" [selectionType]="selectionType" [minDate]="minDate" [maxDate]="maxDate"
+            [showButtonBar]="showButtonBar"></lib-calendar>
 
         <!-- Input autocomplete  -->
         <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
@@ -52,7 +54,8 @@
             (selectedValue)="emitValue($event)" [label]="label" [control]="control"></lib-input>
 
         <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
-            [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label" [control]="control" [value]="value"></lib-input>
+            [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label" [control]="control"
+            [value]="value"></lib-input>
     </div>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"

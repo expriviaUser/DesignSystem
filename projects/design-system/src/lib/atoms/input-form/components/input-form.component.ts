@@ -122,4 +122,11 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
             this.selectedValue.emit(event);
         }
     }
+
+    resetCalendarValue() {
+        this.control.reset();
+        this.value = '';
+        this.onChange(this.value);
+        this.selectedValue.emit(this.value);
+    }
 }

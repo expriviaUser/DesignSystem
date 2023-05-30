@@ -22,7 +22,7 @@
     <p-calendar #calendar (onSelect)="selectDate(calendarDate)" [showButtonBar]="showButtonBar" [disabled]="disabled"
         [(ngModel)]="calendarDate" [showIcon]="showIcon" inputId="icon" [inline]="inlineCal"
         [ngClass]="{'max-w-full' : inlineCal}" [selectionMode]="selectionType" [readonlyInput]="true"
-        [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate">
+        [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()">
     </p-calendar>
 
 

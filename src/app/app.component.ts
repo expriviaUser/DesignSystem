@@ -62131,7 +62131,7 @@ export class AppComponent {
     }
 
     autocompleteForm: FormGroup = this.fb.group({
-        autocomplete: [''],
+        autocomplete: ['', Validators.required],
     });
 
     calendarForm: FormGroup = this.fb.group({

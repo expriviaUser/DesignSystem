@@ -52,10 +52,10 @@
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
 <form [formGroup]="autocompleteForm">
-    <lib-input-form [label]="'prova'" [icon]="'pi pi-search'" [clear]="true" formControlName="autocomplete"
-        [iconPos]="'left'"></lib-input-form>
+    <lib-input-form [type]="'calendar'" [label]="'Selezione Intervallo Date'" formControlName="autocomplete"
+        [inlineCal]="true" [selectionType]="'range'" [showButtonBar]="true"></lib-input-form>
 </form>
-<lib-button [label]="'submit'" (click)="formEmit('autocomplete')"></lib-button>
+<lib-button [label]="'submit'" (click)="formEmit('autocomplete')" [disabled]="autocompleteForm.invalid"></lib-button>
 
 <lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file>
 
@@ -68,7 +68,8 @@
 <lib-file-status [fileList]="fileArray"></lib-file-status>
 
 <lib-file
-    [file]="{title:'/globaldoc-afs-pr/documentiDigitali/31/20200611100803/0434-42034 ENIU3065278.tif', dimension: '50'}">
+    [file]="{title:'/globaldoc-afs-pr/documentiDigitali/31/20200611100803/0434-42034 ENIU3065278.tif', dimension: '50'}"
+    [ellipsed]="false">
     <ng-container file-actions>
         <lib-button [icon]="'pi pi-download'" [type]="'secondary-raised'" [size]="'small'"></lib-button>
     </ng-container>
@@ -126,7 +127,8 @@
 <lib-button [label]="'Deselect'" (click)="deselectVal()"></lib-button>
 
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="2"
-    [totalRecords]="115" [filters]="filterValue" [selectionType]="'single'" [(selectedValue)]="selectionTable">
+    [resizableColumns]="true" [totalRecords]="115" [filters]="filterValue" [selectionType]="'single'"
+    [(selectedValue)]="selectionTable">
     <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
     <ng-template #body let-data="data" let-column="column">
         <td>{{ data[column[0].field] }}</td>

@@ -10,6 +10,7 @@ export class FileComponent implements OnInit {
     @Input() file!: File;
     @Input() checkable: boolean = false;
     @Input() checked: boolean = false;
+    @Input() ellipsed: boolean = true;
 
     srcIcon!: string;
 

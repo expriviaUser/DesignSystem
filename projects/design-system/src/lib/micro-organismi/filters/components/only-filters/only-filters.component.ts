@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { CalendarComponent, DropdownComponent, TreeMenu, TreeSelectComponent, TreeSelectModel } from '../../../../../public-api';
 import { FiltersModel, OnlyFiltersChip, OnlyFiltersModel } from '../../models/filters.model';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -70,8 +71,11 @@ export class OnlyFiltersComponent implements OnInit {
         this.dropdownSelectedValues[dropdownIndex].label = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.data == event)[0].label || '';
     }
 
-    protected setCalendarChild(event: Array<object>, dropdownIndex: number) {
-        this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toLocaleString().split(',')[0] + " - " + event[1].toLocaleString().split(',')[0]
+    protected setCalendarChild(event: string | Array<object>, dropdownIndex: number) {
+        if (Array.isArray(event))
+            this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0] + " - " + event[1].toString().split(',')[0];
+        else
+            this.dropdownSelectedValues[dropdownIndex].childValue = event;
     }
 
     protected setInterval(dropdownIndex: number, event: string, isMin: boolean) {
@@ -85,7 +89,7 @@ export class OnlyFiltersComponent implements OnInit {
         this.dropdownSelectedValues[dropdownIndex].childValue = val.join(' - ');
     }
 
-    constructor() {
+    constructor(private datePipe: DatePipe) {
     }
 
     ngOnInit(): void {
@@ -125,12 +129,17 @@ export class OnlyFiltersComponent implements OnInit {
                 return;
             }
         }
+        const date = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.label === this.dropdownSelectedValues[dropdownIndex].label);
+        let value = this.dropdownSelectedValues[dropdownIndex].childValue;
+        if (date && date.length > 0 && date[0].type === 'calendar')
+            value = this.datePipe.transform(new Date(value), 'dd/MM/yyyy') || '';
+
         this.chipsList.result.push({
             dropdownIndex: dropdownIndex,
             data: this.dropdownSelectedValues[dropdownIndex].value,
             field: this.dropdownValues.filters[dropdownIndex].field,
             type: 'children',
-            chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${this.dropdownSelectedValues[dropdownIndex].childValue}`,
+            chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${value}`,
             value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
         });
         this.dropdownValues.filters[dropdownIndex].data?.forEach(item => {

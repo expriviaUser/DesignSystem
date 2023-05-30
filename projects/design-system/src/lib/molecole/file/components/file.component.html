@@ -4,7 +4,7 @@
             (emitChange)="fileToggle($event)"></lib-checkbox-button>
         <img class="file-icon" *ngIf="srcIcon" [src]="srcIcon" alt="file icon" />
         <div class="file-data">
-            <div [ngClass]="{'title-icon': srcIcon, 'title': !srcIcon}" [title]="file.title">
+            <div [ngClass]="{'title-icon': srcIcon, 'title': !srcIcon, 'ellipsed': ellipsed}" [title]="file.title">
                 {{file.title}}</div>
             <div *ngIf="file.dimension" class="dimension">{{file.dimension}}</div>
         </div>

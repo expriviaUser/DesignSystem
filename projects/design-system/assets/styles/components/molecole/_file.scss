@@ -20,21 +20,27 @@
             flex-direction: column;
             width: 100%;
 
+            .ellipsed {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
             .title {
                 color: $color--file-title;
                 @include typography-body-regular;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 80%;
-                white-space: nowrap;
+
+                &.ellipsed {
+                    max-width: 80%;
+                }
             }
             .title-icon {
                 @include typography-small-semibold;
                 color: $color--file-title;
-                max-width: 70%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+
+                &.ellipsed {
+                    max-width: 70%;
+                }
             }
 
             .dimension {

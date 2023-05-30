@@ -86,6 +86,12 @@ export class InputComponent {
         console.log('value', this.value)
     }
 
+    /* numberPattern(event: any) {
+        if (event.keyCode === 101 || event.keyCode === 69)
+            return 
+            event.charCode >= 48 && event.charCode <= 57
+    } */
+
     // upon UI element value change, this method gets triggered
     emitValueNg(event: any) {
         this.value = event;

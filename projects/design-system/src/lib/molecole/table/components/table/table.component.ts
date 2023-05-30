@@ -61,6 +61,8 @@ export class TableComponent implements OnInit {
 
     @Input() isScrollable!: boolean;
 
+    @Input() resizableColumns: boolean = false;
+
     @Input() scrollHeight!: string;
 
     @Input() alwaysShowPaginator!: boolean;
