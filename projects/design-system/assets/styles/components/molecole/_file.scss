@@ -29,18 +29,11 @@
             .title {
                 color: $color--file-title;
                 @include typography-body-regular;
-
-                &.ellipsed {
-                    max-width: 80%;
-                }
             }
+
             .title-icon {
                 @include typography-small-semibold;
                 color: $color--file-title;
-
-                &.ellipsed {
-                    max-width: 70%;
-                }
             }
 
             .dimension {
