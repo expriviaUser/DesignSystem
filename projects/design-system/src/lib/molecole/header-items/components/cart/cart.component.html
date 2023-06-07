@@ -7,10 +7,8 @@
 <p-overlayPanel #op>
     <ng-template pTemplate="content">
         <div class="container">
-            <div class="row">
-                <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : internalHeader">
-                </ng-template>
-            </div>
+            <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : internalHeader">
+            </ng-template>
             <div *ngFor="let row of rows; let i = index">
                 <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
                     [ngTemplateOutletContext]="{data:row, i:i}">
