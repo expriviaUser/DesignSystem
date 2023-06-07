@@ -23,7 +23,7 @@ export class ButtonComponent {
         if (changes) {
             this.initButtonAttributes();
         }
-    } 
+    }
 
     ngOnInit() {
         this.initButtonAttributes();
@@ -50,6 +50,9 @@ export class ButtonComponent {
                 break;
             case "secondary-rounded":
                 this.class += " p-button-secondary p-button-rounded";
+                break;
+            case "secondary-outlined":
+                this.class += " p-button-secondary p-button-outlined";
                 break;
             case "rounded":
                 this.class += " p-button-rounded";

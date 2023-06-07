@@ -76,6 +76,24 @@
             border: 1px solid;
         }
     }
+
+    &.p-button-secondary {
+        color: $color--button-secondary-outlined-text;
+        background-color: $color--button-secondary-outlined-background;
+        border-color: $color--button-secondary-outlined-border;
+
+        &:enabled {
+            &:hover {
+                border-color: $color--button-secondary-outlined-border-hover;
+                color: $color--button-secondary-outlined-text;
+            }
+
+            &:active {
+                border-color: $color--button-secondary-outlined-border-hover;
+                color: $color--button-secondary-outlined-text;
+            }
+        }
+    }
 }
 
 .p-button.p-button-outlined.p-button-plain {
@@ -175,6 +193,7 @@
 .p-button.p-button-icon-only {
     width: 3rem;
     padding: 0.75rem 0;
+    font-size: 1rem !important;
     .p-button-icon-left {
         margin: 0;
     }

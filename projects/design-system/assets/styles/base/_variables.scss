@@ -176,6 +176,14 @@ $color--button-secondary-border-disabled: var(--base-color-border);
 $color--button-secondary-text-disabled: var(--base-color-border);
 $color--button-secondary-text: var(--base-color-black);
 
+$color--button-secondary-outlined-background: var(--base-color-white);
+$color--button-secondary-outlined-background-disabled: var(--base-color-background);
+$color--button-secondary-outlined-border-hover: var(--secondary-color-30);
+$color--button-secondary-outlined-border: var(--secondary-color-50);
+$color--button-secondary-outlined-border-disabled: var(--secondary-color-50);
+$color--button-secondary-outlined-text-disabled: var(--secondary-color-50);
+$color--button-secondary-outlined-text: var(--secondary-color-50);
+
 $color--button-text-color: var(--secondary-color-50);
 
 // search-bar
