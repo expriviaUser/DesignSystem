@@ -7,6 +7,10 @@
 <p-overlayPanel #op>
     <ng-template pTemplate="content">
         <div class="container">
+            <div class="row">
+                <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : internalHeader">
+                </ng-template>
+            </div>
             <div *ngFor="let row of rows; let i = index">
                 <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
                     [ngTemplateOutletContext]="{data:row, i:i}">
@@ -16,6 +20,9 @@
     </ng-template>
 </p-overlayPanel>
 
+<ng-template #internalHeader>
+    <lib-button [size]="'small'" [label]="'Richiedi consultazione'" [type]="'primary'"></lib-button>
+</ng-template>
 <ng-template #internalBody let-data="data" let-i="i">
     {{data.id}} / {{data.title}}
     <lib-button [size]="'small'" [label]="'Richiedi consultazione'" [type]="'primary'"></lib-button>

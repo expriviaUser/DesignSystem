@@ -9,6 +9,7 @@ import { HeaderItemsService } from '../../services/header-items.service';
 export class CartComponent implements OnInit {
     protected rows: any[] = [];
     @Input() externalBody!: TemplateRef<any>;
+    @Input() externalHeader!: TemplateRef<any>;
 
 
     constructor(private headerItemsService: HeaderItemsService) {
