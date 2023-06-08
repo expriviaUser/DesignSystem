@@ -66,7 +66,7 @@ const exportComponent = [
     entryComponents: [
         ...exportComponent
     ],
-    providers: [HeaderItemsService]
+    providers: []
 })
 
 export class HeaderItemsModule { }

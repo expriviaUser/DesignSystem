@@ -7,7 +7,7 @@ import { HeaderItemsService } from '../../services/header-items.service';
     styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-    protected rows: any[] = [];
+    @Input() rows: any[] = [];
     @Input() externalBody!: TemplateRef<any>;
     @Input() externalHeader!: TemplateRef<any>;
 

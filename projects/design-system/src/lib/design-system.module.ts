@@ -85,6 +85,6 @@ const sharedModules = [
     exports: [
         ...sharedModules
     ],
-    providers: [LibTableService, HeaderItemsService]
+    providers: [LibTableService]
 })
 export class DesignSystemModule { }

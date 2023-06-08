@@ -14,6 +14,10 @@ export class HeaderItemsService {
         this.cartItems$.next(values);
     }
 
+    getCart(): BehaviorSubject<any> {
+        return this.cartItems$;
+    }
+
     uploadFiles$: BehaviorSubject<FileUpload[]> = new BehaviorSubject<FileUpload[]>([]);
     set uploadFiles(val: FileUpload) {
         let values = this.uploadFiles$.getValue();
@@ -28,5 +32,6 @@ export class HeaderItemsService {
         this.notifications$.next(values);
     }
 
-    constructor() { }
+    constructor() {
+    }
 }
