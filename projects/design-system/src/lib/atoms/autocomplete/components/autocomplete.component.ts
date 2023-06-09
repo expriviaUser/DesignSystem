@@ -17,6 +17,7 @@ export class AutocompleteComponent {
     @Input() placeholder: string = '';
     @Input() value: any;
     @Input() label: string = '';
+    @Input() appendTo!: string;
     @Input() icon: string = '';
     @Input() disabled: boolean = false;
     @Input() showClear: boolean = false;

@@ -1,8 +1,8 @@
 <div [ngClass]="{'autocomplete':true, 'dropdown':icon}">
     <p-autoComplete [showClear]="showClear && !icon" [inputStyleClass]="haveError ? 'ng-invalid ng-dirty':''"
-        [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList" (change)="emitValueIfExist($event)"
-        (onSelect)="emitValue($event)" (onClear)="emitValue('')" (completeMethod)="filter($event)"
-        [minLength]="minLength" [disabled]="disabled" [dropdownIcon]="icon" [dropdown]="icon ? true : false"
-        dropdownMode="current" [field]="field ? field : ''"></p-autoComplete>
+        [appendTo]="appendTo" [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList"
+        (change)="emitValueIfExist($event)" (onSelect)="emitValue($event)" (onClear)="emitValue('')"
+        (completeMethod)="filter($event)" [minLength]="minLength" [disabled]="disabled" [dropdownIcon]="icon"
+        [dropdown]="icon ? true : false" dropdownMode="current" [field]="field ? field : ''"></p-autoComplete>
 
 </div>

@@ -16,8 +16,8 @@
 
         <!-- dropdown  -->
         <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
-            [clear]="clear" [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"
-            [disabled]="inputDisabled"></lib-dropdown>
+            [appendTo]="appendTo" [clear]="clear" [placeholder]="placeholder" [control]="control"
+            [valueDropdown]="valueInput" [disabled]="inputDisabled"></lib-dropdown>
 
         <!-- Input calendar -->
         <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
@@ -27,8 +27,8 @@
 
         <!-- Input autocomplete  -->
         <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
-            [minLength]="minLenghtDigits" (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control"
-            [valueAutocomplete]="valueInput" [disabled]="inputDisabled" [icon]="icon"
+            [appendTo]="appendTo" [minLength]="minLenghtDigits" (selectedValue)="emitValue( $event, 'autocomplete')"
+            [control]="control" [valueAutocomplete]="valueInput" [disabled]="inputDisabled" [icon]="icon"
             [field]="field"></lib-autocomplete>
 
         <!-- Input checkbox -->
