@@ -6,7 +6,7 @@ import {
     Validators,
 } from '@angular/forms';
 import { Table, TableService } from 'primeng/table';
-import { PrimeNGConfig } from 'primeng/api';
+import { OverlayOptions, PrimeNGConfig } from 'primeng/api';
 import { Language } from 'projects/design-system/src/lib/molecole/header-items/models/language.model';
 import { ActionTable, BreadcrumbModel, Cols } from '@dnlcorti/design-system';
 import { TreeMenu } from '../../projects/design-system/src/lib/atoms/treemenu/models/treemenu.model';
@@ -62406,8 +62406,12 @@ export class AppComponent {
         /* console.log(this.dialogVisibility);
         this.dialogVisibility = !this.dialogVisibility;
         console.log(this.dialogVisibility); */
-        this.headerItemsService.cartItems = { id: 1, title: 'prova' };
+        this.headerItemsService.cartItems = { id: 1, title: 'provaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' };
         this.headerItemsService.cartItems = { id: 2, title: 'prova2' };
+    }
+    overlayOptions: OverlayOptions = { mode: 'overlay', appendTo: 'body' };
+    logInputEmit(event: any) {
+        console.log('STAMPA INPUT :', event);
     }
 
     goTo(event: any) { }

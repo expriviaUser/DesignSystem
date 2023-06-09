@@ -37,19 +37,6 @@
     </p-table>
 </div>
 
-<ng-template #internalHeader let-columns="columns">
-    <th *ngIf="isSelectable">
-        <!-- <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox> -->
-    </th>
-    <th *ngFor="let col of columns" [pSortableColumn]="col.sort ? col.field : null">
-        {{col.header}}
-        <p-sortIcon *ngIf="col.sort" [field]="col.field"></p-sortIcon>
-    </th>
-    <th *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
-        Operazioni
-    </th>
-</ng-template>
-
 <ng-template #internalBody let-data="data" let-columns="column">
     <td *ngIf="isSelectable">
         <p-tableCheckbox [value]="data"></p-tableCheckbox>

@@ -11,6 +11,8 @@ export class CartComponent implements OnInit {
     @Input() externalBody!: TemplateRef<any>;
     @Input() externalHeader!: TemplateRef<any>;
 
+    protected show: boolean = false;
+
 
     constructor(private headerItemsService: HeaderItemsService) {
 
@@ -18,12 +20,13 @@ export class CartComponent implements OnInit {
 
     ngOnInit() {
         this.headerItemsService.cartItems$.subscribe((value: any) => {
+            this.rows = [];
             this.rows = [...value];
         })
     }
 
-    protected openOverlay(op: any, event: any) {
-        if (this.rows.length > 0)
-            op.toggle(event);
+    protected openOverlay(event: any) {
+        event.stopPropagation();
+        this.show = !this.show;
     }
 }

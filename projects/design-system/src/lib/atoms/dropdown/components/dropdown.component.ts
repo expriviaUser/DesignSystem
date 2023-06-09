@@ -17,6 +17,7 @@ export class DropdownComponent implements OnInit {
 
     @Input() valueDropdown: DropdownType[] | string[] | any = [];
     @Input() label!: string;
+    @Input() appendTo!: string;
     @Input() codeString: string = 'code';
     @Input() nameString: string = 'name';
     @Input() placeholder!: string;

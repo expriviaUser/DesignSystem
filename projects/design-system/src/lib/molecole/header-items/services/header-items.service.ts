@@ -9,13 +9,19 @@ import { UserNotification } from '../models/user-notification.model';
 export class HeaderItemsService {
     cartItems$: BehaviorSubject<any> = new BehaviorSubject<any>([]);
     set cartItems(val: any) {
-        let values = this.cartItems$.getValue();
+        const values = this.cartItems$.getValue();
         values.push(val);
         this.cartItems$.next(values);
     }
 
     getCart(): BehaviorSubject<any> {
         return this.cartItems$;
+    }
+
+    deleteFromCart(index: number) {
+        const values = this.cartItems$.getValue();
+        values.splice(index, 1);
+        this.cartItems$.next(values);
     }
 
     uploadFiles$: BehaviorSubject<FileUpload[]> = new BehaviorSubject<FileUpload[]>([]);

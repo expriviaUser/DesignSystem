@@ -83,16 +83,57 @@
 
 <lib-button [label]="'PROVA'" [size]="'small'" [type]="'secondary-raised'" (onClick)="dialog()"></lib-button>
 
-<lib-dialog [(visible)]="dialogVisibility" [title]="'form'" [subtitle]="'Prova form'">
+<lib-dialog [visible]="true" [title]="'form'" [subtitle]="'Prova form'">
 
-    <form [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
+    <form #form1 [formGroup]="form" (submit)="buttonSubmit" action="POST" body>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
         <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
             [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
         <!--    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form> -->
         <lib-input-form type="calendar" formControlName="age"></lib-input-form>
+        <p-dropdown appendTo="body" [overlayOptions]="overlayOptions"
+            [options]="['Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi', 'Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi', 'Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi']"></p-dropdown>
 
+
+        <lib-dropdown [label]="'Tipologia Richiesta'" appendTo="body"
+            [valueDropdown]="['Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi']"></lib-dropdown>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </form>
-
 
 
     <div footer>
@@ -153,7 +194,7 @@
 </lib-table>
 
 
-<lib-input [iconPos]="'left'" icon="pi pi-user"></lib-input>
+<lib-input (emitInput)="logInputEmit($event)" [placeholder]="'PROVA INPUT'"></lib-input>
 
 <lib-radio-tile [tiles]="myTiles">
 </lib-radio-tile>

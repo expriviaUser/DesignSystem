@@ -1,8 +1,9 @@
 .p-dropdown {
     background: $color--surface-a;
-    border: 1px solid $color--black-700;
+    border: 1px solid $color--dropdown-border;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     border-radius: $border-radius;
+    width: 100%;
 }
 
 // .p-dropdown:not(.p-disabled):hover {
@@ -113,7 +114,7 @@
     font-weight: $font-weight;
 }
 
-p-dropdown.ng-dirty.ng-invalid>.p-dropdown {
+p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
     border-color: $color--red-900;
 }
 
