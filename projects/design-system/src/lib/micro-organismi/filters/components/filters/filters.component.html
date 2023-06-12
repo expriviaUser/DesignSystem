@@ -11,7 +11,8 @@
                 [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate">
 
                 <ng-template #valueTemplate value>
-                    {{selectedValues[i].length > 0 ? selectedValues[i][0].label : dropdownOptions.placeholder}}
+                    {{selectedValues[i].length > 0 && dropdownOptions.selectionType === 'single' ?
+                    selectedValues[i][0].label : dropdownOptions.placeholder}}
                 </ng-template>
             </lib-tree-select>
             <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"

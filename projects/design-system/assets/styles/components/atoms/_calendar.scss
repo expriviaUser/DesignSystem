@@ -12,7 +12,7 @@
         @include typography-form-label;
         color: $color--form-label-text;
     }
-    
+
     p-calendar {
         .p-button:not(.p-button-link) {
             background-color: $color--calendar-button-background;
@@ -28,9 +28,9 @@
                 color: $color--calendar-button-text-hover;
                 text-decoration: underline;
                 border-radius: $border-radius;
+                border-color: $color--calendar-button-border;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
-                border-color: $color--calendar-button-border;
             }
 
             &:disabled {
@@ -40,6 +40,37 @@
                 border-color: $color--calendar-button-border;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
+            }
+        }
+
+        .p-datepicker {
+            box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        }
+    }
+
+    p-calendar.inline-cal {
+        .p-button:not(.p-button-link) {
+            background-color: $color--calendar-button-background;
+            color: $color--calendar-button-text;
+            border-color: $color--calendar-button-border;
+
+            span {
+                font-size: 1.2rem;
+            }
+
+            &:enabled:hover {
+                background-color: $color--calendar-button-background-hover;
+                color: $color--calendar-button-text-hover;
+                text-decoration: underline;
+                border-radius: $border-radius;
+                border-color: $color--calendar-button-border;
+            }
+
+            &:disabled {
+                background-color: $color--calendar-button-background;
+                color: $color--calendar-button-text;
+                border-radius: $border-radius;
+                border-color: $color--calendar-button-border;
             }
         }
 

@@ -1,5 +1,7 @@
+@import "../../base/functions";
+
 .p-button {
-    padding: 0.75rem 1.25rem;
+    padding: pxToRem(12px);
     border: 1px solid $color--button-primary-background;
     border-radius: $border-radius;
     background: $color--button-primary-background;
@@ -11,6 +13,10 @@
         border: 1px solid $color--button-primary-background-disabled;
         color: $color--button-primary-text;
         background: $color--button-primary-background-disabled;
+    }
+
+    .p-button-icon {
+        @include typography-button-regular;
     }
 }
 
@@ -209,23 +215,15 @@
 
 .p-button.p-button-sm {
     @include typography-button-small;
-    padding: 0.65625rem 1.09375rem;
+    padding: pxToRem(8px) pxToRem(12px);
     .p-button-icon {
         @include typography-button-small;
     }
 }
 
-.p-button {
-    @include typography-button-regular;
-    padding: 1rem;
-    .p-button-icon {
-        @include typography-button-regular;
-    }
-}
-
 .p-button.p-button-lg {
     @include typography-button-large;
-    padding: 0.9375rem 1.5625rem;
+    padding: pxToRem(12px);
     .p-button-icon {
         @include typography-button-large;
     }
