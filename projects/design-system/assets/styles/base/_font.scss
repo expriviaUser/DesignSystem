@@ -47,7 +47,7 @@ html {
     font-stretch: normal;
 } */
 
-.small-regular {
+/* .small-regular {
     @include typography-small-regular;
 }
 
@@ -71,6 +71,65 @@ html {
     @include typography-xs-small-regular;
 }
 
-.body-bold {
+.body-semibold {
     @include typography-body-semibold;
+} */
+
+// titles
+.h6-font {
+    @include typography-h6;
+}
+.h5-font {
+    @include typography-h5;
+}
+
+.h4-font {
+    @include typography-h4;
+}
+
+.h3-font {
+    @include typography-h3;
+}
+
+.h2-font {
+    @include typography-h2;
+}
+
+.h1-font {
+    @include typography-h1;
+}
+
+// subtitles
+.subtitle-regular {
+    @include typography-subtitle-regular;
+}
+
+.subtitle-semibold {
+    @include typography-subtitle-semibold;
+}
+
+.subtitle-second-regular {
+    @include typography-subtitle-second-regular;
+}
+
+.subtitle-second-semibold {
+    @include typography-subtitle-second-semibold;
+}
+
+// body
+.body-regular {
+    @include typography-body-regular;
+}
+
+.body-semibold {
+    @include typography-body-semibold;
+}
+
+// small
+.small-regular {
+    @include typography-small-regular;
+}
+
+.small-semibold {
+    @include typography-small-semibold;
 }

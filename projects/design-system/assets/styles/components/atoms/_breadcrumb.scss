@@ -1,7 +1,7 @@
 .breadcrumb-root {
     margin: 0;
     color: $color--text-placeholder;
-    @include typography-x-small-regular;
+    @include typography-small-regular;
 
     .breadcrumb-list {
         display: flex;

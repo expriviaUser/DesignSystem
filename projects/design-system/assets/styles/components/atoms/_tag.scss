@@ -4,7 +4,7 @@
     padding: pxToRem(4px) pxToRem(8px);
     border-radius: $border-radius;
 
-    @include typography-text-xs-medium;
+    @include typography-small-regular;
 
     &.p-tag-success {
         background-color: $color--tag-success;
@@ -48,7 +48,7 @@
 
         &lightAlert {
             .p-tag {
-                background: $color--tag-light-danger-background ;
+                background: $color--tag-light-danger-background;
                 color: $color--tag-danger;
             }
         }

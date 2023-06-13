@@ -8,19 +8,20 @@
         width: 100%;
         .lib-input {
             flex: 1 1 auto;
-            height:auto;
+            height: auto;
             input {
                 height: 100%;
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
                 border-right: 0;
-              &.p-inputtext[disabled] {
-                 opacity: 1;
-                 background: white;
-              }
-              &.p-disabled, .p-component:disabled {
-                opacity: 1;
-              }
+                &.p-inputtext[disabled] {
+                    opacity: 1;
+                    background: white;
+                }
+                &.p-disabled,
+                .p-component:disabled {
+                    opacity: 1;
+                }
             }
         }
 
@@ -41,10 +42,8 @@
 
     .label {
         label {
-            @include typography-form-label;
+            @include typography-subtitle-second-semibold;
             color: $color--form-label-text;
         }
     }
-
-
 }

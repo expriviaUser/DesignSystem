@@ -11,6 +11,7 @@ export class FileComponent implements OnInit {
     @Input() checkable: boolean = false;
     @Input() checked: boolean = false;
     @Input() ellipsed: boolean = true;
+    @Input() isBig: boolean = true;
 
     srcIcon!: string;
 
@@ -20,6 +21,8 @@ export class FileComponent implements OnInit {
         { extensions: ['xls', 'xlsx', 'xlsm', 'xlsb', 'xltx', 'xlt', 'csv'], path: 'assets/svg/microsoft-excel.svg' },
         { extensions: ['ppt', 'pptx', 'pptm', 'xps', 'potx', 'ppsx', 'pps', 'odp', ''], path: 'assets/svg/microsoft-powerpoint.svg' },
         { extensions: ['zip', 'rar'], path: 'assets/svg/zip.svg' },
+        { extensions: ['png', 'tiff', 'jpeg', 'jpg'], path: 'assets/svg/img.svg' },
+        //TIFF image to add
     ];
 
     @Output() fileSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
