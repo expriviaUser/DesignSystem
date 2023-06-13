@@ -25,6 +25,7 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
     @Input() label: string = "";
     @Input() type: string = "text";
     @Input() error: boolean = false;
+    @Input() calendarShowIcon: boolean = false;
     @Input() inputDisabled: boolean = false;
     @Input() placeholder: string = "Inserisci un valore";
     @Input() formControlName: string = "";
@@ -35,9 +36,11 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
     @Input() maxDate!: Date;
     @Input() showButtonBar!: boolean;
     @Input() minLenghtDigits: number = 3;
+    @Input() fileAcceptExtensions!: string;
+    @Input() maxFileSize!: number;
 
     //@Input() formControl: FormControl = new FormControl();
-    @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
+    @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
 
     disabled: boolean = false;
     touched = false;

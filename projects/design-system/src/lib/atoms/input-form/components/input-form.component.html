@@ -21,9 +21,9 @@
 
         <!-- Input calendar -->
         <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control"
-            (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')"
-            [inlineCal]="inlineCal" [selectionType]="selectionType" [minDate]="minDate" [maxDate]="maxDate"
-            [showButtonBar]="showButtonBar"></lib-calendar>
+            [showIcon]="calendarShowIcon" (clearCalendarValue)="resetCalendarValue()"
+            (selectedValue)="emitValue($event, 'calendar')" [inlineCal]="inlineCal" [selectionType]="selectionType"
+            [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"></lib-calendar>
 
         <!-- Input autocomplete  -->
         <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
@@ -35,6 +35,11 @@
         <div class="field-checkbox" *ngSwitchCase="'checkbox'">
             <lib-checkbox-button (change)="emitValue($event)" [label]="label"></lib-checkbox-button>
         </div>
+
+        <!-- Choose file-->
+        <lib-choose-file *ngSwitchCase="'choose-file'" [acceptExtensions]="fileAcceptExtensions" [control]="control"
+            [disabled]="inputDisabled" [value]="value" [icon]="icon" [label]="label" [maxFileSize]="maxFileSize"
+            (onLoadFile)="emitValue($event)"></lib-choose-file>
 
         <!-- Input radio -->
         <div class="field-radio" *ngSwitchCase="'radio'">
@@ -55,7 +60,7 @@
 
         <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
             [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label" [control]="control"
-            [value]="value"></lib-input>
+            [disabled]="inputDisabled" [value]="value"></lib-input>
     </div>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
