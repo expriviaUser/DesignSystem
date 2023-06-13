@@ -22,7 +22,6 @@
         border-top-right-radius: $border-radius;
         border-top-left-radius: $border-radius;
 
-
         .p-dialog-header-icon {
             position: absolute;
             top: 0;
@@ -59,7 +58,6 @@
     .p-dialog-content {
         padding: 1rem 1.5rem;
         background: $color--surface-a;
-        color: $color--text-color;
 
         &:last-of-type {
             border-bottom-right-radius: $border-radius;
