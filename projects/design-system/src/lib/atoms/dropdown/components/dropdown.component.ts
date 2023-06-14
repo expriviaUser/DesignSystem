@@ -30,7 +30,7 @@ export class DropdownComponent implements OnInit {
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
 
     ngOnInit() {
-        this.isObject = typeof this.valueDropdown[0] !== "string";
+        this.isObject = this.valueDropdown ? typeof this.valueDropdown[0] !== "string" : true;
 
     }
 

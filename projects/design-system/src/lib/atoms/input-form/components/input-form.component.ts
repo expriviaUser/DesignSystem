@@ -14,7 +14,7 @@ import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR 
         },
     ],
 })
-export class InputFormComponent implements ControlValueAccessor, OnChanges {
+export class InputFormComponent implements ControlValueAccessor {
     @Input() value!: string;
     @Input() valueInput: any[] = [];
     @Input() clear: boolean = false;
@@ -53,10 +53,6 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
         private datePipe: DatePipe
     ) { }
 
-    ngOnChanges(changes: SimpleChanges) {
-        console.log('InputComponent', changes);
-    }
-
     get control() {
         return this.controlContainer.control!.get(
             this.formControlName
@@ -77,8 +73,6 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
             (!this.control.pristine || this.control.touched)
         );
     }
-
-    ngOnInit() { }
 
     getValueControl() {
         if (this.control!.value) {
