@@ -70,6 +70,8 @@ export class TableComponent implements OnInit {
     @Input() loading!: boolean;
 
     @Input() lazy!: boolean;
+    @Input() responsiveLayout!: string;
+    @Input() responsive: boolean = false;
 
     @Input() lazyOnInit: boolean = true;
 

@@ -75,9 +75,9 @@
                 &:not(.p-disabled):hover {
                     background: $color--surface-a;
                     //font-weight: 600;
-                    @include typography-body-semibold;
                     .p-menuitem-text,
                     .p-submenu-icon {
+                        @include typography-body-semibold;
                         color: $color--black-900;
                     }
                 }

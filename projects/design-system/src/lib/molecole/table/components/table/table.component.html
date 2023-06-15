@@ -7,7 +7,8 @@
         [paginator]="showPaginator" [rows]="nRowsPerPage" [rowsPerPageOptions]="rowsPerPage"
         [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString" [loading]="loading"
         [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy" [lazyLoadOnInit]="lazyOnInit"
-        [customSort]="serverSort" (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)">
+        [customSort]="serverSort" (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)"
+        [responsive]="responsive" [responsiveLayout]="responsiveLayout">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <ng-container *ngIf="showHeader">

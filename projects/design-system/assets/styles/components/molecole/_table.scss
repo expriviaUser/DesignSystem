@@ -24,15 +24,19 @@
     }
 }
 
+.table-wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+
 table .p-datatable .p-datatable-wrapper table .p-datatable-thead tr th {
     font-weight: bold;
 }
 
-.p-datatable-resizable-table>.p-datatable-thead>tr>th {
+.p-datatable-resizable-table > .p-datatable-thead > tr > th {
     text-overflow: ellipsis;
     max-width: 10%;
 }
-
 
 .p-panel {
     width: 100%;
