@@ -9,6 +9,7 @@ import { LibInputModule } from '../input/lib-input.module';
 import { LibRadioButtonModule } from '../radio-button/lib-radio-button.module';
 import { LibTextareaModule } from '../textarea/lib-textarea.module';
 import { InputFormComponent } from './components/input-form.component';
+import { LibChooseFileModule } from '../choose-file/choose-file.module';
 
 
 const primeComponents = [
@@ -19,7 +20,8 @@ const primeComponents = [
     LibRadioButtonModule,
     LibTextareaModule,
     LibInputModule,
-    LibErrorInlineModule
+    LibErrorInlineModule,
+    LibChooseFileModule
 ];
 
 const exportComponent = [
