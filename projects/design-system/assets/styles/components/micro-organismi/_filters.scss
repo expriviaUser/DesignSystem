@@ -1,6 +1,6 @@
 .filters-wrapper {
     .dropdown-title {
-        @include typography-small-semibold;
+        @include typography-body-semibold;
         color: $color--filters-dropdown-title;
         flex: none;
         order: 0;
@@ -116,7 +116,7 @@
 
     .chips-title {
         margin-top: 0.714rem;
-        @include typography-small-regular;
+        @include typography-body-regular;
         color: $color--filters-chips-title;
     }
 
