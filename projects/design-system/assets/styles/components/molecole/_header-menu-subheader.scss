@@ -81,6 +81,15 @@
                         color: $color--black-900;
                     }
                 }
+                &:not(.p-disabled):active {
+                    background: $color--item-menu-active;
+                    //font-weight: 600;
+                    .p-menuitem-text,
+                    .p-submenu-icon {
+                        @include typography-body-semibold;
+                        color: $color--black-900;
+                    }
+                }
             }
 
             .p-menuitem > .p-menuitem-link {

@@ -1,30 +1,19 @@
-import {
-    Component,
-    forwardRef,
-    EventEmitter,
-    Input,
-    OnDestroy,
-    OnInit,
-    Output,
-    SimpleChanges,
-    OnChanges, ViewChild
-} from '@angular/core';
 import { DatePipe } from '@angular/common';
 import {
+    Component,
+    EventEmitter,
+    Input,
+    Output,
+    ViewChild,
+    forwardRef
+} from '@angular/core';
+import {
     AbstractControl,
-    ControlContainer,
-    ControlValueAccessor,
     FormBuilder,
     FormControl,
     FormGroup,
-    NG_VALUE_ACCESSOR,
-    ValidationErrors,
-    ValidatorFn,
-    Validators
+    NG_VALUE_ACCESSOR
 } from '@angular/forms';
-import { MenuItem } from 'primeng/api';
-import { map, Subject, takeUntil } from 'rxjs';
-import { TreeSelectModel } from "../../tree-select/models/tree-select.model";
 import { Calendar } from "primeng/calendar";
 
 @Component({
@@ -37,9 +26,9 @@ import { Calendar } from "primeng/calendar";
         multi: true
     }]
 })
-export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
-    @Input() value!: any
-    @Input() label!: string
+export class CalendarComponent {
+    @Input() value!: any;
+    @Input() label!: string;
     @Input() disabled: boolean = false;
     @Input() inlineCal: boolean = false;
     @Input() showIcon: boolean = false;
@@ -50,6 +39,7 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
     @Input() placeholder: string = '';
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
+    @Input() defaultDateFormat: string = 'dd-mm-yy';
 
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
     @Output() clearCalendarValue: EventEmitter<any> = new EventEmitter<any>();
@@ -60,7 +50,6 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
 
     formData!: FormGroup;
 
-    destroySub$ = new Subject<void>()
     onChange: any = () => {
     }
     onTouch: any = () => {
@@ -80,7 +69,7 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
     ) {
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    /* ngOnChanges(changes: SimpleChanges) {
         if (!(this.inlineCal || this.showIcon || this.dropdownMode)) {
             if (changes['value'].firstChange) {
                 this.formData = this.fb.group({
@@ -103,9 +92,9 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
             this.calendarDate = this.value;
         }
 
-    }
+    } */
 
-    ngOnInit() {
+    /* ngOnInit() {
         if (!(this.inlineCal || this.showIcon || this.dropdownMode)) {
 
             if (this.value) {
@@ -127,24 +116,23 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
         } else {
             this.calendarDate = this.value;
         }
-    }
+    } */
 
-    ngOnDestroy() {
-        this.destroySub$.next()
-        this.destroySub$.complete()
-    }
 
-    selectDate(date: any) {
+    /* selectDate(date: any) {
         if (!(this.inlineCal || this.showIcon || this.dropdownMode)) {
             this.formData.get('date')?.setValue(date.getDate())
             this.formData.get('month')?.setValue(date.getMonth() + 1)
             this.formData.get('year')?.setValue(date.getFullYear())
         } else {
+            this.calendarDate = date;
+
             this.emitValue(date);
         }
-    }
+        console.log(this.calendarDate);
+    } */
 
-    validDate(): ValidatorFn {
+    /* validDate(): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const group = control as FormGroup
             const d = new Date(control.get('year')!.value, (control.get('month')!.value - 1), control.get('date')!.value)
@@ -153,7 +141,7 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
             }
             return null
         }
-    }
+    } */
 
     // this method sets the value programmatically
     writeValue(value: string) {
@@ -177,28 +165,17 @@ export class CalendarComponent implements OnDestroy, OnInit, OnChanges {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any) {
-        console.log('calendar', event);
         this.value = event;
         this.onChange(event);
-        if (!(this.inlineCal || this.showIcon || this.dropdownMode)) {
-            let date = this.datePipe.transform(event, 'yyyy-MM-dd') || '';
-            this.selectedValue.emit(date);
-        } else {
-            this.selectedValue.emit(event);
-        }
-    }
-
-    // upon UI element value change, this method gets triggered
-    emitValueNg(event: any) {
-        console.log('emitValue', event);
-        this.value = event;
-        this.onChange(event);
-        let date = this.datePipe.transform(event, 'yyyy-MM-dd') || '';
-        this.selectedValue.emit(date);
+        /*  if (!(this.inlineCal || this.showIcon || this.dropdownMode)) {
+             let date = this.datePipe.transform(event, 'yyyy-MM-dd') || '';
+             this.selectedValue.emit(date);
+         } else {
+         } */
+        this.selectedValue.emit(event);
     }
 
     toggleCalendar(): void {
         this.pcalendar.toggle();
     }
-
 }

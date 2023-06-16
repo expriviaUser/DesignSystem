@@ -68,7 +68,7 @@ export class ChooseFileComponent {
             filesName.push(file.name);
         })
         this.uploader.clear();
-        this.onLoadFile.emit(event);
+        this.onLoadFile.emit(event.currentFiles);
     }
 
     clearFile() {

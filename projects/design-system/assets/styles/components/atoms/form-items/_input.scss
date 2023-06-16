@@ -4,7 +4,7 @@
     gap: $gap-1;
 
     .static {
-        color: $color--primary-color;
+        padding: pxToRem(9px);
     }
 
     label {

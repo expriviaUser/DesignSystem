@@ -1,3 +1,15 @@
+<lib-header-menu [items]="itemsMenu">
+    <!-- <ng-container endTemp>
+        <div class="align">
+            <lib-cart [externalBody]="external">
+                <ng-template #external let-data="data" let-i="i">
+                    {{data.title}} {{i}}
+                </ng-template>
+            </lib-cart>
+            <lib-dropdown [valueDropdown]="dropdownValue" [clear]="false"></lib-dropdown>
+        </div>
+    </ng-container> -->
+</lib-header-menu>
 <lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
 <router-outlet></router-outlet>
 <div class="header">
@@ -33,21 +45,10 @@
 
 <h6>Catalogazione</h6>
 
-<lib-header-menu [items]="itemsMenu">
-    <ng-container endTemp>
-        <div class="align">
-            <lib-cart [externalBody]="external">
-                <ng-template #external let-data="data" let-i="i">
-                    {{data.title}} {{i}}
-                </ng-template>
-            </lib-cart>
-            <lib-dropdown [valueDropdown]="dropdownValue" [clear]="false"></lib-dropdown>
-        </div>
-    </ng-container>
-</lib-header-menu>
+
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
-<form [formGroup]="autocompleteForm">
+<!-- <form [formGroup]="autocompleteForm">
     <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['CIAO','CIAO1', 'CIAO2']" [icon]="'pi pi-search'"
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
@@ -57,13 +58,13 @@
 </form>
 <lib-button [label]="'submit'" (click)="formEmit('autocomplete')" [disabled]="autocompleteForm.invalid"></lib-button>
 
-<lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file>
+<lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file> -->
 
 <!-- <lib-dropdown [label]="'prova'" [valueDropdown]="['prova1','prova2']"></lib-dropdown><br>
 <lib-autocomplete [valueAutocomplete]="['prova1', 'value2']"></lib-autocomplete> -->
 
 
-<lib-badge [menuBadge]="'3'"></lib-badge>
+<!-- <lib-badge [menuBadge]="'3'"></lib-badge>
 
 <lib-file-status [fileList]="fileArray"></lib-file-status>
 
@@ -75,11 +76,11 @@
     </ng-container>
 </lib-file>
 <lib-button [size]="'small'" [type]="'secondary-outlined'" [icon]="'pi pi-trash'" [iconPosition]="'right'">
-</lib-button>
+</lib-button> -->
 <!-- <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </lib-breadcrumb> -->
 
-<lib-checkbox-button></lib-checkbox-button>
+<!-- <lib-checkbox-button></lib-checkbox-button>
 
 <lib-button [label]="'PROVA'" [size]="'small'" [type]="'secondary-raised'" (onClick)="dialog()"></lib-button>
 
@@ -109,9 +110,9 @@
         <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
             [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
         <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
-            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
-        <!--    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form> -->
-        <lib-input-form type="calendar" formControlName="age"></lib-input-form>
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form> -->
+<!--    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form> -->
+<!-- <lib-input-form type="calendar" formControlName="age"></lib-input-form>
         <p-dropdown appendTo="body" [overlayOptions]="overlayOptions"
             [options]="['Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi', 'Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi', 'Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi']"></p-dropdown>
 
@@ -170,9 +171,9 @@
 
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="2"
     [resizableColumns]="true" [totalRecords]="115" [filters]="filterValue" [selectionType]="'single'"
-    [(selectedValue)]="selectionTable">
-    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
-    <ng-template #body let-data="data" let-column="column">
+    [(selectedValue)]="selectionTable"> -->
+<!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+<!-- <ng-template #body let-data="data" let-column="column">
         <td>{{ data[column[0].field] }}</td>
         <td>{{ data[column[1].field] }}</td>
         <td>
@@ -183,12 +184,12 @@
             <p-tableCheckbox [value]="data"></p-tableCheckbox>
         </td>
     </ng-template>
-</lib-table>
+</lib-table> -->
 
-<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions" [lazy]="true"
-    [lazyOnInit]="true" [emitLazy]="true">
-    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
-    <ng-template #actions let-item="data">
+<!-- <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions" [lazy]="true"
+    [lazyOnInit]="true" [emitLazy]="true"> -->
+<!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+<!--  <ng-template #actions let-item="data">
         <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
     </ng-template>
 </lib-table>
@@ -209,12 +210,12 @@
     <lib-only-filters *ngIf="dropdownValuesThird" [dropdownValues]="dropdownValuesThird" [title]="' '"
         (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
 </div>
-<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips>
+<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips> -->
 
 <!-- <lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">
 </lib-chip> -->
 
-<lib-treemenu [filter]="true" [selectionMode]="'checkbox'" [filterPlaceholder]="'Cerca'" [items]="treemenuItems"
+<!-- <lib-treemenu [filter]="true" [selectionMode]="'checkbox'" [filterPlaceholder]="'Cerca'" [items]="treemenuItems"
     [(selected)]="selectedItems" (selectedChange)="selectedMenu($event)" [checkboxOnlyLeaf]="true"
     [propagateSelectionUp]="false"></lib-treemenu>
 
@@ -224,4 +225,4 @@
 <lib-language-selector [options]="languages" (selectedOptionChange)="catchChange($event)"></lib-language-selector>
 <lib-header-actions [languages]="languages" (languageChange)="catchChange($event)"></lib-header-actions>
 
-<lib-loader></lib-loader>
+<lib-loader></lib-loader> -->

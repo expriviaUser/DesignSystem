@@ -16,13 +16,12 @@
             div {
                 height: 100%;
             }
-
         }
-        
+
         button {
             height: 100%;
         }
-        
+
         .p-dropdown {
             line-height: 0;
             border-bottom-right-radius: 0;
@@ -45,9 +44,20 @@
 
 //Global Doc
 .search-bar {
-
     .p-inputtext {
         border: 1px solid $color--searchbar-inputtype-border;
+    }
+
+    form {
+        lib-input-form {
+            div:first-child {
+                height: 100%;
+            }
+
+            p-dropdown {
+                height: 100%;
+            }
+        }
     }
 
     .p-dropdown {
@@ -55,7 +65,9 @@
         border: 1px solid $color--gray-600;
 
         .p-dropdown-label {
-            color:  $color--white;
+            color: $color--white;
+            display: flex;
+            align-items: center;
 
             &.p-inputtext {
                 border: 0;
@@ -65,8 +77,5 @@
         .p-dropdown-trigger-icon {
             color: $color--white;
         }
-
     }
-
-    
 }

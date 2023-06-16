@@ -3,8 +3,7 @@
 }
 
 .p-component {
-    font-size: 0.875rem;
-    font-weight: $font-weight;
+    @include typography-small-regular;
 }
 
 .p-component-overlay {
@@ -532,10 +531,8 @@ p-inputnumber.p-inputnumber-clearable .p-inputnumber-buttons-horizontal .p-input
 
 // PrimeNG inputtext component
 .p-inputtext {
-    font-size: 1rem;
     color: $color--text-color;
     background: $color--surface-a;
-    padding: 0.75rem 0.75rem;
     border: 1px solid $color--input-border;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     appearance: none;

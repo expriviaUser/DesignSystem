@@ -42,9 +42,11 @@ export * from './lib/atoms/autocomplete/components/autocomplete.component';
 export * from './lib/atoms/autocomplete/lib-autocomplete.module';
 
 export * from './lib/atoms/checkbox/components/checkbox-button.component';
+export * from './lib/atoms/checkbox/models/checkbox.model';
 export * from './lib/atoms/checkbox/lib-checkbox.module';
 
 export * from './lib/atoms/radio-button/components/radio-button.component';
+export * from './lib/atoms/radio-button/models/radio.model';
 export * from './lib/atoms/radio-button/lib-radio-button.module';
 
 export * from './lib/atoms/textarea/components/textarea.component';

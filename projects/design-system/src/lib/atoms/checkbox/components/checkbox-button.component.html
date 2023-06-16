@@ -1,4 +1,10 @@
-<div class="field-checkbox check">
-    <p-checkbox #checkboxInput [ngClass]="{'rounded': rounded}" [(ngModel)]="check" [label]="label" (onChange)="changed()" [binary]="true"
-        [disabled]="disabled"></p-checkbox>
+<div class="check field">
+    <label *ngIf="label">{{label}}</label>
+    <div class="check-list">
+        <div *ngFor="let item of items; let i = index">
+            <p-checkbox #checkboxInput [ngClass]="{'rounded': rounded}" [label]="item.label"
+                (onChange)="emitValue($event, i)" [binary]="true" [trueValue]="item.data ? item : true"
+                [falseValue]="item.data ? null : false" [disabled]="disabled"></p-checkbox>
+        </div>
+    </div>
 </div>

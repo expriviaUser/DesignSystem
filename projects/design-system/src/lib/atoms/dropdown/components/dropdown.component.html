@@ -1,4 +1,5 @@
-<div class="dropdown-wrapper">
+<div class="dropdown-wrapper field">
+    <label *ngIf="label">{{label}}</label>
     <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [appendTo]="appendTo"
         [disabled]="!valueDropdown || disabled" [showClear]="clear" [options]="valueDropdown"
         (onChange)="emitValue($event)" [optionLabel]="isObject ? nameString : ''" [(ngModel)]="value"

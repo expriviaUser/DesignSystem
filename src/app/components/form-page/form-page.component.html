@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+    <div class="form-row">
+        <lib-input-form [type]="'dropdown'" formControlName="dropdown" [label]="'Dropdown'"
+            [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
+        </lib-input-form>
+        <lib-input-form [type]="'text'" formControlName="input" [label]="'Input text'"
+            [placeholder]="'Titolo Documento'">
+        </lib-input-form>
+        <lib-input-form [type]="'calendar'" formControlName="calendar" [label]="'Calendar'" [calendarShowIcon]="true">
+
+        </lib-input-form>
+    </div>
+    <div class="form-row">
+        <lib-input-form [type]="'choose-file'" [icon]="'pi pi-upload'" [label]="'Seleziona File'"
+            [placeholder]="'Seleziona File'" formControlName="chooseFile">
+        </lib-input-form>
+        <lib-input-form [type]="'textarea'" formControlName="textarea" [label]="'Textarea'"
+            [placeholder]="'Descrizione'">
+        </lib-input-form>
+        <lib-input-form [type]="'number'" formControlName="number" [label]="'Input number'"
+            [placeholder]="'Titolo Documento'">
+        </lib-input-form>
+    </div>
+    <div class="form-row">
+        <lib-input-form [type]="'password'" formControlName="psw" [label]="'Input psw'"
+            [placeholder]="'Titolo Documento'">
+        </lib-input-form>
+        <lib-input-form [type]="'autocomplete'" formControlName="autocomplete" [label]="'Autocomplete'"
+            [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
+        </lib-input-form>
+        <lib-input-form [type]="'static'" formControlName="static" [label]="'Static'">
+        </lib-input-form>
+    </div>
+
+    <div class="form-row">
+        <lib-input-form [type]="'checkbox'" formControlName="check" [label]="'Checkbox'"
+            [checkboxValue]="[{data: 1, label: 'Pippo'}]" [placeholder]="'Titolo Documento'">
+        </lib-input-form>
+        <lib-input-form [type]="'radio'" [valueInput]="[{data: 1, label: 'Prova'},{data: 2, label: 'Ciao'}]"
+            formControlName="radio" [label]="'Radio'">
+        </lib-input-form>
+    </div>
+
+    <lib-button [label]="'Submit'" [size]="'small'" (onClick)="submit()"></lib-button>
+</form>

@@ -93,7 +93,7 @@ export class AppComponent {
     ];
 
     protected itemsMenu: MenubarItem[] = [
-        { label: 'Richieste' },
+        { label: 'Form', routerLink: 'form' },
         { label: 'Macero' },
         { label: 'Fatturazione' },
         { label: 'Logistica' },
@@ -103,10 +103,10 @@ export class AppComponent {
 
     sidebarItems: SidebarItem[] = [
         {
-            label: 'Etichette',
+            label: 'Form',
             style: { 'font-weight': 600 },
             icon: 'pi pi-fw pi-plus',
-            routerLink: 'app',
+            routerLink: 'form',
         },
         {
             label: 'Contenitori',
