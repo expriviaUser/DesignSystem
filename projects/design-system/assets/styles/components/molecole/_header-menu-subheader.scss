@@ -1,5 +1,3 @@
-@import "../../base/functions";
-
 .menu-bar-container {
     padding: 0;
     width: 100%;
@@ -66,27 +64,31 @@
             .p-menuitem.p-menuitem-active > .p-menuitem-link {
                 background: $color--primary-color;
                 color: $color--black-900;
+
+                @include typography-body-regular;
                 height: 100%;
+                .p-menuitem-text {
+                    line-height: unset;
+                }
                 .p-menuitem-text,
                 .p-submenu-icon {
                     color: $color--black-900;
-                    @include typography-body-regular;
                 }
                 &:not(.p-disabled):hover {
                     background: $color--surface-a;
                     //font-weight: 600;
+                    @include typography-body-semibold;
                     .p-menuitem-text,
                     .p-submenu-icon {
-                        @include typography-body-semibold;
                         color: $color--black-900;
                     }
                 }
                 &:not(.p-disabled):active {
-                    background: $color--item-menu-active;
+                    background: $color--surface-a;
                     //font-weight: 600;
+
                     .p-menuitem-text,
                     .p-submenu-icon {
-                        @include typography-body-semibold;
                         color: $color--black-900;
                     }
                 }
