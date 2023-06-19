@@ -71,6 +71,7 @@ export class TableComponent implements OnInit {
 
     @Input() lazy!: boolean;
     @Input() responsiveLayout!: string;
+    @Input() columnResizeMode: string = 'fit';
     @Input() responsive: boolean = false;
 
     @Input() lazyOnInit: boolean = true;
