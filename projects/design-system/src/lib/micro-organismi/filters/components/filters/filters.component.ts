@@ -8,7 +8,7 @@ import {
     ViewChildren
 } from '@angular/core';
 import { FiltersChip, FiltersModel, FiltersResult } from '../../models/filters.model';
-import { TreeSelectModel } from '../../../../../public-api';
+import { DropdownComponent, TreeSelectModel } from '../../../../../public-api';
 import { CalendarComponent } from '../../../../../public-api';
 
 @Component({
@@ -30,6 +30,7 @@ export class FiltersComponent implements OnInit {
     resetCalendarValue!: Array<Date> | null;
 
     @ViewChildren('calendar') calendar!: QueryList<CalendarComponent>;
+    @ViewChildren('dropdown') dropdown!: QueryList<DropdownComponent>;
 
     constructor() {
     }
@@ -40,7 +41,7 @@ export class FiltersComponent implements OnInit {
         }
         this.dropdownValues.forEach((item) => this.chipsExport[item.field] = []);
         this.dropdownValues.filter((item, index) => {
-            if (item.type == 'treeselect')
+            if (item.type === 'treeselect' || item.type === 'dropdown')
                 this.selectedValues[index] = []
         });
     }
@@ -66,6 +67,34 @@ export class FiltersComponent implements OnInit {
                 this.selectedValues[dropdownIndex].push(event.node);
             }
         }
+    }
+
+    createDropChip(event: any, dropdownIndex: number, dropdownField: string, selectionType: string): void {
+        if (event >= 0) {
+            if (selectionType === 'single') {
+                let indexToRemove = this.chipsList.findIndex(item => item.field == dropdownField);
+                if (indexToRemove !== -1)
+                    this.chipsList.splice(indexToRemove, 1);
+            }
+            const label = this.dropdownValues[dropdownIndex].data?.filter(item => item.data === event)[0].label;
+            this.chipsList.push({ chipsLabel: label || '', dropdownIndex: dropdownIndex, field: dropdownField, data: event, type: "dropdown", value: label || '' });
+            this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
+            if (selectionType === 'single')
+                this.chipsExport[dropdownField][0] = event;
+            else
+                this.chipsExport[dropdownField].push(event);
+            this.filterValues.emit(this.chipsExport);
+            if (selectionType == 'single') {
+                this.selectedValues[dropdownIndex][0] = { data: event, label: label || '' };
+            } else {
+                this.selectedValues[dropdownIndex].push({ data: event, label: label || '' });
+            }
+            this.dropdownValues[dropdownIndex].data?.forEach(item => {
+                if (item.data === event)
+                    item.disabled = true;
+            });
+        }
+
     }
 
     createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
@@ -108,6 +137,7 @@ export class FiltersComponent implements OnInit {
         const E_INDEX = this.chipsExport[chipValue.field].findIndex((d: string) => d == chipValue.data); //add data to chipValue
 
 
+
         if (chipValue.type == "treeselect") {
             this.chipsExport[chipValue.field].splice(E_INDEX, 1);
             const N_INDEX = this.selectedValues[chipValue.dropdownIndex].findIndex(n => n.label == chipValue.chipsLabel);
@@ -117,6 +147,16 @@ export class FiltersComponent implements OnInit {
         else if (chipValue.type == "calendar") {
             this.chipsExport[chipValue.field] = [];
             //this.resetCalendarValue = null;
+        } else if (chipValue.type === 'dropdown') {
+            const dropdownFilteredArray = this.dropdownValues.filter(item => item.type === 'dropdown');
+            const index = dropdownFilteredArray.findIndex(item => item.field === chipValue.field);
+            const dropdown = this.dropdown.get(index);
+            if (dropdown)
+                dropdown.value = null;
+            this.dropdownValues[chipValue.dropdownIndex].data?.forEach(item => {
+                if (item.data === chipValue.data)
+                    item.disabled = false;
+            });
         }
         this.filterValues.emit(this.chipsExport);
     }

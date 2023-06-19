@@ -15,6 +15,16 @@
                     selectedValues[i][0].label : dropdownOptions.placeholder}}
                 </ng-template>
             </lib-tree-select>
+
+            <lib-dropdown [virtualScroll]="true" [valueDropdown]="dropdownOptions.data" [codeString]="'data'" #dropdown
+                *ngIf="dropdownOptions.type == 'dropdown' && dropdownOptions.data" [nameString]="'label'"
+                [placeholder]="dropdownOptions.placeholder" [virtualScrollItemSize]="38"
+                (selectedValue)="createDropChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                [selectedItemTemplate]="selectedItemTemplate">
+                <ng-template #selectedItemTemplate pTemplate="selectedItem">
+                    {{dropdownOptions.placeholder}}
+                </ng-template>
+            </lib-dropdown>
             <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"
                 [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
                 (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>

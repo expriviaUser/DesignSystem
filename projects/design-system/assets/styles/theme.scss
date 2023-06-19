@@ -3228,6 +3228,14 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     background-color: $color--surface-b;
 }
 
+.p-scroller {
+    contain: initial !important;
+
+    .p-scroller-content {
+        position: relative;
+    }
+}
+
 .p-datatable .p-datatable-loading-icon {
     font-size: 2rem;
 }

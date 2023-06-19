@@ -55,7 +55,7 @@
             }
 
             .p-treeselect-label {
-                padding: 0.65625rem 0.65625rem;
+                padding: pxToRem(8px);
 
                 &.p-placeholder {
                     color: $color--filters-dropdown-text;
@@ -77,12 +77,25 @@
             }
         }
 
+        .p-dropdown {
+            background: $color--filters-dropdown-background;
+            border: 1px solid $color--filters-dropdown-border;
+
+            .p-dropdown-label {
+                padding: pxToRem(8px);
+                color: $color--filters-dropdown-text;
+                &.p-placeholder {
+                    color: $color--filters-dropdown-text;
+                }
+            }
+        }
+
         p-calendar {
             .p-calendar {
                 .p-inputtext {
                     border-color: $color--filters-dropdown-border;
                     cursor: pointer;
-                    padding: 0.65625rem 0.65625rem;
+                    padding: pxToRem(8px);
 
                     &::placeholder {
                         /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -134,7 +147,7 @@
 
                 .p-dropdown-label {
                     font-size: 0.875rem;
-                    padding: 0.65625rem 0.65625rem;
+                    padding: pxToRem(8px);
                     color: $color--filters-dropdown-text;
                     &.p-placeholder {
                         color: $color--filters-dropdown-text;
