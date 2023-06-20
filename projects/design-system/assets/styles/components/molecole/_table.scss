@@ -38,7 +38,7 @@ table .p-datatable .p-datatable-wrapper table .p-datatable-thead tr th {
     max-width: 10%;
 }
 
-.p-datatable-resizable-table > .p-datatable-thead > tr > th:has(.p-resizable-column) {
+.p-datatable-thead > tr > th:has(.p-resizable-column) {
     white-space: unset !important;
 }
 
