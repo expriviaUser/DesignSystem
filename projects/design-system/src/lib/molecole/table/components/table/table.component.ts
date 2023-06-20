@@ -78,12 +78,15 @@ export class TableComponent implements OnInit {
 
     @Input() emitLazy!: boolean;
 
+    @Input() dataKey: string = '';
+
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged: EventEmitter<{ pageNumber: number, field: string, order: number }> = new EventEmitter<{ pageNumber: number, field: string, order: number }>();
 
     @Output() lazyLoadChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per aggiornare il valore delle checkbox in tabella
+    private checkedRow: any[] = [];
     @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
@@ -117,14 +120,38 @@ export class TableComponent implements OnInit {
         }
     }
 
-    selectedEvent() {
-        this.selectedTableValues.emit(this.selectedValue);
+    selectedEvent(event: any) {
+        console.log('Select/unselect', event);
+        if (event.type === 'row') {
+            // this.selectedValueChange.emit(event);
+        }
+        if (event.type === 'checkbox') {
+            // (event.originalEvent as MouseEvent).stopPropagation();
+            this.checkedEvent(event.originalEvent, event.data, 'single');
+        }
     }
 
     emitSort(event: { field: string, order: number }): void {
         console.log(event);
         if (!this.lazy) {
             this.sortValues.emit(event);
+        }
+    }
+
+    checkedEvent(event: MouseEvent, data: any, checkType: string) {
+        console.log('checked', checkType + ': ', event);
+        event.stopPropagation();
+        this.checkedRow.push(data);
+        this.selectedTableValues.emit(this.checkedRow);
+    }
+
+    selectionChangeWithMode(event: MouseEvent, data: any) {
+        if (this.selectionType === 'checkbox') {
+            console.log('SelModCheckbox', event + ': ', data);
+            event.stopPropagation();
+            // this.selectedValueChange.emit(data);
+        } else {
+            console.log('SelModOthers', event + ': ', data);
         }
     }
 }

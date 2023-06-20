@@ -15,12 +15,14 @@ import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/f
 import { TreeModule } from 'primeng/tree';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormPageComponent } from './components/form-page/form-page.component';
+import { TablePageComponent } from './components/table-page/table-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AboutComponent,
-        FormPageComponent
+        FormPageComponent,
+        TablePageComponent
     ],
     imports: [
         BrowserModule,

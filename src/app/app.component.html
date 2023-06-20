@@ -1,3 +1,10 @@
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+        <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
+    </h1>
+</div>
+
 <lib-header-menu [items]="itemsMenu">
     <!-- <ng-container endTemp>
         <div class="align">
@@ -10,8 +17,11 @@
         </div>
     </ng-container> -->
 </lib-header-menu>
+
 <lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
+
 <router-outlet></router-outlet>
+
 <div class="header">
     <div class="left">
         <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
@@ -25,12 +35,6 @@
 </div>
 
 
-<div style="text-align:center">
-    <h1>
-        Welcome to {{ title }}!
-        <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
-    </h1>
-</div>
 <lib-tag [tagLabel]="'Label'" [tagSeverity]="'success'">
 </lib-tag>
 

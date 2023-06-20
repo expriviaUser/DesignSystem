@@ -1,0 +1,41 @@
+
+<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="[2]"
+    [resizableColumns]="true" [totalRecords]="3" [selectionType]="'checkbox'" [isSelectable]="true"
+    [(selectedValue)]="selectionTable">
+    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+    <ng-template #body let-data="data" let-column="column">
+        <!-- <td>
+            <p-tableCheckbox [value]="data"></p-tableCheckbox>
+        </td> -->
+        <td>{{ data[column[0].field] }}</td>
+        <td>{{ data[column[1].field] }}</td>
+        <td>
+            {{column[2].field | json}}
+            <lib-tag [tagSeverity]="'danger'" [tagLabel]="tableService.getFieldValue(data, column[2].field)"></lib-tag>
+        </td>
+    </ng-template>
+</lib-table>
+
+ciao
+<p-table [value]="items" [(selection)]="selectedProducts" dataKey="name" [tableStyle]="{'min-width': '50rem'}" [selectionMode]="'single'">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product let-rowIndex>
+        <tr [pSelectableRow]="product" [pSelectableRowIndex]="rowIndex">
+            <td>
+                <p-tableCheckbox [value]="product"></p-tableCheckbox>
+            </td>
+            <td>{{product.name}}</td>
+            <td>{{product.surname}}</td>
+            <td>{{product.status.description}}</td>
+        </tr>
+    </ng-template>
+</p-table>

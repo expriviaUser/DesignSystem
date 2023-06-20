@@ -1,8 +1,8 @@
 <div class="table-wrapper">
 
-    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent()"
-        (onRowUnselect)="selectedEvent()" [resizableColumns]="resizableColumns" [(selection)]="selectedValue"
-        (selectionChange)="selectedValueChange.emit(selectedValue)" [scrollable]="isScrollable"
+    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent($event)" [dataKey]="dataKey ? dataKey : columns[0].field"
+        (onRowUnselect)="selectedEvent($event)" [resizableColumns]="resizableColumns" [selection]="selectedValue"
+         [scrollable]="isScrollable"
         [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator" [columns]="columns" [value]="value"
         [paginator]="showPaginator" [rows]="nRowsPerPage" [rowsPerPageOptions]="rowsPerPage"
         [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString" [loading]="loading"
@@ -13,7 +13,7 @@
             <tr>
                 <ng-container *ngIf="showHeader">
                     <th *ngIf="isSelectable">
-                        <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox>
+                        <p-tableHeaderCheckbox (click)="checkedEvent($event, null, 'all')"></p-tableHeaderCheckbox>
                     </th>
                     <th *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.sort ? col.field : null">
                         {{col.header}}
@@ -27,7 +27,10 @@
         </ng-template>
 
         <ng-template pTemplate="body" let-rowData let-i="rowIndex" let-columns="columns">
-            <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="i">
+            <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="i" (click)="selectionChangeWithMode($event, rowData)">
+    <td *ngIf="isSelectable">
+        <p-tableCheckbox [value]="rowData" (click)="checkedEvent($event, rowData, 'single')"></p-tableCheckbox>
+    </td>
                 <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
                     [ngTemplateOutletContext]="{data:rowData, column:columns}">
 
@@ -39,16 +42,13 @@
 </div>
 
 <ng-template #internalBody let-data="data" let-columns="column">
-    <td *ngIf="isSelectable">
-        <p-tableCheckbox [value]="data"></p-tableCheckbox>
-    </td>
     <td *ngFor="let col of columns" [class]="col.classes ? col.classes : ''">
         <!-- DATI DELLE COLONNE -->
         <span [innerHTML]="getFieldValue(data, col.field)">
         </span>
     </td>
 
-    <td *ngIf=" actions" pFrozenColumn [frozen]="true" alignFrozen="right">
+    <td *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
         <ng-container [ngTemplateOutlet]="actions" [ngTemplateOutletContext]="{data:data}">
         </ng-container>
     </td>

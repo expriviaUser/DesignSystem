@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { FormPageComponent } from './components/form-page/form-page.component';
+import { TablePageComponent } from './components/table-page/table-page.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,10 @@ const routes: Routes = [
     {
         path: 'form',
         component: FormPageComponent,
+    },
+    {
+        path: 'table',
+        component: TablePageComponent,
     }
 ];
 
