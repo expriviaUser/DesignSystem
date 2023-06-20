@@ -38,8 +38,10 @@ table .p-datatable .p-datatable-wrapper table .p-datatable-thead tr th {
     max-width: 10%;
 }
 
-.p-datatable-thead > tr > th:has(.p-resizable-column) {
-    white-space: unset !important;
+.p-datatable-thead > tr > th {
+    &.p-resizable-column {
+        white-space: unset !important;
+    }
 }
 
 .p-panel {
