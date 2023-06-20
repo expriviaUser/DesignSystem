@@ -13,7 +13,7 @@
             <tr>
                 <ng-container *ngIf="showHeader">
                     <th *ngIf="isSelectable">
-                        <!-- <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox> -->
+                        <p-tableHeaderCheckbox (click)="selectedEvent()"></p-tableHeaderCheckbox>
                     </th>
                     <th *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.sort ? col.field : null">
                         {{col.header}}
