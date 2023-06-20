@@ -15,6 +15,7 @@ import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms'
 export class CheckboxButtonComponent {
     //Insert in input checked status, disabled, and label
     @Input() checked: any = [];
+    @Input() check: boolean = false;
     @Input() disabled: boolean = false;
     @Input() items!: any;
     @Input() rounded: boolean = false;
@@ -23,7 +24,7 @@ export class CheckboxButtonComponent {
 
 
     //Return in output a boolean value
-    @Output() emitChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() emitChange: EventEmitter<any> = new EventEmitter<any>();
     value: any;
     onChange: any = () => { }
     onTouch: any = () => { }
@@ -55,13 +56,15 @@ export class CheckboxButtonComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any, index: number) {
-        if (event.checked)
-            this.checked.push(event.checked);
-        else {
-            const indexToRemove = this.checked.findIndex((item: any) => item === this.items[index]);
-            this.checked.splice(indexToRemove, 1);
+        if (index !== -1) {
+            if (event.checked)
+                this.checked.push(event.checked);
+            else {
+                const indexToRemove = this.checked.findIndex((item: any) => item === this.items[index]);
+                this.checked.splice(indexToRemove, 1);
+            }
         }
-        this.value = this.checked;
+        this.value = index !== -1 ? this.checked : { checked: event.checked, defaultEvent: event.originalEvent as MouseEvent };
         this.onChange(this.value);
         this.emitChange.emit(this.value);
         console.log('value', this.value)

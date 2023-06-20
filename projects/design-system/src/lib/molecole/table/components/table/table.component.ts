@@ -65,6 +65,8 @@ export class TableComponent implements OnInit {
 
     @Input() scrollHeight!: string;
 
+    @Input() dataKey!: string;
+
     @Input() alwaysShowPaginator!: boolean;
 
     @Input() loading!: boolean;
@@ -78,7 +80,7 @@ export class TableComponent implements OnInit {
 
     @Input() emitLazy!: boolean;
 
-    @Input() dataKey: string = '';
+    checked: any = [];
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged: EventEmitter<{ pageNumber: number, field: string, order: number }> = new EventEmitter<{ pageNumber: number, field: string, order: number }>();
@@ -86,8 +88,7 @@ export class TableComponent implements OnInit {
     @Output() lazyLoadChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per aggiornare il valore delle checkbox in tabella
-    private checkedRow: any[] = [];
-    @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]>();
+    @Output() checkedRowValues: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
 
@@ -101,7 +102,10 @@ export class TableComponent implements OnInit {
     constructor(private tableService: LibTableService) { }
 
     ngOnInit() {
-        console.log(this.value)
+        console.log(this.value);
+        if (!this.dataKey) {
+            this.dataKey = this.columns[0].field;
+        }
     }
 
 
@@ -120,15 +124,8 @@ export class TableComponent implements OnInit {
         }
     }
 
-    selectedEvent(event: any) {
-        console.log('Select/unselect', event);
-        if (event.type === 'row') {
-            // this.selectedValueChange.emit(event);
-        }
-        if (event.type === 'checkbox') {
-            // (event.originalEvent as MouseEvent).stopPropagation();
-            this.checkedEvent(event.originalEvent, event.data, 'single');
-        }
+    selectedEvent(event?: any) {
+        this.selectedValueChange.emit(this.selectedValue);
     }
 
     emitSort(event: { field: string, order: number }): void {
@@ -138,20 +135,23 @@ export class TableComponent implements OnInit {
         }
     }
 
-    checkedEvent(event: MouseEvent, data: any, checkType: string) {
-        console.log('checked', checkType + ': ', event);
-        event.stopPropagation();
-        this.checkedRow.push(data);
-        this.selectedTableValues.emit(this.checkedRow);
+    check(event: any, checkType: string, rowData?: any) {
+        event.defaultEvent.stopPropagation();
+        if (checkType === 'all') {
+            this.checked = event.checked ? [...this.value] : [];
+        } else {
+            if (event.checked) {
+                this.checked.push(rowData);
+            } else {
+                const indexToRemove = this.checked.findIndex((item: any) => item[this.dataKey] === rowData[this.dataKey]);
+                this.checked.splice(indexToRemove, 1);
+            }
+        }
+
+        this.checkedRowValues.emit(this.checked);
     }
 
-    selectionChangeWithMode(event: MouseEvent, data: any) {
-        if (this.selectionType === 'checkbox') {
-            console.log('SelModCheckbox', event + ': ', data);
-            event.stopPropagation();
-            // this.selectedValueChange.emit(data);
-        } else {
-            console.log('SelModOthers', event + ': ', data);
-        }
+    isChecked(rowData: any): boolean {
+        return (this.checked.filter((item: any) => item[this.dataKey] === rowData[this.dataKey]).length > 0);
     }
 }

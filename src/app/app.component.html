@@ -233,10 +233,23 @@
 
 <lib-loader></lib-loader> -->
 
-<div>
+<!-- <div>
     <lib-only-filters [dropdownValues]="dropdownValuesSecond" [title]="'Filtra per'"
         (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
     <lib-only-filters *ngIf="dropdownValuesThird" [dropdownValues]="dropdownValuesThird" [title]="' '"
         (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
 </div>
-<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips>
+<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips> -->
+
+<lib-table [value]="items" [columns]="columns" [dataKey]="'name'" [externalBody]="body" [rowsPerPage]="[10]"
+    [totalRecords]="115" [selectionType]="'single'" [isSelectable]="true" [(selectedValue)]="selectionTable">
+    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+    <ng-template #body let-data="data" let-column="column">
+        <td>{{ data[column[0].field] }}</td>
+        <td>{{ data[column[1].field] }}</td>
+        <td>
+            {{column[3].field | json}}
+            <lib-tag [tagSeverity]="'danger'" [tagLabel]="getFieldValue(data, column[3].field)"></lib-tag>
+        </td>
+    </ng-template>
+</lib-table>

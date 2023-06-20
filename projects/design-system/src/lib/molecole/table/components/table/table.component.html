@@ -1,19 +1,21 @@
 <div class="table-wrapper">
 
-    <p-table [selectionMode]="selectionType" [filters]="filters" (onRowSelect)="selectedEvent($event)" [dataKey]="dataKey ? dataKey : columns[0].field"
-        (onRowUnselect)="selectedEvent($event)" [resizableColumns]="resizableColumns" [selection]="selectedValue"
-         [scrollable]="isScrollable"
-        [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator" [columns]="columns" [value]="value"
-        [paginator]="showPaginator" [rows]="nRowsPerPage" [rowsPerPageOptions]="rowsPerPage"
-        [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString" [loading]="loading"
-        [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy" [lazyLoadOnInit]="lazyOnInit"
-        [customSort]="serverSort" (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)"
-        [columnResizeMode]="columnResizeMode" [responsive]="responsive" [responsiveLayout]="responsiveLayout">
+    <p-table [selectionMode]="selectionType" [filters]="filters" [dataKey]="dataKey ? dataKey : columns[0].field"
+        (onRowSelect)="selectedEvent($event)" (onRowUnselect)="selectedEvent()" [resizableColumns]="resizableColumns"
+        [(selection)]="selectedValue" (selectionChange)="selectedValueChange.emit(selectedValue)"
+        [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
+        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="nRowsPerPage"
+        [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString"
+        [loading]="loading" [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy"
+        [lazyLoadOnInit]="lazyOnInit" [customSort]="serverSort" (onSort)="emitSort($event)"
+        (onLazyLoad)="lazyLoading($event)" [columnResizeMode]="columnResizeMode" [responsive]="responsive"
+        [responsiveLayout]="responsiveLayout">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <ng-container *ngIf="showHeader">
                     <th *ngIf="isSelectable">
-                        <p-tableHeaderCheckbox (click)="checkedEvent($event, null, 'all')"></p-tableHeaderCheckbox>
+                        <lib-checkbox-button (emitChange)="check($event, 'all')"
+                            [check]="value.length === checked.length"></lib-checkbox-button>
                     </th>
                     <th *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.sort ? col.field : null">
                         {{col.header}}
@@ -27,10 +29,14 @@
         </ng-template>
 
         <ng-template pTemplate="body" let-rowData let-i="rowIndex" let-columns="columns">
-            <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="i" (click)="selectionChangeWithMode($event, rowData)">
-    <td *ngIf="isSelectable">
-        <p-tableCheckbox [value]="rowData" (click)="checkedEvent($event, rowData, 'single')"></p-tableCheckbox>
-    </td>
+            <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="i">
+                <td *ngIf="isSelectable">
+                    <lib-checkbox-button [check]="isChecked(rowData)"
+                        (emitChange)="check($event, 'single', rowData)"></lib-checkbox-button>
+                </td>
+                <td *ngIf="isSelectable">
+                    {{checked | json}} {{isChecked(rowData) ? true : false}}
+                </td>
                 <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
                     [ngTemplateOutletContext]="{data:rowData, column:columns}">
 

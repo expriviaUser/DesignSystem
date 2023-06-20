@@ -7,6 +7,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { LibButtonModule } from '../../atoms/button/lib-button.module';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { LibTableService } from './services/lib-table.service';
+import { LibCheckboxModule } from '../../atoms/checkbox/lib-checkbox.module';
 
 const primeComponents = [
     TableModule,
@@ -26,6 +27,7 @@ const exportComponent = [
         ...primeComponents,
         CommonModule,
         LibButtonModule,
+        LibCheckboxModule,
         TieredMenuModule
     ],
     exports: [
