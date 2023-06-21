@@ -22,7 +22,7 @@
 
 <router-outlet></router-outlet>
 
-<div class="header">
+<!-- <div class="header">
     <div class="left">
         <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
     </div>
@@ -53,7 +53,7 @@
 
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
 
-<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
+<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters> -->
 <!-- <form [formGroup]="autocompleteForm">
     <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['CIAO','CIAO1', 'CIAO2']" [icon]="'pi pi-search'"
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
@@ -241,9 +241,8 @@
 </div>
 <lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips> -->
 
-<lib-table [value]="items" [columns]="columns" [dataKey]="'name'" [externalBody]="body" [rowsPerPage]="[10]"
+<!-- <lib-table [value]="items" [columns]="columns" [dataKey]="'name'" [externalBody]="body" [rowsPerPage]="[10]"
     [totalRecords]="115" [selectionType]="'single'" [isSelectable]="true" [(selectedValue)]="selectionTable">
-    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
     <ng-template #body let-data="data" let-column="column">
         <td>{{ data[column[0].field] }}</td>
         <td>{{ data[column[1].field] }}</td>
@@ -252,4 +251,6 @@
             <lib-tag [tagSeverity]="'danger'" [tagLabel]="getFieldValue(data, column[3].field)"></lib-tag>
         </td>
     </ng-template>
-</lib-table>
+</lib-table> -->
+
+<lib-radio-tile [tiles]="myTiles"></lib-radio-tile>
