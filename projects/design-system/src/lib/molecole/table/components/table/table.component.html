@@ -34,9 +34,6 @@
                     <lib-checkbox-button [check]="isChecked(rowData)"
                         (emitChange)="check($event, 'single', rowData)"></lib-checkbox-button>
                 </td>
-                <td *ngIf="isSelectable">
-                    {{checked | json}} {{isChecked(rowData) ? true : false}}
-                </td>
                 <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
                     [ngTemplateOutletContext]="{data:rowData, column:columns}">
 

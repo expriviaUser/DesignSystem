@@ -37,6 +37,7 @@
         &disable {
             .p-tag {
                 background: $color--tag-disabled-background;
+                border: 1px solid $color--tag-disabled-background;
             }
         }
 
