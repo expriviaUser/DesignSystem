@@ -67,7 +67,6 @@ export class CheckboxButtonComponent {
         this.value = index !== -1 ? this.checked : { checked: event.checked, defaultEvent: event.originalEvent as MouseEvent };
         this.onChange(this.value);
         this.emitChange.emit(this.value);
-        console.log('value', this.value)
     }
 
 

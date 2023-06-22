@@ -62,7 +62,6 @@ export class ChooseFileComponent {
 
     onSelect(event: any) {
         let filesName: string[] = [];
-        console.log(event.currentFiles);
         event.currentFiles.forEach((file: File) => {
             this.arrayFiles.push(file);
             filesName.push(file.name);

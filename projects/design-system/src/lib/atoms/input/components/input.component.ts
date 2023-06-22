@@ -83,7 +83,6 @@ export class InputComponent {
         this.value = event ? event.target.value : '';
         this.onChange(this.value);
         this.selectedValue.emit(this.value);
-        console.log('value', this.value)
     }
 
     /* numberPattern(event: any) {

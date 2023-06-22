@@ -1,5 +1,5 @@
 import { DatePipe } from "@angular/common";
-import { Component, EventEmitter, forwardRef, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, forwardRef, Input, Output } from "@angular/core";
 import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
 import { CheckBoxModel } from "../../checkbox/models/checkbox.model";
 
@@ -15,7 +15,7 @@ import { CheckBoxModel } from "../../checkbox/models/checkbox.model";
         },
     ],
 })
-export class InputFormComponent implements ControlValueAccessor, OnChanges {
+export class InputFormComponent implements ControlValueAccessor {
     @Input() value!: string;
     @Input() valueInput: any[] = [];
     @Input() checkboxValue!: CheckBoxModel[];
@@ -56,10 +56,6 @@ export class InputFormComponent implements ControlValueAccessor, OnChanges {
         private controlContainer: ControlContainer,
         private datePipe: DatePipe
     ) { }
-
-    ngOnChanges(changes: SimpleChanges) {
-        console.log('InputComponent', changes);
-    }
 
     get control() {
         return this.controlContainer.control!.get(

@@ -102,7 +102,6 @@ export class TableComponent implements OnInit {
     constructor(private tableService: LibTableService) { }
 
     ngOnInit() {
-        console.log(this.value);
         if (!this.dataKey) {
             this.dataKey = this.columns[0].field;
         }
@@ -129,7 +128,6 @@ export class TableComponent implements OnInit {
     }
 
     emitSort(event: { field: string, order: number }): void {
-        console.log(event);
         if (!this.lazy) {
             this.sortValues.emit(event);
         }

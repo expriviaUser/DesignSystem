@@ -71,7 +71,6 @@ export class RadioButtonComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any) {
-        console.log('emitValue', event.value);
         this.value = event.value;
         this.onChange(event.value);
         this.selectedValue.emit(this.value);
@@ -79,7 +78,6 @@ export class RadioButtonComponent {
 
     // upon UI element value change, this method gets triggered
     emitValueNg(event: any) {
-        console.log('emitValue', event.value);
         this.value = event.value;
         this.onChange(event.value);
         this.selectedValue.emit(this.value);
