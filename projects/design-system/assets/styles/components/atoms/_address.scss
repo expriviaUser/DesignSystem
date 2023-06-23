@@ -6,11 +6,21 @@
     flex-direction: column;
     gap: pxToRem(8px);
 
+    &:last-child {
+        gap: 0;
+    }
+
     .title {
         @include typography-small-semibold;
     }
 
     .content {
         @include typography-small-regular;
+    }
+
+    .modify-button {
+        width: 100%;
+        display: flex;
+        justify-content: end;
     }
 }

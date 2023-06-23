@@ -6,7 +6,7 @@
 </div>
 
 <lib-header-menu [items]="itemsMenu">
-    <!-- <ng-container endTemp>
+    <ng-container endTemp>
         <div class="align">
             <lib-cart [externalBody]="external">
                 <ng-template #external let-data="data" let-i="i">
@@ -15,7 +15,7 @@
             </lib-cart>
             <lib-dropdown [valueDropdown]="dropdownValue" [clear]="false"></lib-dropdown>
         </div>
-    </ng-container> -->
+    </ng-container>
 </lib-header-menu>
 
 <lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
@@ -253,6 +253,6 @@
     </ng-template>
 </lib-table> -->
 
-<lib-radio-tile [tiles]="myTiles"></lib-radio-tile>
+<!-- <lib-radio-tile [tiles]="myTiles"></lib-radio-tile> -->
 
-<lib-address [address]="{code: 1, name: 'Nome sede', content: 'Via Roma 1'}"></lib-address>
+<lib-address [address]="{code: 1, name: 'Nome sede', content: 'Via Roma 1'}" [modify]="true"></lib-address>

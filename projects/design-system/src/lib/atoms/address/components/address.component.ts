@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Address } from '../models/address.model';
 
 @Component({
@@ -8,6 +8,9 @@ import { Address } from '../models/address.model';
 })
 export class AddressComponent implements OnInit {
     @Input() address!: Address;
+    @Input() modify: boolean = false;
+
+    @Output() modifyClicked = new EventEmitter<boolean>();
 
     ngOnInit() {
         console.log(this.address);

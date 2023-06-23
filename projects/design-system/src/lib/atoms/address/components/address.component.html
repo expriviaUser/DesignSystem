@@ -5,4 +5,7 @@
     <div class="content">
         {{address.content}}
     </div>
+    <div class="modify-button" *ngIf="modify">
+        <lib-button [type]="'link'" [label]="'Modifica'" (onClick)="modifyClicked.emit()"></lib-button>
+    </div>
 </div>
