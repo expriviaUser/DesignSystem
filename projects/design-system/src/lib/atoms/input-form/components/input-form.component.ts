@@ -32,7 +32,8 @@ export class InputFormComponent implements ControlValueAccessor {
     @Input() inputDisabled: boolean = false;
     @Input() placeholder: string = "Inserisci un valore";
     @Input() formControlName: string = "";
-    @Input() field: string = "";
+    @Input() field: string = '';
+    @Input() fieldAutocompleteCard: string[] = [];
     @Input() inlineCal: boolean = false;
     @Input() selectionType: string = 'single';
     @Input() defaultDateFormat: string = 'dd-mm-yy';

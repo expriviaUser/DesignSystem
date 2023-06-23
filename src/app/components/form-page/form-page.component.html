@@ -39,6 +39,11 @@
         <lib-input-form [type]="'radio'" [valueInput]="[{data: 1, label: 'Prova'},{data: 2, label: 'Ciao'}]"
             formControlName="radio" [label]="'Radio'">
         </lib-input-form>
+        <lib-input-form [type]="'autocomplete-card'" formControlName="autocompleteCard" [label]="'Autocomplete Card'"
+            [placeholder]="'Indirizzi'" [icon]="'pi pi-user'" [fieldAutocompleteCard]="['name', 'content']"
+            [clear]="true"
+            [valueInput]="[{code: 1, name: 'Nome Sede', content: 'Via Roma 1'}, {code: 2, name: 'Nome Sede', content: 'Via Napoli 1'}, {code: 3, name: 'Nome Sede', content: 'Via Catania 1'}]">
+        </lib-input-form>
     </div>
 
     <lib-button [label]="'Submit'" [size]="'small'" (onClick)="submit()"></lib-button>

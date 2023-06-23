@@ -1,0 +1,21 @@
+<div [ngClass]="{'autocomplete': true, 'dropdown':icon, 'field': true}">
+    <label *ngIf="label">{{label}}</label>
+    <div [ngClass]="{'autocomplete-card':true, 'autocomplete': true, 'dropdown':icon}">
+        <p-autoComplete #autocomplete [showClear]="showClear && !icon"
+            [inputStyleClass]="haveError ? 'ng-invalid ng-dirty':''" [appendTo]="appendTo" [(ngModel)]="value"
+            [placeholder]="placeholder" [suggestions]="filteredList" (change)="emitValueIfExist($event, autocomplete)"
+            (onSelect)="emitValue($event)" (onClear)="emitValue('')" (completeMethod)="filter($event)"
+            [minLength]="minLength" [disabled]="disabled" [dropdownIcon]="icon" [dropdown]="true" dropdownMode="current"
+            [field]="getCustomField()">
+            <ng-template let-item pTemplate="item">
+                <lib-address [address]="item"></lib-address>
+            </ng-template>
+            <ng-template let-item pTemplate="selectedItem">
+                ciao
+            </ng-template>
+        </p-autoComplete>
+        <div *ngIf="valueItem && control.valid">
+            <lib-address [address]="valueItem"></lib-address>
+        </div>
+    </div>
+</div>

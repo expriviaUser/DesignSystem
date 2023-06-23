@@ -52,6 +52,11 @@
             [id]="formControlName+'-label'"></lib-radio-button>
     </div>
 
+    <lib-autocomplete-card *ngSwitchCase="'autocomplete-card'" [value]="control.value" [placeholder]="placeholder"
+        [label]="label + (required ? ' *' : '')" [appendTo]="appendTo" [minLength]="minLenghtDigits"
+        (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
+        [disabled]="inputDisabled" [icon]="icon" [field]="fieldAutocompleteCard"></lib-autocomplete-card>
+
     <!-- Input Textarea  -->
     <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
         [label]="label + (required ? ' *' : '')" [placeholder]="placeholder"></lib-textarea>

@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormPageComponent {
     form: FormGroup = this.fb.group({
         autocomplete: [''],
+        autocompleteCard: [''],
         input: ['', Validators.required],
         psw: [''],
         dropdown: [''],

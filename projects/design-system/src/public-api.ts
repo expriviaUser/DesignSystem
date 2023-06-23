@@ -41,6 +41,13 @@ export * from './lib/atoms/calendar/lib-calendar.module';
 export * from './lib/atoms/autocomplete/components/autocomplete.component';
 export * from './lib/atoms/autocomplete/lib-autocomplete.module';
 
+export * from './lib/atoms/autocomplete-card/components/autocomplete-card.component';
+export * from './lib/atoms/autocomplete-card/lib-autocomplete-card.module';
+
+export * from './lib/atoms/address/components/address.component';
+export * from './lib/atoms/address/models/address.model';
+export * from './lib/atoms/address/lib-address.module';
+
 export * from './lib/atoms/checkbox/components/checkbox-button.component';
 export * from './lib/atoms/checkbox/models/checkbox.model';
 export * from './lib/atoms/checkbox/lib-checkbox.module';
