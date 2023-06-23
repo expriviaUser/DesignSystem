@@ -147,7 +147,7 @@ export class AutocompleteCardComponent {
                 this.selectedValue.emit(this.value);
                 return;
             }
-            else {
+            else if (this.value) {
                 this.valueItem = null;
                 this.onChange("");
                 this.selectedValue.emit("");
