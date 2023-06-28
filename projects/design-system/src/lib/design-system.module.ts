@@ -37,6 +37,7 @@ import { HeaderItemsService, LibTableService } from '../public-api';
 import { PipesModule } from './pipes/pipes.module';
 import { LibLoaderModule } from './atoms/loader/lib-loader.module';
 import { LibAddressModule } from './atoms/address/lib-address.module';
+import { LibTimelineModule } from './atoms/timeline/lib-timeline.module';
 
 const sharedModules = [
     LibTagModule,
@@ -75,7 +76,8 @@ const sharedModules = [
     PipesModule,
     LibLoaderModule,
     HeaderItemsModule,
-    LibAddressModule
+    LibAddressModule,
+    LibTimelineModule
 ];
 
 @NgModule({

@@ -41,6 +41,9 @@ export * from './lib/atoms/calendar/lib-calendar.module';
 export * from './lib/atoms/autocomplete/components/autocomplete.component';
 export * from './lib/atoms/autocomplete/lib-autocomplete.module';
 
+export * from './lib/atoms/timeline/components/timeline.component';
+export * from './lib/atoms/timeline/lib-timeline.module';
+
 export * from './lib/atoms/autocomplete-card/components/autocomplete-card.component';
 export * from './lib/atoms/autocomplete-card/lib-autocomplete-card.module';
 

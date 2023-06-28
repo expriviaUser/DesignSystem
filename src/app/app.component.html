@@ -209,7 +209,7 @@
 <lib-tree-select [nodes]="treeSelectNodes">
 </lib-tree-select>
 
-<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
+
 <div>
     <lib-only-filters [dropdownValues]="dropdownValuesSecond" [title]="'Filtra per'"
         (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
@@ -255,4 +255,51 @@
 
 <!-- <lib-radio-tile [tiles]="myTiles"></lib-radio-tile> -->
 
-<lib-address [address]="{code: 1, name: 'Nome sede', content: 'Via Roma 1'}" [modify]="true"></lib-address>
+<!-- <lib-address [address]="{code: 1, name: 'Nome sede', content: 'Via Roma 1'}" [modify]="true"></lib-address> -->
+
+<!-- <lib-timeline [events]="myEvents" [externalContent]="content" [externalOpposite]="opposite">
+    <ng-template #content let-data="data">
+        <div>
+            <span class="subtitle-second-semibold"> {{data.date | date: 'EEEE dd MMMM yyyy'}}</span> <br>
+            <div *ngFor="let label of data.labels, let i = index" class="margin-on-bottom"
+                [ngStyle]="{'visibility': i > 0 && label.address.label === data.labels[i-1].address.label ? 'hidden' : 'unset'}">
+                <span class="small-semibold"> {{label.address.label}}</span> <br>
+                <span class="small-regular"> {{label.address.content}}</span>
+
+
+            </div>
+
+        </div>
+    </ng-template>
+    <ng-template #opposite let-data="data">
+        <div *ngFor="let label of data.labels" class="margin-on-top">
+            <lib-card>
+                <div class="row" cContentTemplate>
+                    <div class="col-sm-6 nowrap subtitle-second-semibold">
+                        {{label.request.label}}
+                    </div>
+                    <div class="col-sm-6 body-regular onright">
+                        Id Richiesta: {{label.request.requestId}}
+                    </div>
+                </div>
+                <div class="row mt-3" cContentTemplate>
+                    <div class="col-sm-6 d-flex flex-column">
+                        <span class="body-regular">Richiesta effettuata il:</span>
+                        <span class="body-semibold">{{label.request.date | date: 'dd MMMM yyyy'}}</span>
+                    </div>
+                    <div class="col-sm-6 onright-end">
+                        <lib-tag [tagSeverity]="'info'" [tagLabel]="'In Attesa'"></lib-tag>
+                    </div>
+                </div>
+            </lib-card>
+        </div>
+    </ng-template>
+</lib-timeline> -->
+
+<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
+
+<lib-button [label]="'Message'" [size]="'small'" [type]="'primary'" (onClick)="message()"></lib-button>
+<lib-button [label]="'Message'" [size]="'small'" [type]="'primary'" (onClick)="message()"></lib-button>
+<!-- 
+<p-messages></p-messages> -->
+<lib-message [key]="'all'"></lib-message>

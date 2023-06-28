@@ -6324,7 +6324,6 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 
 // Message component
 .p-message {
-    margin: 1rem 0;
     border-radius: $border-radius;
 
     .p-message-wrapper {
@@ -6369,58 +6368,74 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-message.p-message-info {
-    background: $color--surface-a;
+    background: white;
     border: 1px solid $color--blue-100;
-    color: $color--black-700;
+    color: $color--blue-100;
+
+    .p-message-wrapper {
+        background: rgba($color--blue-100, 0.1);
+    }
 
     .p-message-icon {
         color: $color--blue-100;
     }
 
     .p-message-close {
-        color: $color--black-700;
+        color: $color--blue-100;
     }
 }
 
 .p-message.p-message-success {
-    background: $color--surface-a;
+    background: white;
     border: 1px solid $color--green-50;
-    color: $color--black-700;
+    color: $color--green-50;
+
+    .p-message-wrapper {
+        background: rgba($color--green-50, 0.1);
+    }
 
     .p-message-icon {
         color: $color--green-50;
     }
 
     .p-message-close {
-        color: $color--black-700;
+        color: $color--green-50;
     }
 }
 
 .p-message.p-message-warn {
-    background: $color--surface-a;
+    background: white;
     border: 1px solid $color--orange-50;
-    color: $color--black-700;
+    color: $color--orange-50;
+
+    .p-message-wrapper {
+        background: rgba($color--orange-50, 0.1);
+    }
 
     .p-message-icon {
         color: $color--orange-50;
     }
 
     .p-message-close {
-        color: $color--black-700;
+        color: $color--orange-50;
     }
 }
 
 .p-message.p-message-error {
-    background: $color--surface-a;
+    background: white;
     border: 1px solid $color--red-200;
-    color: $color--black-700;
+    color: $color--red-200;
+
+    .p-message-wrapper {
+        background: rgba($color--red-200, 0.1);
+    }
 
     .p-message-icon {
         color: $color--red-200;
     }
 
     .p-message-close {
-        color: $color--black-700;
+        color: $color--red-200;
     }
 }
 

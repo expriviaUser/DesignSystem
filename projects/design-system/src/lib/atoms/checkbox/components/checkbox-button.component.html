@@ -1,5 +1,5 @@
 <div class="check field">
-    <label *ngIf="label">{{label}}</label>
+    <label *ngIf="label && items">{{label}}</label>
     <div class="check-list" *ngIf="items">
         <div *ngFor="let item of items; let i = index">
             <p-checkbox #checkboxInput [ngClass]="{'rounded': rounded}" [label]="item.label"
@@ -9,6 +9,7 @@
     </div>
     <div class="check-list" *ngIf="!items">
         <p-checkbox #checkboxInput [ngClass]="{'rounded': rounded}" (onChange)="emitValue($event, -1)" [binary]="true"
-            [(ngModel)]="check" [trueValue]="true" [falseValue]="false" [disabled]="disabled"></p-checkbox>
+            [(ngModel)]="check" [trueValue]="true" [falseValue]="false" [disabled]="disabled"
+            [label]="label"></p-checkbox>
     </div>
 </div>

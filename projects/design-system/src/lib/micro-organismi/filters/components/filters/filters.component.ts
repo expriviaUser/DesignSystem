@@ -70,7 +70,7 @@ export class FiltersComponent implements OnInit {
     }
 
     createDropChip(event: any, dropdownIndex: number, dropdownField: string, selectionType: string): void {
-        if (event >= 0) {
+        if (event != null) {
             if (selectionType === 'single') {
                 let indexToRemove = this.chipsList.findIndex(item => item.field == dropdownField);
                 if (indexToRemove !== -1)
