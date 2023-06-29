@@ -148,6 +148,7 @@ export class FiltersComponent implements OnInit {
             this.chipsExport[chipValue.field] = [];
             //this.resetCalendarValue = null;
         } else if (chipValue.type === 'dropdown') {
+            this.chipsExport[chipValue.field].splice(E_INDEX, 1);
             const dropdownFilteredArray = this.dropdownValues.filter(item => item.type === 'dropdown');
             const index = dropdownFilteredArray.findIndex(item => item.field === chipValue.field);
             const dropdown = this.dropdown.get(index);
