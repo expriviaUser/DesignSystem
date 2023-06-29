@@ -37,6 +37,7 @@ export class CalendarComponent {
     @Input() selectionType: string = 'single';
     @Input() control: AbstractControl = new FormControl();
     @Input() placeholder: string = '';
+    @Input() appendTo: string = '';
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() defaultDateFormat: string = 'dd-mm-yy';
