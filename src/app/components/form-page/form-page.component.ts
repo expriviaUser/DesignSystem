@@ -13,7 +13,7 @@ export class FormPageComponent {
         input: ['', Validators.required],
         psw: [''],
         dropdown: [''],
-        calendar: [''],
+        calendar: [new Date('2023-05-15')],
         chooseFile: [''],
         number: [''],
         checkbox: [''],
