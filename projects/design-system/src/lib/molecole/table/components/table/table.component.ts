@@ -136,7 +136,7 @@ export class TableComponent implements OnInit {
     check(event: any, checkType: string, rowData?: any) {
         event.defaultEvent.stopPropagation();
         if (checkType === 'all') {
-            this.checked = event.checked ? [...this.value] : [];
+            this.checked = event.checked ? [...this.value.filter(el => el && !el.isDisabledChecked)] : [];
         } else {
             if (event.checked) {
                 this.checked.push(rowData);
