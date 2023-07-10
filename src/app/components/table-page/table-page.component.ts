@@ -13,6 +13,7 @@ export class TablePageComponent {
             name: 'Simone',
             surname: 'Giannuario',
             status: { id: 0, description: 'prova' },
+            isDisabledChecked: true
         },
         {
             name: 'Daniele',
