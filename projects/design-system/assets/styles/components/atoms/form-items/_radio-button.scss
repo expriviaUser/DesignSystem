@@ -6,12 +6,11 @@
 
 // PrimeNG pradiobutton component
 p-radiobutton {
-
     margin-right: 0.5rem;
     // width: 22px;
     height: 22px;
 
-    +label {
+    + label {
         margin-right: 0.5rem;
 
         &:last-child {
@@ -27,7 +26,11 @@ p-radiobutton {
         height: 22px;
         color: $color--text-color;
         border-radius: 50%;
-        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        transition:
+            background-color 0.2s,
+            color 0.2s,
+            border-color 0.2s,
+            box-shadow 0.2s;
 
         &:not(.p-disabled):not(.p-highlight):hover {
             border-color: $color--radio-button-border-default;
@@ -65,7 +68,7 @@ p-radiobutton {
     }
 }
 
-p-radiobutton.ng-dirty.ng-invalid>.p-radiobutton>.p-radiobutton-box {
+p-radiobutton.ng-dirty.ng-invalid > .p-radiobutton > .p-radiobutton-box {
     border-color: $color--red-900;
 }
 

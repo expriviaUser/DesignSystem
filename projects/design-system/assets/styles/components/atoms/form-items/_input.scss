@@ -12,6 +12,10 @@
         color: $color--form-label-text;
     }
 
+    label.radio-button {
+        @include typography-subtitle-second-regular;
+    }
+
     // TODO: refactor di questo sotto.
     &:has(.field-checkbox) {
         min-height: 50px;
