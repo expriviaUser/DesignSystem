@@ -11,6 +11,7 @@
     "private": false,
     "dependencies": {
         "@angular/animations": "^15.2.0",
+        "@angular/cdk": "^15.2.9",
         "@angular/common": "^15.2.0",
         "@angular/compiler": "^15.2.0",
         "@angular/core": "^15.2.0",
@@ -20,14 +21,14 @@
         "@angular/router": "^15.2.0",
         "@dnlcorti/design-system": "file:dist/design-system",
         "bootstrap": "^5.2.3",
+        "engine.io": "^6.4.2",
         "material-design-icons": "^3.0.1",
         "material-icons": "^1.13.3",
         "primeicons": "^6.0.1",
         "primeng": "^15.2.1",
         "rxjs": "~7.8.0",
         "tslib": "^2.3.0",
-        "zone.js": "~0.12.0",
-        "engine.io": "^6.4.2"
+        "zone.js": "~0.12.0"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^15.2.2",

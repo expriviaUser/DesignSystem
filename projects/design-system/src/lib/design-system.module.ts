@@ -38,6 +38,7 @@ import { PipesModule } from './pipes/pipes.module';
 import { LibLoaderModule } from './atoms/loader/lib-loader.module';
 import { LibAddressModule } from './atoms/address/lib-address.module';
 import { LibTimelineModule } from './atoms/timeline/lib-timeline.module';
+import { LibPickListModule } from './atoms/pick-list/lib-pick-list.module';
 
 const sharedModules = [
     LibTagModule,
@@ -77,7 +78,8 @@ const sharedModules = [
     LibLoaderModule,
     HeaderItemsModule,
     LibAddressModule,
-    LibTimelineModule
+    LibTimelineModule,
+    LibPickListModule
 ];
 
 @NgModule({

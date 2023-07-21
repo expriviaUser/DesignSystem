@@ -83,6 +83,9 @@ export * from './lib/atoms/dialog/lib-dialog.module';
 export * from './lib/atoms/icon-circle/components/icon-circle.component';
 export * from './lib/atoms/icon-circle/lib-icon-circle.module';
 
+export * from './lib/atoms/pick-list/components/pick-list.component';
+export * from './lib/atoms/pick-list/lib-pick-list.module';
+
 export * from './lib/atoms/tabs/components/tabs.component';
 export * from './lib/atoms/tabs/models/tabs.model';
 export * from './lib/atoms/tabs/lib-tabs.module';
