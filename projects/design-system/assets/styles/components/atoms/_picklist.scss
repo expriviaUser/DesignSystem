@@ -1,0 +1,117 @@
+.p-picklist .p-picklist-buttons {
+    padding: 1.25rem;
+}
+
+.p-picklist .p-picklist-buttons .p-button {
+    margin-bottom: 0.5rem;
+    color: $color--button-secondary-text;
+    background: $color--button-secondary-background;
+    border: 1px solid $color--button-secondary-border;
+    &:enabled {
+        &:hover {
+            border-color: $color--button-secondary-border-hover;
+            background: $color--button-secondary-background;
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem #e2e8f0;
+        }
+        &:active {
+            border-color: $color--button-secondary-border-hover;
+            background: $color--button-secondary-background;
+        }
+    }
+    &:disabled {
+        color: $color--button-secondary-text-disabled;
+        background: $color--button-secondary-background-disabled;
+        border: 1px solid $color--button-secondary-border-disabled;
+    }
+}
+
+.p-picklist .p-picklist-header {
+    padding: 1.25rem;
+    padding-left: unset;
+    border-bottom: 0 none;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+}
+
+.p-picklist .p-picklist-header .p-picklist-title {
+    @include typography-subtitle-second-semibold;
+    color: $color--black;
+}
+
+.p-picklist .p-picklist-filter-container {
+    padding: 1.25rem 0.75rem;
+    background: $color--surface-a;
+    border: 1px solid $color--surface-d;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom: 0 none;
+}
+
+.p-picklist .p-picklist-filter-container .p-picklist-filter-input {
+    padding-right: 1.75rem;
+}
+
+.p-picklist .p-picklist-filter-container .p-picklist-filter-icon {
+    right: 0.75rem;
+    color: $color--text-color-secondary;
+}
+
+.p-picklist .p-picklist-list {
+    border: 1px solid $color--surface-d;
+    border-top: 0 none;
+    background: $color--surface-a;
+    color: $color--text-color;
+    padding: 0.75rem 0;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+
+.p-picklist .p-picklist-list .p-picklist-item {
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    border: 0 none;
+    color: $color--text-color;
+    background: transparent;
+    transition: box-shadow 0.2s;
+    @include typography-body-regular;
+}
+
+.p-picklist .p-picklist-list .p-picklist-item:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 0.15rem $color--cyan-100;
+}
+
+.p-picklist .p-picklist-list .p-picklist-item.p-highlight {
+    color: $color--blue-700;
+    background: $color--gray-200;
+}
+
+.p-picklist .p-picklist-list .p-picklist-empty-message {
+    padding: 0.75rem 1.25rem;
+    color: $color--text-color;
+}
+
+.p-picklist .p-picklist-list:not(.cdk-drop-list-dragging) .p-picklist-item:not(.p-highlight):hover {
+    background: $color--surface-c;
+    color: $color--text-color;
+}
+
+.p-picklist.p-picklist-striped .p-picklist-list .p-picklist-item:nth-child(even) {
+    background: #fcfcfc;
+}
+
+.p-picklist.p-picklist-striped .p-picklist-list .p-picklist-item:nth-child(even):hover {
+    background: $color--surface-c;
+}
+
+.p-picklist-item.cdk-drag-preview {
+    padding: 0.75rem 1.25rem;
+    box-shadow: 0 2px 12px 0 rgba($color--black-50, 0.1);
+    border: 0 none;
+    color: $color--text-color;
+    background: $color--surface-a;
+    margin: 0;
+}

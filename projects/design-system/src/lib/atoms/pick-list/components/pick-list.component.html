@@ -1,6 +1,8 @@
 <p-pickList [source]="sourceArray" [target]="targetArray" [sourceHeader]="sourceLabel" [targetHeader]="targetLabel"
     [dragdrop]="dragDrop" [responsive]="responsive" [filterBy]="filterBy" [showSourceControls]="showSourceControl"
     [showTargetControls]="showTargetControl" [sourceFilterPlaceholder]="sourceFilterPlaceholder"
+    (onMoveAllToSource)="moveAllTo($event, 'source')" (onMoveAllToTarget)="moveAllTo($event, 'target')"
+    (onMoveToSource)="moveOneTo($event, 'source')" (onMoveToTarget)="moveOneTo($event, 'target')"
     [targetFilterPlaceholder]="targetFilterPlaceholder">
     <ng-template let-item pTemplate="item">
         <ng-template [ngTemplateOutlet]="template ? template : internalBody" [ngTemplateOutletContext]="{data:item}">

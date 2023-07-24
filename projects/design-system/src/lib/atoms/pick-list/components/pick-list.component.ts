@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 
 @Component({
     selector: 'lib-pick-list',
@@ -19,4 +19,18 @@ export class PickListComponent {
     @Input() showSourceControl: boolean = false;
     @Input() showTargetControl: boolean = false;
 
+    @Output() sourceArrayChange = new EventEmitter<any>();
+    @Output() targetArrayChange = new EventEmitter<any>();
+
+
+    moveAllTo(event: any, position: string) {
+        console.log(event, position);
+        console.log(this.targetArray, this.sourceArray);
+
+    }
+
+    moveOneTo(event: any, position: string) {
+        console.log(event, position);
+        console.log(this.targetArray, this.sourceArray);
+    }
 }
