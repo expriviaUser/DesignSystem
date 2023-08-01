@@ -15,6 +15,8 @@ export class PickListComponent {
     @Input() targetFilterPlaceholder: string = '';
     @Input() template!: TemplateRef<any>;
     @Input() sourceArray: any[] = [];
+    @Input() targetStyle!: any;
+    @Input() sourceStyle!: any;
     @Input() targetArray: any[] = [];
     @Input() showSourceControl: boolean = false;
     @Input() showTargetControl: boolean = false;

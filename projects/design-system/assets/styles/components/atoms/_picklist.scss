@@ -1,6 +1,18 @@
 .p-picklist .p-picklist-buttons {
     padding: 1.25rem;
+    /*   position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -10%); */
 }
+
+.p-picklist {
+    position: relative;
+}
+
+/* .p-picklist-list-wrapper {
+    margin: 0 35px;
+} */
 
 .p-picklist .p-picklist-buttons .p-button {
     margin-bottom: 0.5rem;
@@ -60,18 +72,20 @@
 
 .p-picklist .p-picklist-list {
     border: 1px solid $color--surface-d;
-    border-top: 0 none;
     background: $color--surface-a;
     color: $color--text-color;
     padding: 0.75rem 0;
-    border-bottom-right-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    border-radius: $border-radius;
+}
+
+.p-picklist-filter-container + .p-picklist-list {
+    border-top: 0 none;
+    border-top-left-radius: 0;
 }
 
 .p-picklist .p-picklist-list .p-picklist-item {
     padding: 0.75rem 1.25rem;
     margin: 0;
-    border: 0 none;
     color: $color--text-color;
     background: transparent;
     transition: box-shadow 0.2s;

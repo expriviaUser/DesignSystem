@@ -5,7 +5,7 @@
 <div class="height-fix">
     <lib-pick-list [sourceLabel]="'Disponibili'" [targetLabel]="'Selezionati'" [sourceFilterPlaceholder]="'Filtra'"
         [(sourceArray)]="items" [(targetArray)]="items2" [targetFilterPlaceholder]="'Filtra'" [template]="template"
-        [filterBy]="'label'" [dragDrop]="true">
+        [dragDrop]="true">
         <ng-template #template let-data="data">
             {{data.label}}
         </ng-template>
