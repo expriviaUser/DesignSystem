@@ -3,7 +3,9 @@
     [showTargetControls]="showTargetControl" [sourceFilterPlaceholder]="sourceFilterPlaceholder"
     [sourceStyle]="sourceStyle" [targetStyle]="targetStyle" (onMoveAllToSource)="moveAllTo($event, 'source')"
     (onMoveAllToTarget)="moveAllTo($event, 'target')" (onMoveToSource)="moveOneTo($event, 'source')"
-    (onMoveToTarget)="moveOneTo($event, 'target')" [targetFilterPlaceholder]="targetFilterPlaceholder">
+    [metaKeySelection]="metaKeySelection" (onSourceSelect)="onSourceSelect($event)"
+    (onTargetSelect)="onTargetSelect($event)" (onMoveToTarget)="moveOneTo($event, 'target')"
+    [targetFilterPlaceholder]="targetFilterPlaceholder">
     <ng-template let-item pTemplate="item">
         <ng-template [ngTemplateOutlet]="template ? template : internalBody" [ngTemplateOutletContext]="{data:item}">
 

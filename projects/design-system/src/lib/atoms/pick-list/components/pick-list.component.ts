@@ -16,6 +16,7 @@ export class PickListComponent {
     @Input() template!: TemplateRef<any>;
     @Input() sourceArray: any[] = [];
     @Input() targetStyle!: any;
+    @Input() metaKeySelection: boolean = true;
     @Input() sourceStyle!: any;
     @Input() targetArray: any[] = [];
     @Input() showSourceControl: boolean = false;
@@ -23,6 +24,8 @@ export class PickListComponent {
 
     @Output() sourceArrayChange = new EventEmitter<any>();
     @Output() targetArrayChange = new EventEmitter<any>();
+    @Output() targetSelection = new EventEmitter<any>();
+    @Output() sourceSelection = new EventEmitter<any>();
 
 
     moveAllTo(event: any, position: string) {
@@ -34,5 +37,13 @@ export class PickListComponent {
     moveOneTo(event: any, position: string) {
         console.log(event, position);
         console.log(this.targetArray, this.sourceArray);
+    }
+
+    onTargetSelect(event: any) {
+        this.targetSelection.emit(event.items);
+    }
+
+    onSourceSelect(event: any) {
+        this.sourceSelection.emit(event.items);
     }
 }

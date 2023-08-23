@@ -12,6 +12,7 @@ import { LibTextareaModule } from '../textarea/lib-textarea.module';
 import { InputFormComponent } from './components/input-form.component';
 import { LibAutocompleteCardModule } from '../autocomplete-card/lib-autocomplete-card.module';
 import { LibListboxModule } from '../listbox/lib-listbox.module';
+import { LibMultiSelectModule } from '../multi-select/lib-multi-select.module';
 
 
 const primeComponents = [
@@ -25,7 +26,8 @@ const primeComponents = [
     LibErrorInlineModule,
     LibChooseFileModule,
     LibAutocompleteCardModule,
-    LibListboxModule
+    LibListboxModule,
+    LibMultiSelectModule
 ];
 
 const exportComponent = [

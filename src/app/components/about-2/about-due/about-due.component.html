@@ -5,12 +5,16 @@
 <div class="height-fix">
     <lib-pick-list [sourceLabel]="'Disponibili'" [targetLabel]="'Selezionati'" [sourceFilterPlaceholder]="'Filtra'"
         [(sourceArray)]="items" [(targetArray)]="items2" [targetFilterPlaceholder]="'Filtra'" [template]="template"
-        [dragDrop]="true">
+        [dragDrop]="true" [metaKeySelection]="false">
         <ng-template #template let-data="data">
             {{data.label}}
         </ng-template>
 
     </lib-pick-list>
+</div>
+<div class="multi">
+    <lib-multi-select [valueDropdown]="[{code: 0, name: 'Ciao'}, {code: 1, name: 'Ciao1'}]" [filterActive]="false"
+        [placeholder]="'Prova'" (selectedValue)="selection($event)"></lib-multi-select>
 </div>
 
 <div (click)="prova()">CIAO</div>
