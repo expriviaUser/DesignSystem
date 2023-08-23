@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { LibTableService } from '../public-api';
+import { LibAddressModule } from './atoms/address/lib-address.module';
 import { LibAutocompleteModule } from './atoms/autocomplete/lib-autocomplete.module';
 import { LibBadgeModule } from './atoms/badge/lib-badge.module';
 import { LibBreadcrumbModule } from './atoms/breadcrumb/lib-breadcrumb.module';
@@ -7,38 +10,35 @@ import { LibCalendarModule } from './atoms/calendar/lib-calendar.module';
 import { LibCardModule } from './atoms/card/lib-card.module';
 import { LibCheckboxModule } from './atoms/checkbox/lib-checkbox.module';
 import { LibChipModule } from './atoms/chip/lib-chip.module';
+import { LibChooseFileModule } from './atoms/choose-file/choose-file.module';
 import { LibDialogModule } from './atoms/dialog/lib-dialog.module';
 import { LibDropdownModule } from './atoms/dropdown/lib-dropdown.module';
 import { LibIconCircleModule } from './atoms/icon-circle/lib-icon-circle.module';
 import { InputFormModule } from './atoms/input-form/input-form.module';
 import { LibInputModule } from './atoms/input/lib-input.module';
+import { LibLoaderModule } from './atoms/loader/lib-loader.module';
+import { LibPickListModule } from './atoms/pick-list/lib-pick-list.module';
+import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
 import { LibRadioButtonModule } from './atoms/radio-button/lib-radio-button.module';
+import { SidebarModule } from './atoms/sidebar/sidebar.module';
+import { SwitchModule } from './atoms/switch/switch.module';
 import { LibTabsModule } from './atoms/tabs/lib-tabs.module';
 import { LibTagModule } from './atoms/tag/lib-tag.module';
 import { LibTextareaModule } from './atoms/textarea/lib-textarea.module';
+import { LibTimelineModule } from './atoms/timeline/lib-timeline.module';
+import { LibTreeSelectModule } from "./atoms/tree-select/lib-tree-select.module";
+import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
+import { LibFiltersModule } from "./micro-organismi/filters/lib-filters.module";
 import { CtaBarModule } from './molecole/cta-bar/cta-bar.module';
+import { FileStatusModule } from './molecole/file-status/file-status.module';
+import { FileModule } from './molecole/file/file.module';
 import { HeaderItemsModule } from './molecole/header-items/header-items.module';
+import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
 import { LibMessagesModule } from './molecole/messages/lib-messages.module';
 import { LibRadioTileModule } from './molecole/radio-tile/lib-radio-tile.module';
-import { LibFiltersModule } from "./micro-organismi/filters/lib-filters.module";
-import { HeaderMenuModule } from './molecole/header-menu/header-menu.module';
-import { SidebarModule } from './atoms/sidebar/sidebar.module';
-import { CommonModule } from '@angular/common';
 import { LibTableModule } from './molecole/table/lib-table.module';
-import { FileModule } from './molecole/file/file.module';
-import { FileStatusModule } from './molecole/file-status/file-status.module';
-import { LibTreeSelectModule } from "./atoms/tree-select/lib-tree-select.module";
-import { LibProgressBarModule } from './atoms/progress-bar/lib-progress-bar.module';
 import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
-import { LibChooseFileModule } from './atoms/choose-file/choose-file.module';
-import { SwitchModule } from './atoms/switch/switch.module';
-import { LibTreemenuModule } from './atoms/treemenu/lib-treemenu.module';
-import { HeaderItemsService, LibTableService } from '../public-api';
 import { PipesModule } from './pipes/pipes.module';
-import { LibLoaderModule } from './atoms/loader/lib-loader.module';
-import { LibAddressModule } from './atoms/address/lib-address.module';
-import { LibTimelineModule } from './atoms/timeline/lib-timeline.module';
-import { LibPickListModule } from './atoms/pick-list/lib-pick-list.module';
 
 const sharedModules = [
     LibTagModule,
@@ -83,7 +83,8 @@ const sharedModules = [
 ];
 
 @NgModule({
-    declarations: [],
+    declarations: [
+    ],
     imports: [
         CommonModule,
         ...sharedModules

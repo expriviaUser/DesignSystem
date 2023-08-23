@@ -40,6 +40,7 @@ export class InputFormComponent implements ControlValueAccessor {
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() showButtonBar!: boolean;
+    @Input() multiSelectFilterActive: boolean = true;
     @Input() minLenghtDigits: number = 3;
     @Input() fileAcceptExtensions!: string;
     @Input() maxFileSize!: number;

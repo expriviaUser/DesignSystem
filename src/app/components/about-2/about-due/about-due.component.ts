@@ -12,4 +12,8 @@ export class AboutDueComponent {
     prova() {
         console.log(this.items, this.items2);
     }
+
+    selection(event: any) {
+        console.log(event);
+    }
 }

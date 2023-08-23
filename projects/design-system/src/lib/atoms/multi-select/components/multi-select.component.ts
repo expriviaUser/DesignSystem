@@ -1,19 +1,18 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
-import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { DropdownType } from '../models/dropdown.model';
-import { Dropdown } from 'primeng/dropdown';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR, AbstractControl, FormControl } from '@angular/forms';
+import { DropdownType } from '../../dropdown/models/dropdown.model';
 
 @Component({
-    selector: 'lib-dropdown',
-    templateUrl: './dropdown.component.html',
-    styleUrls: ['./dropdown.component.scss'],
+    selector: 'lib-multi-select',
+    templateUrl: './multi-select.component.html',
+    styleUrls: ['./multi-select.component.scss'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => DropdownComponent),
+        useExisting: forwardRef(() => MultiSelectComponent),
         multi: true
     }]
 })
-export class DropdownComponent implements OnInit {
+export class MultiSelectComponent implements OnInit {
     protected isObject: boolean = false;
 
     @Input() valueDropdown: DropdownType[] | string[] | any = [];
@@ -23,6 +22,7 @@ export class DropdownComponent implements OnInit {
     @Input() nameString: string = 'name';
     @Input() placeholder!: string;
     @Input() clear: boolean = false;
+    @Input() filterActive: boolean = false;
     @Input() virtualScroll: boolean = false;
     @Input() virtualScrollItemSize!: number;
     @Input() control: AbstractControl = new FormControl();

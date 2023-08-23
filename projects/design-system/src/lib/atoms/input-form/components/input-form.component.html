@@ -21,6 +21,12 @@
         [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"
         [disabled]="inputDisabled"></lib-dropdown>
 
+    <!-- multi-select  -->
+    <lib-multi-select *ngSwitchCase="'multi-select'" [value]="control.value"
+        (selectedValue)="emitValue($event, 'dropdown')" [label]="label ? label + (required ? ' *' : '') : ''"
+        [filterActive]="multiSelectFilterActive" [appendTo]="appendTo" [clear]="clear" [placeholder]="placeholder"
+        [control]="control" [valueDropdown]="valueInput" [disabled]="inputDisabled"></lib-multi-select>
+
     <!-- Input calendar -->
     <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control" [showIcon]="calendarShowIcon"
         [appendTo]="appendTo" [defaultDateFormat]="defaultDateFormat" [dropdownMode]="calendarDropdown"
