@@ -1,0 +1,40 @@
+<div class="card" *ngIf="events">
+    <p-timeline [value]="events">
+        <ng-template pTemplate="content" let-event>
+            <ng-template [ngTemplateOutlet]="externalContent ? externalContent : internalContent"
+                [ngTemplateOutletContext]="{data:event}">
+
+            </ng-template>
+
+            <!-- <small class="p-text-secondary">{{ event.date }}</small> -->
+        </ng-template>
+        <ng-template pTemplate="opposite" let-event>
+            <ng-template [ngTemplateOutlet]="externalOpposite ? externalOpposite : internalOpposite"
+                [ngTemplateOutletContext]="{data: event}">
+
+            </ng-template>
+            <!-- {{ event.status }} -->
+        </ng-template>
+    </p-timeline>
+</div>
+
+<ng-template #internalContent let-data="data">
+    <!-- <div>
+        {{data.date}} <br>
+        <div *ngFor="let label of data.labels, let i = index" class="margin-on-bottom"
+            [ngStyle]="{'visibility': i > 0 && label.address.label === data.labels[i-1].address.label ? 'hidden' : 'unset'}">
+            {{label.address.label}}
+
+
+        </div>
+
+    </div> -->
+    <!-- <small class="p-text-secondary">{{ data.date }}</small> -->
+</ng-template>
+<ng-template #internalOpposite let-data="data">
+    <!-- {{ data.status }} -->
+    <!-- <div *ngFor="let label of data.labels" class="margin-on-top">
+        {{label.request.label}} <br>
+
+    </div> -->
+</ng-template>

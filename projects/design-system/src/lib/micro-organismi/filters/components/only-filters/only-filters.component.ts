@@ -47,7 +47,6 @@ export class OnlyFiltersComponent implements OnInit {
     protected getChildEnum(dropdownOption: FiltersModel, value: string): TreeSelectModel[] {
         if (dropdownOption && dropdownOption.data) {
             let index = dropdownOption.data?.findIndex(item => item.data == value);
-            console.log(dropdownOption.data[index].type);
             return dropdownOption.data[index].enumValues || [];
         } else
             return [];
@@ -56,7 +55,6 @@ export class OnlyFiltersComponent implements OnInit {
     protected getChildConfig(dropdownOption: FiltersModel, value: string): any {
         if (dropdownOption && dropdownOption.data) {
             let index = dropdownOption.data?.findIndex(item => item.data == value);
-            console.log(dropdownOption.data[index].type);
             return dropdownOption.data[index].config;
         } else
             return null;
@@ -152,7 +150,6 @@ export class OnlyFiltersComponent implements OnInit {
             label: '', value: null, childValue: ''
         }));
         dropdown.value = null;
-        console.log(this.chipsList);
         this.chipsListChange.emit(this.chipsList);
     }
 
@@ -168,14 +165,11 @@ export class OnlyFiltersComponent implements OnInit {
             this.chipsList.result.push({ chipsLabel: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect", value: event.node.label });
             //(this.chipsList.data[dropdownIndex] as TreeSelectModel[]).push(event.node);
             this.chipsListChange.emit(this.chipsList);
-            console.log(this.chipsList);
         }
     }
-
     expandNode(event: any) {
         console.log(event);
     }
-
     protected createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
         //verifico che non ci sia già la chip per il selettore specificato
         const EXIST = this.chipsList.result.some((d: any) => d.dropdownIndex == dropdownIndex);
@@ -191,7 +185,6 @@ export class OnlyFiltersComponent implements OnInit {
             this.chipsListChange.emit(this.chipsList);
             calendar.pcalendar.value = null;
             calendar.toggleCalendar();
-            console.log(this.chipsList);
         }
     }
 
@@ -201,11 +194,9 @@ export class OnlyFiltersComponent implements OnInit {
         const N_INDEX = (this.chipsList.data[dropdownIndex] as TreeSelectModel[]).indexOf(event.node);
         (this.chipsList.data[dropdownIndex] as TreeSelectModel[]).splice(N_INDEX, 1);
         this.chipsListChange.emit(this.chipsList);
-        console.log(this.chipsList);
     }
 
     protected selectedDialog(event: any, dropdownIndex: number, dropdownField: string, selectionType: string) {
-        console.log(event);
         if (event) {
             if (event) {
                 /* if (selectionType === 'single') {
@@ -220,10 +211,8 @@ export class OnlyFiltersComponent implements OnInit {
                 this.chipsList.result.push({ chipsLabel: event.label || '', dropdownIndex: dropdownIndex, field: dropdownField, data: event.data, type: "dialog", value: event.label || '' });
                 (this.chipsList.data[dropdownIndex]) = { label: event.label || '', data: event.data };
                 this.chipsListChange.emit(this.chipsList);
-                console.log(this.chipsList);
             }
             this.chipsListChange.emit(this.chipsList);
-            console.log(this.chipsList);
         }
     }
 
@@ -236,11 +225,12 @@ export class OnlyFiltersComponent implements OnInit {
         (this.chipsList.data[dropdownIndex]) = { label: value?.label || '', data: value?.data };
         this.chipsList.result.push({ chipsLabel: value?.label || '', dropdownIndex: dropdownIndex, field: dropdownField, data: value?.data || '', type: "dialog", value: value?.label || '' });
         this.chipsListChange.emit(this.chipsList);
-        console.log(this.chipsList);
         //(this.chipsList.data[dropdownIndex]) = { label: value?.label || '', data: value?.data };
     }
 
     protected getTreeValue(indexDropdown: number, field: string) {
         return this.dropdownValues.filters[indexDropdown].children?.filter((element: any) => element.data === this.chipsList.data[indexDropdown].data);
     }
+
+
 }

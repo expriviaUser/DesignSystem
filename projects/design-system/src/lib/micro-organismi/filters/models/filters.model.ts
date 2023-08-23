@@ -7,7 +7,7 @@ export interface FiltersModel {
     data?: FiltersData[],
     placeholder: string,
     field: string,
-    type: "calendar" | "treeselect" | "children" | "dialog",
+    type: "calendar" | "treeselect" | "children" | "dialog" | 'dropdown',
     selectionType?: "single" | "multiple" | "checkbox",
     filter?: boolean,
     addFilterButtonLabel?: string,
@@ -38,7 +38,7 @@ export interface FiltersChip {
     dropdownIndex: number,
     field: string,
     data: string | number | Array<object>,
-    type: "treeselect" | "calendar" | 'children' | 'dialog',
+    type: "treeselect" | "calendar" | 'children' | 'dialog' | 'dropdown',
     value: string
 }
 

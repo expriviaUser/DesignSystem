@@ -1,37 +1,9 @@
-<lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
-<router-outlet></router-outlet>
-<div class="header">
-    <div class="left">
-        <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
-    </div>
-    <div class="center">
-        <lib-search-bar></lib-search-bar>
-    </div>
-    <div class="right">
-        <lib-header-actions [selectedOption]="{name: 'it', code: 'it'}"></lib-header-actions>
-    </div>
-</div>
-
-
 <div style="text-align:center">
     <h1>
         Welcome to {{ title }}!
         <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
     </h1>
 </div>
-<lib-tag [tagLabel]="'Label'" [tagSeverity]="'success'">
-</lib-tag>
-
-<lib-card [cHeader]="'Titolo card'" [cSubHeader]="'Questo è il sottotitolo di una card'">
-</lib-card>
-
-<lib-switch [label]="'Cerca nel contenuto dello zip'"></lib-switch>
-
-<lib-calendar [showIcon]="true"></lib-calendar>
-
-<lib-progress-bar [progress]="30" [showValue]="false"></lib-progress-bar>
-
-<h6>Catalogazione</h6>
 
 <lib-header-menu [items]="itemsMenu">
     <ng-container endTemp>
@@ -46,8 +18,43 @@
     </ng-container>
 </lib-header-menu>
 
+<lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
+
+<router-outlet></router-outlet>
+
+<!-- <div class="header">
+    <div class="left">
+        <lib-logo [text1]="'Global'" [text2]="'Document Management'"></lib-logo>
+    </div>
+    <div class="center">
+        <lib-search-bar></lib-search-bar>
+    </div>
+    <div class="right">
+        <lib-header-actions [selectedOption]="{name: 'it', code: 'it'}"></lib-header-actions>
+    </div>
+</div>
+
+
+<lib-tag [tagLabel]="'Label'" [tagSeverity]="'success'">
+</lib-tag>
+
+<lib-card [cHeader]="'Titolo card'" [cSubHeader]="'Questo è il sottotitolo di una card'">
+</lib-card>
+
+<lib-switch [label]="'Cerca nel contenuto dello zip'"></lib-switch>
+
+<lib-calendar [showIcon]="true"></lib-calendar>
+
+<lib-progress-bar [progress]="30" [showValue]="false"></lib-progress-bar>
+
+<h6>Catalogazione</h6>
+
+
+
 <lib-sidebar [items]="sidebarItems"></lib-sidebar>
-<form [formGroup]="autocompleteForm">
+
+<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters> -->
+<!-- <form [formGroup]="autocompleteForm">
     <lib-autocomplete [label]="'prova'" [valueAutocomplete]="['CIAO','CIAO1', 'CIAO2']" [icon]="'pi pi-search'"
         [showClear]="true" formControlName="autocomplete"></lib-autocomplete>
 </form>
@@ -57,29 +64,29 @@
 </form>
 <lib-button [label]="'submit'" (click)="formEmit('autocomplete')" [disabled]="autocompleteForm.invalid"></lib-button>
 
-<lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file>
+<lib-choose-file [label]="'Choose'" [icon]="'pi pi-upload'"></lib-choose-file> -->
 
 <!-- <lib-dropdown [label]="'prova'" [valueDropdown]="['prova1','prova2']"></lib-dropdown><br>
 <lib-autocomplete [valueAutocomplete]="['prova1', 'value2']"></lib-autocomplete> -->
 
 
-<lib-badge [menuBadge]="'3'"></lib-badge>
+<!-- <lib-badge [menuBadge]="'3'"></lib-badge>
 
 <lib-file-status [fileList]="fileArray"></lib-file-status>
 
 <lib-file
-    [file]="{title:'/globaldoc-afs-pr/documentiDigitali/31/20200611100803/0434-42034 ENIU3065278.tif', dimension: '50'}"
-    [ellipsed]="false">
+    [file]="{title:'/globaldoc-afs-pr/documentiDigitali/31/20200611100803/0434-42034 ENIU3065278.tiff', dimension: '50'}"
+    [ellipsed]="false" [isBig]="false">
     <ng-container file-actions>
         <lib-button [icon]="'pi pi-download'" [type]="'secondary-raised'" [size]="'small'"></lib-button>
     </ng-container>
 </lib-file>
 <lib-button [size]="'small'" [type]="'secondary-outlined'" [icon]="'pi pi-trash'" [iconPosition]="'right'">
-</lib-button>
+</lib-button> -->
 <!-- <lib-breadcrumb [breadcrumbList]="breadcrumbList" [href]="false" (goTo)="goTo($event)">
 </lib-breadcrumb> -->
 
-<lib-checkbox-button></lib-checkbox-button>
+<!-- <lib-checkbox-button></lib-checkbox-button>
 
 <lib-button [label]="'PROVA'" [size]="'small'" [type]="'secondary-raised'" (onClick)="dialog()"></lib-button>
 
@@ -109,9 +116,9 @@
         <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
             [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
         <lib-input-form [type]="'autocomplete'" formControlName="name" [label]="'Utente richiedente'"
-            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form>
-        <!--    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form> -->
-        <lib-input-form type="calendar" formControlName="age"></lib-input-form>
+            [placeholder]="'Cerca utente'" [icon]="'pi pi-upload'" [iconPos]="'right'"></lib-input-form> -->
+<!--    <lib-input-form type="number" [label]="'Età'" formControlName="age"></lib-input-form> -->
+<!-- <lib-input-form type="calendar" formControlName="age"></lib-input-form>
         <p-dropdown appendTo="body" [overlayOptions]="overlayOptions"
             [options]="['Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi', 'Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi', 'Richiesta Prelievo', 'Richiesta Prelievo per ritiro definitivo', 'Consultazione presso EniServizi']"></p-dropdown>
 
@@ -170,9 +177,9 @@
 
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="2"
     [resizableColumns]="true" [totalRecords]="115" [filters]="filterValue" [selectionType]="'single'"
-    [(selectedValue)]="selectionTable">
-    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
-    <ng-template #body let-data="data" let-column="column">
+    [(selectedValue)]="selectionTable"> -->
+<!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+<!-- <ng-template #body let-data="data" let-column="column">
         <td>{{ data[column[0].field] }}</td>
         <td>{{ data[column[1].field] }}</td>
         <td>
@@ -183,12 +190,12 @@
             <p-tableCheckbox [value]="data"></p-tableCheckbox>
         </td>
     </ng-template>
-</lib-table>
+</lib-table> -->
 
-<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions" [lazy]="true"
-    [lazyOnInit]="true" [emitLazy]="true">
-    <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
-    <ng-template #actions let-item="data">
+<!-- <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [actions]="actions" [lazy]="true"
+    [lazyOnInit]="true" [emitLazy]="true"> -->
+<!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
+<!--  <ng-template #actions let-item="data">
         <lib-actions-table [rowData]="item" [iconsTable]="iconsTable || []"></lib-actions-table>
     </ng-template>
 </lib-table>
@@ -202,19 +209,19 @@
 <lib-tree-select [nodes]="treeSelectNodes">
 </lib-tree-select>
 
-<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
+
 <div>
     <lib-only-filters [dropdownValues]="dropdownValuesSecond" [title]="'Filtra per'"
         (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
     <lib-only-filters *ngIf="dropdownValuesThird" [dropdownValues]="dropdownValuesThird" [title]="' '"
         (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
 </div>
-<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips>
+<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips> -->
 
 <!-- <lib-chip [label]="'testo'" [removable]="true" [removeIcon]="'pi pi-times'">
 </lib-chip> -->
 
-<lib-treemenu [filter]="true" [selectionMode]="'checkbox'" [filterPlaceholder]="'Cerca'" [items]="treemenuItems"
+<!-- <lib-treemenu [filter]="true" [selectionMode]="'checkbox'" [filterPlaceholder]="'Cerca'" [items]="treemenuItems"
     [(selected)]="selectedItems" (selectedChange)="selectedMenu($event)" [checkboxOnlyLeaf]="true"
     [propagateSelectionUp]="false"></lib-treemenu>
 
@@ -224,4 +231,88 @@
 <lib-language-selector [options]="languages" (selectedOptionChange)="catchChange($event)"></lib-language-selector>
 <lib-header-actions [languages]="languages" (languageChange)="catchChange($event)"></lib-header-actions>
 
-<lib-loader></lib-loader>
+<lib-loader></lib-loader> -->
+
+<!-- <div>
+    <lib-only-filters [dropdownValues]="dropdownValuesSecond" [title]="'Filtra per'"
+        (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
+    <lib-only-filters *ngIf="dropdownValuesThird" [dropdownValues]="dropdownValuesThird" [title]="' '"
+        (chipsListChange)="changeFiltersResult($event)"></lib-only-filters>
+</div>
+<lib-filters-chips [chipsList]="filtersResult" (onRemove)="removeFilterChip($event)"></lib-filters-chips> -->
+
+<!-- <lib-table [value]="items" [columns]="columns" [dataKey]="'name'" [externalBody]="body" [rowsPerPage]="[10]"
+    [totalRecords]="115" [selectionType]="'single'" [isSelectable]="true" [(selectedValue)]="selectionTable">
+    <ng-template #body let-data="data" let-column="column">
+        <td>{{ data[column[0].field] }}</td>
+        <td>{{ data[column[1].field] }}</td>
+        <td>
+            {{column[3].field | json}}
+            <lib-tag [tagSeverity]="'danger'" [tagLabel]="getFieldValue(data, column[3].field)"></lib-tag>
+        </td>
+    </ng-template>
+</lib-table> -->
+
+<!-- <lib-radio-tile [tiles]="myTiles"></lib-radio-tile> -->
+
+<!-- <lib-address [address]="{code: 1, name: 'Nome sede', content: 'Via Roma 1'}" [modify]="true"></lib-address> -->
+
+<!-- <lib-timeline [events]="myEvents" [externalContent]="content" [externalOpposite]="opposite">
+    <ng-template #content let-data="data">
+        <div>
+            <span class="subtitle-second-semibold"> {{data.date | date: 'EEEE dd MMMM yyyy'}}</span> <br>
+            <div *ngFor="let label of data.labels, let i = index" class="margin-on-bottom"
+                [ngStyle]="{'visibility': i > 0 && label.address.label === data.labels[i-1].address.label ? 'hidden' : 'unset'}">
+                <span class="small-semibold"> {{label.address.label}}</span> <br>
+                <span class="small-regular"> {{label.address.content}}</span>
+
+
+            </div>
+
+        </div>
+    </ng-template>
+    <ng-template #opposite let-data="data">
+        <div *ngFor="let label of data.labels" class="margin-on-top">
+            <lib-card>
+                <div class="row" cContentTemplate>
+                    <div class="col-sm-6 nowrap subtitle-second-semibold">
+                        {{label.request.label}}
+                    </div>
+                    <div class="col-sm-6 body-regular onright">
+                        Id Richiesta: {{label.request.requestId}}
+                    </div>
+                </div>
+                <div class="row mt-3" cContentTemplate>
+                    <div class="col-sm-6 d-flex flex-column">
+                        <span class="body-regular">Richiesta effettuata il:</span>
+                        <span class="body-semibold">{{label.request.date | date: 'dd MMMM yyyy'}}</span>
+                    </div>
+                    <div class="col-sm-6 onright-end">
+                        <lib-tag [tagSeverity]="'info'" [tagLabel]="'In Attesa'"></lib-tag>
+                    </div>
+                </div>
+            </lib-card>
+        </div>
+    </ng-template>
+</lib-timeline> -->
+
+<lib-calendar [showIcon]="true" [value]="calendarDate" [disabled]="true" [label]="'Data di riferimento documento'"
+    [placeholder]="'Data'">
+
+</lib-calendar>
+
+<lib-filters [dropdownValues]="dropdownValues" (filterValues)="print($event)"></lib-filters>
+
+<lib-button [label]="'Message'" [size]="'small'" [type]="'primary'" (onClick)="message()"></lib-button>
+<lib-button [label]="'Message'" [size]="'small'" [type]="'primary'" (onClick)="message()"></lib-button>
+<!-- 
+<p-messages></p-messages> -->
+<lib-message [key]="'all'"></lib-message>
+
+
+
+
+
+<lib-tabs [sections]="sections" [(index)]="tabIndex" class="col"></lib-tabs>
+
+<lib-sidebar></lib-sidebar>

@@ -1,33 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { TieredMenuModule } from 'primeng/tieredmenu';
 import { SidebarComponent } from './components/sidebar.component';
-
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 const primeComponents = [
-  TieredMenuModule,
+    PanelMenuModule,
 
 ];
 
 const exportComponent = [
-  SidebarComponent
+    SidebarComponent
 ];
 
 @NgModule({
-  declarations: [
-    ...exportComponent
-  ],
-  imports: [
-    ...primeComponents,
-    CommonModule
-  ],
-  exports: [
-    ...exportComponent,
+    declarations: [
+        ...exportComponent
+    ],
+    imports: [
+        ...primeComponents,
+        CommonModule
+    ],
+    exports: [
+        ...exportComponent,
 
-  ],
-  entryComponents: [
-    ...exportComponent
-  ]
+    ],
+    entryComponents: [
+        ...exportComponent
+    ]
 })
 
 

@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { LibAutocompleteModule } from '../autocomplete/lib-autocomplete.module';
 import { LibCalendarModule } from '../calendar/lib-calendar.module';
 import { LibCheckboxModule } from '../checkbox/lib-checkbox.module';
+import { LibChooseFileModule } from '../choose-file/choose-file.module';
 import { LibDropdownModule } from '../dropdown/lib-dropdown.module';
 import { LibErrorInlineModule } from '../error-inline/lib-error-inline.module';
 import { LibInputModule } from '../input/lib-input.module';
 import { LibRadioButtonModule } from '../radio-button/lib-radio-button.module';
 import { LibTextareaModule } from '../textarea/lib-textarea.module';
 import { InputFormComponent } from './components/input-form.component';
-import { LibChooseFileModule } from '../choose-file/choose-file.module';
+import { LibAutocompleteCardModule } from '../autocomplete-card/lib-autocomplete-card.module';
 
 
 const primeComponents = [
@@ -21,7 +22,8 @@ const primeComponents = [
     LibTextareaModule,
     LibInputModule,
     LibErrorInlineModule,
-    LibChooseFileModule
+    LibChooseFileModule,
+    LibAutocompleteCardModule
 ];
 
 const exportComponent = [
@@ -30,11 +32,10 @@ const exportComponent = [
 
 @NgModule({
     declarations: [
-        ...exportComponent
+        ...exportComponent,
     ],
     imports: [
         ...primeComponents,
-
         CommonModule
     ],
     exports: [

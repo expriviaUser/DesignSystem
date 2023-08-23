@@ -45,7 +45,6 @@ export class ButtonComponent {
             case "":
                 break;
             case "secondary":
-                console.log(this.type);
                 this.class += " p-button-secondary";
                 break;
             case "secondary-rounded":

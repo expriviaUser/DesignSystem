@@ -24,6 +24,10 @@ export class HeaderItemsService {
         this.cartItems$.next(values);
     }
 
+    deleteAllFromCart() {
+        this.cartItems$.next([]);
+    }
+
     uploadFiles$: BehaviorSubject<FileUpload[]> = new BehaviorSubject<FileUpload[]>([]);
     set uploadFiles(val: FileUpload) {
         let values = this.uploadFiles$.getValue();

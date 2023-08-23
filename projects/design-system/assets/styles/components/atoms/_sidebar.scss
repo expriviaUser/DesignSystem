@@ -1,108 +1,236 @@
-.p-tieredmenu {
-  padding: 0.25rem 0;
-  background: $color--surface-a;
-  color: $color--text-color;
-  border: 1px solid $color--surface-d;
-  border-radius: $border-radius;
-  width: 100%;
-}
+/* 
 
 .p-tieredmenu .p-menuitem-link {
-  padding: 0.75rem 1.25rem;
-  color: $color--text-color;
-  border-radius: 0;
-  transition: box-shadow 0.2s;
-  user-select: none;
+    padding: 0.75rem 1.25rem;
+    color: $color--text-color;
+    border-radius: 0;
+    transition: box-shadow 0.2s;
+    user-select: none;
 }
 
-.p-tieredmenu .p-menuitem-link .p-menuitem-text {
-  color: $color--text-color;
-}
 
 .p-tieredmenu .p-menuitem-link .p-menuitem-icon {
-  color: $color--text-color-secondary;
-  margin-right: 0.5rem;
+    color: $color--text-color-secondary;
+    margin-right: 0.5rem;
 }
 
 .p-tieredmenu .p-menuitem-link .p-submenu-icon {
-  color: $color--text-color-secondary;
+    color: $color--text-color-secondary;
 }
 
 .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover {
-  background: $color--surface-c;
+    background: $color--surface-c;
 }
 
 .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
-  color: $color--text-color;
+    color: $color--text-color;
 }
 
 .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
-  color: $color--text-color-secondary;
+    color: $color--text-color-secondary;
 }
 
 .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
-  color: $color--text-color-secondary;
+    color: $color--text-color-secondary;
 }
 
 .p-tieredmenu .p-menuitem-link:focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: inset 0 0 0 0.15rem $color--cyan-100;
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 0.15rem $color--cyan-100;
 }
 
 .p-tieredmenu.p-tieredmenu-overlay {
-  background: $color--surface-a;
-  border: 0 none;
-  box-shadow: 0 2px 12px 0 rgba($color--black-50, 0.1);
+    background: $color--surface-a;
+    border: 0 none;
+    box-shadow: 0 2px 12px 0 rgba($color--black-50, 0.1);
 }
 
 .p-tieredmenu .p-submenu-list {
-  padding: 0.25rem 0;
-  background: $color--surface-a;
-  border: 0 none;
-  box-shadow: 0 2px 12px 0 rgba($color--black-50, 0.1);
+    padding: 0.25rem 0;
+    background: $color--surface-a;
+    border: 0 none;
+    box-shadow: 0 2px 12px 0 rgba($color--black-50, 0.1);
 }
 
 .p-tieredmenu .p-menuitem {
-  margin: 0;
+    margin: 0;
 }
 
 .p-tieredmenu .p-menuitem:last-child {
-  margin: 0;
+    margin: 0;
 }
 
-.p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link {
-  background: $color--gray-200;
+.p-tieredmenu .p-menuitem.p-menuitem-active > .p-menuitem-link {
+    background: $color--gray-200;
 }
 
-.p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link .p-menuitem-text {
-  color: $color--blue-700;
+.p-tieredmenu .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+    color: $color--blue-700;
 }
 
-.p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link .p-menuitem-icon,
-.p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link .p-submenu-icon {
-  color: $color--blue-700;
+.p-tieredmenu .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-icon,
+.p-tieredmenu .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon {
+    color: $color--blue-700;
 }
 
 .p-tieredmenu .p-menu-separator {
-  border-top: 1px solid $color--surface-d;
-  margin: 0.25rem 0;
+    border-top: 1px solid $color--surface-d;
+    margin: 0.25rem 0;
 }
 
 .p-tieredmenu .p-submenu-icon {
-  font-size: 0.875rem;
+    font-size: 0.875rem;
 }
 
 .p-tieredmenu .p-menuitem-badge {
-  background: $color--primary-color;
-  color: $color--surface-a;
-  font-size: 0.75rem;
-  font-weight: $font-weight;
-  min-width: 1.5rem;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  border-radius: $border-radius;
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+    background: $color--primary-color;
+    color: $color--surface-a;
+    font-size: 0.75rem;
+    font-weight: $font-weight;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: $border-radius;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+ */
+
+.p-panelmenu .p-panelmenu-header > a {
+    padding: 0.75rem 1.25rem;
+    background: $color--surface-a;
+    color: $color--text-color;
+    border-radius: $border-radius;
+    width: 100%;
+    transition: box-shadow 0.2s;
+}
+
+.p-panelmenu .p-panelmenu-header > a .p-panelmenu-icon {
+    margin-right: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.p-panelmenu .p-panelmenu-header > a .p-menuitem-icon {
+    margin-right: 0.5rem;
+}
+
+.p-panelmenu .p-panelmenu-header > a:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: $shadow--focus-ring;
+}
+
+.p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled) > a:hover {
+    background: $color--surface-c;
+    color: $color--black-800;
+}
+
+.p-panelmenu .p-panelmenu-header.p-highlight {
+    margin-bottom: 0;
+}
+
+.p-panelmenu .p-panelmenu-header.p-highlight > a {
+    background: $color--surface-b;
+    color: $color--black-800;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
+    background: $color--surface-c;
+    color: $color--black-800;
+}
+
+.p-panelmenu .p-panelmenu-content {
+    padding-left: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: $color--surface-a;
+    color: $color--text-color;
+    margin-bottom: 4px;
+    border-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link {
+    padding: 0.75rem 1.25rem;
+    color: $color--text-color;
+    border-radius: $border-radius;
+    transition: box-shadow 0.2s;
+    user-select: none;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text {
+    color: $color--text-color;
+}
+
+.p-panelmenu .p-menuitem-text {
+    color: $color--text-color;
+    @include typography-body-regular;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon {
+    color: $color--text-color-secondary;
+    margin-right: 0.5rem;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-submenu-icon {
+    color: $color--text-color-secondary;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
+    background: $color--surface-c;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    color: $color--text-color;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
+    color: $color--text-color-secondary;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+    color: $color--text-color-secondary;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 0.15rem $color--cyan-100;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-panelmenu-icon {
+    margin-right: 0.5rem;
+    position: absolute;
+    right: 0;
+}
+
+.p-panelmenu .p-panelmenu-content .p-submenu-list:not(.p-panelmenu-root-submenu) {
+    padding: 0 0 0 1rem;
+}
+
+.p-panelmenu .p-panelmenu-panel {
+    margin-bottom: 4px;
+}
+
+.p-panelmenu .p-menuitem-badge {
+    background: $color--primary-color;
+    color: $color--surface-a;
+    font-size: 0.75rem;
+    font-weight: $font-weight;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: $border-radius;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }

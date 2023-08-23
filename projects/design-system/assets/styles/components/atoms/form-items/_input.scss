@@ -4,12 +4,16 @@
     gap: $gap-1;
 
     .static {
-        color: $color--primary-color;
+        padding: pxToRem(9px);
     }
 
     label {
-        @include typography-form-label;
+        @include typography-subtitle-second-semibold;
         color: $color--form-label-text;
+    }
+
+    label.radio-button {
+        @include typography-subtitle-second-regular;
     }
 
     // TODO: refactor di questo sotto.

@@ -1,4 +1,5 @@
-<div class="wrapper">
-    <!-- <label [for]="formControlName">{{label}}</label> -->
-    <textarea [id]="control" [ngClass]="{'ng-invalid ng-dirty': haveError}" [placeholder]="placeholder" (ngModelChange)="emitValue($event)" rows="5" cols="20" pInputTextarea [(ngModel)]="value"></textarea>
+<div class="wrapper field">
+    <label *ngIf="label">{{label}}</label>
+    <textarea [id]="control" [ngClass]="{'ng-invalid ng-dirty': haveError}" [placeholder]="placeholder"
+        (ngModelChange)="emitValue($event)" rows="5" cols="20" pInputTextarea [(ngModel)]="value"></textarea>
 </div>

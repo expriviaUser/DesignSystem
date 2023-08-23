@@ -14,66 +14,7 @@
     padding-#{$position}: #{$px};
 }
 
-@mixin typography-xs-small-regular {
-    font-weight: 400;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(16px);
-}
-
-@mixin typography-xs-small-semibold {
-    font-weight: 600;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(16px);
-}
-
-@mixin typography-text-xs-medium {
-    font-weight: 500;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(16px);
-}
-
-@mixin typography-body-regular {
-    font-weight: 400;
-    font-size: pxToRem(14px);
-    line-height: pxToRem(20px);
-}
-
-@mixin typography-body-bold {
-    font-weight: 700;
-    font-size: pxToRem(14px);
-    line-height: pxToRem(20px);
-}
-
-@mixin typography-x-small-regular {
-    font-weight: 400;
-    font-size: pxToRem(14px);
-    line-height: pxToRem(20px);
-}
-
-@mixin typography-small-semibold {
-    font-weight: 600;
-    font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
-}
-
-@mixin typography-x-small-semibold {
-    font-weight: 600;
-    font-size: pxToRem(14px);
-    line-height: pxToRem(20px);
-}
-
-@mixin typography-small-bold {
-    font-weight: 700;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(16px);
-}
-
-@mixin typography-small-regular {
-    font-weight: 400;
-    font-size: pxToRem(12px);
-    line-height: pxToRem(16px);
-}
-
+//buttons
 @mixin typography-button-small {
     font-weight: 600;
     font-size: pxToRem(12px);
@@ -103,14 +44,95 @@
     line-height: pxToRem($line-height);
 }
 
-@mixin typography-form-label {
-    font-weight: 600;
-    font-size: pxToRem(16px);
-    line-height: pxToRem(28px);
-}
-
-@mixin h6 {
+// titles
+@mixin typography-h6 {
     font-weight: 600;
     font-size: pxToRem(24px);
-    line-height: pxToRem(28px);
+    line-height: pxToRem(24px);
+    margin: 0;
+}
+
+@mixin typography-h5 {
+    font-weight: 600;
+    font-size: pxToRem(28px);
+    line-height: pxToRem(40px);
+    margin: 0;
+}
+
+@mixin typography-h4 {
+    font-weight: 700;
+    font-size: pxToRem(32px);
+    line-height: pxToRem(40px);
+    margin: 0;
+}
+@mixin typography-h3 {
+    font-weight: 700;
+    font-size: pxToRem(40px);
+    line-height: pxToRem(48px);
+    margin: 0;
+}
+@mixin typography-h2 {
+    font-weight: 700;
+    font-size: pxToRem(48px);
+    line-height: pxToRem(60px);
+    margin: 0;
+}
+@mixin typography-h1 {
+    font-weight: 700;
+    font-size: pxToRem(56px);
+    line-height: pxToRem(64px);
+    margin: 0;
+}
+
+// subtitles
+@mixin typography-subtitle-regular {
+    font-weight: 400;
+    font-size: pxToRem(18px);
+    line-height: pxToRem(24px);
+}
+
+@mixin typography-subtitle-semibold {
+    font-weight: 600;
+    font-size: pxToRem(18px);
+    line-height: pxToRem(24px);
+}
+
+@mixin typography-subtitle-second-regular {
+    font-weight: 400;
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+}
+
+@mixin typography-subtitle-second-semibold {
+    font-weight: 600;
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+}
+
+// body
+
+@mixin typography-body-regular {
+    font-weight: 400;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+
+@mixin typography-body-semibold {
+    font-weight: 600;
+    font-size: pxToRem(14px);
+    line-height: pxToRem(20px);
+}
+
+// small
+
+@mixin typography-small-regular {
+    font-weight: 400;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
+}
+
+@mixin typography-small-semibold {
+    font-weight: 600;
+    font-size: pxToRem(12px);
+    line-height: pxToRem(16px);
 }

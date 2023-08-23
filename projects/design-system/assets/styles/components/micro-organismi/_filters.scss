@@ -1,6 +1,6 @@
 .filters-wrapper {
     .dropdown-title {
-        @include typography-x-small-semibold;
+        @include typography-body-semibold;
         color: $color--filters-dropdown-title;
         flex: none;
         order: 0;
@@ -55,7 +55,7 @@
             }
 
             .p-treeselect-label {
-                padding: 0.65625rem 0.65625rem;
+                padding: pxToRem(8px);
 
                 &.p-placeholder {
                     color: $color--filters-dropdown-text;
@@ -77,13 +77,25 @@
             }
         }
 
+        .p-dropdown {
+            background: $color--filters-dropdown-background;
+            border: 1px solid $color--filters-dropdown-border;
+
+            .p-dropdown-label {
+                padding: pxToRem(8px);
+                color: $color--filters-dropdown-text;
+                &.p-placeholder {
+                    color: $color--filters-dropdown-text;
+                }
+            }
+        }
+
         p-calendar {
             .p-calendar {
                 .p-inputtext {
                     border-color: $color--filters-dropdown-border;
-                    font-size: 0.875rem;
                     cursor: pointer;
-                    padding: 0.65625rem 0.65625rem;
+                    padding: pxToRem(8px);
 
                     &::placeholder {
                         /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -116,7 +128,7 @@
 
     .chips-title {
         margin-top: 0.714rem;
-        @include typography-x-small-regular;
+        @include typography-body-regular;
         color: $color--filters-chips-title;
     }
 
@@ -135,7 +147,7 @@
 
                 .p-dropdown-label {
                     font-size: 0.875rem;
-                    padding: 0.65625rem 0.65625rem;
+                    padding: pxToRem(8px);
                     color: $color--filters-dropdown-text;
                     &.p-placeholder {
                         color: $color--filters-dropdown-text;

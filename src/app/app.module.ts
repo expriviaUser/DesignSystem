@@ -14,11 +14,17 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { FiltersService } from 'projects/design-system/src/lib/micro-organismi/filters/services/filters.service';
 import { TreeModule } from 'primeng/tree';
 import { DropdownModule } from 'primeng/dropdown';
+import { FormPageComponent } from './components/form-page/form-page.component';
+import { TablePageComponent } from './components/table-page/table-page.component';
+import { MessageService } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent
+        AboutComponent,
+        FormPageComponent,
+        TablePageComponent
     ],
     imports: [
         BrowserModule,
@@ -30,7 +36,8 @@ import { DropdownModule } from 'primeng/dropdown';
         HttpClientModule,
         BreadcrumbModule,
         TreeModule,
-        DropdownModule
+        DropdownModule,
+        MessagesModule
     ],
     providers: [DatePipe, FiltersService],
     bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
-<div class="dropdown-wrapper">
+<div class="dropdown-wrapper field">
+    <label *ngIf="label">{{label}}</label>
     <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [appendTo]="appendTo"
         [disabled]="!valueDropdown || disabled" [showClear]="clear" [options]="valueDropdown"
-        (onChange)="emitValue($event)" [optionLabel]="isObject ? nameString : ''" [(ngModel)]="value"
-        [optionValue]="isObject ? codeString : ''">
+        [virtualScroll]="virtualScroll" [virtualScrollItemSize]="virtualScrollItemSize" (onChange)="emitValue($event)"
+        [optionLabel]="isObject ? nameString : ''" [(ngModel)]="value" [optionValue]="isObject ? codeString : ''">
         <ng-template pTemplate="selectedItem" *ngIf="selectedItemTemplate">
             <ng-container [ngTemplateOutlet]="selectedItemTemplate ? selectedItemTemplate : null"></ng-container>
         </ng-template>

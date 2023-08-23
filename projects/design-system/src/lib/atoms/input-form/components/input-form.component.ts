@@ -1,6 +1,7 @@
 import { DatePipe } from "@angular/common";
-import { Component, EventEmitter, forwardRef, Input, OnChanges, Output, SimpleChanges } from "@angular/core";
-import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { Component, EventEmitter, forwardRef, Input, Output } from "@angular/core";
+import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
+import { CheckBoxModel } from "../../checkbox/models/checkbox.model";
 
 @Component({
     selector: "lib-input-form",
@@ -17,6 +18,7 @@ import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR 
 export class InputFormComponent implements ControlValueAccessor {
     @Input() value!: string;
     @Input() valueInput: any[] = [];
+    @Input() checkboxValue!: CheckBoxModel[];
     @Input() clear: boolean = false;
     @Input() appendTo!: string;
     @Input() icon: string = "";
@@ -26,12 +28,15 @@ export class InputFormComponent implements ControlValueAccessor {
     @Input() type: string = "text";
     @Input() error: boolean = false;
     @Input() calendarShowIcon: boolean = false;
+    @Input() calendarDropdown: boolean = false;
     @Input() inputDisabled: boolean = false;
     @Input() placeholder: string = "Inserisci un valore";
     @Input() formControlName: string = "";
-    @Input() field: string = "";
-    @Input() inlineCal!: boolean;
-    @Input() selectionType: string = '';
+    @Input() field: string = '';
+    @Input() fieldAutocompleteCard: string[] = [];
+    @Input() inlineCal: boolean = false;
+    @Input() selectionType: string = 'single';
+    @Input() defaultDateFormat: string = 'dd-mm-yy';
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() showButtonBar!: boolean;
@@ -64,6 +69,13 @@ export class InputFormComponent implements ControlValueAccessor {
             this.control &&
             this.control.errors &&
             (!this.control.pristine || this.control.touched)
+        );
+    }
+
+    get required() {
+        return (
+            this.control &&
+            this.control.hasValidator(Validators.required)
         );
     }
     get haveErrorParent() {
@@ -112,8 +124,12 @@ export class InputFormComponent implements ControlValueAccessor {
             if ((event && type == 'autocomplete') || type !== "autocomplete")
                 this.value = event;
 
+            if (type == 'choose-file')
+                this.value = event.files;
+
             this.onChange(event);
             this.selectedValue.emit(event);
+
         } else {
             this.value = event.target.value;
             this.onChange(event.target.value);

@@ -12,7 +12,11 @@
         width: 85%;
 
         .file-icon {
-            height: 100%;
+            height: 1.5rem;
+        }
+
+        .small-file-icon {
+            height: 1rem;
         }
 
         .file-data {
@@ -36,13 +40,18 @@
             }
 
             .title-icon {
-                @include typography-small-semibold;
+                @include typography-subtitle-second-semibold;
+                color: $color--file-title;
+            }
+
+            .small-title {
+                @include typography-small-regular;
                 color: $color--file-title;
             }
 
             .dimension {
                 color: $color--file-subtitle;
-                @include typography-xs-small-regular;
+                @include typography-small-regular;
             }
         }
     }

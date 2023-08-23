@@ -58,8 +58,8 @@
 }
 
 p-autocomplete.ng-dirty.ng-invalid {
-    >.p-autocomplete {
-        >.p-inputtext {
+    > .p-autocomplete {
+        > .p-inputtext {
             border-color: $color--red-900;
         }
     }
@@ -145,6 +145,12 @@ p-autocomplete.p-autocomplete-clearable {
         input {
             width: 100%;
         }
+    }
+
+    &-card {
+        border: 1px solid $color--border;
+        border-radius: 6px;
+        padding: pxToRem(12px);
     }
 
     .p-button:not(.p-button-link) {

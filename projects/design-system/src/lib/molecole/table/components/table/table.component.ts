@@ -65,15 +65,22 @@ export class TableComponent implements OnInit {
 
     @Input() scrollHeight!: string;
 
+    @Input() dataKey!: string;
+
     @Input() alwaysShowPaginator!: boolean;
 
     @Input() loading!: boolean;
 
     @Input() lazy!: boolean;
+    @Input() responsiveLayout!: string;
+    @Input() columnResizeMode: string = 'fit';
+    @Input() responsive: boolean = false;
 
     @Input() lazyOnInit: boolean = true;
 
     @Input() emitLazy!: boolean;
+
+    checked: any = [];
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged: EventEmitter<{ pageNumber: number, field: string, order: number }> = new EventEmitter<{ pageNumber: number, field: string, order: number }>();
@@ -81,7 +88,7 @@ export class TableComponent implements OnInit {
     @Output() lazyLoadChange: EventEmitter<any> = new EventEmitter<any>();
 
     //    Output per aggiornare il valore delle checkbox in tabella
-    @Output() selectedTableValues: EventEmitter<any[]> = new EventEmitter<any[]>();
+    @Output() checkedRowValues: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
 
@@ -95,7 +102,9 @@ export class TableComponent implements OnInit {
     constructor(private tableService: LibTableService) { }
 
     ngOnInit() {
-        console.log(this.value)
+        if (!this.dataKey) {
+            this.dataKey = this.columns[0].field;
+        }
     }
 
 
@@ -114,14 +123,33 @@ export class TableComponent implements OnInit {
         }
     }
 
-    selectedEvent() {
-        this.selectedTableValues.emit(this.selectedValue);
+    selectedEvent(event?: any) {
+        this.selectedValueChange.emit(this.selectedValue);
     }
 
     emitSort(event: { field: string, order: number }): void {
-        console.log(event);
         if (!this.lazy) {
             this.sortValues.emit(event);
         }
+    }
+
+    check(event: any, checkType: string, rowData?: any) {
+        event.defaultEvent.stopPropagation();
+        if (checkType === 'all') {
+            this.checked = event.checked ? [...this.value.filter(el => el && !el.isDisabledChecked)] : [];
+        } else {
+            if (event.checked) {
+                this.checked.push(rowData);
+            } else {
+                const indexToRemove = this.checked.findIndex((item: any) => item[this.dataKey] === rowData[this.dataKey]);
+                this.checked.splice(indexToRemove, 1);
+            }
+        }
+
+        this.checkedRowValues.emit(this.checked);
+    }
+
+    isChecked(rowData: any): boolean {
+        return (this.checked.filter((item: any) => item[this.dataKey] === rowData[this.dataKey]).length > 0);
     }
 }

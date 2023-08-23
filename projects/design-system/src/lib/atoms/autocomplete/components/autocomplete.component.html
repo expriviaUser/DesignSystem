@@ -1,4 +1,5 @@
-<div [ngClass]="{'autocomplete':true, 'dropdown':icon}">
+<div [ngClass]="{'autocomplete':true, 'dropdown':icon, 'field': true}">
+    <label *ngIf="label">{{label}}</label>
     <p-autoComplete [showClear]="showClear && !icon" [inputStyleClass]="haveError ? 'ng-invalid ng-dirty':''"
         [appendTo]="appendTo" [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList"
         (change)="emitValueIfExist($event)" (onSelect)="emitValue($event)" (onClear)="emitValue('')"

@@ -1,6 +1,7 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DropdownType } from '../models/dropdown.model';
+import { Dropdown } from 'primeng/dropdown';
 
 @Component({
     selector: 'lib-dropdown',
@@ -22,10 +23,14 @@ export class DropdownComponent implements OnInit {
     @Input() nameString: string = 'name';
     @Input() placeholder!: string;
     @Input() clear: boolean = false;
+    @Input() virtualScroll: boolean = false;
+    @Input() virtualScrollItemSize!: number;
     @Input() control: AbstractControl = new FormControl();
     @Input() disabled: boolean = false;
     @Input() value: any;
     @Input() selectedItemTemplate!: TemplateRef<any>;
+    values: DropdownType[] = [];
+
 
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
 
@@ -33,6 +38,7 @@ export class DropdownComponent implements OnInit {
         this.isObject = this.valueDropdown ? typeof this.valueDropdown[0] !== "string" : true;
 
     }
+
 
     get haveError() {
         return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
