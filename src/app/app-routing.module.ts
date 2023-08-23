@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { FormPageComponent } from './components/form-page/form-page.component';
 import { TablePageComponent } from './components/table-page/table-page.component';
+import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
 
 const routes: Routes = [
     {
@@ -34,6 +35,10 @@ const routes: Routes = [
     {
         path: 'table',
         component: TablePageComponent,
+    },
+    {
+        path: 'listbox',
+        component: ListboxPageComponent,
     }
 ];
 

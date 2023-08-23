@@ -94,6 +94,9 @@ export * from './lib/atoms/tree-select/components/tree-select.component';
 export * from './lib/atoms/tree-select/models/tree-select.model';
 export * from './lib/atoms/tree-select/lib-tree-select.module';
 
+export * from './lib/atoms/listbox/components/listbox.component';
+export * from './lib/atoms/listbox/lib-listbox.module';
+
 /*
     MOLECOLE
 */

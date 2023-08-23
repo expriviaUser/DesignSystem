@@ -21,6 +21,7 @@ export class FormPageComponent {
         textarea: [''],
         static: ['Prova'],
         check: ['Prova'],
+        listbox: [{ code: 2, name: 'Pippo 2' }, Validators.required]
     })
 
     constructor(private fb: FormBuilder) { }

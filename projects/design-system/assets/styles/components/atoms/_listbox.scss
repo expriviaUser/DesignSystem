@@ -1,0 +1,186 @@
+
+// PrimeNG listbox component
+.p-listbox {
+  background: $color--surface-a;
+  color: $color--text-color;
+  border: $border-gray-200;
+  border-radius: $border-radius;
+
+  .p-listbox-header {
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid $color--surface-d;
+      color: $color--black-800;
+      background: $color--surface-b;
+      margin: 0;
+      border-top-right-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+
+      .p-listbox-filter {
+          padding-right: 1.75rem;
+      }
+
+      .p-listbox-filter-icon {
+          right: 0.75rem;
+          color: $color--text-color-secondary;
+      }
+
+      .p-checkbox {
+          margin-right: 0.5rem;
+      }
+  }
+
+  .p-listbox-list {
+      padding: 0.75rem 0;
+
+      .p-listbox-item {
+          margin: 0;
+          padding: 0.75rem 1.25rem;
+          border: 0 none;
+          color: $color--text-color;
+          transition: box-shadow 0.2s;
+          border-radius: 0;
+
+          &:focus {
+              outline: 0 none;
+              outline-offset: 0;
+              box-shadow: inset 0 0 0 0.15rem $color--cyan-100;
+          }
+
+          .p-checkbox {
+              margin-right: 0.5rem;
+          }
+          
+        &.p-highlight {
+          color: $color--blue-700;
+          background: $color--gray-200;
+        }
+      }
+
+      .p-listbox-item-group {
+          margin: 0;
+          padding: 0.75rem 1.25rem;
+          color: $color--black-800;
+          background: $color--surface-a;
+          font-weight: $font-weight;
+      }
+
+      .p-listbox-empty-message {
+          padding: 0.75rem 1.25rem;
+          color: $color--text-color;
+          background: transparent;
+      }
+  }
+
+  &:not(.p-disabled) {
+      .p-listbox-item {
+          &:not(.p-highlight) {
+              &:not(.p-disabled) {
+                  &:hover {
+                      color: $color--text-color;
+                      background: $color--surface-c;
+                  }
+              }
+          }
+      }
+  }
+
+  .p-listbox-footer {
+      padding: 0.7rem 1rem;
+      border-top: $border-gray-200;
+
+      a {
+          margin: 0.5rem 0;
+          display: inline-block;
+          color: $color--blue-100;
+          text-decoration: none;
+      }
+  }
+
+  &--notifications {
+      .p-listbox-list {
+          padding: 0;
+          overflow-y: auto;
+          max-height: 80vh;
+
+          @include medium-up {
+              max-height: 50vh;
+          }
+
+          .p-listbox-item {
+              padding: 0.7rem 1rem;
+              gap: 0.5rem;
+
+              // border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+              a {
+                  text-decoration: none;
+
+                  strong {
+                      color: $color--black-700;
+                      text-decoration: none;
+                  }
+
+                  p {
+                      margin: 0.5rem 0 0 0;
+                      color: $color--blue-100;
+                      display: -webkit-box;
+                      -webkit-line-clamp: $global-line-truncation-size;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                  }
+              }
+
+              .p-listbox-dot {
+                  flex-shrink: 0;
+                  border-radius: 50%;
+                  width: 15px;
+                  height: 15px;
+                  color: $color--surface-a;
+                  background-color: $color--red-200;
+                  font-size: 0.5rem;
+                  line-height: 2.1;
+                  text-align: center;
+              }
+
+              &.p-disabled {
+                  p {
+                      margin: 0.5rem 0 0 0;
+                      // color: $color--blue-100;
+                      display: -webkit-box;
+                      -webkit-line-clamp: $global-line-truncation-size;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                  }
+              }
+          }
+      }
+  }
+
+  &--item-list {
+      width: 208px;
+
+      .p-listbox-list {
+          .p-listbox-item {
+              padding: 0.72rem 1.25rem;
+
+              .list-wraper {
+                  display: flex;
+                  align-items: center;
+
+                  i {
+                      margin-right: 0.6rem;
+                  }
+              }
+          }
+      }
+  }
+}
+
+p-listbox {
+  &.ng-dirty {
+      &.ng-invalid {
+          > .p-listbox {
+              border-color: $color--red-900;
+          }
+      }
+  }
+}

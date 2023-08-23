@@ -1,10 +1,24 @@
 <div [ngSwitch]="type" [class.p-input-icon-right]="icon !== ''">
 
-    <!-- <i *ngIf="icon !== ''" class="pi" [class]="icon"></i> -->
-
     <!-- Input statica -->
     <div class="field" *ngSwitchCase="'static'">
-        <!-- <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'" [class.hasStatic]="hasStatic">{{label}}</label> -->
+        <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'">{{label}}
+            {{required ? '*' : ''}}</label>
+        <div class="static">{{getValueControl()}}</div>
+    </div>
+
+    <!-- Input listBox -->
+    <lib-listbox *ngSwitchCase="'listbox'"
+        [items]="valueInput"
+        [control]="control"
+        [value]="control.value"
+        (valueChange)="emitValue($event, type)"
+        [disabled]="inputDisabled"
+        [filtered]="inputFiltered"
+        [label]="label ? label + (required ? ' *' : '') : ''">        
+    </lib-listbox>
+
+    <div class="field" *ngSwitchCase="'listBox'">
         <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'">{{label}}
             {{required ? '*' : ''}}</label>
         <div class="static">{{getValueControl()}}</div>

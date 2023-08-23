@@ -11,6 +11,7 @@ import { LibRadioButtonModule } from '../radio-button/lib-radio-button.module';
 import { LibTextareaModule } from '../textarea/lib-textarea.module';
 import { InputFormComponent } from './components/input-form.component';
 import { LibAutocompleteCardModule } from '../autocomplete-card/lib-autocomplete-card.module';
+import { LibListboxModule } from '../listbox/lib-listbox.module';
 
 
 const primeComponents = [
@@ -23,7 +24,8 @@ const primeComponents = [
     LibInputModule,
     LibErrorInlineModule,
     LibChooseFileModule,
-    LibAutocompleteCardModule
+    LibAutocompleteCardModule,
+    LibListboxModule
 ];
 
 const exportComponent = [

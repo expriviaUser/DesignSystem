@@ -18,13 +18,15 @@ import { FormPageComponent } from './components/form-page/form-page.component';
 import { TablePageComponent } from './components/table-page/table-page.component';
 import { MessageService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
+import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AboutComponent,
         FormPageComponent,
-        TablePageComponent
+        TablePageComponent,
+        ListboxPageComponent
     ],
     imports: [
         BrowserModule,

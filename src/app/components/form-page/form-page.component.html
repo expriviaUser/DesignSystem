@@ -46,5 +46,11 @@
         </lib-input-form>
     </div>
 
+    <div class="form-row">
+        <lib-input-form [type]="'listbox'" formControlName="listbox" [label]="'ListBox'"
+            [valueInput]="[{code: 1, name: 'Pippo'}, {code: 2, name: 'Pippo 2'},{code: 3, name: 'Pippo 3'},{code: 4, name: 'Pippo 4'}]">
+        </lib-input-form>
+    </div>
+
     <lib-button [label]="'Submit'" [size]="'small'" (onClick)="submit()"></lib-button>
 </form>
