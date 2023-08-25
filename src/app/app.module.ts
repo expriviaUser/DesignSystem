@@ -19,6 +19,7 @@ import { TablePageComponent } from './components/table-page/table-page.component
 import { MessageService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
 import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
+import { ButtonPageComponent } from './components/button-page/button-page.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { ListboxPageComponent } from './components/listbox-page/listbox-page.com
         AboutComponent,
         FormPageComponent,
         TablePageComponent,
-        ListboxPageComponent
+        ListboxPageComponent,
+        ButtonPageComponent
     ],
     imports: [
         BrowserModule,
