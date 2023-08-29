@@ -1,10 +1,8 @@
 .radio-tiles {
-
     .radio-tile {
-        margin: $gap-3;
+        margin-bottom: $gap-2;
 
         &.selected {
-
             .p-card {
                 background: $color--radio-tile-card-selected-bg;
             }
@@ -35,16 +33,21 @@
         .headerActions {
             display: flex;
             justify-content: end;
-            border-bottom: 1px solid #D4D5D8;
+            border-bottom: 1px solid #d4d5d8;
             margin-bottom: 1.25rem;
         }
 
         .titleBody {
-            margin-bottom: 1rem;
+            margin-bottom: pxToRem(4px);
+            @include typography-body-semibold;
+        }
+
+        .contentBody {
+            @include typography-body-regular;
+            margin-bottom: pxToRem(4px);
         }
 
         .bodyContainer {
-
             .bodyItem {
                 display: flex;
                 flex-direction: column;

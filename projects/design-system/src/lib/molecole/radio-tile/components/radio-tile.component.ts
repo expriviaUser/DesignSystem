@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { RadioTile } from '../models/radio-tile.model';
 
 @Component({
@@ -8,8 +8,12 @@ import { RadioTile } from '../models/radio-tile.model';
 })
 export class RadioTileComponent {
     @Input() tiles: RadioTile[] = [];
+    @Input() showRadio: boolean = true;
+    @Input() externalInfo!: TemplateRef<any>;
 
     protected valueSelected: string = '';
+
+    @Output() emitToModify = new EventEmitter<number>();
 
     isSelected(rValue: string): boolean {
         return this.valueSelected === rValue;
@@ -21,5 +25,10 @@ export class RadioTileComponent {
     buttonCopyClicked(event: any) {
         console.log('emitCopyButtonClicked');
     }
-    buttonUpdateClicked(event: any) { }
+    buttonUpdateClicked(event: number) {
+        this.emitToModify.emit(event);
+    }
+    selectObj(tile: RadioTile) {
+        this.valueSelected = tile.id.toString();
+    }
 }

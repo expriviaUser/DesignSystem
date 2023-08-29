@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
-import { FormPageComponent } from './components/form-page/form-page.component';
-import { TablePageComponent } from './components/table-page/table-page.component';
-import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
 import { ButtonPageComponent } from './components/button-page/button-page.component';
+import { FormPageComponent } from './components/form-page/form-page.component';
+import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
+import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-page.component';
+import { TablePageComponent } from './components/table-page/table-page.component';
 
 const routes: Routes = [
     {
@@ -44,6 +45,10 @@ const routes: Routes = [
     {
         path: 'button',
         component: ButtonPageComponent,
+    },
+    {
+        path: 'radio-tile',
+        component: RadioTilePageComponent,
     }
 ];
 

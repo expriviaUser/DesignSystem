@@ -1,6 +1,7 @@
 <div class="radio-tiles">
     <ng-container *ngFor="let tile of tiles">
-        <div [ngClass]="{'selected': isSelected(tile.radioValue), 'radio-tile row': true}">
+        <div [ngClass]="{'selected': isSelected(showRadio ? tile.radio.radioValue : tile.id.toString()), 'radio-tile row': true}"
+            (click)="selectObj(tile)">
             <div class="col">
                 <lib-card [cHeader]="''" [cSubHeader]="''" [cStyle]="''" [cStyleClass]="''">
                     <div cSubtitleTemplate class="headerActions" *ngIf="tile.showHeaderAction">
@@ -10,25 +11,35 @@
                     </div>
                     <div cFooterTemplate>
                         <div class="bodyContainer row">
-                            <div class="col-1 bodyItem center">
-                                <p-radioButton [name]="tile.radioName" [value]="tile.radioValue"
-                                    [disabled]="tile.radioDisabled" [(ngModel)]="valueSelected"
-                                    [inputId]="tile.radioName" (onClick)="emitRadioValue($event)">
+                            <div class="col-1 bodyItem center" *ngIf="showRadio">
+                                <p-radioButton [name]="tile.radio.radioName" [value]="tile.radio.radioValue"
+                                    [disabled]="tile.radio.radioDisabled" [(ngModel)]="valueSelected"
+                                    [inputId]="tile.radio.radioName" (onClick)="emitRadioValue($event)">
                                 </p-radioButton>
                             </div>
                             <div class="col-8">
-                                <label [for]="tile.radioName">
+                                <label [for]="tile.radio.radioName">
                                     <div class="titleBody">
                                         <strong>{{tile.title}}</strong>
                                     </div>
                                     <div class="contentBody">
                                         {{tile.content}}
                                     </div>
+                                    <div class="contentBody">
+                                        <ng-template [ngTemplateOutlet]="externalInfo ? externalInfo : null"
+                                            [ngTemplateOutletContext]="{data:tile}">
+
+                                        </ng-template>
+                                    </div>
                                 </label>
                             </div>
-                            <div class="footerActions col-3 bodyItem end">
+                            <div class="row">
+
+
+                            </div>
+                            <div class="footerActions bodyItem end">
                                 <p-button styleClass="p-button-link" label="Modifica"
-                                    (click)="buttonUpdateClicked($event)">
+                                    (click)="buttonUpdateClicked(tile.id)">
                                 </p-button>
                             </div>
                         </div>
