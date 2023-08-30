@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RadioTile } from '@dnlcorti/design-system';
+import { RadioTile } from 'projects/design-system/src/lib/molecole/radio-tile/models/radio-tile.model';
 
 @Component({
     selector: 'app-radio-tile-page',
