@@ -23,6 +23,7 @@ export class InputComponent {
     @Output() emitInput: EventEmitter<string> = new EventEmitter<string>();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
     @Output() iconClicked: EventEmitter<any> = new EventEmitter<any>();
+    @Output() handlerInputClicked: EventEmitter<any> = new EventEmitter<any>();
 
     @Input() value: any;
     @Input() type: string = 'text';
@@ -57,6 +58,9 @@ export class InputComponent {
         this.iconClicked.emit();
     }
 
+    inputClicked() {
+        this.handlerInputClicked.emit();
+    }
 
     // this method sets the value programmatically
     writeValue(value: string) {
