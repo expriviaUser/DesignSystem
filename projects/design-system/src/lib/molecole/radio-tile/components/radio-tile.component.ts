@@ -14,6 +14,7 @@ export class RadioTileComponent {
     protected valueSelected: string = '';
 
     @Output() emitToModify = new EventEmitter<number>();
+    @Output() emitSelected = new EventEmitter<string>();
 
     isSelected(rValue: string): boolean {
         return this.valueSelected === rValue;
@@ -21,6 +22,7 @@ export class RadioTileComponent {
 
     emitRadioValue(event: any) {
         this.valueSelected = event.value;
+        this.emitSelected.emit(this.valueSelected);
     }
     buttonCopyClicked(event: any) {
         console.log('emitCopyButtonClicked');
@@ -30,5 +32,6 @@ export class RadioTileComponent {
     }
     selectObj(tile: RadioTile) {
         this.valueSelected = tile.id.toString();
+        this.emitSelected.emit(this.valueSelected);
     }
 }
