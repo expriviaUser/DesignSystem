@@ -32,14 +32,15 @@
         <lib-input-form [type]="'autocomplete'" formControlName="autocomplete" [label]="'Autocomplete'"
             [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
         </lib-input-form>
-        <lib-input-form [type]="'static'" formControlName="static" [label]="'Static'">
+        <!-- <lib-input-form [type]="'static'" formControlName="static" [label]="'Static'">
+        </lib-input-form> -->
+        <lib-input-form [type]="'checkbox'" formControlName="check" [label]="'Checkbox'"
+            [checkboxValue]="[{data: 1, label: 'Pippo'}]" [placeholder]="'Titolo Documento'">
         </lib-input-form>
     </div>
 
     <div class="form-row">
-        <lib-input-form [type]="'checkbox'" formControlName="check" [label]="'Checkbox'"
-            [checkboxValue]="[{data: 1, label: 'Pippo'}]" [placeholder]="'Titolo Documento'">
-        </lib-input-form>
+
         <lib-input-form [type]="'radio'" [valueInput]="[{data: 1, label: 'Prova'},{data: 2, label: 'Ciao'}]"
             formControlName="radio" [label]="'Radio'">
         </lib-input-form>

@@ -1,6 +1,6 @@
 <div class="cart" #cart (click)="openOverlay($event)">
     <span class="pi pi-shopping-cart"></span>
-    <span>Carrello</span>
+    <span class="small-semibold">Carrello</span>
     <span *ngIf="rows.length > 0"><p-badge [value]="rows.length.toString()" severity="danger"></p-badge></span>
     <div class="popup-cart" [style.display]="show ? 'initial' : 'none'">
         <div class="container">

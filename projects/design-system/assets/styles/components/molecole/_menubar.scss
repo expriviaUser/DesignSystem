@@ -3,7 +3,7 @@
 .p-menubar {
     padding: 0.1rem 2rem;
     // background: $color--surface-b;
-    color: $color--text-color;
+    color: $color--black;
     border: 1px solid $color--surface-d;
     border-radius: $border-radius;
 }
@@ -196,7 +196,10 @@
         height: 2rem;
         color: $color--text-color-secondary;
         border-radius: 50%;
-        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        transition:
+            background-color 0.2s,
+            color 0.2s,
+            box-shadow 0.2s;
     }
 
     .p-menubar .p-menubar-button:hover {

@@ -1,7 +1,6 @@
 p-checkbox {
     &.rounded {
         .p-checkbox {
-        
             .p-checkbox-box {
                 border-radius: 100%;
             }
@@ -10,7 +9,7 @@ p-checkbox {
 }
 
 .check-list {
-    padding: pxToRem(8px);
+    padding: pxToRem(6px) 0;
 }
 
 // PrimeNG pcheckbox component
@@ -25,7 +24,11 @@ p-checkbox {
         height: 22px;
         color: $color--checkbox-text;
         border-radius: $border-radius;
-        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        transition:
+            background-color 0.2s,
+            color 0.2s,
+            border-color 0.2s,
+            box-shadow 0.2s;
 
         &:focus {
             box-shadow: none;
@@ -79,8 +82,8 @@ p-checkbox {
 }
 
 p-checkbox.ng-dirty.ng-invalid {
-    >.p-checkbox {
-        >.p-checkbox-box {
+    > .p-checkbox {
+        > .p-checkbox-box {
             border-color: $color--error;
         }
     }
@@ -89,7 +92,6 @@ p-checkbox.ng-dirty.ng-invalid {
 .p-checkbox-label {
     margin-left: 0.5rem;
 }
-
 
 .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
     border: 2px solid $color--checkbox-border-checked;

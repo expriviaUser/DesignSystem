@@ -1,13 +1,17 @@
 @import "../../base/functions";
 
 .p-button {
-    padding: pxToRem(12px);
+    padding: pxToRem(11px);
     border: 1px solid $color--button-primary-background;
     border-radius: $border-radius;
     background: $color--button-primary-background;
     @include typography-button-regular;
     color: $color--button-primary-text;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
     &:disabled {
         cursor: not-allowed;
         border: 1px solid $color--button-primary-background-disabled;
@@ -162,7 +166,9 @@
 }
 
 .p-button.p-button-raised {
-    box-shadow: 0 3px 1px -2px rgba($color--black-50, 0.2), 0 2px 2px 0 rgba($color--black-50, 0.14),
+    box-shadow:
+        0 3px 1px -2px rgba($color--black-50, 0.2),
+        0 2px 2px 0 rgba($color--black-50, 0.14),
         0 1px 5px 0 rgba($color--black-50, 0.12);
 
     &.p-button-secondary {
@@ -215,7 +221,7 @@
 
 .p-button.p-button-sm {
     @include typography-button-small;
-    padding: pxToRem(8px) pxToRem(12px);
+    padding: pxToRem(7px) pxToRem(11px);
     .p-button-icon {
         @include typography-button-small;
     }
@@ -223,7 +229,7 @@
 
 .p-button.p-button-lg {
     @include typography-button-large;
-    padding: pxToRem(12px);
+    padding: pxToRem(11px);
     .p-button-icon {
         @include typography-button-large;
     }
