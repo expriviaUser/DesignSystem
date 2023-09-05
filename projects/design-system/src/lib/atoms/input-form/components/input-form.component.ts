@@ -1,5 +1,5 @@
 import { DatePipe } from "@angular/common";
-import { Component, EventEmitter, forwardRef, Input, Output } from "@angular/core";
+import { Component, EventEmitter, forwardRef, Input, Output, TemplateRef } from "@angular/core";
 import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
 import { CheckBoxModel } from "../../checkbox/models/checkbox.model";
 
@@ -45,6 +45,7 @@ export class InputFormComponent implements ControlValueAccessor {
     @Input() minLenghtDigits: number = 3;
     @Input() fileAcceptExtensions!: string;
     @Input() maxFileSize!: number;
+    @Input() errorTemplate!: TemplateRef<any>;
 
     //@Input() formControl: FormControl = new FormControl();
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();

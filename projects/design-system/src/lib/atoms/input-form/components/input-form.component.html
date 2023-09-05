@@ -1,4 +1,4 @@
-<div [ngSwitch]="type" [class.p-input-icon-right]="icon !== ''">
+<div [ngSwitch]="type" class="show-error" [class.p-input-icon-right]="icon !== ''">
 
     <!-- Input statica -->
     <div class="field" *ngSwitchCase="'static'">
@@ -8,14 +8,9 @@
     </div>
 
     <!-- Input listBox -->
-    <lib-listbox *ngSwitchCase="'listbox'"
-        [items]="valueInput"
-        [control]="control"
-        [value]="control.value"
-        (valueChange)="emitValue($event, type)"
-        [disabled]="inputDisabled"
-        [filtered]="inputFiltered"
-        [label]="label ? label + (required ? ' *' : '') : ''">        
+    <lib-listbox *ngSwitchCase="'listbox'" [items]="valueInput" [control]="control" [value]="control.value"
+        (valueChange)="emitValue($event, type)" [disabled]="inputDisabled" [filtered]="inputFiltered"
+        [label]="label ? label + (required ? ' *' : '') : ''">
     </lib-listbox>
 
     <div class="field" *ngSwitchCase="'listBox'">
@@ -26,7 +21,7 @@
 
     <!-- Input number -->
     <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos" [clear]="clear"
-        (selectedValue)="emitValue($event, type)" [control]="control" [id]="formControlName"
+        [value]="value" (selectedValue)="emitValue($event, type)" [control]="control" [id]="formControlName"
         [label]="label ? label + (required ? ' *' : '') : ''" type="number" />
 
     <!-- dropdown  -->
@@ -90,6 +85,9 @@
         [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label ? label + (required ? ' *' : '') : ''"
         [control]="control" [disabled]="inputDisabled" [value]="value"></lib-input>
 
-
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
         [controlName]="formControlName">
+        <ng-template [ngTemplateOutlet]="errorTemplate ? errorTemplate : null">
+            <ng-content></ng-content>
+        </ng-template>
+    </lib-error-inline>

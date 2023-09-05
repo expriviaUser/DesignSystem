@@ -10,7 +10,7 @@ export class FormPageComponent {
     form: FormGroup = this.fb.group({
         autocomplete: [''],
         autocompleteCard: [''],
-        input: ['', Validators.required],
+        input: ['', [Validators.required, Validators.maxLength(4)]],
         psw: [''],
         dropdown: [''],
         calendar: [new Date('2023-05-15')],
@@ -24,9 +24,12 @@ export class FormPageComponent {
         listbox: [{ code: 2, name: 'Pippo 2' }, Validators.required]
     })
 
-    constructor(private fb: FormBuilder) { }
+    constructor(private fb: FormBuilder) {
+        this.form.get('number')?.setValue(14);
+    }
 
     submit() {
         console.log(this.form.value);
+        console.log(this.form.get('input')?.errors)
     }
 }

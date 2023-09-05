@@ -4,7 +4,11 @@
             [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
         </lib-input-form>
         <lib-input-form [type]="'text'" formControlName="input" [label]="'Input text'"
-            [placeholder]="'Titolo Documento'">
+            [placeholder]="'Titolo Documento'" [errorTemplate]="error">
+            <ng-template #error>
+                <li [hidden]="form.get('input')?.pristine && !form.get('input')?.touched"
+                    *ngIf="form.get('input')?.hasError('maxlength')">Lunghezza superata</li>
+            </ng-template>
         </lib-input-form>
         <lib-input-form [type]="'calendar'" formControlName="calendar" [label]="'Calendar'" [calendarShowIcon]="true">
 
