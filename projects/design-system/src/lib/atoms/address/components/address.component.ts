@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Address } from '../models/address.model';
+import { LibAddress } from '../models/address.model';
 
 @Component({
     selector: 'lib-address',
@@ -7,7 +7,7 @@ import { Address } from '../models/address.model';
     styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-    @Input() address!: Address;
+    @Input() address!: LibAddress;
     @Input() modify: boolean = false;
 
     @Output() modifyClicked = new EventEmitter<boolean>();

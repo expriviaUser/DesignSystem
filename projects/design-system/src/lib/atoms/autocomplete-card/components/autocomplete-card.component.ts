@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/cor
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FilterService } from "primeng/api";
 import { RadioTile } from '../../../molecole/radio-tile/models/radio-tile.model';
-import { Address } from '../../address/models/address.model';
+import { LibAddress } from '../../address/models/address.model';
 import { AutoComplete } from 'primeng/autocomplete';
 
 @Component({
