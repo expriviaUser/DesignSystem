@@ -74,11 +74,17 @@ export class OnlyFiltersComponent implements OnInit {
     this.dropdownSelectedValues[dropdownIndex].label = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.data == event)[0].label || '';
   }
 
-  protected setCalendarChild(event: string | Array<object>, dropdownIndex: number) {
-    if (Array.isArray(event) && event[1])
-      this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0] + " - " + event[1].toString().split(',')[0];
-    else if(!Array.isArray(event))
-      this.dropdownSelectedValues[dropdownIndex].childValue = event;
+  protected setCalendarChild(event: string | Array<object>, dropdownIndex: number, config: any) {
+      if (Array.isArray(event)) {
+        if(event[1]) {
+        this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0] + " - " + event[1].toString().split(',')[0];
+        } else {
+          this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0];
+        }
+      }
+      else {
+        this.dropdownSelectedValues[dropdownIndex].childValue = event;
+      }
   }
 
   protected setInterval(dropdownIndex: number, event: string, isMin: boolean) {

@@ -84,7 +84,7 @@
                             <div *ngSwitchCase="'calendar'">
                                 <!-- CHILDREN INPUT CALENDAR -->
                                 <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
-                                    (selectedValue)="setCalendarChild($event, i)"
+                                    (selectedValue)="setCalendarChild($event, i, getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"
                                     [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).selection"></lib-calendar>
                             </div>
                             <div *ngSwitchCase="'interval'" class="same-line">
