@@ -80,7 +80,7 @@ export class TableComponent implements OnInit {
 
     @Input() emitLazy!: boolean;
 
-    checked: any = [];
+    @Input() checked: any = [];
 
     //    Output per triggerare il cambio pagina ( nuova chiamata al be)
     @Output() pageChanged: EventEmitter<{ pageNumber: number, field: string, order: number }> = new EventEmitter<{ pageNumber: number, field: string, order: number }>();
