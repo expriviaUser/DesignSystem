@@ -96,6 +96,7 @@
                     border-color: $color--filters-dropdown-border;
                     cursor: pointer;
                     padding: pxToRem(8px);
+                    padding-right: 2rem;
 
                     &::placeholder {
                         /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -173,4 +174,9 @@
 lib-only-filters {
     display: flex;
     align-items: flex-end;
+}
+
+.flex-center {
+  display:flex;
+  align-items: center;
 }
