@@ -130,10 +130,10 @@ export class OnlyFiltersComponent implements OnInit {
         this.dropdownSelectedValues[dropdownIndex].childValue = value;
       }
     } else if (rangeNum == 1) {
-      if (splittedValue[0]) {
+      if (splittedValue[0] && splittedValue[0].length>0) {
         this.dropdownSelectedValues[dropdownIndex].childValue = `${splittedValue[0]} - ${value}`;
       } else {
-        this.dropdownSelectedValues[dropdownIndex].childValue = value;
+        this.dropdownSelectedValues[dropdownIndex].childValue = ` - ${value}`;
       }
     }
   }
@@ -141,7 +141,7 @@ export class OnlyFiltersComponent implements OnInit {
   protected checkValue(dropdownIndex: number, type: string, config: any){
     if((type==='number' || type==='calendar') && config['selection'] === 'range') {
       let splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
-      if(splittedValue[1] && splittedValue[1].length>0){
+      if(splittedValue[0] && splittedValue[0].length>0 && splittedValue[1] && splittedValue[1].length>0){
         return false;
       } else return true;
     } else return false;
