@@ -212,6 +212,7 @@ export class OnlyFiltersComponent implements OnInit {
 
   protected printData(dropdownIndex: number, dropdown: DropdownComponent, type: string, config: any) {
     let splittedValue;
+    let valueLabel;
     if ((config && (config['selection'] === 'range' || config['selection'] === 'double-range')) || type === 'interval') {
       splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
       if (type === 'interval') {
@@ -232,35 +233,57 @@ export class OnlyFiltersComponent implements OnInit {
     }
     const date = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.label === this.dropdownSelectedValues[dropdownIndex].label);
     let value = this.dropdownSelectedValues[dropdownIndex].childValue;
-    if (config && (config['selection'] !== 'range' && config['selection'] !== 'double-range')) {
-      if (date && date.length > 0 && date[0].type === 'calendar') {
-        value = this.datePipe.transform(new Date(value), 'dd/MM/yyyy') || '';
-      }
-    } else {
+    if (config && (config['selection'] === 'range' || config['selection'] === 'double-range')) {
       if (splittedValue) {
         if (date && date.length > 0 && date[0].type === 'calendar') {
           if (this.exist(splittedValue[0], splittedValue[1])) {
             value = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+            valueLabel = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
           } else if(splittedValue[0] && splittedValue[0].length>0) {
             value = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-`;
+            valueLabel = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}->`;
           }else if(splittedValue[1] && splittedValue[1].length>0) {
             value = `-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+            valueLabel = `<-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
           }
         } else {
+          if(splittedValue[0].length>0 && splittedValue[1].length>0) {
+            valueLabel = `${splittedValue[0]}-${splittedValue[1]}`;
+          }
+          else if(splittedValue[0].length>0) {
+            valueLabel = `${splittedValue[0]}->`;
+          }
+          else if(splittedValue[1].length>0) {
+            valueLabel = `<-${splittedValue[1]}`;
+          }
           value = `${splittedValue[0]}-${splittedValue[1]}`;
         }
       }
+    } else {
+      if (date && date.length > 0 && date[0].type === 'calendar') {
+        value = this.datePipe.transform(new Date(value), 'dd/MM/yyyy') || '';
+      }
     }
 
-
-    this.chipsList.result.push({
-      dropdownIndex: dropdownIndex,
-      data: this.dropdownSelectedValues[dropdownIndex].value,
-      field: this.dropdownValues.filters[dropdownIndex].field,
-      type: 'children',
-      chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${value}`,
-      value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
-    });
+    if (config && (config['selection'] === 'range' || config['selection'] === 'double-range')) {
+      this.chipsList.result.push({
+        dropdownIndex: dropdownIndex,
+        data: this.dropdownSelectedValues[dropdownIndex].value,
+        field: this.dropdownValues.filters[dropdownIndex].field,
+        type: 'children',
+        chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${valueLabel}`,
+        value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
+      });
+    } else {
+      this.chipsList.result.push({
+        dropdownIndex: dropdownIndex,
+        data: this.dropdownSelectedValues[dropdownIndex].value,
+        field: this.dropdownValues.filters[dropdownIndex].field,
+        type: 'children',
+        chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${value}`,
+        value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
+      });
+    }
     this.dropdownValues.filters[dropdownIndex].data?.forEach(item => {
       this.chipsList.result.forEach(element => {
         if (element.data === item.data)
