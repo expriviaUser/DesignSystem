@@ -70,21 +70,21 @@ export class OnlyFiltersComponent implements OnInit {
   }
 
   protected setChildValue(event: string | number, dropdownIndex: number) {
+    this.dropdownSelectedValues[dropdownIndex].childValue = "";
     this.dropdownSelectedValues[dropdownIndex].value = event;
     this.dropdownSelectedValues[dropdownIndex].label = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.data == event)[0].label || '';
   }
 
-  protected setCalendarChild(event: string | Array<object>, dropdownIndex: number, config: any) {
-      if (Array.isArray(event)) {
-        if(event[1]) {
+  protected setCalendarChild(event: string | Array<object>, dropdownIndex: number) {
+    if (Array.isArray(event)) {
+      if (event[1]) {
         this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0] + " - " + event[1].toString().split(',')[0];
-        } else {
-          this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0];
-        }
+      } else {
+        this.dropdownSelectedValues[dropdownIndex].childValue = event[0].toString().split(',')[0];
       }
-      else {
-        this.dropdownSelectedValues[dropdownIndex].childValue = event;
-      }
+    } else {
+      this.dropdownSelectedValues[dropdownIndex].childValue = event;
+    }
   }
 
   protected setInterval(dropdownIndex: number, event: string, isMin: boolean) {
@@ -124,13 +124,13 @@ export class OnlyFiltersComponent implements OnInit {
   protected setNumberRangeValue(dropdownIndex: number, rangeNum: number, value: string) {
     let splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
     if (rangeNum == 0) {
-      if (splittedValue[1]) {
+      if (splittedValue[1] && splittedValue[1].length > 0) {
         this.dropdownSelectedValues[dropdownIndex].childValue = `${value} - ${splittedValue[1]}`;
       } else {
-        this.dropdownSelectedValues[dropdownIndex].childValue = value;
+        this.dropdownSelectedValues[dropdownIndex].childValue = `${value} - `;
       }
     } else if (rangeNum == 1) {
-      if (splittedValue[0] && splittedValue[0].length>0) {
+      if (splittedValue[0] && splittedValue[0].length > 0) {
         this.dropdownSelectedValues[dropdownIndex].childValue = `${splittedValue[0]} - ${value}`;
       } else {
         this.dropdownSelectedValues[dropdownIndex].childValue = ` - ${value}`;
@@ -138,18 +138,82 @@ export class OnlyFiltersComponent implements OnInit {
     }
   }
 
-  protected checkValue(dropdownIndex: number, type: string, config: any){
-    if((type==='number' || type==='calendar') && config['selection'] === 'range') {
+  protected setCalendarDoubleRangeChild(dropdownIndex: number, rangeNum: number, value: string | Array<object>) {
+    let splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
+    if (Array.isArray(value)) {
+      if (rangeNum == 0) {
+        if (splittedValue[1] && splittedValue[1].length > 0) {
+          this.dropdownSelectedValues[dropdownIndex].childValue = `${value[0].toString().split(',')[0]} - ${splittedValue[1]}`;
+        } else {
+          this.dropdownSelectedValues[dropdownIndex].childValue = `${value[0].toString().split(',')[0]} - `;
+        }
+      } else if (rangeNum == 1) {
+        if (splittedValue[0] && splittedValue[0].length > 0) {
+          this.dropdownSelectedValues[dropdownIndex].childValue = `${splittedValue[0]} - ${value[0].toString().split(',')[0]}`;
+        } else {
+          this.dropdownSelectedValues[dropdownIndex].childValue = ` - ${value[0].toString().split(',')[0]}`;
+        }
+      }
+    } else {
+      if (rangeNum == 0) {
+        if (splittedValue[1] && splittedValue[1].length > 0) {
+          this.dropdownSelectedValues[dropdownIndex].childValue = `${value} - ${splittedValue[1]}`;
+        } else {
+          this.dropdownSelectedValues[dropdownIndex].childValue = `${value} - `;
+        }
+      } else if (rangeNum == 1) {
+        if (splittedValue[0] && splittedValue[0].length > 0) {
+          this.dropdownSelectedValues[dropdownIndex].childValue = `${splittedValue[0]} - ${value}`;
+        } else {
+          this.dropdownSelectedValues[dropdownIndex].childValue = ` - ${value}`;
+        }
+      }
+    }
+  }
+
+  protected checkValue(dropdownIndex: number, type: string, config: any) {
+    if ((type === 'number' && config && config['selection'] === 'range') || (type === 'calendar' && config && config['selection'] === 'double-range')) {
       let splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
-      if(splittedValue[0] && splittedValue[0].length>0 && splittedValue[1] && splittedValue[1].length>0){
+      let value0 = "";
+      let value1 = "";
+      if (type === 'number') {
+        value0 = splittedValue[0];
+        value1 = splittedValue[1];
+      }
+
+      if (type === 'calendar') {
+        if(splittedValue[0]?.length>0) {
+          value0 = (new Date(splittedValue[0])).getTime().toString();
+        }
+        if(splittedValue[1]?.length>0) {
+          value1 = (new Date(splittedValue[1])).getTime().toString();
+        }
+      }
+      if (this.exist(value0, value1) && this.isMin(Number(value0), Number(value1))) {
         return false;
-      } else return true;
-    } else return false;
+      } else if (this.existOnlyOne(value0, value1)) {
+        return false;
+      } else {
+        return true;
+      }
+    } else if(type === 'calendar' && config && config['selection'] === 'range') {
+      let splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
+      if (splittedValue[0]?.length > 0 || splittedValue[1]?.length > 0) {
+        return false
+      } else {
+        return true;
+      }
+    } else if(this.dropdownSelectedValues[dropdownIndex].childValue?.toString().length>0) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   protected printData(dropdownIndex: number, dropdown: DropdownComponent, type: string, config: any) {
     let splittedValue;
-    if (config['selection'] === 'range' || type === 'interval') {
+    let valueLabel;
+    if ((config && (config['selection'] === 'range' || config['selection'] === 'double-range')) || type === 'interval') {
       splittedValue = this.dropdownSelectedValues[dropdownIndex].childValue.toString().split(' - ');
       if (type === 'interval') {
         if (!(splittedValue[0])) {
@@ -169,29 +233,57 @@ export class OnlyFiltersComponent implements OnInit {
     }
     const date = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.label === this.dropdownSelectedValues[dropdownIndex].label);
     let value = this.dropdownSelectedValues[dropdownIndex].childValue;
-    if (config['selection'] !== 'range') {
-      if (date && date.length > 0 && date[0].type === 'calendar') {
-        value = this.datePipe.transform(new Date(value), 'dd/MM/yyyy') || '';
-      }
-    } else {
+    if (config && (config['selection'] === 'range' || config['selection'] === 'double-range')) {
       if (splittedValue) {
         if (date && date.length > 0 && date[0].type === 'calendar') {
-          value = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+          if (this.exist(splittedValue[0], splittedValue[1])) {
+            value = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+            valueLabel = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+          } else if(splittedValue[0] && splittedValue[0].length>0) {
+            value = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-`;
+            valueLabel = `Dal: ${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}`;
+          }else if(splittedValue[1] && splittedValue[1].length>0) {
+            value = `-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+            valueLabel = `Fino al: ${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+          }
         } else {
+          if(splittedValue[0].length>0 && splittedValue[1].length>0) {
+            valueLabel = `${splittedValue[0]}-${splittedValue[1]}`;
+          }
+          else if(splittedValue[0].length>0) {
+            valueLabel = `Dal: ${splittedValue[0]}`;
+          }
+          else if(splittedValue[1].length>0) {
+            valueLabel = `Fino al: ${splittedValue[1]}`;
+          }
           value = `${splittedValue[0]}-${splittedValue[1]}`;
         }
       }
+    } else {
+      if (date && date.length > 0 && date[0].type === 'calendar') {
+        value = this.datePipe.transform(new Date(value), 'dd/MM/yyyy') || '';
+      }
     }
 
-
-    this.chipsList.result.push({
-      dropdownIndex: dropdownIndex,
-      data: this.dropdownSelectedValues[dropdownIndex].value,
-      field: this.dropdownValues.filters[dropdownIndex].field,
-      type: 'children',
-      chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${value}`,
-      value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
-    });
+    if (config && (config['selection'] === 'range' || config['selection'] === 'double-range')) {
+      this.chipsList.result.push({
+        dropdownIndex: dropdownIndex,
+        data: this.dropdownSelectedValues[dropdownIndex].value,
+        field: this.dropdownValues.filters[dropdownIndex].field,
+        type: 'children',
+        chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${valueLabel}`,
+        value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
+      });
+    } else {
+      this.chipsList.result.push({
+        dropdownIndex: dropdownIndex,
+        data: this.dropdownSelectedValues[dropdownIndex].value,
+        field: this.dropdownValues.filters[dropdownIndex].field,
+        type: 'children',
+        chipsLabel: `${this.dropdownSelectedValues[dropdownIndex].label}: ${value}`,
+        value: this.dropdownSelectedValues[dropdownIndex].childValue.toString()
+      });
+    }
     this.dropdownValues.filters[dropdownIndex].data?.forEach(item => {
       this.chipsList.result.forEach(element => {
         if (element.data === item.data)
@@ -315,6 +407,18 @@ export class OnlyFiltersComponent implements OnInit {
 
   protected getTreeValue(indexDropdown: number, field: string) {
     return this.dropdownValues.filters[indexDropdown].children?.filter((element: any) => element.data === this.chipsList.data[indexDropdown].data);
+  }
+
+  private exist(val0: string, val1: string) {
+    return val0?.length > 0 && val1?.length > 0
+  }
+
+  private existOnlyOne(val0: string, val1: string) {
+    return (val0?.length > 0 || val1?.length > 0) && !this.exist(val0, val1);
+  }
+
+  private isMin(val0: number, val1: number) {
+    return val0 < val1;
   }
 
 
