@@ -241,20 +241,20 @@ export class OnlyFiltersComponent implements OnInit {
             valueLabel = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
           } else if(splittedValue[0] && splittedValue[0].length>0) {
             value = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}-`;
-            valueLabel = `${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}->`;
+            valueLabel = `Dal: ${this.datePipe.transform(new Date(splittedValue[0]), 'dd/MM/yyyy')}`;
           }else if(splittedValue[1] && splittedValue[1].length>0) {
             value = `-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
-            valueLabel = `<-${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
+            valueLabel = `Fino al: ${this.datePipe.transform(new Date(splittedValue[1]), 'dd/MM/yyyy')}`;
           }
         } else {
           if(splittedValue[0].length>0 && splittedValue[1].length>0) {
             valueLabel = `${splittedValue[0]}-${splittedValue[1]}`;
           }
           else if(splittedValue[0].length>0) {
-            valueLabel = `${splittedValue[0]}->`;
+            valueLabel = `Dal: ${splittedValue[0]}`;
           }
           else if(splittedValue[1].length>0) {
-            valueLabel = `<-${splittedValue[1]}`;
+            valueLabel = `Fino al: ${splittedValue[1]}`;
           }
           value = `${splittedValue[0]}-${splittedValue[1]}`;
         }
