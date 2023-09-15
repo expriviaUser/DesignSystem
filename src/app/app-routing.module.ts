@@ -6,6 +6,7 @@ import { FormPageComponent } from './components/form-page/form-page.component';
 import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
 import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-page.component';
 import { TablePageComponent } from './components/table-page/table-page.component';
+import { FiltersPageComponent } from './components/filters-page/filters-page.component';
 
 const routes: Routes = [
     {
@@ -49,6 +50,10 @@ const routes: Routes = [
     {
         path: 'radio-tile',
         component: RadioTilePageComponent,
+    },
+    {
+        path: 'filters',
+        component: FiltersPageComponent,
     }
 ];
 

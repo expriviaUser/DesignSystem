@@ -122,6 +122,7 @@ export class AppComponent {
         { label: 'ListBox', routerLink: 'listbox' },
         { label: 'Buttons', routerLink: 'button' },
         { label: 'RadioTile', routerLink: 'radio-tile' },
+        { label: 'Filters', routerLink: 'filters' },
     ];
 
     message() {

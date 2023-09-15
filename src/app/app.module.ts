@@ -21,6 +21,7 @@ import { MessagesModule } from 'primeng/messages';
 import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
 import { ButtonPageComponent } from './components/button-page/button-page.component';
 import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-page.component';
+import { FiltersPageComponent } from './components/filters-page/filters-page.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-
         TablePageComponent,
         ListboxPageComponent,
         ButtonPageComponent,
-        RadioTilePageComponent
+        RadioTilePageComponent,
+        FiltersPageComponent
     ],
     imports: [
         BrowserModule,
