@@ -22,6 +22,7 @@ import { ListboxPageComponent } from './components/listbox-page/listbox-page.com
 import { ButtonPageComponent } from './components/button-page/button-page.component';
 import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-page.component';
 import { FiltersPageComponent } from './components/filters-page/filters-page.component';
+import { LibCircleStatusModule } from 'projects/design-system/src/lib/atoms/circle-status/lib-circle-status.module';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,8 @@ import { FiltersPageComponent } from './components/filters-page/filters-page.com
         BreadcrumbModule,
         TreeModule,
         DropdownModule,
-        MessagesModule
+        MessagesModule,
+        LibCircleStatusModule
     ],
     providers: [DatePipe, FiltersService],
     bootstrap: [AppComponent]

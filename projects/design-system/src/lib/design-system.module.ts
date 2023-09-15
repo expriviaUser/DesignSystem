@@ -40,6 +40,7 @@ import { LibTableModule } from './molecole/table/lib-table.module';
 import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.module';
 import { PipesModule } from './pipes/pipes.module';
 import { LibListboxModule } from './atoms/listbox/lib-listbox.module';
+import { LibCircleStatusModule } from './atoms/circle-status/lib-circle-status.module';
 
 const sharedModules = [
     LibTagModule,
@@ -81,7 +82,8 @@ const sharedModules = [
     LibAddressModule,
     LibTimelineModule,
     LibPickListModule,
-    LibListboxModule
+    LibListboxModule,
+    LibCircleStatusModule
 ];
 
 @NgModule({

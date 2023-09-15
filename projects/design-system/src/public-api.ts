@@ -38,6 +38,9 @@ export * from './lib/atoms/dropdown/models/dropdown.model';
 export * from './lib/atoms/dropdown/components/dropdown.component';
 export * from './lib/atoms/dropdown/lib-dropdown.module';
 
+export * from './lib/atoms/circle-status/components/circle-status.component';
+export * from './lib/atoms/circle-status/lib-circle-status.module';
+
 export * from './lib/atoms/calendar/components/calendar.component';
 export * from './lib/atoms/calendar/lib-calendar.module';
 
