@@ -1,5 +1,5 @@
 <lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="[2]"
-    [resizableColumns]="true" [totalRecords]="3" [selectionType]="'checkbox'" [isSelectable]="true"
+    [resizableColumns]="true" [totalRecords]="3" [selectionType]="'single'" [isSelectable]="true"
     (checkedRowValues)="checkedValues=$event" [(selectedValue)]="selectionTable">
     <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
     <ng-template #body let-data="data" let-column="column">
@@ -16,3 +16,11 @@
 </lib-table>
 
 {{checkedValues | json}}
+{{selectionTable | json}}
+
+<lib-button [label]="'Set selection'" [size]="'small'" (onClick)="selectionTable = {
+            name: 'Simone',
+            surname: 'Giannuario',
+            status: { id: 0, description: 'prova' },
+            isDisabledChecked: true
+        }"></lib-button>

@@ -1,15 +1,14 @@
 <div class="table-wrapper">
 
     <p-table [selectionMode]="selectionType" [filters]="filters" [dataKey]="dataKey ? dataKey : columns[0].field"
-        (onRowSelect)="selectedEvent($event)" (onRowUnselect)="selectedEvent()" [resizableColumns]="resizableColumns"
-        [(selection)]="selectedValue" (selectionChange)="selectedValueChange.emit(selectedValue)"
-        [scrollable]="isScrollable" [scrollHeight]="scrollHeight" [alwaysShowPaginator]="alwaysShowPaginator"
-        [columns]="columns" [value]="value" [paginator]="showPaginator" [rows]="nRowsPerPage"
-        [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords" [currentPageReportTemplate]="reportString"
-        [loading]="loading" [showCurrentPageReport]="showReportPage" [(first)]="firstRowInPage" [lazy]="lazy"
-        [lazyLoadOnInit]="lazyOnInit" [customSort]="serverSort" (onSort)="emitSort($event)"
-        (onLazyLoad)="lazyLoading($event)" [columnResizeMode]="columnResizeMode" [responsive]="responsive"
-        [responsiveLayout]="responsiveLayout">
+        [resizableColumns]="resizableColumns" [(selection)]="selectedValue"
+        (selectionChange)="selectedEvent(selectedValue)" [scrollable]="isScrollable" [scrollHeight]="scrollHeight"
+        [alwaysShowPaginator]="alwaysShowPaginator" [columns]="columns" [value]="value" [paginator]="showPaginator"
+        [rows]="nRowsPerPage" [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords"
+        [currentPageReportTemplate]="reportString" [loading]="loading" [showCurrentPageReport]="showReportPage"
+        [(first)]="firstRowInPage" [lazy]="lazy" [lazyLoadOnInit]="lazyOnInit" [customSort]="serverSort"
+        (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)" [columnResizeMode]="columnResizeMode"
+        [responsive]="responsive" [responsiveLayout]="responsiveLayout">
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <ng-container *ngIf="showHeader">

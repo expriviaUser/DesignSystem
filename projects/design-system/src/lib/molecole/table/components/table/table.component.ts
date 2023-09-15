@@ -125,6 +125,7 @@ export class TableComponent implements OnInit {
 
     selectedEvent(event?: any) {
         this.selectedValueChange.emit(this.selectedValue);
+        console.log('1');
     }
 
     emitSort(event: { field: string, order: number }): void {
