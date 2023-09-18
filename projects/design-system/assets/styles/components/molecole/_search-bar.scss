@@ -6,49 +6,10 @@
 
     form {
         display: flex;
-        flex: 0 0 auto;
         height: 100%;
+        width: 90%;
         //X GlobalDoc
 
-        .field {
-            height: 100%;
-
-            div {
-                height: 100%;
-            }
-        }
-
-        button {
-            height: 100%;
-        }
-
-        .p-dropdown {
-            line-height: 0;
-            border-bottom-right-radius: 0;
-            border-top-right-radius: 0;
-            height: 100%;
-        }
-
-        .p-inputtext {
-            border-radius: 0;
-            line-height: 0.875;
-            height: 100%;
-        }
-
-        .p-button {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-}
-
-//Global Doc
-.search-bar {
-    .p-inputtext {
-        border: 1px solid $color--searchbar-inputtype-border;
-    }
-
-    form {
         lib-input-form {
             div:first-child {
                 height: 100%;
@@ -58,24 +19,65 @@
                 height: 100%;
             }
         }
-    }
 
-    .p-dropdown {
-        background-color: $color--gray-600;
-        border: 1px solid $color--gray-600;
+        .search-bar-category {
+            flex: 1 1 30%;
+        }
 
-        .p-dropdown-label {
-            color: $color--white;
-            display: flex;
-            align-items: center;
+        .search-bar-input {
+            flex: 1 1 50%;
+        }
 
-            &.p-inputtext {
-                border: 0;
+        .search-bar-button {
+            flex: 1 1 20%;
+
+            button {
+                height: 100%;
+                width: 100%;
             }
         }
 
-        .p-dropdown-trigger-icon {
-            color: $color--white;
+        .field {
+            height: 100%;
+
+            div {
+                height: 100%;
+            }
+        }
+
+        .p-dropdown {
+            line-height: 0;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            height: 100%;
+            background-color: $color--gray-600;
+            border: 1px solid $color--gray-600;
+
+            .p-dropdown-label {
+                color: $color--white;
+                display: flex;
+                align-items: center;
+
+                &.p-inputtext {
+                    border: 0;
+                }
+            }
+
+            .p-dropdown-trigger-icon {
+                color: $color--white;
+            }
+        }
+
+        .p-inputtext {
+            border-radius: 0;
+            line-height: 0.875;
+            height: 100%;
+            border: 1px solid $color--searchbar-inputtype-border;
+        }
+
+        .p-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
         }
     }
 }

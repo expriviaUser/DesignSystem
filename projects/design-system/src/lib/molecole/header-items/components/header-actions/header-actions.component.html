@@ -16,7 +16,7 @@
         </p-overlayPanel>
     </div>
     <div>
-        <lib-header-notifications *ngIf="user"></lib-header-notifications>
+        <lib-header-notifications *ngIf="notificationsEnabled"></lib-header-notifications>
     </div>
     <div>
         <lib-language-selector [options]="languages" [selectedOption]="selectedOption" placeholder="Seleziona lingua"

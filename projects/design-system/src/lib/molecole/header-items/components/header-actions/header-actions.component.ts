@@ -12,6 +12,8 @@ import { HeaderItemsService } from '../../services/header-items.service';
 export class HeaderActionsComponent implements OnInit {
     fileUpload: FileUpload[] = [];
 
+    @Input() notificationsEnabled: boolean = true;
+
     @Input() user: MenuItem[] = [
         {
             label: "Jonh Doe",

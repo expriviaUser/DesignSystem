@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { UserNotification } from '../../models/user-notification.model';
 import { HeaderItemsService } from '../../services/header-items.service';
 
@@ -8,59 +8,21 @@ import { HeaderItemsService } from '../../services/header-items.service';
     styleUrls: ['./header-notifications.component.scss']
 })
 export class HeaderNotificationsComponent implements OnInit {
-    notifications!: UserNotification[];
-    notificationsNumber!: string;
-    selectedNotification!: UserNotification;
-    readAllNotification: UserNotification = {
-        title: 'Mostra di più…',
-        subtitle: '',
-        id: 0,
-        isRead: true,
-    };
+    @Input() pageUrl: string = '';
+    @Input() readAllLabel: string = 'Mostra di più';
+    @Input() externalItems!: TemplateRef<any>;
+    @Input() externalFooter!: TemplateRef<any>;
 
-    constructor(private headerItemsService: HeaderItemsService) { }
+    notificationsNumber: string = '0';
+    notifications$ = this.headerItemsService.notifications$;
+    selectedNotification!: UserNotification;
+
+    constructor(protected headerItemsService: HeaderItemsService) { }
 
     ngOnInit() {
-        this.setNotificationNumber();
-        this.headerItemsService.cartItems$.subscribe(values => {
-            if (values.length > 0) {
-                this.notifications = [...values];
-            } else {
-                this.notifications = [
-                    {
-                        title: 'Avviso generale dal team di Roberto Burioni',
-                        subtitle: 'Questi risultati indicano che, sebbene i vaccinati e/o guariti rimangono altamente infettivi, la loro infettività è ridotta rispetto agli individui mai infettati o vaccinati.',
-                        id: 3,
-                        isRead: false,
-                    },
-                    {
-                        title: 'Esito risultati Younan Nowzaradan',
-                        subtitle: 'During this time it\'s important to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
-                        id: 5,
-                        isRead: false,
-                    },
-                    {
-                        title: 'Mario Rossi',
-                        subtitle: 'Notifica non da leggere, to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
-                        isRead: true,
-                    }
-                ];
-            }
+        this.headerItemsService.notifications$.subscribe(values => {
+            this.notificationsNumber = values.filter(el => el.isRead === false).length.toString();
         })
-    }
-
-    /**
-     * In base alla lunghezza dell'oggetto che contiene le notifiche
-     * (notifications) valorizza la property del numero di notifiche.
-     *
-     * @returns void
-     */
-    setNotificationNumber(): void {
-        if (!this.notifications) {
-            this.notificationsNumber = '0';
-            return;
-        }
-        this.notificationsNumber = this.notifications.length.toString();
     }
 
 }

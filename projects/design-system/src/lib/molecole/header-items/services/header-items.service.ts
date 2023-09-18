@@ -42,6 +42,15 @@ export class HeaderItemsService {
         this.notifications$.next(values);
     }
 
-    constructor() {
+    notificationRead(id: number) {
+        const notifyToModify = this.notifications$.getValue().map(el => {
+            if (el.id === id) {
+                el.isRead = true;
+            }
+
+            return el;
+        });
+
+        this.notifications$.next(notifyToModify);
     }
 }
