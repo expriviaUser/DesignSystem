@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,10 @@ export class SearchBarComponent {
         categorie: [''],
         text: ['']
     })
+
+    @Input() categories: string[] = [];
+    @Input() dropdownPlaceholder: string = 'Categorie';
+    @Input() buttonLabel: string = 'Cerca';
 
     @Output() onSearch = new EventEmitter<{ category: string, text: string }>();
 
