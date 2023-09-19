@@ -36,6 +36,7 @@ export interface Metadata {
     exportNumber: number,
     lastModifiedUser: string,
     key: any,
+    isRange: boolean,
     searchCriteriaTo: {
         id: any,
         elementNumber: any,
@@ -399,6 +400,7 @@ export class FiltersPageComponent {
                             "lastModifiedDate": new Date(),
                             "lastModifiedUser": '',
                             "keyId": 2,
+                            "isRange": true,
                             "key": {
                                 "id": 2,
                                 "name": "PROTOCOLLO_ASSEGNATO",
@@ -513,6 +515,7 @@ export class FiltersPageComponent {
                             "lastModifiedDate": new Date(),
                             "lastModifiedUser": '',
                             "keyId": 51,
+                            "isRange": true,
                             "key": {
                                 "id": 51,
                                 "name": "DATACONTRATTO",
@@ -7319,7 +7322,7 @@ export class FiltersPageComponent {
                         case 'Numerico':
                             newVal.type = 'number';
                             newVal.config = {
-                                selection: 'single'
+                                selection: value.isRange ? 'range' : 'single'
                             }
                             break;
                         case 'Boolean':
@@ -7328,8 +7331,9 @@ export class FiltersPageComponent {
                             break;
                         case 'Data':
                             newVal.type = 'calendar';
+
                             newVal.config = {
-                                selection: 'single'
+                                selection: value.isRange ? 'double-range' : 'single'
                             }
                             break;
                         case 'Enum':

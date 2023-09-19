@@ -62,16 +62,20 @@
                             </div>
                             <div *ngSwitchCase="'number'" class="same-line">
                                 <!-- CHILDREN INPUT NUMBER -->
-                              <ng-container *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='range'">
-                               <span class="flex-center">Da:</span> <lib-input [type]="'number'"
-                                    (selectedValue)="setNumberRangeValue(i,0, $event)"></lib-input>
-                                <span class="flex-center">A:</span><lib-input  [type]="'number'"
-                                            (selectedValue)="setNumberRangeValue(i,1, $event)"></lib-input>
-                              </ng-container>
-                              <ng-container *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='range'">
-                                <lib-input [type]="'number'"
-                                           (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
-                              </ng-container>
+                                <ng-container
+                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='range'">
+                                    <span class="flex-center">Da:</span> <lib-input [type]="'number'"
+                                        (selectedValue)="setNumberRangeValue(i,0, $event)"
+                                        (emitInput)="emitInputEvent($event, true)"></lib-input>
+                                    <span class="flex-center">A:</span><lib-input [type]="'number'"
+                                        (selectedValue)="setNumberRangeValue(i,1, $event)"
+                                        (emitInput)="emitInputEvent($event, false)"></lib-input>
+                                </ng-container>
+                                <ng-container
+                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='range'">
+                                    <lib-input [type]="'number'"
+                                        (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
+                                </ng-container>
                             </div>
                             <div *ngSwitchCase="'enum'">
                                 <!-- CHILDREN INPUT DROPDOWN -->
@@ -83,30 +87,33 @@
                             </div>
                             <div *ngSwitchCase="'calendar'" class="same-line">
                                 <!-- CHILDREN INPUT CALENDAR -->
-                              <ng-container *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='double-range'">
-                                <span class="flex-center">Da:</span> <lib-calendar [dropdownMode]="true" [placeholder]="'Da'"
-                                              (selectedValue)="setCalendarDoubleRangeChild(i, 0, $event)"
-                                              [selectionType]="'single'"></lib-calendar>
-                                <span class="flex-center">A:</span>
-                                <lib-calendar [dropdownMode]="true" [placeholder]="'A'"
-                                              (selectedValue)="setCalendarDoubleRangeChild(i, 1, $event)"
-                                              [selectionType]="'single'"></lib-calendar>
-                              </ng-container>
-                              <ng-container *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='double-range'">
-                                <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
-                                    (selectedValue)="setCalendarChild($event, i)"
-                                    [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection"></lib-calendar>
-                              </ng-container>
+                                <ng-container
+                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='double-range'">
+                                    <span class="flex-center">Da:</span> <lib-calendar [dropdownMode]="true"
+                                        [placeholder]="'Da'" (selectedValue)="setCalendarDoubleRangeChild(i, 0, $event)"
+                                        [maxDate]="doubleRangeFromMaxDate" [selectionType]="'single'"></lib-calendar>
+                                    <span class="flex-center">A:</span>
+                                    <lib-calendar [dropdownMode]="true" [placeholder]="'A'"
+                                        [minDate]="doubleRangeToMinDate "
+                                        (selectedValue)="setCalendarDoubleRangeChild(i, 1, $event)"
+                                        [selectionType]="'single'"></lib-calendar>
+                                </ng-container>
+                                <ng-container
+                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='double-range'">
+                                    <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
+                                        (selectedValue)="setCalendarChild($event, i)"
+                                        [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection"></lib-calendar>
+                                </ng-container>
                             </div>
                             <div *ngSwitchCase="'interval'" class="same-line">
                                 <!-- CHILDREN INPUT INTERVAL -->
                                 <lib-input #inputDa
                                     [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderDa"
-                                    [ngClass]="{'required-da': requiredDa}"
+                                    [ngClass]="{'required-da': requiredDaIsEmpty}"
                                     (selectedValue)="setInterval(i, $event, true)"></lib-input>
                                 <lib-input #inputA
                                     [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderA"
-                                    [ngClass]="{'required-a': requiredA}"
+                                    [ngClass]="{'required-a': requiredAIsEmpty}"
                                     (selectedValue)="setInterval(i, $event, false)"></lib-input>
                             </div>
                         </ng-container>
@@ -116,7 +123,7 @@
                             [label]="dropdownOptions.addFilterButtonLabel || ''"
                             (onClick)="printData(i, dropdown, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"
                             [size]="'small'"
-                        [disabled]="checkValue(i, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"></lib-button>
+                            [disabled]="checkValue(i, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"></lib-button>
                     </div>
                 </div>
             </ng-container>

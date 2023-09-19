@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DesignSystemModule } from 'projects/design-system/src/public-api';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +22,7 @@ import { ButtonPageComponent } from './components/button-page/button-page.compon
 import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-page.component';
 import { FiltersPageComponent } from './components/filters-page/filters-page.component';
 import { LibCircleStatusModule } from 'projects/design-system/src/lib/atoms/circle-status/lib-circle-status.module';
+import { DesignSystemModule } from 'projects/design-system/src/lib/design-system.module';
 
 @NgModule({
     declarations: [

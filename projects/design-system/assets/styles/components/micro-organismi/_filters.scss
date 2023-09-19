@@ -174,9 +174,20 @@
 lib-only-filters {
     display: flex;
     align-items: flex-end;
+    .required-da {
+        .p-inputtext {
+            border: 1px solid $color--error;
+        }
+    }
+
+    .required-a {
+        .p-inputtext {
+            border: 1px solid $color--error;
+        }
+    }
 }
 
 .flex-center {
-  display:flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }

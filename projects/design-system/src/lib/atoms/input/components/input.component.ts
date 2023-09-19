@@ -20,7 +20,7 @@ export class InputComponent {
     @Input() clear: boolean = false;
     @Input() control: AbstractControl = new FormControl();
 
-    @Output() emitInput: EventEmitter<string> = new EventEmitter<string>();
+    @Output() emitInput: EventEmitter<any> = new EventEmitter<any>();
     @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
     @Output() iconClicked: EventEmitter<any> = new EventEmitter<any>();
     @Output() handlerInputClicked: EventEmitter<any> = new EventEmitter<any>();
@@ -52,6 +52,11 @@ export class InputComponent {
                 this.iconPos = 'p-input-icon-right';
                 break;
         }
+    }
+
+    getInput(event: any) {
+        console.log(event);
+        this.emitInput.emit(event);
     }
 
     iconClick() {
