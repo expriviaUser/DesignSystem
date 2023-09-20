@@ -21,7 +21,7 @@ export class AutocompleteCardComponent {
     @Input() value: any;
     @Input() label: string = '';
     @Input() appendTo!: string;
-    @Input() icon: string = '';
+    @Input() icon!: string;
     @Input() disabled: boolean = false;
     @Input() showClear: boolean = false;
     @Input() minLength: number = 3;
