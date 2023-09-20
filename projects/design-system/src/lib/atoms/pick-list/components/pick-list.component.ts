@@ -31,12 +31,14 @@ export class PickListComponent {
     moveAllTo(event: any, position: string) {
         console.log(event, position);
         console.log(this.targetArray, this.sourceArray);
-
+        position === 'target' ? this.targetArrayChange.emit() : position === 'source' ? this.sourceArrayChange.emit() : null;
     }
 
     moveOneTo(event: any, position: string) {
         console.log(event, position);
         console.log(this.targetArray, this.sourceArray);
+        position === 'target' ? this.targetArrayChange.emit() : position === 'source' ? this.sourceArrayChange.emit() : null;
+
     }
 
     onTargetSelect(event: any) {
