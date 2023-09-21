@@ -76,16 +76,16 @@ export class AutocompleteCardComponent implements OnChanges {
         for (const field of this.field) {
             switch (type) {
                 case 'include':
-                    if (value[field].toLowerCase().includes(query.toLowerCase()))
+                    if (value[field] && value[field].toLowerCase().includes(query.toLowerCase()))
                         valueFound = value;
                     break;
                 case 'match':
-                    if (value[field].toLowerCase() === query.toLowerCase())
+                    if (value[field] && value[field].toLowerCase() === query.toLowerCase())
                         valueFound = value;
                     break;
                 case 'matchAll':
                     this.valueAutocomplete.forEach(item => {
-                        if (item[field].toLowerCase() === query.toLowerCase()) {
+                        if (item[field] && item[field].toLowerCase() === query.toLowerCase()) {
                             valueFound = item;
                         }
                     })
