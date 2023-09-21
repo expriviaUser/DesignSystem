@@ -1,18 +1,9 @@
 <p-tabView [(activeIndex)]="index" (onChange)="changeIndex($event)" [ngClass]="indexNotShow">
-    <!-- [(activeIndex)]="index" [scrollable]="true" -->
 
-    <p-tabPanel *ngFor="let item of sections; let i = index" [header]="item.header" [selected]="i == index"
+    <p-tabPanel *ngFor="let item of sections; let i = index" [header]="item.header" [selected]="i === index"
         [disabled]="item.isDisabled">
         <ng-container [ngTemplateOutlet]="contents ? contents : null"
             [ngTemplateOutletContext]="{data: item.content}"></ng-container>
-
-        <!-- <ng-template let-content pTemplate="content">
-            <div *ngIf="sections">
-                <ng-container [ngTemplateOutlet]="contents" [ngTemplateOutletContext]="{data:item.header}">
-
-                </ng-container>
-            </div>
-        </ng-template> -->
 
     </p-tabPanel>
 

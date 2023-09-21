@@ -29,7 +29,16 @@
 <lib-button [label]="'Aggiungi notifica'" [size]="'small'" [type]="'primary'" (onClick)="addNotify()"></lib-button>
 
 
-<lib-circle-status [type]="'danger'"></lib-circle-status>
+<!-- <lib-circle-status [type]="'danger'"></lib-circle-status>
 <lib-circle-status></lib-circle-status>
 <lib-circle-status [type]="'info'"></lib-circle-status>
-<lib-circle-status [type]="'warning'"></lib-circle-status>
+<lib-circle-status [type]="'warning'"></lib-circle-status> -->
+<div>
+    {{tabIndex}}
+</div>
+<lib-tabs [sections]="sections" [(index)]="tabIndex" (indexChange)="setTabs($event)" [contents]="externalContent"
+    class="col">
+    <ng-template #externalContent let-data="data">
+        prova
+    </ng-template>
+</lib-tabs>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tabs } from 'design-system';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { Table, TableService } from 'primeng/table';
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
@@ -24,6 +25,14 @@ export class AppComponent {
         { label: 'Filters', routerLink: 'filters' },
     ];
 
+    protected sections: Tabs[] = [
+        { header: 'prova', hide: false, isDisabled: true, isSelected: false },
+        { header: 'prova2', hide: true, isDisabled: false, isSelected: false },
+        { header: 'prova4', hide: true, isDisabled: true, isSelected: false },
+        { header: 'prova3', isSelected: false, isDisabled: false },
+    ]
+
+    protected tabIndex = 0;
     protected dropdownValue: string[] = [
         'Ufficio',
         'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED',
@@ -33,6 +42,10 @@ export class AppComponent {
         'ENI \\ ORTONA',
         'ENI \\ VIGGIANO',
     ];
+
+    setTabs(event: any) {
+        console.log(event);
+    }
 
     protected languages = [
         {
