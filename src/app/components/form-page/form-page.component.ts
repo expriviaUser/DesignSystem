@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormPageComponent {
     form: FormGroup = this.fb.group({
         autocomplete: [''],
-        autocompleteCard: [''],
+        autocompleteCard: [{ code: 1, name: 'Nome Sede', content: 'Via Roma 1' }],
         input: ['', [Validators.required, Validators.maxLength(4)]],
         psw: [''],
         dropdown: [''],
@@ -29,6 +29,7 @@ export class FormPageComponent {
     }
 
     submit() {
+        this.form.get('autocompleteCard')?.setValue({ code: 2, name: 'Nome Sede', content: 'Via Napoli 1' });
         console.log(this.form.value);
         console.log(this.form.get('input')?.errors)
     }

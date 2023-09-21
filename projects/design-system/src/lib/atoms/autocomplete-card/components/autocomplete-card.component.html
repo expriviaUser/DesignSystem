@@ -10,8 +10,8 @@
             <ng-template let-item pTemplate="item">
                 <lib-address [address]="item"></lib-address>
             </ng-template>
-            <ng-template let-item pTemplate="selectedItem">
-                ciao
+            <ng-template let-selectedItem pTemplate="selectedItem">
+                <lib-address [address]="selectedItem"></lib-address>
             </ng-template>
         </p-autoComplete>
         <div *ngIf="valueItem && control.valid">

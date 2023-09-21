@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, forwardRef } from '@angular/core';
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FilterService } from "primeng/api";
 import { RadioTile } from '../../../molecole/radio-tile/models/radio-tile.model';
@@ -15,7 +15,7 @@ import { AutoComplete } from 'primeng/autocomplete';
         multi: true
     }, FilterService]
 })
-export class AutocompleteCardComponent {
+export class AutocompleteCardComponent implements OnChanges {
     @Input() valueAutocomplete: any[] = [];
     @Input() placeholder: string = '';
     @Input() value: any;
@@ -34,6 +34,12 @@ export class AutocompleteCardComponent {
     private onTouch: any = () => { }
     protected filteredList: any[] = [];
     protected valueItem!: any;
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['value']) {
+            this.valueItem = this.value;
+        }
+    }
 
     get haveError() {
         return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
