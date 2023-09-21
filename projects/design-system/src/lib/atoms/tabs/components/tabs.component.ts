@@ -28,11 +28,11 @@ export class TabsComponent {
                 }
             }
         })
-        this.changeIndex({ index: indexSelected });
+        this.index = indexSelected;
+        this.indexChange.emit(indexSelected);
     }
 
-    changeIndex(event: any) {
-        this.index = event.index >= 0 ? event.index : 0;
-        this.indexChange.emit(this.index);
+    changeIndex(event: number) {
+        this.indexChange.emit(event);
     }
 }

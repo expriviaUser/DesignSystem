@@ -30,6 +30,7 @@ export class AppComponent {
         { header: 'prova2', hide: true, isDisabled: false, isSelected: false },
         { header: 'prova4', hide: true, isDisabled: true, isSelected: false },
         { header: 'prova3', isSelected: false, isDisabled: false },
+        { header: 'prova4', isSelected: false, isDisabled: false },
     ]
 
     protected tabIndex = 0;
