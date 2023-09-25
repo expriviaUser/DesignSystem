@@ -64,6 +64,7 @@
             .p-menuitem.p-menuitem-active > .p-menuitem-link {
                 background: $color--primary-color;
                 color: $color--black-900;
+                text-transform: capitalize;
 
                 @include typography-body-regular;
                 height: 100%;
