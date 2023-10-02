@@ -3,6 +3,8 @@
         <lib-input-form [type]="'dropdown'" formControlName="dropdown" [label]="'Dropdown'"
             [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
         </lib-input-form>
+      <lib-input-form [type]="'text'" [readonly]="true" formControlName="textbutton" [label]="'Text w/Button'" [icon]="'pi pi-check'" [iconPos]="'right'" (iconClicked)="iconClick()" [actionIcon]="true">
+      </lib-input-form>
         <lib-input-form [type]="'text'" formControlName="input" [label]="'Input text'"
             [placeholder]="'Titolo Documento'" [errorTemplate]="error">
             <ng-template #error>
@@ -21,6 +23,8 @@
         <lib-input-form [type]="'textarea'" formControlName="textarea" [label]="'Textarea'"
             [placeholder]="'Descrizione'">
         </lib-input-form>
+      <lib-input-form [type]="'text'" formControlName="texticon" [label]="'Text w/Icon'" [icon]="'pi pi-check'" [iconPos]="'right'" (iconClicked)="iconClick()">
+      </lib-input-form>
         <lib-input-form [type]="'number'" formControlName="number" [label]="'Input number'"
             [placeholder]="'Titolo Documento'">
         </lib-input-form>

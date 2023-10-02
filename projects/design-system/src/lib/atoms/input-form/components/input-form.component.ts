@@ -41,6 +41,8 @@ export class InputFormComponent implements ControlValueAccessor {
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() showButtonBar!: boolean;
+    @Input() readonly: boolean = false;
+    @Input() actionIcon: boolean = false;
     @Input() multiSelectFilterActive: boolean = true;
     @Input() minLenghtDigits: number = 3;
     @Input() fileAcceptExtensions!: string;
@@ -49,6 +51,7 @@ export class InputFormComponent implements ControlValueAccessor {
 
     //@Input() formControl: FormControl = new FormControl();
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
+    @Output() iconClicked: EventEmitter<any> = new EventEmitter<any>();
 
     disabled: boolean = false;
     touched = false;
@@ -146,4 +149,8 @@ export class InputFormComponent implements ControlValueAccessor {
         this.onChange(this.value);
         this.selectedValue.emit(this.value);
     }
+
+    iconClick() {
+    this.iconClicked.emit();
+  }
 }

@@ -2,14 +2,14 @@
     <label *ngIf="label">{{label}}</label>
     <input *ngIf="!(icon || clear)" [type]="type" [placeholder]="placeholder"
         [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [(ngModel)]="value" [id]="label"
-        (input)="getInput(value)" [disabled]="disabled" class="p-inputtext-sm" pInputText />
+        (input)="getInput(value)" [disabled]="disabled" class="p-inputtext-sm" pInputText [readonly]="readonly" />
 
-    <span *ngIf="icon || clear" [class]="iconPos" [ngClass]="{iconPos: true, 'showClear': clear}">
+    <span *ngIf="icon || clear" [class]="iconPos" [ngClass]="{iconPos: true, 'showClear': clear, 'action-icon':actionIcon}">
         <i *ngIf="icon && iconPos.includes('left')" [class]="icon" (click)="iconClick()"></i>
         <input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}"
             (input)="getInput(value)" (change)="emitValue($event)" [(ngModel)]="value" [id]="label"
-            [disabled]="disabled" class="p-inputtext-sm" pInputText (click)="inputClicked()" />
+            [disabled]="disabled" class="p-inputtext-sm" pInputText (click)="inputClicked()" [readonly]="readonly" />
         <i *ngIf="value && clear" [class]="'pi pi-times icon-clear'" (click)="emitValue($event)"></i>
-        <i *ngIf="icon && iconPos.includes('right')" [class]="icon" (click)="iconClick()"></i>
+        <i class="button-action-icon" *ngIf="icon && iconPos.includes('right')" [class]="icon" (click)="iconClick()"></i>
     </span>
 </div>

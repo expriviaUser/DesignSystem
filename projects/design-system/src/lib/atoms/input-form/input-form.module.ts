@@ -13,6 +13,7 @@ import { InputFormComponent } from './components/input-form.component';
 import { LibAutocompleteCardModule } from '../autocomplete-card/lib-autocomplete-card.module';
 import { LibListboxModule } from '../listbox/lib-listbox.module';
 import { LibMultiSelectModule } from '../multi-select/lib-multi-select.module';
+import {LibButtonModule} from "../button/lib-button.module";
 
 
 const primeComponents = [
@@ -27,7 +28,8 @@ const primeComponents = [
     LibChooseFileModule,
     LibAutocompleteCardModule,
     LibListboxModule,
-    LibMultiSelectModule
+    LibMultiSelectModule,
+    LibButtonModule
 ];
 
 const exportComponent = [
@@ -38,10 +40,10 @@ const exportComponent = [
     declarations: [
         ...exportComponent,
     ],
-    imports: [
-        ...primeComponents,
-        CommonModule
-    ],
+  imports: [
+    ...primeComponents,
+    CommonModule,
+  ],
     exports: [
         ...exportComponent,
     ],

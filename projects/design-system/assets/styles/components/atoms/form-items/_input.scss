@@ -1,60 +1,81 @@
 .field {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-1;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-1;
 
-    .static {
-        padding: pxToRem(9px);
-    }
+  .static {
+    padding: pxToRem(9px);
+  }
 
-    label {
-        @include typography-subtitle-second-semibold;
-        color: $color--form-label-text;
-    }
+  label {
+    @include typography-subtitle-second-semibold;
+    color: $color--form-label-text;
+  }
 
-    label.radio-button {
-        @include typography-subtitle-second-regular;
-    }
+  label.radio-button {
+    @include typography-subtitle-second-regular;
+  }
 
-    // TODO: refactor di questo sotto.
-    &:has(.field-checkbox) {
-        min-height: 50px;
-    }
+  // TODO: refactor di questo sotto.
+  &:has(.field-checkbox) {
+    min-height: 50px;
+  }
 }
 
 small {
-    padding-top: $gap-1;
-    font-size: 0.875rem;
-    color: $red-200;
+  padding-top: $gap-1;
+  font-size: 0.875rem;
+  color: $red-200;
 }
 
 .field-checkbox {
-    label {
-        margin-left: 0.6rem;
-    }
+  label {
+    margin-left: 0.6rem;
+  }
 }
 
 .p-input-icon-left {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .p-input-icon-right {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .icon-clear {
-    position: absolute;
-    right: 0.75rem;
-    cursor: pointer;
-    top: 50%;
-    transform: translate(0, -50%);
+  position: absolute;
+  right: 0.75rem;
+  cursor: pointer;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .showClear {
-    position: relative;
-    & > .p-inputtext {
-        padding-right: 2.5rem;
-    }
+  position: relative;
+
+  & > .p-inputtext {
+    padding-right: 2.5rem;
+  }
+}
+
+.action-icon {
+  .button-action-icon {
+    background: var(--secondary-color-50);
+    width: 3rem;
+    right: 0 !important;
+    top: 0 !important;
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    color: white !important;
+    height: inherit;
+  }
+  &.p-input-icon-right > .p-inputtext {
+    padding-right: 3.5rem;
+  }
 }
