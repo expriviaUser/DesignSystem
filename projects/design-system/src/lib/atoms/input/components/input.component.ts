@@ -18,6 +18,7 @@ export class InputComponent {
     @Input() placeholder: string = '';
     // @Input('controlName') formControlName: string = '';
     @Input() clear: boolean = false;
+    @Input() actionIcon: boolean = false;
     @Input() control: AbstractControl = new FormControl();
 
     @Output() emitInput: EventEmitter<any> = new EventEmitter<any>();
@@ -31,6 +32,7 @@ export class InputComponent {
     @Input() icon: string = '';
 
     @Input() disabled: boolean = false;
+    @Input() readonly: boolean = false;
     onChange: any = () => { }
     onTouch: any = () => { }
 
@@ -96,7 +98,7 @@ export class InputComponent {
 
     /* numberPattern(event: any) {
         if (event.keyCode === 101 || event.keyCode === 69)
-            return 
+            return
             event.charCode >= 48 && event.charCode <= 57
     } */
 

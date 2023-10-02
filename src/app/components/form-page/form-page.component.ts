@@ -20,6 +20,8 @@ export class FormPageComponent {
         radio: [''],
         textarea: [''],
         static: ['Prova'],
+        textbutton: ['Prova2'],
+        texticon: ['Prova3'],
         check: ['Prova'],
         listbox: [{ code: 2, name: 'Pippo 2' }, Validators.required]
     })
@@ -32,5 +34,9 @@ export class FormPageComponent {
         this.form.get('autocompleteCard')?.setValue({ code: 2, name: 'Nome Sede', content: 'Via Napoli 1' });
         console.log(this.form.value);
         console.log(this.form.get('input')?.errors)
+    }
+
+    iconClick() {
+      alert('icon cliccata');
     }
 }
