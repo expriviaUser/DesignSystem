@@ -9,7 +9,9 @@
         <input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}"
             (input)="getInput(value)" (change)="emitValue($event)" [(ngModel)]="value" [id]="label"
             [disabled]="disabled" class="p-inputtext-sm" pInputText (click)="inputClicked()" [readonly]="readonly" />
-        <i *ngIf="value && clear" [class]="'pi pi-times icon-clear'" (click)="emitValue($event)"></i>
-        <i class="button-action-icon" *ngIf="icon && iconPos.includes('right')" [class]="icon" (click)="iconClick()"></i>
+      <div class="icon-clear">
+        <i *ngIf="value && clear" [class]="'pi pi-times clear-action-icon'" (click)="emitValue($event)"></i>
+        <i class="{{icon}} button-action-icon" *ngIf="icon && iconPos.includes('right')" (click)="iconClick()"></i>
+        </div>
     </span>
 </div>

@@ -50,6 +50,8 @@ small {
   cursor: pointer;
   top: 50%;
   transform: translate(0, -50%);
+  gap: 8px;
+  display: flex;
 }
 
 .showClear {
@@ -61,20 +63,31 @@ small {
 }
 
 .action-icon {
-  .button-action-icon {
-    background: var(--secondary-color-50);
-    width: 3rem;
-    right: 0 !important;
-    top: 0 !important;
-    margin-top: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-    color: white !important;
+  .icon-clear {
     height: inherit;
+    right: 0;
+
+    .button-action-icon {
+      background: var(--secondary-color-50);
+      width: 3rem;
+      right: 0 !important;
+      top: 0 !important;
+      margin-top: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+      color: white !important;
+      height: inherit;
+    }
+
+    .clear-action-icon {
+      display:flex;
+      align-items: center;
+    }
   }
+
   &.p-input-icon-right > .p-inputtext {
     padding-right: 3.5rem;
   }
