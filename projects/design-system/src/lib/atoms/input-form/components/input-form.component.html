@@ -83,7 +83,7 @@
 
     <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
         [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label ? label + (required ? ' *' : '') : ''"
-        [control]="control" [disabled]="inputDisabled" [value]="value"></lib-input>
+        [control]="control" [disabled]="inputDisabled" [value]="value" [readonly]="readonly" (iconClicked)="iconClick()" [actionIcon]="actionIcon"></lib-input>
 
     <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
         [controlName]="formControlName">
