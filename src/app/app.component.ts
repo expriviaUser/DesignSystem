@@ -1,154 +1,153 @@
 import { Component } from '@angular/core';
-import { Tabs } from 'design-system';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { Table, TableService } from 'primeng/table';
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
-import { HeaderItemsService, UserNotification } from 'projects/design-system/src/public-api';
+import { HeaderItemsService, Tabs, UserNotification } from 'projects/design-system/src/public-api';
 import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    providers: [Table, TableService, MessageService],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  providers: [Table, TableService, MessageService],
 })
 export class AppComponent {
-    title = 'dSystem';
+  title = 'dSystem';
 
-    protected notifications: UserNotification[] = [];
-    protected itemsMenu: MenubarItem[] = [
-        { label: 'Form', routerLink: 'form' },
-        { label: 'Table', routerLink: 'table' },
-        { label: 'ListBox', routerLink: 'listbox' },
-        { label: 'Buttons', routerLink: 'button' },
-        { label: 'RadioTile', routerLink: 'radio-tile' },
-        { label: 'Filters', routerLink: 'filters' },
-    ];
+  protected notifications: UserNotification[] = [];
+  protected itemsMenu: MenubarItem[] = [
+    { label: 'Form', routerLink: 'form' },
+    { label: 'Table', routerLink: 'table' },
+    { label: 'ListBox', routerLink: 'listbox' },
+    { label: 'Buttons', routerLink: 'button' },
+    { label: 'RadioTile', routerLink: 'radio-tile' },
+    { label: 'Filters', routerLink: 'filters' },
+  ];
 
-    protected sections: Tabs[] = [
-        { header: 'prova', hide: false, isDisabled: true, isSelected: false },
-        { header: 'prova2', hide: true, isDisabled: false, isSelected: false },
-        { header: 'prova4', hide: true, isDisabled: true, isSelected: false },
-        { header: 'prova3', isSelected: false, isDisabled: false },
-        { header: 'prova4', isSelected: false, isDisabled: false },
-    ]
+  protected sections: Tabs[] = [
+    { header: 'prova', hide: false, isDisabled: true, isSelected: false },
+    { header: 'prova2', hide: true, isDisabled: false, isSelected: false },
+    { header: 'prova4', hide: true, isDisabled: true, isSelected: false },
+    { header: 'prova3', isSelected: false, isDisabled: false },
+    { header: 'prova4', isSelected: false, isDisabled: false },
+  ]
 
-    protected tabIndex = 0;
-    protected dropdownValue: string[] = [
-        'Ufficio',
-        'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED',
-        'ENI \\ CARTELLE_PERSONALE',
-        'ENI \\ ENI CORPORATE',
-        'ENI \\ ING E&P RAV',
-        'ENI \\ ORTONA',
-        'ENI \\ VIGGIANO',
-    ];
+  protected tabIndex = 0;
+  protected dropdownValue: string[] = [
+    'Ufficio',
+    'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED',
+    'ENI \\ CARTELLE_PERSONALE',
+    'ENI \\ ENI CORPORATE',
+    'ENI \\ ING E&P RAV',
+    'ENI \\ ORTONA',
+    'ENI \\ VIGGIANO',
+  ];
 
-    setTabs(event: any) {
-        console.log(event);
-    }
+  setTabs(event: any) {
+    console.log(event);
+  }
 
-    protected languages = [
-        {
-            name: 'it',
-            code: 'it',
-        },
-        {
-            name: 'fr',
-            code: 'fr',
-        },
-        {
-            name: 'sp',
-            code: 'sp',
-        },
-        {
-            name: 'en',
-            code: 'en',
-        },
-    ];
+  protected languages = [
+    {
+      name: 'it',
+      code: 'it',
+    },
+    {
+      name: 'fr',
+      code: 'fr',
+    },
+    {
+      name: 'sp',
+      code: 'sp',
+    },
+    {
+      name: 'en',
+      code: 'en',
+    },
+  ];
 
-    protected menuItem!: any;
+  protected menuItem!: any;
 
-    constructor(
-        private config: PrimeNGConfig,
-        private headerItemsService: HeaderItemsService,
-        private loaderService: LoaderService) {
-        this.config.setTranslation({
-            accept: 'Accept',
-            reject: 'Cancel',
-            monthNames: [
-                'Gennaio',
-                'Febbraio',
-                'Marzo',
-                'Aprile',
-                'Maggio',
-                'Giugno',
-                'Luglio',
-                'Agosto',
-                'Settembre',
-                'Ottobre',
-                'Novembre',
-                'Dicembre',
-            ],
-            monthNamesShort: [
-                'Gen',
-                'Feb',
-                'Mar',
-                'Apr',
-                'Mag',
-                'Giu',
-                'Lug',
-                'Ago',
-                'Set',
-                'Ott',
-                'Nov',
-                'Dic',
-            ],
-            dayNames: [
-                'Domenica',
-                'Lunedì',
-                'Martedì',
-                'Mercoledì',
-                'Giovedì',
-                'Venerdì',
-                'Sabato',
-            ],
-            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
-            dayNamesMin: ['Do', 'Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'],
-            today: 'Oggi',
-            clear: 'Svuota',
-        }); //translations });
+  constructor(
+    private config: PrimeNGConfig,
+    private headerItemsService: HeaderItemsService,
+    private loaderService: LoaderService) {
+    this.config.setTranslation({
+      accept: 'Accept',
+      reject: 'Cancel',
+      monthNames: [
+        'Gennaio',
+        'Febbraio',
+        'Marzo',
+        'Aprile',
+        'Maggio',
+        'Giugno',
+        'Luglio',
+        'Agosto',
+        'Settembre',
+        'Ottobre',
+        'Novembre',
+        'Dicembre',
+      ],
+      monthNamesShort: [
+        'Gen',
+        'Feb',
+        'Mar',
+        'Apr',
+        'Mag',
+        'Giu',
+        'Lug',
+        'Ago',
+        'Set',
+        'Ott',
+        'Nov',
+        'Dic',
+      ],
+      dayNames: [
+        'Domenica',
+        'Lunedì',
+        'Martedì',
+        'Mercoledì',
+        'Giovedì',
+        'Venerdì',
+        'Sabato',
+      ],
+      dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+      dayNamesMin: ['Do', 'Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'],
+      today: 'Oggi',
+      clear: 'Svuota',
+    }); //translations });
 
-        setTimeout(() => {
-            this.loaderService.showHide(false);
-        }, 3600);
-    }
+    setTimeout(() => {
+      this.loaderService.showHide(false);
+    }, 3600);
+  }
 
-    goToHomePage() {
+  goToHomePage() {
 
-    }
+  }
 
-    protected addNotify() {
-        this.headerItemsService.notifications =
-        {
-            title: 'Avviso generale dal team di Roberto Burioni',
-            subtitle: 'Questi risultati indicano che, sebbene i vaccinati e/o guariti rimangono altamente infettivi, la loro infettività è ridotta rispetto agli individui mai infettati o vaccinati.',
-            id: 3,
-            isRead: false,
-        };
-        this.headerItemsService.notifications =
-        {
-            title: 'Esito risultati Younan Nowzaradan',
-            subtitle: 'During this time it\'s important to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
-            id: 5,
-            isRead: false,
-        };
-        this.headerItemsService.notifications =
-        {
-            title: 'Mario Rossi',
-            subtitle: 'Notifica non da leggere, to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
-            isRead: true,
-            id: 4
-        };
-    }
+  protected addNotify() {
+    this.headerItemsService.notifications =
+    {
+      title: 'Avviso generale dal team di Roberto Burioni',
+      subtitle: 'Questi risultati indicano che, sebbene i vaccinati e/o guariti rimangono altamente infettivi, la loro infettività è ridotta rispetto agli individui mai infettati o vaccinati.',
+      id: 3,
+      isRead: false,
+    };
+    this.headerItemsService.notifications =
+    {
+      title: 'Esito risultati Younan Nowzaradan',
+      subtitle: 'During this time it\'s important to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
+      id: 5,
+      isRead: false,
+    };
+    this.headerItemsService.notifications =
+    {
+      title: 'Mario Rossi',
+      subtitle: 'Notifica non da leggere, to stay healthy, stay moving, read a book and if you do get out for a walk or the grocery store, be sure to maintain a distance of 6 feet.',
+      isRead: true,
+      id: 4
+    };
+  }
 }
