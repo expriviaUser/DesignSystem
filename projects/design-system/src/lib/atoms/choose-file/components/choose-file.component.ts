@@ -20,6 +20,7 @@ export class ChooseFileComponent {
     @Input() disabled = false;
     @Input() control: AbstractControl = new FormControl();
     @Input() value: any;
+    @Input() multiple: boolean = true;
     @Output() onLoadFile: EventEmitter<any> = new EventEmitter<any>();
     protected arrayFiles: File[] = [];
 
@@ -73,6 +74,7 @@ export class ChooseFileComponent {
     clearFile() {
         this.uploader.clear();
         this.arrayFiles = [];
+        this.onLoadFile.emit('');
     }
 
     returnFileName() {
