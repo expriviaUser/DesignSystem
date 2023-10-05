@@ -47,8 +47,8 @@
   <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
     [label]="label ? label + (required ? ' *' : '') : ''" [appendTo]="appendTo" [minLength]="minLenghtDigits"
     (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
-    (emitLazyValue)="autocompleteLazyValue.emit($event)" [disabled]="inputDisabled" [icon]="icon"
-    [field]="field"></lib-autocomplete>
+    [lazy]="autocompleteLazy" (emitLazyValue)="autocompleteLazyValue.emit($event)" [disabled]="inputDisabled"
+    [icon]="icon" [field]="field"></lib-autocomplete>
 
   <!-- Input checkbox -->
   <div *ngSwitchCase="'checkbox'">

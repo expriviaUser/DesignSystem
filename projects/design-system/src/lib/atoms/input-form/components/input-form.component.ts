@@ -44,6 +44,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() readonly: boolean = false;
   @Input() actionIcon: boolean = false;
   @Input() multiSelectFilterActive: boolean = true;
+  @Input() autocompleteLazy: boolean = false;
   @Input() minLenghtDigits: number = 3;
   @Input() fileAcceptExtensions!: string;
   @Input() maxFileSize!: number;
