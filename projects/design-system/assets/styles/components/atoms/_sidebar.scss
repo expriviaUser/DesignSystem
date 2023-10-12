@@ -177,6 +177,10 @@
 
 .p-panelmenu .p-menuitem-text {
   color: $color--text-color;
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
   @include typography-body-regular;
 }
 
