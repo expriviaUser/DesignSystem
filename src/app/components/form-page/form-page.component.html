@@ -1,65 +1,65 @@
 <form [formGroup]="form">
-    <div class="form-row">
-        <lib-input-form [type]="'dropdown'" formControlName="dropdown" [label]="'Dropdown'"
-            [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
-        </lib-input-form>
-      <lib-input-form [type]="'text'" [readonly]="true" formControlName="textbutton" [label]="'Text w/Button'" [icon]="'pi pi-check'" [iconPos]="'right'" (iconClicked)="iconClick()" [actionIcon]="true" [clear]="true">
-      </lib-input-form>
-        <lib-input-form [type]="'text'" formControlName="input" [label]="'Input text'"
-            [placeholder]="'Titolo Documento'" [errorTemplate]="error">
-            <ng-template #error>
-                <li [hidden]="form.get('input')?.pristine && !form.get('input')?.touched"
-                    *ngIf="form.get('input')?.hasError('maxlength')">Lunghezza superata</li>
-            </ng-template>
-        </lib-input-form>
-        <lib-input-form [type]="'calendar'" formControlName="calendar" [label]="'Calendar'" [calendarShowIcon]="true">
+  <div class="form-row">
+    <lib-input-form [type]="'dropdown'" formControlName="dropdown" [label]="'Dropdown'"
+      [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
+    </lib-input-form>
+    <lib-input-form [type]="'text'" [readonly]="true" formControlName="textbutton" [label]="'Text w/Button'"
+      [icon]="'pi pi-check'" [iconPos]="'right'" (iconClicked)="iconClick()" [actionIcon]="true" [clear]="true">
+    </lib-input-form>
+    <lib-input-form [type]="'text'" formControlName="input" [label]="'Input text'" [placeholder]="'Titolo Documento'"
+      [errorTemplate]="error">
+      <ng-template #error>
+        <li [hidden]="form.get('input')?.pristine && !form.get('input')?.touched"
+          *ngIf="form.get('input')?.hasError('maxlength')">Lunghezza superata</li>
+      </ng-template>
+    </lib-input-form>
+    <lib-input-form [type]="'calendar'" formControlName="calendar" [label]="'Calendar'" [calendarShowIcon]="true">
 
-        </lib-input-form>
-    </div>
-    <div class="form-row">
-        <lib-input-form [type]="'choose-file'" [icon]="'pi pi-upload'" [label]="'Seleziona File'"
-            [placeholder]="'Seleziona File'" formControlName="chooseFile">
-        </lib-input-form>
-        <lib-input-form [type]="'textarea'" formControlName="textarea" [label]="'Textarea'"
-            [placeholder]="'Descrizione'">
-        </lib-input-form>
-      <lib-input-form [type]="'text'" formControlName="texticon" [label]="'Text w/Icon'" [icon]="'pi pi-check'" [iconPos]="'right'" [clear]="true" (iconClicked)="iconClick()">
-      </lib-input-form>
-        <lib-input-form [type]="'number'" formControlName="number" [label]="'Input number'"
-            [placeholder]="'Titolo Documento'">
-        </lib-input-form>
-    </div>
-    <div class="form-row">
-        <lib-input-form [type]="'password'" formControlName="psw" [label]="'Input psw'"
-            [placeholder]="'Titolo Documento'">
-        </lib-input-form>
-        <lib-input-form [type]="'autocomplete'" formControlName="autocomplete" [label]="'Autocomplete'"
-            [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
-        </lib-input-form>
-        <!-- <lib-input-form [type]="'static'" formControlName="static" [label]="'Static'">
+    </lib-input-form>
+  </div>
+  <div class="form-row">
+    <lib-input-form [type]="'choose-file'" [icon]="'pi pi-upload'" [label]="'Seleziona File'"
+      [placeholder]="'Seleziona File'" formControlName="chooseFile">
+    </lib-input-form>
+    <lib-input-form [type]="'textarea'" formControlName="textarea" [label]="'Textarea'" [placeholder]="'Descrizione'">
+    </lib-input-form>
+    <lib-input-form [type]="'text'" formControlName="texticon" [label]="'Text w/Icon'" [icon]="'pi pi-check'"
+      [iconPos]="'right'" [clear]="true" (iconClicked)="iconClick()">
+    </lib-input-form>
+    <lib-input-form [type]="'number'" formControlName="number" [label]="'Input number'"
+      [placeholder]="'Titolo Documento'">
+    </lib-input-form>
+  </div>
+  <div class="form-row">
+    <lib-input-form [type]="'password'" formControlName="psw" [label]="'Input psw'" [placeholder]="'Titolo Documento'">
+    </lib-input-form>
+    <lib-input-form [type]="'autocomplete'" formControlName="autocomplete" [label]="'Autocomplete'"
+      [autocompleteLazy]="true" [placeholder]="'Tipologia Documento'"
+      [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
+    </lib-input-form>
+    <!-- <lib-input-form [type]="'static'" formControlName="static" [label]="'Static'">
         </lib-input-form> -->
-        <lib-input-form [type]="'checkbox'" formControlName="check" [label]="'Checkbox'"
-            [checkboxValue]="[{data: 1, label: 'Pippo'}]" [placeholder]="'Titolo Documento'">
-        </lib-input-form>
-    </div>
+    <lib-input-form [type]="'checkbox'" formControlName="check" [label]="'Checkbox'"
+      [checkboxValue]="[{data: 1, label: 'Pippo'}]" [placeholder]="'Titolo Documento'">
+    </lib-input-form>
+  </div>
 
-    <div class="form-row">
+  <div class="form-row">
 
-        <lib-input-form [type]="'radio'" [valueInput]="[{data: 1, label: 'Prova'},{data: 2, label: 'Ciao'}]"
-            formControlName="radio" [label]="'Radio'">
-        </lib-input-form>
-        <lib-input-form [type]="'autocomplete-card'" formControlName="autocompleteCard" [label]="'Autocomplete Card'"
-            [placeholder]="'Indirizzi'" [icon]="'pi pi-user'" [fieldAutocompleteCard]="['name', 'content']"
-            [clear]="true"
-            [valueInput]="[{code: 1, name: 'Nome Sede', content: 'Via Roma 1'}, {code: 2, name: 'Nome Sede', content: 'Via Napoli 1'}, {code: 3, name: 'Nome Sede', content: 'Via Catania 1'}]">
-        </lib-input-form>
-    </div>
+    <lib-input-form [type]="'radio'" [valueInput]="[{data: 1, label: 'Prova'},{data: 2, label: 'Ciao'}]"
+      formControlName="radio" [label]="'Radio'">
+    </lib-input-form>
+    <lib-input-form [type]="'autocomplete-card'" formControlName="autocompleteCard" [label]="'Autocomplete Card'"
+      [placeholder]="'Indirizzi'" [icon]="'pi pi-user'" [fieldAutocompleteCard]="['name', 'content']" [clear]="true"
+      [valueInput]="[{code: 1, name: 'Nome Sede', content: 'Via Roma 1'}, {code: 2, name: 'Nome Sede', content: 'Via Napoli 1'}, {code: 3, name: 'Nome Sede', content: 'Via Catania 1'}]">
+    </lib-input-form>
+  </div>
 
-    <div class="form-row">
-        <lib-input-form [type]="'listbox'" formControlName="listbox" [label]="'ListBox'"
-            [valueInput]="[{code: 1, name: 'Pippo'}, {code: 2, name: 'Pippo 2'},{code: 3, name: 'Pippo 3'},{code: 4, name: 'Pippo 4'}]">
-        </lib-input-form>
-    </div>
+  <div class="form-row">
+    <lib-input-form [type]="'listbox'" formControlName="listbox" [label]="'ListBox'"
+      [valueInput]="[{code: 1, name: 'Pippo'}, {code: 2, name: 'Pippo 2'},{code: 3, name: 'Pippo 3'},{code: 4, name: 'Pippo 4'}]">
+    </lib-input-form>
+  </div>
 
-    <lib-button [label]="'Submit'" [size]="'small'" (onClick)="submit()"></lib-button>
+  <lib-button [label]="'Submit'" [size]="'small'" (onClick)="submit()"></lib-button>
 </form>

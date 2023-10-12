@@ -15,7 +15,6 @@ import { TreeModule } from 'primeng/tree';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormPageComponent } from './components/form-page/form-page.component';
 import { TablePageComponent } from './components/table-page/table-page.component';
-import { MessageService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
 import { ListboxPageComponent } from './components/listbox-page/listbox-page.component';
 import { ButtonPageComponent } from './components/button-page/button-page.component';
@@ -25,31 +24,31 @@ import { LibCircleStatusModule } from 'projects/design-system/src/lib/atoms/circ
 import { DesignSystemModule } from 'projects/design-system/src/lib/design-system.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        AboutComponent,
-        FormPageComponent,
-        TablePageComponent,
-        ListboxPageComponent,
-        ButtonPageComponent,
-        RadioTilePageComponent,
-        FiltersPageComponent
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        DesignSystemModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        BreadcrumbModule,
-        TreeModule,
-        DropdownModule,
-        MessagesModule,
-        LibCircleStatusModule
-    ],
-    providers: [DatePipe, FiltersService],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    FormPageComponent,
+    TablePageComponent,
+    ListboxPageComponent,
+    ButtonPageComponent,
+    RadioTilePageComponent,
+    FiltersPageComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    DesignSystemModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BreadcrumbModule,
+    TreeModule,
+    DropdownModule,
+    MessagesModule,
+    LibCircleStatusModule
+  ],
+  providers: [DatePipe, FiltersService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FilterService } from "primeng/api";
 
@@ -12,7 +12,7 @@ import { FilterService } from "primeng/api";
     multi: true
   }, FilterService]
 })
-export class AutocompleteComponent {
+export class AutocompleteComponent implements OnChanges {
   @Input() valueAutocomplete: string[] | any[] = [];
   @Input() placeholder: string = '';
   @Input() value: any;
@@ -31,17 +31,27 @@ export class AutocompleteComponent {
 
   private onChange: any = () => { }
   private onTouch: any = () => { }
+  private enableFilter = false;
   protected filteredList: any[] = [];
 
   get haveError() {
     return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
+    if (this.lazy && this.enableFilter) {
+      this.filteredList = [...this.valueAutocomplete];
+    }
+  }
+
   constructor() { }
 
   protected filter(event: any) {
+
     if (!this.lazy) {
       if (event.query.length > this.minLength - 1) {
+        this.enableFilter = true;
         let filtered: any[] = [];
         let query = event.query.toString();
         for (let i = 0; i < this.valueAutocomplete.length; i++) {
@@ -59,7 +69,10 @@ export class AutocompleteComponent {
         this.filteredList = filtered;
       }
     } else {
-      this.emitLazyValue.emit(event.query.toString());
+      if (event.query.toString().length > this.minLength - 1) {
+        this.enableFilter = true;
+        this.emitLazyValue.emit(event.query.toString());
+      }
     }
   }
 
