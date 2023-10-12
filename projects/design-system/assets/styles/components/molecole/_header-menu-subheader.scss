@@ -64,15 +64,15 @@
       .p-menuitem.p-menuitem-active > .p-menuitem-link {
         background: $color--primary-color;
         color: $color--black-900;
-        text-transform: lowercase;
-        &::first-letter {
-          text-transform: uppercase;
-        }
 
         @include typography-body-regular;
         height: 100%;
         .p-menuitem-text {
           line-height: unset;
+          text-transform: lowercase;
+          &::first-letter {
+            text-transform: uppercase;
+          }
         }
         .p-menuitem-text,
         .p-submenu-icon {
