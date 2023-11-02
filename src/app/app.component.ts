@@ -4,6 +4,7 @@ import { Table, TableService } from 'primeng/table';
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
 import { HeaderItemsService, Tabs, UserNotification } from 'projects/design-system/src/public-api';
 import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
+import {AccordionData} from "../../projects/design-system/src/lib/atoms/accordion/models/accordion.model";
 
 @Component({
   selector: 'app-root',
@@ -30,9 +31,18 @@ export class AppComponent {
     { header: 'prova4', hide: true, isDisabled: true, isSelected: false },
     { header: 'prova3', isSelected: false, isDisabled: false },
     { header: 'prova4', isSelected: false, isDisabled: false },
-  ]
+  ];
 
   protected tabIndex = 0;
+
+  protected accordionSections: AccordionData[] = [
+    { header: 'prova1', content: 'test1', val: 'val1'},
+    { header: 'prova2', content: 'test2', val: 'val2'},
+    { header: 'prova3', content: 'test3', val: 'val3'},
+  ];
+
+  protected accordionIndex: number = 0;
+
   protected dropdownValue: string[] = [
     'Ufficio',
     'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED',
