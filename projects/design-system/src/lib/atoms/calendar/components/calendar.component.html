@@ -25,7 +25,7 @@
         [selectionMode]="selectionType" [readonlyInput]="true" [placeholder]="placeholder" [minDate]="minDate"
         [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()">
       <ng-template pTemplate="date" let-date>
-       <span class="selected-date" [ngClass]="{'selected-date': isHighlighted(date)}">
+       <span [ngClass]="{'selected-date': isHighlighted(date)}">
           {{date.day}}</span>
       </ng-template>
     </p-calendar>
