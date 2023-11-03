@@ -6,6 +6,11 @@
   font-weight: $font-weight;
   border-radius: $border-radius;
   transition: box-shadow 0.2s;
+
+
+  .p-accordion-header-text{
+    margin-left: 8px;
+  }
 }
 
 .p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
