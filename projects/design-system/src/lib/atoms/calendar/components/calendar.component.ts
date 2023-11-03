@@ -41,6 +41,7 @@ export class CalendarComponent {
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() defaultDateFormat: string = 'dd-mm-yy';
+    @Input() highlightedDays: Array<string> = ['1-9','15-9','28-2'];
 
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
     @Output() clearCalendarValue: EventEmitter<any> = new EventEmitter<any>();
@@ -95,5 +96,10 @@ export class CalendarComponent {
 
     toggleCalendar(): void {
         this.pcalendar.toggle();
+    }
+
+    isHighlighted(date: { month: number; day: number; year: number; }) {
+const dateString = date.day.toString() + '-' + (date.month+1).toString();
+      return this.highlightedDays.includes(dateString);
     }
 }
