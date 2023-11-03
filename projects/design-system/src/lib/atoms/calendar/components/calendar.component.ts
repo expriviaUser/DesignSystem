@@ -41,7 +41,7 @@ export class CalendarComponent {
     @Input() minDate!: Date;
     @Input() maxDate!: Date;
     @Input() defaultDateFormat: string = 'dd-mm-yy';
-    @Input() highlightedDays: Array<string> = ['1-9','15-9','28-2'];
+    @Input() highlightedDays: Array<string> = [];
 
     @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
     @Output() clearCalendarValue: EventEmitter<any> = new EventEmitter<any>();

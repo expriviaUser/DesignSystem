@@ -41,7 +41,7 @@
     [appendTo]="appendTo" [defaultDateFormat]="defaultDateFormat" [dropdownMode]="calendarDropdown"
     (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')"
     [label]="label ? label + (required ? ' *' : '') : ''" [inlineCal]="inlineCal" [selectionType]="selectionType"
-    [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"></lib-calendar>
+    [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar" [highlightedDays]="highlightedDays"></lib-calendar>
 
   <!-- Input autocomplete  -->
   <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
