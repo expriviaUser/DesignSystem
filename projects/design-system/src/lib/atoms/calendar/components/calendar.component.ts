@@ -99,7 +99,7 @@ export class CalendarComponent {
     }
 
     isHighlighted(date: { month: number; day: number; year: number; }) {
-const dateString = date.day.toString() + '-' + (date.month+1).toString();
+const dateString = date.year.toString() + '-' + ('0' + (date.month+1).toString()).slice(-2) + '-' + ('0' + date.day.toString()).slice(-2);
       return this.highlightedDays.includes(dateString);
     }
 }
