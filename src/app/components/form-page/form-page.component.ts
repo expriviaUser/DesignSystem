@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators } from 'projects/design-system/src/lib/atoms/input-form/custom-validators/custom-validators';
 
 @Component({
   selector: 'app-form-page',
@@ -10,7 +11,7 @@ export class FormPageComponent {
   form: FormGroup = this.fb.group({
     autocomplete: [''],
     autocompleteCard: [{ code: 1, name: 'Nome Sede', content: 'Via Roma 1' }],
-    input: ['', [Validators.required, Validators.maxLength(4)]],
+    input: ['', [Validators.required, CustomValidators.fiscalCode]],
     psw: [''],
     dropdown: [''],
     calendar: [new Date('2023-05-15')],
@@ -35,9 +36,16 @@ export class FormPageComponent {
   }
 
   submit() {
+    const input = this.form.get('input');
+    const validator = input?.validator as any;
+    console.log("Validators", validator);
+    console.log("Errors", input?.errors);
     this.form.get('autocompleteCard')?.setValue({ code: 2, name: 'Nome Sede', content: 'Via Napoli 1' });
     console.log(this.form.value);
     console.log(this.form.get('input')?.errors)
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+    }
   }
 
   iconClick() {

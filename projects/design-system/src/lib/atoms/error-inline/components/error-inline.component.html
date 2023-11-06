@@ -1,5 +1,5 @@
 <ul class="p-error">
-    <!-- <li [hidden]="control.pristine && !control.touched" *ngIf="control.hasError('required')">required</li> -->
+  <li *ngIf="errorVal">{{errorVal}}</li>
 
-    <ng-content></ng-content>
+  <ng-content></ng-content>
 </ul>
