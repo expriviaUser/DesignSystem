@@ -10,7 +10,7 @@
             pInputText placeholder="aaaa" />
 
         <p-calendar appendTo="body" [ngModelOptions]="{standalone: true}" [(ngModel)]="calendarDate" [showIcon]="true"
-            (onSelect)="selectDate(calendarDate)" inputId="icon"></p-calendar> 
+            (onSelect)="selectDate(calendarDate)" inputId="icon"></p-calendar>
 </form>
 <span class="p-error" *ngIf="formData.errors?.['invalidDate']">Data non valida</span> -->
 
@@ -24,6 +24,10 @@
         [dateFormat]="defaultDateFormat" [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}"
         [selectionMode]="selectionType" [readonlyInput]="true" [placeholder]="placeholder" [minDate]="minDate"
         [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()">
+      <ng-template pTemplate="date" let-date>
+       <span [ngClass]="{'selected-date': isHighlighted(date)}">
+          {{date.day}}</span>
+      </ng-template>
     </p-calendar>
 
 

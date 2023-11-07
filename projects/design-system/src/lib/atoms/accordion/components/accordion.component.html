@@ -1,0 +1,7 @@
+<p-accordion [multiple]="multiple" [(activeIndex)]="index" (activeIndexChange)="changeIndex($event)">
+  <p-accordionTab *ngFor="let item of sections; let i = index" [header]="item.header" iconPos="end">
+    <ng-container *ngIf="contents" [ngTemplateOutlet]="contents ? contents : null"
+                  [ngTemplateOutletContext]="{$implicit:item}"></ng-container>
+
+  </p-accordionTab>
+</p-accordion>

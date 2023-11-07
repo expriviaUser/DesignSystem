@@ -41,6 +41,7 @@ import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.modu
 import { PipesModule } from './pipes/pipes.module';
 import { LibListboxModule } from './atoms/listbox/lib-listbox.module';
 import { LibCircleStatusModule } from './atoms/circle-status/lib-circle-status.module';
+import {LibAccordionModule} from "./atoms/accordion/lib-accordion.module";
 
 const sharedModules = [
     LibTagModule,
@@ -83,7 +84,8 @@ const sharedModules = [
     LibTimelineModule,
     LibPickListModule,
     LibListboxModule,
-    LibCircleStatusModule
+    LibCircleStatusModule,
+    LibAccordionModule
 ];
 
 @NgModule({

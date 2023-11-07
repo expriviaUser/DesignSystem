@@ -42,3 +42,13 @@
         prova
     </ng-template>
 </lib-tabs>
+
+<lib-accordion [sections]="accordionSections" [contents]="accordionContent">
+  <ng-template #accordionContent let-data>
+    <p>
+      {{data.content}}
+      </p>
+    <strong>{{data.val}}</strong>
+    </ng-template>
+
+</lib-accordion>
