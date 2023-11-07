@@ -22,51 +22,53 @@ import { MenuModule } from 'primeng/menu';
 import { InputFormModule } from '../../atoms/input-form/input-form.module';
 import { LibUploadFileModule } from '../upload-file/lib-upload-file.module';
 import { HeaderItemsService } from './services/header-items.service';
+import { LibDropdownModule } from '../../atoms/dropdown/lib-dropdown.module';
 
 
 const primeComponents = [
-    BadgeModule,
-    DropdownModule,
-    ListboxModule,
-    OverlayPanelModule,
-    ButtonModule,
-    MenubarModule,
-    MenuModule
+  BadgeModule,
+  DropdownModule,
+  ListboxModule,
+  OverlayPanelModule,
+  ButtonModule,
+  MenubarModule,
+  MenuModule
 ];
 
 const exportComponent = [
-    CartComponent,
-    HeaderActionsComponent,
-    LogoComponent,
-    SearchBarComponent,
-    LanguageSelectorComponent,
-    HeaderNotificationsComponent,
-    HeaderMenuUserComponent
+  CartComponent,
+  HeaderActionsComponent,
+  LogoComponent,
+  SearchBarComponent,
+  LanguageSelectorComponent,
+  HeaderNotificationsComponent,
+  HeaderMenuUserComponent
 ];
 
 @NgModule({
-    declarations: [
-        ...exportComponent
-    ],
-    imports: [
-        ...primeComponents,
-        CommonModule,
-        RouterModule,
-        LibButtonModule,
-        LibIconCircleModule,
-        FormsModule,
-        ReactiveFormsModule,
-        LibBadgeModule,
-        InputFormModule,
-        LibUploadFileModule
-    ],
-    exports: [
-        ...exportComponent,
-    ],
-    entryComponents: [
-        ...exportComponent
-    ],
-    providers: []
+  declarations: [
+    ...exportComponent
+  ],
+  imports: [
+    ...primeComponents,
+    CommonModule,
+    RouterModule,
+    LibButtonModule,
+    LibIconCircleModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LibBadgeModule,
+    InputFormModule,
+    LibUploadFileModule,
+    LibDropdownModule
+  ],
+  exports: [
+    ...exportComponent,
+  ],
+  entryComponents: [
+    ...exportComponent
+  ],
+  providers: []
 })
 
 export class HeaderItemsModule { }
