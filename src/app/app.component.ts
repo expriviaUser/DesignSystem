@@ -158,4 +158,8 @@ export class AppComponent {
       id: 4
     };
   }
+
+  print(value:any) {
+    console.log(value);
+  }
 }

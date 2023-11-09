@@ -47,6 +47,8 @@ export class CalendarComponent {
 
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
   @Output() clearCalendarValue: EventEmitter<any> = new EventEmitter<any>();
+  @Output() yearChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() monthChange: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild('calendar') pcalendar!: Calendar;
 

@@ -453,6 +453,28 @@ span {
 }
 
 .p-calendar {
+  .p-datepicker table td > span.p-highlight {
+    background-color: $color--calendar-selected-day;
+    color: $color--blue-700;
+  }
+  .p-datepicker table td.p-datepicker-today > span {
+    background-color: #EFF6FF;
+    border: 1px solid var(--secondary-color-50);
+    &.p-highlight {
+      background-color: $color--calendar-selected-day !important;
+      color: $color--blue-700 !important;
+    }
+  }
+  .p-highlight {
+    .selected-date {
+      background-color: $color--calendar-selected-day !important;
+      color: $color--blue-700 !important;
+    }
+    .holidays {
+      background-color: $color--calendar-selected-day;
+      color: $color--blue-700;
+    }
+  }
   .selected-date {
     width: 100%;
     height: 100%;
