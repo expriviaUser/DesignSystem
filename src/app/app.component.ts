@@ -4,7 +4,7 @@ import { Table, TableService } from 'primeng/table';
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
 import { HeaderItemsService, Tabs, UserNotification } from 'projects/design-system/src/public-api';
 import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
-import {AccordionData} from "../../projects/design-system/src/lib/atoms/accordion/models/accordion.model";
+import { AccordionData } from "../../projects/design-system/src/lib/atoms/accordion/models/accordion.model";
 
 @Component({
   selector: 'app-root',
@@ -36,9 +36,9 @@ export class AppComponent {
   protected tabIndex = 0;
 
   protected accordionSections: AccordionData[] = [
-    { header: 'prova1', content: 'test1', val: 'val1'},
-    { header: 'prova2', content: 'test2', val: 'val2'},
-    { header: 'prova3', content: 'test3', val: 'val3'},
+    { header: 'prova1', content: 'test1', val: 'val1' },
+    { header: 'prova2', content: 'test2', val: 'val2' },
+    { header: 'prova3', content: 'test3', val: 'val3' },
   ];
 
   protected accordionIndex: number = 0;
@@ -53,9 +53,7 @@ export class AppComponent {
     'ENI \\ VIGGIANO',
   ];
 
-  setTabs(event: any) {
-    console.log(event);
-  }
+
 
   protected languages = [
     {

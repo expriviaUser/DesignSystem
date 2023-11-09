@@ -39,7 +39,6 @@ export class AutocompleteComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
     if (this.lazy && this.enableFilter) {
       this.filteredList = [...this.valueAutocomplete];
     }

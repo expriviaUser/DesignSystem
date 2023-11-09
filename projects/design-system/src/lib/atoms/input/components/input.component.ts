@@ -57,8 +57,6 @@ export class InputComponent {
   }
 
   getInput(event: any) {
-    console.log(event);
-    console.log(event);
     this.emitInput.emit(event);
   }
 

@@ -1,132 +1,126 @@
 <div class="filters-wrapper">
-    <div class="dropdown-title">{{title}}</div>
-    <div class="dropdown-container">
+  <div class="dropdown-title">{{title}}</div>
+  <div class="dropdown-container">
 
-        <div *ngFor="let dropdownOptions of dropdownValues.filters; let i = index">
-            <ng-container [ngSwitch]="dropdownOptions.type">
-                <!-- TREESELECT -->
-                <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
-                    [options]="dropdownOptions.data || []" [metaKeySelection]="false"
-                    [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
-                    [selectionMode]="dropdownOptions.selectionType || 'multiple'"
-                    [placeholder]="dropdownOptions.placeholder"
-                    (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-                    (onNodeUnselect)="unselectOption($event, i)">
-                    <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
-                        <ng-template pTemplate="value">
-                            {{dropdownOptions.placeholder}}
-                        </ng-template>
-                    </ng-container>
-                    <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
-                        <ng-template pTemplate="value">
-                            {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
-                        </ng-template>
-                    </ng-container>
-                </p-treeSelect>
-                <div *ngSwitchCase="'dialog'" class="align-children">
-                    <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []"
-                        [(ngModel)]="chipsList.data[i]" [metaKeySelection]="false"
-                        [filter]="dropdownOptions.filter || false"
-                        [filterInputAutoFocus]="dropdownOptions.filter || false"
-                        [selectionMode]="dropdownOptions.selectionType || 'multiple'"
-                        [placeholder]="dropdownOptions.placeholder" (onNodeExpand)="expandNode($event)"
-                        (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-                        (onNodeUnselect)="unselectOption($event, i)">
-                        <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
-                            <ng-template pTemplate="value">
-                                {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
-                            </ng-template>
-                        </ng-container>
-                    </p-treeSelect>
-                </div>
-                <!-- CALENDAR -->
-                <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true"
-                    [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
-                    (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
-                <!-- CHILDREN -->
-                <div *ngSwitchCase="'children'" class="align-children">
-                    <div class="same-line">
-                        <!-- CHILDREN DROPDOWN -->
-                        <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data"
-                            [placeholder]="dropdownOptions.placeholder" [codeString]="'data'" [nameString]="'label'"
-                            [selectedItemTemplate]="selectedItemTemplate" (selectedValue)="setChildValue($event, i)">
-                            <ng-template #selectedItemTemplate pTemplate="selectedItem">
-                                {{dropdownSelectedValues[i].label || dropdownOptions.placeholder}}
-                            </ng-template>
-                        </lib-dropdown>
-                        <ng-container [ngSwitch]="getChildType(dropdownOptions, dropdownSelectedValues[i].value)">
-                            <div *ngSwitchCase="'text'">
-                                <!-- CHILDREN INPUT TEXT-->
-                                <lib-input [placeholder]="dropdownSelectedValues[i].label"
-                                    (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
-                            </div>
-                            <div *ngSwitchCase="'number'" class="same-line">
-                                <!-- CHILDREN INPUT NUMBER -->
-                                <ng-container
-                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='range'">
-                                    <span class="flex-center">Da:</span> <lib-input [type]="'number'"
-                                        (selectedValue)="setNumberRangeValue(i,0, $event)"
-                                        (emitInput)="emitInputEvent($event, true)"></lib-input>
-                                    <span class="flex-center">A:</span><lib-input [type]="'number'"
-                                        (selectedValue)="setNumberRangeValue(i,1, $event)"
-                                        (emitInput)="emitInputEvent($event, false)"></lib-input>
-                                </ng-container>
-                                <ng-container
-                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='range'">
-                                    <lib-input [type]="'number'"
-                                        (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
-                                </ng-container>
-                            </div>
-                            <div *ngSwitchCase="'enum'">
-                                <!-- CHILDREN INPUT DROPDOWN -->
-                                <lib-dropdown
-                                    [valueDropdown]="getChildEnum(dropdownOptions, dropdownSelectedValues[i].value)"
-                                    [codeString]="'data'" [nameString]="'label'"
-                                    [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholder"
-                                    (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-dropdown>
-                            </div>
-                            <div *ngSwitchCase="'calendar'" class="same-line">
-                                <!-- CHILDREN INPUT CALENDAR -->
-                                <ng-container
-                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='double-range'">
-                                    <span class="flex-center">Da:</span> <lib-calendar [dropdownMode]="true"
-                                        [placeholder]="'Da'" (selectedValue)="setCalendarDoubleRangeChild(i, 0, $event)"
-                                        [maxDate]="doubleRangeFromMaxDate" [selectionType]="'single'"></lib-calendar>
-                                    <span class="flex-center">A:</span>
-                                    <lib-calendar [dropdownMode]="true" [placeholder]="'A'"
-                                        [minDate]="doubleRangeToMinDate "
-                                        (selectedValue)="setCalendarDoubleRangeChild(i, 1, $event)"
-                                        [selectionType]="'single'"></lib-calendar>
-                                </ng-container>
-                                <ng-container
-                                    *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='double-range'">
-                                    <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
-                                        (selectedValue)="setCalendarChild($event, i)"
-                                        [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection"></lib-calendar>
-                                </ng-container>
-                            </div>
-                            <div *ngSwitchCase="'interval'" class="same-line">
-                                <!-- CHILDREN INPUT INTERVAL -->
-                                <lib-input #inputDa
-                                    [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderDa"
-                                    [ngClass]="{'required-da': requiredDaIsEmpty}"
-                                    (selectedValue)="setInterval(i, $event, true)"></lib-input>
-                                <lib-input #inputA
-                                    [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderA"
-                                    [ngClass]="{'required-a': requiredAIsEmpty}"
-                                    (selectedValue)="setInterval(i, $event, false)"></lib-input>
-                            </div>
-                        </ng-container>
-                    </div>
-                    <div class="button-filtri">
-                        <lib-button *ngIf="dropdownSelectedValues[i].label"
-                            [label]="dropdownOptions.addFilterButtonLabel || ''"
-                            (onClick)="printData(i, dropdown, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"
-                            [size]="'small'"
-                            [disabled]="checkValue(i, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"></lib-button>
-                    </div>
-                </div>
+    <div *ngFor="let dropdownOptions of dropdownValues.filters; let i = index">
+      <ng-container [ngSwitch]="dropdownOptions.type">
+        <!-- TREESELECT -->
+        <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
+          [options]="dropdownOptions.data || []" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
+          [filterInputAutoFocus]="dropdownOptions.filter || false"
+          [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
+          (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+          (onNodeUnselect)="unselectOption($event, i)">
+          <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
+            <ng-template pTemplate="value">
+              {{dropdownOptions.placeholder}}
+            </ng-template>
+          </ng-container>
+          <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+            <ng-template pTemplate="value">
+              {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+            </ng-template>
+          </ng-container>
+        </p-treeSelect>
+        <div *ngSwitchCase="'dialog'" class="align-children">
+          <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []"
+            [(ngModel)]="chipsList.data[i]" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
+            [filterInputAutoFocus]="dropdownOptions.filter || false"
+            [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
+            (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+            (onNodeUnselect)="unselectOption($event, i)">
+            <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+              <ng-template pTemplate="value">
+                {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+              </ng-template>
             </ng-container>
+          </p-treeSelect>
         </div>
+        <!-- CALENDAR -->
+        <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true"
+          [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
+          (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
+        <!-- CHILDREN -->
+        <div *ngSwitchCase="'children'" class="align-children">
+          <div class="same-line">
+            <!-- CHILDREN DROPDOWN -->
+            <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data" [placeholder]="dropdownOptions.placeholder"
+              [codeString]="'data'" [nameString]="'label'" [selectedItemTemplate]="selectedItemTemplate"
+              (selectedValue)="setChildValue($event, i)">
+              <ng-template #selectedItemTemplate pTemplate="selectedItem">
+                {{dropdownSelectedValues[i].label || dropdownOptions.placeholder}}
+              </ng-template>
+            </lib-dropdown>
+            <ng-container [ngSwitch]="getChildType(dropdownOptions, dropdownSelectedValues[i].value)">
+              <div *ngSwitchCase="'text'">
+                <!-- CHILDREN INPUT TEXT-->
+                <lib-input [placeholder]="dropdownSelectedValues[i].label"
+                  (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
+              </div>
+              <div *ngSwitchCase="'number'" class="same-line">
+                <!-- CHILDREN INPUT NUMBER -->
+                <ng-container
+                  *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='range'">
+                  <span class="flex-center">Da:</span> <lib-input [type]="'number'"
+                    (selectedValue)="setNumberRangeValue(i,0, $event)"
+                    (emitInput)="emitInputEvent($event, true)"></lib-input>
+                  <span class="flex-center">A:</span><lib-input [type]="'number'"
+                    (selectedValue)="setNumberRangeValue(i,1, $event)"
+                    (emitInput)="emitInputEvent($event, false)"></lib-input>
+                </ng-container>
+                <ng-container
+                  *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='range'">
+                  <lib-input [type]="'number'"
+                    (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-input>
+                </ng-container>
+              </div>
+              <div *ngSwitchCase="'enum'">
+                <!-- CHILDREN INPUT DROPDOWN -->
+                <lib-dropdown [valueDropdown]="getChildEnum(dropdownOptions, dropdownSelectedValues[i].value)"
+                  [codeString]="'data'" [nameString]="'label'"
+                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholder"
+                  (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-dropdown>
+              </div>
+              <div *ngSwitchCase="'calendar'" class="same-line">
+                <!-- CHILDREN INPUT CALENDAR -->
+                <ng-container
+                  *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='double-range'">
+                  <span class="flex-center">Da:</span> <lib-calendar [dropdownMode]="true" [placeholder]="'Da'"
+                    (selectedValue)="setCalendarDoubleRangeChild(i, 0, $event)" [maxDate]="doubleRangeFromMaxDate"
+                    [selectionType]="'single'"></lib-calendar>
+                  <span class="flex-center">A:</span>
+                  <lib-calendar [dropdownMode]="true" [placeholder]="'A'" [minDate]="doubleRangeToMinDate "
+                    (selectedValue)="setCalendarDoubleRangeChild(i, 1, $event)"
+                    [selectionType]="'single'"></lib-calendar>
+                </ng-container>
+                <ng-container
+                  *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='double-range'">
+                  <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
+                    (selectedValue)="setCalendarChild($event, i)"
+                    [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection"></lib-calendar>
+                </ng-container>
+              </div>
+              <div *ngSwitchCase="'interval'" class="same-line">
+                <!-- CHILDREN INPUT INTERVAL -->
+                <lib-input #inputDa
+                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderDa"
+                  [ngClass]="{'required-da': requiredDaIsEmpty}"
+                  (selectedValue)="setInterval(i, $event, true)"></lib-input>
+                <lib-input #inputA
+                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderA"
+                  [ngClass]="{'required-a': requiredAIsEmpty}"
+                  (selectedValue)="setInterval(i, $event, false)"></lib-input>
+              </div>
+            </ng-container>
+          </div>
+          <div class="button-filtri">
+            <lib-button *ngIf="dropdownSelectedValues[i].label" [label]="dropdownOptions.addFilterButtonLabel || ''"
+              (onClick)="printData(i, dropdown, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"
+              [size]="'small'"
+              [disabled]="checkValue(i, getChildType(dropdownOptions, dropdownSelectedValues[i].value),  getChildConfig(dropdownOptions, dropdownSelectedValues[i].value))"></lib-button>
+          </div>
+        </div>
+      </ng-container>
     </div>
+  </div>
 </div>

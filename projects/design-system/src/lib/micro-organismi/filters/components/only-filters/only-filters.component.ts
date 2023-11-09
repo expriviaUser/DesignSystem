@@ -258,9 +258,7 @@ export class OnlyFiltersComponent implements OnInit {
     }
   }
 
-  expandNode(event: any) {
-    console.log(event);
-  }
+
 
   protected createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
     //verifico che non ci sia già la chip per il selettore specificato

@@ -28,118 +28,119 @@ $ipad-pro-min-width: 1024px;
 $ipad-pro-max-width: 1366px;
 
 :root {
-    //PRIMARY
-    --primary-color-10: #856f00;
-    --primary-color-20: #9d8300;
-    --primary-color-30: #b89a00;
-    --primary-color-40: #d9b500;
-    --primary-color-50: #ffd300;
-    --primary-color-60: #ffdf40;
-    --primary-color-70: #ffe770;
-    --primary-color-80: #ffed93;
-    --primary-color-90: #fff2ae;
-    --primary-color-100: #fff5c2;
+  //PRIMARY
+  --primary-color-10: #856f00;
+  --primary-color-20: #9d8300;
+  --primary-color-30: #b89a00;
+  --primary-color-40: #d9b500;
+  --primary-color-50: #ffd300;
+  --primary-color-60: #ffdf40;
+  --primary-color-70: #ffe770;
+  --primary-color-80: #ffed93;
+  --primary-color-90: #fff2ae;
+  --primary-color-100: #fff5c2;
 
-    //SECONDARY
-    --secondary-color-10: #073f98;
-    --secondary-color-20: #084ab3;
-    --secondary-color-30: #0a57d3;
-    --secondary-color-40: #0f67f4;
-    --secondary-color-50: #3b82f6;
-    --secondary-color-60: #6ca2f8;
-    --secondary-color-70: #91b9fa;
-    --secondary-color-80: #accbfb;
-    --secondary-color-90: #c1d8fc;
-    --secondary-color-100: #d0e1fd;
+  //SECONDARY
+  --secondary-color-10: #073f98;
+  --secondary-color-20: #084ab3;
+  --secondary-color-30: #0a57d3;
+  --secondary-color-40: #0f67f4;
+  --secondary-color-50: #3b82f6;
+  --secondary-color-60: #6ca2f8;
+  --secondary-color-70: #91b9fa;
+  --secondary-color-80: #accbfb;
+  --secondary-color-90: #c1d8fc;
+  --secondary-color-100: #d0e1fd;
 
-    //TERTIARY
-    --tertiary-color-10: #073f98;
-    --tertiary-color-20: #084ab3;
-    --tertiary-color-30: #0a57d3;
-    --tertiary-color-40: #0f67f4;
-    --tertiary-color-50: #3b82f6;
-    --tertiary-color-60: #6ca2f8;
-    --tertiary-color-70: #91b9fa;
-    --tertiary-color-80: #accbfb;
-    --tertiary-color-90: #c1d8fc;
-    --tertiary-color-100: #d0e1fd;
+  //TERTIARY
+  --tertiary-color-10: #073f98;
+  --tertiary-color-20: #084ab3;
+  --tertiary-color-30: #0a57d3;
+  --tertiary-color-40: #0f67f4;
+  --tertiary-color-50: #3b82f6;
+  --tertiary-color-60: #6ca2f8;
+  --tertiary-color-70: #91b9fa;
+  --tertiary-color-80: #accbfb;
+  --tertiary-color-90: #c1d8fc;
+  --tertiary-color-100: #d0e1fd;
 
-    //BASE
-    --base-color-black: #000000;
-    --base-color-white: #ffffff;
-    --base-color-background: #f4f5f8;
-    --base-color-transparent: transparent;
-    --base-color-border: #b8b8b8;
+  //BASE
+  --base-color-black: #000000;
+  --base-color-white: #ffffff;
+  --base-color-background: #f4f5f8;
+  --base-color-transparent: transparent;
+  --base-color-border: #b8b8b8;
 
-    //GRAY
-    --gray-color-10: #626d7d;
-    --gray-color-20: #748092;
-    --gray-color-30: #8e98a7;
-    --gray-color-40: #adb4bf;
-    --gray-color-50: #d1d5db;
-    --gray-color-60: #dcdfe4;
-    --gray-color-70: #e5e7eb;
-    --gray-color-80: #ecedf0;
-    --gray-color-90: #f0f2f4;
-    --gray-color-100: #f4f5f6;
+  //GRAY
+  --gray-color-10: #626d7d;
+  --gray-color-20: #748092;
+  --gray-color-30: #8e98a7;
+  --gray-color-40: #adb4bf;
+  --gray-color-50: #d1d5db;
+  --gray-color-60: #dcdfe4;
+  --gray-color-70: #e5e7eb;
+  --gray-color-80: #ecedf0;
+  --gray-color-90: #f0f2f4;
+  --gray-color-100: #f4f5f6;
+  --gray-color-200: #eff6ff;
 
-    //ERROR
-    --error-color-10: #b21f27;
-    --error-color-50: #ef4444;
-    --error-color-100: #f1edee;
+  //ERROR
+  --error-color-10: #b21f27;
+  --error-color-50: #ef4444;
+  --error-color-100: #f1edee;
 
-    //SUCCESS
-    --success-color-10: #006612;
-    --success-color-50: #00b843;
-    --success-color-100: #d4ffdc;
+  //SUCCESS
+  --success-color-10: #006612;
+  --success-color-50: #00b843;
+  --success-color-100: #d4ffdc;
 
-    //WARNING
-    --warning-color-10: #805100;
-    --warning-color-50: #f59b00;
-    --warning-color-100: #ffe8c0;
+  //WARNING
+  --warning-color-10: #805100;
+  --warning-color-50: #f59b00;
+  --warning-color-100: #ffe8c0;
 
-    //BADGE
-    --badge-color-10: #006612;
-    --badge-color-50: #00b843;
-    --badge-color-100: #d4ffdc;
+  //BADGE
+  --badge-color-10: #006612;
+  --badge-color-50: #00b843;
+  --badge-color-100: #d4ffdc;
 
-    //TEXT
-    --text-color-placeholder: #64748b;
-    --text-color-normal: #000000;
-    --text-color-disabled: #b8b8b8;
-    --text-color-hyperlink: #3b82f6;
-    --text-color-subtitle: #64748b;
+  //TEXT
+  --text-color-placeholder: #64748b;
+  --text-color-normal: #000000;
+  --text-color-disabled: #b8b8b8;
+  --text-color-hyperlink: #3b82f6;
+  --text-color-subtitle: #64748b;
 
-    //FILTER
-    --filter-background: #0ea5e9;
-    --filter-warning: #fde68a;
-    --filter-error: #fecaca;
+  //FILTER
+  --filter-background: #0ea5e9;
+  --filter-warning: #fde68a;
+  --filter-error: #fecaca;
 
-    //BORDERS
-    --progressbar-border-radius: 10px;
+  //BORDERS
+  --progressbar-border-radius: 10px;
 
-    //FONT-WEIGHT
-    --font-weight-light: 100;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --typography-form-label-font-weight: 600;
+  //FONT-WEIGHT
+  --font-weight-light: 100;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --typography-form-label-font-weight: 600;
 
-    //FONT-SIZE
-    --font-size-xs: 12px;
-    --font-size-s: 14px;
-    --font-size-m: 16px;
-    --font-size-l: 18px;
-    --font-size-h6: 24px;
-    --typography-form-label-font-size: 16px;
+  //FONT-SIZE
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-h6: 24px;
+  --typography-form-label-font-size: 16px;
 
-    //LINE-HEIGHT
-    --line-height-xs: 16px;
-    --line-height-s: 20px;
-    --line-height-m: 24px;
-    --line-height-l: 28px;
-    --typography-form-label-line-height: 28px;
+  //LINE-HEIGHT
+  --line-height-xs: 16px;
+  --line-height-s: 20px;
+  --line-height-m: 24px;
+  --line-height-l: 28px;
+  --typography-form-label-line-height: 28px;
 }
 
 // Colors prj
@@ -285,6 +286,8 @@ $color--calendar-button-background-hover: var(--secondary-color-50);
 $color--calendar-header-text: var(--gray-color-30);
 $color--calendar-button-border: var(--secondary-color-50);
 $color--calendar-highlight-day: var(--secondary-color-50);
+$color--calendar-holidays-background: var(--gray-color-200);
+$color--calendar-holidays-text: var(--secondary-color-50);
 
 //switch
 $color--switch-active: var(--tertiary-color-50);
