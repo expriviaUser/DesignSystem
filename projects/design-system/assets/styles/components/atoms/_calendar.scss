@@ -459,8 +459,8 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $color--calendar-highlight-day;
-    color: $white;
+    background-color: $color--calendar-highlight-day !important;
+    color: $white !important;
   }
 
   .holidays {
