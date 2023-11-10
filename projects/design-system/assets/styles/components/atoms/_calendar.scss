@@ -453,38 +453,6 @@ span {
 }
 
 .p-calendar {
-  .p-datepicker table td > span.p-highlight {
-    background-color: $color--calendar-selected-day;
-    color: $color--blue-700;
-  }
-  .p-datepicker table td.p-datepicker-today > span {
-    background-color: #EFF6FF;
-    border: 1px solid var(--secondary-color-50);
-    &.p-highlight {
-      background-color: $color--calendar-selected-day !important;
-      color: $color--blue-700 !important;
-    }
-  }
-  .p-highlight {
-    .selected-date {
-      background-color: $color--calendar-selected-day !important;
-      color: $color--blue-700 !important;
-    }
-    .holidays {
-      background-color: $color--calendar-selected-day;
-      color: $color--blue-700;
-    }
-  }
-  .selected-date {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $color--calendar-highlight-day !important;
-    color: $white !important;
-  }
-
   .holidays {
     width: 100%;
     height: 100%;
@@ -493,5 +461,44 @@ span {
     justify-content: center;
     background-color: $color--calendar-holidays-background;
     color: $color--calendar-holidays-text;
+  }
+
+  .selected-date {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color--calendar-highlight-day;
+      color: $white;
+    }
+
+  .p-datepicker table td.p-datepicker-today > span {
+    background-color: #EFF6FF;
+    border: 1px solid var(--secondary-color-50);
+    .selected-date {
+      background-color: #EFF6FF;
+      color: $color--text-color;
+    }
+    .holidays {
+      background-color: #EFF6FF;
+      color: $color--text-color;
+    }
+  }
+
+  .p-datepicker table td > span.p-highlight {
+    background-color: $color--calendar-selected-day;
+    color: $color--blue-700;
+  }
+
+  .p-highlight {
+    .selected-date {
+      background-color: $color--calendar-selected-day !important;
+      color: $color--blue-700 !important;
+    }
+    .holidays {
+      background-color: $color--calendar-selected-day !important;
+      color: $color--blue-700 !important;
+    }
   }
 }
