@@ -24,7 +24,7 @@
     [dateFormat]="defaultDateFormat" [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}"
     [selectionMode]="selectionType" [readonlyInput]="true" [placeholder]="placeholder" [minDate]="minDate"
     [firstDayOfWeek]="firstDayOfWeek" [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()"
-              (onMonthChange)="monthChange.emit($event)" (onYearChange)="yearChange.emit($event)">
+              (onMonthChange)="monthChange.emit($event)" (onYearChange)="yearChange.emit($event)" [timeOnly]="timeOnly" [dataType]="dataType">
     <ng-template pTemplate="date" let-date>
       <span [ngClass]="{'holidays': isHoliday(date), 'selected-date': isHighlighted(date)}">{{date.day}}</span>
     </ng-template>

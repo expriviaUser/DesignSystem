@@ -43,7 +43,7 @@
     (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')"
     [label]="label ? label + (required ? ' *' : '') : ''" [inlineCal]="inlineCal" [selectionType]="selectionType"
     [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"
-    [highlightedDays]="highlightedDays" [disabled]="inputDisabled"></lib-calendar>
+    [highlightedDays]="highlightedDays" [disabled]="inputDisabled" [timeOnly]="timeOnly" [dataType]="dataType"></lib-calendar>
 
   <!-- Input autocomplete  -->
   <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"

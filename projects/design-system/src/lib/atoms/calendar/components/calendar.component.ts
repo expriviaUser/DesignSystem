@@ -44,6 +44,8 @@ export class CalendarComponent {
   @Input() highlightedDays: Array<string> = [];
   @Input() firstDayOfWeek!: number;
   @Input() disabledDays!: number[];
+  @Input() timeOnly: boolean = false;
+  @Input() dataType: string = 'date';
 
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
   @Output() clearCalendarValue: EventEmitter<any> = new EventEmitter<any>();

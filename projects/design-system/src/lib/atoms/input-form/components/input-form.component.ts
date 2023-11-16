@@ -52,6 +52,8 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() maxFileSize!: number;
   @Input() errorTemplate!: TemplateRef<any>;
   @Input() highlightedDays: Array<string> = [];
+  @Input() timeOnly: boolean = false;
+  @Input() dataType: string = 'date';
 
   //@Input() formControl: FormControl = new FormControl();
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
