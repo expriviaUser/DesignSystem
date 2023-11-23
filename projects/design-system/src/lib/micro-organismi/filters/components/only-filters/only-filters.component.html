@@ -45,8 +45,8 @@
           <div class="same-line">
             <!-- CHILDREN DROPDOWN -->
             <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data" [placeholder]="dropdownOptions.placeholder"
-              [codeString]="'data'" [nameString]="'label'" [selectedItemTemplate]="selectedItemTemplate"
-              (selectedValue)="setChildValue($event, i)">
+              [appendTo]="'body'" [codeString]="'data'" [nameString]="'label'"
+              [selectedItemTemplate]="selectedItemTemplate" (selectedValue)="setChildValue($event, i)">
               <ng-template #selectedItemTemplate pTemplate="selectedItem">
                 {{dropdownSelectedValues[i].label || dropdownOptions.placeholder}}
               </ng-template>
@@ -77,7 +77,7 @@
               <div *ngSwitchCase="'enum'">
                 <!-- CHILDREN INPUT DROPDOWN -->
                 <lib-dropdown [valueDropdown]="getChildEnum(dropdownOptions, dropdownSelectedValues[i].value)"
-                  [codeString]="'data'" [nameString]="'label'"
+                  [appendTo]="'body'" [codeString]="'data'" [nameString]="'label'"
                   [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholder"
                   (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-dropdown>
               </div>
