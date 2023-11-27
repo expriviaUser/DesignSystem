@@ -6,8 +6,8 @@
       <ng-container [ngSwitch]="dropdownOptions.type">
         <!-- TREESELECT -->
         <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
-          [options]="dropdownOptions.data || []" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
-          [filterInputAutoFocus]="dropdownOptions.filter || false"
+          [appendTo]="'body'" [options]="dropdownOptions.data || []" [metaKeySelection]="false"
+          [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
           [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
           (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
           (onNodeUnselect)="unselectOption($event, i)">
@@ -23,7 +23,7 @@
           </ng-container>
         </p-treeSelect>
         <div *ngSwitchCase="'dialog'" class="align-children">
-          <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []"
+          <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'"
             [(ngModel)]="chipsList.data[i]" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
             [filterInputAutoFocus]="dropdownOptions.filter || false"
             [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
