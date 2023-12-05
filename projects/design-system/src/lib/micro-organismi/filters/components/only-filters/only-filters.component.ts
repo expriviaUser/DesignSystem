@@ -118,7 +118,7 @@ export class OnlyFiltersComponent implements OnInit {
       }
       if (item.type == 'dialog') {
 
-        this.chipsList.data[index] = {} as TreeSelectModel[];
+        this.chipsList.data[index] = item.selectionType !== 'multiple' ? {} as TreeSelectModel[] : [];
       }
       if (item.type == 'children') {
         this.dropdownSelectedValues[index] = { label: '', value: null, childValue: '' };
@@ -245,8 +245,13 @@ export class OnlyFiltersComponent implements OnInit {
 
         //this.chipsList.data[dropdownIndex] = [];
       }
+      let fieldSplitted: string[] = [];
+      if (this.dropdownValues.filters[dropdownIndex].type === 'dialog' && selectionType === 'multiple') {
+        fieldSplitted = dropdownField.split('');
+        fieldSplitted[0] = fieldSplitted[0].toLocaleUpperCase();
+      }
       this.chipsList.result.push({
-        chipsLabel: event.node.label,
+        chipsLabel: fieldSplitted.length ? fieldSplitted?.join('') + ': ' + event.node.label : event.node.label,
         dropdownIndex: dropdownIndex,
         field: dropdownField,
         data: event.node.data,

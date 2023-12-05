@@ -41,63 +41,65 @@ import { LibUploadFileModule } from './molecole/upload-file/lib-upload-file.modu
 import { PipesModule } from './pipes/pipes.module';
 import { LibListboxModule } from './atoms/listbox/lib-listbox.module';
 import { LibCircleStatusModule } from './atoms/circle-status/lib-circle-status.module';
-import {LibAccordionModule} from "./atoms/accordion/lib-accordion.module";
+import { LibAccordionModule } from "./atoms/accordion/lib-accordion.module";
+import { LibInplaceModule } from './atoms/inplace/lib-inplace.module';
 
 const sharedModules = [
-    LibTagModule,
-    LibCardModule,
-    LibBreadcrumbModule,
-    LibButtonModule,
-    LibDropdownModule,
-    LibCalendarModule,
-    LibAutocompleteModule,
-    LibCheckboxModule,
-    LibRadioButtonModule,
-    LibChipModule,
-    LibTextareaModule,
-    InputFormModule,
-    LibInputModule,
-    LibBadgeModule,
-    LibDialogModule,
-    LibIconCircleModule,
-    LibTabsModule,
-    LibTableModule,
-    CtaBarModule,
-    HeaderItemsModule,
-    LibMessagesModule,
-    LibRadioTileModule,
-    LibFiltersModule,
-    HeaderMenuModule,
-    SidebarModule,
-    FileModule,
-    FileStatusModule,
-    LibTreeSelectModule,
-    LibProgressBarModule,
-    LibUploadFileModule,
-    LibChooseFileModule,
-    SwitchModule,
-    LibTreemenuModule,
-    PipesModule,
-    LibLoaderModule,
-    HeaderItemsModule,
-    LibAddressModule,
-    LibTimelineModule,
-    LibPickListModule,
-    LibListboxModule,
-    LibCircleStatusModule,
-    LibAccordionModule
+  LibTagModule,
+  LibCardModule,
+  LibBreadcrumbModule,
+  LibButtonModule,
+  LibDropdownModule,
+  LibCalendarModule,
+  LibAutocompleteModule,
+  LibCheckboxModule,
+  LibRadioButtonModule,
+  LibChipModule,
+  LibTextareaModule,
+  InputFormModule,
+  LibInputModule,
+  LibBadgeModule,
+  LibDialogModule,
+  LibIconCircleModule,
+  LibTabsModule,
+  LibTableModule,
+  CtaBarModule,
+  HeaderItemsModule,
+  LibMessagesModule,
+  LibRadioTileModule,
+  LibFiltersModule,
+  HeaderMenuModule,
+  SidebarModule,
+  FileModule,
+  FileStatusModule,
+  LibTreeSelectModule,
+  LibProgressBarModule,
+  LibUploadFileModule,
+  LibChooseFileModule,
+  SwitchModule,
+  LibTreemenuModule,
+  PipesModule,
+  LibLoaderModule,
+  HeaderItemsModule,
+  LibAddressModule,
+  LibTimelineModule,
+  LibPickListModule,
+  LibListboxModule,
+  LibCircleStatusModule,
+  LibAccordionModule,
+  LibInplaceModule
 ];
 
 @NgModule({
-    declarations: [
-    ],
-    imports: [
-        CommonModule,
-        ...sharedModules
-    ],
-    exports: [
-        ...sharedModules
-    ],
-    providers: [LibTableService]
+  declarations: [
+  ],
+  imports: [
+    CommonModule,
+    ...sharedModules
+  ],
+  exports: [
+    ...sharedModules
+  ],
+  providers: [LibTableService]
 })
 export class DesignSystemModule { }

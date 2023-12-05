@@ -1,0 +1,8 @@
+<p-inplace [closable]="isClosable" [active]="isActive">
+  <ng-template pTemplate="display">
+    <ng-content select="[displayTemplate]"></ng-content>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <ng-content select="[contentTemplate]"></ng-content>
+  </ng-template>
+</p-inplace>

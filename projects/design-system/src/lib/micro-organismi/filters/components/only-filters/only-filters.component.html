@@ -4,38 +4,46 @@
 
     <div *ngFor="let dropdownOptions of dropdownValues.filters; let i = index">
       <ng-container [ngSwitch]="dropdownOptions.type">
-        <!-- TREESELECT -->
-        <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
-          [appendTo]="'body'" [options]="dropdownOptions.data || []" [metaKeySelection]="false"
-          [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
-          [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
-          (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-          (onNodeUnselect)="unselectOption($event, i)">
-          <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
-            <ng-template pTemplate="value">
-              {{dropdownOptions.placeholder}}
-            </ng-template>
-          </ng-container>
-          <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
-            <ng-template pTemplate="value">
-              {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
-            </ng-template>
-          </ng-container>
-        </p-treeSelect>
-        <div *ngSwitchCase="'dialog'" class="align-children">
-          <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'"
-            [(ngModel)]="chipsList.data[i]" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
-            [filterInputAutoFocus]="dropdownOptions.filter || false"
+        <ng-container *ngIf="chipsList?.data?.length">
+          <!-- TREESELECT -->
+          <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
+            [appendTo]="'body'" [options]="dropdownOptions.data || []" [metaKeySelection]="false"
+            [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
             [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
             (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
             (onNodeUnselect)="unselectOption($event, i)">
+            <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
+              <ng-template pTemplate="value">
+                {{dropdownOptions.placeholder}}
+              </ng-template>
+            </ng-container>
             <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
               <ng-template pTemplate="value">
                 {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
               </ng-template>
             </ng-container>
           </p-treeSelect>
-        </div>
+          <div *ngSwitchCase="'dialog'" class="align-children">
+            <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'"
+              [(ngModel)]="chipsList.data[i]" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
+              [filterInputAutoFocus]="dropdownOptions.filter || false"
+              [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
+              (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+              (onNodeUnselect)="unselectOption($event, i)">
+              <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+                <ng-template pTemplate="value">
+                  {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+                </ng-template>
+              </ng-container>
+              <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
+                <ng-template pTemplate="value">
+                  {{dropdownOptions.placeholder}}
+                </ng-template>
+              </ng-container>
+            </p-treeSelect>
+          </div>
+        </ng-container>
+
         <!-- CALENDAR -->
         <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true"
           [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
@@ -86,17 +94,17 @@
                 <ng-container
                   *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection==='double-range'">
                   <span class="flex-center">Da:</span> <lib-calendar [dropdownMode]="true" [placeholder]="'Da'"
-                    (selectedValue)="setCalendarDoubleRangeChild(i, 0, $event)" [maxDate]="doubleRangeFromMaxDate"
-                    [selectionType]="'single'"></lib-calendar>
+                    [appendTo]="'body'" (selectedValue)="setCalendarDoubleRangeChild(i, 0, $event)"
+                    [maxDate]="doubleRangeFromMaxDate" [selectionType]="'single'"></lib-calendar>
                   <span class="flex-center">A:</span>
                   <lib-calendar [dropdownMode]="true" [placeholder]="'A'" [minDate]="doubleRangeToMinDate "
-                    (selectedValue)="setCalendarDoubleRangeChild(i, 1, $event)"
+                    [appendTo]="'body'" (selectedValue)="setCalendarDoubleRangeChild(i, 1, $event)"
                     [selectionType]="'single'"></lib-calendar>
                 </ng-container>
                 <ng-container
                   *ngIf="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection!=='double-range'">
                   <lib-calendar [dropdownMode]="true" [placeholder]="dropdownSelectedValues[i].label"
-                    (selectedValue)="setCalendarChild($event, i)"
+                    [appendTo]="'body'" (selectedValue)="setCalendarChild($event, i)"
                     [selectionType]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.selection"></lib-calendar>
                 </ng-container>
               </div>

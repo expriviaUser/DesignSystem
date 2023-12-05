@@ -49,4 +49,14 @@
 </lib-accordion>
 
 <lib-calendar [inlineCal]="true" [disabledDays]="[0,6]" [firstDayOfWeek]="1"
-  [highlightedDays]="['2023-11-11', '2023-11-10']" (yearChange)="print($event)" (monthChange)="print($event)"></lib-calendar>
+  [highlightedDays]="['2023-11-11', '2023-11-10']" (yearChange)="print($event)"
+  (monthChange)="print($event)"></lib-calendar>
+<lib-button [label]="'Descrizione'" [type]="'primary'" [size]="'small'" (onClick)="inplace.isActive = !inplace.isActive"
+  [icon]="isActive ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></lib-button>
+
+<lib-inplace #inplace [isActive]="isActive">
+
+  <ng-container contentTemplate>
+    Click To Hide
+  </ng-container>
+</lib-inplace>

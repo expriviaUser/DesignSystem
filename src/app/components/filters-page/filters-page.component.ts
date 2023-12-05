@@ -189,7 +189,7 @@ export class FiltersPageComponent {
         data: [],
         children: this.titolario,
         type: 'dialog',
-        selectionType: 'single'
+        selectionType: 'multiple'
       }
     );
 

@@ -43,6 +43,8 @@ export class AppComponent {
 
   protected accordionIndex: number = 0;
 
+  protected isActive = true;
+
   protected dropdownValue: string[] = [
     'Ufficio',
     'ENI \\ ENISERVIZI \\ PRE \\ AD \\ SEBI \\ ATED',
@@ -159,7 +161,7 @@ export class AppComponent {
     };
   }
 
-  print(value:any) {
+  print(value: any) {
     console.log(value);
   }
 }
