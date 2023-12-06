@@ -4,53 +4,52 @@ import { FileUpload } from '../../upload-file/models/file-upload.model';
 import { UserNotification } from '../models/user-notification.model';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class HeaderItemsService {
-    cartItems$: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-    set cartItems(val: any) {
-        const values = this.cartItems$.getValue();
-        values.push(val);
-        this.cartItems$.next(values);
-    }
+  cartItems$: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  set cartItems(val: any[]) {
 
-    getCart(): BehaviorSubject<any> {
-        return this.cartItems$;
-    }
+    this.cartItems$.next(val);
+  }
 
-    deleteFromCart(index: number) {
-        const values = this.cartItems$.getValue();
-        values.splice(index, 1);
-        this.cartItems$.next(values);
-    }
+  getCart(): BehaviorSubject<any> {
+    return this.cartItems$;
+  }
 
-    deleteAllFromCart() {
-        this.cartItems$.next([]);
-    }
+  deleteFromCart(index: number) {
+    const values = this.cartItems$.getValue();
+    values.splice(index, 1);
+    this.cartItems$.next(values);
+  }
 
-    uploadFiles$: BehaviorSubject<FileUpload[]> = new BehaviorSubject<FileUpload[]>([]);
-    set uploadFiles(val: FileUpload) {
-        let values = this.uploadFiles$.getValue();
-        values.push(val);
-        this.uploadFiles$.next(values);
-    }
+  deleteAllFromCart() {
+    this.cartItems$.next([]);
+  }
 
-    notifications$: BehaviorSubject<UserNotification[]> = new BehaviorSubject<UserNotification[]>([]);
-    set notifications(val: UserNotification) {
-        let values = this.notifications$.getValue();
-        values.push(val);
-        this.notifications$.next(values);
-    }
+  uploadFiles$: BehaviorSubject<FileUpload[]> = new BehaviorSubject<FileUpload[]>([]);
+  set uploadFiles(val: FileUpload) {
+    let values = this.uploadFiles$.getValue();
+    values.push(val);
+    this.uploadFiles$.next(values);
+  }
 
-    notificationRead(id: number) {
-        const notifyToModify = this.notifications$.getValue().map(el => {
-            if (el.id === id) {
-                el.isRead = true;
-            }
+  notifications$: BehaviorSubject<UserNotification[]> = new BehaviorSubject<UserNotification[]>([]);
+  set notifications(val: UserNotification) {
+    let values = this.notifications$.getValue();
+    values.push(val);
+    this.notifications$.next(values);
+  }
 
-            return el;
-        });
+  notificationRead(id: number) {
+    const notifyToModify = this.notifications$.getValue().map(el => {
+      if (el.id === id) {
+        el.isRead = true;
+      }
 
-        this.notifications$.next(notifyToModify);
-    }
+      return el;
+    });
+
+    this.notifications$.next(notifyToModify);
+  }
 }
