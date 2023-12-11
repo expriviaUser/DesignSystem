@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dSystem": {
+    "DesignSystem": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/d-system",
+            "outputPath": "dist/design-system",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -44,7 +44,8 @@
           },
           "configurations": {
             "production": {
-              "budgets": [{
+              "budgets": [
+                {
                   "type": "initial",
                   "maximumWarning": "500kb",
                   "maximumError": "1mb"
@@ -72,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dSystem:build:production"
+              "browserTarget": "DesignSystem:build:production"
             },
             "development": {
-              "browserTarget": "dSystem:build:development"
+              "browserTarget": "DesignSystem:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dSystem:build"
+            "browserTarget": "DesignSystem:build"
           }
         },
         "test": {

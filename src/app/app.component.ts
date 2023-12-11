@@ -13,7 +13,7 @@ import { AccordionData } from "../../projects/design-system/src/lib/atoms/accord
   providers: [Table, TableService, MessageService],
 })
 export class AppComponent {
-  title = 'dSystem';
+  title = 'DesignSystem';
 
   protected notifications: UserNotification[] = [];
   protected itemsMenu: MenubarItem[] = [
