@@ -1,0 +1,11 @@
+<div class="cta-bar {{isMain}}" [class.main]="isMain">
+    <div>
+        <ng-content select="[back]"></ng-content>
+    </div>
+    <div>
+        <ng-content select="[middle]"></ng-content>
+    </div>
+    <div>
+        <ng-content select="[cta]"></ng-content>
+    </div>
+</div>

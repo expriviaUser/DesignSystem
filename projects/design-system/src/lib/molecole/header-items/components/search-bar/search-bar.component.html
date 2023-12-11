@@ -1,0 +1,11 @@
+<div class="search-bar">
+    <form [formGroup]="searchForm">
+        <lib-input-form type="dropdown" [valueInput]="categories" [placeholder]="dropdownPlaceholder"
+            class="search-bar-category" [appendTo]="'body'" formControlName="categorie"></lib-input-form>
+        <lib-input-form type="text" formControlName="text" placeholder="Cerca"
+            class="search-bar-input"></lib-input-form>
+        <lib-button type="primary" [label]="buttonLabel" size="small" icon="pi pi-search" class="search-bar-button"
+            (onClick)="search()"></lib-button>
+    </form>
+
+</div>

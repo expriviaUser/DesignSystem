@@ -1,0 +1,11 @@
+<!-- icon with associated tooltips -->
+<i [class]="icon"
+  [class.info]="type == 'info'" [pTooltip]="tooltipText!" [tooltipPosition]="tooltipPosition!" (click)="showTooltip()"
+  tooltipEvent="focus" [escape]="false" [ngClass]="tooltipText && tooltipPosition? 'tooltip-pointer':''"
+  [tooltipStyleClass]="tooltipSize!"></i>
+
+<!-- 
+    The click event toggles the tooltip;
+    The escape=false property allows the tooltip to read HTML tags for formatting and special HTML characters
+    The tooltip-pointer class toggles only if the tooltip is active and sets the cursor: pointer
+  -->

@@ -1,0 +1,14 @@
+<p>about-due works!</p>
+<router-outlet></router-outlet>
+<a routerLink="/about-due/caricamento">Caricamento</a>
+
+<div class="height-fix">
+  <lib-pick-list [sourceLabel]="'Disponibili'" [targetLabel]="'Selezionati'" [sourceFilterPlaceholder]="'Filtra'"
+    [(sourceArray)]="items" [(targetArray)]="items2" [targetFilterPlaceholder]="'Filtra'" [template]="template"
+    [dragDrop]="true" [metaKeySelection]="false">
+    <ng-template #template let-data="data">
+      {{data.label}}
+    </ng-template>
+
+  </lib-pick-list>
+</div>

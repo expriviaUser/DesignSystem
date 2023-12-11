@@ -1,0 +1,29 @@
+.p-progressbar {
+    border: 1px solid $color--progressbar-border;
+    height: 1.5rem;
+    background: $color--progressbar-background;
+    border-radius: $progressbar-border-radius;
+}
+
+.p-progressbar .p-progressbar-value {
+    border: 0 none;
+    margin: 0;
+    border-radius: $progressbar-border-radius;
+    background: $color--progressbar-background-progress;
+}
+
+.p-progressbar .p-progressbar-label {
+    color: $color--progressbar-text;
+    line-height: 1.5rem;
+}
+
+.progress-bar {
+    
+    &.not-show-value {
+        height: 0.5em;
+
+        .p-progressbar {
+            height: 100%;
+        }
+    }
+}

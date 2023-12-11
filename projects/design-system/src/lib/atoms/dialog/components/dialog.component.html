@@ -1,0 +1,22 @@
+<p-dialog [header]="title" [(visible)]="visible" styleClass="'p-dialog--responsive'" [modal]="true" [draggable]="false"
+    [resizable]="true" [closable]="closable" (onHide)="hideDialog()">
+    <ng-template pTemplate="header">
+        <ng-template [ngTemplateOutlet]="externalHeader ? externalHeader : defaultHeader">
+
+        </ng-template>
+    </ng-template>
+    <ng-content select="[body]"></ng-content>
+
+    <ng-template pTemplate="footer">
+        <ng-content select="[footer]">
+        </ng-content>
+    </ng-template>
+
+</p-dialog>
+
+<ng-template #defaultHeader>
+    <div class="header-dialog">
+        <h6>{{title}}</h6>
+        <span class="subtitle-second-regular">{{subtitle}}</span>
+    </div>
+</ng-template>

@@ -1,0 +1,25 @@
+.margin-on-top {
+    margin-top: 20px;
+}
+
+.margin-on-bottom {
+    margin-bottom: 110px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: white;
+
+    .left {
+        lib-logo {
+            cursor: pointer;
+        }
+    }
+
+    .center {
+        flex: 0 1 40%;
+    }
+}

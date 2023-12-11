@@ -1,0 +1,44 @@
+.p-chip {
+    background-color: $color--chip-background;
+    color: $color--chip-text;
+    border-radius: 8px;
+    padding: 0 0.75rem;
+
+    &.p-component {
+        @include typography-small-semibold;
+    }
+
+    .p-chip-text {
+        line-height: 1.5;
+        margin-top: 0.286rem;
+        margin-bottom: 0.286rem;
+    }
+
+    .p-chip-icon {
+        margin-right: 0.5rem;
+    }
+
+    .pi-chip-remove-icon {
+        margin-left: 0.5rem;
+        font-size: 0.821rem;
+        margin-top: 0.063rem;
+    }
+
+    img {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-left: -0.75rem;
+        margin-right: 0.5rem;
+    }
+
+    .pi-chip-remove-icon {
+        border-radius: $border-radius;
+        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .pi-chip-remove-icon:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        box-shadow: $shadow--focus-ring;
+    }
+}

@@ -1,0 +1,9 @@
+<div class="logo-box">
+    <img class="first-logo" [src]="logoPath ? logoPath : 'assets/svg/logo.svg'" />
+    <img [src]="'assets/svg/line1.svg'" />
+    <div class="text-box" *ngIf="!secondLogo">
+        <div class="first-text">{{text1}}</div>
+        <div class="second-text">{{text2}}</div>
+    </div>
+    <img class="second-logo" [src]="logoPath" *ngIf="secondLogo" />
+</div>

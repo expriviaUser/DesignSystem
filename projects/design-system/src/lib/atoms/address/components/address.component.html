@@ -1,0 +1,11 @@
+<div class="address" *ngIf="address">
+  <div class="title body-semibold">
+    {{address.name}}
+  </div>
+  <div class="content body-regular">
+    {{address.content}}
+  </div>
+  <div class="modify-button" *ngIf="modify">
+    <lib-button [type]="'link'" [label]="'Modifica'" (onClick)="modifyClicked.emit()"></lib-button>
+  </div>
+</div>

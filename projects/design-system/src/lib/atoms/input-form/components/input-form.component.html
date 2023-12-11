@@ -1,0 +1,97 @@
+<div [ngSwitch]="type" class="show-error" [class.p-input-icon-right]="icon !== ''">
+
+  <!-- Input statica -->
+  <div class="field" *ngSwitchCase="'static'">
+    <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'">{{label}}
+      {{required ? '*' : ''}}</label>
+    <div class="static">{{getValueControl()}}</div>
+  </div>
+
+  <!-- Input listBox -->
+  <lib-listbox *ngSwitchCase="'listbox'" [items]="valueInput" [control]="control" [value]="control.value"
+    (valueChange)="emitValue($event, type)" [disabled]="inputDisabled" [filtered]="inputFiltered"
+    [label]="label ? label + (required ? ' *' : '') : ''">
+  </lib-listbox>
+
+  <div class="field" *ngSwitchCase="'listBox'">
+    <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'">{{label}}
+      {{required ? '*' : ''}}</label>
+    <div class="static">{{getValueControl()}}</div>
+  </div>
+
+  <!-- Input number -->
+  <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos" [clear]="clear"
+    [value]="value" (selectedValue)="emitValue($event, type)" [control]="control" [id]="formControlName"
+    [label]="label ? label + (required ? ' *' : '') : ''" type="number" />
+
+  <!-- dropdown  -->
+  <lib-dropdown *ngSwitchCase="'dropdown'" [value]="control.value" (selectedValue)="emitValue($event, 'dropdown')"
+    [filter]="dropdownFilter" [filterPlaceholder]="dropdownFilterPlaceholder"
+    [label]="label ? label + (required ? ' *' : '') : ''" [appendTo]="appendTo" [clear]="clear"
+    [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"
+    [disabled]="inputDisabled"></lib-dropdown>
+
+  <!-- multi-select  -->
+  <lib-multi-select *ngSwitchCase="'multi-select'" [value]="control.value"
+    (selectedValue)="emitValue($event, 'dropdown')" [label]="label ? label + (required ? ' *' : '') : ''"
+    [filterActive]="multiSelectFilterActive" [appendTo]="appendTo" [clear]="clear" [placeholder]="placeholder"
+    [control]="control" [valueDropdown]="valueInput" [disabled]="inputDisabled"></lib-multi-select>
+
+  <!-- Input calendar -->
+  <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control" [showIcon]="calendarShowIcon"
+    [appendTo]="appendTo" [defaultDateFormat]="defaultDateFormat" [dropdownMode]="calendarDropdown"
+    (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')"
+    [label]="label ? label + (required ? ' *' : '') : ''" [inlineCal]="inlineCal" [selectionType]="selectionType"
+    [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"
+    [highlightedDays]="highlightedDays" [disabled]="inputDisabled" [timeOnly]="timeOnly" [dataType]="dataType"></lib-calendar>
+
+  <!-- Input autocomplete  -->
+  <lib-autocomplete *ngSwitchCase="'autocomplete'" [value]="control.value" [placeholder]="placeholder"
+    [label]="label ? label + (required ? ' *' : '') : ''" [appendTo]="appendTo" [minLength]="minLenghtDigits"
+    (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
+    [lazy]="autocompleteLazy" (emitLazyValue)="autocompleteLazyValue.emit($event)" [disabled]="inputDisabled"
+    [icon]="icon" [field]="field"></lib-autocomplete>
+
+  <!-- Input checkbox -->
+  <div *ngSwitchCase="'checkbox'">
+    <lib-checkbox-button (emitChange)="emitValue($event, type)" [items]="checkboxValue"
+      [label]="label ? label + (required ? ' *' : '') : ''"></lib-checkbox-button>
+  </div>
+
+  <!-- Choose file-->
+  <lib-choose-file *ngSwitchCase="'choose-file'" [acceptExtensions]="fileAcceptExtensions" [control]="control"
+    [disabled]="inputDisabled" [value]="value" [icon]="icon" [maxFileSize]="maxFileSize"
+    [label]="label ? label + (required ? ' *' : '') : ''" (onLoadFile)="emitValue($event, type)"></lib-choose-file>
+
+  <!-- Input radio -->
+  <div class="field-radio" *ngSwitchCase="'radio'">
+    <lib-radio-button [control]="control" [items]="valueInput" [disabled]="disabled"
+      (selectedValue)="emitValue($event, type)" [label]="label ? label + (required ? ' *' : '') : ''"
+      [id]="formControlName+'-label'"></lib-radio-button>
+  </div>
+
+  <lib-autocomplete-card *ngSwitchCase="'autocomplete-card'" [value]="control.value" [placeholder]="placeholder"
+    [label]="label ? label + (required ? ' *' : '') : ''" [appendTo]="appendTo" [minLength]="minLenghtDigits"
+    (selectedValue)="emitValue( $event, 'autocomplete')" [control]="control" [valueAutocomplete]="valueInput"
+    [disabled]="inputDisabled" [icon]="icon" [field]="fieldAutocompleteCard"></lib-autocomplete-card>
+
+  <!-- Input Textarea  -->
+  <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value"
+    [label]="label ? label + (required ? ' *' : '') : ''" [placeholder]="placeholder"></lib-textarea>
+
+  <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder" [clear]="clear"
+    (selectedValue)="emitValue($event, type)" [label]="label ? label + (required ? ' *' : '') : ''"
+    [control]="control"></lib-input>
+
+  <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
+    [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label ? label + (required ? ' *' : '') : ''"
+    [control]="control" [disabled]="inputDisabled" [value]="value" [readonly]="readonly" (iconClicked)="iconClick()"
+    [actionIcon]="actionIcon"></lib-input>
+
+  <lib-error-inline *ngIf="control && haveError || control.parent && haveErrorParent" [control]="control"
+    [controlName]="formControlName">
+    <ng-template [ngTemplateOutlet]="errorTemplate ? errorTemplate : null">
+      <ng-content></ng-content>
+    </ng-template>
+  </lib-error-inline>
+</div>

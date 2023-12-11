@@ -1,0 +1,17 @@
+:host {
+    ::ng-deep .p-inputtextarea {
+        overflow: unset;
+        max-height: 130px;
+        overflow-y: auto;
+    }
+
+    ::ng-deep .p-inputtextarea-resizable {
+        overflow: unset;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

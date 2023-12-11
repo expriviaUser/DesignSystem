@@ -1,0 +1,26 @@
+.circle-status {
+    width: pxToRem(12.5px);
+    height: pxToRem(12.5px);
+    border-radius: 100%;
+    display: block;
+
+    &.warning {
+        background-color: $color--tag-warning;
+        color: $color--tag-text;
+    }
+
+    &.success {
+        background-color: $color--tag-success;
+        color: $color--tag-text;
+    }
+
+    &.danger {
+        background-color: $color--tag-danger;
+        color: $color--tag-text;
+    }
+
+    &.info {
+        background-color: $color--tag-info;
+        color: $color--tag-text;
+    }
+}

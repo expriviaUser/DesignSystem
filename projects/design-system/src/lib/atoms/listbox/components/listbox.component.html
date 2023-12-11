@@ -1,0 +1,14 @@
+<div class="field">
+  <label *ngIf="label && items">{{label}}</label>
+  <div class="listbox" *ngIf="items">
+    <p-listbox
+      [options]="items"
+      [(ngModel)]="value"
+      [optionLabel]="nameString"
+      [disabled]="disabled"
+      [filter]="filtered"
+      [ngClass]="{'ng-invalid ng-dirty': haveError}"
+      (onChange)="this.valueChange.emit(this.value);">
+    </p-listbox>
+  </div>
+</div>

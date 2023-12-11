@@ -1,0 +1,52 @@
+<lib-badge (click)="overlaynotifications.toggle($event);" [menuBadge]="notificationsNumber"></lib-badge>
+
+<p-overlayPanel styleClass="p-overlaypanel p-overlaypanel--notifications" #overlaynotifications>
+
+    <ng-template pTemplate>
+        <ng-container *ngIf="(notifications$ | async) as notify">
+            <p-listbox [options]="notify" [(ngModel)]="selectedNotification" optionLabel="title" optionValue="id"
+                optionDisabled="isRead" styleClass="p-listbox p-listbox--notifications">
+
+                <ng-template let-notification pTemplate="item">
+
+                    <ng-template [ngTemplateOutlet]="externalItems ? externalItems : internalItems"
+                        [ngTemplateOutletContext]="{notification: notification}">
+
+                    </ng-template>
+                </ng-template>
+
+                <ng-template pTemplate="footer" *ngIf="externalFooter || pageUrl">
+                    <ng-template [ngTemplateOutlet]="externalFooter ? externalFooter : internalFooter">
+
+                    </ng-template>
+                </ng-template>
+
+            </p-listbox>
+
+        </ng-container>
+
+    </ng-template>
+
+</p-overlayPanel>
+<ng-template #internalItems let-notification="notification">
+    <a *ngIf="notification.url; else noLink" class="notification" routerLink="{{ notification.url }}"
+        (click)="headerItemsService.notificationRead(notification.id)"
+        title="{{ 'Apri la notifica: ' + notification.title }}">
+        <strong>{{ notification.title }}</strong>
+        <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
+    </a>
+    <div *ngIf="!notification.isRead" class="p-listbox-dot">!</div>
+
+    <ng-template #noLink>
+        <div class="notification" (click)="headerItemsService.notificationRead(notification.id)">
+            <strong>{{ notification.title }}</strong>
+            <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
+        </div>
+    </ng-template>
+</ng-template>
+
+<ng-template #internalFooter>
+    <strong>
+        <a [routerLink]="pageUrl" title="Leggi tutte le notifiche">{{readAllLabel}}</a>
+    </strong>
+</ng-template>

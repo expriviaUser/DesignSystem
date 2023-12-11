@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    lib-input-form {
+      display: block;
+      flex: 1 1 30%;
+    }
+  }
+}

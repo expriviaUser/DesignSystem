@@ -1,0 +1,135 @@
+/// Chunk per specificare le regole dei font
+
+html {
+    font-size: $font-size-in-px;
+    font-family: $font-family;
+}
+
+@font-face {
+    font-family: "EniExpBold";
+    src: url("../../font/EniExpBold.eot");
+    src: url("../../font/EniExpBold.eot?#iefix") format("embedded-opentype"),
+        url("../../font/EniExpBold.woff2") format("woff2"), url("../../font/EniExpBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+/* 
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto-Regular), url("../../font/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto-Light), url("../../font/Roboto-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto-Medium), url("../../font/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto-Bold), url("../../font/Roboto-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+} */
+
+/* .small-regular {
+    @include typography-small-regular;
+}
+
+.small-semibold {
+    @include typography-small-semibold;
+}
+
+.small-bold {
+    @include typography-small-bold;
+}
+
+.x-small-regular {
+    @include typography-x-small-regular;
+}
+
+.x-small-semibold {
+    @include typography-x-small-semibold;
+}
+
+.xs-small-regular {
+    @include typography-xs-small-regular;
+}
+
+.body-semibold {
+    @include typography-body-semibold;
+} */
+
+// titles
+.h6-font {
+    @include typography-h6;
+}
+.h5-font {
+    @include typography-h5;
+}
+
+.h4-font {
+    @include typography-h4;
+}
+
+.h3-font {
+    @include typography-h3;
+}
+
+.h2-font {
+    @include typography-h2;
+}
+
+.h1-font {
+    @include typography-h1;
+}
+
+// subtitles
+.subtitle-regular {
+    @include typography-subtitle-regular;
+}
+
+.subtitle-semibold {
+    @include typography-subtitle-semibold;
+}
+
+.subtitle-second-regular {
+    @include typography-subtitle-second-regular;
+}
+
+.subtitle-second-semibold {
+    @include typography-subtitle-second-semibold;
+}
+
+// body
+.body-regular {
+    @include typography-body-regular;
+}
+
+.body-semibold {
+    @include typography-body-semibold;
+}
+
+// small
+.small-regular {
+    @include typography-small-regular;
+}
+
+.small-semibold {
+    @include typography-small-semibold;
+}

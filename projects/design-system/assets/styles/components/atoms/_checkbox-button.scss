@@ -1,0 +1,102 @@
+p-checkbox {
+    &.rounded {
+        .p-checkbox {
+            .p-checkbox-box {
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+.check-list {
+    padding: pxToRem(6px) 0;
+}
+
+// PrimeNG pcheckbox component
+.p-checkbox {
+    width: 22px;
+    height: 22px;
+
+    .p-checkbox-box {
+        border: 2px solid $color--checkbox-border;
+        background: $color--checkbox-background;
+        width: 22px;
+        height: 22px;
+        color: $color--checkbox-text;
+        border-radius: $border-radius;
+        transition:
+            background-color 0.2s,
+            color 0.2s,
+            border-color 0.2s,
+            box-shadow 0.2s;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        .p-checkbox-icon {
+            transition-duration: 0.2s;
+            color: $color--checkbox-text;
+            font-size: 14px;
+        }
+    }
+
+    .p-checkbox-box {
+        &.p-highlight {
+            border-color: $color--checkbox-border-checked;
+            background: $color--checkbox-background-checked;
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background: $color--checkbox-background-checked;
+                border-color: $color--checkbox-border-checked;
+            }
+        }
+    }
+
+    &:not(.p-checkbox-disabled) {
+        .p-checkbox-box {
+            &:hover {
+                border-color: $color--checkbox-border-checked;
+            }
+        }
+
+        .p-checkbox-box.p-focus {
+            outline: 0 none;
+            outline-offset: 0;
+            box-shadow: $shadow--focus-ring;
+            border-color: $color--checkbox-border-checked;
+        }
+
+        .p-checkbox-box.p-highlight {
+            &:hover {
+                border-color: $color--checkbox-border-checked;
+                background: $color--checkbox-background-checked;
+                color: $color--checkbox-text;
+            }
+        }
+    }
+}
+
+p-checkbox.ng-dirty.ng-invalid {
+    > .p-checkbox {
+        > .p-checkbox-box {
+            border-color: $color--error;
+        }
+    }
+}
+
+.p-checkbox-label {
+    margin-left: 0.5rem;
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+    border: 2px solid $color--checkbox-border-checked;
+
+    &:focus {
+        box-shadow: none;
+    }
+}

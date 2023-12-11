@@ -1,0 +1,19 @@
+.header-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+
+//Global Doc
+.header-actions {
+    .p-button-link {
+        color: $color--headeractions-buttonlink-color;
+        padding: 0;
+    }
+
+    .p-menubar {
+        padding: 0;
+    }
+}

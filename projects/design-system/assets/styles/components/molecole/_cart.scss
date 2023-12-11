@@ -1,0 +1,18 @@
+.cart {
+    display: flex;
+    flex-direction: row;
+    gap: $gap-1;
+    position: relative;
+
+    .popup-cart {
+        position: absolute;
+        z-index: 1500;
+        top: 30px;
+        right: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        padding: 1rem;
+        width: max-content;
+        background-color: $color--white;
+    }
+}

@@ -1,0 +1,22 @@
+<p-card [header]="cHeader" [subheader]="cSubHeader" [style]="cStyle" [styleClass]="cStyleClass"
+    (click)="emitClick($event)">
+    <ng-template pTemplate="header">
+        <ng-content select="[cHeaderTemplate]"></ng-content>
+    </ng-template>
+
+    <ng-template pTemplate="title">
+        <ng-content select="[cTitleTemplate]"></ng-content>
+    </ng-template>
+
+    <ng-template pTemplate="subtitle">
+        <ng-content select="[cSubtitleTemplate]"></ng-content>
+    </ng-template>
+
+    <ng-template pTemplate="content">
+        <ng-content select="[cContentTemplate]"></ng-content>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <ng-content select="[cFooterTemplate]"></ng-content>
+    </ng-template>
+</p-card>

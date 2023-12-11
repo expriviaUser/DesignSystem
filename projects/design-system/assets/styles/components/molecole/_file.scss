@@ -1,0 +1,63 @@
+.file-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    .file-structure {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: $gap-2;
+        width: 85%;
+
+        .file-icon {
+            height: 1.5rem;
+        }
+
+        .small-file-icon {
+            height: 1rem;
+        }
+
+        .file-data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            word-wrap: break-word;
+            padding-right: 20px;
+
+            .ellipsed {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-right: 0;
+                word-wrap: unset;
+            }
+
+            .title {
+                color: $color--file-title;
+                @include typography-body-regular;
+            }
+
+            .title-icon {
+                @include typography-subtitle-second-semibold;
+                color: $color--file-title;
+            }
+
+            .small-title {
+                @include typography-small-regular;
+                color: $color--file-title;
+            }
+
+            .dimension {
+                color: $color--file-subtitle;
+                @include typography-small-regular;
+            }
+        }
+    }
+
+    .file-actions {
+        display: flex;
+        align-items: center;
+    }
+}

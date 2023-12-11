@@ -1,0 +1,26 @@
+<div class="cart" #cart (click)="openOverlay($event)">
+    <span class="pi pi-shopping-cart"></span>
+    <span class="small-semibold">Carrello</span>
+    <span *ngIf="rows.length > 0"><p-badge [value]="rows.length.toString()" severity="danger"></p-badge></span>
+    <div class="popup-cart" [style.display]="show ? 'initial' : 'none'">
+        <div class="container">
+            <div>
+                <ng-content select="[header]"></ng-content>
+            </div>
+            <div *ngFor="let row of rows; let i = index">
+                <ng-template [ngTemplateOutlet]="externalBody ? externalBody : internalBody"
+                    [ngTemplateOutletContext]="{data:row, i:i}">
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #internalHeader>
+    <lib-button [size]="'small'" [label]="'Richiedi consultazione'" [type]="'primary'"></lib-button>
+</ng-template>
+<ng-template #internalBody let-data="data" let-i="i">
+    {{data.id}} / {{data.title}}
+    <lib-button [size]="'small'" [label]="'Richiedi consultazione'" [type]="'primary'"></lib-button>
+</ng-template>

@@ -1,0 +1,9 @@
+<div [ngClass]="{'autocomplete':true, 'dropdown':icon, 'field': true}">
+    <label *ngIf="label">{{label}}</label>
+    <p-autoComplete [showClear]="showClear && !icon" [inputStyleClass]="haveError ? 'ng-invalid ng-dirty':''"
+        [appendTo]="appendTo" [(ngModel)]="value" [placeholder]="placeholder" [suggestions]="filteredList"
+        (change)="emitValueIfExist($event)" (onSelect)="emitValue($event)" (onClear)="emitValue('')"
+        (completeMethod)="filter($event)" [minLength]="minLength" [disabled]="disabled" [dropdownIcon]="icon"
+        [dropdown]="icon ? true : false" dropdownMode="current" [field]="field ? field : ''"></p-autoComplete>
+
+</div>

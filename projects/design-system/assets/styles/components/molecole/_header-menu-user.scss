@@ -1,0 +1,22 @@
+p-button-menu-top {
+    button {
+        &.p-button {
+            &.p-button-icon-only {
+                margin-left: 1.2rem;
+                padding: 0;
+                border: 1.6px solid;
+                width: 1.4rem;
+                height: 1.4rem;
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    i {
+        &.pi-user {
+            padding: 1.3rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+    }
+}

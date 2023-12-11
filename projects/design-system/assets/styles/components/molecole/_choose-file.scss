@@ -1,0 +1,48 @@
+.file-choose {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-1;
+
+    .input {
+        display: flex;
+        width: 100%;
+        .lib-input {
+            flex: 1 1 auto;
+            height: auto;
+            input {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-right: 0;
+                &.p-inputtext[disabled] {
+                    opacity: 1;
+                    background: white;
+                }
+                &.p-disabled,
+                .p-component:disabled {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .p-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: $color--uploadfile-button-background;
+            color: $color--uploadfile-button-text;
+            border-color: $color--uploadfile-button-background;
+
+            &:hover {
+                background-color: $color--uploadfile-button-background;
+                color: $color--uploadfile-button-text;
+                border-color: $color--uploadfile-button-background;
+            }
+        }
+    }
+
+    .label {
+        label {
+            @include typography-subtitle-second-semibold;
+            color: $color--form-label-text;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<div style="width: 100%">
+    <lib-radio-tile [tiles]="tiles" [showRadio]="false" [externalInfo]="otherInfo">
+        <ng-template #otherInfo let-data="data">
+            Piano: {{data.floor}} - Stanza: {{data.room}} - Postazione: {{data.building}}
+        </ng-template>
+    </lib-radio-tile>
+</div>

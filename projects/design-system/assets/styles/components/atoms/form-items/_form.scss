@@ -1,0 +1,26 @@
+.p-treeselect-label-container,
+.p-inputtext {
+  @include typography-body-regular;
+}
+
+.p-treeselect-label,
+.p-inputtext {
+  padding: pxToRem(7px);
+}
+
+.p-component,
+.p-calendar {
+  .p-button-icon-only {
+    padding: pxToRem(7px);
+  }
+}
+
+.show-error {
+  padding-bottom: 1rem;
+  position: relative;
+
+  lib-error-inline {
+    position: absolute;
+    bottom: 0;
+  }
+}

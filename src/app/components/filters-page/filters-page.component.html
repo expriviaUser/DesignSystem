@@ -1,0 +1,36 @@
+<ng-container *ngIf="filtersDefault.filters.length">
+    <lib-only-filters [title]="'Filtra per'" [dropdownValues]="filtersDefault"
+        (chipsListChange)="setFiltersOnDefaultUpload($event)">
+    </lib-only-filters>
+</ng-container>
+<ng-container *ngIf="filtersDigital.filters.length > 0">
+    <lib-only-filters [dropdownValues]="filtersDigital" (chipsListChange)="setFiltersOnDigitalUpload($event)">
+    </lib-only-filters>
+</ng-container>
+<ng-container *ngIf="filtersPaper.filters.length > 0">
+    <lib-only-filters [dropdownValues]="filtersPaper" (chipsListChange)="setFiltersOnPaperUpload($event)">
+    </lib-only-filters>
+</ng-container>
+<ng-container *ngIf="filtersMetadata.filters.length">
+    <span class="metadata">
+        <div class="border-metadata">
+        </div>
+        <lib-only-filters [dropdownValues]="filtersMetadata" (chipsListChange)="setFiltersOnMetadataUpload($event)">
+        </lib-only-filters>
+    </span>
+</ng-container>
+<div class="text-search">
+    <lib-input (selectedValue)="textSearch = $event" [value]="textSearch" (emitInput)="inputSearch($event)"
+        [placeholder]="'Digitare un testo libero di ricerca'"></lib-input>
+</div>
+<lib-button [label]="'Cerca'" [disabled]="isEmptyFilters" [size]="'small'">
+</lib-button>
+<lib-button *ngIf="!isEmptyFilters" [label]="'Azzera filtri'" (onClick)="resetFilters()" [size]="'small'"
+    [type]="'secondary'">
+</lib-button>
+
+<div class="mt-2 px-2">
+    <lib-filters-chips [chipsList]="filtersResult"
+        *ngIf="filtersResult && filtersResult[0] && filtersResult[0].result.length"
+        (onRemove)="removeFilterChip($event)"></lib-filters-chips>
+</div>

@@ -1,0 +1,10 @@
+<p-tabView [(activeIndex)]="index" (activeIndexChange)="changeIndex($event)" [ngClass]="indexNotShow">
+
+    <p-tabPanel *ngFor="let item of sections; let i = index" [header]="item.header" [selected]="i === index"
+        [disabled]="item.isDisabled">
+        <ng-container [ngTemplateOutlet]="contents ? contents : null"
+            [ngTemplateOutletContext]="{data: item.content}"></ng-container>
+
+    </p-tabPanel>
+
+</p-tabView>

@@ -1,0 +1,34 @@
+<!-- <div class="field-data field" *ngIf="!(inlineCal || showIcon || this.dropdownMode)">
+    <label *ngIf="label">{{label}}</label>
+    <form class="data-wrapper" [formGroup]="formData">
+
+        <input type="number" [ngClass]="{'ng-invalid ng-dirty': haveErrorParent || haveError}" formControlName="date"
+            pInputText placeholder="gg" max="31" min="1" />
+        <input type="number" [ngClass]="{'ng-invalid ng-dirty':haveErrorParent ||  haveError}" formControlName="month"
+            pInputText placeholder="mm" max="12" min="1" />
+        <input type="number" [ngClass]="{'ng-invalid ng-dirty':haveErrorParent ||  haveError}" formControlName="year"
+            pInputText placeholder="aaaa" />
+
+        <p-calendar appendTo="body" [ngModelOptions]="{standalone: true}" [(ngModel)]="calendarDate" [showIcon]="true"
+            (onSelect)="selectDate(calendarDate)" inputId="icon"></p-calendar>
+</form>
+<span class="p-error" *ngIf="formData.errors?.['invalidDate']">Data non valida</span> -->
+
+<!-- </div> -->
+
+<div class="field-data field" *ngIf="inlineCal || showIcon || this.dropdownMode">
+  <label *ngIf="label">{{label}}</label>
+
+  <p-calendar #calendar [showButtonBar]="showButtonBar" [disabled]="disabled" [(ngModel)]="value" [appendTo]="appendTo"
+    [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" (onSelect)="emitValue($event)"
+    [dateFormat]="defaultDateFormat" [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}"
+    [selectionMode]="selectionType" [readonlyInput]="true" [placeholder]="placeholder" [minDate]="minDate"
+    [firstDayOfWeek]="firstDayOfWeek" [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()"
+              (onMonthChange)="monthChange.emit($event)" (onYearChange)="yearChange.emit($event)" [timeOnly]="timeOnly" [dataType]="dataType">
+    <ng-template pTemplate="date" let-date>
+      <span [ngClass]="{'holidays': isHoliday(date), 'selected-date': isHighlighted(date)}">{{date.day}}</span>
+    </ng-template>
+  </p-calendar>
+
+
+</div>

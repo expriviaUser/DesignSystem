@@ -1,0 +1,73 @@
+.p-tag {
+    background: $color--primary-color;
+    color: $color--tag-text;
+    padding: pxToRem(4px) pxToRem(8px);
+    border-radius: $border-radius;
+
+    @include typography-small-regular;
+
+    &.p-tag-success {
+        background-color: $color--tag-success;
+        color: $color--tag-text;
+    }
+
+    &.p-tag-info {
+        background-color: $color--tag-info;
+        color: $color--tag-text;
+    }
+
+    &.p-tag-warning {
+        background-color: $color--tag-warning;
+        color: $color--tag-text;
+    }
+
+    &.p-tag-danger {
+        background-color: $color--tag-danger;
+        color: $color--tag-text;
+    }
+
+    & .p-tag-icon {
+        margin-right: 0.25rem;
+        font-size: 0.75rem;
+    }
+}
+
+.app-tag {
+    &.app-tag- {
+        &disable {
+            .p-tag {
+                background: $color--tag-disabled-background;
+                border: 1px solid $color--tag-disabled-background;
+            }
+        }
+
+        &lightInformation {
+            .p-tag {
+                background: $color--tag-light-information-background;
+            }
+        }
+
+        &lightAlert {
+            .p-tag {
+                background: $color--tag-light-danger-background;
+                color: $color--tag-danger;
+            }
+        }
+
+        &informationReverse {
+            .p-tag {
+                background: $color--tag-text;
+                color: $color--tag-info;
+                border: 1px solid $color--tag-info;
+            }
+        }
+
+        &successReverse {
+            .p-tag {
+                background: $color--tag-text;
+                color: $color--tag-success;
+                border: 1px solid $color--tag-success;
+            }
+        }
+    }
+}

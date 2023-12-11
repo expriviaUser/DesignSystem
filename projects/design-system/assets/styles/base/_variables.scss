@@ -1,0 +1,387 @@
+@use "sass:meta";
+
+// Fonts
+$font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-weight-light: 100;
+$font-weight: 400;
+$font-weight-bold: bold;
+$font-size-in-px: 16px;
+$font-size: 100%;
+
+$global-line-truncation-size: 2;
+
+// $global-line-height: 20px;
+// $global-letter-spacing: 0.4px;
+
+//Breakpoint media query
+$breakpoint--mobile-width: 39.94rem; // 639px
+$breakpoint--tablet-width: 40rem; // 640px
+$breakpoint--desktop-width: 64rem; // 1024px
+$breakpoint--x-large: 75rem; // 1200px
+$breakpoint--xx-large: 87.5rem; // 1400px
+$breakpoint--xxx-large: 118.8rem; // 1900px
+
+// Misure per gli iPhone
+$iphone-6-width: 375px;
+$ipad-min-width: 768px;
+$ipad-pro-min-width: 1024px;
+$ipad-pro-max-width: 1366px;
+
+:root {
+  //PRIMARY
+  --primary-color-10: #856f00;
+  --primary-color-20: #9d8300;
+  --primary-color-30: #b89a00;
+  --primary-color-40: #d9b500;
+  --primary-color-50: #ffd300;
+  --primary-color-60: #ffdf40;
+  --primary-color-70: #ffe770;
+  --primary-color-80: #ffed93;
+  --primary-color-90: #fff2ae;
+  --primary-color-100: #fff5c2;
+
+  //SECONDARY
+  --secondary-color-10: #073f98;
+  --secondary-color-20: #084ab3;
+  --secondary-color-30: #0a57d3;
+  --secondary-color-40: #0f67f4;
+  --secondary-color-50: #3b82f6;
+  --secondary-color-60: #6ca2f8;
+  --secondary-color-70: #91b9fa;
+  --secondary-color-80: #accbfb;
+  --secondary-color-90: #c1d8fc;
+  --secondary-color-100: #d0e1fd;
+
+  //TERTIARY
+  --tertiary-color-10: #073f98;
+  --tertiary-color-20: #084ab3;
+  --tertiary-color-30: #0a57d3;
+  --tertiary-color-40: #0f67f4;
+  --tertiary-color-50: #3b82f6;
+  --tertiary-color-60: #6ca2f8;
+  --tertiary-color-70: #91b9fa;
+  --tertiary-color-80: #accbfb;
+  --tertiary-color-90: #c1d8fc;
+  --tertiary-color-100: #d0e1fd;
+
+  //BASE
+  --base-color-black: #000000;
+  --base-color-white: #ffffff;
+  --base-color-background: #f4f5f8;
+  --base-color-transparent: transparent;
+  --base-color-border: #b8b8b8;
+
+  //GRAY
+  --gray-color-10: #626d7d;
+  --gray-color-20: #748092;
+  --gray-color-30: #8e98a7;
+  --gray-color-40: #adb4bf;
+  --gray-color-50: #d1d5db;
+  --gray-color-60: #dcdfe4;
+  --gray-color-70: #e5e7eb;
+  --gray-color-80: #ecedf0;
+  --gray-color-90: #f0f2f4;
+  --gray-color-100: #f4f5f6;
+  --gray-color-200: #eff6ff;
+
+  //ERROR
+  --error-color-10: #b21f27;
+  --error-color-50: #ef4444;
+  --error-color-100: #f1edee;
+
+  //SUCCESS
+  --success-color-10: #006612;
+  --success-color-50: #00b843;
+  --success-color-100: #d4ffdc;
+
+  //WARNING
+  --warning-color-10: #805100;
+  --warning-color-50: #f59b00;
+  --warning-color-100: #ffe8c0;
+
+  //BADGE
+  --badge-color-10: #006612;
+  --badge-color-50: #00b843;
+  --badge-color-100: #d4ffdc;
+
+  //TEXT
+  --text-color-placeholder: #64748b;
+  --text-color-normal: #000000;
+  --text-color-disabled: #b8b8b8;
+  --text-color-hyperlink: #3b82f6;
+  --text-color-subtitle: #64748b;
+
+  //FILTER
+  --filter-background: #0ea5e9;
+  --filter-warning: #fde68a;
+  --filter-error: #fecaca;
+
+  //BORDERS
+  --progressbar-border-radius: 10px;
+
+  //FONT-WEIGHT
+  --font-weight-light: 100;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --typography-form-label-font-weight: 600;
+
+  //FONT-SIZE
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-h6: 24px;
+  --typography-form-label-font-size: 16px;
+
+  //LINE-HEIGHT
+  --line-height-xs: 16px;
+  --line-height-s: 20px;
+  --line-height-m: 24px;
+  --line-height-l: 28px;
+  --typography-form-label-line-height: 28px;
+}
+
+// Colors prj
+// $color--primary-color: #FFD300;
+$color--primary-color: var(--primary-color-50);
+$color--white: #ffffff;
+$color--black: #000;
+$color--error: var(--error-color-50);
+
+//Text colors
+$color--text-placeholder: var(--text-color-placeholder);
+$color--text-normal: var(--text-color-normal);
+$color--text-disabled: var(--text-color-disabled);
+$color--text-hyperlink: var(--text-color-hyperlink);
+$color--text-subtitle: var(--text-color-subtitle);
+
+$color--border: var(--base-color-border);
+
+// colors components
+// buttons
+$color--button-primary-background: var(--primary-color-50);
+$color--button-primary-text: var(--base-color-black);
+$color--button-primary-background-disabled: var(--primary-color-60);
+$color--button-primary-background-hover: var(--primary-color-40);
+
+$color--button-secondary-raised-background: var(--secondary-color-50);
+$color--button-secondary-raised-background-hover: var(--secondary-color-30);
+$color--button-secondary-raised-background-disabled: var(--secondary-color-70);
+$color--button-secondary-raised-text: var(--base-color-white);
+
+$color--button-secondary-background: var(--base-color-white);
+$color--button-secondary-background-disabled: var(--base-color-background);
+$color--button-secondary-border-hover: var(--secondary-color-50);
+$color--button-secondary-border: var(--base-color-border);
+$color--button-secondary-border-disabled: var(--base-color-border);
+$color--button-secondary-text-disabled: var(--base-color-border);
+$color--button-secondary-text: var(--base-color-black);
+
+$color--button-secondary-outlined-background: var(--base-color-white);
+$color--button-secondary-outlined-background-disabled: var(--base-color-background);
+$color--button-secondary-outlined-border-hover: var(--secondary-color-30);
+$color--button-secondary-outlined-border: var(--secondary-color-50);
+$color--button-secondary-outlined-border-disabled: var(--secondary-color-50);
+$color--button-secondary-outlined-text-disabled: var(--secondary-color-50);
+$color--button-secondary-outlined-text: var(--secondary-color-50);
+
+$color--button-text-color: var(--secondary-color-50);
+
+// dropdown
+$color--dropdown-border: var(--base-color-border);
+
+// search-bar
+$color--searchbar-inputtype-border: #cbd5e1;
+
+// header-actions
+$color--headeractions-buttonlink-color: #1890ff;
+
+// menubar
+$color--menubar-link-active-background: $color--white;
+
+// radio-button
+$color--radio-button-border-default: #d4d5d8;
+$color--radio-button-icon-selected: #1890ff;
+
+//autocomplete
+$color--autocomplete-button-background: var(--base-color-transparent);
+$color--autocomplete-button-border: var(--base-color-border);
+
+//upload file
+$color--uploadfile-button-background: var(--secondary-color-50);
+$color--uploadfile-button-text: var(--base-color-white);
+
+// radio-tiles
+$color--radio-tile-card-selected-bg: #e2e9f5;
+$color--radio-tile-card-hover-border: #1890ff;
+$color--radio-tile-card-border: #e2e9f5;
+
+//chip
+$color--chip-text: var(--base-color-white);
+$color--chip-background: var(--filter-background);
+
+//filters
+$color--filters-dropdown-border: var(--base-color-border);
+$color--filters-dropdown-background: var(--base-color-white);
+$color--filters-dropdown-title: var(--base-color-black);
+$color--filters-chips-title: var(--text-color-subtitle);
+$color--filters-dropdown-text: var(--base-color-black);
+
+//File
+$color--file-subtitle: var(--text-color-subtitle);
+$color--file-title: var(--base-color-black);
+
+//tag
+$color--tag-success: var(--success-color-50);
+$color--tag-info: var(--secondary-color-50);
+$color--tag-warning: var(--warning-color-50);
+$color--tag-danger: var(--error-color-50);
+$color--tag-text: var(--base-color-white);
+$color--tag-disabled-background: var(--gray-color-10);
+$color--tag-light-information-background: var(--filter-background);
+$color--tag-light-danger-background: var(--error-color-100);
+
+//tabs
+$color--tabs-background: var(--base-color-white);
+$color--tabs-panel-background: var(--base-color-transparent);
+$color--tabs-text: #64748b;
+$color--tabs-border: #e2e8f0;
+$color--tabs-border-selected: var(--secondary-color-50);
+$color--tabs-text-selected: var(--secondary-color-50);
+
+//paginator
+$color--paginator-border-transparent: var(--base-color-transparent);
+$color--paginator-background-transparent: var(--base-color-transparent);
+$color--paginator-text: var(--gray-color-40);
+$color-paginator-button-background: var(--base-color-white);
+$color-paginator-button-active: var(--secondary-color-50);
+$color-paginator-button-border: var(--gray-color-50);
+$color-paginator-button-text: var(--gray-color-30);
+
+//dialog
+$color--dialog-background-header: var(--base-color-white);
+$color--dialog-text-header: var(--base-color-black);
+
+//progress-bar
+$color--progressbar-background: var(--gray-color-80);
+$color--progressbar-background-progress: var(--secondary-color-50);
+$color--progressbar-text: var(--base-color-white);
+$color--progressbar-border: var(--base-color-border);
+$progressbar-border-radius: var(--progressbar-border-radius);
+
+//checkbox
+$color--checkbox-background: var(--base-color-white);
+$color--checkbox-background-checked: var(--secondary-color-50);
+$color--checkbox-border: var(--base-color-border);
+$color--checkbox-border-checked: var(--secondary-color-50);
+$color--checkbox-text: var(--base-color-white);
+
+//calendar
+$color--calendar-button-text: var(--base-color-white);
+$color--calendar-button-text-hover: var(--base-color-white);
+$color--calendar-button-background: var(--secondary-color-50);
+$color--calendar-button-background-hover: var(--secondary-color-50);
+$color--calendar-header-text: var(--gray-color-30);
+$color--calendar-text-hover: var(--secondary-color-50);
+$color--calendar-button-border: var(--secondary-color-50);
+$color--calendar-highlight-day: var(--secondary-color-50);
+$color--calendar-selected-day: #D4D5D8;
+$color--calendar-holidays-background: var(--gray-color-200);
+$color--calendar-holidays-text: var(--secondary-color-50);
+
+//switch
+$color--switch-active: var(--tertiary-color-50);
+$color--switch-hover: var(--tertiary-color-50);
+
+//form
+$color--form-label-text: var(--text-color-normal);
+
+// header menu subheader
+$color--item-menu-active: var(--base-color-white);
+
+// input-text
+$color--input-border: var(--base-color-border);
+// end colors components
+
+$color--surface-a: #ffffff;
+$color--surface-b: #f8f9fa;
+$color--surface-c: #e9ecef;
+$color--surface-d: #dee2e6;
+$color--text-color: #495057;
+$color--text-color-secondary: #64748b;
+$color--surface-300: #e0e0e0;
+$color--gray-100: #ced4da;
+$color--gray-200: #eff6ff;
+$color--gray-600: #989aa2;
+
+$color--black-700: #202020;
+$color--black-800: #343a40;
+$color--black-900: #000000;
+$color--blue-100: #056dbf;
+$color--blue-500: #114477;
+$color--blue-600: #0a2b4d;
+$color--blue-700: #1d4ed8;
+$color--blue-800: #f0f8fe;
+$color--green-50: #2d7830;
+$color--cyan-100: #bfdbfe;
+$color--orange-50: #fb8c00;
+$color--bluegray-50: #f7f8f9;
+$color--bluegray-500: #64748b;
+$color--purple-50: #fbf7ff;
+$color--purple-500: #a855f7;
+$color--red-50: #ef4444;
+$color--red-100: #a85524;
+$color--red-200: #dd0b0b;
+$color--red-900: #e24c4c;
+$color--black-50: #000;
+$color--white-50: #000;
+
+$white: #ffffff;
+$grey-200: #d8d8d8;
+$blue-100: #056dbf;
+$black: #202020;
+$primary-100: #114477;
+$primary-200: #056dbf;
+$primary-300: #0092bc;
+$red-200: #dd0b0b;
+
+$footer: $primary-300;
+
+// Padding/Margin
+$gap-1: 8px;
+$gap-2: 16px;
+$gap-3: 24px;
+$gap-4: 32px;
+$gap-5: 40px;
+
+// Borders
+$border-gray-200: 1px solid #ced4da;
+$border-radius: 6px;
+
+// others
+$shadow--focus-ring: 0 0 0 0.2rem #bfdbfe;
+$overlay--maskbg: rgba(0, 0, 0, 0.4);
+
+$font-weight-light: var(--font-weight-light);
+$font-weight-regular: var(--font-weight-regular);
+$font-weight-medium: var(--font-weight-medium);
+$font-weight-semibold: var(--font-weight-semibold);
+$font-weight-bold: var(--font-weight-bold);
+$typography-form-label-font-weight: var(--font-weight-semibold);
+
+//FONT-SIZE
+$font-size-xs: var(--font-size-xs);
+$font-size-s: var(--font-size-s);
+$font-size-m: var(--font-size-m);
+$font-size-l: var(--font-size-l);
+$font-size-h6: var(--font-size-h6);
+$typography-form-label-font-size: var(--typography-form-label-font-size);
+
+//LINE-HEIGHT
+$line-height-xs: var(--line-height-xs);
+$line-height-s: var(--line-height-s);
+$line-height-m: var(--line-height-m);
+$line-height-l: var(--line-height-l);
+$typography-form-label-line-height: var(--typography-form-label-line-height);
