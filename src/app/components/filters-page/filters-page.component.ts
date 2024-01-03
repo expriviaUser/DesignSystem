@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { TreeSelectModel } from '@dnlcorti/design-system/lib/atoms/tree-select/models/tree-select.model';
 import { FiltersData, OnlyFiltersChip, OnlyFiltersModel } from 'projects/design-system/src/lib/micro-organismi/filters/models/filters.model';
-import { FiltersService } from 'projects/design-system/src/public-api';
+import { FiltersService, TreeSelectModel } from 'projects/design-system/src/public-api';
 
 export interface TreeOptions {
   children?: TreeOptions[],

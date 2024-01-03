@@ -22,6 +22,7 @@ import { RadioTilePageComponent } from './components/radio-tile-page/radio-tile-
 import { FiltersPageComponent } from './components/filters-page/filters-page.component';
 import { LibCircleStatusModule } from 'projects/design-system/src/lib/atoms/circle-status/lib-circle-status.module';
 import { DesignSystemModule } from 'projects/design-system/src/lib/design-system.module';
+import { LibStepperModule } from 'projects/design-system/src/lib/atoms/stepper/lib-stepper.module';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DesignSystemModule } from 'projects/design-system/src/lib/design-system
     TreeModule,
     DropdownModule,
     MessagesModule,
-    LibCircleStatusModule
+    LibCircleStatusModule,
+    LibStepperModule
   ],
   providers: [DatePipe, FiltersService],
   bootstrap: [AppComponent]

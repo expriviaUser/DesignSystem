@@ -36,6 +36,9 @@
 <div>
   {{tabIndex}}
 </div>
+<lib-button [label]="'Previous'" [disabled]="activeIndex === 0" (onClick)="activeIndex = activeIndex - 1"></lib-button>
+<lib-button [label]="'Next'" (onClick)="activeIndex = activeIndex + 1"></lib-button>
+<lib-stepper [(activeIndex)]="activeIndex" [items]="stepsItems"></lib-stepper>
 
 
 <lib-accordion [sections]="accordionSections" [contents]="accordionContent">

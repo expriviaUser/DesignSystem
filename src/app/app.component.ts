@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
 import { Table, TableService } from 'primeng/table';
 import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/services/loader.service';
 import { HeaderItemsService, Tabs, UserNotification } from 'projects/design-system/src/public-api';
-import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
 import { AccordionData } from "../../projects/design-system/src/lib/atoms/accordion/models/accordion.model";
+import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,14 @@ import { AccordionData } from "../../projects/design-system/src/lib/atoms/accord
 })
 export class AppComponent {
   title = 'DesignSystem';
+
+  protected activeIndex = 0;
+
+  stepsItems: MenuItem[] = [
+    {label: 'Step1', items: []},
+    {label: 'Step2', items: [], disabled: true, command: () => {this.activeIndex = 1}},
+    {label: 'Step3', items: [], command: () => {this.activeIndex = 2}},
+  ]
 
   protected notifications: UserNotification[] = [];
   protected itemsMenu: MenubarItem[] = [
