@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { moduleMetadata } from '@storybook/angular';
-import { Story } from '@storybook/angular/types-6-0';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { BreadcrumbComponent } from './breadcrumb.component';
 
-// This exports the Stories group for this component
-export default {
+
+const meta: Meta<BreadcrumbComponent> = {
   title: 'Components/Molecole/Breadcrumb',
   // The component related to the Stories
   component: BreadcrumbComponent,
@@ -12,10 +11,12 @@ export default {
     // The necessary modules for the component to work on Storybook
     moduleMetadata({
       declarations: [BreadcrumbComponent],
-       imports: [ ...primeComponentsCommonModule],
+       imports: [ CommonModule],
     }),
   ]
 };
+export default meta;
+
 
 const BREAD_CRUMB_LIST = [
   { name: 'Home', active: false, link: '#' },
@@ -25,28 +26,18 @@ const BREAD_CRUMB_LIST = [
   { name: 'Path 4', active: true, link: '#/path1/path42' },
 ];
 
-// This creates a Story for the component
-const Template: Story<BreadcrumbComponent> = (args) => ({
-  component: BreadcrumbComponent,
-  props: {
-    breadcrumbList: args.breadcrumbList,
-    href: args.href,
-    goTo: args.goTo
-  },
-  template: `
-<app-breadcrumb
-[breadcrumbList]="breadcrumbList"
-[href]="href"
-(goTo)="goTo($event)"
->
-</app-breadcrumb>`,
-});
+type Story = StoryObj<BreadcrumbComponent>;
 
-export const SimpleBreadCrumb = Template.bind({});
-SimpleBreadCrumb.args = {
-  breadcrumbList: BREAD_CRUMB_LIST,
-  href: false,
-  // @ts-ignore
-  goTo: (option: string) => alert(`Go to: ${option}`)
-};
+/* export const Base: Story = {
+  args: {
+    breadcrumbs$
+    breadcrumbList: BREAD_CRUMB_LIST,
+    href: false,
+    // @ts-ignore
+    goTo: (option: string) => alert(`Go to: ${option}`)
+  }
+} */
+
+
+
 

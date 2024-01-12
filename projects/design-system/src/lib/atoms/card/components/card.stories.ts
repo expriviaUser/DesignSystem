@@ -1,25 +1,37 @@
 import { CommonModule } from '@angular/common';
-import { moduleMetadata } from '@storybook/angular';
-import { Story } from '@storybook/angular/types-6-0';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { CardModule } from 'primeng/card';
-import { ComponentsModule } from '../../components.module';
 import { CardComponent } from './card.component';
 
-// This exports the Stories group for this component
-export default {
-    title: 'Components/Atomi/Card',
+const meta: Meta<CardComponent> = {
+  title: 'Components/Atomi/Card',
     // The component related to the Stories
     component: CardComponent,
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-             imports: [ ...primeComponentsCommonModule, CardModule, ComponentsModule],
+             imports: [ CommonModule, CardModule],
         }),
     ]
 };
+export default meta;
+
+type Story = StoryObj<CardComponent>;
+
+/* export const Base: Story = {
+  args: {
+    type: '',
+    size: '',
+    label: 'Prova',
+    icon: '',
+    disabled: false,
+    //@ts-ignore
+    onClick: (event: boolean) => { console.log(event) }
+  },
+} */
 
 // This creates a Story for the component
-const Template: Story<CardComponent> = (args) => ({
+const Template: Story = (args:any) => ({
     component: CardComponent,
     props: {
         title: args.cHeader,
@@ -30,7 +42,7 @@ const Template: Story<CardComponent> = (args) => ({
         tagSeverity: 'info',
         tagRounded: false
     },
-    template: `
+    render: `
     <lib-card [cHeader]="title" [cSubHeader]="subtitle" [cStyle]="style" [cStyleClass]="styleClass">  
     </lib-card>
     <div class="row">
@@ -74,10 +86,11 @@ const Template: Story<CardComponent> = (args) => ({
             </lib-card>
         </div>        
     </div>`,
+    args: {
+      
+    }
 });
-
-export const Base = Template.bind({});
-Base.args = {
+Template.args = {
     cHeader: 'Titolo card',
     cSubHeader: 'Questo è il sottotitolo di una card',
     cStyle: '',
