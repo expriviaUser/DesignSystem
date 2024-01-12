@@ -28,18 +28,11 @@
 <router-outlet></router-outlet>
 <lib-button [label]="'Aggiungi notifica'" [size]="'small'" [type]="'primary'" (onClick)="addNotify()"></lib-button>
 
-
-<!-- <lib-circle-status [type]="'danger'"></lib-circle-status>
-<lib-circle-status></lib-circle-status>
-<lib-circle-status [type]="'info'"></lib-circle-status>
-<lib-circle-status [type]="'warning'"></lib-circle-status> -->
 <div>
-  {{tabIndex}}
+  <lib-button [label]="'Ultimo Step'"  (onClick)="activeIndex = (stepsItems.length -1)"></lib-button>
+  <lib-button [label]="'Primo Step'"  (onClick)="activeIndex = 0"></lib-button>
+  <lib-stepper [activeIndex]="activeIndex" (activeIndexChange)="activeIndex = $event; " [items]="stepsItems" [readonly]="true"></lib-stepper>
 </div>
-<lib-button [label]="'Previous'" [disabled]="activeIndex === 0" (onClick)="activeIndex = activeIndex - 1"></lib-button>
-<lib-button [label]="'Next'" (onClick)="activeIndex = activeIndex + 1"></lib-button>
-<lib-stepper [(activeIndex)]="activeIndex" [items]="stepsItems"></lib-stepper>
-
 
 <lib-accordion [sections]="accordionSections" [contents]="accordionContent">
   <ng-template #accordionContent let-data>

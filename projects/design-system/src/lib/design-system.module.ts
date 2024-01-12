@@ -43,6 +43,7 @@ import { LibListboxModule } from './atoms/listbox/lib-listbox.module';
 import { LibCircleStatusModule } from './atoms/circle-status/lib-circle-status.module';
 import { LibAccordionModule } from "./atoms/accordion/lib-accordion.module";
 import { LibInplaceModule } from './atoms/inplace/lib-inplace.module';
+import { LibStepperModule } from './atoms/stepper/lib-stepper.module';
 
 const sharedModules = [
   LibTagModule,
@@ -87,7 +88,8 @@ const sharedModules = [
   LibListboxModule,
   LibCircleStatusModule,
   LibAccordionModule,
-  LibInplaceModule
+  LibInplaceModule,
+  LibStepperModule
 ];
 
 @NgModule({

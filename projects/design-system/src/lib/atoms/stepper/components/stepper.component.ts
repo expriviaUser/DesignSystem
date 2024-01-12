@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -6,41 +6,59 @@ import { MenuItem } from 'primeng/api';
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
-export class StepperComponent {
+export class StepperComponent implements OnChanges {
   @Input() activeIndex: number = 0;
   @Input() items: MenuItem[] = [];
   @Input() readonly: boolean = false;
+  @Input() previousLabel: string = 'Indietro';
+  @Input() nextLabel: string = 'Avanti';
+  @Input() saveLabel: string = 'Salva';
+  @Input() disablePrevious: boolean = false;
+  @Input() disableNext: boolean = false;
+  @Input() disableSave: boolean = false;
+
 
   @Output() activeIndexChange = new EventEmitter<number>();
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.readonly) {
-      if ((changes['activeIndex'].currentValue > changes['activeIndex'].previousValue) || changes['activeIndex'].previousValue == undefined)
-        this.recursiveStepMajor(this.activeIndex);
-      else
-        this.recursiveStepMinor(this.activeIndex);
-  
-      this.activeIndexChange.emit(this.activeIndex);
+  protected index: number = 0;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['activeIndex'].previousValue >= 0 && changes['activeIndex'].previousValue < changes['activeIndex'].currentValue) {
+      this.items[changes['activeIndex'].previousValue].styleClass = 'success';
     }
+    this.index = this.activeIndex;
+    this.items[this.index].styleClass = '';
   }
 
-  recursiveStepMajor(index: number) {
-    if (this.items[index].disabled) {
-      this.items[index].styleClass = '';
+  protected changeStep(step: string) {
+    if (step === 'next') {
+      this.recursiveStepMajor(this.index);
+    } else if (step === 'previous') {
+      this.recursiveStepMinor(this.index);
+    }
+
+    this.activeIndexChange.emit(this.index);
+  }
+
+  private recursiveStepMajor(index: number) {
+    if (this.items[index + 1].disabled) {
       this.recursiveStepMajor(index + 1);
     } else {
-      this.activeIndex = index;
-      this.items[index].styleClass = 'success';
+      this.items[this.index].styleClass = 'success';
+      this.index = index + 1;
     }
   }
 
-  recursiveStepMinor(index: number) {
-    if (this.items[index].disabled) {
-      this.items[index].styleClass = '';
-      this.recursiveStepMajor(index - 1);
+  private recursiveStepMinor(index: number) {
+    if (this.items[index - 1].disabled) {
+      this.recursiveStepMinor(index - 1);
     } else {
-      this.activeIndex = index;
-      this.items[index].styleClass = 'success';
+      this.index = index - 1;
+      this.items[this.index].styleClass = '';
     }
   }
+
+
+
+
 }

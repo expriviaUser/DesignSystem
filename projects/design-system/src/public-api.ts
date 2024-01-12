@@ -159,8 +159,8 @@ export * from './lib/micro-organismi/filters/lib-filters.module';
 export * from './lib/atoms/progress-bar/components/progress-bar.component';
 export * from './lib/atoms/progress-bar/lib-progress-bar.module';
 
-export * from './lib/atoms/progress-bar/components/progress-bar.component';
-export * from './lib/atoms/progress-bar/lib-progress-bar.module';
+export * from './lib/atoms/stepper/components/stepper.component';
+export * from './lib/atoms/stepper/lib-stepper.module';
 
 export * from './lib/atoms/accordion/components/accordion.component';
 export * from './lib/atoms/accordion/models/accordion.model';

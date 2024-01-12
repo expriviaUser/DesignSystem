@@ -1,5 +1,17 @@
 <div class="stepper">
-  {{activeIndex}}
-  <p-steps [model]="items" [readonly]="false"
-    [activeIndex]="activeIndex"></p-steps><!-- (activeIndexChange)="onActiveIndexChange($event)" -->
+  Index: {{activeIndex}}
+  Steps: {{items.length}}
+  <p-steps [model]="items" [readonly]="readonly"
+    [activeIndex]="activeIndex"></p-steps>
+</div>
+<div class="step-buttons">
+  <lib-cta-bar>
+    <ng-container back>
+      <lib-button [label]="previousLabel" [disabled]="activeIndex === 0 || disablePrevious" (onClick)="changeStep('previous')"></lib-button>
+    </ng-container>
+    <ng-container cta>
+      <lib-button [disabled]="disableNext" *ngIf="activeIndex < (items.length-1)" [label]="nextLabel" (onClick)="changeStep('next')"></lib-button>
+      <lib-button [disabled]="disableSave" *ngIf="activeIndex === (items.length-1)" [label]="saveLabel" (onClick)="changeStep('next')"></lib-button>
+    </ng-container>
+  </lib-cta-bar>
 </div>

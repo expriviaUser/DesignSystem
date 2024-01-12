@@ -14,7 +14,7 @@ export default {
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
             declarations: [ButtonComponent],
-             imports: [ ...primeComponentsCommonModule, ButtonModule],
+             imports: [ CommonModule, ButtonModule],
         }),
     ],
     argTypes: {
@@ -34,7 +34,7 @@ export default {
 };
 
 // This creates a Story for the component
-const Template: Story<ButtonComponent> = (args) => ({
+const Template: Story<ButtonComponent> = (args: any) => ({
     component: ButtonComponent,
     props: {
         type: args.type,

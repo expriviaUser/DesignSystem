@@ -19,10 +19,13 @@ export class AppComponent {
 
   stepsItems: MenuItem[] = [
     {label: 'Step1', items: []},
-    {label: 'Step2', items: [], disabled: true, command: () => {this.activeIndex = 1}},
-    {label: 'Step3', items: [], command: () => {this.activeIndex = 2}},
+    {label: 'Step2', items: [], disabled: true},
+    {label: 'Step3', items: []},
+    {label: 'Step4', items: [], disabled: true},
+    {label: 'Step5', items: []},
   ]
 
+  changeStep: '' | 'next' | 'previous' = '';
   protected notifications: UserNotification[] = [];
   protected itemsMenu: MenubarItem[] = [
     { label: 'Form', routerLink: 'form' },
