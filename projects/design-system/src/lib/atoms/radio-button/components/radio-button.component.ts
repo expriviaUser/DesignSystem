@@ -22,6 +22,7 @@ export class RadioButtonComponent {
     @Input() formControlName: string = '';
     @Input() disabled: boolean = false;
     @Input() name: string = '';
+    @Input() colSize: string = '3';
     @Input() value!: any;
     @Input() control: FormControl = new FormControl();
 
