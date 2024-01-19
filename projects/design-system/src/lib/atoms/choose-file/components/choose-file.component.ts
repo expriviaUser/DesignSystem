@@ -21,6 +21,7 @@ export class ChooseFileComponent implements OnChanges {
   @Input() control: AbstractControl = new FormControl();
   @Input() value: any;
   @Input() multiple: boolean = true;
+  @Input() fileLimit!: number;
   @Output() onLoadFile: EventEmitter<any> = new EventEmitter<any>();
   protected arrayFiles: File[] = [];
 
