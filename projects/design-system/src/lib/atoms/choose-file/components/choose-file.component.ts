@@ -23,6 +23,7 @@ export class ChooseFileComponent implements OnChanges {
   @Input() multiple: boolean = true;
   @Input() fileLimit!: number;
   @Output() onLoadFile: EventEmitter<any> = new EventEmitter<any>();
+
   protected arrayFiles: File[] = [];
 
   @ViewChild('uploader', { static: false }) protected uploader!: FileUpload;
@@ -41,7 +42,7 @@ export class ChooseFileComponent implements OnChanges {
   // }
 
   get inputValue(): string {
-    return this.returnFileName();
+    return this.arrayFiles.map(el => el.name).join(',')
   };
   get haveError() {
     return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
@@ -68,10 +69,9 @@ export class ChooseFileComponent implements OnChanges {
   }
 
   onSelect(event: any) {
-    let filesName: string[] = [];
+    this.arrayFiles = [];
     event.currentFiles.forEach((file: File) => {
       this.arrayFiles.push(file);
-      filesName.push(file.name);
     })
     this.uploader.clear();
     this.onLoadFile.emit(event.currentFiles);
@@ -81,13 +81,6 @@ export class ChooseFileComponent implements OnChanges {
     this.uploader.clear();
     this.arrayFiles = [];
     this.onLoadFile.emit('');
-  }
-
-  returnFileName() {
-    let initValue: string = '';
-    let filesNames = this.arrayFiles.reduce((accumulator, currentValue, index) => accumulator + currentValue.name + (this.arrayFiles.length - 1 > index ? ', ' : ''), initValue);
-
-    return filesNames;
   }
 
   uploadFiles() {

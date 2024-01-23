@@ -44,6 +44,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() maxDate!: Date;
   @Input() showButtonBar!: boolean;
   @Input() readonly: boolean = false;
+  @Input() uploadMultipleFiles: boolean = false;
   @Input() actionIcon: boolean = false;
   @Input() multiSelectFilterActive: boolean = true;
   @Input() autocompleteLazy: boolean = false;
