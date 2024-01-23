@@ -9,6 +9,7 @@ import { File } from '../models/file.model';
 export class FileComponent implements OnInit {
     @Input() file!: File;
     @Input() checkable: boolean = false;
+    @Input() checkboxDisabled: boolean = false;
     @Input() checked: boolean = false;
     @Input() ellipsed: boolean = true;
     @Input() isBig: boolean = true;

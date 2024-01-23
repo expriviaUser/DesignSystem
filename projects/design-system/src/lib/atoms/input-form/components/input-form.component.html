@@ -61,7 +61,7 @@
   <!-- Choose file-->
   <lib-choose-file *ngSwitchCase="'choose-file'" [acceptExtensions]="fileAcceptExtensions" [control]="control"
     [disabled]="inputDisabled" [value]="value" [icon]="icon" [maxFileSize]="maxFileSize"
-    [label]="label ? label + (required ? ' *' : '') : ''" (onLoadFile)="emitValue($event, type)"></lib-choose-file>
+    [label]="label ? label + (required ? ' *' : '') : ''" (onLoadFile)="emitValue($event, type)" [fileLimit]="uploadFileLimit"></lib-choose-file>
 
   <!-- Input radio -->
   <div class="field-radio" *ngSwitchCase="'radio'">
