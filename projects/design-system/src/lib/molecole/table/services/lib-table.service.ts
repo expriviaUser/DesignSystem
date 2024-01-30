@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +24,11 @@ export class LibTableService {
         }
         else {
           //If you pass a timestamp it will has milliseconds and you have to enable forceDate
-          const date = new Date(data[prop]);
+          const date = moment(data[prop], true).isValid();
 
           if ((typeof data[prop] === 'number' || typeof data[prop] === 'boolean') && !forceDate) {
             return data[prop];
-          } else if (!isNaN(date.getTime())) {
+          } else if (date) {
             return this.datePipe.transform(data[prop], dateFormat);
           } else {
             if (data[prop] != null) {

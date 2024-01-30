@@ -56,6 +56,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() highlightedDays: Array<string> = [];
   @Input() timeOnly: boolean = false;
   @Input() dataType: string = 'date';
+  @Input() radioColSize: string = '3';
 
   //@Input() formControl: FormControl = new FormControl();
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();

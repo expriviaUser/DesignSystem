@@ -11,7 +11,7 @@ export class TablePageComponent {
   items: any[] = [
     {
       name: false,
-      surname: '',
+      surname: 'Giannuario 1',
       status: { id: 0, description: 'prova' },
       isDisabledChecked: true
     },
@@ -21,8 +21,8 @@ export class TablePageComponent {
       status: { id: 0, description: 'prova' },
     },
     {
-      name: null,
-      surname: undefined,
+      name: '',
+      surname: 'Giannuario',
       status: { id: 0, description: 'prova' },
     },
   ];
