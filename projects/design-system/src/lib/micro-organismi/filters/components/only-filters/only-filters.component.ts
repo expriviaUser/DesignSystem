@@ -22,6 +22,7 @@ export class OnlyFiltersComponent implements OnInit {
   protected showDialog: boolean = false;
 
   @Input() title: string = '';
+  @Input() disableAll: boolean = false;
   @Input() dropdownValues: OnlyFiltersModel = {} as OnlyFiltersModel;
   @Input() chipsList: OnlyFiltersChip = {} as OnlyFiltersChip;
 

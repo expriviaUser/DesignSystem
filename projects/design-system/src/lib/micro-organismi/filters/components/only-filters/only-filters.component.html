@@ -6,7 +6,7 @@
       <ng-container [ngSwitch]="dropdownOptions.type">
         <ng-container *ngIf="chipsList?.data?.length">
           <!-- TREESELECT -->
-          <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
+          <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]" [disabled]="disableAll"
             [appendTo]="'body'" [options]="dropdownOptions.data || []" [metaKeySelection]="false"
             [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
             [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
@@ -26,7 +26,7 @@
             </ng-container>
           </p-treeSelect>
           <div *ngSwitchCase="'dialog'" class="align-children">
-            <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'"
+            <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'" [disabled]="disableAll"
               [propagateSelectionDown]="dropdownOptions?.propagateSelection?.down || false"
               [propagateSelectionUp]="dropdownOptions?.propagateSelection?.up || false" [(ngModel)]="chipsList.data[i]"
               [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
@@ -49,14 +49,14 @@
         </ng-container>
 
         <!-- CALENDAR -->
-        <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true"
+        <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true" [disabled]="disableAll"
           [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
           (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
         <!-- CHILDREN -->
         <div *ngSwitchCase="'children'" class="align-children">
           <div class="same-line">
             <!-- CHILDREN DROPDOWN -->
-            <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data" [placeholder]="dropdownOptions.placeholder"
+            <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data" [placeholder]="dropdownOptions.placeholder" [disabled]="disableAll"
               [appendTo]="'body'" [codeString]="'data'" [nameString]="'label'"
               [selectedItemTemplate]="selectedItemTemplate" (selectedValue)="setChildValue($event, i)">
               <ng-template #selectedItemTemplate pTemplate="selectedItem">
