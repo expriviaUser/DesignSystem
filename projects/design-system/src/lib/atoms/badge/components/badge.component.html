@@ -1,3 +1,4 @@
 <ng-container>
-    <i class="" pBadge [value]="menuBadge" severity="danger"></i>
+  <i *ngIf="icon" class="pi pi-bell" pBadge [value]="menuBadge" severity="{{severity}}"></i>
+  <p-badge *ngIf="!icon" [value]="menuBadge" severity="{{severity}}"></p-badge>
 </ng-container>
