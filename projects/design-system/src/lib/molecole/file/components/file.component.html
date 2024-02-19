@@ -1,6 +1,6 @@
 <div class="file-wrapper">
     <div class="file-structure">
-        <lib-checkbox-button *ngIf="checkable" [checked]="checked" [disabled]="checkboxDisabled"
+        <lib-checkbox-button *ngIf="checkable" [check]="checked" [disabled]="checkboxDisabled"
             (emitChange)="fileToggle($event)"></lib-checkbox-button>
         <img class="file-icon" *ngIf="srcIcon" [src]="srcIcon" alt="file icon" />
         <div class="file-data">
