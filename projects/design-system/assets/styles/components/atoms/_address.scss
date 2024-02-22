@@ -1,21 +1,13 @@
 .address {
     border: 1px solid $color--border;
     padding: pxToRem(12px);
-    border-radius: 6px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: pxToRem(8px);
+    gap: pxToRem(16px);
 
     &:last-child {
         gap: 0;
-    }
-
-    .title {
-        @include typography-small-semibold;
-    }
-
-    .content {
-        @include typography-small-regular;
     }
 
     .modify-button {

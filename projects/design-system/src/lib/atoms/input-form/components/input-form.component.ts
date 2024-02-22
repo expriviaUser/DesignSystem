@@ -52,6 +52,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() fileAcceptExtensions!: string;
   @Input() maxFileSize!: number;
   @Input() uploadFileLimit!: number;
+  @Input() firstDayOfWeek!: number;
   @Input() errorTemplate!: TemplateRef<any>;
   @Input() highlightedDays: Array<string> = [];
   @Input() timeOnly: boolean = false;
