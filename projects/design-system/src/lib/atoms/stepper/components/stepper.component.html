@@ -2,7 +2,7 @@
   <p-steps [model]="items" [readonly]="readonly"
     [activeIndex]="activeIndex"></p-steps>
 </div>
-<div class="step-buttons">
+<div class="step-buttons" *ngIf="showButtons">
   <lib-cta-bar>
     <ng-container back>
       <lib-button [label]="previousLabel" [disabled]="activeIndex === 0 || disablePrevious" (onClick)="changeStep('previous')"></lib-button>

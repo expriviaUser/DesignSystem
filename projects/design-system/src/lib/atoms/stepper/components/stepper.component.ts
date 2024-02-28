@@ -16,6 +16,7 @@ export class StepperComponent implements OnChanges {
   @Input() disablePrevious: boolean = false;
   @Input() disableNext: boolean = false;
   @Input() disableSave: boolean = false;
+  @Input() showButtons: boolean = true;
 
 
   @Output() activeIndexChange = new EventEmitter<number>();
