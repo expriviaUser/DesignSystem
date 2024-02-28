@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { TreeSelectModel } from "../models/tree-select.model";
 
 @Component({
@@ -10,6 +10,10 @@ export class TreeSelectComponent {
 
     @Input() nodes: TreeSelectModel[] = [];
 
+    @Input() enableFilter = false;
+    @Input() propagateDown = false;
+    @Input() propagateUp = false;
+    @Input() filterPlaceholder!: string;
     @Input() valueTemplate!: TemplateRef<any>;
     @Input() selectedNodes: TreeSelectModel[] = [];
     @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();

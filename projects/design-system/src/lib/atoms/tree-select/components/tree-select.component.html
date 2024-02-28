@@ -1,5 +1,5 @@
-<p-treeSelect [(ngModel)]="selectedNodes" (ngModelChange)="selectedValuesEmit($event)" [options]="nodes"
-    [metaKeySelection]="false" [selectionMode]="selectionType" placeholder="{{placeholder}}"
+<p-treeSelect [(ngModel)]="selectedNodes" (ngModelChange)="selectedValuesEmit($event)" [options]="nodes" [filter]="enableFilter" [filterPlaceholder]="filterPlaceholder" 
+    [metaKeySelection]="false" [selectionMode]="selectionType" placeholder="{{placeholder}}" [propagateSelectionDown]="propagateDown" [propagateSelectionUp]="propagateUp"
     (onNodeSelect)="optionEmit($event)" (onNodeUnselect)="unselectEmit($event)">
     <ng-template pTemplate="value" let-node *ngIf="valueTemplate">
         <ng-container [ngTemplateOutlet]="valueTemplate ? valueTemplate : null"></ng-container>

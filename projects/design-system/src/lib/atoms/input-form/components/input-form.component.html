@@ -65,7 +65,7 @@
 
   <!-- Input radio -->
   <div class="field-radio" *ngSwitchCase="'radio'">
-    <lib-radio-button [control]="control" [items]="valueInput" [disabled]="disabled" [colSize]="radioColSize"
+    <lib-radio-button [control]="control" [items]="valueInput" [disabled]="disabled" [colSize]="radioColSize" [value]="value"
       (selectedValue)="emitValue($event, type)" [label]="label ? label + (required ? ' *' : '') : ''"
       [id]="formControlName+'-label'"></lib-radio-button>
   </div>

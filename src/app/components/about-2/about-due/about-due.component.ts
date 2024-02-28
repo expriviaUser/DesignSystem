@@ -10,6 +10,8 @@ export class AboutDueComponent {
   items2 = [{ label: 'Ciao' }, { label: 'Ciao2' }]
 
 
-
+  console(event: any) {
+    console.log(event);
+  }
 
 }

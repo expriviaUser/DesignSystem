@@ -1,6 +1,6 @@
 {
   "name": "@expriviauser/design-system",
-  "version": "1.0.32",
+  "version": "1.0.36",
   "scripts": {
     "versioning": "npm --no-git-tag-version version patch --project=design-system && ng build design-system"
   },

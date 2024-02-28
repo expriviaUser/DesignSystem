@@ -40,7 +40,7 @@ export class StepperComponent implements OnChanges {
     this.activeIndexChange.emit(this.index);
   }
 
-  private recursiveStepMajor(index: number) {
+  public recursiveStepMajor(index: number) {
     if (this.items[index + 1].disabled) {
       this.recursiveStepMajor(index + 1);
     } else {
@@ -49,7 +49,7 @@ export class StepperComponent implements OnChanges {
     }
   }
 
-  private recursiveStepMinor(index: number) {
+  public recursiveStepMinor(index: number) {
     if (this.items[index - 1].disabled) {
       this.recursiveStepMinor(index - 1);
     } else {

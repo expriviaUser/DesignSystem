@@ -29,11 +29,13 @@ export class PickListComponent {
 
 
   moveAllTo(event: any, position: string) {
-    position === 'target' ? this.targetArrayChange.emit(this.targetArray) : position === 'source' ? this.sourceArrayChange.emit(this.sourceArray) : null;
+    this.targetArrayChange.emit(this.targetArray);
+    this.sourceArrayChange.emit(this.sourceArray);
   }
 
   moveOneTo(event: any, position: string) {
-    position === 'target' ? this.targetArrayChange.emit(this.targetArray) : position === 'source' ? this.sourceArrayChange.emit(this.sourceArray) : null;
+    this.targetArrayChange.emit(this.targetArray);
+    this.sourceArrayChange.emit(this.sourceArray);
   }
 
   onTargetSelect(event: any) {
