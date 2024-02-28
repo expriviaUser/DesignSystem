@@ -28,27 +28,21 @@
 </div> -->
 
 <nav aria-label="breadcrumb" class="breadcrumb-root" [ngClass]="class">
-    <ol class="breadcrumb-list">
-        <ng-container *ngFor="
+  <ol class="breadcrumb-list">
+    <ng-container *ngFor="
         let breadcrumb of breadcrumbs$ | async;
         last as isLast;
         first as isFirst;
         index as index;
         count as count
       ">
-            <li class="breadcrumb-item">
-                <a *ngIf="!isLast" class="breadcrumb-link"
-                    [ngClass]="{ 'breadcrumb-link-disabled': breadcrumb.disable }"
-                    [attr.aria-disabled]="breadcrumb.disable" [attr.tabIndex]="breadcrumb.disable ? -1 : 0"
-                    rel="noopener noreferrer" [routerLink]="
-            breadcrumb.routeInterceptor
-              ? breadcrumb.routeInterceptor(breadcrumb.routeLink || '', breadcrumb)
-              : breadcrumb.routeLink
-          " [queryParams]="
-            preserveQueryParams ? breadcrumb.queryParams : undefined
-          " [fragment]="preserveFragment ? breadcrumb.fragment : undefined"
-                    [target]="anchorTarget ? anchorTarget : '_self'">
-                    <ng-container *ngTemplateOutlet="
+      <li class="breadcrumb-item">
+        <a *ngIf="!isLast" class="breadcrumb-link" [ngClass]="{ 'breadcrumb-link-disabled': breadcrumb.disable }"
+          [attr.aria-disabled]="breadcrumb.disable" [attr.tabIndex]="breadcrumb.disable ? -1 : 0"
+          rel="noopener noreferrer" [routerLink]="breadcrumb.routeInterceptor ? breadcrumb.routeInterceptor(breadcrumb.routeLink || '', breadcrumb) : breadcrumb.routeLink" 
+          [queryParams]="preserveQueryParams ? breadcrumb.queryParams : undefined" [fragment]="preserveFragment ? breadcrumb.fragment : undefined"
+          [target]="anchorTarget ? anchorTarget : '_self'">
+          <ng-container *ngTemplateOutlet="
               itemTemplate;
               context: {
                 $implicit: breadcrumb.label,
@@ -59,13 +53,13 @@
                 count: count
               }
             "></ng-container>
-                    <ng-container *ngIf="!itemTemplate">{{
-                        breadcrumb.label
-                        }}</ng-container>
-                </a>
+          <ng-container *ngIf="!itemTemplate">{{
+            breadcrumb.label
+            }}</ng-container>
+        </a>
 
-                <label *ngIf="isLast" class="breadcrumb-trail">
-                    <ng-container *ngTemplateOutlet="
+        <label *ngIf="isLast" class="breadcrumb-trail">
+          <ng-container *ngTemplateOutlet="
               itemTemplate;
               context: {
                 $implicit: breadcrumb.label,
@@ -76,15 +70,15 @@
                 count: count
               }
             "></ng-container>
-                    <ng-container *ngIf="!itemTemplate">{{
-                        breadcrumb.label
-                        }}</ng-container>
-                </label>
-            </li>
+          <ng-container *ngIf="!itemTemplate">{{
+            breadcrumb.label
+            }}</ng-container>
+        </label>
+      </li>
 
-            <li *ngIf="!isLast" class="breadcrumb-separator" aria-hidden="true">
-                {{ separator }}
-            </li>
-        </ng-container>
-    </ol>
+      <li *ngIf="!isLast" class="breadcrumb-separator" aria-hidden="true">
+        {{ separator }}
+      </li>
+    </ng-container>
+  </ol>
 </nav>

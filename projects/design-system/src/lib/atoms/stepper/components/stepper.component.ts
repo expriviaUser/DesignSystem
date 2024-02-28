@@ -31,7 +31,7 @@ export class StepperComponent implements OnChanges {
     this.items[this.index].styleClass = '';
   }
 
-  protected changeStep(step: string) {
+  public changeStep(step: string) {
     if (step === 'next') {
       this.recursiveStepMajor(this.index);
     } else if (step === 'previous') {
@@ -41,8 +41,8 @@ export class StepperComponent implements OnChanges {
     this.activeIndexChange.emit(this.index);
   }
 
-  public recursiveStepMajor(index: number) {
-    if (this.items[index + 1].disabled) {
+  private recursiveStepMajor(index: number) {
+    if (this.items[index + 1]?.disabled) {
       this.recursiveStepMajor(index + 1);
     } else {
       this.items[this.index].styleClass = 'success';
@@ -50,8 +50,8 @@ export class StepperComponent implements OnChanges {
     }
   }
 
-  public recursiveStepMinor(index: number) {
-    if (this.items[index - 1].disabled) {
+  private recursiveStepMinor(index: number) {
+    if (this.items[index - 1]?.disabled) {
       this.recursiveStepMinor(index - 1);
     } else {
       this.index = index - 1;
