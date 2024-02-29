@@ -44,6 +44,7 @@ import { LibCircleStatusModule } from './atoms/circle-status/lib-circle-status.m
 import { LibAccordionModule } from "./atoms/accordion/lib-accordion.module";
 import { LibInplaceModule } from './atoms/inplace/lib-inplace.module';
 import { LibStepperModule } from './atoms/stepper/lib-stepper.module';
+import {LibPaginatorModule} from "./atoms/paginator/lib-paginator.module";
 
 const sharedModules = [
   LibTagModule,
@@ -89,7 +90,8 @@ const sharedModules = [
   LibCircleStatusModule,
   LibAccordionModule,
   LibInplaceModule,
-  LibStepperModule
+  LibStepperModule,
+  LibPaginatorModule
 ];
 
 @NgModule({

@@ -166,6 +166,10 @@ export * from './lib/atoms/accordion/components/accordion.component';
 export * from './lib/atoms/accordion/models/accordion.model';
 export * from './lib/atoms/accordion/lib-accordion.module';
 
+export * from './lib/atoms/paginator/components/paginator.component';
+export * from './lib/atoms/paginator/models/paginator.model';
+export * from './lib/atoms/paginator/lib-paginator.module';
+
 export * from './lib/atoms/choose-file/components/choose-file.component';
 export * from './lib/atoms/choose-file/choose-file.module';
 
