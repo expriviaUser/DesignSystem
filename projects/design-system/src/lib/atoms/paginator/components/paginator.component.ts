@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PageEvent} from "../models/paginator.model";
 
 
@@ -7,7 +7,7 @@ import {PageEvent} from "../models/paginator.model";
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.scss']
 })
-export class PaginatorComponent {
+export class PaginatorComponent implements OnInit{
 
   @Input() first: number = 0;
   @Input() rows: number = 10;
@@ -16,9 +16,20 @@ export class PaginatorComponent {
   @Input() rowsPerPageOptions!: number[];
   @Input() currentPageReportTemplate: string = '{first} - {last} of {totalRecords}';
 
+  protected innerFirst: number = 0;
+  protected innerRows: number = 10;
+
   @Output() onPageChange: EventEmitter<PageEvent> = new EventEmitter<PageEvent>();
 
+
+  ngOnInit(){
+    this.innerFirst=this.first;
+    this.innerRows=this.rows;
+  }
+
   onPageChangeEmit(event: PageEvent) {
+    this.innerFirst = event.first;
+    this.innerRows = event.rows;
     this.onPageChange.emit(event);
   }
 
