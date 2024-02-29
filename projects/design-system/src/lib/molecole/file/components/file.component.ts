@@ -13,7 +13,9 @@ export class FileComponent implements OnInit {
     @Input() checked: boolean = false;
     @Input() ellipsed: boolean = true;
     @Input() isBig: boolean = true;
+    @Input() error: boolean = false;
 
+    errorIcon= 'assets/svg/info-circle.svg';
     srcIcon!: string;
 
     iconArray = [

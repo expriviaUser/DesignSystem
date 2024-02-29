@@ -34,6 +34,10 @@
                 word-wrap: unset;
             }
 
+          .error {
+            color: $color--tag-danger !important;
+          }
+
             .title {
                 color: $color--file-title;
                 @include typography-body-regular;
