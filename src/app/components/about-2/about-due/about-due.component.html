@@ -11,4 +11,16 @@
     </ng-template>
 
   </lib-pick-list>
+
+
+
+  <lib-accordion [sections]="accordionData" [contents]="contentTemplate">
+    <ng-template #contentTemplate let-data>
+        <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'"
+            [items]="structuresList" [(selected)]="selectedStructures" [selectionMode]="'checkbox'"
+            [propagateSelectionUp]="false">
+        </lib-treemenu>
+    </ng-template>
+  </lib-accordion>
+   
 </div>

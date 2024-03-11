@@ -4,6 +4,7 @@ import { LibBreadcrumbModule, LibMultiSelectModule, LibPickListModule } from 'pr
 import { About2RoutingModule } from './about-2-routing.module';
 import { AboutDueComponent } from './about-due/about-due.component';
 import { CaricamentoComponent } from './caricamento/caricamento.component';
+import { LibAccordionModule, LibTreemenuModule } from '@expriviauser/design-system';
 
 
 
@@ -17,6 +18,8 @@ import { CaricamentoComponent } from './caricamento/caricamento.component';
     About2RoutingModule,
     LibBreadcrumbModule,
     LibPickListModule,
+    LibAccordionModule,
+    LibTreemenuModule,
     LibMultiSelectModule
   ]
 })

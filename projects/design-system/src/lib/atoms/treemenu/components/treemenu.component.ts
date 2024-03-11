@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TreeMenu } from '../models/treemenu.model';
-import { TreeSelectModel } from '@expriviauser/design-system';
+import { TreeSelectModel } from '../../tree-select/models/tree-select.model';
 
 @Component({
   selector: 'lib-treemenu',
@@ -20,21 +20,16 @@ export class TreemenuComponent {
   @Input() selected!: any;
 
   @Output() selectedChange: EventEmitter<TreeMenu[]> = new EventEmitter<TreeMenu[]>();
+  @Output() emitUnselect = new EventEmitter<TreeSelectModel>();
 
   changedSelection(event: any) {
     this.selectedChange.emit(event);
   }
 
-  optionEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {
-    event.originalEvent.stopPropagation();
-    event.originalEvent.preventDefault();
-    // this.emitSelectedOption.emit(event);
-  }
-
   unselectEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {
-    event.originalEvent.stopPropagation();
-    event.originalEvent.preventDefault();
-    //this.emitUnselect.emit(event);
+    /* event.originalEvent.stopPropagation();
+    event.originalEvent.preventDefault(); */
+    this.emitUnselect.emit(event.node);
   }
 
 
