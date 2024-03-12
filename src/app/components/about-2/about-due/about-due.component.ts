@@ -22,23 +22,15 @@ export class AboutDueComponent {
     { header: '4' },
   ]
 
-  public get selectedStructures(): Array<TreeMenu> {
-    return this._selectedStructures;
-  }
-
-  public set selectedStructures(value: Array<TreeMenu>) {
-    this._selectedStructures = value;
-  }
-
-  public get structuresList(): Array<TreeMenu> {
-    return this._structuresList;
-  }
-  private _structuresList: Array<TreeMenu> = [
+   structuresList: Array<TreeMenu> = [
     {data: 1, label: '1', children: [{data: 2, label: '2'}]},
     {data: 3, label: '3', children: [{data: 4, label: '4'}]},
     {data: 5, label: '5', children: [{data: 6, label: '6'}]},
   ];
 
-  private _selectedStructures: Array<TreeMenu> = [];
+  selectedStructures: Array<TreeMenu> = [];
 
-}
+  vaffanculo(event: any) {
+    console.log(event);
+  }
+ }

@@ -95,7 +95,7 @@ export class AutocompleteCardComponent implements OnChanges {
             if (valueFound)
                 return valueFound;
         }
-        return;
+        return undefined;
     }
 
     // this method sets the value programmatically

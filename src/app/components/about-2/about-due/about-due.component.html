@@ -14,13 +14,17 @@
 
 
 
-  <lib-accordion [sections]="accordionData" [contents]="contentTemplate">
+ <!--  <lib-accordion [sections]="accordionData" [contents]="contentTemplate">
     <ng-template #contentTemplate let-data>
         <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'"
             [items]="structuresList" [(selected)]="selectedStructures" [selectionMode]="'checkbox'"
             [propagateSelectionUp]="false">
         </lib-treemenu>
-    </ng-template>
-  </lib-accordion>
-   
-</div>
+      </ng-template>
+    </lib-accordion> -->
+    <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="vaffanculo($event)"
+        [items]="structuresList" [(selected)]="selectedStructures" [selectionMode]="'checkbox'"
+        [propagateSelectionUp]="false">
+    </lib-treemenu>
+    
+  </div>

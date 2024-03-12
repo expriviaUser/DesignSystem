@@ -21,15 +21,20 @@ export class TreemenuComponent {
 
   @Output() selectedChange: EventEmitter<TreeMenu[]> = new EventEmitter<TreeMenu[]>();
   @Output() emitUnselect = new EventEmitter<TreeSelectModel>();
+  @Output() emitSelect = new EventEmitter<TreeSelectModel>();
 
   changedSelection(event: any) {
     this.selectedChange.emit(event);
   }
 
   unselectEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {
-    /* event.originalEvent.stopPropagation();
-    event.originalEvent.preventDefault(); */
+    console.log(event);
     this.emitUnselect.emit(event.node);
+  }
+ 
+  selectEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {
+    console.log(event);
+    this.emitSelect.emit(event.node);
   }
 
 

@@ -5,6 +5,7 @@ import { LoaderService } from 'projects/design-system/src/lib/atoms/loader/servi
 import { HeaderItemsService, Tabs, UserNotification } from 'projects/design-system/src/public-api';
 import { AccordionData } from "../../projects/design-system/src/lib/atoms/accordion/models/accordion.model";
 import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
+import { TreeMenu } from '@expriviauser/design-system';
 
 @Component({
   selector: 'app-root',
@@ -86,6 +87,18 @@ export class AppComponent {
       code: 'en',
     },
   ];
+
+  structuresList: Array<TreeMenu> = [
+    {data: 1, label: '1', children: [{data: 2, label: '2'}]},
+    {data: 3, label: '3', children: [{data: 4, label: '4'}]},
+    {data: 5, label: '5', children: [{data: 6, label: '6'}]},
+  ];
+
+  selectedStructures: Array<TreeMenu> = [];
+
+  vaffanculo(event: any) {
+    console.log(event);
+  }
 
   protected menuItem!: any;
 
