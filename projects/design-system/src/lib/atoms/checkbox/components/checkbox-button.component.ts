@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, OnInit, OnChanges, forwardRef } from '@angular/core';
-import { CheckBoxModel } from '../models/checkbox.model';
+
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CheckBox } from '../models/checkbox.model';
 
 @Component({
     selector: 'lib-checkbox-button',
@@ -12,16 +13,28 @@ import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms'
         multi: true
     }]
 })
-export class CheckboxButtonComponent {
+export class CheckboxButtonComponent implements OnChanges {
     //Insert in input checked status, disabled, and label
     @Input() checked: any = [];
     @Input() check: boolean = false;
     @Input() disabled: boolean = false;
-    @Input() items!: any;
+    @Input() items!: CheckBox[];
     @Input() rounded: boolean = false;
     @Input() label: string = '';
     @Input() control: AbstractControl = new FormControl();
 
+
+    ngOnChanges(changes: SimpleChanges) {
+      if (changes && changes['items'].currentValue) {
+        this.items.forEach(element => {
+          if (element?.checked) {
+            this.checked.push(element);
+          } else {
+            element.checked = false;
+          }
+        })
+      }
+    }
 
     //Return in output a boolean value
     @Output() emitChange: EventEmitter<any> = new EventEmitter<any>();
@@ -58,7 +71,7 @@ export class CheckboxButtonComponent {
     emitValue(event: any, index: number) {
         if (index !== -1) {
             if (event.checked)
-                this.checked.push(event.checked);
+                this.checked.push({...this.items[index]});
             else {
                 const indexToRemove = this.checked.findIndex((item: any) => item === this.items[index]);
                 this.checked.splice(indexToRemove, 1);
@@ -67,6 +80,10 @@ export class CheckboxButtonComponent {
         this.value = index !== -1 ? this.checked : { checked: event.checked, defaultEvent: event.originalEvent as MouseEvent };
         this.onChange(this.value);
         this.emitChange.emit(this.value);
+    }
+
+    getValueItem(item) {
+      return this.checked.find(el => el === item) ? true : false;
     }
 
 

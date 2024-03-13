@@ -1,7 +1,7 @@
 import { DatePipe } from "@angular/common";
 import { Component, EventEmitter, forwardRef, Input, Output, TemplateRef } from "@angular/core";
 import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
-import { CheckBoxModel } from "../../checkbox/models/checkbox.model";
+import { CheckBox } from "../../checkbox/models/checkbox.model";
 
 @Component({
   selector: "lib-input-form",
@@ -18,7 +18,7 @@ import { CheckBoxModel } from "../../checkbox/models/checkbox.model";
 export class InputFormComponent implements ControlValueAccessor {
   @Input() value!: string;
   @Input() valueInput: any[] = [];
-  @Input() checkboxValue!: CheckBoxModel[];
+  @Input() checkboxValue!: CheckBox[];
   @Input() clear: boolean = false;
   @Input() appendTo!: string;
   @Input() icon: string = "";

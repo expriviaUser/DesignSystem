@@ -67,7 +67,16 @@ export class AppComponent {
     'ENI \\ VIGGIANO',
   ];
 
+  addedChanges: { data: number; label: string; show: boolean; checked: boolean; }[] = [
+    {data: 0, label: 'ccc', show: true, checked: false},
+    {data: 1, label: 'xxx', show: false, checked: true},
+    {data: 2, label: 'vvv', show: true, checked: false},
+    {data: 3, label: 'nnn', show: false, checked: false},
+  ];
 
+  log(event) {
+    console.log(event);
+  }
 
   protected languages = [
     {

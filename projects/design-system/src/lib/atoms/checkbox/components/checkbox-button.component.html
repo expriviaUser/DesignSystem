@@ -2,9 +2,9 @@
     <label *ngIf="label && items">{{label}}</label>
     <div class="check-list" *ngIf="items">
         <div *ngFor="let item of items; let i = index">
-            <p-checkbox #checkboxInput [ngClass]="{'rounded': rounded}" [label]="item.label"
-                (onChange)="emitValue($event, i)" [binary]="true" [trueValue]="item.data ? item : true"
-                [falseValue]="item.data ? null : false" [disabled]="disabled"></p-checkbox>
+            <p-checkbox #checkboxInput [ngClass]="{'rounded': rounded}" [label]="item?.label" [(ngModel)]="item.checked"
+                (onChange)="emitValue($event, i)" [binary]="true" [trueValue]="true"
+                [falseValue]="false" [disabled]="disabled"></p-checkbox>
         </div>
     </div>
     <div class="check-list" *ngIf="!items">
