@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Message } from 'primeng/api';
 // import { Message } from 'primeng/api';
 
 @Component({
@@ -10,5 +11,6 @@ export class MessageComponent {
 
     // msgs1!: Message[];
     @Input() key: string = '';
+    @Input() messages: Message[] = [];
 
 }
