@@ -33,9 +33,9 @@
     font-weight: 700;
     color: #4b5563;
   }
-  .p-steps .p-steps-item:before {
+  .p-steps .p-steps-item:before, .p-steps .p-disabled .p-steps-item:before  {
     content: " ";
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid $color--stepper-line;
     width: 100%;
     top: 50%;
     left: 0;
@@ -47,6 +47,7 @@
   .success {
     .p-menuitem-link .p-steps-number {
       background-color: green !important;
+      color: white !important;
     }
   }
 
