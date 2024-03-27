@@ -25,7 +25,7 @@ export class CheckboxButtonComponent implements OnChanges {
 
 
     ngOnChanges(changes: SimpleChanges) {
-      if (changes && changes['items'].currentValue) {
+      if (changes && changes['items']?.currentValue) {
         this.items.forEach(element => {
           if (element?.checked) {
             this.checked.push(element);
