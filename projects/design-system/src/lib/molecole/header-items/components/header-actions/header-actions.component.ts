@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { FileUpload } from '../../../upload-file/models/file-upload.model';
 import { Language } from '../../models/language.model';
 import { MenuItem } from '../../models/menuItem.model';
@@ -14,8 +14,13 @@ export class HeaderActionsComponent implements OnInit {
   fileUpload: FileUpload[] = [];
 
   @Input() notificationsEnabled: boolean = true;
+  @Input() isHelp: boolean = false;
   @Input() valueDropdown!: DropdownType[];
   @Input() value!: string;
+  @Input() pageUrl!: string;
+  @Input() readAllLabel: string = 'Mostra di più';
+  @Input() externalItems!: TemplateRef<any>;
+  @Input() externalFooter!: TemplateRef<any>;
 
   @Input() user!: MenuItem[];
 
@@ -28,6 +33,9 @@ export class HeaderActionsComponent implements OnInit {
 
   @Output() languageChange: EventEmitter<Language> = new EventEmitter<Language>();
   @Output() dropdownSelection: EventEmitter<string> = new EventEmitter<string>();
+  @Output() emitHelp: EventEmitter<void> = new EventEmitter<void>();
+  @Output() emitPageClick = new EventEmitter<void>();
+  @Output() emitNotificationClick = new EventEmitter<any>();
 
   constructor(private headerItemsService: HeaderItemsService) { }
 

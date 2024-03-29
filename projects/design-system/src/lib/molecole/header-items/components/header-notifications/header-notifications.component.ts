@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { UserNotification } from '../../models/user-notification.model';
 import { HeaderItemsService } from '../../services/header-items.service';
 
@@ -12,6 +12,9 @@ export class HeaderNotificationsComponent implements OnInit {
     @Input() readAllLabel: string = 'Mostra di più';
     @Input() externalItems!: TemplateRef<any>;
     @Input() externalFooter!: TemplateRef<any>;
+
+    @Output() emitPageClick = new EventEmitter<void>();
+    @Output() emitNotificationClick = new EventEmitter<any>();
 
     notificationsNumber: string = '0';
     notifications$ = this.headerItemsService.notifications$;

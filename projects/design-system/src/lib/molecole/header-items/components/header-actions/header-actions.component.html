@@ -1,9 +1,6 @@
 <div class="header-actions">
-  <div>
-    <lib-button label="Help" size="medium" type="link"></lib-button>
-  </div>
-  <div>
-    <lib-icon-circle icon="pi pi-question-circle" type="help" size="small"></lib-icon-circle>
+  <div *ngIf="isHelp">
+    <lib-icon-circle icon="pi pi-question-circle" type="help" size="small" (onClick)="emitHelp.emit()"></lib-icon-circle>
   </div>
   <div *ngIf="fileUpload.length > 0">
     <lib-icon-circle icon="pi pi-upload" type="help" size="small" (click)="op.toggle($event)"></lib-icon-circle>
@@ -15,14 +12,15 @@
       </ng-template>
     </p-overlayPanel>
   </div>
-  <div>
-    <lib-header-notifications *ngIf="notificationsEnabled"></lib-header-notifications>
+  <div *ngIf="notificationsEnabled">
+    <lib-header-notifications [pageUrl]="pageUrl" [readAllLabel]="readAllLabel" [externalItems]="externalItems" (emitNotificationClick)="emitNotificationClick.emit($event)" (emitPageClick)="emitPageClick.emit()"
+      [externalFooter]="externalFooter"></lib-header-notifications>
   </div>
-  <div>
+  <div *ngIf="languages.length > 1">
     <lib-language-selector [options]="languages" [selectedOption]="selectedOption" placeholder="Seleziona lingua"
       (selectedOptionChange)="languageChange.next($event)"></lib-language-selector>
   </div>
-  <div>
+  <div *ngIf="valueDropdown.length > 0">
     <lib-header-menu-user [menuNavbar]="user" [valueDropdown]="valueDropdown" [value]="value"
       (dropdownSelection)="emitDropdownSelection($event)"></lib-header-menu-user>
   </div>
