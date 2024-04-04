@@ -1,11 +1,11 @@
-<lib-badge (click)="overlaynotifications.toggle($event);" [menuBadge]="notificationsNumber"></lib-badge>
+<lib-badge (click)="overlaynotifications.toggle($event);notificationsNumber = 0;emitOpenOverlay.emit();" [menuBadge]="notificationsNumber.toString()"></lib-badge>
 
 <p-overlayPanel styleClass="p-overlaypanel p-overlaypanel--notifications" #overlaynotifications>
 
     <ng-template pTemplate>
         <ng-container *ngIf="(notifications$ | async) as notify">
             <p-listbox [options]="notify" [(ngModel)]="selectedNotification" optionLabel="title" optionValue="id"
-                optionDisabled="isRead" styleClass="p-listbox p-listbox--notifications">
+                styleClass="p-listbox p-listbox--notifications" [listStyleClass]="">
 
                 <ng-template let-notification pTemplate="item">
 
@@ -29,20 +29,27 @@
 
 </p-overlayPanel>
 <ng-template #internalItems let-notification="notification">
-    <div *ngIf="notification.url; else noLink" class="notification"
+  <span class="notification-container">
+    <div *ngIf="enableIcon">
+      <span [class]="'icon' + ' ' + (notification?.icon || 'pi pi-bell') + ' ' + (notification?.class || '')"></span>
+    </div>
+    <div class="notification"
         (click)="emitNotificationClick.emit(notification.id)"
         title="{{ 'Apri la notifica: ' + notification.title }}">
-        <strong>{{ notification.title }}</strong>
-        <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
+        <strong *ngIf="!notification.isRead">{{ notification.title }}</strong>
+        <div *ngIf="notification.isRead">{{ notification.title }}</div>
+        <ng-container *ngIf="enableSubtitle">
+          <strong *ngIf="notification.subtitle !== '' && !notification.isRead" class="notifications-text subtitle">{{ notification.subtitle }}</strong>
+          <span *ngIf="notification.subtitle !== '' && notification.isRead" class="notifications-text subtitle">{{ notification.subtitle }}</span>
+        </ng-container>
+        <ng-container *ngIf="enableDate">
+          <strong *ngIf="notification.date !== '' && !notification.isRead" class="notifications-text date">{{ getFormattedDate(notification.date) }}</strong>
+          <span *ngIf="notification.date !== '' && notification.isRead" class="notifications-text date">{{ getFormattedDate(notification.date) }}</span>
+        </ng-container>
     </div>
-    <div *ngIf="!notification.isRead" class="p-listbox-dot">!</div>
+    <div *ngIf="!notification.isRead" class="p-listbox-dot"></div>
+  </span>
 
-    <ng-template #noLink>
-        <div class="notification" (click)="emitNotificationClick.emit(notification.id)">
-            <strong>{{ notification.title }}</strong>
-            <p *ngIf="notification.subtitle !== ''">{{ notification.subtitle }}</p>
-        </div>
-    </ng-template>
 </ng-template>
 
 <ng-template #internalFooter>

@@ -78,6 +78,9 @@ export class AppComponent {
     console.log(event);
   }
 
+  formatDate(date: Date) {
+    return new Date();
+  }
   protected languages = [
     {
       name: 'it',

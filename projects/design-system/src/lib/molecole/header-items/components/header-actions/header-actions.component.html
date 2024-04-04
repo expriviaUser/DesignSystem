@@ -1,6 +1,7 @@
 <div class="header-actions">
   <div *ngIf="isHelp">
-    <lib-icon-circle icon="pi pi-question-circle" type="help" size="small" (onClick)="emitHelp.emit()"></lib-icon-circle>
+    <lib-icon-circle icon="pi pi-question-circle" type="help" size="small"
+      (onClick)="emitHelp.emit()"></lib-icon-circle>
   </div>
   <div *ngIf="fileUpload.length > 0">
     <lib-icon-circle icon="pi pi-upload" type="help" size="small" (click)="op.toggle($event)"></lib-icon-circle>
@@ -13,14 +14,17 @@
     </p-overlayPanel>
   </div>
   <div *ngIf="notificationsEnabled">
-    <lib-header-notifications [pageUrl]="pageUrl" [readAllLabel]="readAllLabel" [externalItems]="externalItems" (emitNotificationClick)="emitNotificationClick.emit($event)" (emitPageClick)="emitPageClick.emit()"
-      [externalFooter]="externalFooter"></lib-header-notifications>
+    <lib-header-notifications [pageUrl]="pageUrl" [readAllLabel]="readAllLabel" [externalItems]="externalItems"
+      (emitNotificationClick)="emitNotificationClick.emit($event)" (emitPageClick)="emitPageClick.emit()"
+      (emitOpenOverlay)="emitOpenOverlay.emit()" [notificationsNumber]="notificationsNumber"
+      [isExternalNumber]="isExternalNumber" [paramToNumber]="paramToNumber" [enableSubtitle]="enableSubtitle" [formattedDate]="formattedDate"
+      [enableDate]="enableDate" [enableIcon]="enableIcon" [externalFooter]="externalFooter"></lib-header-notifications>
   </div>
   <div *ngIf="languages.length > 1">
     <lib-language-selector [options]="languages" [selectedOption]="selectedOption" placeholder="Seleziona lingua"
-      (selectedOptionChange)="languageChange.next($event)"></lib-language-selector>
+      (selectedOptionChange)="changeLanguage($event)"></lib-language-selector>
   </div>
-  <div *ngIf="valueDropdown.length > 0">
+  <div *ngIf="valueDropdown?.length > 0">
     <lib-header-menu-user [menuNavbar]="user" [valueDropdown]="valueDropdown" [value]="value"
       (dropdownSelection)="emitDropdownSelection($event)"></lib-header-menu-user>
   </div>
