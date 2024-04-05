@@ -20,7 +20,7 @@ export class LibTableService {
         const prop = props.shift() as string; //country----> name
 
         if (props.length) {
-          return this.getFieldValue(data[prop], props.join("."));
+          return this.getFieldValue(data[prop], props.join("."), forceDate, dateFormat, stopDate);
         }
         else {
           //If you pass a timestamp it will has milliseconds and you have to enable forceDate
