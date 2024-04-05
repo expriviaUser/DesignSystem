@@ -11,7 +11,7 @@ export class LibTableService {
 
   }
 
-  getFieldValue(data: { [key: string]: any }, field: string, forceDate = false, dateFormat: string = 'dd/MM/yyyy'): any {
+  getFieldValue(data: { [key: string]: any }, field: string, forceDate = false, dateFormat: string = 'dd/MM/yyyy', stopDate: boolean = false): any {
     // Example with --> field country.name
     if (data) {
 
@@ -28,7 +28,7 @@ export class LibTableService {
 
           if ((typeof data[prop] === 'number' || typeof data[prop] === 'boolean') && !forceDate) {
             return data[prop];
-          } else if (date) {
+          } else if (date && !stopDate) {
             return this.datePipe.transform(data[prop], dateFormat);
           } else {
             if (data[prop] != null) {
