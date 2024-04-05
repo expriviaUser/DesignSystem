@@ -10,7 +10,7 @@
             (input)="getInput(value)" (change)="emitValue($event)" [(ngModel)]="value" [id]="label"
             [disabled]="disabled" class="p-inputtext-sm" pInputText (click)="inputClicked()" [readonly]="readonly" />
       <div class="icon-clear">
-        <i *ngIf="value && clear" [class]="'pi pi-times clear-action-icon'" (click)="emitValue($event)"></i>
+        <i *ngIf="value && clear" [class]="'pi pi-times clear-action-icon'" (click)="emitValue($event); emitClearEvent()"></i>
         <i class="{{icon}} button-action-icon" *ngIf="icon && iconPos.includes('right')" (click)="iconClick()"></i>
         </div>
     </span>

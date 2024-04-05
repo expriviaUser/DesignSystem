@@ -25,6 +25,7 @@ export class InputComponent {
   @Output() selectedValue: EventEmitter<string> = new EventEmitter<string>();
   @Output() iconClicked: EventEmitter<any> = new EventEmitter<any>();
   @Output() handlerInputClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() emitClear: EventEmitter<void> = new EventEmitter<void>();
 
   @Input() value: any;
   @Input() type: string = 'text';
@@ -106,5 +107,9 @@ export class InputComponent {
     this.value = event;
     this.onChange(event);
 
+  }
+
+  emitClearEvent(){
+    this.emitClear.emit();
   }
 }
