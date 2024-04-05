@@ -1,5 +1,6 @@
 export interface CheckBox {
     data?: string | number,
     label: string,
-    checked?: boolean
+    checked?: boolean,
+    disabled?: boolean
 }

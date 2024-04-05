@@ -264,6 +264,15 @@ $color-paginator-button-text: var(--gray-color-30);
 $color--dialog-background-header: var(--base-color-white);
 $color--dialog-text-header: var(--base-color-black);
 
+//notifications
+$color--notifications-icon-1: var(--base-color-black);
+$color--notifications-icon-2: var(--base-color-white);
+$color--notifications-icon-3: var(--base-color-white);
+$color--notifications-background-1: var(--primary-color-50);
+$color--notifications-background-2: var(--secondary-color-50);
+$color--notifications-background-3: var(--error-color-50);
+$color--notifications-date: var(--secondary-color-50);
+
 //progress-bar
 $color--progressbar-background: var(--gray-color-80);
 $color--progressbar-background-progress: var(--secondary-color-50);

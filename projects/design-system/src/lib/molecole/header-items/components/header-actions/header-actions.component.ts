@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { FileUpload } from '../../../upload-file/models/file-upload.model';
 import { Language } from '../../models/language.model';
 import { MenuItem } from '../../models/menuItem.model';
@@ -14,8 +14,13 @@ export class HeaderActionsComponent implements OnInit {
   fileUpload: FileUpload[] = [];
 
   @Input() notificationsEnabled: boolean = true;
+  @Input() isHelp: boolean = false;
   @Input() valueDropdown!: DropdownType[];
   @Input() value!: string;
+  @Input() pageUrl!: string;
+  @Input() readAllLabel: string = 'Mostra di più';
+  @Input() externalItems!: TemplateRef<any>;
+  @Input() externalFooter!: TemplateRef<any>;
 
   @Input() user!: MenuItem[];
 
@@ -24,10 +29,23 @@ export class HeaderActionsComponent implements OnInit {
     { code: 'en', name: 'en' },
   ]
 
+  @Input() notificationsNumber: number = 0;
+  @Input() isExternalNumber: boolean = false;
+  @Input() paramToNumber: string = 'isRead';
+  @Input() enableSubtitle: boolean = true;
+  @Input() enableDate: boolean = false;
+  @Input() enableIcon: boolean = false;
+  @Input() formattedDate!: Function;
+
   @Input() selectedOption: Language = { code: 'fr', name: 'fr' };
 
   @Output() languageChange: EventEmitter<Language> = new EventEmitter<Language>();
   @Output() dropdownSelection: EventEmitter<string> = new EventEmitter<string>();
+  @Output() emitHelp: EventEmitter<void> = new EventEmitter<void>();
+  @Output() emitPageClick = new EventEmitter<void>();
+  @Output() emitNotificationClick = new EventEmitter<any>();
+  @Output() emitOpenOverlay = new EventEmitter<void>();
+  
 
   constructor(private headerItemsService: HeaderItemsService) { }
 
@@ -39,5 +57,13 @@ export class HeaderActionsComponent implements OnInit {
 
   emitDropdownSelection(event: string) {
     this.dropdownSelection.emit(event);
+  }
+
+  changeLanguage(event) {
+    this.languageChange.emit(event);
+    if (this.notificationsEnabled) {
+      this.notificationsEnabled = false;
+      this.notificationsEnabled = true;
+    }
   }
 }
