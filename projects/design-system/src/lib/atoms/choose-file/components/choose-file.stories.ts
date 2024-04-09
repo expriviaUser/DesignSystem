@@ -1,27 +1,27 @@
 
 import { CommonModule } from '@angular/common';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { CheckboxButtonComponent } from './checkbox-button.component';
-import { LibCheckboxModule } from '../lib-checkbox.module';
+import { ChooseFileComponent } from './choose-file.component';
+import { LibChooseFileModule } from '../choose-file.module';
+import { HttpClientModule } from '@angular/common/http';
 
-const meta: Meta<CheckboxButtonComponent> = {
-  title: 'Components/Atomi/Checkbox',
+const meta: Meta<ChooseFileComponent> = {
+  title: 'Components/Atomi/Choose file',
     // The component related to the Stories
-    component: CheckboxButtonComponent,
+    component: ChooseFileComponent,
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-             imports: [ CommonModule, LibCheckboxModule],
+             imports: [ CommonModule, LibChooseFileModule, HttpClientModule],
         }),
     ]
 };
 export default meta;
 
-type Story = StoryObj<CheckboxButtonComponent>;
+type Story = StoryObj<ChooseFileComponent>;
 
 export const Base: Story = {
   args: {
-
   },
 };
 

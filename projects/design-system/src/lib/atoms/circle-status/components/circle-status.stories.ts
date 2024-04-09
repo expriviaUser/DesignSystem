@@ -1,27 +1,26 @@
 
 import { CommonModule } from '@angular/common';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { CheckboxButtonComponent } from './checkbox-button.component';
-import { LibCheckboxModule } from '../lib-checkbox.module';
+import { CircleStatusComponent } from './circle-status.component';
+import { LibCircleStatusModule } from '../lib-circle-status.module';
 
-const meta: Meta<CheckboxButtonComponent> = {
-  title: 'Components/Atomi/Checkbox',
+const meta: Meta<CircleStatusComponent> = {
+  title: 'Components/Atomi/Circle status',
     // The component related to the Stories
-    component: CheckboxButtonComponent,
+    component: CircleStatusComponent,
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-             imports: [ CommonModule, LibCheckboxModule],
+             imports: [ CommonModule, LibCircleStatusModule],
         }),
     ]
 };
 export default meta;
 
-type Story = StoryObj<CheckboxButtonComponent>;
+type Story = StoryObj<CircleStatusComponent>;
 
 export const Base: Story = {
   args: {
-
   },
 };
 
