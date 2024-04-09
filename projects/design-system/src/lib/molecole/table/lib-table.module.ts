@@ -9,6 +9,7 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
 import { LibTableService } from './services/lib-table.service';
 import { LibCheckboxModule } from '../../atoms/checkbox/lib-checkbox.module';
 import localeIt from '@angular/common/locales/it';
+import {MultiSelectModule} from "primeng/multiselect";
 
 registerLocaleData(localeIt);
 
@@ -26,13 +27,14 @@ const exportComponent = [
   declarations: [
     ...exportComponent,
   ],
-  imports: [
-    ...primeComponents,
-    CommonModule,
-    LibButtonModule,
-    LibCheckboxModule,
-    TieredMenuModule
-  ],
+    imports: [
+        ...primeComponents,
+        CommonModule,
+        LibButtonModule,
+        LibCheckboxModule,
+        TieredMenuModule,
+        MultiSelectModule
+    ],
   exports: [
     ...exportComponent,
     TableModule

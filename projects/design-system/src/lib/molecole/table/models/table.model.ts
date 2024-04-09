@@ -16,4 +16,5 @@ export interface Cols {
     field: string;
     sort?: boolean;
     classes?: string;
+    selectable?: boolean;
 }

@@ -29,8 +29,8 @@ export class TablePageComponent {
 
   columns: Cols[] = [
     { header: 'Nome', field: 'name', sort: true },
-    { header: 'Cognome', field: 'surname' },
-    { header: 'Description', field: 'status.description' },
+    { header: 'Cognome', field: 'surname', selectable:true, sort:true },
+    { header: 'Description', field: 'status.description', selectable:true },
   ];
 
 

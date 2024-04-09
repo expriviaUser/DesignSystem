@@ -82,6 +82,11 @@ export class TableComponent implements OnInit {
 
   @Input() checked: any = [];
 
+  @Input() selectableColumns: boolean = false;
+  @Input() columnsSelectorPlaceholder: string = 'Seleziona colonne';
+
+  selectedColumns!: Cols[];
+
   //    Output per triggerare il cambio pagina ( nuova chiamata al be)
   @Output() pageChanged: EventEmitter<{ pageNumber: number, field: string, order: number }> = new EventEmitter<{ pageNumber: number, field: string, order: number }>();
 
@@ -99,12 +104,17 @@ export class TableComponent implements OnInit {
   firstRowInPage: number = 0;
   //environment = environment
 
+  get selectableColumnsList(): Cols[] {
+    return this.columns.filter((col: Cols) => col.selectable);
+  }
+
   constructor(private tableService: LibTableService) { }
 
   ngOnInit() {
     if (!this.dataKey) {
       this.dataKey = this.columns[0].field;
     }
+    this.selectedColumns = this.columns;
   }
 
 

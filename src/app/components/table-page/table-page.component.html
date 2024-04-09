@@ -1,4 +1,4 @@
-<lib-table *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="[2]"
+<lib-table [selectableColumns]="true" *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="[2]"
   [resizableColumns]="true" [totalRecords]="3" [selectionType]="'single'" [isSelectable]="true"
   (checkedRowValues)="checkedValues=$event" [(selectedValue)]="selectionTable">
   <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->
@@ -6,12 +6,17 @@
     <!-- <td>
             <p-tableCheckbox [value]="data"></p-tableCheckbox>
         </td> -->
-    <td>{{ tableService.getFieldValue(data, column[0].field) }}</td>
+   <!-- <td *ngFor="let col of column">{{ tableService.getFieldValue(data, col.field) }}</td>-->
+    <ng-container *ngFor="let col of column">
+      <td *ngIf="col.field!=='status.description'">{{ tableService.getFieldValue(data, col.field) }}</td>
+      <td *ngIf="col.field==='status.description'"><lib-tag [tagSeverity]="'danger'" [tagLabel]="tableService.getFieldValue(data, col.field)"></lib-tag></td>
+    </ng-container>
+   <!-- <td>{{ tableService.getFieldValue(data, column[0].field) }}</td>
     <td>{{ tableService.getFieldValue(data, column[1].field, true) }}</td>
     <td>
       {{column[2].field | json}}
       <lib-tag [tagSeverity]="'danger'" [tagLabel]="tableService.getFieldValue(data, column[2].field)"></lib-tag>
-    </td>
+    </td>-->
   </ng-template>
 </lib-table>
 

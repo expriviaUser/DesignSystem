@@ -1,14 +1,21 @@
 <div class="table-wrapper">
 
+
+
     <p-table [selectionMode]="selectionType" [filters]="filters" [dataKey]="dataKey ? dataKey : columns[0].field"
         [resizableColumns]="resizableColumns" [(selection)]="selectedValue"
         (selectionChange)="selectedEvent(selectedValue)" [scrollable]="isScrollable" [scrollHeight]="scrollHeight"
-        [alwaysShowPaginator]="alwaysShowPaginator" [columns]="columns" [value]="value" [paginator]="showPaginator"
+        [alwaysShowPaginator]="alwaysShowPaginator" [columns]="selectedColumns" [value]="value" [paginator]="showPaginator"
         [rows]="nRowsPerPage" [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords"
         [currentPageReportTemplate]="reportString" [loading]="loading" [showCurrentPageReport]="showReportPage"
         [(first)]="firstRowInPage" [lazy]="lazy" [lazyLoadOnInit]="lazyOnInit" [customSort]="serverSort"
         (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)" [columnResizeMode]="columnResizeMode"
         [responsive]="responsive" [responsiveLayout]="responsiveLayout">
+
+      <ng-template pTemplate="caption">
+      <p-multiSelect *ngIf="selectableColumns" [options]="selectableColumnsList" [(ngModel)]="selectedColumns" optionLabel="header"
+                     selectedItemsLabel="{0} columns selected" [style]="{'min-width': '200px'}" [placeholder]="columnsSelectorPlaceholder"></p-multiSelect>
+    </ng-template>
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <ng-container *ngIf="showHeader">
