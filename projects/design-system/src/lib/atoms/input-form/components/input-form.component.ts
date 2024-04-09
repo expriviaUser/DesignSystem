@@ -2,6 +2,7 @@ import { DatePipe } from "@angular/common";
 import { Component, EventEmitter, forwardRef, Input, Output, TemplateRef } from "@angular/core";
 import { ControlContainer, ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from "@angular/forms";
 import { CheckBox } from "../../checkbox/models/checkbox.model";
+import {CalendarTypeView} from "primeng/calendar";
 
 @Component({
   selector: "lib-input-form",
@@ -58,6 +59,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() timeOnly: boolean = false;
   @Input() dataType: string = 'date';
   @Input() radioColSize: string = '3';
+  @Input() calendarView: CalendarTypeView = 'date';
 
   //@Input() formControl: FormControl = new FormControl();
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();

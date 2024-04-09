@@ -14,7 +14,7 @@ import {
   FormGroup,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
-import { Calendar } from "primeng/calendar";
+import {Calendar, CalendarTypeView} from "primeng/calendar";
 
 @Component({
   selector: 'lib-calendar',
@@ -46,6 +46,7 @@ export class CalendarComponent {
   @Input() disabledDays!: number[];
   @Input() timeOnly: boolean = false;
   @Input() dataType: string = 'date';
+  @Input() view: CalendarTypeView = 'date';
 
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
   @Output() clearCalendarValue: EventEmitter<any> = new EventEmitter<any>();
