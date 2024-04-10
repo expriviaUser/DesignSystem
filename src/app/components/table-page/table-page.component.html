@@ -1,4 +1,4 @@
-<lib-table [selectableColumns]="true" *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="[2]"
+<lib-table [selectableColumns]="false" *ngIf="!(items.length < 1)" [value]="items" [columns]="columns" [externalBody]="body" [rowsPerPage]="[2]"
   [resizableColumns]="true" [totalRecords]="3" [selectionType]="'single'" [isSelectable]="true"
   (checkedRowValues)="checkedValues=$event" [(selectedValue)]="selectionTable">
   <!-- se non voglio le azioni, eliminare l'unput  [actions]="actions" e <ng-template #actions ></ng-template>-->

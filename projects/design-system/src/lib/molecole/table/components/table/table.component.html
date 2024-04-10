@@ -12,8 +12,8 @@
         (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)" [columnResizeMode]="columnResizeMode"
         [responsive]="responsive" [responsiveLayout]="responsiveLayout">
 
-      <ng-template pTemplate="caption">
-      <p-multiSelect *ngIf="selectableColumns" [options]="selectableColumnsList" [(ngModel)]="selectedColumns" optionLabel="header"
+      <ng-template pTemplate="caption" *ngIf="selectableColumns">
+      <p-multiSelect  [options]="selectableColumnsList" [(ngModel)]="selectedColumns" optionLabel="header"
                      selectedItemsLabel="{0} columns selected" [style]="{'min-width': '200px'}" [placeholder]="columnsSelectorPlaceholder"></p-multiSelect>
     </ng-template>
         <ng-template pTemplate="header" let-columns>
