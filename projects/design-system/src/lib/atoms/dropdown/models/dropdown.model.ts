@@ -1,5 +1,5 @@
 export interface DropdownType {
     name: string;
-    code: any;
+    code: string;
     disabled?: boolean;
 }
