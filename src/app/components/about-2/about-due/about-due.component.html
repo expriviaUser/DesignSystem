@@ -22,7 +22,12 @@
         </lib-treemenu>
       </ng-template>
     </lib-accordion> -->
-    <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="vaffanculo($event)"
+  
+    <lib-tree-select [enableFilter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="vaffanculo($event)" 
+        [nodes]="structuresList" [(selectedNodes)]="selectedStructures" [selectionType]="'checkbox'"
+       >
+    </lib-tree-select>
+    <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="vaffanculo($event)" 
         [items]="structuresList" [(selected)]="selectedStructures" [selectionMode]="'checkbox'"
         [propagateSelectionUp]="false">
     </lib-treemenu>

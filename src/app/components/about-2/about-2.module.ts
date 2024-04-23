@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LibBreadcrumbModule, LibMultiSelectModule, LibPickListModule } from 'projects/design-system/src/public-api';
+import { LibAccordionModule, LibBreadcrumbModule, LibMultiSelectModule, LibPickListModule, LibTreeSelectModule, LibTreemenuModule } from 'projects/design-system/src/public-api';
 import { About2RoutingModule } from './about-2-routing.module';
 import { AboutDueComponent } from './about-due/about-due.component';
 import { CaricamentoComponent } from './caricamento/caricamento.component';
-import { LibAccordionModule, LibTreemenuModule } from '@expriviauser/design-system';
 
 
 
@@ -20,7 +19,8 @@ import { LibAccordionModule, LibTreemenuModule } from '@expriviauser/design-syst
     LibPickListModule,
     LibAccordionModule,
     LibTreemenuModule,
-    LibMultiSelectModule
+    LibMultiSelectModule,
+    LibTreeSelectModule
   ]
 })
 export class About2Module { }

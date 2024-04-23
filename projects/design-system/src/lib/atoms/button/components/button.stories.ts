@@ -35,9 +35,31 @@ export default meta;
 
 type Story = StoryObj<ButtonComponent>;
 
-export const Base: Story = {
+export const PrimaryButton: Story = {
   args: {
-    type: '',
+    type: 'primary',
+    size: '',
+    label: 'Prova',
+    icon: '',
+    disabled: false,
+    //@ts-ignore
+    onClick: (event: boolean) => { console.log(event) }
+  }
+}
+export const SecondaryButton: Story = {
+  args: {
+    type: 'secondary',
+    size: '',
+    label: 'Prova',
+    icon: '',
+    disabled: false,
+    //@ts-ignore
+    onClick: (event: boolean) => { console.log(event) }
+  }
+}
+export const LinkButton: Story = {
+  args: {
+    type: 'link',
     size: '',
     label: 'Prova',
     icon: '',

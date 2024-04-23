@@ -1,0 +1,1600 @@
+
+> design-system@0.0.1 build-storybook
+> ng run design-system:build-storybook --output-dir C:\Users\SGIANN~1\AppData\Local\Temp\chromatic--43832-mDriAgPZSFTI
+
+[0m
+[0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
+[0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
+[0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
+[48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m
+[48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m
+[48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m
+[48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m
+[48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m [0m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [48;5;255m [0m
+[0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
+[0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
+[0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [48;5;255m [48;5;255m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m [0m
+
+1.1.23
+
+TypeScript version used by Compodoc : 5.2.2
+
+TypeScript version of current project : 4.9.4
+
+Node.js version : v16.15.0
+
+Operating system : Windows 10
+
+[17:04:27] No configuration file found, switching to CLI flags.
+[17:04:27] Using tsconfig file : C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\projects\design-system\.storybook\tsconfig.json
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/.storybook/preview.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/public-api.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/design-system.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/byte.pipe.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/pipes.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/safe.pipe.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/lib-accordion.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/lib-address.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/lib-autocomplete.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/lib-autocomplete-card.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/lib-badge.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/lib-breadcrumb.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/lib-button.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/lib-calendar.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/lib-card.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/lib-checkbox.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/lib-chip.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/choose-file.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/lib-circle-status.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/lib-dialog.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/lib-dropdown.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/lib-error-inline.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/lib-icon-circle.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/lib-inplace.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input/lib-input.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/input-form.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/lib-listbox.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/lib-loader.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/lib-multi-select.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/lib-paginator.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/lib-pick-list.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/lib-progress-bar.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/lib-radio-button.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/sidebar.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/lib-stepper.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/switch.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/lib-tabs.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/lib-tag.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/lib-textarea.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/lib-timeline.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/lib-tree-select.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/lib-treemenu.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/lib-filters.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/cta-bar.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/file.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/file-status.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/header-items.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/header-menu.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/lib-messages.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/lib-radio-tile.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/lib-table.module.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/lib-upload-file.module.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/components/accordion.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/components/accordion.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/components/accordion.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/components/accordion.stories.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/models/accordion.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/components/address.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/components/address.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/components/address.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/components/address.stories.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/models/address.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/components/autocomplete.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/components/autocomplete.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/components/autocomplete.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/components/autocomplete.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/components/badge.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/components/badge.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/components/badge.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/components/badge.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/components/breadcrumb.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/components/breadcrumb.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/components/breadcrumb.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/directives/breadcrumb.directive.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/models/breadcrumb.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/services/breadcrumb.service.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/components/button.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/components/button.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/components/button.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/components/button.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/components/calendar.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/components/calendar.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/components/calendar.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/components/calendar.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/components/card.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/components/card.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/components/card.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/components/card.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/components/checkbox-button.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/components/checkbox-button.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/components/checkbox-button.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/components/checkbox-button.stories.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/models/checkbox.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/components/chip.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/components/chip.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/components/chip.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/components/chip.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/components/choose-file.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/components/choose-file.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/components/choose-file.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/components/choose-file.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/components/circle-status.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/components/circle-status.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/components/circle-status.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/components/circle-status.stories.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/components/dialog.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/components/dialog.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/components/dialog.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/components/dropdown.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/components/dropdown.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/components/dropdown.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/models/dropdown.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/components/error-inline.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/components/error-inline.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/components/error-inline.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/components/inplace.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/components/inplace.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/components/inplace.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input/components/input.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input/components/input.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input/components/input.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/components/input-form.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/components/input-form.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/components/input-form.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/custom-validators/custom-validators.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/components/listbox.component.css
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/components/listbox.component.html
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/components/listbox.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/components/loader.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/components/loader.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/components/loader.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/services/loader.service.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/components/multi-select.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/components/multi-select.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/components/multi-select.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/components/paginator.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/components/paginator.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/components/paginator.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/models/paginator.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/components/pick-list.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/components/pick-list.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/components/pick-list.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/components/radio-button.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/components/radio-button.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/components/radio-button.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/models/radio.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/components/sidebar.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/components/sidebar.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/components/sidebar.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/components/stepper.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/components/stepper.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/components/stepper.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/components/switch.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/components/switch.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/components/switch.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/components/tabs.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/components/tabs.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/components/tabs.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/models/tabs.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/components/tag.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/components/tag.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/components/tag.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/components/textarea.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/components/textarea.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/components/textarea.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/components/timeline.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/components/timeline.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/components/timeline.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/components/tree-select.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/components/tree-select.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/components/tree-select.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/models/tree-select.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/components/treemenu.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/components/treemenu.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/components/treemenu.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/models/treemenu.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/models/filters.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/services/filters.service.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/components/cta-bar.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/components/cta-bar.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/components/cta-bar.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/components/file.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/components/file.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/components/file.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/models/file.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/components/file-status.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/components/file-status.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/components/file-status.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/models/fileStatus.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/language.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/menuItem.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/user-notification.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/services/header-items.service.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/components/header-menu.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/components/header-menu.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/components/header-menu.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/models/menu-item.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/models/messages.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/components/radio-tile.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/components/radio-tile.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/components/radio-tile.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/models/radio-tile.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/models/table.model.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/services/lib-table.service.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/components/upload-file.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/components/upload-file.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/components/upload-file.component.ts
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/models/file-upload.model.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters/filters.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters/filters.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters/filters.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters-chips/filters-chips.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters-chips/filters-chips.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters-chips/filters-chips.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/only-filters/only-filters.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/only-filters/only-filters.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/only-filters/only-filters.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/cart/cart.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/cart/cart.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/cart/cart.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-actions/header-actions.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-actions/header-actions.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-actions/header-actions.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-menu-user/header-menu-user.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-menu-user/header-menu-user.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-menu-user/header-menu-user.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-notifications/header-notifications.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-notifications/header-notifications.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-notifications/header-notifications.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/language-selector/language-selector.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/language-selector/language-selector.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/language-selector/language-selector.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/logo/logo.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/logo/logo.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/logo/logo.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/search-bar/search-bar.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/search-bar/search-bar.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/search-bar/search-bar.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/message/message.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/message/message.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/message/message.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/messages/messages.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/messages/messages.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/messages/messages.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/toast/toast.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/toast/toast.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/toast/toast.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/actions-table/actions-table.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/actions-table/actions-table.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/actions-table/actions-table.component.ts
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/table/table.component.html
+[17:04:27] Excluding      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/table/table.component.scss
+[17:04:27] Including      : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/table/table.component.ts
+[17:04:27] Searching package.json file
+[17:04:27] package.json file found
+[17:04:27] Processing package.json dependencies
+[17:04:27] Searching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files
+[17:04:27] README.md file found
+[17:04:27] Error during C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\CHANGELOG read
+[17:04:27] Continuing without CHANGELOG.md file
+[17:04:27] Error during C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\CONTRIBUTING read
+[17:04:27] Continuing without CONTRIBUTING.md file
+[17:04:27] Error during C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\LICENSE read
+[17:04:27] Continuing without LICENSE.md file
+[17:04:27] Error during C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\TODO read
+[17:04:27] Continuing without TODO.md file
+[17:04:27] Get dependencies data
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/.storybook/preview.ts
+[17:04:28] found          : preview
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/public-api.ts
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/design-system.module.ts
+[17:04:28] found          : sharedModules
+[17:04:28] found          : DesignSystemModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- sharedModules
+[17:04:28]                : - exports:
+[17:04:28]                : 	- sharedModules
+[17:04:28]                : - providers:
+[17:04:28]                : 	- LibTableService
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/byte.pipe.ts
+[17:04:28] found          : BytePipe
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/pipes.module.ts
+[17:04:28] found          : PipesModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- BytePipe
+[17:04:28]                : 	- SafePipe
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- BytePipe
+[17:04:28]                : 	- SafePipe
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/safe.pipe.ts
+[17:04:28] found          : SafePipe
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/lib-accordion.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibAccordionModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- AccordionModule
+[17:04:28]                : 	- TabViewModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/lib-address.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibAddressModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- LibCardModule
+[17:04:28]                : 	- LibButtonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/lib-autocomplete.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibAutocompleteModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/lib-autocomplete-card.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibAutocompleteCardModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- LibAddressModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/lib-badge.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibBadgeModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/lib-breadcrumb.module.ts
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibBreadcrumbModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- RouterModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/lib-button.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibButtonModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/lib-calendar.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibCalendarModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - providers:
+[17:04:28]                : 	- DatePipe
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/lib-card.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibCardModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/lib-checkbox.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibCheckboxModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/lib-chip.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibChipModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/choose-file.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibChooseFileModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- LibInputModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/lib-circle-status.module.ts
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibCircleStatusModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/lib-dialog.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibDialogModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/lib-dropdown.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibDropdownModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/lib-error-inline.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibErrorInlineModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/lib-icon-circle.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibIconCircleModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/lib-inplace.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibInplaceModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input/lib-input.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibInputModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/input-form.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : InputFormModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - providers:
+[17:04:28]                : 	- DatePipe
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/lib-listbox.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibListboxModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/lib-loader.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibLoaderModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/lib-multi-select.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibMultiSelectModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/lib-paginator.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibPaginatorModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- PaginatorModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/lib-pick-list.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibPickListModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/lib-progress-bar.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibProgressBarModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/lib-radio-button.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibRadioButtonModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/sidebar.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : SidebarModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/lib-stepper.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibStepperModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- LibButtonModule
+[17:04:28]                : 	- CtaBarModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/switch.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : SwitchModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/lib-tabs.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibTabsModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/lib-tag.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibTagModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/lib-textarea.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibTextareaModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/lib-timeline.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibTimelineModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/lib-tree-select.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibTreeSelectModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/lib-treemenu.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibTreemenuModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - providers:
+[17:04:28]                : 	- TreeDragDropService
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/lib-filters.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : LibFiltersModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- LibTreeSelectModule
+[17:04:28]                : 	- LibCalendarModule
+[17:04:28]                : 	- TreeSelectModule
+[17:04:28]                : 	- LibDropdownModule
+[17:04:28]                : 	- LibInputModule
+[17:04:28]                : 	- LibButtonModule
+[17:04:28]                : 	- LibDialogModule
+[17:04:28]                : 	- LibTreemenuModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/cta-bar.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : CtaBarModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/file.module.ts
+[17:04:28] found          : exportComponent
+[17:04:28] found          : FileModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- LibCheckboxModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/file-status.module.ts
+[17:04:28] found          : exportComponent
+[17:04:28] found          : FileStatusModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- FileModule
+[17:04:28]                : 	- LibTagModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/header-items.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : HeaderItemsModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- RouterModule
+[17:04:28]                : 	- LibButtonModule
+[17:04:28]                : 	- LibIconCircleModule
+[17:04:28]                : 	- FormsModule
+[17:04:28]                : 	- ReactiveFormsModule
+[17:04:28]                : 	- LibBadgeModule
+[17:04:28]                : 	- InputFormModule
+[17:04:28]                : 	- LibUploadFileModule
+[17:04:28]                : 	- LibDropdownModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/header-menu.module.ts
+[17:04:28] found          : primeComponents
+[17:04:28] found          : exportComponent
+[17:04:28] found          : HeaderMenuModule
+[17:04:28]                : - imports:
+[17:04:28]                : 	- primeComponents
+[17:04:28]                : 	- CommonModule
+[17:04:28]                : 	- LibProgressBarModule
+[17:04:28]                : - exports:
+[17:04:28]                : 	- exportComponent
+[17:04:28]                : - declarations:
+[17:04:28]                : 	- exportComponent
+[17:04:28] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/lib-messages.module.ts
+[17:04:29] found          : primeComponents
+[17:04:29] found          : exportComponent
+[17:04:29] found          : LibMessagesModule
+[17:04:29]                : - imports:
+[17:04:29]                : 	- primeComponents
+[17:04:29]                : 	- CommonModule
+[17:04:29]                : - exports:
+[17:04:29]                : 	- exportComponent
+[17:04:29]                : - declarations:
+[17:04:29]                : 	- exportComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/lib-radio-tile.module.ts
+[17:04:29] found          : primeComponents
+[17:04:29] found          : exportComponent
+[17:04:29] found          : LibRadioTileModule
+[17:04:29]                : - imports:
+[17:04:29]                : 	- primeComponents
+[17:04:29]                : 	- CommonModule
+[17:04:29]                : 	- FormsModule
+[17:04:29]                : 	- ReactiveFormsModule
+[17:04:29]                : - exports:
+[17:04:29]                : 	- exportComponent
+[17:04:29]                : - declarations:
+[17:04:29]                : 	- exportComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/lib-table.module.ts
+[17:04:29] found          : primeComponents
+[17:04:29] found          : exportComponent
+[17:04:29] found          : LibTableModule
+[17:04:29]                : - imports:
+[17:04:29]                : 	- primeComponents
+[17:04:29]                : 	- CommonModule
+[17:04:29]                : 	- LibButtonModule
+[17:04:29]                : 	- LibCheckboxModule
+[17:04:29]                : 	- TieredMenuModule
+[17:04:29]                : 	- MultiSelectModule
+[17:04:29]                : - exports:
+[17:04:29]                : 	- exportComponent
+[17:04:29]                : 	- TableModule
+[17:04:29]                : - declarations:
+[17:04:29]                : 	- exportComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- LibTableService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/lib-upload-file.module.ts
+[17:04:29] found          : exportComponent
+[17:04:29] found          : LibUploadFileModule
+[17:04:29]                : - imports:
+[17:04:29]                : 	- CommonModule
+[17:04:29]                : 	- LibProgressBarModule
+[17:04:29]                : - exports:
+[17:04:29]                : 	- exportComponent
+[17:04:29]                : - declarations:
+[17:04:29]                : 	- exportComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/components/accordion.component.ts
+[17:04:29] found          : AccordionComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/components/accordion.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/accordion/models/accordion.model.ts
+[17:04:29] found          : AccordionData
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/components/address.component.ts
+[17:04:29] found          : AddressComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/components/address.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/address/models/address.model.ts
+[17:04:29] found          : LibAddress
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/components/autocomplete.component.ts
+[17:04:29] found          : AutocompleteComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => AutocompleteComponent), multi: true
+}
+[17:04:29]                : 	- FilterService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete/components/autocomplete.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.component.ts
+[17:04:29] found          : AutocompleteCardComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => AutocompleteCardComponent), multi: true
+}
+[17:04:29]                : 	- FilterService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/components/badge.component.ts
+[17:04:29] found          : BadgeComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/badge/components/badge.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/components/breadcrumb.component.ts
+[17:04:29] found          : BreadcrumbComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/directives/breadcrumb.directive.ts
+[17:04:29] found          : BreadcrumbItemDirective
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/models/breadcrumb.model.ts
+[17:04:29] found          : BreadcrumbModel
+[17:04:29] found          : Breadcrumb
+[17:04:29] found          : BreadcrumbObject
+[17:04:29] found          : BreadcrumbFunction
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/services/breadcrumb.service.ts
+[17:04:29] found          : BreadcrumbConfig
+[17:04:29] found          : StoreMatcherKey
+[17:04:29] found          : BreadcrumbDefinition
+[17:04:29] found          : PATH_PARAM
+[17:04:29] found          : ALIAS_PREFIX
+[17:04:29] found          : isNotEmpty
+[17:04:29] found          : BreadcrumbService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/components/button.component.ts
+[17:04:29] found          : ButtonComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/button/components/button.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : PrimaryButton
+[17:04:29] found          : SecondaryButton
+[17:04:29] found          : LinkButton
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/components/calendar.component.ts
+[17:04:29] found          : CalendarComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => CalendarComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/calendar/components/calendar.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/components/card.component.ts
+[17:04:29] found          : CardComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/card/components/card.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/components/checkbox-button.component.ts
+[17:04:29] found          : CheckboxButtonComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => CheckboxButtonComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/components/checkbox-button.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/checkbox/models/checkbox.model.ts
+[17:04:29] found          : CheckBox
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/components/chip.component.ts
+[17:04:29] found          : ChipComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/chip/components/chip.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/components/choose-file.component.ts
+[17:04:29] found          : ChooseFileComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => ChooseFileComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/choose-file/components/choose-file.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/components/circle-status.component.ts
+[17:04:29] found          : CircleStatusComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/circle-status/components/circle-status.stories.ts
+[17:04:29] found          : meta
+[17:04:29] found          : Story
+[17:04:29] found          : Base
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/components/dialog.component.ts
+[17:04:29] found          : DialogComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/components/dropdown.component.ts
+[17:04:29] found          : DropdownComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => DropdownComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/models/dropdown.model.ts
+[17:04:29] found          : DropdownType
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/components/error-inline.component.ts
+[17:04:29] found          : ErrorInlineComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.component.ts
+[17:04:29] found          : IconCircleComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/components/inplace.component.ts
+[17:04:29] found          : InplaceComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input/components/input.component.ts
+[17:04:29] found          : InputComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => InputComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/components/input-form.component.ts
+[17:04:29] found          : InputFormComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => InputFormComponent), multi: true,
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/custom-validators/custom-validators.ts
+[17:04:29] found          : CustomValidators
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/components/listbox.component.ts
+[17:04:29] found          : ListboxComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => ListboxComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/components/loader.component.ts
+[17:04:29] found          : LoaderComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/services/loader.service.ts
+[17:04:29] found          : LoaderService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/components/multi-select.component.ts
+[17:04:29] found          : MultiSelectComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => MultiSelectComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/components/paginator.component.ts
+[17:04:29] found          : PaginatorComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/models/paginator.model.ts
+[17:04:29] found          : PageEvent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/components/pick-list.component.ts
+[17:04:29] found          : PickListComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.component.ts
+[17:04:29] found          : ProgressBarComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/components/radio-button.component.ts
+[17:04:29] found          : RadioButtonComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => RadioButtonComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/models/radio.model.ts
+[17:04:29] found          : RadioModel
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/components/sidebar.component.ts
+[17:04:29] found          : SidebarComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model.ts
+[17:04:29] found          : SidebarItem
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/components/stepper.component.ts
+[17:04:29] found          : StepperComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/components/switch.component.ts
+[17:04:29] found          : SwitchComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => SwitchComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/components/tabs.component.ts
+[17:04:29] found          : TabsComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/models/tabs.model.ts
+[17:04:29] found          : Tabs
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/components/tag.component.ts
+[17:04:29] found          : TagComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/components/textarea.component.ts
+[17:04:29] found          : TextareaComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- {
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => TextareaComponent), multi: true
+}
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/components/timeline.component.ts
+[17:04:29] found          : TimelineComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/components/tree-select.component.ts
+[17:04:29] found          : TreeSelectComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/models/tree-select.model.ts
+[17:04:29] found          : TreeSelectModel
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/components/treemenu.component.ts
+[17:04:29] found          : TreemenuComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/models/treemenu.model.ts
+[17:04:29] found          : TreeMenu
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/models/filters.model.ts
+[17:04:29] found          : FiltersModel
+[17:04:29] found          : FiltersData
+[17:04:29] found          : OnlyFiltersModel
+[17:04:29] found          : FiltersResult
+[17:04:29] found          : FiltersChip
+[17:04:29] found          : OnlyFiltersChip
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/services/filters.service.ts
+[17:04:29] found          : FiltersService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/components/cta-bar.component.ts
+[17:04:29] found          : CtaBarComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/components/file.component.ts
+[17:04:29] found          : FileComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/models/file.model.ts
+[17:04:29] found          : File
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/components/file-status.component.ts
+[17:04:29] found          : FileStatusComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/models/fileStatus.model.ts
+[17:04:29] found          : FileStatus
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/language.model.ts
+[17:04:29] found          : Language
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/menuItem.model.ts
+[17:04:29] found          : MenuItem
+[17:04:29] found          : link
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/user-notification.model.ts
+[17:04:29] found          : UserNotification
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/services/header-items.service.ts
+[17:04:29] found          : HeaderItemsService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/components/header-menu.component.ts
+[17:04:29] found          : HeaderMenuComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/models/menu-item.model.ts
+[17:04:29] found          : MenubarItem
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/models/messages.model.ts
+[17:04:29] found          : Messages
+[17:04:29] found          : MESSAGES_GENERAL
+[17:04:29] found          : ALERTS_GENERAL
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/components/radio-tile.component.ts
+[17:04:29] found          : RadioTileComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/models/radio-tile.model.ts
+[17:04:29] found          : RadioTile
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/models/table.model.ts
+[17:04:29] found          : ActionTable
+[17:04:29] found          : PaginatorData
+[17:04:29] found          : Cols
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/services/lib-table.service.ts
+[17:04:29] found          : LibTableService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/components/upload-file.component.ts
+[17:04:29] found          : UploadFileComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/models/file-upload.model.ts
+[17:04:29] found          : FileUpload
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters/filters.component.ts
+[17:04:29] found          : FiltersComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters-chips/filters-chips.component.ts
+[17:04:29] found          : FiltersChipsComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/only-filters/only-filters.component.ts
+[17:04:29] found          : OnlyFiltersComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/cart/cart.component.ts
+[17:04:29] found          : CartComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-actions/header-actions.component.ts
+[17:04:29] found          : HeaderActionsComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-menu-user/header-menu-user.component.ts
+[17:04:29] found          : HeaderMenuUserComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-notifications/header-notifications.component.ts
+[17:04:29] found          : HeaderNotificationsComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/language-selector/language-selector.component.ts
+[17:04:29] found          : LanguageSelectorComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/logo/logo.component.ts
+[17:04:29] found          : LogoComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/search-bar/search-bar.component.ts
+[17:04:29] found          : SearchBarComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/message/message.component.ts
+[17:04:29] found          : MessageComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/messages/messages.component.ts
+[17:04:29] found          : MessagesComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- MessageService
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/toast/toast.component.ts
+[17:04:29] found          : ToastComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/actions-table/actions-table.component.ts
+[17:04:29] found          : ActionsTableComponent
+[17:04:29] parsing        : C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/table/table.component.ts
+[17:04:29] found          : TableComponent
+[17:04:29]                : - providers:
+[17:04:29]                : 	- Table
+[17:04:29]                : 	- TableService
+[17:04:29] -------------------
+[17:04:29] Project statistics 
+[17:04:29] - files      : 150
+[17:04:29] - module     : 48
+[17:04:29] - component  : 57
+[17:04:29] - directive  : 1
+[17:04:29] - injectable : 5
+[17:04:29] - pipe       : 2
+[17:04:29] - class      : 2
+[17:04:29] - interface  : 29
+[17:04:29] -------------------
+[17:04:29] Prepare components
+[17:04:29]  AccordionComponent has a templateUrl, include it
+[17:04:29]  AccordionComponent has styleUrls, include them
+[17:04:29]  ActionsTableComponent has a templateUrl, include it
+[17:04:29]  ActionsTableComponent has styleUrls, include them
+[17:04:29]  AddressComponent has a templateUrl, include it
+[17:04:29]  AddressComponent has styleUrls, include them
+[17:04:29]  AutocompleteCardComponent has a templateUrl, include it
+[17:04:29]  AutocompleteCardComponent has styleUrls, include them
+[17:04:29]  AutocompleteComponent has a templateUrl, include it
+[17:04:29]  AutocompleteComponent has styleUrls, include them
+[17:04:29]  BadgeComponent has a templateUrl, include it
+[17:04:29]  BadgeComponent has styleUrls, include them
+[17:04:29]  BreadcrumbComponent has a templateUrl, include it
+[17:04:29]  BreadcrumbComponent has styleUrls, include them
+[17:04:29]  ButtonComponent has a templateUrl, include it
+[17:04:29]  ButtonComponent has styleUrls, include them
+[17:04:29]  CalendarComponent has a templateUrl, include it
+[17:04:29]  CalendarComponent has styleUrls, include them
+[17:04:29]  CardComponent has a templateUrl, include it
+[17:04:29]  CardComponent has styleUrls, include them
+[17:04:29]  CartComponent has a templateUrl, include it
+[17:04:29]  CartComponent has styleUrls, include them
+[17:04:29]  CheckboxButtonComponent has a templateUrl, include it
+[17:04:29]  CheckboxButtonComponent has styleUrls, include them
+[17:04:29]  ChipComponent has a templateUrl, include it
+[17:04:29]  ChipComponent has styleUrls, include them
+[17:04:29]  ChooseFileComponent has a templateUrl, include it
+[17:04:29]  ChooseFileComponent has styleUrls, include them
+[17:04:29]  CircleStatusComponent has a templateUrl, include it
+[17:04:29]  CircleStatusComponent has styleUrls, include them
+[17:04:29]  CtaBarComponent has a templateUrl, include it
+[17:04:29]  CtaBarComponent has styleUrls, include them
+[17:04:29]  DialogComponent has a templateUrl, include it
+[17:04:29]  DialogComponent has styleUrls, include them
+[17:04:29]  DropdownComponent has a templateUrl, include it
+[17:04:29]  DropdownComponent has styleUrls, include them
+[17:04:29]  ErrorInlineComponent has a templateUrl, include it
+[17:04:29]  ErrorInlineComponent has styleUrls, include them
+[17:04:29]  FileComponent has a templateUrl, include it
+[17:04:29]  FileComponent has styleUrls, include them
+[17:04:29]  FileStatusComponent has a templateUrl, include it
+[17:04:29]  FileStatusComponent has styleUrls, include them
+[17:04:29]  FiltersChipsComponent has a templateUrl, include it
+[17:04:29]  FiltersChipsComponent has styleUrls, include them
+[17:04:29]  FiltersComponent has a templateUrl, include it
+[17:04:29]  FiltersComponent has styleUrls, include them
+[17:04:29]  HeaderActionsComponent has a templateUrl, include it
+[17:04:29]  HeaderActionsComponent has styleUrls, include them
+[17:04:29]  HeaderMenuComponent has a templateUrl, include it
+[17:04:29]  HeaderMenuComponent has styleUrls, include them
+[17:04:29]  HeaderMenuUserComponent has a templateUrl, include it
+[17:04:29]  HeaderMenuUserComponent has styleUrls, include them
+[17:04:29]  HeaderNotificationsComponent has a templateUrl, include it
+[17:04:29]  HeaderNotificationsComponent has styleUrls, include them
+[17:04:29]  IconCircleComponent has a templateUrl, include it
+[17:04:29]  IconCircleComponent has styleUrls, include them
+[17:04:29]  InplaceComponent has a templateUrl, include it
+[17:04:29]  InplaceComponent has styleUrls, include them
+[17:04:29]  InputComponent has a templateUrl, include it
+[17:04:29]  InputComponent has styleUrls, include them
+[17:04:29]  InputFormComponent has a templateUrl, include it
+[17:04:29]  InputFormComponent has styleUrls, include them
+[17:04:29]  LanguageSelectorComponent has a templateUrl, include it
+[17:04:29]  LanguageSelectorComponent has styleUrls, include them
+[17:04:29]  ListboxComponent has a templateUrl, include it
+[17:04:29]  ListboxComponent has styleUrls, include them
+[17:04:29]  LoaderComponent has a templateUrl, include it
+[17:04:29]  LoaderComponent has styleUrls, include them
+[17:04:29]  LogoComponent has a templateUrl, include it
+[17:04:29]  LogoComponent has styleUrls, include them
+[17:04:29]  MessageComponent has a templateUrl, include it
+[17:04:29]  MessageComponent has styleUrls, include them
+[17:04:29]  MessagesComponent has a templateUrl, include it
+[17:04:29]  MessagesComponent has styleUrls, include them
+[17:04:29]  MultiSelectComponent has a templateUrl, include it
+[17:04:29]  MultiSelectComponent has styleUrls, include them
+[17:04:29]  OnlyFiltersComponent has a templateUrl, include it
+[17:04:29]  OnlyFiltersComponent has styleUrls, include them
+[17:04:29]  PaginatorComponent has a templateUrl, include it
+[17:04:29]  PaginatorComponent has styleUrls, include them
+[17:04:29]  PickListComponent has a templateUrl, include it
+[17:04:29]  PickListComponent has styleUrls, include them
+[17:04:29]  ProgressBarComponent has a templateUrl, include it
+[17:04:29]  ProgressBarComponent has styleUrls, include them
+[17:04:29]  RadioButtonComponent has a templateUrl, include it
+[17:04:29]  RadioButtonComponent has styleUrls, include them
+[17:04:29]  RadioTileComponent has a templateUrl, include it
+[17:04:29]  RadioTileComponent has styleUrls, include them
+[17:04:29]  SearchBarComponent has a templateUrl, include it
+[17:04:29]  SearchBarComponent has styleUrls, include them
+[17:04:29]  SidebarComponent has a templateUrl, include it
+[17:04:29]  SidebarComponent has styleUrls, include them
+[17:04:29]  StepperComponent has a templateUrl, include it
+[17:04:29]  StepperComponent has styleUrls, include them
+[17:04:29]  SwitchComponent has a templateUrl, include it
+[17:04:29]  SwitchComponent has styleUrls, include them
+[17:04:29]  TableComponent has a templateUrl, include it
+[17:04:29]  TableComponent has styleUrls, include them
+[17:04:29]  TabsComponent has a templateUrl, include it
+[17:04:29]  TabsComponent has styleUrls, include them
+[17:04:29]  TagComponent has a templateUrl, include it
+[17:04:29]  TagComponent has styleUrls, include them
+[17:04:29]  TextareaComponent has a templateUrl, include it
+[17:04:29]  TextareaComponent has styleUrls, include them
+[17:04:29]  TimelineComponent has a templateUrl, include it
+[17:04:29]  TimelineComponent has styleUrls, include them
+[17:04:29]  ToastComponent has a templateUrl, include it
+[17:04:29]  ToastComponent has styleUrls, include them
+[17:04:29]  TreemenuComponent has a templateUrl, include it
+[17:04:29]  TreemenuComponent has styleUrls, include them
+[17:04:29]  TreeSelectComponent has a templateUrl, include it
+[17:04:29]  TreeSelectComponent has styleUrls, include them
+[17:04:29]  UploadFileComponent has a templateUrl, include it
+[17:04:29]  UploadFileComponent has styleUrls, include them
+[17:04:29] Prepare modules
+[17:04:29] Prepare directives
+[17:04:29] Prepare injectables
+[17:04:29] Prepare pipes
+[17:04:29] Prepare classes
+[17:04:29] Prepare interfaces
+[17:04:29] Prepare miscellaneous
+[17:04:29] Process documentation coverage report
+[17:04:29] Generating documentation in export format json
+[17:04:29] Documentation generated in projects/design-system/ in 3.119 seconds
+info => Cleaning outputDir: C:\Users\SGIANN~1\AppData\Local\Temp\chromatic--43832-mDriAgPZSFTI
+
+info => Loading presets
+info => Building manager..
+info => Manager built (466 ms)
+info => Building preview..
+info => Copying static files: C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\node_modules\@storybook\manager\static at C:\Users\SGIANN~1\AppData\Local\Temp\chromatic--43832-mDriAgPZSFTI\sb-common-assets
+info Using Babel compiler
+info Addon-docs: using MDX2
+info => Using implicit CSS loaders
+info => Using angular browser target options from "design-system:build"
+info => Using angular project with "tsConfig:C:\Users\sgiannuario\Documents\DocumentiLavoro\Progetti\ExpriviaDS\DesignSystem\projects\design-system\.storybook\tsconfig.json"
+info => Using default Webpack5 setup
+WARN No story files found for the specified pattern: projects\design-system\src\**\*.mdx
+WARN Module Warning (from ./node_modules/postcss-loader/dist/cjs.js):
+WARN Warning
+WARN 
+WARN (4907:3) autoprefixer: end value has mixed support, consider using flex-end instead
+WARN Module Warning (from ./node_modules/postcss-loader/dist/cjs.js):
+WARN Warning
+WARN 
+WARN (8295:3) autoprefixer: end value has mixed support, consider using flex-end instead
+WARN Module Warning (from ./node_modules/postcss-loader/dist/cjs.js):
+WARN Warning
+WARN 
+WARN (9454:3) autoprefixer: end value has mixed support, consider using flex-end instead
+WARN Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+WARN Deprecation Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+WARN 
+WARN Recommendation: math.div($size, $font-size-in-px) or calc($size / $font-size-in-px)
+WARN 
+WARN More info and automated migrator: https://sass-lang.com/d/slash-div
+WARN 
+WARN projects\design-system\assets\styles\base\_functions.scss 3:15   pxToRem()
+WARN projects\design-system\assets\styles\base\_functions.scss 50:16  typography-h6()
+WARN projects\design-system\assets\styles\base\_font.scss 80:5        @import
+WARN projects\design-system\assets\styles\index.scss 4:9              root stylesheet
+WARN 
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/autocomplete-card/lib-autocomplete-card.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/components/breadcrumb.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/directives/breadcrumb.directive.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/lib-breadcrumb.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/models/breadcrumb.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/breadcrumb/services/breadcrumb.service.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/components/dialog.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dialog/lib-dialog.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/components/dropdown.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/lib-dropdown.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/dropdown/models/dropdown.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/components/error-inline.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/error-inline/lib-error-inline.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/icon-circle/lib-icon-circle.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/components/inplace.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/inplace/lib-inplace.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/components/input-form.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/custom-validators/custom-validators.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/input-form/input-form.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/components/listbox.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/listbox/lib-listbox.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/components/loader.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/lib-loader.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/loader/services/loader.service.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/components/multi-select.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/multi-select/lib-multi-select.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/components/paginator.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/lib-paginator.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/paginator/models/paginator.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/components/pick-list.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/pick-list/lib-pick-list.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/progress-bar/lib-progress-bar.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/components/radio-button.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/lib-radio-button.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/radio-button/models/radio.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/components/sidebar.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/models/sidebar-item.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/sidebar/sidebar.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/components/stepper.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/stepper/lib-stepper.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/components/switch.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/switch/switch.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/components/tabs.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/lib-tabs.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tabs/models/tabs.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/components/tag.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tag/lib-tag.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/components/textarea.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/textarea/lib-textarea.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/components/timeline.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/timeline/lib-timeline.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/components/tree-select.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/lib-tree-select.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/tree-select/models/tree-select.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/components/treemenu.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/lib-treemenu.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/atoms/treemenu/models/treemenu.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/design-system.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters-chips/filters-chips.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/filters/filters.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/components/only-filters/only-filters.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/lib-filters.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/models/filters.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/micro-organismi/filters/services/filters.service.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/components/cta-bar.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/cta-bar/cta-bar.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/components/file-status.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/file-status.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file-status/models/fileStatus.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/components/file.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/file.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/file/models/file.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/cart/cart.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-actions/header-actions.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-menu-user/header-menu-user.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/header-notifications/header-notifications.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/language-selector/language-selector.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/logo/logo.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/components/search-bar/search-bar.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/header-items.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/language.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/menuItem.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/models/user-notification.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-items/services/header-items.service.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/components/header-menu.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/header-menu.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/header-menu/models/menu-item.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/message/message.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/messages/messages.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/components/toast/toast.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/lib-messages.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/messages/models/messages.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/components/radio-tile.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/lib-radio-tile.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/radio-tile/models/radio-tile.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/actions-table/actions-table.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/components/table/table.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/lib-table.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/models/table.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/table/services/lib-table.service.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/components/upload-file.component.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/lib-upload-file.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/molecole/upload-file/models/file-upload.model.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/byte.pipe.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/pipes.module.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/lib/pipes/safe.pipe.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN C:/Users/sgiannuario/Documents/DocumentiLavoro/Progetti/ExpriviaDS/DesignSystem/projects/design-system/src/public-api.ts is part of the TypeScript compilation but it's unused.
+WARN Add only entry points to the 'files' or 'include' properties in your tsconfig.
+WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+WARN This can impact web performance.
+WARN Assets: 
+WARN   primeicons.svg (285 KiB)
+WARN   main.9adcdd5f.iframe.bundle.js (753 KiB)
+WARN   925.dc0112d9.iframe.bundle.js (819 KiB)
+WARN   103.43b9f539.iframe.bundle.js (583 KiB)
+WARN   622.0edf9a83.iframe.bundle.js (2.04 MiB)
+WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+WARN Entrypoints:
+WARN   main (3.04 MiB)
+WARN       runtime~main.99da1801.iframe.bundle.js
+WARN       622.css
+WARN       622.0edf9a83.iframe.bundle.js
+WARN       main.css
+WARN       main.9adcdd5f.iframe.bundle.js
+WARN 
+info => Preview built (1.07 min)
+info => Output directory: C:\Users\SGIANN~1\AppData\Local\Temp\chromatic--43832-mDriAgPZSFTI

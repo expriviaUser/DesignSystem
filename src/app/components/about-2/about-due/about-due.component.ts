@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AccordionData, TreeMenu } from '@expriviauser/design-system';
+import { TreeNode } from 'primeng/api';
+import { TreeSelectModel } from 'projects/design-system/src/public-api';
 
 @Component({
   selector: 'app-about-due',
@@ -22,15 +24,23 @@ export class AboutDueComponent {
     { header: '4' },
   ]
 
-   structuresList: Array<TreeMenu> = [
-    {data: 1, label: '1', children: [{data: 2, label: '2'}]},
-    {data: 3, label: '3', children: [{data: 4, label: '4'}]},
-    {data: 5, label: '5', children: [{data: 6, label: '6'}]},
+  structuresList: Array<TreeSelectModel> = [
+    { data: 1, label: '1', children: [{data: 4, label: '6'}] },
+    { data: 2, label: '2', children: [] },
+    { data: 3, label: '3', children: [] },
   ];
 
-  selectedStructures: Array<TreeMenu> = [];
+  lazyLoad(data: TreeNode) {
+
+    data.children = [
+      { data: 4, label: '4', leaf: true }
+    ]
+
+  }
+
+  selectedStructures: Array<TreeSelectModel> = [];
 
   vaffanculo(event: any) {
     console.log(event);
   }
- }
+}
