@@ -13,6 +13,7 @@ export class TreeSelectComponent {
   @Input() enableFilter = false;
   @Input() propagateDown = false;
   @Input() lazy = false;
+  @Input() appendTo = 'body';
   @Input() lazyFn: Function;
   @Input() propagateUp = false;
   @Input() filterPlaceholder!: string;

@@ -17025,7 +17025,7 @@
         },
         {
             "name": "TreeSelectComponent",
-            "id": "component-TreeSelectComponent-2735a67d67196e54ed573a8582242b4b291776b760fea9b9d946b8948674bd8b5539f745ab3cd8505fbf33bc1bc90a81d14ca8de165e53382314d7715e54a8fa",
+            "id": "component-TreeSelectComponent-2225fc9dbf81cfb1398312dfcbe5dc023c4a2507a7f996f05da5a29c427898c301ee512b5e64af2adee9cade450809e39dd2d565869d74c833944f54aa364762",
             "file": "projects/design-system/src/lib/atoms/tree-select/components/tree-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -17044,6 +17044,15 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "appendTo",
+                    "defaultValue": "'body'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "enableFilter",
                     "defaultValue": "false",
                     "deprecated": false,
@@ -17056,7 +17065,7 @@
                     "name": "filterPlaceholder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -17073,7 +17082,7 @@
                     "name": "lazyFn",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "Function",
                     "decorators": []
                 },
@@ -17091,7 +17100,7 @@
                     "defaultValue": "\"Select Item\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 },
@@ -17109,7 +17118,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -17118,7 +17127,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "TreeSelectModel[]",
                     "decorators": []
                 },
@@ -17127,7 +17136,7 @@
                     "defaultValue": "\"multiple\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -17135,7 +17144,7 @@
                     "name": "valueTemplate",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "TemplateRef<any>",
                     "decorators": []
                 }
@@ -17146,7 +17155,7 @@
                     "defaultValue": "new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": "EventEmitter<literal type>"
                 },
                 {
@@ -17154,7 +17163,7 @@
                     "defaultValue": "new EventEmitter<Array<TreeSelectModel>>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 28,
                     "type": "EventEmitter<Array<TreeSelectModel>>"
                 },
                 {
@@ -17162,7 +17171,7 @@
                     "defaultValue": "new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "EventEmitter<literal type>"
                 },
                 {
@@ -17170,7 +17179,7 @@
                     "defaultValue": "new EventEmitter<TreeSelectModel[]>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "EventEmitter<TreeSelectModel[]>"
                 }
             ],
@@ -17189,7 +17198,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 47,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -17217,7 +17226,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 51,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -17245,7 +17254,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -17273,7 +17282,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -17301,7 +17310,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -17326,7 +17335,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';\r\nimport { TreeSelectModel } from \"../models/tree-select.model\";\r\n\r\n@Component({\r\n  selector: 'lib-tree-select',\r\n  templateUrl: './tree-select.component.html',\r\n  styleUrls: ['./tree-select.component.scss']\r\n})\r\nexport class TreeSelectComponent {\r\n\r\n  @Input() nodes: TreeSelectModel[] = [];\r\n\r\n  @Input() enableFilter = false;\r\n  @Input() propagateDown = false;\r\n  @Input() lazy = false;\r\n  @Input() lazyFn: Function;\r\n  @Input() propagateUp = false;\r\n  @Input() filterPlaceholder!: string;\r\n  @Input() valueTemplate!: TemplateRef<any>;\r\n  @Input() selectedNodes: TreeSelectModel[] = [];\r\n  @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();\r\n\r\n  @Input() placeholder = \"Select Item\";\r\n  @Input() selectionType = \"multiple\";\r\n  @Output() emitSelectedOption: EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }> = new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>();\r\n  @Output() emitUnselect: EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }> = new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>();\r\n  @Output() emitSelectedValues: EventEmitter<Array<TreeSelectModel>> = new EventEmitter<Array<TreeSelectModel>>();\r\n\r\n  constructor() {\r\n  }\r\n\r\n\r\n  optionEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {\r\n    this.emitSelectedOption.emit(event);\r\n  }\r\n\r\n  unselectEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {\r\n\r\n    this.emitUnselect.emit(event);\r\n  }\r\n\r\n  selectedValuesEmit(event: Array<TreeSelectModel>): void {\r\n    this.emitSelectedValues.emit(event);\r\n  }\r\n\r\n  expandNode(event: any) {\r\n    this.lazyFn(event.node);\r\n  }\r\n\r\n  nodeCollapse(event: any) {\r\n    event.node.children = [];\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';\r\nimport { TreeSelectModel } from \"../models/tree-select.model\";\r\n\r\n@Component({\r\n  selector: 'lib-tree-select',\r\n  templateUrl: './tree-select.component.html',\r\n  styleUrls: ['./tree-select.component.scss']\r\n})\r\nexport class TreeSelectComponent {\r\n\r\n  @Input() nodes: TreeSelectModel[] = [];\r\n\r\n  @Input() enableFilter = false;\r\n  @Input() propagateDown = false;\r\n  @Input() lazy = false;\r\n  @Input() appendTo = 'body';\r\n  @Input() lazyFn: Function;\r\n  @Input() propagateUp = false;\r\n  @Input() filterPlaceholder!: string;\r\n  @Input() valueTemplate!: TemplateRef<any>;\r\n  @Input() selectedNodes: TreeSelectModel[] = [];\r\n  @Output() selectedNodesChange: EventEmitter<TreeSelectModel[]> = new EventEmitter<TreeSelectModel[]>();\r\n\r\n  @Input() placeholder = \"Select Item\";\r\n  @Input() selectionType = \"multiple\";\r\n  @Output() emitSelectedOption: EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }> = new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>();\r\n  @Output() emitUnselect: EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }> = new EventEmitter<{ originalEvent: PointerEvent, node: TreeSelectModel }>();\r\n  @Output() emitSelectedValues: EventEmitter<Array<TreeSelectModel>> = new EventEmitter<Array<TreeSelectModel>>();\r\n\r\n  constructor() {\r\n  }\r\n\r\n\r\n  optionEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {\r\n    this.emitSelectedOption.emit(event);\r\n  }\r\n\r\n  unselectEmit(event: { originalEvent: PointerEvent, node: TreeSelectModel }): void {\r\n\r\n    this.emitUnselect.emit(event);\r\n  }\r\n\r\n  selectedValuesEmit(event: Array<TreeSelectModel>): void {\r\n    this.emitSelectedValues.emit(event);\r\n  }\r\n\r\n  expandNode(event: any) {\r\n    this.lazyFn(event.node);\r\n  }\r\n\r\n  nodeCollapse(event: any) {\r\n    event.node.children = [];\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -17341,10 +17350,10 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 27
+                "line": 28
             },
             "extends": [],
-            "templateData": "<p-treeSelect [(ngModel)]=\"selectedNodes\" (ngModelChange)=\"selectedValuesEmit($event)\" [options]=\"nodes\" [filter]=\"enableFilter\" [filterPlaceholder]=\"filterPlaceholder\" (onNodeExpand)=\"lazy ? expandNode : null\" (onNodeCollapse)=\"lazy ? nodeCollapse($event) : null\"\r\n    [metaKeySelection]=\"false\" [selectionMode]=\"selectionType\" placeholder=\"{{placeholder}}\" [propagateSelectionDown]=\"propagateDown\" [propagateSelectionUp]=\"propagateUp\"\r\n    (onNodeSelect)=\"optionEmit($event)\" (onNodeUnselect)=\"unselectEmit($event)\">\r\n    <ng-template pTemplate=\"value\" let-node *ngIf=\"valueTemplate\">\r\n        <ng-container [ngTemplateOutlet]=\"valueTemplate ? valueTemplate : null\"></ng-container>\r\n    </ng-template>\r\n</p-treeSelect>"
+            "templateData": "<p-treeSelect [(ngModel)]=\"selectedNodes\" (ngModelChange)=\"selectedValuesEmit($event)\" [options]=\"nodes\" [filter]=\"enableFilter\" [filterPlaceholder]=\"filterPlaceholder\" (onNodeExpand)=\"lazy ? expandNode : null\" (onNodeCollapse)=\"lazy ? nodeCollapse($event) : null\"\r\n    [metaKeySelection]=\"false\" [selectionMode]=\"selectionType\" placeholder=\"{{placeholder}}\" [propagateSelectionDown]=\"propagateDown\" [propagateSelectionUp]=\"propagateUp\" [appendTo]=\"appendTo\"\r\n    (onNodeSelect)=\"optionEmit($event)\" (onNodeUnselect)=\"unselectEmit($event)\">\r\n    <ng-template pTemplate=\"value\" let-node *ngIf=\"valueTemplate\">\r\n        <ng-container [ngTemplateOutlet]=\"valueTemplate ? valueTemplate : null\"></ng-container>\r\n    </ng-template>\r\n</p-treeSelect>"
         },
         {
             "name": "UploadFileComponent",
@@ -19933,7 +19942,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    multiple: false,\r\n    index: 0,\r\n    sections: [{header: 'prova1'}, {header: 'prova2'}],\r\n    //@ts-ignore\r\n    //activeIndexChange: (event: any) => { this.index = event.args }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    multiple: false,\r\n    index: 0,\r\n    sections: [{header: 'prova1'}, {header: 'prova2'}],\r\n    //@ts-ignore\r\n    //activeIndexChange: (event: any) => { this.index = event.args }\r\n  }\r\n}"
             },
             {
                 "name": "Base",
@@ -19943,7 +19952,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    address: {code: 0, content: 'Via Roma, 22 - 71122 Foggia (FG)', name: 'Casa mia'},\r\n    //modify: true,\r\n    //@ts-ignore\r\n    onClick: () => { console.log('Modify') }\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    address: {code: 0, content: 'Via Roma, 22 - 71122 Foggia (FG)', name: 'Casa mia'},\r\n    //modify: true,\r\n    //@ts-ignore\r\n    onClick: () => { console.log('Modify') }\r\n  },\r\n}"
             },
             {
                 "name": "Base",
@@ -19953,7 +19962,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    valueAutocomplete: [''],\r\n    placeholder: '',\r\n    value: '',\r\n    label: 'cc',\r\n    icon: '',\r\n    disabled: false,\r\n    showClear: false,\r\n    field: '',\r\n    minLength: 3,\r\n    //@ts-ignore\r\n    onChange: (event: any) => { console.log(event) }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    valueAutocomplete: [''],\r\n    placeholder: '',\r\n    value: '',\r\n    label: 'cc',\r\n    icon: '',\r\n    disabled: false,\r\n    showClear: false,\r\n    field: '',\r\n    minLength: 3,\r\n    //@ts-ignore\r\n    onChange: (event: any) => { console.log(event) }\r\n  }\r\n}"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    valueAutocomplete: [{\r\n      code: 1,\r\n      name: 'Prova1',\r\n      content: 'Via Napoli'\r\n  }],\r\n    placeholder: '',\r\n    value: '',\r\n    label: 'cc',\r\n    icon: '',\r\n    disabled: false,\r\n    showClear: false,\r\n    minLength: 3,\r\n    //@ts-ignore\r\n    onChange: (event: any) => { console.log(event) }\r\n  }\r\n}"
             },
             {
                 "name": "Base",
@@ -19963,7 +19982,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    menuBadge: '0'\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    menuBadge: '0'\r\n  },\r\n}"
             },
             {
                 "name": "Base",
@@ -19973,7 +19992,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    value: null,\r\n    label: '',\r\n    disabled: false,\r\n    inlineCal: false,\r\n    showIcon: true,\r\n    dropdownMode: false,\r\n    showButtonBar: false,\r\n    selectionType: 'single',\r\n    placeholder: 'Data',\r\n    minDate: null,\r\n    maxDate: null,\r\n    defaultDateFormat: 'dd-mm-yy',\r\n    highlightedDays: [],\r\n    firstDayOfWeek: null,\r\n    disabledDays: [],\r\n    timeOnly: false,\r\n    dataType: 'date',\r\n    //@ts-ignore\r\n    onSelect: (event: any) => { console.log(event) }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    value: null,\r\n    label: '',\r\n    disabled: false,\r\n    inlineCal: false,\r\n    showIcon: true,\r\n    dropdownMode: false,\r\n    showButtonBar: false,\r\n    selectionType: 'single',\r\n    placeholder: 'Data',\r\n    minDate: null,\r\n    maxDate: null,\r\n    defaultDateFormat: 'dd-mm-yy',\r\n    highlightedDays: [],\r\n    firstDayOfWeek: null,\r\n    disabledDays: [],\r\n    timeOnly: false,\r\n    dataType: 'date',\r\n    //@ts-ignore\r\n    onSelect: (event: any) => { console.log(event) }\r\n  }\r\n}"
             },
             {
                 "name": "Base",
@@ -19983,7 +20002,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    cHeader: 'Prova',\r\n    cSubHeader: 'Prova sottotitolo',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: ` \r\n  <lib-card [cHeader]=\"\" [cSubHeader]=\"\" [cStyle]=\"style\" [cStyleClass]=\"styleClass\">     \r\n      <div cTitleTemplate>${args.cHeader}</div>\r\n      <div cSubtitleTemplate>${args.cSubHeader}</div>\r\n      <div cContentTemplate>Questo è il contenuto di una card</div>\r\n      <div cFooterTemplate>Questo è il footer di una card</div>\r\n  </lib-card>\r\n `})\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    cHeader: 'Prova',\r\n    cSubHeader: 'Prova sottotitolo',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: ` \r\n  <lib-card [cHeader]=\"\" [cSubHeader]=\"\" [cStyle]=\"style\" [cStyleClass]=\"styleClass\">     \r\n      <div cTitleTemplate>${args.cHeader}</div>\r\n      <div cSubtitleTemplate>${args.cSubHeader}</div>\r\n      <div cContentTemplate>Questo è il contenuto di una card</div>\r\n      <div cFooterTemplate>Questo è il footer di una card</div>\r\n  </lib-card>\r\n `})\r\n}"
             },
             {
                 "name": "Base",
@@ -19993,7 +20012,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n\r\n  },\r\n}"
             },
             {
                 "name": "Base",
@@ -20003,7 +20022,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    \r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    \r\n  },\r\n}"
             },
             {
                 "name": "Base",
@@ -20013,7 +20032,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n  },\r\n}"
             },
             {
                 "name": "Base",
@@ -20023,7 +20042,57 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n  },\r\n}"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    title: \"Modale\",\r\n    subtitle: \"Sottotitolo \",\r\n    visible: true\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    \r\n<lib-dialog [closable]=\"${args.closable}\" [title]=\"'${args.title}'\" [subtitle]=\"'${args.subtitle}'\" [visible]=\"${args.visible}\"\r\n  >\r\n  <ng-container body>\r\n    Testo di prova\r\n  </ng-container>\r\n  <ng-container footer>\r\n    <lib-cta-bar>\r\n      <ng-container cta>\r\n        <lib-button [size]=\"'small'\" [label]=\"'Conferma'\"></lib-button>\r\n      </ng-container>\r\n    </lib-cta-bar>\r\n  </ng-container>\r\n</lib-dialog>\r\n `})\r\n}"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    valueDropdown: [{code: 1, name: 'prova'}, {code: 2, name: 'prova1'}, {code: 3, name: 'prova2'}, {code: 4, name:'prova3'}],\r\n    codeString: 'code',\r\n    clear: true, \r\n    disabled: false,\r\n    filter: true, \r\n    filterPlaceholder: 'Cerca',\r\n    label: 'Dropdown',\r\n    nameString: 'name',\r\n    placeholder: 'Seleziona valore',\r\n\r\n  }\r\n}"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  /* args: {\r\n    control: new FormControl(['', Error]).setErrors(MaxLengthValidator).\r\n\r\n  } */\r\n}"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    icon: \"pi pi-search\",\r\n    size: \"small\",\r\n    type: \"info\"\r\n  }\r\n}"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    progress: 25,\r\n    showValue: true\r\n  }\r\n}"
             },
             {
                 "name": "exportComponent",
@@ -20533,7 +20602,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    indexChange: {\r\n      control: null,\r\n    },\r\n    changeIndex: {\r\n      control: null\r\n    }\r\n  },\r\n}"
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    indexChange: {\r\n      type: null\r\n    },\r\n    changeIndex: {type: null}\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -20554,6 +20623,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<AutocompleteComponent>",
                 "defaultValue": "{\r\n  title: 'Components/Atomi/Autocomplete',\r\n  // The component related to the Stories\r\n  component: AutocompleteComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAutocompleteModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AutocompleteCardComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/AutocompleteCard',\r\n  // The component related to the Stories\r\n  component: AutocompleteCardComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAutocompleteCardModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    valueAutocomplete: {\r\n    }\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -20634,6 +20713,96 @@
                 "deprecationMessage": "",
                 "type": "Meta<CircleStatusComponent>",
                 "defaultValue": "{\r\n  title: 'Components/Atomi/Circle status',\r\n    // The component related to the Stories\r\n    component: CircleStatusComponent,\r\n    decorators: [\r\n        // The necessary modules for the component to work on Storybook\r\n        moduleMetadata({\r\n             imports: [ CommonModule, LibCircleStatusModule],\r\n        }),\r\n    ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DialogComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Dialog',\r\n  // The component related to the Stories\r\n  component: DialogComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibDialogModule, DialogModule, LibButtonModule, CtaBarModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DropdownComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Dropdown',\r\n  // The component related to the Stories\r\n  component: DropdownComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibDropdownModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ErrorInlineComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Error - Form',\r\n  // The component related to the Stories\r\n  component: ErrorInlineComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibErrorInlineModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<IconCircleComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/IconCircle',\r\n  // The component related to the Stories\r\n  component: IconCircleComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibIconCircleModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Input',\r\n  // The component related to the Stories\r\n  component: InputComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibInputModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ListboxComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/ListBox',\r\n  // The component related to the Stories\r\n  component: ListboxComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibListboxModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LoaderComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Loader',\r\n  // The component related to the Stories\r\n  component: LoaderComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibLoaderModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ProgressBarComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Atomi/ProgressBar',\r\n  // The component related to the Stories\r\n  component: ProgressBarComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibProgressBarModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+            },
+            {
+                "name": "Number",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Number',\r\n  args: {\r\n    label: 'Number',\r\n    placeholder: 'Inserisci numero',\r\n    type: 'number',\r\n  }\r\n}"
             },
             {
                 "name": "PATH_PARAM",
@@ -21094,6 +21263,36 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\r\n  LibTagModule,\r\n  LibCardModule,\r\n  LibBreadcrumbModule,\r\n  LibButtonModule,\r\n  LibDropdownModule,\r\n  LibCalendarModule,\r\n  LibAutocompleteModule,\r\n  LibCheckboxModule,\r\n  LibRadioButtonModule,\r\n  LibChipModule,\r\n  LibTextareaModule,\r\n  InputFormModule,\r\n  LibInputModule,\r\n  LibBadgeModule,\r\n  LibDialogModule,\r\n  LibIconCircleModule,\r\n  LibTabsModule,\r\n  LibTableModule,\r\n  CtaBarModule,\r\n  HeaderItemsModule,\r\n  LibMessagesModule,\r\n  LibRadioTileModule,\r\n  LibFiltersModule,\r\n  HeaderMenuModule,\r\n  SidebarModule,\r\n  FileModule,\r\n  FileStatusModule,\r\n  LibTreeSelectModule,\r\n  LibProgressBarModule,\r\n  LibUploadFileModule,\r\n  LibChooseFileModule,\r\n  SwitchModule,\r\n  LibTreemenuModule,\r\n  PipesModule,\r\n  LibLoaderModule,\r\n  HeaderItemsModule,\r\n  LibAddressModule,\r\n  LibTimelineModule,\r\n  LibPickListModule,\r\n  LibListboxModule,\r\n  LibCircleStatusModule,\r\n  LibAccordionModule,\r\n  LibInplaceModule,\r\n  LibStepperModule,\r\n  LibPaginatorModule\r\n]"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Text',\r\n  args: {\r\n    label: 'Text',\r\n    placeholder: 'Inserisci testo',\r\n    type: 'text',\r\n  }\r\n}"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    label: 'Listbox',\r\n    nameString: 'description',\r\n    items: [{code: 1, description: 'prova'}, {code: 2, description: 'prova1'}, {code: 3, description: 'prova2'}, ]\r\n  }\r\n}"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Default',\r\n  play: () => {\r\n    const service = new LoaderService();\r\n    service.showHide(true);\r\n  },\r\n}"
             }
         ],
         "functions": [],
@@ -21201,6 +21400,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<AutocompleteCardComponent>",
+                "file": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<BadgeComponent>",
                 "file": "projects/design-system/src/lib/atoms/badge/components/badge.stories.ts",
                 "deprecated": false,
@@ -21284,6 +21494,94 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DialogComponent>",
+                "file": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DropdownComponent>",
+                "file": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ErrorInlineComponent>",
+                "file": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<IconCircleComponent>",
+                "file": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ListboxComponent>",
+                "file": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LoaderComponent>",
+                "file": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ProgressBarComponent>",
+                "file": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
@@ -21351,7 +21649,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    multiple: false,\r\n    index: 0,\r\n    sections: [{header: 'prova1'}, {header: 'prova2'}],\r\n    //@ts-ignore\r\n    //activeIndexChange: (event: any) => { this.index = event.args }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    multiple: false,\r\n    index: 0,\r\n    sections: [{header: 'prova1'}, {header: 'prova2'}],\r\n    //@ts-ignore\r\n    //activeIndexChange: (event: any) => { this.index = event.args }\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21361,7 +21659,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    indexChange: {\r\n      control: null,\r\n    },\r\n    changeIndex: {\r\n      control: null\r\n    }\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    indexChange: {\r\n      type: null\r\n    },\r\n    changeIndex: {type: null}\r\n  },\r\n}"
                 }
             ],
             "projects/design-system/src/lib/atoms/address/components/address.stories.ts": [
@@ -21373,7 +21671,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    address: {code: 0, content: 'Via Roma, 22 - 71122 Foggia (FG)', name: 'Casa mia'},\r\n    //modify: true,\r\n    //@ts-ignore\r\n    onClick: () => { console.log('Modify') }\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    address: {code: 0, content: 'Via Roma, 22 - 71122 Foggia (FG)', name: 'Casa mia'},\r\n    //modify: true,\r\n    //@ts-ignore\r\n    onClick: () => { console.log('Modify') }\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21395,7 +21693,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    valueAutocomplete: [''],\r\n    placeholder: '',\r\n    value: '',\r\n    label: 'cc',\r\n    icon: '',\r\n    disabled: false,\r\n    showClear: false,\r\n    field: '',\r\n    minLength: 3,\r\n    //@ts-ignore\r\n    onChange: (event: any) => { console.log(event) }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    valueAutocomplete: [''],\r\n    placeholder: '',\r\n    value: '',\r\n    label: 'cc',\r\n    icon: '',\r\n    disabled: false,\r\n    showClear: false,\r\n    field: '',\r\n    minLength: 3,\r\n    //@ts-ignore\r\n    onChange: (event: any) => { console.log(event) }\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21408,6 +21706,28 @@
                     "defaultValue": "{\r\n  title: 'Components/Atomi/Autocomplete',\r\n  // The component related to the Stories\r\n  component: AutocompleteComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAutocompleteModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
+            "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    valueAutocomplete: [{\r\n      code: 1,\r\n      name: 'Prova1',\r\n      content: 'Via Napoli'\r\n  }],\r\n    placeholder: '',\r\n    value: '',\r\n    label: 'cc',\r\n    icon: '',\r\n    disabled: false,\r\n    showClear: false,\r\n    minLength: 3,\r\n    //@ts-ignore\r\n    onChange: (event: any) => { console.log(event) }\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AutocompleteCardComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/AutocompleteCard',\r\n  // The component related to the Stories\r\n  component: AutocompleteCardComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAutocompleteCardModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    valueAutocomplete: {\r\n    }\r\n  }\r\n}"
+                }
+            ],
             "projects/design-system/src/lib/atoms/badge/components/badge.stories.ts": [
                 {
                     "name": "Base",
@@ -21417,7 +21737,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    menuBadge: '0'\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    menuBadge: '0'\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21439,7 +21759,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    value: null,\r\n    label: '',\r\n    disabled: false,\r\n    inlineCal: false,\r\n    showIcon: true,\r\n    dropdownMode: false,\r\n    showButtonBar: false,\r\n    selectionType: 'single',\r\n    placeholder: 'Data',\r\n    minDate: null,\r\n    maxDate: null,\r\n    defaultDateFormat: 'dd-mm-yy',\r\n    highlightedDays: [],\r\n    firstDayOfWeek: null,\r\n    disabledDays: [],\r\n    timeOnly: false,\r\n    dataType: 'date',\r\n    //@ts-ignore\r\n    onSelect: (event: any) => { console.log(event) }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    value: null,\r\n    label: '',\r\n    disabled: false,\r\n    inlineCal: false,\r\n    showIcon: true,\r\n    dropdownMode: false,\r\n    showButtonBar: false,\r\n    selectionType: 'single',\r\n    placeholder: 'Data',\r\n    minDate: null,\r\n    maxDate: null,\r\n    defaultDateFormat: 'dd-mm-yy',\r\n    highlightedDays: [],\r\n    firstDayOfWeek: null,\r\n    disabledDays: [],\r\n    timeOnly: false,\r\n    dataType: 'date',\r\n    //@ts-ignore\r\n    onSelect: (event: any) => { console.log(event) }\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21461,7 +21781,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    cHeader: 'Prova',\r\n    cSubHeader: 'Prova sottotitolo',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: ` \r\n  <lib-card [cHeader]=\"\" [cSubHeader]=\"\" [cStyle]=\"style\" [cStyleClass]=\"styleClass\">     \r\n      <div cTitleTemplate>${args.cHeader}</div>\r\n      <div cSubtitleTemplate>${args.cSubHeader}</div>\r\n      <div cContentTemplate>Questo è il contenuto di una card</div>\r\n      <div cFooterTemplate>Questo è il footer di una card</div>\r\n  </lib-card>\r\n `})\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    cHeader: 'Prova',\r\n    cSubHeader: 'Prova sottotitolo',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: ` \r\n  <lib-card [cHeader]=\"\" [cSubHeader]=\"\" [cStyle]=\"style\" [cStyleClass]=\"styleClass\">     \r\n      <div cTitleTemplate>${args.cHeader}</div>\r\n      <div cSubtitleTemplate>${args.cSubHeader}</div>\r\n      <div cContentTemplate>Questo è il contenuto di una card</div>\r\n      <div cFooterTemplate>Questo è il footer di una card</div>\r\n  </lib-card>\r\n `})\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21483,7 +21803,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21505,7 +21825,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    \r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    \r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21527,7 +21847,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21549,7 +21869,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -21560,6 +21880,116 @@
                     "deprecationMessage": "",
                     "type": "Meta<CircleStatusComponent>",
                     "defaultValue": "{\r\n  title: 'Components/Atomi/Circle status',\r\n    // The component related to the Stories\r\n    component: CircleStatusComponent,\r\n    decorators: [\r\n        // The necessary modules for the component to work on Storybook\r\n        moduleMetadata({\r\n             imports: [ CommonModule, LibCircleStatusModule],\r\n        }),\r\n    ]\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    title: \"Modale\",\r\n    subtitle: \"Sottotitolo \",\r\n    visible: true\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n    \r\n<lib-dialog [closable]=\"${args.closable}\" [title]=\"'${args.title}'\" [subtitle]=\"'${args.subtitle}'\" [visible]=\"${args.visible}\"\r\n  >\r\n  <ng-container body>\r\n    Testo di prova\r\n  </ng-container>\r\n  <ng-container footer>\r\n    <lib-cta-bar>\r\n      <ng-container cta>\r\n        <lib-button [size]=\"'small'\" [label]=\"'Conferma'\"></lib-button>\r\n      </ng-container>\r\n    </lib-cta-bar>\r\n  </ng-container>\r\n</lib-dialog>\r\n `})\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DialogComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Dialog',\r\n  // The component related to the Stories\r\n  component: DialogComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibDialogModule, DialogModule, LibButtonModule, CtaBarModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    valueDropdown: [{code: 1, name: 'prova'}, {code: 2, name: 'prova1'}, {code: 3, name: 'prova2'}, {code: 4, name:'prova3'}],\r\n    codeString: 'code',\r\n    clear: true, \r\n    disabled: false,\r\n    filter: true, \r\n    filterPlaceholder: 'Cerca',\r\n    label: 'Dropdown',\r\n    nameString: 'name',\r\n    placeholder: 'Seleziona valore',\r\n\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DropdownComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Dropdown',\r\n  // The component related to the Stories\r\n  component: DropdownComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibDropdownModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  /* args: {\r\n    control: new FormControl(['', Error]).setErrors(MaxLengthValidator).\r\n\r\n  } */\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ErrorInlineComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Error - Form',\r\n  // The component related to the Stories\r\n  component: ErrorInlineComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibErrorInlineModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    icon: \"pi pi-search\",\r\n    size: \"small\",\r\n    type: \"info\"\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconCircleComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/IconCircle',\r\n  // The component related to the Stories\r\n  component: IconCircleComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibIconCircleModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    progress: 25,\r\n    showValue: true\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ProgressBarComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/ProgressBar',\r\n  // The component related to the Stories\r\n  component: ProgressBarComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibProgressBarModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
                 }
             ],
             "projects/design-system/src/lib/atoms/accordion/lib-accordion.module.ts": [
@@ -22576,6 +23006,82 @@
                     "defaultValue": "{\r\n  name: 'Secondary',\r\n  args: {\r\n    type: 'secondary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
                 }
             ],
+            "projects/design-system/src/lib/atoms/input/components/input.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Input',\r\n  // The component related to the Stories\r\n  component: InputComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibInputModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+                },
+                {
+                    "name": "Number",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Number',\r\n  args: {\r\n    label: 'Number',\r\n    placeholder: 'Inserisci numero',\r\n    type: 'number',\r\n  }\r\n}"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Text',\r\n  args: {\r\n    label: 'Text',\r\n    placeholder: 'Inserisci testo',\r\n    type: 'text',\r\n  }\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ListboxComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/ListBox',\r\n  // The component related to the Stories\r\n  component: ListboxComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibListboxModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  args: {\r\n    label: 'Listbox',\r\n    nameString: 'description',\r\n    items: [{code: 1, description: 'prova'}, {code: 2, description: 'prova1'}, {code: 3, description: 'prova2'}, ]\r\n  }\r\n}"
+                }
+            ],
+            "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LoaderComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Loader',\r\n  // The component related to the Stories\r\n  component: LoaderComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [CommonModule, LibLoaderModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n  },\r\n}"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Default',\r\n  play: () => {\r\n    const service = new LoaderService();\r\n    service.showHide(true);\r\n  },\r\n}"
+                }
+            ],
             "projects/design-system/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -22715,6 +23221,19 @@
                     "kind": 183
                 }
             ],
+            "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AutocompleteCardComponent>",
+                    "file": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/design-system/src/lib/atoms/badge/components/badge.stories.ts": [
                 {
                     "name": "Story",
@@ -22813,6 +23332,110 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CircleStatusComponent>",
                     "file": "projects/design-system/src/lib/atoms/circle-status/components/circle-status.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DialogComponent>",
+                    "file": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DropdownComponent>",
+                    "file": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ErrorInlineComponent>",
+                    "file": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<IconCircleComponent>",
+                    "file": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/input/components/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ListboxComponent>",
+                    "file": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LoaderComponent>",
+                    "file": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ProgressBarComponent>",
+                    "file": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -22959,6 +23582,26 @@
                 "name": "AutocompleteCardComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/28",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/autocomplete-card/components/autocomplete-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -23555,6 +24198,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/dialog/components/dialog.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system/src/lib/atoms/dialog/lib-dialog.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -23581,6 +24244,26 @@
                 "name": "DropdownComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/21",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/dropdown/components/dropdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -23622,6 +24305,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/error-inline/components/error-inline.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system/src/lib/atoms/error-inline/lib-error-inline.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -23648,6 +24351,26 @@
                 "name": "IconCircleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/icon-circle/components/icon-circle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -23747,6 +24470,36 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Number",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/input/components/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system/src/lib/atoms/input/lib-input.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -23776,6 +24529,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/listbox/components/listbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/design-system/src/lib/atoms/listbox/lib-listbox.module.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -23802,6 +24575,26 @@
                 "name": "LoaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/loader/components/loader.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -23936,6 +24729,26 @@
                 "name": "ProgressBarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/progress-bar/components/progress-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -24223,7 +25036,7 @@
                 "linktype": "component",
                 "name": "TreeSelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/22",
+                "coverageCount": "0/23",
                 "status": "low"
             },
             {

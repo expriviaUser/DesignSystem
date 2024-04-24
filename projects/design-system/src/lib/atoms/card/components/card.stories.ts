@@ -19,6 +19,7 @@ export default meta;
 type Story = StoryObj<CardComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
     cHeader: 'Prova',
     cSubHeader: 'Prova sottotitolo',

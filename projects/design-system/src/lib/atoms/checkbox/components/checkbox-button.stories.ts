@@ -20,6 +20,7 @@ export default meta;
 type Story = StoryObj<CheckboxButtonComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
 
   },

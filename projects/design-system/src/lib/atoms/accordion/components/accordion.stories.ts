@@ -28,6 +28,7 @@ export default meta;
 type Story = StoryObj<AccordionComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
     multiple: false,
     index: 0,

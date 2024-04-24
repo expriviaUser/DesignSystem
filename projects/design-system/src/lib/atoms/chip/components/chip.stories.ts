@@ -20,6 +20,7 @@ export default meta;
 type Story = StoryObj<ChipComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
     
   },

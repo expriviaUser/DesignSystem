@@ -20,6 +20,7 @@ export default meta;
 type Story = StoryObj<BadgeComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
     menuBadge: '0'
   },

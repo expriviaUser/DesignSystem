@@ -20,6 +20,7 @@ export default meta;
 type Story = StoryObj<CircleStatusComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
   },
 };

@@ -1,37 +1,44 @@
 
 import { CommonModule } from '@angular/common';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { AutocompleteComponent } from './autocomplete.component';
-import { LibAutocompleteModule } from '../lib-autocomplete.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AutocompleteCardComponent } from './autocomplete-card.component';
+import { LibAutocompleteCardModule } from '../lib-autocomplete-card.module';
 
 
-const meta: Meta<AutocompleteComponent> = {
-  title: 'Components/Atomi/Autocomplete',
+const meta: Meta<AutocompleteCardComponent> = {
+  title: 'Components/Atomi/AutocompleteCard',
   // The component related to the Stories
-  component: AutocompleteComponent,
+  component: AutocompleteCardComponent,
   decorators: [
     // The necessary modules for the component to work on Storybook
     moduleMetadata({
-      imports: [CommonModule, LibAutocompleteModule, BrowserAnimationsModule],
+      imports: [CommonModule, LibAutocompleteCardModule, BrowserAnimationsModule],
     }),
   ],
+  argTypes: {
+    valueAutocomplete: {
+    }
+  }
 };
 export default meta;
 
-type Story = StoryObj<AutocompleteComponent>;
+type Story = StoryObj<AutocompleteCardComponent>;
 
 export const Base: Story = {
   name: 'Default',
   args: {
-    valueAutocomplete: [''],
+    valueAutocomplete: [{
+      code: 1,
+      name: 'Prova1',
+      content: 'Via Napoli'
+  }],
     placeholder: '',
     value: '',
     label: 'cc',
     icon: '',
     disabled: false,
     showClear: false,
-    field: '',
     minLength: 3,
     //@ts-ignore
     onChange: (event: any) => { console.log(event) }

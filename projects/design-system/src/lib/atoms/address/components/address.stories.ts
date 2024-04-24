@@ -21,6 +21,7 @@ export default meta;
 type Story = StoryObj<AddressComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
     address: {code: 0, content: 'Via Roma, 22 - 71122 Foggia (FG)', name: 'Casa mia'},
     //modify: true,

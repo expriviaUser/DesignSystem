@@ -22,6 +22,7 @@ export default meta;
 type Story = StoryObj<CalendarComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
     value: null,
     label: '',

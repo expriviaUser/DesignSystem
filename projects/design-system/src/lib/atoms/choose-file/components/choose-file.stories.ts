@@ -21,6 +21,7 @@ export default meta;
 type Story = StoryObj<ChooseFileComponent>;
 
 export const Base: Story = {
+  name: 'Default',
   args: {
   },
 };
