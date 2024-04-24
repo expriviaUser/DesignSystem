@@ -1,9 +1,9 @@
 
 import { CommonModule } from '@angular/common';
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { AccordionComponent } from './accordion.component';
-import { LibAccordionModule } from '../lib-accordion.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { LibAccordionModule } from '../lib-accordion.module';
+import { AccordionComponent } from './accordion.component';
 
 
 const meta: Meta<AccordionComponent> = {
@@ -15,7 +15,13 @@ const meta: Meta<AccordionComponent> = {
     moduleMetadata({
       imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],
     }),
-  ]
+  ],
+  argTypes: {
+    indexChange: {
+      type: null
+    },
+    changeIndex: {type: null}
+  },
 };
 export default meta;
 

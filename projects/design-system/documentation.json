@@ -20486,6 +20486,16 @@
                 "defaultValue": "[\r\n   UploadFileComponent\r\n]"
             },
             {
+                "name": "IconButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/design-system/src/lib/atoms/button/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Icon',\r\n  args: {\r\n    type: 'link',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: 'pi pi-search',\r\n    iconPosition: 'right',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+            },
+            {
                 "name": "isNotEmpty",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -20503,7 +20513,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    type: 'link',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'Link',\r\n  args: {\r\n    type: 'link',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
             },
             {
                 "name": "MESSAGES_GENERAL",
@@ -20523,7 +20533,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    indexChange: {\r\n      control: null,\r\n    },\r\n    changeIndex: {\r\n      control: null\r\n    }\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -20563,7 +20573,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\r\n  title: 'Components/Atomi/Button',\r\n  // The component related to the Stories\r\n  component: ButtonComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [ButtonComponent],\r\n      imports: [CommonModule, ButtonModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    type: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['', 'secondary', 'secondary-rounded', 'rounded', 'link', 'link-icon'],\r\n    },\r\n    size: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['', 'small', 'big'],\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  title: 'Components/Atomi/Button',\r\n  // The component related to the Stories\r\n  component: ButtonComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [ButtonComponent],\r\n      imports: [CommonModule, ButtonModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    type: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['primary', 'secondary', 'secondary-rounded', 'rounded', 'link', 'link-icon'],\r\n    },\r\n    size: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['small', 'big'],\r\n    },\r\n    iconPosition: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['','left', 'right'],\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -20653,7 +20663,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    type: 'primary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    type: 'primary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
             },
             {
                 "name": "primeComponents",
@@ -21073,7 +21083,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    type: 'secondary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'Secondary',\r\n  args: {\r\n    type: 'secondary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
             },
             {
                 "name": "sharedModules",
@@ -21351,7 +21361,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Accordion',\r\n  // The component related to the Stories\r\n  component: AccordionComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      imports: [CommonModule, LibAccordionModule, BrowserAnimationsModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    indexChange: {\r\n      control: null,\r\n    },\r\n    changeIndex: {\r\n      control: null\r\n    }\r\n  },\r\n}"
                 }
             ],
             "projects/design-system/src/lib/atoms/address/components/address.stories.ts": [
@@ -22516,6 +22526,16 @@
             ],
             "projects/design-system/src/lib/atoms/button/components/button.stories.ts": [
                 {
+                    "name": "IconButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/design-system/src/lib/atoms/button/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Icon',\r\n  args: {\r\n    type: 'link',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: 'pi pi-search',\r\n    iconPosition: 'right',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                },
+                {
                     "name": "LinkButton",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -22523,7 +22543,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    type: 'link',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'Link',\r\n  args: {\r\n    type: 'link',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -22533,7 +22553,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\r\n  title: 'Components/Atomi/Button',\r\n  // The component related to the Stories\r\n  component: ButtonComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [ButtonComponent],\r\n      imports: [CommonModule, ButtonModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    type: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['', 'secondary', 'secondary-rounded', 'rounded', 'link', 'link-icon'],\r\n    },\r\n    size: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['', 'small', 'big'],\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  title: 'Components/Atomi/Button',\r\n  // The component related to the Stories\r\n  component: ButtonComponent,\r\n  decorators: [\r\n    // The necessary modules for the component to work on Storybook\r\n    moduleMetadata({\r\n      declarations: [ButtonComponent],\r\n      imports: [CommonModule, ButtonModule],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    type: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['primary', 'secondary', 'secondary-rounded', 'rounded', 'link', 'link-icon'],\r\n    },\r\n    size: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['small', 'big'],\r\n    },\r\n    iconPosition: {\r\n      control: {\r\n        type: 'select',\r\n      },\r\n      options: ['','left', 'right'],\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "PrimaryButton",
@@ -22543,7 +22563,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    type: 'primary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    type: 'primary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
                 },
                 {
                     "name": "SecondaryButton",
@@ -22553,7 +22573,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    type: 'secondary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'Secondary',\r\n  args: {\r\n    type: 'secondary',\r\n    size: '',\r\n    label: 'Prova',\r\n    icon: '',\r\n    disabled: false,\r\n    //@ts-ignore\r\n    onClick: (event: boolean) => { console.log(event) }\r\n  }\r\n}"
                 }
             ],
             "projects/design-system/.storybook/preview.ts": [
@@ -23160,6 +23180,16 @@
                 "name": "ButtonComponent",
                 "coveragePercent": 7,
                 "coverageCount": "1/14",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/atoms/button/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

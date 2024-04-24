@@ -21,13 +21,19 @@ const meta: Meta<ButtonComponent> = {
       control: {
         type: 'select',
       },
-      options: ['', 'secondary', 'secondary-rounded', 'rounded', 'link', 'link-icon'],
+      options: ['primary', 'secondary', 'secondary-rounded', 'rounded', 'link', 'link-icon'],
     },
     size: {
       control: {
         type: 'select',
       },
-      options: ['', 'small', 'big'],
+      options: ['small', 'big'],
+    },
+    iconPosition: {
+      control: {
+        type: 'select',
+      },
+      options: ['','left', 'right'],
     },
   },
 };
@@ -36,6 +42,7 @@ export default meta;
 type Story = StoryObj<ButtonComponent>;
 
 export const PrimaryButton: Story = {
+  name: 'Primary',
   args: {
     type: 'primary',
     size: '',
@@ -47,6 +54,7 @@ export const PrimaryButton: Story = {
   }
 }
 export const SecondaryButton: Story = {
+  name: 'Secondary',
   args: {
     type: 'secondary',
     size: '',
@@ -58,11 +66,25 @@ export const SecondaryButton: Story = {
   }
 }
 export const LinkButton: Story = {
+  name: 'Link',
   args: {
     type: 'link',
     size: '',
     label: 'Prova',
     icon: '',
+    disabled: false,
+    //@ts-ignore
+    onClick: (event: boolean) => { console.log(event) }
+  }
+}
+export const IconButton: Story = {
+  name: 'Icon',
+  args: {
+    type: 'link',
+    size: '',
+    label: 'Prova',
+    icon: 'pi pi-search',
+    iconPosition: 'right',
     disabled: false,
     //@ts-ignore
     onClick: (event: boolean) => { console.log(event) }
