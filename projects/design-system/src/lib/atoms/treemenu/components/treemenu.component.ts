@@ -17,6 +17,7 @@ export class TreemenuComponent {
   @Input() lazy: boolean = false;
   @Input() draggableNodes: boolean = false;
   @Input() droppableNodes: boolean = false;
+  @Input() disabled: boolean = false;
   @Input() propagateSelectionDown: boolean = true;
   @Input() selectionMode: string = 'single';
   @Input() filterPlaceholder: string = 'Search';
@@ -53,6 +54,6 @@ export class TreemenuComponent {
   }
 
   nodeCollapse(event: any) {
-    event.node.children = [];
+    event.node.children = [{label: '', code: null}];
   }
 }

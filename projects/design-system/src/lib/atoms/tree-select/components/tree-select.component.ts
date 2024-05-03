@@ -16,6 +16,7 @@ export class TreeSelectComponent {
   @Input() appendTo = 'body';
   @Input() lazyFn: Function;
   @Input() propagateUp = false;
+  @Input() disabled = false;
   @Input() filterPlaceholder!: string;
   @Input() valueTemplate!: TemplateRef<any>;
   @Input() selectedNodes: TreeSelectModel[] = [];
@@ -49,7 +50,7 @@ export class TreeSelectComponent {
   }
 
   nodeCollapse(event: any) {
-    event.node.children = [];
+    event.node.children = [{label: '', code: null}];
   }
 
 }

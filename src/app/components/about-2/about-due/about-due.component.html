@@ -23,11 +23,11 @@
       </ng-template>
     </lib-accordion> -->
   
-    <lib-tree-select [enableFilter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="vaffanculo($event)" 
+    <lib-tree-select [enableFilter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="log($event)" [lazy]="true" [lazyFn]="lazyLoad" [draggable]="true"
         [nodes]="structuresList" [(selectedNodes)]="selectedStructures" [selectionType]="'checkbox'"
        >
     </lib-tree-select>
-    <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="vaffanculo($event)" 
+    <lib-treemenu [filter]="true" [filterPlaceholder]="'startSession.filters.search'" (emitUnselect)="log($event)"  [lazy]="true" [lazyFn]="lazyLoad" [draggableNodes]="true"
         [items]="structuresList" [(selected)]="selectedStructures" [selectionMode]="'checkbox'"
         [propagateSelectionUp]="false">
     </lib-treemenu>

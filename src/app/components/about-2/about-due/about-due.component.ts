@@ -25,7 +25,7 @@ export class AboutDueComponent {
   ]
 
   structuresList: Array<TreeSelectModel> = [
-    { data: 1, label: '1', children: [{data: 4, label: '6'}] },
+    { data: 1, label: '1', draggable: true, children: [{data: 4, label: '6'}] },
     { data: 2, label: '2', children: [] },
     { data: 3, label: '3', children: [] },
   ];
@@ -33,14 +33,14 @@ export class AboutDueComponent {
   lazyLoad(data: TreeNode) {
 
     data.children = [
-      { data: 4, label: '4', leaf: true }
+      { data: 4, label: '4', leaf: true, draggable: true }
     ]
 
   }
 
-  selectedStructures: Array<TreeSelectModel> = [];
+  selectedStructures: Array<any> = [];
 
-  vaffanculo(event: any) {
+  log(event: any) {
     console.log(event);
   }
 }
