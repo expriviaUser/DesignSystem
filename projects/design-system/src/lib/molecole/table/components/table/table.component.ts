@@ -97,6 +97,8 @@ export class TableComponent implements OnInit {
 
   @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output() selectedAll = new EventEmitter<boolean>();
+
   //    Output per segnalare l'evento di sorting
   @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
 
