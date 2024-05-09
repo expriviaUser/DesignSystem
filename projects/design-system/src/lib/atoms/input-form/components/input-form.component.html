@@ -29,7 +29,7 @@
     [filter]="dropdownFilter" [filterPlaceholder]="dropdownFilterPlaceholder"
     [label]="label ? label + (required ? ' *' : '') : ''" [appendTo]="appendTo" [clear]="clear"
     [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"
-    [disabled]="inputDisabled"></lib-dropdown>
+    [disabled]="inputDisabled" [virtualScroll]="virtualScroll" [virtualScrollItemSize]="virtualScrollItemSize"></lib-dropdown>
 
   <!-- multi-select  -->
   <lib-multi-select *ngSwitchCase="'multi-select'" [value]="control.value"

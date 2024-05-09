@@ -60,6 +60,8 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() dataType: string = 'date';
   @Input() radioColSize: string = '3';
   @Input() calendarView: CalendarTypeView = 'date';
+  @Input() virtualScroll: boolean = false;
+  @Input() virtualScrollItemSize!: number;
 
   //@Input() formControl: FormControl = new FormControl();
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
