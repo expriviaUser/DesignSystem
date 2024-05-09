@@ -19,6 +19,8 @@ export class ListboxComponent {
   @Input() nameString: string = 'name';
   @Input() disabled: boolean = false;
   @Input() filtered: boolean = false;
+  @Input() multiple: boolean = false;
+  @Input() metaKeySelection: boolean = false;
 
   @Output() valueChange: EventEmitter<any> = new EventEmitter<any>();
 

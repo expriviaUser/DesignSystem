@@ -1,6 +1,6 @@
 <div class="dropdown-wrapper field">
   <label *ngIf="label">{{label}}</label>
-  <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [appendTo]="appendTo"
+  <p-dropdown [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [appendTo]="appendTo" [autoDisplayFirst]="false"
     [disabled]="!valueDropdown || disabled" [showClear]="clear" [options]="valueDropdown" [filter]="filter"
     [filterPlaceholder]="filterPlaceholder" [virtualScroll]="virtualScroll"
     [virtualScrollItemSize]="virtualScrollItemSize" (onChange)="emitValue($event)"
