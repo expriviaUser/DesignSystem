@@ -26,9 +26,11 @@ export class PickListComponent {
   @Output() targetArrayChange = new EventEmitter<any>();
   @Output() targetSelection = new EventEmitter<any>();
   @Output() sourceSelection = new EventEmitter<any>();
+  @Output() moveToPosition = new EventEmitter<string>();
 
 
   moveAllTo(event: any, position: string) {
+    this.moveToPosition.emit(position);
     this.targetArrayChange.emit(this.targetArray);
     this.sourceArrayChange.emit(this.sourceArray);
   }
