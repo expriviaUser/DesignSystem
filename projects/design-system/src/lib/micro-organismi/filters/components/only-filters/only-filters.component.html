@@ -50,7 +50,7 @@
 
         <!-- CALENDAR -->
         <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true" [disabled]="disableAll"
-          [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
+          [placeholder]="dropdownOptions.placeholder" [selectionType]="dropdownOptions.calendarSelectionType || 'range'"
           (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
         <!-- CHILDREN -->
         <div *ngSwitchCase="'children'" class="align-children">
