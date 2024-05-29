@@ -1,7 +1,6 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DropdownType } from '../models/dropdown.model';
-import { Dropdown } from 'primeng/dropdown';
 
 @Component({
   selector: 'lib-dropdown',
