@@ -269,8 +269,17 @@ export class OnlyFiltersComponent implements OnInit {
   protected createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
     //verifico che non ci sia già la chip per il selettore specificato
     const EXIST = this.chipsList.result.some((d: any) => d.dropdownIndex == dropdownIndex);
-    if (event[0] && event[1]) {
-      const DATE_RANGE = `${dropdownOption.placeholder}: ${event[0].toLocaleString().split(',')[0]} - ${event[1].toLocaleString().split(',')[0]}`;
+    let DATE_RANGE, next = false;
+    if(event) {
+    if((dropdownOption.calendarSelectionType === 'range' || !dropdownOption.calendarSelectionType) && (event[0] && event[1])) {
+      DATE_RANGE = `${dropdownOption.placeholder}: ${event[0].toLocaleString().split(',')[0]} - ${event[1].toLocaleString().split(',')[0]}`;
+      next = true;
+    }
+    else if(dropdownOption.calendarSelectionType === 'single' && event) {
+      DATE_RANGE = `${dropdownOption.placeholder}: ${event.toLocaleString().split(',')[0]}`;
+      next= true;
+    }
+    if(next) {
       if (EXIST) {
         //elimina quello esistente
         const C_INDEX = this.chipsList.result.findIndex(c => c.dropdownIndex == dropdownIndex);
@@ -288,6 +297,7 @@ export class OnlyFiltersComponent implements OnInit {
       this.chipsListChange.emit(this.chipsList);
       calendar.pcalendar.value = null;
       calendar.toggleCalendar();
+    }
     }
   }
 
@@ -310,7 +320,7 @@ export class OnlyFiltersComponent implements OnInit {
             let indexToRemove = this.chipsList.result.findIndex(item => item.field == dropdownField);
             if (indexToRemove !== -1)
                 this.chipsList.result.splice(indexToRemove, 1);
- 
+
             //this.chipsList.data[dropdownIndex] = [];
         } */
         let indexToRemove = this.chipsList.result.findIndex(item => item.field == dropdownField);

@@ -9,6 +9,7 @@ export interface FiltersModel {
   field: string,
   type: "calendar" | "treeselect" | "children" | "dialog" | 'dropdown',
   selectionType?: "single" | "multiple" | "checkbox",
+  calendarSelectionType?: "single" | "range",
   filter?: boolean,
   addFilterButtonLabel?: string,
   children?: any,

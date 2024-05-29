@@ -103,7 +103,7 @@ export class TableComponent implements OnInit {
   @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
 
   pageIndex: number = 0;
-  firstRowInPage: number = 0;
+  @Input() firstRowInPage: number = 0;
   //environment = environment
 
   get selectableColumnsList(): Cols[] {
