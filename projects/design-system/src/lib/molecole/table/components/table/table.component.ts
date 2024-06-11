@@ -82,6 +82,8 @@ export class TableComponent implements OnInit {
 
   @Input() checked: any = [];
 
+  @Input() reorderableRows: boolean = false;
+
   @Input() selectableColumns: boolean = false;
   @Input() columnsSelectorPlaceholder: string = 'Seleziona colonne';
 
@@ -98,6 +100,8 @@ export class TableComponent implements OnInit {
   @Output() selectedValueChange: EventEmitter<any> = new EventEmitter<any>();
 
   @Output() selectedAll = new EventEmitter<boolean>();
+
+  @Output() onRowReorder = new EventEmitter<any>();
 
   //    Output per segnalare l'evento di sorting
   @Output() sortValues: EventEmitter<{ field: string, order: number }> = new EventEmitter<{ field: string, order: number }>();
@@ -165,5 +169,9 @@ export class TableComponent implements OnInit {
 
   isChecked(rowData: any): boolean {
     return (this.checked.filter((item: any) => item[this.dataKey] === rowData[this.dataKey]).length > 0);
+  }
+
+  reorderEmit(event) {
+    this.onRowReorder.emit(event);
   }
 }
