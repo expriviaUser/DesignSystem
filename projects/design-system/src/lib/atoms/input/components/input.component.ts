@@ -28,6 +28,8 @@ export class InputComponent {
   @Output() emitClear: EventEmitter<void> = new EventEmitter<void>();
 
   @Input() value: any;
+  @Input() min: number = -1;
+  @Input() max: number = -1;
   @Input() type: string = 'text';
   @Input() iconPos: string = 'left'
   @Input() icon: string = '';

@@ -1,12 +1,12 @@
 <div class="field">
     <label *ngIf="label">{{label}}</label>
     <input *ngIf="!(icon || clear)" [type]="type" [placeholder]="placeholder"
-        [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [(ngModel)]="value" [id]="label"
+        [ngClass]="{'ng-invalid ng-dirty': haveError}" (change)="emitValue($event)" [(ngModel)]="value" [id]="label" [min]="type === 'number' && min >= 0 ? min : null" [max]="type === 'number' && max >= 0 && max >= min ? max : null"
         (input)="getInput(value)" [disabled]="disabled" class="p-inputtext-sm" pInputText [readonly]="readonly" />
 
     <span *ngIf="icon || clear" [class]="iconPos" [ngClass]="{iconPos: true, 'showClear': clear, 'action-icon':actionIcon}">
         <i *ngIf="icon && iconPos.includes('left')" [class]="icon" (click)="iconClick()"></i>
-        <input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}"
+        <input [type]="type" [placeholder]="placeholder" [ngClass]="{'ng-invalid ng-dirty': haveError}" [min]="type === 'number' && min >= 0 ? min : null" [max]="type === 'number' && max >= 0 && max >= min ? max : null"
             (input)="getInput(value)" (change)="emitValue($event)" [(ngModel)]="value" [id]="label"
             [disabled]="disabled" class="p-inputtext-sm" pInputText (click)="inputClicked()" [readonly]="readonly" />
       <div class="icon-clear">
