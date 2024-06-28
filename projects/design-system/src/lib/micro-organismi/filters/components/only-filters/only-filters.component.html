@@ -6,58 +6,65 @@
       <ng-container [ngSwitch]="dropdownOptions.type">
         <ng-container *ngIf="chipsList?.data?.length">
           <!-- TREESELECT -->
-          <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]" [disabled]="disableAll"
-            [appendTo]="'body'" [options]="dropdownOptions.data || []" [metaKeySelection]="false"
-            [filter]="dropdownOptions.filter || false" [filterInputAutoFocus]="dropdownOptions.filter || false"
-            [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
-            [propagateSelectionDown]="dropdownOptions?.propagateSelection?.down || false"
-            [propagateSelectionUp]="dropdownOptions?.propagateSelection?.up || false"
-            (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-            (onNodeUnselect)="unselectOption($event, i)">
-            <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
-              <ng-template pTemplate="value">
-                {{dropdownOptions.placeholder}}
-              </ng-template>
-            </ng-container>
-            <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
-              <ng-template pTemplate="value">
-                {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
-              </ng-template>
-            </ng-container>
-          </p-treeSelect>
-          <div *ngSwitchCase="'dialog'" class="align-children">
-            <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'" [disabled]="disableAll"
-              [propagateSelectionDown]="dropdownOptions?.propagateSelection?.down || false"
-              [propagateSelectionUp]="dropdownOptions?.propagateSelection?.up || false" [(ngModel)]="chipsList.data[i]"
+          <div class="field-data field" *ngSwitchCase="'treeselect' || 'dialog'" >
+            <label *ngIf="dropdownOptions?.placeholder">{{dropdownOptions?.placeholder}}</label>
+            <p-treeSelect class="single-dropdown" *ngSwitchCase="'treeselect'" [(ngModel)]="chipsList.data[i]"
+              [disabled]="disableAll" [appendTo]="'body'" [options]="dropdownOptions.data || []"
               [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
               [filterInputAutoFocus]="dropdownOptions.filter || false"
               [selectionMode]="dropdownOptions.selectionType || 'multiple'" [placeholder]="dropdownOptions.placeholder"
+              [propagateSelectionDown]="dropdownOptions?.propagateSelection?.down || false"
+              [propagateSelectionUp]="dropdownOptions?.propagateSelection?.up || false"
               (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
               (onNodeUnselect)="unselectOption($event, i)">
-              <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
-                <ng-template pTemplate="value">
-                  {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
-                </ng-template>
-              </ng-container>
               <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
                 <ng-template pTemplate="value">
                   {{dropdownOptions.placeholder}}
                 </ng-template>
               </ng-container>
+              <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+                <ng-template pTemplate="value">
+                  {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+                </ng-template>
+              </ng-container>
             </p-treeSelect>
+            <div *ngSwitchCase="'dialog'" class="align-children">
+              <p-treeSelect class="children-dropdown" [options]="dropdownOptions.children || []" [appendTo]="'body'"
+                [disabled]="disableAll" [propagateSelectionDown]="dropdownOptions?.propagateSelection?.down || false"
+                [propagateSelectionUp]="dropdownOptions?.propagateSelection?.up || false"
+                [(ngModel)]="chipsList.data[i]" [metaKeySelection]="false" [filter]="dropdownOptions.filter || false"
+                [filterInputAutoFocus]="dropdownOptions.filter || false"
+                [selectionMode]="dropdownOptions.selectionType || 'multiple'"
+                [placeholder]="dropdownOptions.placeholder"
+                (onNodeSelect)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+                (onNodeUnselect)="unselectOption($event, i)">
+                <ng-container *ngIf="dropdownOptions.selectionType == 'single'">
+                  <ng-template pTemplate="value">
+                    {{getTreeSelectValue(i) !== '' ? getTreeSelectValue(i) : dropdownOptions.placeholder}}
+                  </ng-template>
+                </ng-container>
+                <ng-container *ngIf="dropdownOptions.selectionType !== 'single'">
+                  <ng-template pTemplate="value">
+                    {{dropdownOptions.placeholder}}
+                  </ng-template>
+                </ng-container>
+              </p-treeSelect>
+            </div>
           </div>
         </ng-container>
 
         <!-- CALENDAR -->
         <lib-calendar #calendar *ngSwitchCase="'calendar'" [dropdownMode]="true" [disabled]="disableAll"
-          [placeholder]="dropdownOptions.placeholder" [selectionType]="dropdownOptions.calendarSelectionType || 'range'"
+          [readonlyInput]="dropdownOptions.calendarSelectionType === 'range' ? false : true"
+          [label]="dropdownOptions.placeholder" [appendTo]="'body'" [placeholder]="dropdownOptions.placeholder"
+          [selectionType]="dropdownOptions.calendarSelectionType || 'range'"
           (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
         <!-- CHILDREN -->
         <div *ngSwitchCase="'children'" class="align-children">
           <div class="same-line">
             <!-- CHILDREN DROPDOWN -->
-            <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data" [placeholder]="dropdownOptions.placeholder" [disabled]="disableAll"
-              [appendTo]="'body'" [codeString]="'data'" [nameString]="'label'"
+            <lib-dropdown #dropdown [valueDropdown]="dropdownOptions.data" [placeholder]="dropdownOptions.placeholder"
+              [disabled]="disableAll" [appendTo]="'body'" [codeString]="'data'" [nameString]="'label'"
               [selectedItemTemplate]="selectedItemTemplate" (selectedValue)="setChildValue($event, i)">
               <ng-template #selectedItemTemplate pTemplate="selectedItem">
                 {{dropdownSelectedValues[i].label || dropdownOptions.placeholder}}

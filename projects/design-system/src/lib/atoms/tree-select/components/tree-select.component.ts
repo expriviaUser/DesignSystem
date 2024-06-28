@@ -9,7 +9,7 @@ import { TreeSelectModel } from "../models/tree-select.model";
 export class TreeSelectComponent {
 
   @Input() nodes: TreeSelectModel[] = [];
-
+  @Input() label: string = '';
   @Input() enableFilter = false;
   @Input() propagateDown = false;
   @Input() lazy = false;

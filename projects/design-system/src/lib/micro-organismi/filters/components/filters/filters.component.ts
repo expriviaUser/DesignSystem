@@ -19,6 +19,8 @@ import { CalendarComponent } from '../../../../../public-api';
 export class FiltersComponent implements OnInit {
   @Input() dropdownValues: FiltersModel[] = [];
   @Input() inputSelectedValues: TreeSelectModel[][] = [];
+  @Input() filtraPerLabel: string = 'Filtra per';
+  @Input() filtriAttiviLabel: string = 'Filtri attivi';
 
   selectedValues: TreeSelectModel[][] = [];
   @Output() filterValues: EventEmitter<FiltersResult> = new EventEmitter<FiltersResult>();

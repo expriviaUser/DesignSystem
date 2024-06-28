@@ -34,6 +34,7 @@ export class CalendarComponent {
   @Input() showIcon: boolean = false;
   @Input() dropdownMode: boolean = false;
   @Input() showButtonBar: boolean = false;
+  @Input() readonlyInput: boolean = false;
   @Input() selectionType: string = 'single';
   @Input() control: AbstractControl = new FormControl();
   @Input() placeholder: string = '';
@@ -120,5 +121,9 @@ export class CalendarComponent {
     } else {
       return false;
     }
+  }
+
+  console(value: string, type: string) {
+    console.log(value, type);
   }
 }

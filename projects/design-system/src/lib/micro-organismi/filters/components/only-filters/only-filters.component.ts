@@ -252,7 +252,7 @@ export class OnlyFiltersComponent implements OnInit {
         fieldSplitted[0] = fieldSplitted[0].toLocaleUpperCase();
       }
       this.chipsList.result.push({
-        chipsLabel: fieldSplitted.length ? fieldSplitted?.join('') + ': ' + event.node.label : event.node.label,
+        chipsLabel: this.dropdownValues.filters[dropdownIndex].placeholder + ': ' + (fieldSplitted.length ? fieldSplitted?.join('') + ': ' + event.node.label : event.node.label),
         dropdownIndex: dropdownIndex,
         field: dropdownField,
         data: event.node.data,
@@ -296,6 +296,7 @@ export class OnlyFiltersComponent implements OnInit {
       });
       this.chipsListChange.emit(this.chipsList);
       calendar.pcalendar.value = null;
+      calendar.value = null;
       calendar.toggleCalendar();
     }
     }

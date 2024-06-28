@@ -143,6 +143,15 @@ export class FiltersPageComponent {
         selectionType: 'multiple'
       }
     );
+    this.filtersDefault.filters.push(
+      {
+        placeholder: 'Data creazione',
+        field: 'date',
+        data: dataCatalogazione,
+        type: 'calendar',
+        calendarSelectionType: 'range'
+      }
+    );
 
     // Titolario
     this.titolario = [

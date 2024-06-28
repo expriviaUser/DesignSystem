@@ -1,40 +1,40 @@
 <div class="filters-wrapper">
-    <div class="dropdown-title">Filtra per</div>
-    <div class="dropdown-container">
+  <div class="dropdown-title">{{filtraPerLabel}}</div>
+  <div class="dropdown-container">
 
-        <div *ngFor="let dropdownOptions of dropdownValues; let i = index">
-            <lib-tree-select class="single-dropdown"
-                *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
-                [selectionType]="dropdownOptions.selectionType || 'multiple'" [nodes]="dropdownOptions.data"
-                (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-                [(selectedNodes)]="selectedValues[i]" (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
-                [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate">
+    <div *ngFor="let dropdownOptions of dropdownValues; let i = index">
+      <lib-tree-select class="single-dropdown" *ngIf="dropdownOptions.type == 'treeselect' && dropdownOptions.data"
+        [label]="dropdownOptions.placeholder" [selectionType]="dropdownOptions.selectionType || 'multiple'"
+        [nodes]="dropdownOptions.data"
+        (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+        [(selectedNodes)]="selectedValues[i]" (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
+        [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate">
 
-                <ng-template #valueTemplate value>
-                    {{selectedValues[i].length > 0 && dropdownOptions.selectionType === 'single' ?
-                    selectedValues[i][0].label : dropdownOptions.placeholder}}
-                </ng-template>
-            </lib-tree-select>
+        <ng-template #valueTemplate value>
+          {{selectedValues[i].length > 0 && dropdownOptions.selectionType === 'single' ?
+          selectedValues[i][0].label : dropdownOptions.placeholder}}
+        </ng-template>
+      </lib-tree-select>
 
-            <lib-dropdown [virtualScroll]="true" [valueDropdown]="dropdownOptions.data" [codeString]="'data'" #dropdown
-                *ngIf="dropdownOptions.type == 'dropdown' && dropdownOptions.data" [nameString]="'label'"
-                [placeholder]="dropdownOptions.placeholder" [virtualScrollItemSize]="38"
-                (selectedValue)="createDropChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-                [selectedItemTemplate]="selectedItemTemplate">
-                <ng-template #selectedItemTemplate pTemplate="selectedItem">
-                    {{dropdownOptions.placeholder}}
-                </ng-template>
-            </lib-dropdown>
-            <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"
-                [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
-                (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
-        </div>
-
+      <lib-dropdown [virtualScroll]="true" [valueDropdown]="dropdownOptions.data" [codeString]="'data'" #dropdown
+        [label]="dropdownOptions.placeholder" *ngIf="dropdownOptions.type == 'dropdown' && dropdownOptions.data"
+        [nameString]="'label'" [placeholder]="dropdownOptions.placeholder" [virtualScrollItemSize]="38"
+        (selectedValue)="createDropChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
+        [selectedItemTemplate]="selectedItemTemplate">
+        <ng-template #selectedItemTemplate pTemplate="selectedItem">
+          {{dropdownOptions.placeholder}}
+        </ng-template>
+      </lib-dropdown>
+      <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"
+        [label]="dropdownOptions.placeholder" [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
+        (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
     </div>
-    <div *ngIf="chipsList.length>0" class="chips-title">Filtri attivi</div>
-    <div class="chips-container">
-        <lib-chip class="single-chip" *ngFor="let singleChip of chipsList; let j = index"
-            (onRemove)="resetDropdown(j, singleChip)" [label]="singleChip.value" [removable]="true"
-            removeIcon="pi pi-times"></lib-chip>
-    </div>
+
+  </div>
+  <div *ngIf="chipsList.length>0" class="chips-title subtitle-second-regular">{{filtriAttiviLabel}}</div>
+  <div class="chips-container">
+    <lib-chip class="single-chip" *ngFor="let singleChip of chipsList; let j = index"
+      (onRemove)="resetDropdown(j, singleChip)" [label]="singleChip.value" [removable]="true"
+      removeIcon="pi pi-times"></lib-chip>
+  </div>
 </div>

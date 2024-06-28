@@ -29,6 +29,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() type: string = "text";
   @Input() error: boolean = false;
   @Input() calendarShowIcon: boolean = false;
+  @Input() calendarReadonlyInput: boolean = false;
   @Input() calendarDropdown: boolean = false;
   @Input() dropdownFilter = false;
   @Input() dropdownFilterPlaceholder = '';

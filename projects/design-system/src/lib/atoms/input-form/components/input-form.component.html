@@ -38,7 +38,7 @@
     [control]="control" [valueDropdown]="valueInput" [disabled]="inputDisabled"></lib-multi-select>
 
   <!-- Input calendar -->
-  <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control" [showIcon]="calendarShowIcon"
+  <lib-calendar *ngSwitchCase="'calendar'" [value]="control.value" [control]="control" [showIcon]="calendarShowIcon" [readonlyInput]="calendarReadonlyInput"
     [appendTo]="appendTo" [defaultDateFormat]="defaultDateFormat" [dropdownMode]="calendarDropdown"
     (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')" [firstDayOfWeek]="firstDayOfWeek"
     [label]="label ? label + (required ? ' *' : '') : ''" [inlineCal]="inlineCal" [selectionType]="selectionType"

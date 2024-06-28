@@ -19,16 +19,15 @@
 <div class="field-data field" *ngIf="inlineCal || showIcon || this.dropdownMode">
   <label *ngIf="label">{{label}}</label>
 
-  <p-calendar #calendar [showButtonBar]="showButtonBar" [disabled]="disabled" [(ngModel)]="value" [appendTo]="appendTo"
-    [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" (onSelect)="emitValue($event)"
+  <p-calendar #calendar [showButtonBar]="showButtonBar" [disabled]="disabled" [(ngModel)]="value" [appendTo]="appendTo" (onBlur)="emitValue($event)" 
+    [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" (onSelect)="emitValue($event)" 
     [dateFormat]="defaultDateFormat" [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}"
-    [selectionMode]="selectionType" [readonlyInput]="true" [placeholder]="placeholder" [minDate]="minDate"
+    [selectionMode]="selectionType" [readonlyInput]="readonlyInput" [placeholder]="readonlyInput ? 'dd-mm-yyyy' : placeholder" [minDate]="minDate"
     [firstDayOfWeek]="firstDayOfWeek" [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()"
               (onMonthChange)="monthChange.emit($event)" (onYearChange)="yearChange.emit($event)" [timeOnly]="timeOnly" [dataType]="dataType" [view]="view">
     <ng-template pTemplate="date" let-date>
       <span [ngClass]="{'holidays': isHoliday(date), 'selected-date': isHighlighted(date)}">{{date.day}}</span>
     </ng-template>
   </p-calendar>
-
-
+  <div class="small-semibold" *ngIf="selectionType === 'range'">Seleziona un range di date</div>
 </div>
