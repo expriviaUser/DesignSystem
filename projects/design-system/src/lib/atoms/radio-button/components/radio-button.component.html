@@ -1,7 +1,7 @@
 <div class="radiobutton-group field">
     <label *ngIf="label">{{label}}</label>
     <div *ngFor="let item of items; let i = index" class="col-md-{{colSize}}">
-        <p-radioButton [name]="name" [value]="item" [disabled]="disabled" [(ngModel)]="value"
+        <p-radioButton [name]="name" [value]="item.data" [disabled]="disabled" [(ngModel)]="value"
             [inputId]="item.data.toString()" (onClick)="emitValue($event)"></p-radioButton>
         <label class="radio-button" [for]="item.data">{{item.label}}</label>
     </div>

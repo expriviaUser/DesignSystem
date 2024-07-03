@@ -1,4 +1,4 @@
 export interface RadioModel {
     label: string,
-    data: string | number
+    data: string | number | boolean
 }

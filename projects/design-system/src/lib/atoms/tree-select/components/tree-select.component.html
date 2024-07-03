@@ -1,4 +1,4 @@
-<div class="field-data field" *ngSwitchCase="'treeselect' || 'dialog'">
+<div class="field-data field">
   <label *ngIf="label">{{label}}</label>
   <p-treeSelect [(ngModel)]="selectedNodes" (ngModelChange)="selectedValuesEmit($event)" [options]="nodes"
     [disabled]="disabled" [filter]="enableFilter" [filterPlaceholder]="filterPlaceholder"

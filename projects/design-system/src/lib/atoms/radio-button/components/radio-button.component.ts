@@ -29,7 +29,7 @@ export class RadioButtonComponent {
     @Output() selectedValue = new EventEmitter<RadioModel>();
 
 
-
+    _items: RadioModel[] = [];
     id: string = '';
     quantity: string = '';
     touched = false;
@@ -72,17 +72,16 @@ export class RadioButtonComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any) {
-        this.value = event.value;
-        this.onChange(event.value);
+        this.value = this.items.find(el => el.data === event.value);
+        this.onChange(this.value);
         this.selectedValue.emit(this.value);
     }
 
     // upon UI element value change, this method gets triggered
     emitValueNg(event: any) {
-        this.value = event.value;
-        this.onChange(event.value);
-        this.selectedValue.emit(this.value);
-
+      this.value = this.items.find(el => el.data === event.value);
+      this.onChange(this.value);
+      this.selectedValue.emit(this.value);
     }
 
 }
