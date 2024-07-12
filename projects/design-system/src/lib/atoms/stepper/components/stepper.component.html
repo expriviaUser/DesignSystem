@@ -9,7 +9,7 @@
     </ng-container>
     <ng-container cta>
       <lib-button [size]="'small'" [disabled]="disableNext" *ngIf="activeIndex < (items.length-1)" [label]="nextLabel" (onClick)="changeStep('next')"></lib-button>
-      <lib-button [size]="'small'" [disabled]="disableSave" *ngIf="activeIndex === (items.length-1)" [label]="saveLabel" (onClick)="changeStep('next')"></lib-button>
+      <lib-button [size]="'small'" [disabled]="disableSave" *ngIf="activeIndex === (items.length-1) && showSave" [label]="saveLabel" (onClick)="changeStep('next')"></lib-button>
     </ng-container>
   </lib-cta-bar>
 </div>

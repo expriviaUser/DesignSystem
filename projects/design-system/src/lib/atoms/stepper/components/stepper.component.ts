@@ -14,12 +14,14 @@ export class StepperComponent implements OnChanges {
   @Input() nextLabel: string = 'Avanti';
   @Input() saveLabel: string = 'Salva';
   @Input() disablePrevious: boolean = false;
+  @Input() showSave: boolean = true;
   @Input() disableNext: boolean = false;
   @Input() disableSave: boolean = false;
   @Input() showButtons: boolean = true;
 
 
   @Output() activeIndexChange = new EventEmitter<number>();
+  @Output() saveStep = new EventEmitter<void>();
 
   protected index: number = 0;
 
@@ -57,6 +59,10 @@ export class StepperComponent implements OnChanges {
       this.index = index - 1;
       this.items[this.index].styleClass = '';
     }
+  }
+
+  protected saveStepper() {
+    this.saveStep.emit();
   }
 
 
