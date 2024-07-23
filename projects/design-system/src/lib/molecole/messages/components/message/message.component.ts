@@ -11,6 +11,7 @@ export class MessageComponent {
 
     // msgs1!: Message[];
     @Input() key: string = '';
+    @Input() enableService: boolean = false;
     @Input() messages: Message[] = [];
 
 }
