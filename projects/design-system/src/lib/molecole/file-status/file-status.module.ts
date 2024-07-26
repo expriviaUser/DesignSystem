@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FileStatusComponent } from './components/file-status.component';
 import { FileModule } from '../file/file.module';
 import { LibTagModule } from '../../atoms/tag/lib-tag.module';
+import {LibButtonModule} from "../../atoms/button/lib-button.module";
 
 
 const exportComponent = [
@@ -16,7 +17,8 @@ const exportComponent = [
     imports: [
         CommonModule,
         FileModule,
-        LibTagModule
+        LibTagModule,
+      LibButtonModule
     ],
     exports: [
         ...exportComponent,

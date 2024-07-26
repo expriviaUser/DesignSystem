@@ -1,5 +1,7 @@
 import { File } from "../../file/models/file.model";
 
 export interface FileStatus extends File {
-    status: string
+    status: string,
+    downloadDisabled?: boolean,
+    showDownload?: boolean
 }

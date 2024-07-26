@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { FileStatus } from '../models/fileStatus.model';
 
 @Component({
@@ -8,4 +8,11 @@ import { FileStatus } from '../models/fileStatus.model';
 })
 export class FileStatusComponent {
     @Input() fileList: FileStatus[] = [];
+
+    @Output() downloadClick: EventEmitter<void> = new EventEmitter<void>();
+
+  emitDownloadClick(): void {
+    this.downloadClick.emit();
+  }
+
 }
