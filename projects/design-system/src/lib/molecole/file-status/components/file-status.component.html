@@ -2,7 +2,12 @@
     <div *ngFor="let file of fileList; let i = index">
         <lib-file [checkable]="false" [file]="file">
             <ng-container file-actions>
-                <lib-tag [tagSeverity]="file.status == 'OK' ? 'success' : 'danger'" [tagLabel]="file.status"></lib-tag>
+
+              <lib-tag [tagSeverity]="file.status == 'OK' ? 'success' : 'danger'" [tagLabel]="file.status"></lib-tag>
+
+              <lib-button *ngIf="file.showDownload" class="margin-left-button-file" [icon]="'pi pi-download'" [type]="'secondary-raised'" [size]="'small'"
+                          [disabled]="file.downloadDisabled" (click)="emitDownloadClick()"></lib-button>
+
             </ng-container>
         </lib-file>
     </div>
