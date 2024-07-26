@@ -35,8 +35,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/primeng.min.css",
               "./projects/design-system/assets/styles/index.scss",
               "src/styles.scss"
             ],

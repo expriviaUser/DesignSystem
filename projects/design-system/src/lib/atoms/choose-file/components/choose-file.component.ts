@@ -73,18 +73,18 @@ export class ChooseFileComponent implements OnChanges {
     event.currentFiles.forEach((file: File) => {
       this.arrayFiles.push(file);
     })
-    this.uploader.clear();
+    this.uploader?.clear();
     this.onLoadFile.emit(event.currentFiles);
   }
 
   clearFile() {
-    this.uploader.clear();
+    this.uploader?.clear();
     this.arrayFiles = [];
     this.onLoadFile.emit('');
   }
 
   uploadFiles() {
-    this.uploader.upload();
+    this.uploader?.upload();
   }
 
 

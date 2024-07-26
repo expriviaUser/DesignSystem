@@ -21,7 +21,7 @@
 
   <!-- Input number -->
   <lib-input *ngSwitchCase="'number'" [placeholder]="placeholder" [icon]="icon" [iconPos]="iconPos" [clear]="clear" [disabled]="inputDisabled"
-    [value]="value" (selectedValue)="emitValue($event, type)" [control]="control" [id]="formControlName"
+    [value]="value" (selectedValue)="emitValue($event, type)" (emitInput)="emitValue($event, type)" [control]="control" [id]="formControlName"
     [label]="label ? label + (required ? ' *' : '') : ''" type="number" />
 
   <!-- dropdown  -->
@@ -29,7 +29,22 @@
     [filter]="dropdownFilter" [filterPlaceholder]="dropdownFilterPlaceholder"
     [label]="label ? label + (required ? ' *' : '') : ''" [appendTo]="appendTo" [clear]="clear"
     [placeholder]="placeholder" [control]="control" [valueDropdown]="valueInput"
-    [disabled]="inputDisabled" [virtualScroll]="virtualScroll" [virtualScrollItemSize]="virtualScrollItemSize"></lib-dropdown>
+    [disabled]="inputDisabled" [virtualScroll]="virtualScroll" [virtualScrollItemSize]="virtualScrollItemSize" [itemTemplate]="item" [selectedItemTemplate]="itemSelected">
+    <ng-template #itemSelected >
+      <ng-container *ngIf="itemSelectedDropdownTemplate">
+        <ng-container [ngTemplateOutlet]="itemSelectedDropdownTemplate" ></ng-container>
+      </ng-container>
+      <ng-container *ngIf="!itemSelectedDropdownTemplate">{{control?.value?.name || control?.value}}</ng-container>
+      
+    </ng-template>
+    <ng-template let-data="data" #item >
+      <ng-container *ngIf="itemDropdownTemplate">
+        <ng-container [ngTemplateOutlet]="itemDropdownTemplate" [ngTemplateOutletContext]="{data: data}"></ng-container>
+      </ng-container>
+      <ng-container *ngIf="!itemDropdownTemplate">{{data?.name || data}}</ng-container>
+      
+    </ng-template>
+  </lib-dropdown>
 
   <!-- multi-select  -->
   <lib-multi-select *ngSwitchCase="'multi-select'" [value]="control.value"
@@ -76,14 +91,14 @@
     [disabled]="inputDisabled" [icon]="icon" [field]="fieldAutocompleteCard"></lib-autocomplete-card>
 
   <!-- Input Textarea  -->
-  <lib-textarea *ngSwitchCase="'textarea'" (change)="emitValue($event)" [control]="control" [value]="value" [disabled]="inputDisabled"
+  <lib-textarea *ngSwitchCase="'textarea'" (valueChange)="emitValue($event)" [control]="control" [value]="value" [disabled]="inputDisabled" (emitInput)="emitValue($event)"
     [label]="label ? label + (required ? ' *' : '') : ''" [placeholder]="placeholder"></lib-textarea>
 
-  <lib-input type="password" *ngSwitchCase="'password'" [placeholder]="placeholder" [clear]="clear" [disabled]="inputDisabled"
+  <lib-input type="password" *ngSwitchCase="'password'" (emitInput)="emitValue($event, type)" [placeholder]="placeholder" [clear]="clear" [disabled]="inputDisabled"
     (selectedValue)="emitValue($event, type)" [label]="label ? label + (required ? ' *' : '') : ''"
     [control]="control"></lib-input>
 
-  <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (selectedValue)="emitValue($event, type)"
+  <lib-input type="text" *ngSwitchDefault [placeholder]="placeholder" (emitInput)="emitValue($event, type)" (selectedValue)="emitValue($event, type)"
     [icon]="icon" [iconPos]="iconPos" [clear]="clear" [label]="label ? label + (required ? ' *' : '') : ''"
     [control]="control" [disabled]="inputDisabled" [value]="value" [readonly]="readonly" (iconClicked)="iconClick()"
     [actionIcon]="actionIcon"></lib-input>

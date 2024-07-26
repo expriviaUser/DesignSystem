@@ -30,6 +30,7 @@ export class DropdownComponent implements OnInit {
   @Input() disabled: boolean = false;
   @Input() value: any;
   @Input() selectedItemTemplate!: TemplateRef<any>;
+  @Input() itemTemplate!: TemplateRef<any>;
   values: DropdownType[] = [];
 
 

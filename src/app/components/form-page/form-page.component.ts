@@ -34,6 +34,11 @@ export class FormPageComponent {
       console.log(val);
     })
   }
+  dropdownValues = [{name:'Ciao', code: 3, content: '- PROVA'}, {name: 'Ciao2', code: 1, content: '- PROVA'}];
+
+  get dropdownValue() {
+    return this.dropdownValues.find(el => el.code === this.form.get('dropdown')?.value);
+  }
 
   submit() {
     const input = this.form.get('input');

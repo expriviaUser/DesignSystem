@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { AbstractControl, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -20,6 +20,9 @@ export class TextareaComponent {
     @Input() error: boolean = false;
     @Input() disabled:boolean = false;
     @Input() control: AbstractControl = new FormControl();
+
+    @Output() emitInput: EventEmitter<string> = new EventEmitter<string>();
+    @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
     // @Input('controlName') formControlName: string = '';
     
     
@@ -55,6 +58,10 @@ export class TextareaComponent {
         this.onChange = fn
     }
 
+    getInput(event: string) {
+      this.emitInput.emit(event);
+    }
+
     // set touching element emit function
     registerOnTouched(fn: any) {
         this.onTouch = fn
@@ -69,5 +76,6 @@ export class TextareaComponent {
     emitValue(event: any) {
         this.value = event;
         this.onChange(event);
+        this.valueChange.emit(this.value);
     }
 }

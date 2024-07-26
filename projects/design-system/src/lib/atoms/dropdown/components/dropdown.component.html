@@ -8,5 +8,12 @@
     <ng-template pTemplate="selectedItem" *ngIf="selectedItemTemplate">
       <ng-container [ngTemplateOutlet]="selectedItemTemplate ? selectedItemTemplate : null"></ng-container>
     </ng-template>
+    <ng-template pTemplate="item" *ngIf="itemTemplate" let-item>
+      <ng-template [ngTemplateOutlet]="itemTemplate ? itemTemplate : null"
+          [ngTemplateOutletContext]="{data: item}">
+
+      </ng-template>
+      <!-- {{ event.status }} -->
+  </ng-template>
   </p-dropdown>
 </div>

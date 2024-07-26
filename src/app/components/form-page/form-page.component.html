@@ -1,7 +1,13 @@
 <form [formGroup]="form">
   <div class="form-row">
     <lib-input-form [type]="'dropdown'" formControlName="dropdown" [label]="'Dropdown'"
-      [placeholder]="'Tipologia Documento'" [valueInput]="['Ciao', 'Ciao2', 'Ciao3', 'Ciao4']">
+      [placeholder]="'Tipologia Documento'" [valueInput]="[{name:'Ciao', code: 3, content: '- PROVA'}, {name: 'Ciao2', code: 1, content: '- PROVA'}]" [itemDropdownTemplate]="item" [itemSelectedDropdownTemplate]="itemSelected">
+      <ng-template #item let-data="data">
+        <div>{{data.name}} {{data.content}}</div> 
+      </ng-template>
+      <ng-template #itemSelected >
+        <div>{{dropdownValue.name}} {{dropdownValue.content}}</div> 
+      </ng-template>
     </lib-input-form>
     <lib-input-form [type]="'text'" [readonly]="true" formControlName="textbutton" [label]="'Text w/Button'"
       [icon]="'pi pi-check'" [iconPos]="'right'" (iconClicked)="iconClick()" [actionIcon]="true" [clear]="true">
