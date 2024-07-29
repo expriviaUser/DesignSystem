@@ -34,7 +34,12 @@ export class FileComponent {
     let lastIndex = this.file.title.lastIndexOf('.');
     if (lastIndex > 0) {
       const extension = this.iconArray.filter(item => item.extensions.includes(this.file.title.substring(lastIndex + 1, this.file.title.length).toLocaleLowerCase()));
-      return extension[0].path;
+      if(extension && extension.length>0) {
+        return extension[0].path;
+      }
+      else {
+        return ''
+      }
     }
     return '';
   }
