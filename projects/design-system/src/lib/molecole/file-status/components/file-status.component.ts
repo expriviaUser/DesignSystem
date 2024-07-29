@@ -9,10 +9,10 @@ import { FileStatus } from '../models/fileStatus.model';
 export class FileStatusComponent {
     @Input() fileList: FileStatus[] = [];
 
-    @Output() downloadClick: EventEmitter<void> = new EventEmitter<void>();
+    @Output() downloadClick: EventEmitter<FileStatus> = new EventEmitter<FileStatus>();
 
-  emitDownloadClick(): void {
-    this.downloadClick.emit();
+  emitDownloadClick(file: FileStatus): void {
+    this.downloadClick.emit(file);
   }
 
 }
