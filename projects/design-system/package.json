@@ -1,6 +1,6 @@
 {
   "name": "@expriviauser/design-system",
-  "version": "1.0.122",
+  "version": "1.0.124",
   "scripts": {
     "versioning": "npm --no-git-tag-version version patch --project=design-system && ng build design-system"
   },
@@ -8,8 +8,6 @@
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0",
     "bootstrap": "^5.2.3",
-    "material-design-icons": "^3.0.1",
-    "material-icons": "^1.13.1",
     "primeicons": "^6.0.1",
     "primeng": "^15.0.0",
     "@angular/cdk": "^15.2.9"
