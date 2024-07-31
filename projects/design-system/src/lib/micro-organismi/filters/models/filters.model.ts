@@ -41,7 +41,8 @@ export interface FiltersChip {
   field: string,
   data: string | number | Array<object>,
   type: "treeselect" | "calendar" | 'children' | 'dialog' | 'dropdown',
-  value: string
+  value: string,
+  removable?: boolean
 }
 
 export interface OnlyFiltersChip {

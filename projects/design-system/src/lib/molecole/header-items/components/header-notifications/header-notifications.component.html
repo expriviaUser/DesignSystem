@@ -1,4 +1,4 @@
-<lib-badge (click)="overlaynotifications.toggle($event);notificationsNumber = 0;emitOpenOverlay.emit();" [menuBadge]="notificationsNumber.toString()"></lib-badge>
+<lib-badge (badgeClick)="openOverlay($event)" [menuBadge]="notificationsNumber"></lib-badge>
 
 <p-overlayPanel styleClass="p-overlaypanel p-overlaypanel--notifications" #overlaynotifications>
 

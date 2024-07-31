@@ -1,4 +1,5 @@
-<ng-container>
-  <i *ngIf="icon" class="pi pi-bell" pBadge [value]="menuBadge" severity="{{severity}}"></i>
-  <p-badge *ngIf="!icon" [value]="menuBadge" severity="{{severity}}"></p-badge>
-</ng-container>
+<div (click)="badgeClick.emit($event)" >
+  <i *ngIf="icon && menuBadge > 0" class="pi pi-bell" pBadge [value]="menuBadge.toString()" severity="{{severity}}"></i>
+  <i *ngIf="icon && menuBadge === 0" class="pi pi-bell" ></i>
+  <p-badge *ngIf="!icon" [value]="menuBadge.toString()" severity="{{severity}}"></p-badge>
+</div>

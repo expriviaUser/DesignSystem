@@ -6,7 +6,7 @@
     <lib-search-bar></lib-search-bar>
   </div>
   <div class="right">
-    <lib-header-actions [selectedOption]="{name: 'it', code: 'it'}" [user]="menuItem" [enableSubtitle]="false" [enableIcon]="true" [enableDate]="true" [formattedDate]="formatDate"></lib-header-actions>
+    <lib-header-actions [selectedOption]="{name: 'it', code: 'it'}" [notificationsNumber]="5" [user]="menuItem" [enableSubtitle]="false" [enableIcon]="true" [enableDate]="true" [formattedDate]="formatDate"></lib-header-actions>
   </div>
 </div>
 
@@ -24,6 +24,8 @@
 </lib-header-menu>
 
 <lib-breadcrumb id="ciao" [separator]="'/'"></lib-breadcrumb>
+
+<lib-button [size]="'small'" [label]="'Aggiungi notifiche'" (onClick)="addNotify()"></lib-button>
 
 <router-outlet></router-outlet>
 <!-- <lib-button [label]="'Aggiungi notifica'" [size]="'small'" [type]="'primary'" (onClick)="addNotify()"></lib-button>

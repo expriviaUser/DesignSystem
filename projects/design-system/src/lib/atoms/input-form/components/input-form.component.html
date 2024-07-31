@@ -34,7 +34,7 @@
       <ng-container *ngIf="itemSelectedDropdownTemplate">
         <ng-container [ngTemplateOutlet]="itemSelectedDropdownTemplate" ></ng-container>
       </ng-container>
-      <ng-container *ngIf="!itemSelectedDropdownTemplate">{{control?.value?.name || control?.value}}</ng-container>
+      <ng-container *ngIf="!itemSelectedDropdownTemplate">{{dropdownValue}}</ng-container>
       
     </ng-template>
     <ng-template let-data="data" #item >

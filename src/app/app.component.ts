@@ -173,6 +173,10 @@ export class AppComponent {
 
   }
 
+  ngOnInit() {
+    this.addNotify();
+  }
+
   protected addNotify() {
     this.headerItemsService.notifications =
     {

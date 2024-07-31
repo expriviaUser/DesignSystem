@@ -32,6 +32,7 @@ export class HeaderActionsComponent implements OnInit {
   @Input() notificationsNumber: number = 0;
   @Input() isExternalNumber: boolean = false;
   @Input() paramToNumber: string = 'isRead';
+  @Input() paramValueToCheck: boolean = false;
   @Input() enableSubtitle: boolean = true;
   @Input() enableDate: boolean = false;
   @Input() enableIcon: boolean = false;

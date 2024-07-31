@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ChangeDetectorRef, ViewChild, ComponentRef } from '@angular/core';
 import { UserNotification } from '../../models/user-notification.model';
 import { HeaderItemsService } from '../../services/header-items.service';
 import moment from 'moment';
+import { OverlayPanel } from 'primeng/overlaypanel';
 
 @Component({
   selector: 'lib-header-notifications',
@@ -15,6 +16,7 @@ export class HeaderNotificationsComponent implements OnInit {
   @Input() externalFooter!: TemplateRef<any>;
   @Input() notificationsNumber: number = 0;
   @Input() isExternalNumber: boolean = false;
+  @Input() paramValueToCheck: boolean = false;
   @Input() paramToNumber: string = 'isRead';
   @Input() enableSubtitle: boolean = true;
   @Input() enableDate: boolean = false;
@@ -25,10 +27,12 @@ export class HeaderNotificationsComponent implements OnInit {
   @Output() emitNotificationClick = new EventEmitter<any>();
   @Output() emitOpenOverlay = new EventEmitter<void>();
 
+  @ViewChild('overlaynotifications') overlaynotifications!: OverlayPanel;
+
   notifications$ = this.headerItemsService.notifications$;
   selectedNotification!: UserNotification;
 
-  constructor(protected headerItemsService: HeaderItemsService) { }
+  constructor(protected headerItemsService: HeaderItemsService, private cd: ChangeDetectorRef) { }
 
   getFormattedDate(date: Date) {
     if (this.formattedDate) {
@@ -73,8 +77,18 @@ export class HeaderNotificationsComponent implements OnInit {
   ngOnInit() {
     this.headerItemsService.notifications$.subscribe(values => {
       if (!this.isExternalNumber) {
-        this.notificationsNumber = values.filter(el => el[this.paramToNumber] === false).length;
+        this.notificationsNumber = values.filter(el => el[this.paramToNumber] === this.paramValueToCheck).length;
+        this.cd.detectChanges();
       }
     })
+  }
+
+  openOverlay(event: Event) {
+    this.overlaynotifications.toggle(event, event.currentTarget);
+    this.emitOpenOverlay.emit();
+    /* setTimeout(() => { */
+      this.notificationsNumber = 0;
+      
+  /*   }, 100); */
   }
 }
