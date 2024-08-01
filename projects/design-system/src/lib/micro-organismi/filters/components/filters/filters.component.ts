@@ -56,7 +56,7 @@ export class FiltersComponent implements OnInit {
         if (indexToRemove !== -1)
           this.chipsList.splice(indexToRemove, 1);
       }
-      this.chipsList.push({ chipsLabel: event.node.label, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect", value: event.node.label });
+      this.chipsList.push({ chipsLabel: event.node.label, hideRemoveButton: this.dropdownValues[dropdownIndex].hideChipsRemoveButton, dropdownIndex: dropdownIndex, field: dropdownField, data: event.node.data, type: "treeselect", value: event.node.label });
       this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
       if (selectionType === 'single')
         this.chipsExport[dropdownField][0] = event.node.data;
@@ -79,7 +79,7 @@ export class FiltersComponent implements OnInit {
           this.chipsList.splice(indexToRemove, 1);
       }
       const label = this.dropdownValues[dropdownIndex].data?.filter(item => item.data === event)[0].label;
-      this.chipsList.push({ chipsLabel: label || '', dropdownIndex: dropdownIndex, field: dropdownField, data: event, type: "dropdown", value: label || '' });
+      this.chipsList.push({ chipsLabel: label || '', hideRemoveButton: this.dropdownValues[dropdownIndex].hideChipsRemoveButton, dropdownIndex: dropdownIndex, field: dropdownField, data: event, type: "dropdown", value: label || '' });
       this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
       if (selectionType === 'single')
         this.chipsExport[dropdownField][0] = event;
@@ -110,7 +110,7 @@ export class FiltersComponent implements OnInit {
         this.chipsList.splice(C_INDEX, 1);
       }
       //Crea il chip
-      this.chipsList.push({ chipsLabel: DATE_RANGE, dropdownIndex: dropdownIndex, field: dropdownOption.field, data: event, type: "calendar", value: DATE_RANGE });
+      this.chipsList.push({ chipsLabel: DATE_RANGE, hideRemoveButton: this.dropdownValues[dropdownIndex].hideChipsRemoveButton, dropdownIndex: dropdownIndex, field: dropdownOption.field, data: event, type: "calendar", value: DATE_RANGE });
       this.chipsList.sort((a, b) => a.dropdownIndex - b.dropdownIndex);
       //Emette il valore
       this.chipsExport[dropdownOption.field] = event;

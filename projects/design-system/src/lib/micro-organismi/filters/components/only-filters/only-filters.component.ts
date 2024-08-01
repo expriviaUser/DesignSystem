@@ -198,6 +198,7 @@ export class OnlyFiltersComponent implements OnInit {
 
     this.chipsList.result.push({
       dropdownIndex: dropdownIndex,
+      hideRemoveButton: this.dropdownValues.filters[dropdownIndex].hideChipsRemoveButton,
       data: this.dropdownSelectedValues[dropdownIndex].value,
       field: this.dropdownValues.filters[dropdownIndex].field,
       type: 'children',
@@ -254,6 +255,7 @@ export class OnlyFiltersComponent implements OnInit {
       this.chipsList.result.push({
         chipsLabel: this.dropdownValues.filters[dropdownIndex].placeholder + ': ' + (fieldSplitted.length ? fieldSplitted?.join('') + ': ' + event.node.label : event.node.label),
         dropdownIndex: dropdownIndex,
+        hideRemoveButton: this.dropdownValues.filters[dropdownIndex].hideChipsRemoveButton,
         field: dropdownField,
         data: event.node.data,
         type: "treeselect",
@@ -270,35 +272,36 @@ export class OnlyFiltersComponent implements OnInit {
     //verifico che non ci sia già la chip per il selettore specificato
     const EXIST = this.chipsList.result.some((d: any) => d.dropdownIndex == dropdownIndex);
     let DATE_RANGE, next = false;
-    if(event) {
-    if((dropdownOption.calendarSelectionType === 'range' || !dropdownOption.calendarSelectionType) && (event[0] && event[1])) {
-      DATE_RANGE = `${dropdownOption.placeholder}: ${event[0].toLocaleString().split(',')[0]} - ${event[1].toLocaleString().split(',')[0]}`;
-      next = true;
-    }
-    else if(dropdownOption.calendarSelectionType === 'single' && event) {
-      DATE_RANGE = `${dropdownOption.placeholder}: ${event.toLocaleString().split(',')[0]}`;
-      next= true;
-    }
-    if(next) {
-      if (EXIST) {
-        //elimina quello esistente
-        const C_INDEX = this.chipsList.result.findIndex(c => c.dropdownIndex == dropdownIndex);
-        this.chipsList.result.splice(C_INDEX, 1);
+    if (event) {
+      if ((dropdownOption.calendarSelectionType === 'range' || !dropdownOption.calendarSelectionType) && (event[0] && event[1])) {
+        DATE_RANGE = `${dropdownOption.placeholder}: ${event[0].toLocaleString().split(',')[0]} - ${event[1].toLocaleString().split(',')[0]}`;
+        next = true;
       }
-      //Crea il chip
-      this.chipsList.result.push({
-        chipsLabel: DATE_RANGE,
-        dropdownIndex: dropdownIndex,
-        field: dropdownOption.field,
-        data: event,
-        type: "calendar",
-        value: DATE_RANGE
-      });
-      this.chipsListChange.emit(this.chipsList);
-      calendar.pcalendar.value = null;
-      calendar.value = null;
-      calendar.toggleCalendar();
-    }
+      else if (dropdownOption.calendarSelectionType === 'single' && event) {
+        DATE_RANGE = `${dropdownOption.placeholder}: ${event.toLocaleString().split(',')[0]}`;
+        next = true;
+      }
+      if (next) {
+        if (EXIST) {
+          //elimina quello esistente
+          const C_INDEX = this.chipsList.result.findIndex(c => c.dropdownIndex == dropdownIndex);
+          this.chipsList.result.splice(C_INDEX, 1);
+        }
+        //Crea il chip
+        this.chipsList.result.push({
+          chipsLabel: DATE_RANGE,
+          hideRemoveButton: this.dropdownValues.filters[dropdownIndex].hideChipsRemoveButton,
+          dropdownIndex: dropdownIndex,
+          field: dropdownOption.field,
+          data: event,
+          type: "calendar",
+          value: DATE_RANGE
+        });
+        this.chipsListChange.emit(this.chipsList);
+        calendar.pcalendar.value = null;
+        calendar.value = null;
+        calendar.toggleCalendar();
+      }
     }
   }
 
@@ -328,6 +331,7 @@ export class OnlyFiltersComponent implements OnInit {
         this.chipsList.result.splice(indexToRemove, 1);
         this.chipsList.result.push({
           chipsLabel: event.label || '',
+          hideRemoveButton: this.dropdownValues.filters[dropdownIndex].hideChipsRemoveButton,
           dropdownIndex: dropdownIndex,
           field: dropdownField,
           data: event.data,
@@ -350,6 +354,7 @@ export class OnlyFiltersComponent implements OnInit {
     (this.chipsList.data[dropdownIndex]) = { label: value?.label || '', data: value?.data };
     this.chipsList.result.push({
       chipsLabel: value?.label || '',
+      hideRemoveButton: this.dropdownValues.filters[dropdownIndex].hideChipsRemoveButton,
       dropdownIndex: dropdownIndex,
       field: dropdownField,
       data: value?.data || '',

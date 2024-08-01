@@ -1,7 +1,4 @@
 import { TreeSelectModel } from "../../../atoms/tree-select/models/tree-select.model";
-import { TreeMenu } from "../../../atoms/treemenu/models/treemenu.model";
-
-
 
 export interface FiltersModel {
   data?: FiltersData[],
@@ -13,6 +10,7 @@ export interface FiltersModel {
   filter?: boolean,
   addFilterButtonLabel?: string,
   children?: any,
+  hideChipsRemoveButton?: boolean,
   propagateSelection?: { down: boolean, up: boolean }
 }
 
@@ -42,7 +40,7 @@ export interface FiltersChip {
   data: string | number | Array<object>,
   type: "treeselect" | "calendar" | 'children' | 'dialog' | 'dropdown',
   value: string,
-  removable?: boolean
+  hideRemoveButton?: boolean
 }
 
 export interface OnlyFiltersChip {
