@@ -1,8 +1,8 @@
 <!-- <p-messages [(value)]="msgs1" [enableService]="false"></p-messages> -->
-<ng-container *ngIf="messages.length > 0; else nomessages">
-  <p-messages [enableService]="enableService" [key]="key" [(value)]="messages"></p-messages>
+<ng-container *ngIf="!enableService; else noservice">
+  <p-messages [enableService]="false" [value]="messages" (valueChange)="emitMessagesChange($event)" [closable]="closable"></p-messages>
 
 </ng-container>
-<ng-template #nomessages>
+<ng-template #noservice>
   <p-messages [key]="key"></p-messages>
 </ng-template>
