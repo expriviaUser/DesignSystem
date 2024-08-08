@@ -16,7 +16,7 @@
   <div *ngIf="notificationsEnabled">
     <lib-header-notifications [pageUrl]="pageUrl" [readAllLabel]="readAllLabel" [externalItems]="externalItems" [paramValueToCheck]="paramValueToCheck"
       (emitNotificationClick)="emitNotificationClick.emit($event)" (emitPageClick)="emitPageClick.emit()"
-      (emitOpenOverlay)="emitOpenOverlay.emit()" [notificationsNumber]="notificationsNumber"
+      (emitOpenOverlay)="emitOpenOverlay.emit($event)" [notificationsNumber]="notificationsNumber"
       [isExternalNumber]="isExternalNumber" [paramToNumber]="paramToNumber" [enableSubtitle]="enableSubtitle" [formattedDate]="formattedDate"
       [enableDate]="enableDate" [enableIcon]="enableIcon" [externalFooter]="externalFooter"></lib-header-notifications>
   </div>

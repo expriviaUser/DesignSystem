@@ -25,7 +25,7 @@ export class HeaderNotificationsComponent implements OnInit {
 
   @Output() emitPageClick = new EventEmitter<void>();
   @Output() emitNotificationClick = new EventEmitter<any>();
-  @Output() emitOpenOverlay = new EventEmitter<void>();
+  @Output() emitOpenOverlay = new EventEmitter<{panel: OverlayPanel, ev: Event}>();
 
   @ViewChild('overlaynotifications') overlaynotifications!: OverlayPanel;
 
@@ -77,7 +77,7 @@ export class HeaderNotificationsComponent implements OnInit {
   ngOnInit() {
     this.headerItemsService.notifications$.subscribe(values => {
       if (!this.isExternalNumber) {
-        this.notificationsNumber = values.filter(el => el[this.paramToNumber] === this.paramValueToCheck).length;
+        this.notificationsNumber = [...values].filter(el => el[this.paramToNumber] === this.paramValueToCheck).length;
         this.cd.detectChanges();
       }
     })
@@ -85,7 +85,7 @@ export class HeaderNotificationsComponent implements OnInit {
 
   openOverlay(event: Event) {
     this.overlaynotifications.toggle(event, event.currentTarget);
-    this.emitOpenOverlay.emit();
+    this.emitOpenOverlay.emit({panel: this.overlaynotifications, ev: event});
     /* setTimeout(() => { */
       this.notificationsNumber = 0;
       

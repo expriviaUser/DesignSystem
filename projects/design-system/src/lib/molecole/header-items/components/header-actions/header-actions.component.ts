@@ -4,6 +4,7 @@ import { Language } from '../../models/language.model';
 import { MenuItem } from '../../models/menuItem.model';
 import { HeaderItemsService } from '../../services/header-items.service';
 import { DropdownType } from '../../../../atoms/dropdown/models/dropdown.model';
+import { OverlayPanel } from 'primeng/overlaypanel';
 
 @Component({
   selector: 'lib-header-actions',
@@ -45,7 +46,7 @@ export class HeaderActionsComponent implements OnInit {
   @Output() emitHelp: EventEmitter<void> = new EventEmitter<void>();
   @Output() emitPageClick = new EventEmitter<void>();
   @Output() emitNotificationClick = new EventEmitter<any>();
-  @Output() emitOpenOverlay = new EventEmitter<void>();
+  @Output() emitOpenOverlay = new EventEmitter<{panel: OverlayPanel, ev: Event}>();
   
 
   constructor(private headerItemsService: HeaderItemsService) { }

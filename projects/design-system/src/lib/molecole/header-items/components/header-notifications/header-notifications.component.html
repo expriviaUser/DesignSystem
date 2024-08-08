@@ -10,7 +10,7 @@
                 <ng-template let-notification pTemplate="item">
 
                     <ng-template [ngTemplateOutlet]="externalItems ? externalItems : internalItems"
-                        [ngTemplateOutletContext]="{notification: notification}">
+                        [ngTemplateOutletContext]="{notification: notification, el: overlaynotifications}">
 
                     </ng-template>
                 </ng-template>
