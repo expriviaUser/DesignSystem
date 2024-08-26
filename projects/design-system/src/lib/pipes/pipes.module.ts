@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BytePipe } from './byte.pipe';
 import { SafePipe } from './safe.pipe';
+import { NowDatePipe } from './now-date.pipe';
 
 
 
 @NgModule({
     declarations: [
         BytePipe,
-        SafePipe
+        SafePipe,
+        NowDatePipe
     ],
     imports: [
     ],
     exports: [
         BytePipe,
-        SafePipe
+        SafePipe,
+        NowDatePipe
     ],
     providers: []
 })
