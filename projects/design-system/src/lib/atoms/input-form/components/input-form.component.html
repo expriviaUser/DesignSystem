@@ -4,7 +4,7 @@
   <div class="field" *ngSwitchCase="'static'">
     <label *ngIf="label" [for]="formControlName" id="{{formControlName}}-label'">{{label}}
       {{required ? '*' : ''}}</label>
-    <div class="static">{{getValueControl()}}</div>
+    <div class="static body-regular">{{getValueControl()}}</div>
   </div>
 
   <!-- Input listBox -->
