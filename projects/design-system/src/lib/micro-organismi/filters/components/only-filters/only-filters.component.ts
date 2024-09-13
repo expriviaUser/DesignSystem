@@ -178,13 +178,13 @@ export class OnlyFiltersComponent implements OnInit {
   protected printData(dropdownIndex: number, dropdown: DropdownComponent, type: string, config: any) {
     const date = this.dropdownValues.filters[dropdownIndex].data?.filter(item => item.label === this.dropdownSelectedValues[dropdownIndex].label);
     let value = this.dropdownSelectedValues[dropdownIndex].childValue;
-    if (config['selection'] === 'double-range') {
+    if (config?.selection === 'double-range') {
       value = !this._dateTo && this._dateFrom ? 'Dal ' : '';
       value += this._dateFrom ? this.datePipe.transform(new Date(this._dateFrom), 'dd/MM/yyyy') : '';
       value += this._dateTo && this._dateFrom ? '-' : '';
       value += this._dateTo && !this._dateFrom ? 'Fino al ' : '';
       value += this._dateTo ? this.datePipe.transform(new Date(this._dateTo), 'dd/MM/yyyy') : '';
-    } else if (config['selection'] === 'range') {
+    } else if (config?.selection === 'range') {
       value = !this._numberTo && this._numberFrom ? 'Dal ' : '';
       value += this._numberFrom || '';
       value += this._numberTo && this._numberFrom ? '-' : '';
