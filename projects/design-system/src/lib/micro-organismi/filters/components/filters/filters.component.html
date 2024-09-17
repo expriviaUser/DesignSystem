@@ -16,7 +16,7 @@
         </ng-template>
       </lib-tree-select>
 
-      <lib-dropdown [virtualScroll]="true" [valueDropdown]="dropdownOptions.data" [codeString]="'data'" #dropdown
+      <lib-dropdown [virtualScroll]="true" [valueDropdown]="dropdownOptions.data" [filter]="dropdownOptions.filter" [codeString]="'data'" #dropdown
         [label]="dropdownOptions.placeholder" *ngIf="dropdownOptions.type == 'dropdown' && dropdownOptions.data"
         [nameString]="'label'" [placeholder]="dropdownOptions.placeholder" [virtualScrollItemSize]="38"
         (selectedValue)="createDropChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
