@@ -92,6 +92,9 @@ export class FiltersComponent implements OnInit {
         this.selectedValues[dropdownIndex].push({ data: event, label: label || '' });
       }
       this.dropdownValues[dropdownIndex].data?.forEach(item => {
+        if(selectionType ==='single' && item.data !== event){
+          item.disabled = false;
+        }
         if (item.data === event)
           item.disabled = true;
       });
