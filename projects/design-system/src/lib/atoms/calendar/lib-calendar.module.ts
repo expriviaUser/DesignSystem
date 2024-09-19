@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { CalendarComponent } from './components/calendar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const primeComponents = [
@@ -22,7 +23,8 @@ const exportComponent = [
         ...primeComponents,
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TranslateModule
     ],
     exports: [
         ...exportComponent,

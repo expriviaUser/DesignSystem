@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@expriviauser/design-system": "file:dist/design-system",
+    "@ngx-translate/core": "^14.0.0",
     "bootstrap": "^5.2.3",
     "engine.io": "^6.4.2",
     "primeng": "^15.2.1",

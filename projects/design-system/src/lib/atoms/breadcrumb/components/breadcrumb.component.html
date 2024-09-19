@@ -54,7 +54,7 @@
               }
             "></ng-container>
           <ng-container *ngIf="!itemTemplate">{{
-            breadcrumb.label
+           isLabelString(breadcrumb.label) | translate
             }}</ng-container>
         </a>
 
@@ -71,7 +71,7 @@
               }
             "></ng-container>
           <ng-container *ngIf="!itemTemplate">{{
-            breadcrumb.label
+            isLabelString(breadcrumb.label) | translate
             }}</ng-container>
         </label>
       </li>

@@ -29,5 +29,5 @@
       <span [ngClass]="{'holidays': isHoliday(date), 'selected-date': isHighlighted(date)}">{{date.day}}</span>
     </ng-template>
   </p-calendar>
-  <div class="small-semibold" *ngIf="selectionType === 'range'">Seleziona un range di date</div>
+  <div class="small-semibold" *ngIf="selectionType === 'range'">{{'Seleziona un range di date' | translate}}</div>
 </div>

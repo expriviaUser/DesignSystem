@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BreadcrumbComponent } from './components/breadcrumb.component';
 import { BreadcrumbItemDirective } from './directives/breadcrumb.directive';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 /* const primeComponents = [
     BreadcrumbModule
@@ -21,7 +22,8 @@ const exportComponent = [
     imports: [
         // ...primeComponents,
         CommonModule,
-        RouterModule
+        RouterModule,
+        TranslateModule
     ],
     exports: [
         ...exportComponent,
