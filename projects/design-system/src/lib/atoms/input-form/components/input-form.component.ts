@@ -98,7 +98,7 @@ export class InputFormComponent implements ControlValueAccessor {
 
   get dropdownValue() {
     const value = this.valueInput.find(el => el.code === this.control.value || el === this.control.value);
-    return value.name || value;
+    return value?.name || value;
   }
 
   get required() {
