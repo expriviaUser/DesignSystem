@@ -69,5 +69,44 @@
                 border: 1px solid $color--tag-success;
             }
         }
+
+      &gray {
+        .p-tag {
+          background: $color--tag-gray;
+          color: $color--tag-text;
+        }
+      }
+      &grayReverse {
+      .p-tag {
+        background: $color--tag-text;
+        color: $color--tag-gray;
+        border: 1px solid $color--tag-gray;
+        }
+    }
+      &purple {
+         .p-tag {
+           background: $color--tag-purple;
+           color: $color--tag-text;
+         }
+       }
+      &purpleReverse {
+        .p-tag {
+          background: $color--tag-text;
+          color: $color--tag-purple;
+          border: 1px solid $color--tag-purple;
+        }
+      } &yellowBlack {
+         .p-tag {
+           background: $color--primary-color;
+           color: $color--tag-black-text;
+         }
+       }
+      &yellowBlackReverse {
+        .p-tag {
+          background: $color--tag-text;
+          color: $color--tag-black-text;
+          border: 1px solid $color--primary-color;
+        }
+      }
     }
 }

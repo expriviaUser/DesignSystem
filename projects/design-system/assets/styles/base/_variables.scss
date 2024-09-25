@@ -239,9 +239,12 @@ $color--tag-info: var(--secondary-color-50);
 $color--tag-warning: var(--warning-color-50);
 $color--tag-danger: var(--error-color-50);
 $color--tag-text: var(--base-color-white);
+$color--tag-black-text: var(--base-color-black);
 $color--tag-disabled-background: var(--gray-color-10);
 $color--tag-light-information-background: var(--filter-background);
 $color--tag-light-danger-background: var(--error-color-100);
+$color--tag-gray: var(--gray-color-10);
+$color--tag-purple: #a855f7;
 
 //tabs
 $color--tabs-background: var(--base-color-white);
