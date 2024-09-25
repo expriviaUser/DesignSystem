@@ -23,6 +23,7 @@ import { FiltersPageComponent } from './components/filters-page/filters-page.com
 import { LibCircleStatusModule } from 'projects/design-system/src/lib/atoms/circle-status/lib-circle-status.module';
 import { DesignSystemModule } from 'projects/design-system/src/lib/design-system.module';
 import { LibStepperModule } from 'projects/design-system/src/lib/atoms/stepper/lib-stepper.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { LibStepperModule } from 'projects/design-system/src/lib/atoms/stepper/l
     DropdownModule,
     MessagesModule,
     LibCircleStatusModule,
-    LibStepperModule
+    LibStepperModule,
+    TranslateModule.forRoot()
   ],
   providers: [DatePipe, FiltersService],
   bootstrap: [AppComponent]

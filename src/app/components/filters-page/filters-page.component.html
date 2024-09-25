@@ -1,3 +1,5 @@
+<lib-tag [tagSeverity]="'yellowBlack'" [tagLabel]="'Prova'"></lib-tag>
+
 <ng-container *ngIf="filtersDefault.filters.length">
     <lib-only-filters [title]="'Filtra per'" [dropdownValues]="filtersDefault"
         (chipsListChange)="setFiltersOnDefaultUpload($event)">
