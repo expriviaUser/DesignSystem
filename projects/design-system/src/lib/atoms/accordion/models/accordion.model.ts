@@ -1,4 +1,5 @@
 export interface AccordionData {
     header: string,
-    [x: string]: string
+    disabled?: boolean,
+    [x: string]: string | boolean | number
 }
