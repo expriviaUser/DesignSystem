@@ -29,6 +29,8 @@ export class FiltersComponent implements OnInit {
   chipsList: FiltersChip[] = [];
   chipsExport: any = {};
 
+  calendarValue = [];
+
   resetCalendarValue!: Array<Date> | null;
 
   @ViewChildren('calendar') calendar!: QueryList<CalendarComponent>;
@@ -105,7 +107,8 @@ export class FiltersComponent implements OnInit {
   createCalendarChip(event: Array<object>, dropdownIndex: number, dropdownOption: FiltersModel, calendar: CalendarComponent): void {
     //verifico che non ci sia già la chip per il selettore specificato
     const EXIST = this.chipsList.some((d: any) => d.dropdownIndex == dropdownIndex);
-    if (event[0] && event[1]) {
+    if (event && event[0] && event[1] && (event[0] !== this.calendarValue[0] || event[1] !== this.calendarValue[1])) {
+
       const DATE_RANGE = `${dropdownOption.placeholder}: ${event[0].toLocaleString().split(',')[0]} - ${event[1].toLocaleString().split(',')[0]}`;
       if (EXIST) {
         //elimina quello esistente
@@ -118,6 +121,7 @@ export class FiltersComponent implements OnInit {
       //Emette il valore
       this.chipsExport[dropdownOption.field] = event;
       this.filterValues.emit(this.chipsExport);
+      this.calendarValue = event;
       //this.resetCalendarValue = null;
       calendar.pcalendar.value = null;
       //const CAL = this.calendar.toArray();
