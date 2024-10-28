@@ -145,12 +145,12 @@ export class OnlyFiltersComponent implements OnInit {
   protected setCalendarDoubleRangeChild(dropdownIndex: number, rangeNum: number, value: string) {
     if (rangeNum === 0) {
       this.doubleRangeToMinDate = new Date(value);
-      this._dateFrom = this.datePipe.transform(value, 'YYYY-MM-ddTHH:mm:ss') || '';
+      this._dateFrom = this.datePipe.transform(value, 'yyyy-MM-ddTHH:mm:ss') || '';
       this.requiredDaIsEmpty = !this._dateFrom;
     }
     if (rangeNum === 1) {
       this.doubleRangeFromMaxDate = new Date(value);
-      this._dateTo = this.datePipe.transform(value, 'YYYY-MM-ddTHH:mm:ss') || '';
+      this._dateTo = this.datePipe.transform(value, 'yyyy-MM-ddTHH:mm:ss') || '';
       this.requiredAIsEmpty = !this._dateTo;
 
     }

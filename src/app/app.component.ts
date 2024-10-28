@@ -6,6 +6,8 @@ import { HeaderItemsService, Tabs, UserNotification } from 'projects/design-syst
 import { AccordionData } from "../../projects/design-system/src/lib/atoms/accordion/models/accordion.model";
 import { MenubarItem } from '../../projects/design-system/src/lib/molecole/header-menu/models/menu-item.model';
 import { TreeMenu } from '@expriviauser/design-system';
+import moment from 'moment';
+import 'moment-timezone';
 
 @Component({
   selector: 'app-root',
@@ -46,6 +48,7 @@ export class AppComponent {
   ];
 
   protected tabIndex = 0;
+  protected dateMoment = moment('2024-10-22T15:34:28.1519175+00:00').tz(moment.tz.guess()).format('YYYY-MM-DD HH:mm:ss');
 
   protected accordionSections: AccordionData[] = [
     { header: 'prova1', content: 'test1', val: 'val1' },
