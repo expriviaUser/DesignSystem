@@ -17,4 +17,5 @@ export interface Cols {
     sort?: boolean;
     classes?: string;
     selectable?: boolean;
+    tooltip?: string;
 }

@@ -25,7 +25,7 @@
                             [check]="value.length === checked.length"></lib-checkbox-button>
                     </th>
                   <th *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.sort ? col.field : null">
-                        {{col.header}}
+                        {{col.header}} <i class="pi pi-info-circle" *ngIf="!!col.tooltip" [pTooltip]="col.tooltip ?? ''"></i>
                         <p-sortIcon *ngIf="col.sort" [field]="col.field"></p-sortIcon>
                     </th>
                     <th *ngIf="actions" pFrozenColumn [frozen]="true" alignFrozen="right">
