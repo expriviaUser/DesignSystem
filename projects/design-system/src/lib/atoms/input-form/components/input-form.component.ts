@@ -63,6 +63,8 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() dataType: string = 'date';
   @Input() radioColSize: string = '3';
   @Input() calendarView: CalendarTypeView = 'date';
+  @Input() calendarDisabledDays: number[] = [];
+  @Input() calendarDisabledDates: Date[] = [];
   @Input() virtualScroll: boolean = false;
   @Input() virtualScrollItemSize!: number;
 

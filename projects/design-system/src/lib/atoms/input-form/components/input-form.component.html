@@ -57,7 +57,7 @@
     [appendTo]="appendTo" [defaultDateFormat]="defaultDateFormat" [dropdownMode]="calendarDropdown"
     (clearCalendarValue)="resetCalendarValue()" (selectedValue)="emitValue($event, 'calendar')" [firstDayOfWeek]="firstDayOfWeek"
     [label]="label ? label + (required ? ' *' : '') : ''" [inlineCal]="inlineCal" [selectionType]="selectionType"
-    [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar"
+    [placeholder]="placeholder" [minDate]="minDate" [maxDate]="maxDate" [showButtonBar]="showButtonBar" [disabledDays]="calendarDisabledDays" [disabledDates]="calendarDisabledDates"
     [highlightedDays]="highlightedDays" [disabled]="inputDisabled" [timeOnly]="timeOnly" [dataType]="dataType" [view]="calendarView"></lib-calendar>
 
   <!-- Input autocomplete  -->

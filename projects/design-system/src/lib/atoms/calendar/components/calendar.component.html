@@ -21,7 +21,7 @@
 
   <p-calendar #calendar [showButtonBar]="showButtonBar" [disabled]="disabled" [(ngModel)]="value" [appendTo]="appendTo" (onBlur)="emitValue($event)" 
     [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" (onSelect)="emitValue($event)" 
-    [dateFormat]="defaultDateFormat" [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}"
+    [dateFormat]="defaultDateFormat" [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}" [disabledDays]="disabledDays" [disabledDates]="disabledDates"
     [selectionMode]="selectionType" [readonlyInput]="readonlyInput" [placeholder]="readonlyInput ? 'dd-mm-yyyy' : placeholder" [minDate]="minDate"
     [firstDayOfWeek]="firstDayOfWeek" [maxDate]="maxDate" (onClearClick)="clearCalendarValue.emit()"
               (onMonthChange)="monthChange.emit($event)" (onYearChange)="yearChange.emit($event)" [timeOnly]="timeOnly" [dataType]="dataType" [view]="view">

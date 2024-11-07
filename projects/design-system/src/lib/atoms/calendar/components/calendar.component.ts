@@ -45,6 +45,7 @@ export class CalendarComponent {
   @Input() highlightedDays: Array<string> = [];
   @Input() firstDayOfWeek!: number;
   @Input() disabledDays!: number[];
+  @Input() disabledDates!: Date[];
   @Input() timeOnly: boolean = false;
   @Input() dataType: string = 'date';
   @Input() view: CalendarTypeView = 'date';
