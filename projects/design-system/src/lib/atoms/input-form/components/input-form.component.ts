@@ -162,7 +162,7 @@ export class InputFormComponent implements ControlValueAccessor {
       this.selectedValue.emit(event);
 
     } else {
-      this.value = event.target.value;
+      this.value = event.target?.value;
       this.onChange(event.target.value);
       this.selectedValue.emit(event);
     }

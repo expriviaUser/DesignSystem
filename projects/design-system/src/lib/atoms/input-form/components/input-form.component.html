@@ -91,7 +91,7 @@
     [disabled]="inputDisabled" [icon]="icon" [field]="fieldAutocompleteCard"></lib-autocomplete-card>
 
   <!-- Input Textarea  -->
-  <lib-textarea *ngSwitchCase="'textarea'" (valueChange)="emitValue($event)" [control]="control" [value]="value" [disabled]="inputDisabled" (emitInput)="emitValue($event)"
+  <lib-textarea *ngSwitchCase="'textarea'" (valueChange)="emitValue($event, 'textarea')" [control]="control" [value]="value" [disabled]="inputDisabled" (emitInput)="emitValue($event, 'textarea')"
     [label]="label ? label + (required ? ' *' : '') : ''" [placeholder]="placeholder"></lib-textarea>
 
   <lib-input type="password" *ngSwitchCase="'password'" (emitInput)="emitValue($event, type)" [placeholder]="placeholder" [clear]="clear" [disabled]="inputDisabled"
