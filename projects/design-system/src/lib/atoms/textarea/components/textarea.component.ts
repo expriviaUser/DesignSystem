@@ -74,8 +74,8 @@ export class TextareaComponent {
 
     // upon UI element value change, this method gets triggered
     emitValue(event: any) {
-        this.value = event;
-        this.onChange(event);
+        this.value = event.target.value;
+        this.onChange(event.target.value);
         this.valueChange.emit(this.value);
     }
 }
