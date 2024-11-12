@@ -4,5 +4,6 @@ export interface TreeSelectModel {
     expanded?: boolean,
     draggable?: boolean,
     selectable?: boolean,
+    key?: string,
     children?: TreeSelectModel[]
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import { TreeMenu } from '../models/treemenu.model';
 import { TreeSelectModel } from '../../tree-select/models/tree-select.model';
 import { TreeDragDropService } from 'primeng/api';
@@ -8,7 +8,7 @@ import { TreeDragDropService } from 'primeng/api';
   templateUrl: './treemenu.component.html',
   styleUrls: ['./treemenu.component.scss']
 })
-export class TreemenuComponent {
+export class TreemenuComponent implements OnInit{
   @Input() items!: TreeMenu[];
   @Input() filter: boolean = false;
   @Input() scrollHeight!: string;
@@ -30,6 +30,21 @@ export class TreemenuComponent {
   @Output() emitSelect = new EventEmitter<TreeSelectModel>();
 
   constructor(protected dragservice: TreeDragDropService) {}
+
+  ngOnInit() {
+    this.items = this.addKeyOnEveryNode(this.items);
+  }
+
+  private addKeyOnEveryNode(nodes: TreeMenu[]) {
+    for (const node of nodes) {
+      node.key = node.data.toString();
+      if (node.children) {
+        this.addKeyOnEveryNode(node.children);
+      }
+
+    }
+    return nodes;
+  }
 
   changedSelection(event: any) {
     this.selectedChange.emit(event);

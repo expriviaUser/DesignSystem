@@ -7,7 +7,7 @@
         [label]="dropdownOptions.placeholder" [selectionType]="dropdownOptions.selectionType || 'multiple'"
         [nodes]="dropdownOptions.data"
         (emitSelectedOption)="createTreeChip($event, i, dropdownOptions.field, (dropdownOptions.selectionType || 'multiple'))"
-        [(selectedNodes)]="selectedValues[i]" (emitUnselect)="unselectOption($event, i, dropdownOptions.field)"
+        [(selectedNodes)]="selectedValues[i]" (emitUnse\lect)="unselectOption($event, i, dropdownOptions.field)"
         [placeholder]="dropdownOptions.placeholder" [valueTemplate]="valueTemplate">
 
         <ng-template #valueTemplate value>
