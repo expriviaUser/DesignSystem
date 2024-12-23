@@ -17,7 +17,7 @@ export class FormPageComponent {
     calendar: [new Date('2023-05-15')],
     chooseFile: [''],
     number: [''],
-    checkbox: [''],
+    checkbox: [true],
     radio: [''],
     textarea: [''],
     static: ['Prova'],
@@ -51,6 +51,10 @@ export class FormPageComponent {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
     }
+  }
+
+  tryNgModel(event) {
+    console.log(event);
   }
 
   iconClick() {

@@ -77,7 +77,7 @@ export class CheckboxButtonComponent implements OnChanges {
                 this.checked.splice(indexToRemove, 1);
             }
         }
-        this.value = index !== -1 ? this.checked : { checked: event.checked, defaultEvent: event.originalEvent as MouseEvent };
+        this.value = index !== -1 ? this.checked : event.checked;
         this.onChange(this.value);
         this.emitChange.emit(this.value);
     }

@@ -69,7 +69,7 @@
 
   <!-- Input checkbox -->
   <div *ngSwitchCase="'checkbox'">
-    <lib-checkbox-button (emitChange)="emitValue($event, type)" [items]="checkboxValue" [disabled]="inputDisabled"
+    <lib-checkbox-button (emitChange)="emitValue($event, type)" [items]="checkboxValue" [disabled]="inputDisabled" [control]="control" [check]="control.value"
       [label]="label ? label + (required ? ' *' : '') : ''"></lib-checkbox-button>
   </div>
 

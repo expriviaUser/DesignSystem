@@ -18,7 +18,7 @@
           *ngIf="form.get('input')?.hasError('maxlength')">Lunghezza superata</li>
       </ng-template> -->
     </lib-input-form>
-    <lib-input-form [type]="'calendar'" formControlName="calendar" [selectionType]="'range'" [label]="'Calendar'"  [calendarShowIcon]="true" [highlightedDays]="['2023-05-11','2023-11-02','2022-01-02']">
+    <lib-input-form [type]="'calendar'" formControlName="calendar" [selectionType]="'single'" [defaultDateFormat]="'yy-mm-dd'" (selectedValue)="tryNgModel($event)" [label]="'Calendar'"  [calendarShowIcon]="true" [highlightedDays]="['2023-05-11','2023-11-02','2022-01-02']">
 
     </lib-input-form>
   </div>
@@ -44,8 +44,8 @@
     </lib-input-form>
     <!-- <lib-input-form [type]="'static'" formControlName="static" [label]="'Static'">
         </lib-input-form> -->
-    <lib-input-form [type]="'checkbox'" formControlName="check" [label]="'Checkbox'"
-      [checkboxValue]="[{data: 1, label: 'Pippo'}]" [placeholder]="'Titolo Documento'">
+    <lib-input-form [type]="'checkbox'" formControlName="checkbox" [label]="'Checkbox'"
+       [placeholder]="'Titolo Documento'">
     </lib-input-form>
   </div>
 
