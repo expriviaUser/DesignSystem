@@ -114,6 +114,10 @@ export class TableComponent implements OnInit {
     return this.columns.filter((col: Cols) => col.selectable);
   }
 
+  get areSelectedAll(): boolean {
+    return this.value?.filter(el => !el.isDisabledChecked).length === this.checked?.length;
+  }
+
   constructor(private tableService: LibTableService) { }
 
   ngOnInit() {
@@ -151,12 +155,12 @@ export class TableComponent implements OnInit {
   }
 
   check(event: any, checkType: string, rowData?: any) {
-    event.defaultEvent.stopPropagation();
+    /* event.defaultEvent.stopPropagation(); */
     if (checkType === 'all') {
-      this.checked = event.checked ? [...this.value.filter(el => el && !el.isDisabledChecked)] : [];
-      this.selectedAll.emit(event.checked);
+      this.checked = event ? [...this.value.filter(el => el && !el.isDisabledChecked)] : [];
+      this.selectedAll.emit(event);
     } else {
-      if (event.checked) {
+      if (event) {
         this.checked.push(rowData);
       } else {
         const indexToRemove = this.checked.findIndex((item: any) => item[this.dataKey] === rowData[this.dataKey]);

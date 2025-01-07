@@ -22,7 +22,7 @@
                   <th *ngIf="reorderableRows"></th>
                     <th *ngIf="isSelectable">
                         <lib-checkbox-button (emitChange)="check($event, 'all')"
-                            [check]="value.length === checked.length"></lib-checkbox-button>
+                            [check]="areSelectedAll"></lib-checkbox-button>
                     </th>
                   <th *ngFor="let col of columns" pResizableColumn [pSortableColumn]="col.sort ? col.field : null">
                         {{col.header}} <i class="pi pi-info-circle" *ngIf="!!col.tooltip" [pTooltip]="col.tooltip ?? ''"></i>
