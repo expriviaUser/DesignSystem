@@ -14,6 +14,7 @@ import { FileUpload } from 'primeng/fileupload';
 })
 export class ChooseFileComponent implements OnChanges {
   @Input() label!: string;
+  @Input() placeholder: string = 'Nome File';
   @Input() acceptExtensions: string = 'image/*';
   @Input() maxFileSize!: number;
   @Input() icon!: string;

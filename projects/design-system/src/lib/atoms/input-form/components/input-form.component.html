@@ -74,7 +74,7 @@
   </div>
 
   <!-- Choose file-->
-  <lib-choose-file *ngSwitchCase="'choose-file'" [acceptExtensions]="fileAcceptExtensions" [control]="control"
+  <lib-choose-file *ngSwitchCase="'choose-file'" [acceptExtensions]="fileAcceptExtensions" [control]="control" [placeholder]="placeholder"
     [disabled]="inputDisabled" [value]="value" [icon]="icon" [maxFileSize]="maxFileSize" [multiple]="uploadMultipleFiles"
     [label]="label ? label + (required ? ' *' : '') : ''" (onLoadFile)="emitValue($event, type)" [fileLimit]="uploadFileLimit"></lib-choose-file>
 

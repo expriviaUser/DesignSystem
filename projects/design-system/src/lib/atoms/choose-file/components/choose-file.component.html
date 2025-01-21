@@ -3,9 +3,9 @@
     <label [for]="uploader">{{label}}</label>
   </div>
   <div class="input">
-    <lib-input [disabled]="true" class="lib-input" [icon]="arrayFiles.length > 0 ? 'pi pi-times' : ''"
+    <lib-input [disabled]="true" class="lib-input" [icon]="arrayFiles.length > 0 ? 'pi pi-times' : ''" 
       [ngClass]="{'ng-invalid ng-dirty': haveError}" (iconClicked)="clearFile()" [iconPos]="'right'"
-      [value]="inputValue" [placeholder]="'Nome File'"></lib-input>
+      [value]="inputValue" [placeholder]="placeholder"></lib-input>
     <p-fileUpload #uploader [disabled]="disabled" mode="basic" [chooseLabel]="''" [accept]="acceptExtensions"
       [maxFileSize]="maxFileSize" [customUpload]="true" [chooseIcon]="icon" (onSelect)="onSelect($event)"
       [showCancelButton]="true" [cancelIcon]="'pi pi-close'" [showUploadButton]="false" [uploadLabel]="''"
