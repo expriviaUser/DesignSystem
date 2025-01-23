@@ -8,6 +8,7 @@ import { HeaderItemsService } from '../../services/header-items.service';
 })
 export class CartComponent implements OnInit {
     @Input() rows: any[] = [];
+    @Input() cartLabel: string = 'Carrello';
     @Input() externalBody!: TemplateRef<any>;
     @Input() externalHeader!: TemplateRef<any>;
 

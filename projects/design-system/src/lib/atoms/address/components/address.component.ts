@@ -9,6 +9,7 @@ import { LibAddress } from '../models/address.model';
 export class AddressComponent {
   @Input() address!: LibAddress;
   @Input() modify: boolean = false;
+  @Input() buttonLabel: string = 'Modifica';
 
   @Output() modifyClicked = new EventEmitter<boolean>();
 

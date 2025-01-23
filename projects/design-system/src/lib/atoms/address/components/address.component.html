@@ -6,6 +6,6 @@
     {{address.content}}
   </div>
   <div class="modify-button" *ngIf="modify">
-    <lib-button [type]="'link'" [label]="'Modifica'" (onClick)="modifyClicked.emit()"></lib-button>
+    <lib-button [type]="'link'" [label]="buttonLabel" (onClick)="modifyClicked.emit()"></lib-button>
   </div>
 </div>
