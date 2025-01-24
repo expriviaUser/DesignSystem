@@ -14,7 +14,7 @@ import {
   FormGroup,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
-import {Calendar, CalendarTypeView} from "primeng/calendar";
+import { Calendar, CalendarTypeView } from "primeng/calendar";
 
 @Component({
   selector: 'lib-calendar',
@@ -101,6 +101,12 @@ export class CalendarComponent {
   emitValue(event: any) {
     this.onChange(event);
     this.selectedValue.emit(this.value);
+  }
+
+  inputTime(event: any) {
+    const value = event.target.value;
+    this.value = value || null;
+    this.onChange(value);
   }
 
   toggleCalendar(): void {

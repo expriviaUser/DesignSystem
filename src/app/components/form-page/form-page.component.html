@@ -18,9 +18,13 @@
           *ngIf="form.get('input')?.hasError('maxlength')">Lunghezza superata</li>
       </ng-template> -->
     </lib-input-form>
-    <lib-input-form [type]="'calendar'" formControlName="calendar" [selectionType]="'single'" [defaultDateFormat]="'yy-mm-dd'" (selectedValue)="tryNgModel($event)" [label]="'Calendar'"  [calendarShowIcon]="true" [highlightedDays]="['2023-05-11','2023-11-02','2022-01-02']">
+    <!-- <lib-input-form [type]="'calendar'" formControlName="calendar" [selectionType]="'single'" [defaultDateFormat]="'yy-mm-dd'" (selectedValue)="tryNgModel($event)" [label]="'Calendar'"  [calendarShowIcon]="true" [highlightedDays]="['2023-05-11','2023-11-02','2022-01-02']">
 
-    </lib-input-form>
+    </lib-input-form> -->
+    <lib-input-form [type]="'calendar'" formControlName="calendar"
+                    [label]="'Calendar'" [appendTo]="'body'" [placeholder]="'hh:mm'"
+                    [calendarShowIcon]="false" [timeOnly]="true" [dataType]="'string'" [calendarDropdown]="true">
+                  </lib-input-form>
   </div>
   <div class="form-row">
     <lib-input-form [type]="'choose-file'" [icon]="'pi pi-upload'" [label]="'Seleziona File'" [uploadMultipleFiles]="true"
