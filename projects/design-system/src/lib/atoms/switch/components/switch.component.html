@@ -1,5 +1,5 @@
 <div class="switch-wrapper">
-    <p-inputSwitch #switch [(ngModel)]="checked" (onChange)="onToggle($event)" [disabled]="disabled"
+    <p-inputSwitch #switch [ngModel]="checked" [disabled]="isChanging" (ngModelChange)="onToggleModel($event)" [disabled]="disabled"
         [id]="label"></p-inputSwitch>
     <label [for]="switch">{{label}}</label>
 </div>

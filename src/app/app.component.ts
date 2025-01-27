@@ -20,6 +20,12 @@ export class AppComponent {
 
   protected activeIndex = 0;
 
+  switcher = false;
+
+  isChangedSwitch(event: boolean) {
+    console.log(event);
+  }
+
   stepsItems: MenuItem[] = [
     {label: 'Step1', items: []},
     {label: 'Step2', items: [], disabled: true},
