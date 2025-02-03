@@ -47,6 +47,7 @@ export class CalendarComponent {
   @Input() disabledDays!: number[];
   @Input() disabledDates!: Date[];
   @Input() timeOnly: boolean = false;
+  @Input() timeShowSeconds: boolean = false;
   @Input() dataType: string = 'date';
   @Input() view: CalendarTypeView = 'date';
 
@@ -107,6 +108,7 @@ export class CalendarComponent {
     const value = event.target.value;
     this.value = value || null;
     this.onChange(value);
+    this.selectedValue.emit(this.value);
   }
 
   toggleCalendar(): void {

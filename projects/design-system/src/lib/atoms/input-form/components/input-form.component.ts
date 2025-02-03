@@ -60,6 +60,7 @@ export class InputFormComponent implements ControlValueAccessor {
   @Input() itemSelectedDropdownTemplate!: TemplateRef<any>;
   @Input() highlightedDays: Array<string> = [];
   @Input() timeOnly: boolean = false;
+  @Input() timeShowSeconds: boolean = false;
   @Input() dataType: string = 'date';
   @Input() radioColSize: string = '3';
   @Input() calendarView: CalendarTypeView = 'date';
