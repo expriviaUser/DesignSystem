@@ -3,7 +3,7 @@
     [showTargetControls]="showTargetControl" [sourceFilterPlaceholder]="sourceFilterPlaceholder"
     [sourceStyle]="sourceStyle" [targetStyle]="targetStyle" (onMoveAllToSource)="moveAllTo($event, 'source')"
     (onMoveAllToTarget)="moveAllTo($event, 'target')" (onMoveToSource)="moveOneTo($event, 'source')"
-    [metaKeySelection]="metaKeySelection" (onSourceSelect)="onSourceSelect($event)"
+    [metaKeySelection]="metaKeySelection" (onSourceSelect)="onSourceSelect($event)" [disabled]="disabled"
     (onTargetSelect)="onTargetSelect($event)" (onMoveToTarget)="moveOneTo($event, 'target')"
     [targetFilterPlaceholder]="targetFilterPlaceholder">
     <ng-template let-item pTemplate="item">

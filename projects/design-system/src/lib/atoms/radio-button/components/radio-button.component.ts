@@ -47,6 +47,10 @@ export class RadioButtonComponent {
 
     constructor() { }
 
+    ngOnChanges() {
+      this.value = this.items.find(el => el.data === this.value?.data).data;
+    }
+
     ngOnInit() {
     }
 

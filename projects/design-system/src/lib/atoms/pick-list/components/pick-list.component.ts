@@ -17,6 +17,7 @@ export class PickListComponent {
   @Input() sourceArray: any[] = [];
   @Input() targetStyle!: any;
   @Input() metaKeySelection: boolean = true;
+  @Input() disabled: boolean = false;
   @Input() sourceStyle!: any;
   @Input() targetArray: any[] = [];
   @Input() showSourceControl: boolean = false;
