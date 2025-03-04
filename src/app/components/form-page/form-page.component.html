@@ -21,8 +21,8 @@
     <!-- <lib-input-form [type]="'calendar'" formControlName="calendar" [selectionType]="'single'" [defaultDateFormat]="'yy-mm-dd'" (selectedValue)="tryNgModel($event)" [label]="'Calendar'"  [calendarShowIcon]="true" [highlightedDays]="['2023-05-11','2023-11-02','2022-01-02']">
 
     </lib-input-form> -->
-    <lib-input-form [type]="'calendar'" formControlName="calendar"
-                    [label]="'Calendar'" [appendTo]="'body'" [placeholder]="'hh:mm'"
+    <lib-input-form [type]="'calendar'" formControlName="calendar" [defaultDateFormat]="'dd-mm-yy'" 
+                    [label]="'Calendar'" [appendTo]="'body'" [placeholder]="'dd-MM-yyyy'"
                     [calendarShowIcon]="false" [dataType]="'string'" [calendarDropdown]="true">
                   </lib-input-form>
   </div>
