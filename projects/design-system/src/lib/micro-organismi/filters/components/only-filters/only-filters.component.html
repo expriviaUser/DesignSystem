@@ -100,7 +100,7 @@
                 <!-- CHILDREN INPUT DROPDOWN -->
                 <lib-dropdown [valueDropdown]="getChildEnum(dropdownOptions, dropdownSelectedValues[i].value)"
                   [appendTo]="'body'" [codeString]="'data'" [nameString]="'label'"
-                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholder"
+                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.placeholder"
                   (selectedValue)="dropdownSelectedValues[i].childValue = $event"></lib-dropdown>
               </div>
               <div *ngSwitchCase="'calendar'" class="same-line">
@@ -125,11 +125,11 @@
               <div *ngSwitchCase="'interval'" class="same-line">
                 <!-- CHILDREN INPUT INTERVAL -->
                 <lib-input #inputDa
-                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderDa"
+                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.placeholderDa"
                   [ngClass]="{'required-da': requiredDaIsEmpty}"
                   (selectedValue)="setInterval(i, $event, true)"></lib-input>
                 <lib-input #inputA
-                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value).placeholderA"
+                  [placeholder]="getChildConfig(dropdownOptions, dropdownSelectedValues[i].value)?.placeholderA"
                   [ngClass]="{'required-a': requiredAIsEmpty}"
                   (selectedValue)="setInterval(i, $event, false)"></lib-input>
               </div>
