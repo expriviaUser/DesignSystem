@@ -106,8 +106,10 @@ export class CalendarComponent {
 
   inputTime(event: any) {
     const value = event.target.value;
-    this.value = value || null;
-    this.onChange(value);
+    const format = this.defaultDateFormat;
+    const date = this.datePipe.transform(value, format);
+    this.value = date || null;
+    this.onChange(date);
     this.selectedValue.emit(this.value);
   }
 
