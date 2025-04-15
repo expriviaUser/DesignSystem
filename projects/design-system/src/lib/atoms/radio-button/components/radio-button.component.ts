@@ -42,21 +42,22 @@ export class RadioButtonComponent {
 
     get haveError() {
         return this.control && this.control.errors && (!this.control.pristine || this.control.touched);
-
     }
 
     constructor() { }
 
     ngOnChanges() {
-      this.value = this.items.find(el => el.data === this.value?.data)?.data;
+        const valueToUse = this.value?.data !== undefined ? this.value?.data : this.value;
+        this.value = this.items.find(el => el.data === valueToUse)?.data;
     }
 
     ngOnInit() {
     }
 
     // this method sets the value programmatically
-    writeValue(value: string) {
-        this.value = value;
+    writeValue(value: any) {
+        const valueToUse = this.value?.data !== undefined ? this.value?.data : value;
+        this.value = this.items.find(el => el.data === valueToUse);
     }
 
     // set UI element value changes emit function
@@ -79,13 +80,6 @@ export class RadioButtonComponent {
         this.value = this.items.find(el => el.data === event.value);
         this.onChange(this.value);
         this.selectedValue.emit(this.value);
-    }
-
-    // upon UI element value change, this method gets triggered
-    emitValueNg(event: any) {
-      this.value = this.items.find(el => el.data === event.value);
-      this.onChange(this.value);
-      this.selectedValue.emit(this.value);
     }
 
 }
