@@ -20,8 +20,8 @@
   <label *ngIf="label">{{label}}</label>
 
   <p-calendar #calendar [showButtonBar]="showButtonBar" [disabled]="disabled" [(ngModel)]="value" [appendTo]="appendTo"
-    [showIcon]="showIcon" inputId="icon" [inline]="inlineCal" (onSelect)="emitValue($event)"
-    (onBlur)="inputTime($event)" [dateFormat]="defaultDateFormat"
+    [showIcon]="showIcon" inputId="icon" [inline]="inlineCal"
+    (ngModelChange)="emitValue($event)" [dateFormat]="defaultDateFormat" 
     [ngClass]="{'max-w-full' : inlineCal, 'inline-cal': inlineCal}" [disabledDays]="disabledDays"
     [disabledDates]="disabledDates" [selectionMode]="selectionType" [readonlyInput]="readonlyInput"
     [placeholder]="readonlyInput ? 'dd-mm-yyyy' : placeholder" [minDate]="minDate" [firstDayOfWeek]="firstDayOfWeek"

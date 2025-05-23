@@ -100,12 +100,7 @@ export class CalendarComponent {
 
   // upon UI element value change, this method gets triggered
   emitValue(event: any) {
-    this.onChange(event);
-    this.selectedValue.emit(this.value);
-  }
-
-  inputTime(event: any) {
-    const value = event.target.value;
+    const value = event;
     //const format = this.defaultDateFormat;
     //const date = this.datePipe.transform(value, format);
     this.value = value || null;

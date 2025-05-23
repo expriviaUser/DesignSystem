@@ -7,7 +7,7 @@
         (selectionChange)="selectedEvent(selectedValue)" [scrollable]="isScrollable" [scrollHeight]="scrollHeight"
         [alwaysShowPaginator]="alwaysShowPaginator" [columns]="selectedColumns" [value]="value" [paginator]="showPaginator"
         [rows]="nRowsPerPage" [rowsPerPageOptions]="rowsPerPage" [totalRecords]="totalRecords"
-        [currentPageReportTemplate]="reportString" [loading]="loading" [showCurrentPageReport]="showReportPage"
+        [currentPageReportTemplate]="reportString" [loading]="loading" [showCurrentPageReport]="showReportPage" [showJumpToPageDropdown]="true" [showJumpToPageInput]="true" [showPageLinks]="true"
         [(first)]="firstRowInPage" [lazy]="lazy" [lazyLoadOnInit]="lazyOnInit" [customSort]="serverSort"
         (onSort)="emitSort($event)" (onLazyLoad)="lazyLoading($event)" [columnResizeMode]="columnResizeMode"
         [responsive]="responsive" [responsiveLayout]="responsiveLayout" (onRowReorder)="reorderEmit($event)">
