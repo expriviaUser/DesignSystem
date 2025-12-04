@@ -70,10 +70,14 @@ export class ChooseFileComponent implements OnChanges {
   }
 
   onSelect(event: any) {
-    this.arrayFiles = [];
-    event.currentFiles.forEach((file: File) => {
-      this.arrayFiles.push(file);
-    })
+    if (this.multiple) {
+      this.arrayFiles = [];
+      event.currentFiles.forEach((file: File) => {
+        this.arrayFiles.push(file);
+      })
+    } else {
+      this.arrayFiles = [...event.currentFiles]
+    }
     this.uploader?.clear();
     this.onLoadFile.emit(event.currentFiles);
   }
