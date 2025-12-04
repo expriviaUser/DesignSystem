@@ -11,6 +11,7 @@ export class TabsComponent {
     @Input() sections!: Tabs[];
     @Input() contents!: TemplateRef<any>;
     @Input() index: number = 0;
+    @Input() scrollable: boolean = false;
 
     indexNotShow: string = '';
 

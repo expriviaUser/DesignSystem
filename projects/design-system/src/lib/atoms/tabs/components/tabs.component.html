@@ -1,4 +1,4 @@
-<p-tabView [(activeIndex)]="index" (activeIndexChange)="changeIndex($event)" [ngClass]="indexNotShow">
+<p-tabView [(activeIndex)]="index" (activeIndexChange)="changeIndex($event)" [ngClass]="indexNotShow" [scrollable]="scrollable">
 
     <p-tabPanel *ngFor="let item of sections; let i = index" [header]="item.header" [selected]="i === index"
         [disabled]="item.isDisabled">
