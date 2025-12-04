@@ -25,7 +25,7 @@
           {{dropdownOptions.placeholder}}
         </ng-template>
       </lib-dropdown>
-      <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true"
+      <lib-calendar #calendar *ngIf="dropdownOptions.type == 'calendar'" [dropdownMode]="true" [appendTo]="'body'"
         [label]="dropdownOptions.placeholder" [placeholder]="dropdownOptions.placeholder" [selectionType]="'range'"
         (selectedValue)="createCalendarChip($event, i, dropdownOptions, calendar)"></lib-calendar>
     </div>
